@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { AccentBar } from '@/components/brand/AccentBar'
-import { BrandOutline, brandSlug } from '@/components/phone-picker/BrandOutline'
+import { logoIsWordmark, PhoneBrandLogo } from '@/components/brand/PhoneBrandLogo'
+import { brandSlug } from '@/components/phone-picker/BrandOutline'
 import { Reveal } from '@/components/motion/Reveal.client'
 import { WHATSAPP_NUMBER } from '@/lib/brand'
 import type { PhoneModel } from '@/lib/medusa/fixtures'
@@ -34,7 +35,6 @@ export function BrandRow({ brands, models }: BrandRowProps) {
         <ul className="mt-8 flex flex-wrap gap-3">
           {brands.map((brand, i) => {
             const list = models.filter((model) => model.brand === brand)
-            const outline = list[0]?.islandStyle ?? 'square'
             return (
               <Reveal as="li" key={brand} delay={i * 0.04}>
                 {list.length > 0 ? (
@@ -42,16 +42,16 @@ export function BrandRow({ brands, models }: BrandRowProps) {
                     href={`/phones/${brandSlug(brand)}`}
                     className={`${PILL} text-fg transition-colors duration-(--dur-micro) outline-none hover:border-accent-2 hover:bg-surface-2 focus-visible:ring-3 focus-visible:ring-accent-2`}
                   >
-                    <BrandOutline islandStyle={outline} className="text-accent-text" />
-                    <span className="font-semibold">{brand}</span>
+                    <PhoneBrandLogo brand={brand} />
+                    <span className={logoIsWordmark(brand) ? 'sr-only' : 'font-semibold'}>{brand}</span>
                     <span className="text-fg-muted tabular-nums">
                       · {list.length} {list.length === 1 ? 'model' : 'models'}
                     </span>
                   </Link>
                 ) : (
                   <span className={`${PILL} text-fg-muted`} aria-disabled="true">
-                    <BrandOutline islandStyle="square" />
-                    <span className="font-semibold">{brand}</span>
+                    <PhoneBrandLogo brand={brand} />
+                    <span className={logoIsWordmark(brand) ? 'sr-only' : 'font-semibold'}>{brand}</span>
                     <span>· coming soon</span>
                   </span>
                 )}

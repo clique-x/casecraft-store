@@ -2,11 +2,11 @@
 
 import { useEffect } from 'react';
 import { AnimatePresence, m } from 'motion/react';
-import { MessageCircle } from 'lucide-react';
-import { formatInr } from '@/lib/catalog/photos';
+import { BuyButtons } from '@/components/product/BuyButtons';
+import { formatInr, photoSrc } from '@/lib/catalog/photos';
 import { useInView } from '@/lib/device/use-in-view';
 import { chromeStore } from '@/lib/layout/chrome-store';
-import { CASE_TYPES, type PhoneModel, type ProductDetail } from '@/lib/medusa/fixtures';
+import { CASE_TYPES, type PhoneModel, type ProductDetail, type Variant } from '@/lib/medusa/fixtures';
 import { findVariant, lowestPrice } from '@/lib/medusa/variants';
 import { SPRING_UI } from '@/lib/motion/tokens';
 import { usePickerSheetOpen } from '@/lib/phone/picker-sheet-store';
@@ -18,17 +18,24 @@ interface StickyBuyBarProps {
   models: PhoneModel[];
 }
 
+/** Photo products carry one variant per model and no case type. */
+function variantFor(product: ProductDetail, modelSlug: string | null, caseType: Variant['caseType']): Variant | null {
+  if (product.caseTypes.length > 0) return findVariant(product, modelSlug, caseType);
+  if (modelSlug === null) return null;
+  return product.variants.find((v) => v.modelSlug === modelSlug) ?? null;
+}
+
 /**
- * Phone-only bottom bar with the live price and the one working CTA. Hidden while the buy box
- * or the footer is on screen; slides away (but stays mounted) while the picker sheet is open,
- * for the same focus-return reason as StickyPhoneCta.
+ * Bottom bar with Add to cart and Buy now. It slides up as soon as the buy box's own buttons
+ * leave the screen, on every screen size, and hides again over the footer. It slides away
+ * (but stays mounted) while the picker sheet is open, for the same focus-return reason as StickyPhoneCta.
  */
 export function StickyBuyBar({ product, models }: StickyBuyBarProps) {
   const selection = useVariantSelection();
   const sheetOpen = usePickerSheetOpen();
-  const buyBoxInView = useInView('#buy-box');
+  const actionsInView = useInView('#buy-actions');
   const footerInView = useInView('footer');
-  const shown = buyBoxInView === false && footerInView === false;
+  const shown = actionsInView === false && footerInView === false;
   const visible = shown && !sheetOpen;
 
   useEffect(() => {
@@ -37,41 +44,56 @@ export function StickyBuyBar({ product, models }: StickyBuyBarProps) {
   useEffect(() => () => chromeStore.setStickyCtaVisible(false), []);
 
   const model = selection.modelSlug ? (models.find((x) => x.slug === selection.modelSlug) ?? null) : null;
-  const variant = findVariant(product, model?.slug ?? null, selection.caseType);
+  const variant = variantFor(product, model?.slug ?? null, selection.caseType);
   const caseTypeInfo = CASE_TYPES.find((c) => c.type === selection.caseType) ?? CASE_TYPES[0];
   const price = variant ? variant.priceInr : lowestPrice(product);
-  const href = askOnWhatsAppHref({
+  const priceLabel = `${variant ? '' : 'from '}${formatInr(price)}`;
+  const soldOut = variant !== null && variant.stock <= 0;
+  const orderHref = askOnWhatsAppHref({
     productName: product.title,
     modelName: model?.model ?? null,
     caseTypeName: product.caseTypes.length > 0 ? caseTypeInfo.name : null,
     sku: variant?.sku ?? null,
+    intent: soldOut ? 'notify' : 'order',
   });
+  const detail = [model?.model, product.caseTypes.length > 0 ? caseTypeInfo.name : null].filter(Boolean).join(' · ');
 
   return (
     <AnimatePresence>
       {shown && (
         <m.div
           key="sticky-buy-bar"
-          initial={{ y: 96 }}
-          animate={{ y: sheetOpen ? 96 : 0 }}
-          exit={{ y: 96 }}
+          initial={{ y: 120 }}
+          animate={{ y: sheetOpen ? 120 : 0 }}
+          exit={{ y: 120 }}
           transition={{ type: 'spring', ...SPRING_UI }}
-          className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-surface/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] supports-backdrop-filter:bg-surface/85 supports-backdrop-filter:backdrop-blur lg:hidden"
+          className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-paper/95 shadow-[0_-8px_24px_-12px_color-mix(in_srgb,var(--color-shadow)_18%,transparent)] supports-backdrop-filter:bg-paper/85 supports-backdrop-filter:backdrop-blur-md"
         >
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-pill bg-accent px-6 text-base font-semibold text-ink transition-colors duration-(--dur-micro) outline-none hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2"
-          >
-            <span className="tabular-nums">
-              {variant ? '' : 'from '}
-              {formatInr(price)}
-            </span>
-            <span aria-hidden="true">·</span>
-            <MessageCircle className="size-5" aria-hidden="true" />
-            Ask on WhatsApp
-          </a>
+          <div className="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:px-6 lg:px-8">
+            <div className="hidden min-w-0 flex-1 items-center gap-3 md:flex">
+              {product.photo && (
+                // eslint-disable-next-line @next/next/no-img-element -- local catalogue photo at a fixed small size
+                <img
+                  src={photoSrc(product.photo.id, 320)}
+                  alt=""
+                  width={44}
+                  height={55}
+                  className="h-14 w-11 shrink-0 rounded-md bg-surface-2 object-contain"
+                />
+              )}
+              <div className="min-w-0">
+                <p className="truncate text-sm font-bold text-fg">{product.title}</p>
+                {detail && <p className="truncate text-caption text-fg-muted">{detail}</p>}
+              </div>
+              <p className="ml-auto pl-4 text-lg font-extrabold text-fg tabular-nums">{priceLabel}</p>
+            </div>
+            <BuyButtons
+              orderHref={orderHref}
+              soldOut={soldOut}
+              priceLabel={priceLabel}
+              className="w-full md:w-[22rem] md:shrink-0 md:[&>a>span]:hidden"
+            />
+          </div>
         </m.div>
       )}
     </AnimatePresence>

@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useRef } from 'react';
-import { BellIcon, MessageCircle, ShoppingBagIcon } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
+import { BuyButtons } from '@/components/product/BuyButtons';
 import { CaseTypeSelector } from '@/components/product/CaseTypeSelector.client';
 import { ModelSelector } from '@/components/product/ModelSelector.client';
 import { PriceTag } from '@/components/product/PriceTag.client';
@@ -19,7 +20,7 @@ const BADGE_LABEL: Record<NonNullable<ProductDetail['badge']>, string> = {
   limited: 'Limited',
 };
 
-const COMING_SOON = 'Checkout is coming soon · order on WhatsApp for now';
+const ORDER_NOTE = 'Buy now confirms your order on WhatsApp. Pay by UPI, card or Cash on Delivery.';
 const COOKIE_RE = /(?:^|;\s*)my_phone=([^;]*)/;
 
 // Read directly: the MyPhoneProvider value is still the server's `null` in the hydration commit's effects.
@@ -127,19 +128,21 @@ export function BuyBox({ product, models }: BuyBoxProps) {
     if (!phone) setPhone(slug);
   };
 
-  const whatsappHref = askOnWhatsAppHref({
+  const whatsappArgs = {
     productName: product.title,
     modelName: selectedModel?.model ?? null,
     caseTypeName: hasCaseTypes ? caseTypeInfo.name : null,
     sku: variant?.sku ?? null,
-  });
+  };
+  const orderHref = askOnWhatsAppHref({ ...whatsappArgs, intent: soldOut ? 'notify' : 'order' });
+  const whatsappHref = askOnWhatsAppHref(whatsappArgs);
 
   return (
     <section id="buy-box" aria-labelledby="buy-box-title" className="flex flex-col gap-7 text-fg">
       <header className="flex flex-col gap-3">
         <div className="flex flex-wrap items-center gap-2 text-label font-bold tracking-[0.2em] text-accent-text uppercase">
           {brandLine ? <span>{brandLine}</span> : theme ? <span>{theme.name}</span> : null}
-          {product.badge && <Badge className="border-transparent bg-badge text-ink">{BADGE_LABEL[product.badge]}</Badge>}
+          {product.badge && <Badge className="border-transparent bg-badge text-fg">{BADGE_LABEL[product.badge]}</Badge>}
           {product.isNew && <Badge className="border-transparent bg-surface-2 text-fg">New</Badge>}
         </div>
         <h1 id="buy-box-title" className="font-display text-h2 text-balance">
@@ -170,28 +173,17 @@ export function BuyBox({ product, models }: BuyBoxProps) {
         />
       )}
 
-      <div className="flex flex-col gap-3">
-        <button
-          type="button"
-          aria-disabled="true"
-          aria-describedby="buy-box-cart-note"
-          onClick={(e) => e.preventDefault()}
-          className="inline-flex h-12 w-full cursor-not-allowed items-center justify-center gap-2 rounded-pill bg-accent px-6 text-base font-semibold text-ink opacity-60 outline-none select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2"
-        >
-          {soldOut ? <BellIcon className="size-5" aria-hidden="true" /> : <ShoppingBagIcon className="size-5" aria-hidden="true" />}
-          {soldOut ? 'Notify me' : 'Add to cart'}
-        </button>
-        <p id="buy-box-cart-note" className="text-center text-caption text-fg-muted">
-          {COMING_SOON}
-        </p>
+      <div id="buy-actions" className="flex flex-col gap-3">
+        <BuyButtons orderHref={orderHref} soldOut={soldOut} />
+        <p className="text-caption text-fg-muted">{ORDER_NOTE}</p>
         <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-pill border border-border bg-surface px-6 text-base font-semibold text-fg transition-colors duration-(--dur-micro) outline-none hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2"
+          className="inline-flex items-center gap-2 self-start rounded-sm text-sm font-semibold text-fg underline-offset-4 outline-none hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
         >
-          <MessageCircle className="size-5 text-whatsapp" aria-hidden="true" />
-          Ask on WhatsApp
+          <MessageCircle className="size-4 text-whatsapp" aria-hidden="true" />
+          Questions? Chat with us on WhatsApp
         </a>
       </div>
     </section>

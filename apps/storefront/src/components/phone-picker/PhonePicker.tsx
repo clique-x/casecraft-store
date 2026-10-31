@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, m } from 'motion/react'
 import { ArrowRightIcon, SearchIcon } from 'lucide-react'
+import { logoIsWordmark, PhoneBrandLogo } from '@/components/brand/PhoneBrandLogo'
 import { BrandOutline, phoneHref } from '@/components/phone-picker/BrandOutline'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -196,12 +197,12 @@ export function PhonePicker({ models, variant = 'section', onNavigate, className
                 value={group.brand}
                 data-brand-tab=""
                 className={cn(
-                  'h-auto min-h-11 flex-none snap-start gap-2 rounded-lg px-3 text-sm font-medium after:bg-accent focus-visible:border-transparent focus-visible:ring-accent-2/60 data-active:bg-transparent',
+                  'h-auto min-h-11 flex-none snap-start gap-2 rounded-lg px-3 text-sm font-medium after:bg-brand-coral focus-visible:border-transparent focus-visible:ring-accent-2/60 data-active:bg-transparent',
                   t.tab,
                 )}
               >
-                <BrandOutline islandStyle={group.models[0]?.islandStyle ?? 'square'} className="opacity-80" />
-                {group.brand}
+                <PhoneBrandLogo brand={group.brand} />
+                {logoIsWordmark(group.brand) ? <span className="sr-only">{group.brand}</span> : group.brand}
               </TabsTrigger>
             ))}
           </TabsList>

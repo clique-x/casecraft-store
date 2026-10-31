@@ -25,7 +25,6 @@ import {
   IDLE_SWAY_MS,
   LG_QUERY,
   markInteraction,
-  readAutoOff,
   useChipSelection,
 } from './heroBus';
 import { loadGsap, useHeroBeats, type GsapBundle } from './useHeroBeats';
@@ -281,27 +280,34 @@ export function HeroStage({ castIds, chipSlugs }: Props) {
     return () => sway?.classList.remove('is-idle');
   }, [section, touchSway]);
 
-  // Auto-advance: self-cancelling for the session on the first deliberate interaction.
+  // Auto-advance on every tier. Without motion (static tier, reduced motion) the beat is a plain
+  // crossfade. Interactions pause it for IDLE_AFTER_INTERACTION_MS; the pause button stops it.
+  const autoTier = tier !== null;
+  // When the stage first rendered, so the first cover changes AUTO_ADVANCE_MS after the page
+  // appears rather than after hydration and GSAP finish. Kept in a ref: the effect below re-runs
+  // when GSAP arrives, which must not restart the wait.
+  const [renderedAt] = useState(() => performance.now());
+  const lastAdvanceRef = useRef<number | null>(null);
   useEffect(() => {
-    autoLive.set(motionTier && !readAutoOff());
-  }, [motionTier]);
+    autoLive.set(autoTier);
+  }, [autoTier]);
   useEffect(() => {
-    if (!section || !motionTier) return;
-    let lastAdvance = performance.now();
+    if (!section || !autoTier) return;
+    lastAdvanceRef.current ??= renderedAt;
     const id = window.setInterval(() => {
       if (!autoLive.get()) return;
       const now = performance.now();
       if (!heroState.inView || document.visibilityState !== 'visible') return;
       if (autoAdvance.paused() || heroState.beatActive) return;
       if (now - heroState.lastInteractionAt < IDLE_AFTER_INTERACTION_MS) return;
-      if (fine && section.matches(':hover')) return;
-      if (section.matches(':focus-within')) return;
-      if (now - lastAdvance < AUTO_ADVANCE_MS) return;
-      lastAdvance = now;
+      // Keyboard users reading the stage keep it still; mouse clicks and hovering do not.
+      if (section.matches(':focus-visible, :has(:focus-visible)')) return;
+      if (now - (lastAdvanceRef.current ?? now) < AUTO_ADVANCE_MS) return;
+      lastAdvanceRef.current = now;
       beats.beat(1, 'auto');
     }, TICK_MS);
     return () => window.clearInterval(id);
-  }, [section, motionTier, fine, beats]);
+  }, [section, autoTier, beats, renderedAt]);
 
   // Keyboard on the focusable section.
   useEffect(() => {

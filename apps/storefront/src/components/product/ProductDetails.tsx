@@ -29,7 +29,7 @@ export function ProductDetails({ product }: { product: ProductDetail }) {
         <ul aria-label="Features" className="flex flex-col gap-2">
           {features.map((feature) => (
             <li key={feature} className="flex items-center gap-3 text-body text-fg">
-              <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-accent" />
+              <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-brand-coral" />
               {feature}
             </li>
           ))}

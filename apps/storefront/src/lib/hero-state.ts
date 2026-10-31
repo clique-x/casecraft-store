@@ -9,7 +9,8 @@ export const heroState = {
   scroll: 0,
   inView: true,
   pointer: { x: 0, y: 0 },
-  lastInteractionAt: 0,
+  // -Infinity, not 0: performance.now() starts at navigation, so 0 would read as a click at page load.
+  lastInteractionAt: Number.NEGATIVE_INFINITY,
   beatActive: false,
 };
 

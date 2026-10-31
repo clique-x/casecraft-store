@@ -85,7 +85,7 @@ export function ModelSelector({ models, value, onChange, unfitPhone = null, clas
             <TabsTrigger
               key={group.brand}
               value={group.brand}
-              className="h-auto min-h-11 flex-none snap-start gap-2 rounded-lg px-3 text-sm font-medium text-fg-muted after:bg-accent hover:text-fg focus-visible:border-transparent focus-visible:ring-accent-2/60 data-active:bg-transparent data-active:text-fg"
+              className="h-auto min-h-11 flex-none snap-start gap-2 rounded-lg px-3 text-sm font-medium text-fg-muted after:bg-brand-coral hover:text-fg focus-visible:border-transparent focus-visible:ring-accent-2/60 data-active:bg-transparent data-active:text-fg"
             >
               <BrandOutline islandStyle={group.models[0]?.islandStyle ?? 'square'} className="opacity-80" />
               {group.brand}

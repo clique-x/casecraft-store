@@ -123,7 +123,7 @@ export function PhotoCard({
 
             <div
               aria-hidden="true"
-              className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-[width] duration-500 ease-out-expo group-hover/card:w-full in-data-centre:w-full"
+              className="absolute bottom-0 left-0 h-0.5 w-0 bg-brand-coral transition-[width] duration-500 ease-out-expo group-hover/card:w-full in-data-centre:w-full"
             />
 
             {showRank && (
@@ -136,7 +136,7 @@ export function PhotoCard({
               <Badge
                 className={cn(
                   'absolute top-2.5 right-2.5 h-6 border-transparent px-2.5 text-caption font-semibold',
-                  badge === 'New' ? 'bg-accent-2 text-on-accent' : 'bg-highlight text-ink',
+                  badge === 'New' ? 'bg-accent-2 text-on-accent' : 'bg-highlight text-fg',
                   // Narrow phone cards: the rank numeral already says it, and both won't fit.
                   badge === 'Most ordered' && showRank && 'max-sm:hidden',
                 )}

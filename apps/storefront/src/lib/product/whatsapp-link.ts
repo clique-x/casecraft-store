@@ -6,12 +6,16 @@ interface AskOnWhatsAppArgs {
   /** Omitted for photographed stock, which has one case type. */
   caseTypeName: string | null;
   sku: string | null;
+  /** `order` (default) places an order; `notify` asks to hear when a sold-out variant is back. */
+  intent?: 'order' | 'notify';
 }
 
 /** Prefilled wa.me link for ordering (or asking about) one variant. */
-export function askOnWhatsAppHref({ productName, modelName, caseTypeName, sku }: AskOnWhatsAppArgs): string {
+export function askOnWhatsAppHref({ productName, modelName, caseTypeName, sku, intent = 'order' }: AskOnWhatsAppArgs): string {
   const lines = [
-    `Hi! I'd like to order the ${productName} back cover.`,
+    intent === 'notify'
+      ? `Hi! Please tell me when the ${productName} back cover is back in stock.`
+      : `Hi! I'd like to order the ${productName} back cover.`,
     `Phone: ${modelName ?? 'not picked yet'}`,
   ];
   if (caseTypeName) lines.push(`Case type: ${caseTypeName}`);

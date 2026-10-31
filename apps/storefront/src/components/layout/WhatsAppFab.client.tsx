@@ -32,9 +32,11 @@ export function WhatsAppFab() {
       aria-hidden={sheetOpen || undefined}
       tabIndex={sheetOpen ? -1 : undefined}
       className={cn(
-        'fixed right-4 z-40 inline-flex size-14 items-center justify-center rounded-pill bg-whatsapp text-fg-on-ink shadow-lg shadow-shadow/15 transition-[opacity,transform,visibility,bottom] duration-(--dur-ui) ease-out-expo hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2 lg:right-6 lg:bottom-6',
+        'fixed right-4 z-40 inline-flex size-14 items-center justify-center rounded-pill bg-whatsapp text-fg-on-ink shadow-lg shadow-shadow/15 transition-[opacity,transform,visibility,bottom] duration-(--dur-ui) ease-out-expo hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2 lg:right-6',
         // The sticky bar (lg:hidden) is 72 px plus the safe area; sit above it only while it shows.
-        stickyVisible ? 'bottom-[calc(env(safe-area-inset-bottom)+4.75rem)]' : 'bottom-[calc(env(safe-area-inset-bottom)+1rem)]',
+        stickyVisible
+          ? 'bottom-[calc(env(safe-area-inset-bottom)+4.75rem)] lg:bottom-[6rem]'
+          : 'bottom-[calc(env(safe-area-inset-bottom)+1rem)] lg:bottom-6',
         sheetOpen && 'pointer-events-none translate-y-4 opacity-0',
         overHero && 'max-lg:invisible max-lg:translate-y-4 max-lg:opacity-0',
       )}

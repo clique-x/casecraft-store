@@ -1,6 +1,5 @@
 import { useSyncExternalStore } from 'react';
 import { featuredStore, heroState, type ChangeSource } from '@/lib/hero-state';
-import { AUTO_OFF_KEY } from './heroConfig';
 
 export * from './heroConfig';
 
@@ -41,7 +40,7 @@ export function useChipSelection(): string | null | undefined {
   return useStore(chipSelection, undefined);
 }
 
-/** Whether auto-advance can still run this session (drives the pause button's visibility). */
+/** Whether auto-advance runs on this page (drives the pause button's visibility). */
 export const autoLive = createStore(false);
 export function useAutoLive(): boolean {
   return useStore(autoLive, false);
@@ -53,23 +52,12 @@ export function useKickerOverride(): string | null {
   return useStore(kickerOverride, null);
 }
 
-export function readAutoOff(): boolean {
-  try {
-    return window.sessionStorage.getItem(AUTO_OFF_KEY) === '1';
-  } catch {
-    return false;
-  }
-}
-
-/** Every deliberate stage interaction: stamps the idle clock and retires auto-advance for the session. */
+/**
+ * Every deliberate stage interaction stamps the idle clock: auto-advance waits
+ * IDLE_AFTER_INTERACTION_MS and then resumes. Only the pause button stops it for good.
+ */
 export function markInteraction(): void {
   heroState.lastInteractionAt = performance.now();
-  try {
-    window.sessionStorage.setItem(AUTO_OFF_KEY, '1');
-  } catch {
-    /* storage unavailable: the in-memory flag still stops it */
-  }
-  autoLive.set(false);
 }
 
 export interface HeroController {

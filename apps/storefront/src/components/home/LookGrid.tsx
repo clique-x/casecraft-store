@@ -94,7 +94,7 @@ export function LookGrid({ looks }: { looks: LookWithCover[] }) {
                       <LookPhoto cover={cover} />
                       <div
                         aria-hidden="true"
-                        className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-[width] duration-500 ease-out-expo group-hover/tile:w-full"
+                        className="absolute bottom-0 left-0 h-0.5 w-0 bg-brand-coral transition-[width] duration-500 ease-out-expo group-hover/tile:w-full"
                       />
                     </div>
 

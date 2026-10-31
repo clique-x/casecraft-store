@@ -13,7 +13,6 @@ import { TrendingRow } from '@/components/home/TrendingRow';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { LookGrid } from '@/components/home/LookGrid';
 import { BrandRow } from '@/components/home/BrandRow';
-import { BrandStrip } from '@/components/home/BrandStrip';
 import { WhyUs } from '@/components/home/WhyUs';
 import { FinalCta } from '@/components/home/FinalCta';
 import { StickyPhoneCta } from '@/components/home/StickyPhoneCta.client';
@@ -99,7 +98,6 @@ export default async function HomePage() {
       <Hero cast={cast} models={models} chipModels={chipModels} />
       <PhonePickerSection models={models} />
       <TrustSeam />
-      <BrandStrip />
       {front && <UpClose initial={front} />}
       <TrendingRow products={trending} />
       <NewArrivalsRow products={newArrivals} models={models} />

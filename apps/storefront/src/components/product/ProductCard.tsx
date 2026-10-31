@@ -54,7 +54,7 @@ export function ProductCard({ product, rank, modelCount, priority, className }: 
             </span>
           )}
           {product.badge && (
-            <Badge className="absolute top-2 right-2 h-6 border-transparent bg-highlight px-2.5 text-caption font-semibold text-ink">
+            <Badge className="absolute top-2 right-2 h-6 border-transparent bg-highlight px-2.5 text-caption font-semibold text-fg">
               {BADGE_LABEL[product.badge]}
             </Badge>
           )}

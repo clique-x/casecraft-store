@@ -400,7 +400,7 @@ export function UpCloseStage({ initial, header }: UpCloseStageProps) {
               data-node-stop={i === 0 ? 'callout-1' : undefined}
               className={cn(
                 'flex min-h-11 items-center gap-3 text-body font-semibold text-fg',
-                i === 0 ? 'pl-2' : 'before:size-2 before:shrink-0 before:rounded-full before:bg-accent before:content-[""]',
+                i === 0 ? 'pl-2' : 'before:size-2 before:shrink-0 before:rounded-full before:bg-brand-coral before:content-[""]',
               )}
             >
               {text}
@@ -430,7 +430,7 @@ export function UpCloseStage({ initial, header }: UpCloseStageProps) {
             ) : (
               <li
                 key={`${entry.id}-${i}`}
-                className="inline-flex min-h-11 items-center gap-2 rounded-pill bg-surface-2 px-4 text-sm font-semibold text-fg before:size-2 before:rounded-full before:bg-accent before:content-['']"
+                className="inline-flex min-h-11 items-center gap-2 rounded-pill bg-surface-2 px-4 text-sm font-semibold text-fg before:size-2 before:rounded-full before:bg-brand-coral before:content-['']"
               >
                 {text}
               </li>

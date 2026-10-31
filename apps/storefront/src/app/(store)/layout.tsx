@@ -3,6 +3,7 @@ import { getPhoneModels } from '@/lib/medusa/home';
 import { GsapMount } from '@/components/motion/GsapMount.client';
 import { MotionProvider } from '@/components/motion/MotionProvider';
 import { MyPhoneProvider } from '@/components/phone-picker/MyPhoneProvider';
+import { DeviceDetect } from '@/components/phone-picker/DeviceDetect.client';
 import { PhonePickerSheetMount } from '@/components/phone-picker/PhonePickerSheetMount.client';
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { Header } from '@/components/layout/Header';
@@ -26,6 +27,7 @@ export default async function StoreLayout({ children }: { children: ReactNode })
         <Footer />
         <WhatsAppFab />
         <PhonePickerSheetMount models={models} />
+        <DeviceDetect models={models} />
       </MyPhoneProvider>
       <div aria-hidden="true" className="grain-overlay" />
     </MotionProvider>

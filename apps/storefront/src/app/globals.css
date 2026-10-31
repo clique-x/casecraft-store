@@ -10,7 +10,7 @@
 
 @theme {
   /* Light retail palette: white pages, warm studio-grey bands, near-black type and buttons,
-     one red for badges. The `ink` names are kept from the old dark stage so components
+     brand teal and coral as small accents. The `ink` names are kept from the old dark stage so components
      did not have to change; they are now the light "studio" bands (hero, picker, final CTA, footer). */
 
   /* studio bands */
@@ -31,15 +31,19 @@
   --color-fg: #141414;
   --color-fg-muted: #5c5a54;
   --color-heading: #141414;
-  --color-accent-text: #141414;
+  --color-accent-text: #0e6b76;
+
+  /* EarthClique brand colours (from public/brand/*.svg), used in small touches only */
+  --color-brand: #0e6b76;
+  --color-brand-coral: #ee5a3c;
 
   /* actions and badges */
   --color-accent: #141414;
   --color-accent-hover: #3a3a3a;
   --color-on-accent: #ffffff;
-  --color-accent-2: #141414;
-  --color-highlight: #c8231b;
-  --color-badge: #c8231b;
+  --color-accent-2: #0e6b76;
+  --color-highlight: #ee5a3c;
+  --color-badge: #ee5a3c;
   --color-success: #17804f;
   --color-warn: #a86f00;
   --color-danger: #c8231b;
@@ -116,7 +120,7 @@
   --destructive: var(--color-danger);
   --border: var(--color-border);
   --input: var(--color-border);
-  --ring: var(--color-fg-muted);
+  --ring: var(--color-brand);
 
   /* Studio bands are flat; the old radial glow and film grain read as a template. */
   --gradient-glow: linear-gradient(var(--color-ink), var(--color-ink));
@@ -197,7 +201,7 @@
     cursor: pointer;
   }
   :focus-visible {
-    outline: 2px solid var(--color-fg);
+    outline: 2px solid var(--color-brand);
     outline-offset: 2px;
   }
   @media (prefers-reduced-motion: no-preference) {
