@@ -18,6 +18,7 @@ import {
   createTaxRegionsWorkflow,
   linkSalesChannelsToApiKeyWorkflow,
   linkSalesChannelsToStockLocationWorkflow,
+  updateRegionsWorkflow,
   updateStoresWorkflow,
 } from '@medusajs/medusa/core-flows'
 import { PHONE_MODEL_MODULE } from '../modules/phone-model'
@@ -155,6 +156,22 @@ export default async function seed({ container }: ExecArgs) {
     // No default rate yet: confirm the GST rate and HSN code for phone cases with your CA (store-spec.md §3).
     await createTaxRegionsWorkflow(container).run({ input: [{ country_code: 'in', provider_id: 'tp_system' }] })
     logger.info('Created region "India" (INR, prices include tax)')
+  }
+
+  // Razorpay joins Cash on Delivery once its keys are configured (medusa-config.ts).
+  if (process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_KEY_SECRET) {
+    const { data: regions } = await query.graph({
+      entity: 'region',
+      fields: ['id', 'payment_providers.id'],
+      filters: { id: regionId },
+    })
+    const current = (regions[0]?.payment_providers ?? []).map((p) => p?.id).filter((id): id is string => Boolean(id))
+    if (!current.includes('pp_razorpay_razorpay')) {
+      await updateRegionsWorkflow(container).run({
+        input: { selector: { id: regionId }, update: { payment_providers: [...current, 'pp_razorpay_razorpay'] } },
+      })
+      logger.info('Enabled Razorpay for the India region')
+    }
   }
 
   // Stock location and shipping -------------------------------------------------------------------

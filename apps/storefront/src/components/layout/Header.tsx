@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Search, ShoppingBag } from 'lucide-react';
+import { Search } from 'lucide-react';
+import { CartButton } from './CartButton.client';
 import { BRAND_NAME, PARENT_BRAND, SHOW_PARENT_BRAND } from '@/lib/brand';
 import { HeaderScrollState } from './HeaderScrollState.client';
 import { MyPhoneChip } from './MyPhoneChip.client';
@@ -54,9 +55,7 @@ export function Header({ solid = false }: HeaderProps) {
           <Link href="/search" className={ICON_LINK} aria-label="Search">
             <Search className="size-5" aria-hidden="true" />
           </Link>
-          <Link href="/cart" className={ICON_LINK} aria-label="Cart">
-            <ShoppingBag className="size-5" aria-hidden="true" />
-          </Link>
+          <CartButton className={ICON_LINK} />
         </div>
       </div>
     </HeaderScrollState>

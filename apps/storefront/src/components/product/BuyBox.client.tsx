@@ -20,7 +20,7 @@ const BADGE_LABEL: Record<NonNullable<ProductDetail['badge']>, string> = {
   limited: 'Limited',
 };
 
-const ORDER_NOTE = 'Buy now confirms your order on WhatsApp. Pay by UPI, card or Cash on Delivery.';
+const ORDER_NOTE = 'Pay by UPI, card, netbanking or Cash on Delivery at checkout.';
 const COOKIE_RE = /(?:^|;\s*)my_phone=([^;]*)/;
 
 // Read directly: the MyPhoneProvider value is still the server's `null` in the hydration commit's effects.
@@ -134,7 +134,7 @@ export function BuyBox({ product, models }: BuyBoxProps) {
     caseTypeName: hasCaseTypes ? caseTypeInfo.name : null,
     sku: variant?.sku ?? null,
   };
-  const orderHref = askOnWhatsAppHref({ ...whatsappArgs, intent: soldOut ? 'notify' : 'order' });
+  const fallbackHref = askOnWhatsAppHref({ ...whatsappArgs, intent: soldOut ? 'notify' : 'order' });
   const whatsappHref = askOnWhatsAppHref(whatsappArgs);
 
   return (
@@ -174,7 +174,7 @@ export function BuyBox({ product, models }: BuyBoxProps) {
       )}
 
       <div id="buy-actions" className="flex flex-col gap-3">
-        <BuyButtons orderHref={orderHref} soldOut={soldOut} />
+        <BuyButtons variantId={variant?.id ?? null} soldOut={soldOut} whatsappHref={fallbackHref} />
         <p className="text-caption text-fg-muted">{ORDER_NOTE}</p>
         <a
           href={whatsappHref}

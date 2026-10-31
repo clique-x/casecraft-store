@@ -43,6 +43,21 @@ export function getCatalogHandles(): Promise<string[]> {
   return handles;
 }
 
+let modelsMemo: { at: number; models: Promise<PhoneModel[]> } | null = null;
+
+/** Phone models for src/proxy.ts, with the same one-minute memo as the handles. */
+export function getCatalogPhoneModels(): Promise<PhoneModel[]> {
+  if (!medusaEnabled) return Promise.resolve([...PHONE_MODELS]);
+  const now = Date.now();
+  if (modelsMemo && now - modelsMemo.at < HANDLES_TTL_MS) return modelsMemo.models;
+  const models = fetchPhoneModels();
+  modelsMemo = { at: now, models };
+  models.catch(() => {
+    if (modelsMemo?.models === models) modelsMemo = null;
+  });
+  return models;
+}
+
 // --- Medusa reads ---------------------------------------------------------------------------------
 
 /** Fields the store API returns; `*variants` is needed because a narrower list drops variant metadata. */

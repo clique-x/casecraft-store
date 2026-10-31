@@ -32,6 +32,32 @@ const redisModules = REDIS_URL
     ]
   : []
 
+/**
+ * Razorpay (UPI, cards, netbanking, wallets) when its keys are set; Cash on Delivery always uses
+ * Medusa's built-in manual provider (`pp_system_default`). Use rzp_test_ keys until launch.
+ */
+const razorpay =
+  process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_KEY_SECRET
+    ? [
+        {
+          resolve: '@medusajs/medusa/payment',
+          options: {
+            providers: [
+              {
+                resolve: './src/modules/razorpay',
+                id: 'razorpay',
+                options: {
+                  key_id: process.env.RAZORPAY_KEY_ID,
+                  key_secret: process.env.RAZORPAY_KEY_SECRET,
+                  webhook_secret: process.env.RAZORPAY_WEBHOOK_SECRET,
+                },
+              },
+            ],
+          },
+        },
+      ]
+    : []
+
 module.exports = defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
@@ -50,5 +76,5 @@ module.exports = defineConfig({
     disable: process.env.DISABLE_MEDUSA_ADMIN === 'true',
     backendUrl: process.env.MEDUSA_BACKEND_URL,
   },
-  modules: [{ resolve: './src/modules/phone-model' }, ...redisModules],
+  modules: [{ resolve: './src/modules/phone-model' }, ...razorpay, ...redisModules],
 })

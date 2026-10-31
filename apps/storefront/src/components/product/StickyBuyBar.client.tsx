@@ -49,7 +49,7 @@ export function StickyBuyBar({ product, models }: StickyBuyBarProps) {
   const price = variant ? variant.priceInr : lowestPrice(product);
   const priceLabel = `${variant ? '' : 'from '}${formatInr(price)}`;
   const soldOut = variant !== null && variant.stock <= 0;
-  const orderHref = askOnWhatsAppHref({
+  const whatsappHref = askOnWhatsAppHref({
     productName: product.title,
     modelName: model?.model ?? null,
     caseTypeName: product.caseTypes.length > 0 ? caseTypeInfo.name : null,
@@ -88,10 +88,11 @@ export function StickyBuyBar({ product, models }: StickyBuyBarProps) {
               <p className="ml-auto pl-4 text-lg font-extrabold text-fg tabular-nums">{priceLabel}</p>
             </div>
             <BuyButtons
-              orderHref={orderHref}
+              variantId={variant?.id ?? null}
               soldOut={soldOut}
+              whatsappHref={whatsappHref}
               priceLabel={priceLabel}
-              className="w-full md:w-[22rem] md:shrink-0 md:[&>a>span]:hidden"
+              className="w-full md:w-[22rem] md:shrink-0 md:[&>button>span]:hidden"
             />
           </div>
         </m.div>

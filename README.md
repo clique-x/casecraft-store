@@ -4,7 +4,7 @@ Modern e-commerce storefront for premium mobile cases and accessories, featuring
 
 Customers pick their phone, browse curated back-cover designs that fit it, inspect each case in 3D, and check out. The store is built for India: INR pricing, UPI, cards and cash on delivery.
 
-> **Status: in development.** Products, prices, stock and phone models come from the Medusa backend in `apps/backend`. Without Medusa settings the storefront falls back to built-in sample data. Cart, checkout and payments are not built yet. See [`claudedocs/store-spec.md`](claudedocs/store-spec.md).
+> **Status: in development.** Products, prices, stock, cart, checkout (Razorpay and Cash on Delivery) and order tracking run on the Medusa backend in `apps/backend`. Without Medusa settings the storefront falls back to built-in sample data and orders go to WhatsApp. Order emails and Shiprocket are not built yet. See [`claudedocs/store-spec.md`](claudedocs/store-spec.md).
 
 ## Features
 
@@ -125,9 +125,13 @@ To cut a product out of a photo on macOS, see [`scripts/photo-cutout/README.md`]
 - [x] Product page with 3D viewer and photo gallery
 - [x] Phone picker
 - [x] Medusa v2 backend with products, prices, stock and phone models
-- [ ] Phone-model admin page and "shop by phone" pages
-- [ ] Cart and checkout
-- [ ] Razorpay and cash on delivery
+- [x] Shop by phone, look, trending, new arrivals and search pages
+- [x] Cart drawer, cart page and checkout with Indian address and pincode lookup
+- [x] Razorpay and Cash on Delivery
+- [x] Order confirmation and order tracking
+- [x] Shipping, returns, refunds, privacy, terms and contact pages
+- [ ] Order emails (Resend) and GST invoices
+- [ ] Phone-model admin page
 - [ ] Shiprocket shipping and order tracking
 - [ ] Deployment to the VPS behind Cloudflare
 

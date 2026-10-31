@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react';
 import { getPhoneModels } from '@/lib/medusa/home';
+import { medusaEnabled } from '@/lib/medusa/client';
+import { CartProvider } from '@/lib/cart/cart-context';
+import { CartDrawer } from '@/components/cart/CartDrawer.client';
 import { GsapMount } from '@/components/motion/GsapMount.client';
 import { MotionProvider } from '@/components/motion/MotionProvider';
 import { MyPhoneProvider } from '@/components/phone-picker/MyPhoneProvider';
@@ -18,17 +21,20 @@ export default async function StoreLayout({ children }: { children: ReactNode })
   return (
     <MotionProvider>
       <GsapMount />
-      <MyPhoneProvider initialSlug={null} models={models}>
-        <AnnouncementBar />
-        <Header />
-        <main id="main" className="flex flex-1 flex-col">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppFab />
-        <PhonePickerSheetMount models={models} />
-        <DeviceDetect models={models} />
-      </MyPhoneProvider>
+      <CartProvider enabled={medusaEnabled}>
+        <MyPhoneProvider initialSlug={null} models={models}>
+          <AnnouncementBar />
+          <Header />
+          <main id="main" className="flex flex-1 flex-col">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppFab />
+          <PhonePickerSheetMount models={models} />
+          <DeviceDetect models={models} />
+          <CartDrawer />
+        </MyPhoneProvider>
+      </CartProvider>
       <div aria-hidden="true" className="grain-overlay" />
     </MotionProvider>
   );
