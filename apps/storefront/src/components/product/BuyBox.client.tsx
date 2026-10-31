@@ -1,0 +1,201 @@
+'use client';
+
+import { useEffect, useMemo, useRef } from 'react';
+import { BellIcon, MessageCircle, ShoppingBagIcon } from 'lucide-react';
+import { CaseTypeSelector } from '@/components/product/CaseTypeSelector.client';
+import { ModelSelector } from '@/components/product/ModelSelector.client';
+import { PriceTag } from '@/components/product/PriceTag.client';
+import { StockLine } from '@/components/product/StockLine.client';
+import { Badge } from '@/components/ui/badge';
+import { formatInr } from '@/lib/catalog/photos';
+import { CASE_TYPES, THEMES, type CaseType, type PhoneModel, type ProductDetail, type Variant } from '@/lib/medusa/fixtures';
+import { findVariant, lowestPrice } from '@/lib/medusa/products';
+import { DEFAULT_SELECTION, useVariantSelection, variantStore } from '@/lib/product/variant-store';
+import { askOnWhatsAppHref } from '@/lib/product/whatsapp-link';
+import { useMyPhone } from '@/lib/phone/use-my-phone';
+
+const BADGE_LABEL: Record<NonNullable<ProductDetail['badge']>, string> = {
+  bestseller: 'Bestseller',
+  limited: 'Limited',
+};
+
+const COMING_SOON = 'Checkout is coming soon · order on WhatsApp for now';
+const COOKIE_RE = /(?:^|;\s*)my_phone=([^;]*)/;
+
+// Read directly: the MyPhoneProvider value is still the server's `null` in the hydration commit's effects.
+function readCookiePhone(): string | null {
+  const match = COOKIE_RE.exec(document.cookie);
+  if (!match) return null;
+  try {
+    return decodeURIComponent(match[1]);
+  } catch {
+    return null;
+  }
+}
+
+function isCaseType(value: string | null): value is CaseType {
+  return value !== null && CASE_TYPES.some((c) => c.type === value);
+}
+
+/** Photo products carry one variant per model and no case type, so the type is ignored for them. */
+function variantFor(product: ProductDetail, modelSlug: string | null, caseType: CaseType): Variant | null {
+  if (product.caseTypes.length > 0) return findVariant(product, modelSlug, caseType);
+  if (modelSlug === null) return null;
+  return product.variants.find((v) => v.modelSlug === modelSlug) ?? null;
+}
+
+function brandLineOf(product: ProductDetail): string | null {
+  if (product.brandLine) return product.brandLine;
+  if (product.photo) return `${product.photo.brand} · ${product.photo.series}`;
+  return null;
+}
+
+interface BuyBoxProps {
+  product: ProductDetail;
+  models: PhoneModel[];
+}
+
+/**
+ * Owns the variant selection for the page: initialises it (query → cookie → first in stock),
+ * mirrors it into the URL with `replaceState`, and resets it when the page goes away.
+ */
+export function BuyBox({ product, models }: BuyBoxProps) {
+  const { phone, setPhone } = useMyPhone();
+  const selection = useVariantSelection();
+
+  const hasCaseTypes = product.caseTypes.length > 0;
+  const fitModels = useMemo(() => models.filter((m) => product.fitsModels.includes(m.slug)), [models, product]);
+  const caseTypes = useMemo(() => CASE_TYPES.filter((c) => product.caseTypes.includes(c.type)), [product]);
+
+  const initialised = useRef(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const queryType = params.get('type');
+    const caseType: CaseType =
+      isCaseType(queryType) && product.caseTypes.includes(queryType) ? queryType : (product.caseTypes[0] ?? 'soft');
+
+    const fits = (slug: string | null): slug is string => slug !== null && fitModels.some((m) => m.slug === slug);
+    const queryModel = params.get('model');
+    const cookieModel = readCookiePhone();
+    const firstInStock =
+      fitModels.find((m) => (variantFor(product, m.slug, caseType)?.stock ?? 0) > 0) ?? fitModels[0] ?? null;
+    const modelSlug = fits(queryModel) ? queryModel : fits(cookieModel) ? cookieModel : (firstInStock?.slug ?? null);
+
+    variantStore.reset({ modelSlug, caseType });
+    initialised.current = true;
+    return () => {
+      initialised.current = false;
+      variantStore.reset(DEFAULT_SELECTION);
+    };
+  }, [product, fitModels]);
+
+  useEffect(() => {
+    if (!initialised.current) return;
+    // Read the store, not the rendered value: the init effect above may have just moved it.
+    const current = variantStore.get();
+    const url = new URL(window.location.href);
+    if (current.modelSlug) url.searchParams.set('model', current.modelSlug);
+    else url.searchParams.delete('model');
+    if (hasCaseTypes) url.searchParams.set('type', current.caseType);
+    else url.searchParams.delete('type');
+    const next = `${url.pathname}${url.search}${url.hash}`;
+    const now = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    if (next !== now) window.history.replaceState(null, '', next);
+  }, [selection, hasCaseTypes]);
+
+  const selectedModel = selection.modelSlug ? (fitModels.find((m) => m.slug === selection.modelSlug) ?? null) : null;
+  const variant = variantFor(product, selectedModel?.slug ?? null, selection.caseType);
+  const caseTypeInfo = caseTypes.find((c) => c.type === selection.caseType) ?? caseTypes[0] ?? CASE_TYPES[0];
+  const soldOut = variant !== null && variant.stock <= 0;
+  const unfitPhone = phone && !product.fitsModels.includes(phone.slug) ? phone : null;
+  const theme = THEMES.find((t) => t.handle === product.theme);
+  const brandLine = brandLineOf(product);
+  const price = variant ? variant.priceInr : lowestPrice(product);
+  const regular = product.regularInr !== undefined && product.regularInr > price ? product.regularInr : null;
+
+  const soldOutTypes = new Set<CaseType>(
+    selectedModel
+      ? caseTypes
+          .filter((c) => (findVariant(product, selectedModel.slug, c.type)?.stock ?? 0) <= 0)
+          .map((c) => c.type)
+      : [],
+  );
+
+  const chooseModel = (slug: string) => {
+    variantStore.set({ modelSlug: slug });
+    if (!phone) setPhone(slug);
+  };
+
+  const whatsappHref = askOnWhatsAppHref({
+    productName: product.title,
+    modelName: selectedModel?.model ?? null,
+    caseTypeName: hasCaseTypes ? caseTypeInfo.name : null,
+    sku: variant?.sku ?? null,
+  });
+
+  return (
+    <section id="buy-box" aria-labelledby="buy-box-title" className="flex flex-col gap-7 text-fg">
+      <header className="flex flex-col gap-3">
+        <div className="flex flex-wrap items-center gap-2 text-label font-bold tracking-[0.2em] text-accent-text uppercase">
+          {brandLine ? <span>{brandLine}</span> : theme ? <span>{theme.name}</span> : null}
+          {product.badge && <Badge className="border-transparent bg-badge text-ink">{BADGE_LABEL[product.badge]}</Badge>}
+          {product.isNew && <Badge className="border-transparent bg-surface-2 text-fg">New</Badge>}
+        </div>
+        <h1 id="buy-box-title" className="font-display text-h2 text-balance">
+          {product.title}
+        </h1>
+        <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
+          <div className="flex items-baseline gap-2">
+            <PriceTag priceInr={price} from={variant === null} />
+            {regular !== null && (
+              <s className="text-sm text-fg-muted tabular-nums">
+                <span className="sr-only">Regular price </span>
+                {formatInr(regular)}
+              </s>
+            )}
+          </div>
+          <StockLine stock={variant ? variant.stock : null} />
+        </div>
+      </header>
+
+      <ModelSelector models={fitModels} value={selectedModel?.slug ?? null} onChange={chooseModel} unfitPhone={unfitPhone} />
+
+      {hasCaseTypes && (
+        <CaseTypeSelector
+          options={caseTypes}
+          value={selection.caseType}
+          onChange={(caseType) => variantStore.set({ caseType })}
+          soldOut={soldOutTypes}
+        />
+      )}
+
+      <div className="flex flex-col gap-3">
+        <button
+          type="button"
+          aria-disabled="true"
+          aria-describedby="buy-box-cart-note"
+          onClick={(e) => e.preventDefault()}
+          className="inline-flex h-12 w-full cursor-not-allowed items-center justify-center gap-2 rounded-pill bg-accent px-6 text-base font-semibold text-ink opacity-60 outline-none select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2"
+        >
+          {soldOut ? <BellIcon className="size-5" aria-hidden="true" /> : <ShoppingBagIcon className="size-5" aria-hidden="true" />}
+          {soldOut ? 'Notify me' : 'Add to cart'}
+        </button>
+        <p id="buy-box-cart-note" className="text-center text-caption text-fg-muted">
+          {COMING_SOON}
+        </p>
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-pill border border-border bg-surface px-6 text-base font-semibold text-fg transition-colors duration-(--dur-micro) outline-none hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2"
+        >
+          <MessageCircle className="size-5 text-whatsapp" aria-hidden="true" />
+          Ask on WhatsApp
+        </a>
+      </div>
+    </section>
+  );
+}
+
+export default BuyBox;

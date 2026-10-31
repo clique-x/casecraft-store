@@ -1,0 +1,402 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Dark mode: system preference unless [data-theme] says otherwise. */
+@custom-variant dark {
+  @media (prefers-color-scheme: dark) {
+    &:not(:where([data-theme="light"], [data-theme="light"] *)) {
+      @slot;
+    }
+  }
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+}
+
+/* Viewports at least 900 px tall: the hero sub on phones, where the stacked CTA row leaves no room for it below. */
+@custom-variant tall (@media (min-height: 900px));
+
+@theme {
+  /* stage (hero, picker band, final CTA, footer): deep teal 62 / white 18 / mist 10 / coral 10 */
+  --color-ink: #04171b;
+  --color-ink-2: #0b2e33;
+  --color-fg-on-ink: #ffffff;
+  --color-fg-on-ink-muted: #bfd9dc;
+  --color-surface-glass: rgb(255 255 255 / 0.08);
+  --color-glow-1: #134a52;
+  --color-glow-3: #08242a;
+
+  /* store (light): white 60 / teal 22 / deep teal 10 / coral 8 */
+  --color-paper: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #e7f1f2;
+  --color-surface-3: #cde1e3;
+  --color-border: #ddeaec;
+  --color-fg: #111111;
+  --color-fg-muted: #4f696c;
+  --color-heading: #0e6b76;
+  --color-accent-text: #0e6b76;
+
+  /* accents */
+  --color-accent: #ee5a3c;
+  --color-accent-hover: #d94e32;
+  --color-accent-2: #1f8f9b;
+  --color-highlight: #ffb4a3;
+  --color-badge: #ffb4a3;
+  --color-success: #1f9d6b;
+  --color-warn: #c98a00;
+  --color-danger: #c8323a;
+  --color-whatsapp: #25d366;
+
+  /* 3D materials and lights (product viewer, read by readToken) */
+  --color-island: #0b2e33;
+  --color-phone: #10272b;
+  --color-lens: #050509;
+  --color-metal: #8a8f99;
+  --color-light-rim: #ee5a3c;
+  --color-light-fill: #1f8f9b;
+
+  /* type: Unbounded for h1/h2 only (≥ 28 px), Manrope for everything else */
+  --font-display: var(--font-unbounded), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-display);
+  --text-hero: clamp(1.75rem, 1.05rem + 3.2vw, 3.25rem);
+  --text-hero--line-height: 1.05;
+  --text-hero--letter-spacing: -0.01em;
+  --text-hero--font-weight: 600;
+  --text-h2: clamp(1.75rem, 1.25rem + 1.4vw, 2.5rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 600;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.2;
+  --text-h3--font-weight: 700;
+  --text-body: 1rem;
+  --text-body--line-height: 1.55;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: 0.2em;
+  --text-label--font-weight: 700;
+  --text-cta: 1.1875rem;
+  --text-cta--line-height: 1.2;
+  --text-cta--font-weight: 700;
+
+  /* motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur-micro: 160ms;
+  --dur-ui: 300ms;
+  --dur-reveal: 600ms;
+  --dur-scene: 400ms;
+  --dur-beat: 1100ms;
+  --dur-sheen: 700ms;
+
+  --radius-card: 0.875rem;
+  --radius-pill: 9999px;
+}
+
+/* shadcn primitive variables, mapped onto the brand tokens */
+:root {
+  color-scheme: light;
+  --radius: 0.5rem;
+  --background: var(--color-paper);
+  --foreground: var(--color-fg);
+  --card: var(--color-surface);
+  --card-foreground: var(--color-fg);
+  --popover: var(--color-surface);
+  --popover-foreground: var(--color-fg);
+  --primary: var(--color-accent);
+  --primary-foreground: var(--color-fg-on-ink);
+  --secondary: var(--color-surface-2);
+  --secondary-foreground: var(--color-fg);
+  --muted: var(--color-surface-2);
+  --muted-foreground: var(--color-fg-muted);
+  --accent: var(--color-accent);
+  --accent-foreground: var(--color-fg-on-ink);
+  --destructive: var(--color-danger);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-accent-2);
+
+  /* the brand radial: hero backdrop, final CTA, stage-glow */
+  --gradient-glow: radial-gradient(
+    120% 90% at 30% 25%,
+    var(--color-glow-1) 0%,
+    var(--color-ink-2) 55%,
+    var(--color-glow-3) 100%
+  );
+
+  /* 3% SVG feTurbulence grain, reused by the hero backdrop and the page overlay */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* dark mode: store surfaces invert, stage tokens unchanged */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-paper: #04171b;
+    --color-surface: #0b2e33;
+    --color-surface-2: #0f4148;
+    --color-surface-3: #15505a;
+    --color-border: #1c454b;
+    --color-fg: #ffffff;
+    --color-fg-muted: #bfd9dc;
+    --color-heading: #ffffff;
+    --color-accent-text: #ffb4a3;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #04171b;
+  --color-surface: #0b2e33;
+  --color-surface-2: #0f4148;
+  --color-surface-3: #15505a;
+  --color-border: #1c454b;
+  --color-fg: #ffffff;
+  --color-fg-muted: #bfd9dc;
+  --color-heading: #ffffff;
+  --color-accent-text: #ffb4a3;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-fg);
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (min-width: 64rem) {
+    body {
+      font-size: 1.0625rem;
+    }
+  }
+  h1,
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  h1 {
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent-2);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer components {
+  /* Reveal: added by <Reveal> on the client only, after hydration */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity var(--dur-reveal) var(--ease-out-expo),
+      transform var(--dur-reveal) var(--ease-out-expo);
+    will-change: opacity, transform;
+  }
+  .reveal.reveal-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    padding: 0.625rem 1rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink-2);
+    color: var(--color-fg-on-ink);
+    font-weight: 700;
+    transform: translateY(-200%);
+    transition: transform var(--dur-micro) var(--ease-out-expo);
+  }
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
+
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    background-image: var(--grain);
+    background-size: 160px 160px;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+  }
+
+  /* Infinite marquee: each track is one copy; the pair slides by exactly one copy. */
+  .marquee-track {
+    gap: var(--marquee-gap, 3rem);
+    padding-right: var(--marquee-gap, 3rem);
+    animation: marquee var(--marquee-dur, 40s) linear infinite;
+    will-change: transform;
+  }
+  .group\/marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  /* Final CTA fan: a slow float per cover, 11–14 s via --float-dur. */
+  .fan-float {
+    animation: fan-float var(--float-dur, 12s) var(--ease-in-out-quart) infinite alternate;
+  }
+  @keyframes fan-float {
+    from {
+      transform: translateY(-3px);
+    }
+    to {
+      transform: translateY(3px);
+    }
+  }
+}
+
+/* Stage glow: Night base, grain, the brand radial */
+@utility stage-glow {
+  background-color: var(--color-ink);
+  background-image: var(--grain), var(--gradient-glow);
+  background-size:
+    160px 160px,
+    auto;
+  background-blend-mode: overlay, normal;
+}
+
+/* Kept for interim consumers (product viewer, loading shells): same paint as stage-glow. */
+@utility stage-backdrop {
+  background-color: var(--color-ink);
+  background-image: var(--grain), var(--gradient-glow);
+  background-size:
+    160px 160px,
+    auto;
+  background-blend-mode: overlay, normal;
+}
+
+/* Header legibility band over the stage; the copy no longer overlays cases. */
+@utility scrim-hero {
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-ink) 55%, transparent), transparent 14%);
+}
+
+/* 48×3 coral rule under h1/h2 */
+@utility accent-bar {
+  display: block;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+
+/* Product cutout <img>: the straight cut on today's photos fades behind a ledge (brief §1.4). */
+@utility cutout {
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  &[data-cut="faded"] {
+    -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+  }
+}
+
+/* Mini ledge inside card, UpClose and tile panels; --ledge-top sets where it starts. */
+@utility card-ledge {
+  position: absolute;
+  inset: var(--ledge-top, 80%) 0 0 0;
+  pointer-events: none;
+  background: var(--color-surface-3);
+  border-top: 1px solid color-mix(in srgb, var(--color-accent-2) 25%, transparent);
+}
+
+/* Decorative network SVG: positioned by the component, coloured Teal Bright */
+@utility net-pattern {
+  position: absolute;
+  pointer-events: none;
+  color: var(--color-accent-2);
+}
+
+/* Sections below the first screens render lazily */
+@utility cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fan-float,
+  .marquee-track {
+    animation: none !important;
+  }
+}

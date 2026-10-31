@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "storefront-dev",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "storefront", "exec", "next", "dev", "-p", "3011"],
+      "port": 3011
+    },
+    {
+      "name": "storefront-prod",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "storefront", "exec", "next", "start", "-p", "3010"],
+      "port": 3010
+    }
+  ]
+}

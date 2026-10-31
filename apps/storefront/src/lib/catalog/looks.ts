@@ -1,0 +1,75 @@
+import { PHOTOS, type PhotoEntry } from './photos';
+
+export interface Look {
+  /** Route handle under /categories/[handle]; fixed by the store spec. */
+  handle: string;
+  name: string;
+  blurb: string;
+  match: (e: PhotoEntry) => boolean;
+}
+
+export interface LookWithCover {
+  look: Look;
+  cover: PhotoEntry;
+  /** The next covers in the look (up to two), shown as thumbnails on the tile. */
+  others: PhotoEntry[];
+  count: number;
+}
+
+export const LOOKS: readonly Look[] = [
+  {
+    handle: 'carbon-and-aramid',
+    name: 'Carbon & aramid',
+    blurb: 'Woven fibre backs: thin, stiff and matte.',
+    match: (e) => e.look === 'carbon-and-aramid',
+  },
+  {
+    handle: 'sparkle',
+    name: 'Sparkle',
+    blurb: 'Glitter set into the shell, so it never flakes.',
+    match: (e) => e.look === 'sparkle',
+  },
+  {
+    handle: 'animal-print',
+    name: 'Animal print',
+    blurb: 'Tiger and horse patterns in the weave.',
+    match: (e) => e.look === 'animal-print',
+  },
+  {
+    handle: 'gradient',
+    name: 'Gradient',
+    blurb: 'Two colours fading into each other across the back.',
+    match: (e) => e.look === 'gradient',
+  },
+  {
+    handle: 'solid',
+    name: 'Solid',
+    blurb: 'One colour and a textured grip.',
+    match: (e) => e.look === 'solid',
+  },
+  {
+    handle: 'fold-hinge-protection',
+    name: 'Fold & hinge',
+    blurb: 'A hinge piece covers the spine of folding phones.',
+    match: (e) => e.tags?.includes('hinge') ?? false,
+  },
+];
+
+function byTrending(a: PhotoEntry, b: PhotoEntry): number {
+  return (a.trendingRank ?? Infinity) - (b.trendingRank ?? Infinity);
+}
+
+/** Each look with its lead cover (best `trendingRank` not already leading a look), two more, and the count. */
+export function looksWithCovers(): LookWithCover[] {
+  const out: LookWithCover[] = [];
+  const used = new Set<number>();
+  for (const look of LOOKS) {
+    const items = PHOTOS.filter(look.match).sort(byTrending);
+    // Looks overlap (a sparkle cover can also be a hinge cover), so lead with one no earlier tile used.
+    const cover = items.find((e) => !used.has(e.id)) ?? items[0];
+    if (!cover) continue;
+    used.add(cover.id);
+    out.push({ look, cover, others: items.filter((e) => e !== cover).slice(0, 2), count: items.length });
+  }
+  return out;
+}
