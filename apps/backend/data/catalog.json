@@ -1,0 +1,4238 @@
+{
+  "phoneModels": [
+    {
+      "slug": "iphone-16",
+      "brand": "Apple",
+      "name": "iPhone 16",
+      "series": "iPhone",
+      "releaseYear": 2024,
+      "islandStyle": "square",
+      "rank": 0
+    },
+    {
+      "slug": "iphone-16-pro",
+      "brand": "Apple",
+      "name": "iPhone 16 Pro",
+      "series": "iPhone",
+      "releaseYear": 2024,
+      "islandStyle": "square",
+      "rank": 1
+    },
+    {
+      "slug": "iphone-17",
+      "brand": "Apple",
+      "name": "iPhone 17",
+      "series": "iPhone",
+      "releaseYear": 2025,
+      "islandStyle": "square",
+      "rank": 2
+    },
+    {
+      "slug": "galaxy-s25",
+      "brand": "Samsung",
+      "name": "Galaxy S25",
+      "series": "Galaxy S",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 3
+    },
+    {
+      "slug": "galaxy-a56",
+      "brand": "Samsung",
+      "name": "Galaxy A56",
+      "series": "Galaxy A",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 4
+    },
+    {
+      "slug": "oneplus-13",
+      "brand": "OnePlus",
+      "name": "OnePlus 13",
+      "series": null,
+      "releaseYear": 2025,
+      "islandStyle": "circle",
+      "rank": 5
+    },
+    {
+      "slug": "oneplus-nord-ce4",
+      "brand": "OnePlus",
+      "name": "OnePlus Nord CE4",
+      "series": "Nord",
+      "releaseYear": 2024,
+      "islandStyle": "pills",
+      "rank": 6
+    },
+    {
+      "slug": "redmi-note-14-pro",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 14 Pro",
+      "series": "Redmi Note",
+      "releaseYear": 2025,
+      "islandStyle": "circle",
+      "rank": 7
+    },
+    {
+      "slug": "redmi-note-13",
+      "brand": "Xiaomi",
+      "name": "Redmi Note 13",
+      "series": "Redmi Note",
+      "releaseYear": 2024,
+      "islandStyle": "square",
+      "rank": 8
+    },
+    {
+      "slug": "realme-13-pro",
+      "brand": "Realme",
+      "name": "Realme 13 Pro",
+      "series": "Number",
+      "releaseYear": 2024,
+      "islandStyle": "circle",
+      "rank": 9
+    },
+    {
+      "slug": "realme-14-pro",
+      "brand": "Realme",
+      "name": "Realme 14 Pro",
+      "series": "Number",
+      "releaseYear": 2025,
+      "islandStyle": "circle",
+      "rank": 10
+    },
+    {
+      "slug": "vivo-v40",
+      "brand": "Vivo",
+      "name": "Vivo V40",
+      "series": "V",
+      "releaseYear": 2024,
+      "islandStyle": "circle",
+      "rank": 11
+    },
+    {
+      "slug": "vivo-v50",
+      "brand": "Vivo",
+      "name": "Vivo V50",
+      "series": "V",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 12
+    },
+    {
+      "slug": "nothing-phone-3a",
+      "brand": "Nothing",
+      "name": "Nothing Phone (3a)",
+      "series": "Phone",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 13
+    },
+    {
+      "slug": "pixel-9a",
+      "brand": "Google",
+      "name": "Pixel 9a",
+      "series": "Pixel",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 14
+    },
+    {
+      "slug": "galaxy-z-fold-8",
+      "brand": "Samsung",
+      "name": "Galaxy Z Fold 8",
+      "series": "Galaxy Z",
+      "releaseYear": 2026,
+      "islandStyle": "pills",
+      "rank": 15
+    },
+    {
+      "slug": "galaxy-z-fold-8-ultra",
+      "brand": "Samsung",
+      "name": "Galaxy Z Fold 8 Ultra",
+      "series": "Galaxy Z",
+      "releaseYear": 2026,
+      "islandStyle": "pills",
+      "rank": 16
+    },
+    {
+      "slug": "iphone-18-pro",
+      "brand": "Apple",
+      "name": "iPhone 18 Pro",
+      "series": "iPhone",
+      "releaseYear": 2026,
+      "islandStyle": "square",
+      "rank": 17
+    },
+    {
+      "slug": "iphone-duo",
+      "brand": "Apple",
+      "name": "iPhone Duo",
+      "series": "iPhone",
+      "releaseYear": 2026,
+      "islandStyle": "pills",
+      "rank": 18
+    }
+  ],
+  "themes": [
+    {
+      "handle": "marble",
+      "name": "Marble",
+      "blurb": "Veined stone finishes that look carved, not printed."
+    },
+    {
+      "handle": "holographic",
+      "name": "Holographic",
+      "blurb": "Rainbow sheen that shifts every time the phone turns."
+    },
+    {
+      "handle": "abstract",
+      "name": "Abstract",
+      "blurb": "Aurora ribbons and deep-space gradients."
+    },
+    {
+      "handle": "aesthetic",
+      "name": "Aesthetic",
+      "blurb": "Y2K checkers, stickers and candy colours."
+    },
+    {
+      "handle": "quotes",
+      "name": "Quotes",
+      "blurb": "Four words, big type, your whole mood."
+    },
+    {
+      "handle": "minimal",
+      "name": "Minimal",
+      "blurb": "One line, one dot, warm off-white calm."
+    }
+  ],
+  "caseTypes": [
+    {
+      "type": "soft",
+      "name": "Soft silicone"
+    },
+    {
+      "type": "glass",
+      "name": "Glass back"
+    }
+  ],
+  "products": [
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-black-carbon-samsung-fold-8-ultra",
+      "title": "Black Carbon · Luxo",
+      "description": "Black Carbon is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
+      "imagePath": "/products/photos/41280/960.webp",
+      "collections": [
+        "trending",
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41280,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "trending_rank": 5,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1099,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41280-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1099,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-grey-tiger-samsung-fold-8-ultra",
+      "title": "Grey Tiger · Luxo",
+      "description": "Grey Tiger is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film.",
+      "imagePath": "/products/photos/41282/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41282,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1099,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41282-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1099,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-moonrise-samsung-fold-8-ultra",
+      "title": "Moonrise · Luxo",
+      "description": "Moonrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through.",
+      "imagePath": "/products/photos/41284/960.webp",
+      "collections": [
+        "trending",
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41284,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "trending_rank": 1,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1099,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41284-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1099,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-colourful-tiger-samsung-fold-8-ultra",
+      "title": "Colourful Tiger · Luxo",
+      "description": "Colourful Tiger is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film.",
+      "imagePath": "/products/photos/41286/960.webp",
+      "collections": [
+        "trending",
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41286,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "trending_rank": 3,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1099,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41286-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1099,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-greenrise-samsung-fold-8-ultra",
+      "title": "Greenrise · Luxo",
+      "description": "Greenrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through.",
+      "imagePath": "/products/photos/41288/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41288,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1099,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41288-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1099,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-green-iphone-18-pro",
+      "title": "Green · X-Level",
+      "description": "Green is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
+      "imagePath": "/products/photos/41162/960.webp",
+      "collections": [
+        "trending"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41162,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 2,
+        "brand_line": "X-Level Leader Steed Nano Fiber",
+        "regular_inr": 1199,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41162-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 1199,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-glacier-iphone-18-pro",
+      "title": "Glacier · X-Level",
+      "description": "Glacier is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
+      "imagePath": "/products/photos/41164/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41164,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "X-Level Leader Steed Nano Fiber",
+        "regular_inr": 1199,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41164-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 1199,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-cherry-iphone-18-pro",
+      "title": "Cherry · X-Level",
+      "description": "Cherry is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
+      "imagePath": "/products/photos/41166/960.webp",
+      "collections": [
+        "trending"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41166,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 7,
+        "brand_line": "X-Level Leader Steed Nano Fiber",
+        "regular_inr": 1199,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41166-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 1199,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sparkle-grey-samsung-fold-8",
+      "title": "Sparkle Grey · Luxo",
+      "description": "Sparkle Grey is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
+      "imagePath": "/products/photos/41168/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41168,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1299,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41168-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": "soft",
+          "priceInr": 1299,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sunrise-samsung-fold-8",
+      "title": "Sunrise · Luxo",
+      "description": "Sunrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through. A separate hinge piece covers the spine when the phone is folded.",
+      "imagePath": "/products/photos/41189/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41189,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1299,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41189-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": "soft",
+          "priceInr": 1299,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sparkle-redish-samsung-fold-8",
+      "title": "Sparkle Redish · Luxo",
+      "description": "Sparkle Redish is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
+      "imagePath": "/products/photos/41190/960.webp",
+      "collections": [
+        "trending"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41190,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 8,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1299,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41190-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": "soft",
+          "priceInr": 1299,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-black-horse-samsung-fold-8-ultra",
+      "title": "Black Horse · Luxo",
+      "description": "Black Horse is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film. A separate hinge piece covers the spine when the phone is folded.",
+      "imagePath": "/products/photos/41250/960.webp",
+      "collections": [
+        "trending"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41250,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 6,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1299,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41250-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1299,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-redish-sparkle-samsung-fold-8-ultra",
+      "title": "Redish Sparkle · Luxo",
+      "description": "Redish Sparkle is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
+      "imagePath": "/products/photos/41252/960.webp",
+      "collections": [
+        "trending"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41252,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 4,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1299,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41252-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1299,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-moonrise-samsung-fold-8-ultra",
+      "title": "Moonrise · Luxo",
+      "description": "Moonrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through. A separate hinge piece covers the spine when the phone is folded.",
+      "imagePath": "/products/photos/41254/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41254,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1299,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41254-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1299,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-blue-horse-samsung-fold-8-ultra",
+      "title": "Blue Horse · Luxo",
+      "description": "Blue Horse is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film. A separate hinge piece covers the spine when the phone is folded.",
+      "imagePath": "/products/photos/41256/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41256,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1299,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41256-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1299,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-grey-sparkle-samsung-fold-8-ultra",
+      "title": "Grey Sparkle · Luxo",
+      "description": "Grey Sparkle is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
+      "imagePath": "/products/photos/41258/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41258,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Luxo Nano Fiber Magsafe",
+        "regular_inr": 1299,
+        "case_types": "",
+        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41258-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": "soft",
+          "priceInr": 1299,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "borluco-textured-silicone-case-with-stand-black-iphone-duo",
+      "title": "Black · Borluco",
+      "description": "Black is a Borluco Textured Silicone cover for the iPhone Duo, photographed in our Haridwar shop. One colour, a textured grip and a fold-out stand on the back.",
+      "imagePath": "/products/photos/41154/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 41154,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Borluco Textured Silicone",
+        "regular_inr": 1399,
+        "case_types": "",
+        "detail_material": "Textured silicone with a fold-out stand",
+        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
+        "detail_fit": "Made for the iPhone Duo. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-41154-IPD",
+          "modelSlug": "iphone-duo",
+          "caseType": "soft",
+          "priceInr": 1399,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "midnight-marble",
+      "title": "Midnight Marble",
+      "description": "Midnight Marble takes the look of polished stone: veins that split and rejoin, a little depth under the surface, and a quiet base colour that does not shout. The veining is drawn for this cover rather than scanned from a slab, so it stays crisp at the corners where photographs of stone go soft.",
+      "imagePath": null,
+      "collections": [
+        "trending"
+      ],
+      "category": "marble",
+      "tags": [
+        "bestseller"
+      ],
+      "metadata": {
+        "kind": "design",
+        "design_id": "midnight-marble",
+        "family": "marble",
+        "theme": "marble",
+        "finish": "glass",
+        "holo": false,
+        "badge": "bestseller",
+        "trending_rank": 2,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "Full-bleed veined pattern carried over the sides, so the stone does not stop at the edge. Matte on silicone; under glass the veins pick up a soft depth.",
+        "detail_fit": "Cut for each of the 12 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "MDNG-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 13
+        },
+        {
+          "sku": "MDNG-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 3
+        },
+        {
+          "sku": "MDNG-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 1
+        },
+        {
+          "sku": "MDNG-IP16P-GLASS",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 24
+        },
+        {
+          "sku": "MDNG-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 1
+        },
+        {
+          "sku": "MDNG-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 2
+        },
+        {
+          "sku": "MDNG-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "MDNG-GAS25-GLASS",
+          "modelSlug": "galaxy-s25",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 36
+        },
+        {
+          "sku": "MDNG-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 36
+        },
+        {
+          "sku": "MDNG-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 6
+        },
+        {
+          "sku": "MDNG-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 24
+        },
+        {
+          "sku": "MDNG-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 6
+        },
+        {
+          "sku": "MDNG-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "MDNG-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 9
+        },
+        {
+          "sku": "MDNG-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 33
+        },
+        {
+          "sku": "MDNG-REN13-GLASS",
+          "modelSlug": "redmi-note-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 7
+        },
+        {
+          "sku": "MDNG-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 22
+        },
+        {
+          "sku": "MDNG-RE13P-GLASS",
+          "modelSlug": "realme-13-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 37
+        },
+        {
+          "sku": "MDNG-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 33
+        },
+        {
+          "sku": "MDNG-VIV40-GLASS",
+          "modelSlug": "vivo-v40",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 16
+        },
+        {
+          "sku": "MDNG-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "MDNG-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "MDNG-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 31
+        },
+        {
+          "sku": "MDNG-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 19
+        }
+      ]
+    },
+    {
+      "handle": "rose-quartz",
+      "title": "Rose Quartz",
+      "description": "Rose Quartz takes the look of polished stone: veins that split and rejoin, a little depth under the surface, and a quiet base colour that does not shout. The veining is drawn for this cover rather than scanned from a slab, so it stays crisp at the corners where photographs of stone go soft.",
+      "imagePath": null,
+      "collections": [
+        "trending"
+      ],
+      "category": "marble",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "rose-quartz",
+        "family": "marble",
+        "theme": "marble",
+        "finish": "glass",
+        "holo": false,
+        "trending_rank": 8,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "Full-bleed veined pattern carried over the sides, so the stone does not stop at the edge. Matte on silicone; under glass the veins pick up a soft depth.",
+        "detail_fit": "Cut for each of the 10 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "RSQR-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 24
+        },
+        {
+          "sku": "RSQR-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "RSQR-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 9
+        },
+        {
+          "sku": "RSQR-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 1
+        },
+        {
+          "sku": "RSQR-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 1
+        },
+        {
+          "sku": "RSQR-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 19
+        },
+        {
+          "sku": "RSQR-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 16
+        },
+        {
+          "sku": "RSQR-ON13-GLASS",
+          "modelSlug": "oneplus-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 12
+        },
+        {
+          "sku": "RSQR-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 37
+        },
+        {
+          "sku": "RSQR-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 8
+        },
+        {
+          "sku": "RSQR-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 38
+        },
+        {
+          "sku": "RSQR-RE13P-GLASS",
+          "modelSlug": "realme-13-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 17
+        },
+        {
+          "sku": "RSQR-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 13
+        },
+        {
+          "sku": "RSQR-RE14P-GLASS",
+          "modelSlug": "realme-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 18
+        },
+        {
+          "sku": "RSQR-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 22
+        },
+        {
+          "sku": "RSQR-VIV40-GLASS",
+          "modelSlug": "vivo-v40",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "RSQR-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 29
+        },
+        {
+          "sku": "RSQR-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 2
+        },
+        {
+          "sku": "RSQR-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 19
+        },
+        {
+          "sku": "RSQR-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "ink-and-gold",
+      "title": "Ink & Gold",
+      "description": "Ink & Gold takes the look of polished stone: veins that split and rejoin, a little depth under the surface, and a quiet base colour that does not shout. The veining is drawn for this cover rather than scanned from a slab, so it stays crisp at the corners where photographs of stone go soft.",
+      "imagePath": null,
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": "marble",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "ink-and-gold",
+        "family": "marble",
+        "theme": "marble",
+        "finish": "glass",
+        "holo": false,
+        "is_new": true,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "Full-bleed veined pattern carried over the sides, so the stone does not stop at the edge. Matte on silicone; under glass the veins pick up a soft depth.",
+        "detail_fit": "Cut for each of the 10 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "NKND-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 20
+        },
+        {
+          "sku": "NKND-IP16P-GLASS",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 14
+        },
+        {
+          "sku": "NKND-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 1
+        },
+        {
+          "sku": "NKND-GAS25-GLASS",
+          "modelSlug": "galaxy-s25",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 33
+        },
+        {
+          "sku": "NKND-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "NKND-ON13-GLASS",
+          "modelSlug": "oneplus-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 35
+        },
+        {
+          "sku": "NKND-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 17
+        },
+        {
+          "sku": "NKND-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "NKND-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 1
+        },
+        {
+          "sku": "NKND-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 3
+        },
+        {
+          "sku": "NKND-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 8
+        },
+        {
+          "sku": "NKND-RE13P-GLASS",
+          "modelSlug": "realme-13-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 13
+        },
+        {
+          "sku": "NKND-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 24
+        },
+        {
+          "sku": "NKND-RE14P-GLASS",
+          "modelSlug": "realme-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 19
+        },
+        {
+          "sku": "NKND-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 17
+        },
+        {
+          "sku": "NKND-VIV40-GLASS",
+          "modelSlug": "vivo-v40",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 23
+        },
+        {
+          "sku": "NKND-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 15
+        },
+        {
+          "sku": "NKND-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 1
+        },
+        {
+          "sku": "NKND-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 32
+        },
+        {
+          "sku": "NKND-PI9A-GLASS",
+          "modelSlug": "pixel-9a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 3
+        }
+      ]
+    },
+    {
+      "handle": "sage-stone",
+      "title": "Sage Stone",
+      "description": "Sage Stone takes the look of polished stone: veins that split and rejoin, a little depth under the surface, and a quiet base colour that does not shout. The veining is drawn for this cover rather than scanned from a slab, so it stays crisp at the corners where photographs of stone go soft.",
+      "imagePath": null,
+      "collections": [],
+      "category": "marble",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "sage-stone",
+        "family": "marble",
+        "theme": "marble",
+        "finish": "glass",
+        "holo": false,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "Full-bleed veined pattern carried over the sides, so the stone does not stop at the edge. Matte on silicone; under glass the veins pick up a soft depth.",
+        "detail_fit": "Cut for each of the 12 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "SGST-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 11
+        },
+        {
+          "sku": "SGST-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 8
+        },
+        {
+          "sku": "SGST-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "SGST-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 15
+        },
+        {
+          "sku": "SGST-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "SGST-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "SGST-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 32
+        },
+        {
+          "sku": "SGST-ON13-GLASS",
+          "modelSlug": "oneplus-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 3
+        },
+        {
+          "sku": "SGST-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "SGST-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 26
+        },
+        {
+          "sku": "SGST-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 18
+        },
+        {
+          "sku": "SGST-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 13
+        },
+        {
+          "sku": "SGST-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 17
+        },
+        {
+          "sku": "SGST-REN13-GLASS",
+          "modelSlug": "redmi-note-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 29
+        },
+        {
+          "sku": "SGST-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 38
+        },
+        {
+          "sku": "SGST-RE13P-GLASS",
+          "modelSlug": "realme-13-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 11
+        },
+        {
+          "sku": "SGST-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 10
+        },
+        {
+          "sku": "SGST-VIV40-GLASS",
+          "modelSlug": "vivo-v40",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 31
+        },
+        {
+          "sku": "SGST-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 39
+        },
+        {
+          "sku": "SGST-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 28
+        },
+        {
+          "sku": "SGST-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "SGST-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 14
+        },
+        {
+          "sku": "SGST-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 36
+        },
+        {
+          "sku": "SGST-PI9A-GLASS",
+          "modelSlug": "pixel-9a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 7
+        }
+      ]
+    },
+    {
+      "handle": "holo-shift",
+      "title": "Holo Shift",
+      "description": "Holo Shift is a pale, near-silver base with a thin-film sheen on top. Tilt the phone and the sheen walks across the back in a slow band of colour; hold it still and it reads as a clean pearl grey.",
+      "imagePath": null,
+      "collections": [
+        "trending"
+      ],
+      "category": "holographic",
+      "tags": [
+        "bestseller"
+      ],
+      "metadata": {
+        "kind": "design",
+        "design_id": "holo-shift",
+        "family": "holo",
+        "theme": "holographic",
+        "finish": "glass",
+        "holo": true,
+        "badge": "bestseller",
+        "trending_rank": 1,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "A fine prismatic layer sits over the printed base. The colour shift comes from the layer itself, not from a picture of a rainbow, so it moves with the light in your hand.",
+        "detail_fit": "Cut for each of the 11 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "HLSH-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 9
+        },
+        {
+          "sku": "HLSH-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 11
+        },
+        {
+          "sku": "HLSH-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 19
+        },
+        {
+          "sku": "HLSH-IP16P-GLASS",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 33
+        },
+        {
+          "sku": "HLSH-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 15
+        },
+        {
+          "sku": "HLSH-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 14
+        },
+        {
+          "sku": "HLSH-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 3
+        },
+        {
+          "sku": "HLSH-ON13-GLASS",
+          "modelSlug": "oneplus-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 2
+        },
+        {
+          "sku": "HLSH-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 7
+        },
+        {
+          "sku": "HLSH-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "HLSH-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 24
+        },
+        {
+          "sku": "HLSH-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 11
+        },
+        {
+          "sku": "HLSH-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 34
+        },
+        {
+          "sku": "HLSH-REN13-GLASS",
+          "modelSlug": "redmi-note-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 2
+        },
+        {
+          "sku": "HLSH-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 11
+        },
+        {
+          "sku": "HLSH-RE13P-GLASS",
+          "modelSlug": "realme-13-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 6
+        },
+        {
+          "sku": "HLSH-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 18
+        },
+        {
+          "sku": "HLSH-VIV40-GLASS",
+          "modelSlug": "vivo-v40",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 9
+        },
+        {
+          "sku": "HLSH-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "HLSH-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 17
+        },
+        {
+          "sku": "HLSH-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 12
+        },
+        {
+          "sku": "HLSH-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 24
+        }
+      ]
+    },
+    {
+      "handle": "chrome-candy",
+      "title": "Chrome Candy",
+      "description": "Chrome Candy is a pale, near-silver base with a thin-film sheen on top. Tilt the phone and the sheen walks across the back in a slow band of colour; hold it still and it reads as a clean pearl grey.",
+      "imagePath": null,
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": "holographic",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "chrome-candy",
+        "family": "holo",
+        "theme": "holographic",
+        "finish": "glass",
+        "holo": true,
+        "is_new": true,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "A fine prismatic layer sits over the printed base. The colour shift comes from the layer itself, not from a picture of a rainbow, so it moves with the light in your hand.",
+        "detail_fit": "Cut for each of the 11 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "CHRM-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 32
+        },
+        {
+          "sku": "CHRM-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 2
+        },
+        {
+          "sku": "CHRM-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "CHRM-IP16P-GLASS",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 7
+        },
+        {
+          "sku": "CHRM-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 11
+        },
+        {
+          "sku": "CHRM-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "CHRM-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 27
+        },
+        {
+          "sku": "CHRM-GAS25-GLASS",
+          "modelSlug": "galaxy-s25",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 3
+        },
+        {
+          "sku": "CHRM-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 19
+        },
+        {
+          "sku": "CHRM-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 14
+        },
+        {
+          "sku": "CHRM-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 1
+        },
+        {
+          "sku": "CHRM-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 26
+        },
+        {
+          "sku": "CHRM-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "CHRM-REN13-GLASS",
+          "modelSlug": "redmi-note-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "CHRM-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "CHRM-VIV40-GLASS",
+          "modelSlug": "vivo-v40",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 40
+        },
+        {
+          "sku": "CHRM-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 28
+        },
+        {
+          "sku": "CHRM-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 12
+        },
+        {
+          "sku": "CHRM-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "CHRM-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 24
+        },
+        {
+          "sku": "CHRM-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 16
+        },
+        {
+          "sku": "CHRM-PI9A-GLASS",
+          "modelSlug": "pixel-9a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 12
+        }
+      ]
+    },
+    {
+      "handle": "prism-pop",
+      "title": "Prism Pop",
+      "description": "Prism Pop is a pale, near-silver base with a thin-film sheen on top. Tilt the phone and the sheen walks across the back in a slow band of colour; hold it still and it reads as a clean pearl grey.",
+      "imagePath": null,
+      "collections": [],
+      "category": "holographic",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "prism-pop",
+        "family": "holo",
+        "theme": "holographic",
+        "finish": "glass",
+        "holo": true,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "A fine prismatic layer sits over the printed base. The colour shift comes from the layer itself, not from a picture of a rainbow, so it moves with the light in your hand.",
+        "detail_fit": "Cut for each of the 11 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "PRSM-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "PRSM-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 22
+        },
+        {
+          "sku": "PRSM-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 35
+        },
+        {
+          "sku": "PRSM-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 11
+        },
+        {
+          "sku": "PRSM-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 29
+        },
+        {
+          "sku": "PRSM-GAS25-GLASS",
+          "modelSlug": "galaxy-s25",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "PRSM-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 33
+        },
+        {
+          "sku": "PRSM-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 19
+        },
+        {
+          "sku": "PRSM-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 29
+        },
+        {
+          "sku": "PRSM-ON13-GLASS",
+          "modelSlug": "oneplus-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 13
+        },
+        {
+          "sku": "PRSM-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 39
+        },
+        {
+          "sku": "PRSM-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 15
+        },
+        {
+          "sku": "PRSM-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 35
+        },
+        {
+          "sku": "PRSM-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 20
+        },
+        {
+          "sku": "PRSM-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 38
+        },
+        {
+          "sku": "PRSM-REN13-GLASS",
+          "modelSlug": "redmi-note-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 19
+        },
+        {
+          "sku": "PRSM-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 38
+        },
+        {
+          "sku": "PRSM-RE14P-GLASS",
+          "modelSlug": "realme-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 32
+        },
+        {
+          "sku": "PRSM-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 29
+        },
+        {
+          "sku": "PRSM-VIV40-GLASS",
+          "modelSlug": "vivo-v40",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 14
+        },
+        {
+          "sku": "PRSM-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 1
+        },
+        {
+          "sku": "PRSM-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 16
+        }
+      ]
+    },
+    {
+      "handle": "oil-slick",
+      "title": "Oil Slick",
+      "description": "Oil Slick is a pale, near-silver base with a thin-film sheen on top. Tilt the phone and the sheen walks across the back in a slow band of colour; hold it still and it reads as a clean pearl grey.",
+      "imagePath": null,
+      "collections": [],
+      "category": "holographic",
+      "tags": [
+        "limited"
+      ],
+      "metadata": {
+        "kind": "design",
+        "design_id": "oil-slick",
+        "family": "holo",
+        "theme": "holographic",
+        "finish": "glass",
+        "holo": true,
+        "badge": "limited",
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "A fine prismatic layer sits over the printed base. The colour shift comes from the layer itself, not from a picture of a rainbow, so it moves with the light in your hand.",
+        "detail_fit": "Cut for each of the 14 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "LSLC-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "LSLC-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 32
+        },
+        {
+          "sku": "LSLC-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "LSLC-IP16P-GLASS",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 3
+        },
+        {
+          "sku": "LSLC-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 6
+        },
+        {
+          "sku": "LSLC-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 9
+        },
+        {
+          "sku": "LSLC-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "LSLC-GAS25-GLASS",
+          "modelSlug": "galaxy-s25",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 7
+        },
+        {
+          "sku": "LSLC-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "LSLC-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 18
+        },
+        {
+          "sku": "LSLC-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 13
+        },
+        {
+          "sku": "LSLC-ON13-GLASS",
+          "modelSlug": "oneplus-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 39
+        },
+        {
+          "sku": "LSLC-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 29
+        },
+        {
+          "sku": "LSLC-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 32
+        },
+        {
+          "sku": "LSLC-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 36
+        },
+        {
+          "sku": "LSLC-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 26
+        },
+        {
+          "sku": "LSLC-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 39
+        },
+        {
+          "sku": "LSLC-REN13-GLASS",
+          "modelSlug": "redmi-note-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 16
+        },
+        {
+          "sku": "LSLC-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 33
+        },
+        {
+          "sku": "LSLC-RE13P-GLASS",
+          "modelSlug": "realme-13-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 12
+        },
+        {
+          "sku": "LSLC-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 40
+        },
+        {
+          "sku": "LSLC-VIV40-GLASS",
+          "modelSlug": "vivo-v40",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 1
+        },
+        {
+          "sku": "LSLC-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 22
+        },
+        {
+          "sku": "LSLC-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 8
+        },
+        {
+          "sku": "LSLC-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 1
+        },
+        {
+          "sku": "LSLC-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 11
+        },
+        {
+          "sku": "LSLC-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 37
+        },
+        {
+          "sku": "LSLC-PI9A-GLASS",
+          "modelSlug": "pixel-9a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 35
+        }
+      ]
+    },
+    {
+      "handle": "aurora-night",
+      "title": "Aurora Night",
+      "description": "Aurora Night is a near-black sky with ribbons of colour folded through it, soft at the edges and brighter where they cross. The composition is weighted toward the lower half so the camera island sits in the dark.",
+      "imagePath": null,
+      "collections": [
+        "trending"
+      ],
+      "category": "abstract",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "aurora-night",
+        "family": "aurora",
+        "theme": "abstract",
+        "finish": "glass",
+        "holo": false,
+        "trending_rank": 4,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "Smooth gradients with no visible banding. The darkest areas print as true black rather than dark grey, which keeps the ribbons looking lit from behind.",
+        "detail_fit": "Cut for each of the 9 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "RRNG-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 20
+        },
+        {
+          "sku": "RRNG-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 36
+        },
+        {
+          "sku": "RRNG-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 23
+        },
+        {
+          "sku": "RRNG-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 26
+        },
+        {
+          "sku": "RRNG-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 39
+        },
+        {
+          "sku": "RRNG-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 23
+        },
+        {
+          "sku": "RRNG-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 34
+        },
+        {
+          "sku": "RRNG-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "RRNG-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 22
+        },
+        {
+          "sku": "RRNG-RE13P-GLASS",
+          "modelSlug": "realme-13-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 10
+        },
+        {
+          "sku": "RRNG-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 18
+        },
+        {
+          "sku": "RRNG-RE14P-GLASS",
+          "modelSlug": "realme-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 1
+        },
+        {
+          "sku": "RRNG-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "RRNG-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 21
+        },
+        {
+          "sku": "RRNG-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 19
+        },
+        {
+          "sku": "RRNG-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 29
+        },
+        {
+          "sku": "RRNG-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 25
+        },
+        {
+          "sku": "RRNG-PI9A-GLASS",
+          "modelSlug": "pixel-9a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 3
+        }
+      ]
+    },
+    {
+      "handle": "northern-haze",
+      "title": "Northern Haze",
+      "description": "Northern Haze is a near-black sky with ribbons of colour folded through it, soft at the edges and brighter where they cross. The composition is weighted toward the lower half so the camera island sits in the dark.",
+      "imagePath": null,
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": "abstract",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "northern-haze",
+        "family": "aurora",
+        "theme": "abstract",
+        "finish": "glass",
+        "holo": false,
+        "is_new": true,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "Smooth gradients with no visible banding. The darkest areas print as true black rather than dark grey, which keeps the ribbons looking lit from behind.",
+        "detail_fit": "Cut for each of the 9 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "NRTH-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 25
+        },
+        {
+          "sku": "NRTH-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 34
+        },
+        {
+          "sku": "NRTH-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 6
+        },
+        {
+          "sku": "NRTH-IP16P-GLASS",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 18
+        },
+        {
+          "sku": "NRTH-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 35
+        },
+        {
+          "sku": "NRTH-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 1
+        },
+        {
+          "sku": "NRTH-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "NRTH-ON13-GLASS",
+          "modelSlug": "oneplus-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 36
+        },
+        {
+          "sku": "NRTH-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 15
+        },
+        {
+          "sku": "NRTH-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 0
+        },
+        {
+          "sku": "NRTH-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 9
+        },
+        {
+          "sku": "NRTH-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 40
+        },
+        {
+          "sku": "NRTH-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 15
+        },
+        {
+          "sku": "NRTH-REN13-GLASS",
+          "modelSlug": "redmi-note-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 8
+        },
+        {
+          "sku": "NRTH-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 15
+        },
+        {
+          "sku": "NRTH-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 21
+        },
+        {
+          "sku": "NRTH-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 9
+        },
+        {
+          "sku": "NRTH-PI9A-GLASS",
+          "modelSlug": "pixel-9a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 20
+        }
+      ]
+    },
+    {
+      "handle": "deep-nebula",
+      "title": "Deep Nebula",
+      "description": "Deep Nebula is a near-black sky with ribbons of colour folded through it, soft at the edges and brighter where they cross. The composition is weighted toward the lower half so the camera island sits in the dark.",
+      "imagePath": null,
+      "collections": [],
+      "category": "abstract",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "deep-nebula",
+        "family": "aurora",
+        "theme": "abstract",
+        "finish": "glass",
+        "holo": false,
+        "case_types": "soft,glass",
+        "detail_material": "Soft silicone: flexible TPU, 1.5 mm across the back, matte-touch. Glass back: 0.6 mm tempered glass bonded to a TPU bumper, printed on the underside so the art sits behind the glass and cannot wear.",
+        "detail_print": "Smooth gradients with no visible banding. The darkest areas print as true black rather than dark grey, which keeps the ribbons looking lit from behind.",
+        "detail_fit": "Cut for each of the 14 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap; a dry microfibre cloth keeps the glass streak-free. Keep it out of direct sun for long stretches. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "DPNB-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 7
+        },
+        {
+          "sku": "DPNB-IP16-GLASS",
+          "modelSlug": "iphone-16",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 7
+        },
+        {
+          "sku": "DPNB-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 25
+        },
+        {
+          "sku": "DPNB-IP16P-GLASS",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 39
+        },
+        {
+          "sku": "DPNB-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 3
+        },
+        {
+          "sku": "DPNB-IP17-GLASS",
+          "modelSlug": "iphone-17",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 22
+        },
+        {
+          "sku": "DPNB-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 36
+        },
+        {
+          "sku": "DPNB-GAS25-GLASS",
+          "modelSlug": "galaxy-s25",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 35
+        },
+        {
+          "sku": "DPNB-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 35
+        },
+        {
+          "sku": "DPNB-GAA56-GLASS",
+          "modelSlug": "galaxy-a56",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 13
+        },
+        {
+          "sku": "DPNB-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 34
+        },
+        {
+          "sku": "DPNB-ON13-GLASS",
+          "modelSlug": "oneplus-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 35
+        },
+        {
+          "sku": "DPNB-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 17
+        },
+        {
+          "sku": "DPNB-ONNCE4-GLASS",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 40
+        },
+        {
+          "sku": "DPNB-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "DPNB-REN14P-GLASS",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 40
+        },
+        {
+          "sku": "DPNB-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 12
+        },
+        {
+          "sku": "DPNB-REN13-GLASS",
+          "modelSlug": "redmi-note-13",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 40
+        },
+        {
+          "sku": "DPNB-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "DPNB-RE13P-GLASS",
+          "modelSlug": "realme-13-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 23
+        },
+        {
+          "sku": "DPNB-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 0
+        },
+        {
+          "sku": "DPNB-RE14P-GLASS",
+          "modelSlug": "realme-14-pro",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 21
+        },
+        {
+          "sku": "DPNB-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 23
+        },
+        {
+          "sku": "DPNB-VIV50-GLASS",
+          "modelSlug": "vivo-v50",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 1
+        },
+        {
+          "sku": "DPNB-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 2
+        },
+        {
+          "sku": "DPNB-NOP3A-GLASS",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 12
+        },
+        {
+          "sku": "DPNB-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 349,
+          "stock": 34
+        },
+        {
+          "sku": "DPNB-PI9A-GLASS",
+          "modelSlug": "pixel-9a",
+          "caseType": "glass",
+          "priceInr": 499,
+          "stock": 6
+        }
+      ]
+    },
+    {
+      "handle": "checker-wave",
+      "title": "Checker Wave",
+      "description": "Checker Wave is sharp geometry in candy colours: a grid that warps as it crosses the back, with a second colour showing through the gaps. It reads loud from across the room and clean up close.",
+      "imagePath": null,
+      "collections": [
+        "trending"
+      ],
+      "category": "aesthetic",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "checker-wave",
+        "family": "y2k",
+        "theme": "aesthetic",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 5,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Hard-edged shapes with high contrast. Edges are vector-sharp, a full row meets the top edge, and the warp is centred on the back rather than drifting toward a corner.",
+        "detail_fit": "Cut for each of the 11 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "CHCK-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 9
+        },
+        {
+          "sku": "CHCK-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 11
+        },
+        {
+          "sku": "CHCK-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 18
+        },
+        {
+          "sku": "CHCK-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 40
+        },
+        {
+          "sku": "CHCK-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 29
+        },
+        {
+          "sku": "CHCK-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 21
+        },
+        {
+          "sku": "CHCK-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 26
+        },
+        {
+          "sku": "CHCK-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 22
+        },
+        {
+          "sku": "CHCK-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 34
+        },
+        {
+          "sku": "CHCK-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "CHCK-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 17
+        }
+      ]
+    },
+    {
+      "handle": "candy-grid",
+      "title": "Candy Grid",
+      "description": "Candy Grid is sharp geometry in candy colours: a grid that warps as it crosses the back, with a second colour showing through the gaps. It reads loud from across the room and clean up close.",
+      "imagePath": null,
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": "aesthetic",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "candy-grid",
+        "family": "y2k",
+        "theme": "aesthetic",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Hard-edged shapes with high contrast. Edges are vector-sharp, a full row meets the top edge, and the warp is centred on the back rather than drifting toward a corner.",
+        "detail_fit": "Cut for each of the 13 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "CNDY-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "CNDY-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 35
+        },
+        {
+          "sku": "CNDY-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "CNDY-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 26
+        },
+        {
+          "sku": "CNDY-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "CNDY-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 15
+        },
+        {
+          "sku": "CNDY-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "CNDY-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 14
+        },
+        {
+          "sku": "CNDY-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 8
+        },
+        {
+          "sku": "CNDY-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "CNDY-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 16
+        },
+        {
+          "sku": "CNDY-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 22
+        },
+        {
+          "sku": "CNDY-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        }
+      ]
+    },
+    {
+      "handle": "retro-tiles",
+      "title": "Retro Tiles",
+      "description": "Retro Tiles is sharp geometry in candy colours: a grid that warps as it crosses the back, with a second colour showing through the gaps. It reads loud from across the room and clean up close.",
+      "imagePath": null,
+      "collections": [],
+      "category": "aesthetic",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "retro-tiles",
+        "family": "y2k",
+        "theme": "aesthetic",
+        "finish": "soft",
+        "holo": false,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Hard-edged shapes with high contrast. Edges are vector-sharp, a full row meets the top edge, and the warp is centred on the back rather than drifting toward a corner.",
+        "detail_fit": "Cut for each of the 11 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "RTRT-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 16
+        },
+        {
+          "sku": "RTRT-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 32
+        },
+        {
+          "sku": "RTRT-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 34
+        },
+        {
+          "sku": "RTRT-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 12
+        },
+        {
+          "sku": "RTRT-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 10
+        },
+        {
+          "sku": "RTRT-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 38
+        },
+        {
+          "sku": "RTRT-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 3
+        },
+        {
+          "sku": "RTRT-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 27
+        },
+        {
+          "sku": "RTRT-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 11
+        },
+        {
+          "sku": "RTRT-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 3
+        },
+        {
+          "sku": "RTRT-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 17
+        }
+      ]
+    },
+    {
+      "handle": "main-character",
+      "title": "Main Character",
+      "description": "Main Character puts four words at most in large display type, tipped a few degrees so the back reads as a sticker rather than a label. The ground is a single warm colour with a faint texture so the letters have something to sit on.",
+      "imagePath": null,
+      "collections": [
+        "trending"
+      ],
+      "category": "quotes",
+      "tags": [
+        "bestseller"
+      ],
+      "metadata": {
+        "kind": "design",
+        "design_id": "main-character",
+        "family": "quote",
+        "theme": "quotes",
+        "finish": "soft",
+        "holo": false,
+        "badge": "bestseller",
+        "trending_rank": 3,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Bold display type with a hard drop shadow in a second colour. Letterforms are printed from vectors, so the edges stay crisp and the shadow never blurs.",
+        "detail_fit": "Cut for each of the 10 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "MNCH-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "MNCH-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 16
+        },
+        {
+          "sku": "MNCH-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "MNCH-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "MNCH-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 40
+        },
+        {
+          "sku": "MNCH-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "MNCH-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "MNCH-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 29
+        },
+        {
+          "sku": "MNCH-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 6
+        },
+        {
+          "sku": "MNCH-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 3
+        }
+      ]
+    },
+    {
+      "handle": "soft-launch",
+      "title": "Soft Launch",
+      "description": "Soft Launch puts four words at most in large display type, tipped a few degrees so the back reads as a sticker rather than a label. The ground is a single warm colour with a faint texture so the letters have something to sit on.",
+      "imagePath": null,
+      "collections": [],
+      "category": "quotes",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "soft-launch",
+        "family": "quote",
+        "theme": "quotes",
+        "finish": "soft",
+        "holo": false,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Bold display type with a hard drop shadow in a second colour. Letterforms are printed from vectors, so the edges stay crisp and the shadow never blurs.",
+        "detail_fit": "Cut for each of the 13 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "SFTL-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "SFTL-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "SFTL-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "SFTL-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 20
+        },
+        {
+          "sku": "SFTL-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "SFTL-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 40
+        },
+        {
+          "sku": "SFTL-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 38
+        },
+        {
+          "sku": "SFTL-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "SFTL-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "SFTL-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 7
+        },
+        {
+          "sku": "SFTL-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 35
+        },
+        {
+          "sku": "SFTL-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 38
+        },
+        {
+          "sku": "SFTL-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 24
+        }
+      ]
+    },
+    {
+      "handle": "no-thoughts",
+      "title": "No Thoughts",
+      "description": "No Thoughts puts four words at most in large display type, tipped a few degrees so the back reads as a sticker rather than a label. The ground is a single warm colour with a faint texture so the letters have something to sit on.",
+      "imagePath": null,
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": "quotes",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "no-thoughts",
+        "family": "quote",
+        "theme": "quotes",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Bold display type with a hard drop shadow in a second colour. Letterforms are printed from vectors, so the edges stay crisp and the shadow never blurs.",
+        "detail_fit": "Cut for each of the 14 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "NTHG-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 32
+        },
+        {
+          "sku": "NTHG-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 36
+        },
+        {
+          "sku": "NTHG-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 12
+        },
+        {
+          "sku": "NTHG-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "NTHG-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 20
+        },
+        {
+          "sku": "NTHG-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 23
+        },
+        {
+          "sku": "NTHG-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 33
+        },
+        {
+          "sku": "NTHG-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 22
+        },
+        {
+          "sku": "NTHG-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 18
+        },
+        {
+          "sku": "NTHG-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 16
+        },
+        {
+          "sku": "NTHG-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 10
+        },
+        {
+          "sku": "NTHG-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 9
+        },
+        {
+          "sku": "NTHG-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 34
+        },
+        {
+          "sku": "NTHG-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 6
+        }
+      ]
+    },
+    {
+      "handle": "chai-first",
+      "title": "Chai First",
+      "description": "Chai First puts four words at most in large display type, tipped a few degrees so the back reads as a sticker rather than a label. The ground is a single warm colour with a faint texture so the letters have something to sit on.",
+      "imagePath": null,
+      "collections": [
+        "trending"
+      ],
+      "category": "quotes",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "chai-first",
+        "family": "quote",
+        "theme": "quotes",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 7,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Bold display type with a hard drop shadow in a second colour. Letterforms are printed from vectors, so the edges stay crisp and the shadow never blurs.",
+        "detail_fit": "Cut for each of the 11 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "CHFR-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 3
+        },
+        {
+          "sku": "CHFR-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 10
+        },
+        {
+          "sku": "CHFR-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 37
+        },
+        {
+          "sku": "CHFR-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "CHFR-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 28
+        },
+        {
+          "sku": "CHFR-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 37
+        },
+        {
+          "sku": "CHFR-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 32
+        },
+        {
+          "sku": "CHFR-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 33
+        },
+        {
+          "sku": "CHFR-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 20
+        },
+        {
+          "sku": "CHFR-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 37
+        },
+        {
+          "sku": "CHFR-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 7
+        }
+      ]
+    },
+    {
+      "handle": "sticker-bomb",
+      "title": "Sticker Bomb",
+      "description": "Sticker Bomb is a scatter of hand-drawn stickers piled over a bright base, each with its own white border and a hint of shadow. They are arranged so the camera island covers nothing you would miss.",
+      "imagePath": null,
+      "collections": [
+        "trending"
+      ],
+      "category": "aesthetic",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "sticker-bomb",
+        "family": "sticker",
+        "theme": "aesthetic",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 6,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Flat colours with white sticker borders and a soft drop shadow, printed as one layer. Nothing is raised or applied, so there are no edges to catch or peel.",
+        "detail_fit": "Cut for each of the 11 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "STCK-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "STCK-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 27
+        },
+        {
+          "sku": "STCK-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 40
+        },
+        {
+          "sku": "STCK-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 12
+        },
+        {
+          "sku": "STCK-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 22
+        },
+        {
+          "sku": "STCK-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 13
+        },
+        {
+          "sku": "STCK-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "STCK-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 3
+        },
+        {
+          "sku": "STCK-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 14
+        },
+        {
+          "sku": "STCK-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "STCK-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 36
+        }
+      ]
+    },
+    {
+      "handle": "smiley-days",
+      "title": "Smiley Days",
+      "description": "Smiley Days is a scatter of hand-drawn stickers piled over a bright base, each with its own white border and a hint of shadow. They are arranged so the camera island covers nothing you would miss.",
+      "imagePath": null,
+      "collections": [],
+      "category": "aesthetic",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "smiley-days",
+        "family": "sticker",
+        "theme": "aesthetic",
+        "finish": "soft",
+        "holo": false,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Flat colours with white sticker borders and a soft drop shadow, printed as one layer. Nothing is raised or applied, so there are no edges to catch or peel.",
+        "detail_fit": "Cut for each of the 14 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "SMLY-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 27
+        },
+        {
+          "sku": "SMLY-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 7
+        },
+        {
+          "sku": "SMLY-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 38
+        },
+        {
+          "sku": "SMLY-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "SMLY-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 21
+        },
+        {
+          "sku": "SMLY-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "SMLY-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 28
+        },
+        {
+          "sku": "SMLY-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 9
+        },
+        {
+          "sku": "SMLY-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 28
+        },
+        {
+          "sku": "SMLY-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 14
+        },
+        {
+          "sku": "SMLY-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 8
+        },
+        {
+          "sku": "SMLY-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 31
+        },
+        {
+          "sku": "SMLY-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 39
+        },
+        {
+          "sku": "SMLY-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 36
+        }
+      ]
+    },
+    {
+      "handle": "star-sign",
+      "title": "Star Sign",
+      "description": "Star Sign is a scatter of hand-drawn stickers piled over a bright base, each with its own white border and a hint of shadow. They are arranged so the camera island covers nothing you would miss.",
+      "imagePath": null,
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": "aesthetic",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "star-sign",
+        "family": "sticker",
+        "theme": "aesthetic",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "Flat colours with white sticker borders and a soft drop shadow, printed as one layer. Nothing is raised or applied, so there are no edges to catch or peel.",
+        "detail_fit": "Cut for each of the 14 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "STRS-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 34
+        },
+        {
+          "sku": "STRS-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 31
+        },
+        {
+          "sku": "STRS-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 19
+        },
+        {
+          "sku": "STRS-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 24
+        },
+        {
+          "sku": "STRS-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "STRS-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 36
+        },
+        {
+          "sku": "STRS-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "STRS-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "STRS-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 10
+        },
+        {
+          "sku": "STRS-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 7
+        },
+        {
+          "sku": "STRS-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 34
+        },
+        {
+          "sku": "STRS-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 26
+        },
+        {
+          "sku": "STRS-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 11
+        },
+        {
+          "sku": "STRS-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 18
+        }
+      ]
+    },
+    {
+      "handle": "less-is-more",
+      "title": "Less Is More",
+      "description": "Less Is More is one mark on an off-white ground: a line, an arc or a dot, placed low and slightly off-centre. The ground carries a faint paper grain so the back does not read as blank plastic.",
+      "imagePath": null,
+      "collections": [],
+      "category": "minimal",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "less-is-more",
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "A single-colour mark on a warm off-white field. The grain is printed, not embossed, so the surface stays smooth and the mark stays exactly where it was placed.",
+        "detail_fit": "Cut for each of the 9 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "LSSS-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 11
+        },
+        {
+          "sku": "LSSS-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "LSSS-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 39
+        },
+        {
+          "sku": "LSSS-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 20
+        },
+        {
+          "sku": "LSSS-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "LSSS-REN13-SOFT",
+          "modelSlug": "redmi-note-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 37
+        },
+        {
+          "sku": "LSSS-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 12
+        },
+        {
+          "sku": "LSSS-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 6
+        },
+        {
+          "sku": "LSSS-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        }
+      ]
+    },
+    {
+      "handle": "one-arc",
+      "title": "One Arc",
+      "description": "One Arc is one mark on an off-white ground: a line, an arc or a dot, placed low and slightly off-centre. The ground carries a faint paper grain so the back does not read as blank plastic.",
+      "imagePath": null,
+      "collections": [],
+      "category": "minimal",
+      "tags": [
+        "limited"
+      ],
+      "metadata": {
+        "kind": "design",
+        "design_id": "one-arc",
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "badge": "limited",
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "A single-colour mark on a warm off-white field. The grain is printed, not embossed, so the surface stays smooth and the mark stays exactly where it was placed.",
+        "detail_fit": "Cut for each of the 12 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "NRCX-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 2
+        },
+        {
+          "sku": "NRCX-IP16P-SOFT",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "NRCX-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 19
+        },
+        {
+          "sku": "NRCX-GAS25-SOFT",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 32
+        },
+        {
+          "sku": "NRCX-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 21
+        },
+        {
+          "sku": "NRCX-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 21
+        },
+        {
+          "sku": "NRCX-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 26
+        },
+        {
+          "sku": "NRCX-RE13P-SOFT",
+          "modelSlug": "realme-13-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 3
+        },
+        {
+          "sku": "NRCX-RE14P-SOFT",
+          "modelSlug": "realme-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 34
+        },
+        {
+          "sku": "NRCX-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "NRCX-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 30
+        },
+        {
+          "sku": "NRCX-PI9A-SOFT",
+          "modelSlug": "pixel-9a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 21
+        }
+      ]
+    },
+    {
+      "handle": "quiet-dot",
+      "title": "Quiet Dot",
+      "description": "Quiet Dot is one mark on an off-white ground: a line, an arc or a dot, placed low and slightly off-centre. The ground carries a faint paper grain so the back does not read as blank plastic.",
+      "imagePath": null,
+      "collections": [],
+      "category": "minimal",
+      "tags": [],
+      "metadata": {
+        "kind": "design",
+        "design_id": "quiet-dot",
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "case_types": "soft",
+        "detail_material": "Flexible TPU, 1.5 mm across the back and thicker at the corners, with a matte-touch finish that does not hold fingerprints. It bends to go on and off and settles back flat.",
+        "detail_print": "A single-colour mark on a warm off-white field. The grain is printed, not embossed, so the surface stays smooth and the mark stays exactly where it was placed.",
+        "detail_fit": "Cut for each of the 9 listed models: the camera opening follows that phone's island and the buttons and ports stay open. A 1.2 mm lip runs around the screen and the camera so the phone rests on the case, not on glass.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Keep it out of direct sun for long stretches, since TPU yellows slowly under UV. Do not use alcohol or acetone on the print."
+      },
+      "variants": [
+        {
+          "sku": "QTDT-IP16-SOFT",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 36
+        },
+        {
+          "sku": "QTDT-IP17-SOFT",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 9
+        },
+        {
+          "sku": "QTDT-GAA56-SOFT",
+          "modelSlug": "galaxy-a56",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 23
+        },
+        {
+          "sku": "QTDT-ON13-SOFT",
+          "modelSlug": "oneplus-13",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 24
+        },
+        {
+          "sku": "QTDT-ONNCE4-SOFT",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 1
+        },
+        {
+          "sku": "QTDT-REN14P-SOFT",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 0
+        },
+        {
+          "sku": "QTDT-VIV40-SOFT",
+          "modelSlug": "vivo-v40",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 3
+        },
+        {
+          "sku": "QTDT-VIV50-SOFT",
+          "modelSlug": "vivo-v50",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 12
+        },
+        {
+          "sku": "QTDT-NOP3A-SOFT",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": "soft",
+          "priceInr": 299,
+          "stock": 30
+        }
+      ]
+    }
+  ]
+}

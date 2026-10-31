@@ -13,9 +13,10 @@ import { ProductViewer } from '@/components/product/viewer/ProductViewer.client'
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 import { LOOKS } from '@/lib/catalog/looks';
 import { photoSrc, type PhotoEntry } from '@/lib/catalog/photos';
-import { PRODUCTS, type HomeProduct, type ProductDetail } from '@/lib/medusa/fixtures';
+import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getPhoneModels } from '@/lib/medusa/home';
 import {
+  getAllProducts,
   getMoreForPhoneCandidates,
   getProduct,
   getProductHandles,
@@ -73,11 +74,11 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 }
 
 /** Same look, other photographed covers; trending first. Procedural designs keep the theme query. */
-function relatedByLook(product: ProductDetail): HomeProduct[] {
+async function relatedByLook(product: ProductDetail): Promise<HomeProduct[]> {
   const photo = product.photo;
   if (!photo) return [];
   const look = LOOKS.find((l) => l.handle === photo.look);
-  return PRODUCTS.filter(
+  return (await getAllProducts()).filter(
     (p) => p.id !== product.id && p.photo !== undefined && (look ? look.match(p.photo) : p.photo.look === photo.look),
   )
     .sort((a, b) => (a.trendingRank ?? 99) - (b.trendingRank ?? 99))

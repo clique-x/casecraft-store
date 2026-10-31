@@ -2,7 +2,7 @@ import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 import { LOOKS } from '@/lib/catalog/looks';
 import { photoSrc } from '@/lib/catalog/photos';
 import { THEMES, type ProductDetail } from '@/lib/medusa/fixtures';
-import { lowestPrice } from '@/lib/medusa/products';
+import { lowestPrice } from '@/lib/medusa/variants';
 
 function categoryOf(product: ProductDetail): string {
   if (product.photo) {

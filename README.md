@@ -4,7 +4,7 @@ Modern e-commerce storefront for premium mobile cases and accessories, featuring
 
 Customers pick their phone, browse curated back-cover designs that fit it, inspect each case in 3D, and check out. The store is built for India: INR pricing, UPI, cards and cash on delivery.
 
-> **Status: in development.** The storefront runs on built-in sample data (`src/lib/medusa/fixtures.ts`). The Medusa commerce backend, checkout and payments are planned but not connected yet. See [`claudedocs/store-spec.md`](claudedocs/store-spec.md).
+> **Status: in development.** Products, prices, stock and phone models come from the Medusa backend in `apps/backend`. Without Medusa settings the storefront falls back to built-in sample data. Cart, checkout and payments are not built yet. See [`claudedocs/store-spec.md`](claudedocs/store-spec.md).
 
 ## Features
 
@@ -24,8 +24,8 @@ Customers pick their phone, browse curated back-cover designs that fit it, inspe
 | Animation | GSAP, Motion |
 | 3D | Three.js, React Three Fiber, Drei |
 | Images | sharp (variant generation), macOS Vision (photo cutouts) |
+| Commerce backend | Medusa v2, PostgreSQL, Redis |
 | Package manager | pnpm workspaces |
-| Planned backend | Medusa v2, PostgreSQL, Redis |
 | Planned services | Razorpay, Shiprocket, Cloudflare R2, Resend |
 
 ## Project structure
@@ -33,13 +33,18 @@ Customers pick their phone, browse curated back-cover designs that fit it, inspe
 ```text
 .
 ├── apps/
+│   ├── backend/                  # Medusa v2: products, stock, phone models, admin
+│   │   ├── data/catalog.json     # Catalogue loaded by the seed script
+│   │   └── src/                  # phone-model module, store API, seed, subscribers
 │   └── storefront/               # Next.js customer-facing store
 │       ├── public/products/      # Product photos and generated variants
-│       ├── scripts/              # Photo variant and shot generators
+│       ├── scripts/              # Photo tools and the catalogue export
 │       └── src/
 │           ├── app/(store)/      # Home page and /products/[handle]
+│           ├── app/api/revalidate/  # Called by Medusa after catalogue changes
 │           ├── components/       # home, product viewer, phone picker, motion, ui
-│           └── lib/              # catalog, designs, three, medusa (sample data)
+│           └── lib/medusa/       # Medusa client, catalogue loader, sample data
+├── infra/docker-compose.dev.yml  # Local Postgres and Redis
 ├── claudedocs/                   # Store spec and page briefs
 ├── scripts/photo-cutout/         # Swift tool that cuts products out of photos
 ├── package.json
@@ -50,10 +55,11 @@ Customers pick their phone, browse curated back-cover designs that fit it, inspe
 
 ### Prerequisites
 
-- Node.js 20 or newer
+- Node.js 22.23 or newer
 - pnpm 10. Run `corepack enable` once to get the version pinned in `package.json`.
+- For the backend: PostgreSQL and Redis. `infra/docker-compose.dev.yml` starts both with Docker.
 
-### Install and run
+### Storefront only, with sample data
 
 ```bash
 git clone https://github.com/clique-x/casecraft-store.git
@@ -64,7 +70,30 @@ pnpm dev
 
 Open http://localhost:3000.
 
-No environment variables are needed yet. When Medusa is connected, add them to `apps/storefront/.env.local`, which git ignores.
+### With the Medusa backend
+
+1. Start Postgres and Redis:
+
+   ```bash
+   docker compose -f infra/docker-compose.dev.yml up -d
+   ```
+
+2. Set up and start the backend. The seed prints the values for the next step.
+
+   ```bash
+   cp apps/backend/.env.example apps/backend/.env
+   pnpm backend:migrate
+   pnpm backend:seed
+   pnpm backend:dev
+   ```
+
+3. Copy `apps/storefront/.env.example` to `apps/storefront/.env.local` and fill in the publishable key and region ID from the seed output. Use the same secret for `REVALIDATE_SECRET` there and `STOREFRONT_REVALIDATE_SECRET` in the backend's `.env`.
+
+4. Start the storefront with `pnpm dev`.
+
+The admin dashboard is at http://localhost:9000/app. Create a login with `npx medusa user -e you@example.com -p your-password` from `apps/backend`. Price and stock changes made there show on the storefront on the next page load.
+
+The storefront fetches the catalogue at build time too, so Medusa must be running for `pnpm build` when the Medusa variables are set. See [`apps/backend/README.md`](apps/backend/README.md) for details.
 
 ### Scripts
 
@@ -76,6 +105,10 @@ Run these from the repository root:
 | `pnpm build` | Create a production build |
 | `pnpm lint` | Run ESLint |
 | `pnpm typecheck` | Generate route types and run the TypeScript compiler |
+| `pnpm backend:dev` | Start Medusa and its admin dashboard on port 9000 |
+| `pnpm backend:migrate` | Apply database migrations |
+| `pnpm backend:seed` | Set up the India store and load the catalogue |
+| `pnpm catalog:export` | Rewrite `apps/backend/data/catalog.json` from the storefront's sample catalogue |
 
 Product photo tools, run from `apps/storefront`:
 
@@ -91,7 +124,8 @@ To cut a product out of a photo on macOS, see [`scripts/photo-cutout/README.md`]
 - [x] Home page with hero, themes and trending designs
 - [x] Product page with 3D viewer and photo gallery
 - [x] Phone picker
-- [ ] Medusa v2 backend with products, stock and orders
+- [x] Medusa v2 backend with products, prices, stock and phone models
+- [ ] Phone-model admin page and "shop by phone" pages
 - [ ] Cart and checkout
 - [ ] Razorpay and cash on delivery
 - [ ] Shiprocket shipping and order tracking

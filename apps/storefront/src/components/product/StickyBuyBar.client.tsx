@@ -7,7 +7,7 @@ import { formatInr } from '@/lib/catalog/photos';
 import { useInView } from '@/lib/device/use-in-view';
 import { chromeStore } from '@/lib/layout/chrome-store';
 import { CASE_TYPES, type PhoneModel, type ProductDetail } from '@/lib/medusa/fixtures';
-import { findVariant, lowestPrice } from '@/lib/medusa/products';
+import { findVariant, lowestPrice } from '@/lib/medusa/variants';
 import { SPRING_UI } from '@/lib/motion/tokens';
 import { usePickerSheetOpen } from '@/lib/phone/picker-sheet-store';
 import { useVariantSelection } from '@/lib/product/variant-store';

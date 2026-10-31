@@ -9,7 +9,7 @@ import { StockLine } from '@/components/product/StockLine.client';
 import { Badge } from '@/components/ui/badge';
 import { formatInr } from '@/lib/catalog/photos';
 import { CASE_TYPES, THEMES, type CaseType, type PhoneModel, type ProductDetail, type Variant } from '@/lib/medusa/fixtures';
-import { findVariant, lowestPrice } from '@/lib/medusa/products';
+import { findVariant, lowestPrice } from '@/lib/medusa/variants';
 import { DEFAULT_SELECTION, useVariantSelection, variantStore } from '@/lib/product/variant-store';
 import { askOnWhatsAppHref } from '@/lib/product/whatsapp-link';
 import { useMyPhone } from '@/lib/phone/use-my-phone';

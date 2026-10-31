@@ -6,6 +6,10 @@
     "dev": "pnpm --filter storefront dev",
     "build": "pnpm --filter storefront build",
     "lint": "pnpm --filter storefront lint",
-    "typecheck": "pnpm --filter storefront typecheck"
+    "typecheck": "pnpm --filter storefront typecheck",
+    "backend:dev": "pnpm --filter backend dev",
+    "backend:migrate": "pnpm --filter backend db:migrate",
+    "backend:seed": "pnpm --filter backend seed",
+    "catalog:export": "pnpm --filter storefront catalog:export"
   }
 }

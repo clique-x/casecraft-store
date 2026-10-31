@@ -1,7 +1,7 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { PHONE_MODELS } from '@/lib/medusa/fixtures';
+import { getPhoneModels } from '@/lib/medusa/home';
 
 const MY_PHONE_COOKIE = 'my_phone';
 const ONE_YEAR_S = 365 * 24 * 60 * 60;
@@ -12,7 +12,7 @@ export async function setMyPhone(slug: string | null): Promise<void> {
     store.delete(MY_PHONE_COOKIE);
     return;
   }
-  if (!PHONE_MODELS.some((m) => m.slug === slug)) {
+  if (!(await getPhoneModels()).some((m) => m.slug === slug)) {
     throw new Error('Unknown phone model');
   }
   store.set(MY_PHONE_COOKIE, slug, {

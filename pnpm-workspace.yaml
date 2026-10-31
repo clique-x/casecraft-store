@@ -1,2 +1,17 @@
 packages:
   - "apps/*"
+  - "!apps/backend/.medusa/**"
+
+onlyBuiltDependencies:
+  - "@medusajs/telemetry"
+  - "@swc/core"
+  - esbuild
+  - sharp
+
+overrides:
+  # rollup 4.67.3 is listed on npm but its tarball returns 404; unpin once it downloads.
+  rollup: 4.67.2
+  # One copy of React's types across the workspace. Without this the backend's React 18 types leak into
+  # the storefront's type check. Medusa's own starter pins them the same way.
+  "@types/react": 19.3.0
+  "@types/react-dom": 19.3.0

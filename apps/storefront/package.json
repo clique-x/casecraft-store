@@ -9,10 +9,12 @@
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "photos": "node scripts/photo-variants.mjs",
-    "photos:shots": "node scripts/photo-shots.mjs"
+    "photos:shots": "node scripts/photo-shots.mjs",
+    "catalog:export": "tsx --tsconfig tsconfig.json scripts/export-catalog.mts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@medusajs/js-sdk": "2.22.2",
     "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.2",
     "class-variance-authority": "^0.7.1",
@@ -26,6 +28,7 @@
     "radix-ui": "^1.8.1",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
     "shadcn": "^4.23.0",
     "tailwind-merge": "^3.7.0",
     "three": "^0.187.0",
@@ -42,6 +45,7 @@
     "eslint-config-next": "16.4.3",
     "sharp": "^0.35.5",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }
