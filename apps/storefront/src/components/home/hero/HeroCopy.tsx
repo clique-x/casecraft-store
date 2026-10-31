@@ -39,7 +39,7 @@ export function HeroCopy({ models }: Props) {
             <HeroKicker fallback={KICKER} />
           </p>
           <h1
-            className="font-display text-hero leading-[1.05] font-semibold tracking-[-0.01em] text-fg-on-ink"
+            className="font-display text-hero leading-[1.02] font-extrabold tracking-[-0.035em] text-fg-on-ink"
             style={{ textWrap: 'balance' }}
           >
             <span className="block">

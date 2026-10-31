@@ -1,6 +1,5 @@
 import { CameraIcon, MessageCircleIcon, WalletIcon, type LucideIcon } from 'lucide-react'
 import { AccentBar } from '@/components/brand/AccentBar'
-import { MeasuredNodeLine } from '@/components/home/UpCloseStage.client'
 import { Reveal } from '@/components/motion/Reveal.client'
 import { REPLACEMENT_DAYS, SHOP_CITY, WHATSAPP_NUMBER } from '@/lib/brand'
 
@@ -30,24 +29,23 @@ const REASONS: readonly Reason[] = [
   },
 ]
 
-/** Teal Tint band; three white cards joined by one coral node line that draws with scroll. */
+/** Studio-grey band with three white cards. */
 export function WhyUs() {
   return (
     <section id="why" aria-labelledby="why-heading" className="scroll-mt-20 bg-surface-2 py-14 text-fg lg:py-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 id="why-heading" className="font-display text-h2 font-semibold text-heading text-balance">
+          <h2 id="why-heading" className="font-display text-h2 font-extrabold text-heading text-balance">
             Why buy here
           </h2>
           <AccentBar className="mt-4" />
         </Reveal>
 
-        <div className="relative mt-8 pl-6 md:pt-10 md:pl-0">
+        <div className="relative mt-8">
           <ul className="grid gap-4 md:grid-cols-3 md:gap-6">
             {REASONS.map(({ Icon, title, body }, i) => (
               <Reveal as="li" key={title} delay={i * 0.06}>
                 <article
-                  data-node-stop={i === 0 ? 'why-1' : i === REASONS.length - 1 ? 'why-3' : undefined}
                   className="flex h-full flex-col gap-3 rounded-card border border-border bg-surface p-5 sm:p-6"
                 >
                   <span className="grid size-11 place-items-center rounded-full bg-surface-2 text-accent-text">
@@ -69,7 +67,6 @@ export function WhyUs() {
               </Reveal>
             ))}
           </ul>
-          <MeasuredNodeLine stops={['why-1', 'why-3']} route="rail" gap={16} draw="scroll" />
         </div>
       </div>
     </section>

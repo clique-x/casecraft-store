@@ -1,4 +1,3 @@
-import { NetworkPattern } from '@/components/brand/NetworkPattern'
 import { FanSpread } from '@/components/home/FanSpread.client'
 import { CaseCutout } from '@/components/home/hero/CaseCutout'
 import { Ledge } from '@/components/home/hero/Ledge'
@@ -30,7 +29,7 @@ const FAN_SLOTS: readonly { transform: string; className: string }[] = [
   },
 ]
 
-/** Contact band: deep-teal glow with a coral top line, the one action, and a static CSS-3D fan of three covers. */
+/** Closing band: studio grey, the one action, and a static CSS-3D fan of three covers. */
 export function FinalCta({ fan }: { fan: PhotoEntry[] }) {
   const covers = fan.slice(0, FAN_SLOTS.length)
 
@@ -38,15 +37,11 @@ export function FinalCta({ fan }: { fan: PhotoEntry[] }) {
     <section
       id="find-covers"
       aria-labelledby="final-cta-heading"
-      className="stage-glow cv-auto relative overflow-hidden border-t-2 border-accent py-16 text-fg-on-ink lg:py-24"
+      className="stage-glow cv-auto relative overflow-hidden border-t border-border py-16 text-fg-on-ink lg:py-24"
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden sm:block">
-        <NetworkPattern corner="bl" opacity={0.3} />
-      </div>
-
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <Reveal className="flex flex-col items-start gap-5 lg:col-span-6">
-          <h2 id="final-cta-heading" className="font-display text-h2 font-semibold text-fg-on-ink text-balance">
+          <h2 id="final-cta-heading" className="font-display text-h2 font-extrabold text-fg-on-ink text-balance">
             Find covers for your phone
           </h2>
           <p className="max-w-md text-body leading-relaxed text-fg-on-ink-muted">

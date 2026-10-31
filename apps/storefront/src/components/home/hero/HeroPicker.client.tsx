@@ -29,7 +29,7 @@ export function focusHeroPicker(): boolean {
 /** Desktop: the phone picker inline in the copy column. */
 export function HeroPicker({ models, className }: Props) {
   return (
-    <div data-hero-picker="" className={cn('hero-picker rounded-card bg-surface-glass p-4', className)}>
+    <div data-hero-picker="" className={cn('hero-picker rounded-card border border-border bg-surface-glass p-4', className)}>
       <PhonePicker models={models} variant="hero" />
     </div>
   );

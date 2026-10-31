@@ -4,6 +4,7 @@ import { GsapMount } from '@/components/motion/GsapMount.client';
 import { MotionProvider } from '@/components/motion/MotionProvider';
 import { MyPhoneProvider } from '@/components/phone-picker/MyPhoneProvider';
 import { PhonePickerSheetMount } from '@/components/phone-picker/PhonePickerSheetMount.client';
+import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFab } from '@/components/layout/WhatsAppFab.client';
@@ -17,6 +18,7 @@ export default async function StoreLayout({ children }: { children: ReactNode })
     <MotionProvider>
       <GsapMount />
       <MyPhoneProvider initialSlug={null} models={models}>
+        <AnnouncementBar />
         <Header />
         <main id="main" className="flex flex-1 flex-col">
           {children}

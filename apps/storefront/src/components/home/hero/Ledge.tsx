@@ -15,7 +15,7 @@ export function Ledge({ top, height, className }: Props) {
   return (
     <div
       aria-hidden="true"
-      className={cn('pointer-events-none absolute inset-x-0 border-t-2 border-accent bg-ink-2', className)}
+      className={cn('pointer-events-none absolute inset-x-0 border-t border-border bg-ink-2', className)}
       style={style}
     />
   );

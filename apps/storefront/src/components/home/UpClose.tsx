@@ -16,7 +16,7 @@ export function UpClose({ initial }: { initial: PhotoEntry }) {
               <p className="text-label font-bold tracking-[0.2em] text-accent-text uppercase">
                 Shot in our {SHOP_CITY} shop
               </p>
-              <h2 id="up-close-heading" className="mt-3 font-display text-h2 font-semibold text-heading text-balance">
+              <h2 id="up-close-heading" className="mt-3 font-display text-h2 font-extrabold text-heading text-balance">
                 What you see is what ships.
               </h2>
               <AccentBar className="mt-4" />

@@ -1,11 +1,11 @@
 import { Manrope, Unbounded } from 'next/font/google';
 
-// One file: the brand token weight. Unbounded is used for h1/h2 only, never under 28 px.
+// Only the procedural "quote" cover artwork draws with Unbounded (lib/designs/painters/quote.ts); the UI uses Manrope.
 export const unbounded = Unbounded({
   weight: ['600'],
   subsets: ['latin'],
   display: 'swap',
-  preload: true,
+  preload: false,
   adjustFontFallback: true,
   variable: '--font-unbounded',
 });

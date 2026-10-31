@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const PRIMARY_CTA =
-  'inline-flex min-h-13 items-center justify-center gap-2 rounded-pill bg-accent px-6 py-2 text-center font-sans text-[1.1875rem] leading-tight font-bold whitespace-normal text-fg-on-ink transition-colors duration-(--dur-micro) hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2';
+  'inline-flex min-h-13 items-center justify-center gap-2 rounded-pill bg-accent px-6 py-2 text-center font-sans text-[1.1875rem] leading-tight font-bold whitespace-normal text-on-accent transition-colors duration-(--dur-micro) hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2';
 
 /**
  * The coral button. Phones open the picker sheet, desktop focuses the inline picker;

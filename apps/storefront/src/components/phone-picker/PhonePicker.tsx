@@ -55,7 +55,7 @@ const TONE = {
     text: 'text-fg-on-ink',
     muted: 'text-fg-on-ink-muted',
     tab: 'text-fg-on-ink-muted hover:text-fg-on-ink data-active:text-fg-on-ink',
-    chip: 'bg-surface-glass text-fg-on-ink hover:bg-fg-on-ink/15',
+    chip: 'border border-border bg-paper text-fg-on-ink hover:border-fg-on-ink/40',
     chipSelected: 'bg-fg-on-ink text-ink ring-offset-ink',
     // Outline in the text colour, offset past the selection ring, so focus on the selected chip stays visible.
     chipFocus: 'focus-visible:outline-fg-on-ink',
@@ -67,7 +67,7 @@ const TONE = {
     muted: 'text-fg-muted',
     tab: 'text-fg-muted hover:text-fg data-active:text-fg',
     chip: 'bg-surface-2 text-fg hover:bg-border',
-    chipSelected: 'bg-ink text-fg-on-ink ring-offset-surface',
+    chipSelected: 'bg-fg text-paper ring-offset-surface',
     chipFocus: 'focus-visible:outline-fg',
     input: 'border-border text-fg placeholder:text-fg-muted focus-visible:border-accent-2 focus-visible:ring-accent-2/40',
   },

@@ -16,11 +16,11 @@ import { cn } from '@/lib/utils'
 
 /** Primary button: coral, 48 px, 19 px / 700 white label (large bold text, AA on coral). */
 export const PRIMARY_CTA =
-  'inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-pill bg-accent px-6 text-cta font-bold text-fg-on-ink transition-colors duration-(--dur-micro) hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2 [&_svg]:size-5 [&_svg]:shrink-0'
+  'inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-pill bg-accent px-6 text-cta font-bold text-on-accent transition-colors duration-(--dur-micro) hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2 [&_svg]:size-5 [&_svg]:shrink-0'
 
 /** Ghost button for ink surfaces, paired with the primary button. */
 export const GHOST_CTA_ON_INK =
-  'inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-pill border border-fg-on-ink/20 px-6 text-base font-semibold text-fg-on-ink transition-colors duration-(--dur-micro) hover:bg-surface-glass focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2'
+  'inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-pill border border-fg-on-ink/25 bg-paper px-6 text-base font-semibold text-fg-on-ink transition-colors duration-(--dur-micro) hover:border-fg-on-ink/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2'
 
 const EASE: [number, number, number, number] = [...EASE_OUT_EXPO]
 

@@ -2,73 +2,70 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* Dark mode: system preference unless [data-theme] says otherwise. */
-@custom-variant dark {
-  @media (prefers-color-scheme: dark) {
-    &:not(:where([data-theme="light"], [data-theme="light"] *)) {
-      @slot;
-    }
-  }
-  &:where([data-theme="dark"], [data-theme="dark"] *) {
-    @slot;
-  }
-}
+/* The store is light only; `dark:` utilities (shadcn primitives) apply only under an explicit [data-theme="dark"]. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 /* Viewports at least 900 px tall: the hero sub on phones, where the stacked CTA row leaves no room for it below. */
 @custom-variant tall (@media (min-height: 900px));
 
 @theme {
-  /* stage (hero, picker band, final CTA, footer): deep teal 62 / white 18 / mist 10 / coral 10 */
-  --color-ink: #04171b;
-  --color-ink-2: #0b2e33;
-  --color-fg-on-ink: #ffffff;
-  --color-fg-on-ink-muted: #bfd9dc;
-  --color-surface-glass: rgb(255 255 255 / 0.08);
-  --color-glow-1: #134a52;
-  --color-glow-3: #08242a;
+  /* Light retail palette: white pages, warm studio-grey bands, near-black type and buttons,
+     one red for badges. The `ink` names are kept from the old dark stage so components
+     did not have to change; they are now the light "studio" bands (hero, picker, final CTA, footer). */
 
-  /* store (light): white 60 / teal 22 / deep teal 10 / coral 8 */
+  /* studio bands */
+  --color-ink: #f4f3ef;
+  --color-ink-2: #efeee9;
+  --color-fg-on-ink: #141414;
+  --color-fg-on-ink-muted: #5c5a54;
+  --color-surface-glass: rgb(255 255 255 / 0.85);
+  --color-glow-1: #f4f3ef;
+  --color-glow-3: #f4f3ef;
+
+  /* pages */
   --color-paper: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-2: #e7f1f2;
-  --color-surface-3: #cde1e3;
-  --color-border: #ddeaec;
-  --color-fg: #111111;
-  --color-fg-muted: #4f696c;
-  --color-heading: #0e6b76;
-  --color-accent-text: #0e6b76;
+  --color-surface-2: #f4f3ef;
+  --color-surface-3: #e9e7e1;
+  --color-border: #e4e2db;
+  --color-fg: #141414;
+  --color-fg-muted: #5c5a54;
+  --color-heading: #141414;
+  --color-accent-text: #141414;
 
-  /* accents */
-  --color-accent: #ee5a3c;
-  --color-accent-hover: #d94e32;
-  --color-accent-2: #1f8f9b;
-  --color-highlight: #ffb4a3;
-  --color-badge: #ffb4a3;
-  --color-success: #1f9d6b;
-  --color-warn: #c98a00;
-  --color-danger: #c8323a;
+  /* actions and badges */
+  --color-accent: #141414;
+  --color-accent-hover: #3a3a3a;
+  --color-on-accent: #ffffff;
+  --color-accent-2: #141414;
+  --color-highlight: #c8231b;
+  --color-badge: #c8231b;
+  --color-success: #17804f;
+  --color-warn: #a86f00;
+  --color-danger: #c8231b;
   --color-whatsapp: #25d366;
+  --color-shadow: #1b1a17;
 
   /* 3D materials and lights (product viewer, read by readToken) */
-  --color-island: #0b2e33;
-  --color-phone: #10272b;
+  --color-island: #1c1c1e;
+  --color-phone: #1c1c1e;
   --color-lens: #050509;
   --color-metal: #8a8f99;
-  --color-light-rim: #ee5a3c;
-  --color-light-fill: #1f8f9b;
+  --color-light-rim: #ffffff;
+  --color-light-fill: #d9dde0;
 
-  /* type: Unbounded for h1/h2 only (≥ 28 px), Manrope for everything else */
-  --font-display: var(--font-unbounded), ui-sans-serif, system-ui, sans-serif;
+  /* type: Manrope throughout; headings use its heaviest weight with tight tracking */
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-display);
   --text-hero: clamp(1.75rem, 1.05rem + 3.2vw, 3.25rem);
   --text-hero--line-height: 1.05;
-  --text-hero--letter-spacing: -0.01em;
-  --text-hero--font-weight: 600;
+  --text-hero--letter-spacing: -0.035em;
+  --text-hero--font-weight: 800;
   --text-h2: clamp(1.75rem, 1.25rem + 1.4vw, 2.5rem);
   --text-h2--line-height: 1.1;
-  --text-h2--letter-spacing: -0.01em;
-  --text-h2--font-weight: 600;
+  --text-h2--letter-spacing: -0.03em;
+  --text-h2--font-weight: 800;
   --text-h3: 1.25rem;
   --text-h3--line-height: 1.2;
   --text-h3--font-weight: 700;
@@ -109,28 +106,21 @@
   --popover: var(--color-surface);
   --popover-foreground: var(--color-fg);
   --primary: var(--color-accent);
-  --primary-foreground: var(--color-fg-on-ink);
+  --primary-foreground: var(--color-on-accent);
   --secondary: var(--color-surface-2);
   --secondary-foreground: var(--color-fg);
   --muted: var(--color-surface-2);
   --muted-foreground: var(--color-fg-muted);
   --accent: var(--color-accent);
-  --accent-foreground: var(--color-fg-on-ink);
+  --accent-foreground: var(--color-on-accent);
   --destructive: var(--color-danger);
   --border: var(--color-border);
   --input: var(--color-border);
-  --ring: var(--color-accent-2);
+  --ring: var(--color-fg-muted);
 
-  /* the brand radial: hero backdrop, final CTA, stage-glow */
-  --gradient-glow: radial-gradient(
-    120% 90% at 30% 25%,
-    var(--color-glow-1) 0%,
-    var(--color-ink-2) 55%,
-    var(--color-glow-3) 100%
-  );
-
-  /* 3% SVG feTurbulence grain, reused by the hero backdrop and the page overlay */
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* Studio bands are flat; the old radial glow and film grain read as a template. */
+  --gradient-glow: linear-gradient(var(--color-ink), var(--color-ink));
+  --grain: none;
 }
 
 @theme inline {
@@ -159,33 +149,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* dark mode: store surfaces invert, stage tokens unchanged */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --color-paper: #04171b;
-    --color-surface: #0b2e33;
-    --color-surface-2: #0f4148;
-    --color-surface-3: #15505a;
-    --color-border: #1c454b;
-    --color-fg: #ffffff;
-    --color-fg-muted: #bfd9dc;
-    --color-heading: #ffffff;
-    --color-accent-text: #ffb4a3;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --color-paper: #04171b;
-  --color-surface: #0b2e33;
-  --color-surface-2: #0f4148;
-  --color-surface-3: #15505a;
-  --color-border: #1c454b;
-  --color-fg: #ffffff;
-  --color-fg-muted: #bfd9dc;
-  --color-heading: #ffffff;
-  --color-accent-text: #ffb4a3;
-}
+/* Light only: the store no longer follows the system dark mode. */
 
 @layer base {
   * {
@@ -212,16 +176,16 @@
   h1,
   h2 {
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 800;
     text-wrap: balance;
   }
   h1 {
     line-height: 1.05;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.035em;
   }
   h2 {
     line-height: 1.1;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
   }
   h3 {
     font-family: var(--font-sans);
@@ -233,7 +197,7 @@
     cursor: pointer;
   }
   :focus-visible {
-    outline: 2px solid var(--color-accent-2);
+    outline: 2px solid var(--color-fg);
     outline-offset: 2px;
   }
   @media (prefers-reduced-motion: no-preference) {
@@ -282,8 +246,8 @@
     pointer-events: none;
     background-image: var(--grain);
     background-size: 160px 160px;
-    opacity: 0.035;
-    mix-blend-mode: overlay;
+    opacity: 0;
+    display: none;
   }
 
   /* Infinite marquee: each track is one copy; the pair slides by exactly one copy. */
@@ -338,16 +302,12 @@
 
 /* Header legibility band over the stage; the copy no longer overlays cases. */
 @utility scrim-hero {
-  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-ink) 55%, transparent), transparent 14%);
+  background: none;
 }
 
-/* 48×3 coral rule under h1/h2 */
+/* The old 48×3 coral rule under headings; hidden in the retail look. */
 @utility accent-bar {
-  display: block;
-  width: 48px;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--color-accent);
+  display: none;
 }
 
 /* Product cutout <img>: the straight cut on today's photos fades behind a ledge (brief §1.4). */
@@ -367,7 +327,7 @@
   inset: var(--ledge-top, 80%) 0 0 0;
   pointer-events: none;
   background: var(--color-surface-3);
-  border-top: 1px solid color-mix(in srgb, var(--color-accent-2) 25%, transparent);
+  border-top: 1px solid var(--color-border);
 }
 
 /* Decorative network SVG: positioned by the component, coloured Teal Bright */

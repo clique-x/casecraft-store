@@ -11,7 +11,7 @@ interface HeaderScrollStateProps {
 
 const THRESHOLD_PX = 24;
 
-/** Transparent only over a dark hero; every other page (and SSR) gets the solid bar. */
+/** Sets data-scrolled (solid styling) and data-past (the announcement bar has scrolled away). */
 export function HeaderScrollState({ solid = false, className, children }: HeaderScrollStateProps) {
   const [scrolled, setScrolled] = useState(false);
   const heroPresent = useHeroPresent(false);
@@ -34,7 +34,11 @@ export function HeaderScrollState({ solid = false, className, children }: Header
   }, []);
 
   return (
-    <header data-scrolled={scrolled || solid || !heroPresent ? '' : undefined} className={className}>
+    <header
+      data-scrolled={scrolled || solid || !heroPresent ? '' : undefined}
+      data-past={scrolled ? '' : undefined}
+      className={className}
+    >
       {children}
     </header>
   );

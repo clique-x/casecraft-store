@@ -217,7 +217,7 @@ function ProceduralViewer({ product, models, className }: Props) {
           design={design}
           islandStyle={islandStyle}
           lip
-          className="h-[66%] drop-shadow-[0_32px_48px_color-mix(in_srgb,var(--color-ink)_80%,transparent)]"
+          className="h-[66%] drop-shadow-[0_32px_48px_color-mix(in_srgb,var(--color-shadow)_18%,transparent)]"
         />
       </div>
 

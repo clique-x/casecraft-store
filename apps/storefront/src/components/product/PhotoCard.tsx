@@ -83,7 +83,7 @@ export function PhotoCard({
           href={`/products/${photo.slug}`}
           className="flex h-full flex-col gap-3 rounded-card outline-none focus-visible:ring-3 focus-visible:ring-accent-2"
         >
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card bg-ink-2 shadow-lg shadow-ink/20 ring-1 ring-fg/10 ring-inset">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card bg-ink-2 shadow-lg shadow-shadow/10 ring-1 ring-fg/10 ring-inset">
             {shots > 0 ? (
               <>
                 {/* eslint-disable-next-line @next/next/no-img-element -- static pre-sized variants, no optimizer */}
@@ -136,7 +136,7 @@ export function PhotoCard({
               <Badge
                 className={cn(
                   'absolute top-2.5 right-2.5 h-6 border-transparent px-2.5 text-caption font-semibold',
-                  badge === 'New' ? 'bg-accent-2 text-fg-on-ink' : 'bg-highlight text-ink',
+                  badge === 'New' ? 'bg-accent-2 text-on-accent' : 'bg-highlight text-ink',
                   // Narrow phone cards: the rank numeral already says it, and both won't fit.
                   badge === 'Most ordered' && showRank && 'max-sm:hidden',
                 )}
@@ -154,7 +154,7 @@ export function PhotoCard({
               ) : (
                 <span />
               )}
-              <span className="grid size-9 place-items-center rounded-pill bg-fg-on-ink text-ink shadow-md transition-colors duration-300 group-hover/card:bg-accent group-hover/card:text-fg-on-ink">
+              <span className="grid size-9 place-items-center rounded-pill bg-fg-on-ink text-ink shadow-md transition-colors duration-300 group-hover/card:bg-accent group-hover/card:text-on-accent">
                 <ArrowUpRightIcon className="size-4 transition-transform duration-300 group-hover/card:rotate-45" />
               </span>
             </div>

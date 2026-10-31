@@ -108,7 +108,7 @@ export function ModelSelector({ models, value, onChange, unfitPhone = null, clas
                     className={cn(
                       'min-h-11 rounded-pill px-4 text-sm font-medium transition-colors duration-(--dur-micro) outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fg',
                       isSelected
-                        ? 'bg-ink text-fg-on-ink ring-2 ring-accent-2 ring-offset-2 ring-offset-surface'
+                        ? 'bg-fg text-paper ring-2 ring-fg ring-offset-2 ring-offset-surface'
                         : 'bg-surface-2 text-fg hover:bg-border',
                     )}
                   >

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { ArrowUpRightIcon } from 'lucide-react'
 import { AccentBar } from '@/components/brand/AccentBar'
-import { NetworkPattern } from '@/components/brand/NetworkPattern'
 import { CaseCutout } from '@/components/home/hero/CaseCutout'
 import { Reveal } from '@/components/motion/Reveal.client'
 import { TiltCard } from '@/components/motion/TiltCard.client'
@@ -60,7 +59,7 @@ function LookThumbs({ others, className }: { others: PhotoEntry[]; className?: s
 
 /**
  * Six looks. Phones: the look's lead cover fills a 4:5 frame with name and count below it. Desktop:
- * a deep-teal panel (name, blurb, other covers, count) beside the photo. No shade is laid over
+ * a studio-grey panel (name, blurb, other covers, count) beside the photo. No shade is laid over
  * the photo at any size, so the cover always reads as photographed.
  */
 export function LookGrid({ looks }: { looks: LookWithCover[] }) {
@@ -73,7 +72,7 @@ export function LookGrid({ looks }: { looks: LookWithCover[] }) {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 id="looks-heading" className="font-display text-h2 font-semibold text-heading text-balance">
+            <h2 id="looks-heading" className="font-display text-h2 font-extrabold text-heading text-balance">
               Shop by look
             </h2>
             <AccentBar className="mt-4" />
@@ -89,9 +88,9 @@ export function LookGrid({ looks }: { looks: LookWithCover[] }) {
                 <TiltCard maxDeg={0} pressScale={0.98} className="h-full">
                   <Link
                     href={`/categories/${look.handle}`}
-                    className="group/tile flex h-full flex-col gap-3 rounded-card outline-none focus-visible:ring-3 focus-visible:ring-accent-2 lg:relative lg:aspect-[5/4] lg:flex-row lg:gap-0 lg:overflow-hidden lg:bg-ink-2 lg:shadow-lg lg:shadow-ink/20"
+                    className="group/tile flex h-full flex-col gap-3 rounded-card outline-none focus-visible:ring-3 focus-visible:ring-accent-2 lg:relative lg:aspect-[5/4] lg:flex-row lg:gap-0 lg:overflow-hidden lg:bg-ink-2 lg:shadow-lg lg:shadow-shadow/10"
                   >
-                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card bg-ink-2 shadow-lg shadow-ink/20 lg:order-2 lg:aspect-auto lg:w-auto lg:flex-1 lg:rounded-none lg:shadow-none">
+                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card bg-ink-2 shadow-lg shadow-shadow/10 lg:order-2 lg:aspect-auto lg:w-auto lg:flex-1 lg:rounded-none lg:shadow-none">
                       <LookPhoto cover={cover} />
                       <div
                         aria-hidden="true"
@@ -100,9 +99,6 @@ export function LookGrid({ looks }: { looks: LookWithCover[] }) {
                     </div>
 
                     <div className="relative flex min-w-0 items-center justify-between gap-2 px-0.5 lg:order-1 lg:w-[46%] lg:flex-col lg:items-start lg:justify-between lg:p-6 lg:text-fg-on-ink">
-                      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
-                        <NetworkPattern corner="tl" opacity={0.18} className="h-full w-full" />
-                      </div>
                       <div className="relative hidden items-center gap-3 lg:flex">
                         <LookThumbs others={others} />
                         <span className="text-caption font-semibold text-fg-on-ink-muted tabular-nums">{countLabel}</span>
@@ -116,7 +112,7 @@ export function LookGrid({ looks }: { looks: LookWithCover[] }) {
                       </div>
                       <span className="relative flex shrink-0 items-center gap-2 text-sm font-semibold lg:text-fg-on-ink">
                         <span className="hidden lg:inline">Shop the look</span>
-                        <span className="grid size-8 place-items-center rounded-pill bg-ink-2 text-fg-on-ink transition-colors duration-300 group-hover/tile:bg-accent lg:bg-fg-on-ink lg:text-ink lg:group-hover/tile:text-fg-on-ink">
+                        <span className="grid size-8 place-items-center rounded-pill bg-ink-2 text-fg-on-ink transition-colors duration-300 group-hover/tile:bg-accent group-hover/tile:text-on-accent lg:bg-fg-on-ink lg:text-ink lg:group-hover/tile:text-on-accent">
                           <ArrowUpRightIcon aria-hidden="true" className="size-4 transition-transform duration-300 group-hover/tile:rotate-45" />
                         </span>
                       </span>

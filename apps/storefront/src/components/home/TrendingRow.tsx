@@ -16,7 +16,7 @@ export function TrendingRow({ products }: TrendingRowProps) {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="flex items-end justify-between gap-4">
           <div>
-            <h2 id="trending-heading" className="font-display text-h2 font-semibold text-heading text-balance">
+            <h2 id="trending-heading" className="font-display text-h2 font-extrabold text-heading text-balance">
               Trending this week
               <RowHeaderForPhone products={products} />
             </h2>

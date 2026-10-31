@@ -97,7 +97,7 @@ export function CaseArt({ design, islandStyle = 'square', lip = false, className
     <div className={cn('@container relative aspect-[74/152]', className)}>
       {lip && <div aria-hidden="true" className="absolute -inset-1.5 rounded-[16%_/_8%] bg-phone" />}
       <div
-        className="absolute inset-0 overflow-hidden rounded-[14%_/_7%] shadow-[0_18px_40px_-18px_color-mix(in_srgb,var(--color-ink)_60%,transparent)]"
+        className="absolute inset-0 overflow-hidden rounded-[14%_/_7%] shadow-[0_18px_40px_-18px_color-mix(in_srgb,var(--color-shadow)_25%,transparent)]"
         style={{ background: designCss(design) }}
       >
         {design.quote && (

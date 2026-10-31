@@ -25,7 +25,7 @@ export function BrandRow({ brands, models }: BrandRowProps) {
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 id="brands-heading" className="font-display text-h2 font-semibold text-heading text-balance">
+          <h2 id="brands-heading" className="font-display text-h2 font-extrabold text-heading text-balance">
             Shop by phone
           </h2>
           <AccentBar className="mt-4" />
