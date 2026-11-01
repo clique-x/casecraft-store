@@ -9,6 +9,8 @@ The commerce backend for the storefront: products, prices, stock, phone models a
 | Store, region, tax | `src/scripts/seed.ts` | One region, India, in INR with tax-inclusive prices. No GST rate yet: confirm it with your CA. |
 | Stock location and shipping | `src/scripts/seed.ts` | "Home warehouse" with Standard delivery: ₹49, free from ₹499. The ₹49 fee is a placeholder. |
 | Catalogue | `data/catalog.json` | Exported from the storefront by `pnpm catalog:export`, loaded by the seed. |
+| Accessories | `data/catalog.json` | Screen guards (clear, privacy), camera lens protector and full-frame back films (matte, carbon), one variant per phone model, with product types. |
+| Bundle pricing | `src/scripts/seed.ts` | Automatic promotion `BUNDLE50`: ₹50 off each accessory when the cart also holds a phone cover. Medusa re-checks it on every cart change. Change the amount in the admin under Promotions, and `BUNDLE_SAVING_INR` in `apps/storefront/src/lib/catalog/accessories.ts` to match. |
 | Phone models | `src/modules/phone-model` | Custom module with brand, name, release year, camera island and picker order. |
 | Phone models API | `src/api/store/phone-models/route.ts` | `GET /store/phone-models`, used by the phone picker. |
 | Razorpay | `src/modules/razorpay` | Payment provider: a Razorpay order per checkout, payment confirmed with Razorpay's API before an order is created, refunds from the admin, webhooks. Turned on when its keys are set. |

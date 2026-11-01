@@ -1,4 +1,5 @@
 import { SHOP_CITY } from '@/lib/brand';
+import { ACCESSORIES, ACCESSORY_TYPE_LABEL, type AccessoryEntry } from '@/lib/catalog/accessories';
 import { DEFAULT_STOCK, PHOTO_PHONE_MODELS, PHOTOS, type PhotoEntry } from '@/lib/catalog/photos';
 import { DESIGNS, type Family, type Finish, type ThemeHandle } from '@/lib/designs/catalog';
 
@@ -39,6 +40,8 @@ export interface HomeProduct {
   /** Struck through on cards only when higher than the price. */
   regularInr?: number;
   stock?: number;
+  /** Present on screen guards, lens protectors and back films (lib/catalog/accessories.ts). */
+  accessory?: AccessoryEntry;
 }
 
 export type PhotoProduct = HomeProduct & { photo: PhotoEntry };
@@ -365,3 +368,57 @@ function photoDetail(product: HomeProduct, photo: PhotoEntry): ProductDetail {
 export const PRODUCT_DETAILS: readonly ProductDetail[] = PRODUCTS.map((product) =>
   product.photo ? photoDetail(product, product.photo) : proceduralDetail(product),
 );
+
+// --- accessories ---------------------------------------------------------------------------------
+
+const ACCESSORY_STOCK = 25;
+
+/** "glass-privacy" → "GLAPRI": three letters of each part, unique across the accessory list. */
+function accessoryCode(id: string): string {
+  return id
+    .split('-')
+    .map((part) => part.slice(0, 3))
+    .join('')
+    .toUpperCase();
+}
+
+/** One variant per phone model; accessories have no case type, so `soft` only fills the field. */
+function accessoryDetail(entry: AccessoryEntry): ProductDetail {
+  const fitsModels = PHONE_MODELS.map((m) => m.slug);
+  return {
+    id: `acc_${entry.id}`,
+    handle: entry.handle,
+    title: entry.title,
+    designId: `acc_${entry.id}`,
+    family: 'minimal',
+    theme: 'minimal',
+    priceFromInr: entry.priceInr,
+    regularInr: entry.regularInr,
+    fitsModels,
+    holo: false,
+    finish: 'soft',
+    brandLine: ACCESSORY_TYPE_LABEL[entry.type],
+    accessory: entry,
+    description: entry.description,
+    caseTypes: [],
+    variants: fitsModels.map((modelSlug) => {
+      const sku = `ACC-${accessoryCode(entry.id)}-${modelCode(modelSlug)}`;
+      return {
+        id: `variant_${sku.toLowerCase()}`,
+        sku,
+        modelSlug,
+        caseType: 'soft' as const,
+        priceInr: entry.priceInr,
+        stock: ACCESSORY_STOCK,
+      };
+    }),
+    details: {
+      material: entry.details.material,
+      print: entry.details.inBox,
+      fit: entry.details.fit,
+      care: entry.details.care,
+    },
+  };
+}
+
+export const ACCESSORY_DETAILS: readonly ProductDetail[] = ACCESSORIES.map(accessoryDetail);

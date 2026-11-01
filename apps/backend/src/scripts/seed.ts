@@ -9,6 +9,8 @@ import {
   createProductCategoriesWorkflow,
   createProductOptionsWorkflow,
   createProductTagsWorkflow,
+  createProductTypesWorkflow,
+  createPromotionsWorkflow,
   createProductsWorkflow,
   createRegionsWorkflow,
   createSalesChannelsWorkflow,
@@ -18,6 +20,7 @@ import {
   createTaxRegionsWorkflow,
   linkSalesChannelsToApiKeyWorkflow,
   linkSalesChannelsToStockLocationWorkflow,
+  updateProductsWorkflow,
   updateRegionsWorkflow,
   updateStoresWorkflow,
 } from '@medusajs/medusa/core-flows'
@@ -39,6 +42,8 @@ interface Catalog {
   caseTypes: { type: string; name: string }[]
   products: {
     handle: string
+    /** "Phone cover", "Screen guard", "Camera lens protector" or "Back film"; the bundle promotion keys on it. */
+    productType: string
     title: string
     description: string
     imagePath: string | null
@@ -46,7 +51,7 @@ interface Catalog {
     category: string | null
     tags: string[]
     metadata: Record<string, string | number | boolean>
-    variants: { sku: string; modelSlug: string; caseType: string; priceInr: number; stock: number }[]
+    variants: { sku: string; modelSlug: string; caseType: string | null; priceInr: number; stock: number }[]
   }[]
 }
 
@@ -58,6 +63,11 @@ const REGION_NAME = 'India'
 const FREE_SHIPPING_THRESHOLD_INR = 499
 /** Placeholder until the shipping fee is decided (store-spec.md §11, question 5). */
 const SHIPPING_FEE_INR = 49
+
+/** Bundle price: this much off each accessory when the cart also has a phone cover. Matches the storefront. */
+const BUNDLE_CODE = 'BUNDLE50'
+const BUNDLE_SAVING_INR = 50
+const COVER_TYPE = 'Phone cover'
 
 const COLLECTIONS = [
   { handle: 'trending', title: 'Trending' },
@@ -296,6 +306,16 @@ export default async function seed({ container }: ExecArgs) {
   }
   const tagId = new Map((await query.graph({ entity: 'product_tag', fields: ['id', 'value'] })).data.map((t) => [t.value, t.id]))
 
+  // Product types -----------------------------------------------------------------------------------
+  const typeNames = [...new Set(catalog.products.map((p) => p.productType))]
+  const { data: existingTypes } = await query.graph({ entity: 'product_type', fields: ['id', 'value'] })
+  const missingTypes = typeNames.filter((value) => !existingTypes.some((t) => t.value === value))
+  if (missingTypes.length > 0) {
+    await createProductTypesWorkflow(container).run({ input: { product_types: missingTypes.map((value) => ({ value })) } })
+    logger.info(`Created product types: ${missingTypes.join(', ')}`)
+  }
+  const typeId = new Map((await query.graph({ entity: 'product_type', fields: ['id', 'value'] })).data.map((t) => [t.value, t.id]))
+
   // Products --------------------------------------------------------------------------------------
   const { data: existingProducts } = await query.graph({ entity: 'product', fields: ['handle'] })
   const existingHandles = new Set(existingProducts.map((p) => p.handle))
@@ -322,18 +342,29 @@ export default async function seed({ container }: ExecArgs) {
             ...(p.collections[0] ? { collection_id: collectionId.get(p.collections[0]) } : {}),
             ...(p.tags.length > 0 ? { tag_ids: p.tags.map((value) => tagId.get(value)!) } : {}),
             metadata: p.metadata,
-            options: [{ id: optionIds['Phone Model'] }, { id: optionIds['Case Type'] }],
+            type_id: typeId.get(p.productType),
+            // Accessories vary by phone model only.
+            options: p.variants.some((v) => v.caseType)
+              ? [{ id: optionIds['Phone Model'] }, { id: optionIds['Case Type'] }]
+              : [{ id: optionIds['Phone Model'] }],
             sales_channels: [{ id: salesChannelId }],
             variants: p.variants.map((v) => ({
-              title: `${modelName.get(v.modelSlug) ?? v.modelSlug} / ${caseTypeName.get(v.caseType) ?? v.caseType}`,
+              title: v.caseType
+                ? `${modelName.get(v.modelSlug) ?? v.modelSlug} / ${caseTypeName.get(v.caseType) ?? v.caseType}`
+                : (modelName.get(v.modelSlug) ?? v.modelSlug),
               sku: v.sku,
               manage_inventory: true,
               allow_backorder: false,
-              options: {
-                'Phone Model': modelName.get(v.modelSlug) ?? v.modelSlug,
-                'Case Type': caseTypeName.get(v.caseType) ?? v.caseType,
-              },
-              metadata: { model_slug: v.modelSlug, case_type: v.caseType },
+              options: (v.caseType
+                ? {
+                    'Phone Model': modelName.get(v.modelSlug) ?? v.modelSlug,
+                    'Case Type': caseTypeName.get(v.caseType) ?? v.caseType,
+                  }
+                : { 'Phone Model': modelName.get(v.modelSlug) ?? v.modelSlug }) as Record<string, string>,
+              metadata: (v.caseType ? { model_slug: v.modelSlug, case_type: v.caseType } : { model_slug: v.modelSlug }) as Record<
+                string,
+                string
+              >,
               prices: [{ currency_code: 'inr', amount: v.priceInr }],
             })),
           }
@@ -342,6 +373,51 @@ export default async function seed({ container }: ExecArgs) {
     })
   }
   if (toCreate.length > 0) logger.info(`Created ${toCreate.length} products`)
+
+  // Products created before product types existed get theirs now (the bundle promotion needs them).
+  const { data: untyped } = await query.graph({ entity: 'product', fields: ['id', 'handle', 'type_id'] })
+  const typeByHandle = new Map(catalog.products.map((p) => [p.handle, p.productType]))
+  const byType = new Map<string, string[]>()
+  for (const prod of untyped) {
+    const wanted = typeByHandle.get(prod.handle)
+    if (!wanted || prod.type_id) continue
+    byType.set(wanted, [...(byType.get(wanted) ?? []), prod.id])
+  }
+  for (const [value, ids] of byType) {
+    await updateProductsWorkflow(container).run({ input: { selector: { id: ids }, update: { type_id: typeId.get(value) } } })
+    logger.info(`Set type "${value}" on ${ids.length} existing products`)
+  }
+
+  // Bundle promotion -------------------------------------------------------------------------------
+  // Automatic: every accessory (screen guard, lens protector, back film) is ₹50 less when the same cart
+  // holds a phone cover. Medusa re-checks it on every cart change, so removing the cover removes it.
+  const { data: existingPromos } = await query.graph({ entity: 'promotion', fields: ['id'], filters: { code: BUNDLE_CODE } })
+  if (existingPromos.length === 0) {
+    const accessoryTypeIds = typeNames.filter((t) => t !== COVER_TYPE).map((t) => typeId.get(t)!)
+    await createPromotionsWorkflow(container).run({
+      input: {
+        promotionsData: [
+          {
+            code: BUNDLE_CODE,
+            type: 'standard',
+            status: 'active',
+            is_automatic: true,
+            application_method: {
+              type: 'fixed',
+              value: BUNDLE_SAVING_INR,
+              currency_code: 'inr',
+              target_type: 'items',
+              allocation: 'each',
+              max_quantity: 10,
+              target_rules: [{ attribute: 'items.product.type_id', operator: 'in', values: accessoryTypeIds }],
+            },
+            rules: [{ attribute: 'items.product.type_id', operator: 'in', values: [typeId.get(COVER_TYPE)!] }],
+          },
+        ],
+      },
+    })
+    logger.info(`Created automatic promotion ${BUNDLE_CODE}: ₹${BUNDLE_SAVING_INR} off each accessory with a cover`)
+  }
 
   // Stock: one inventory level at the home warehouse for every catalogue variant that has none yet.
   // Variants that already have a level keep their (possibly admin-edited) count.

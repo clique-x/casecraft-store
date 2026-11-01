@@ -3,6 +3,9 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { BuyButtons } from '@/components/product/BuyButtons';
+import { ProtectionAddOns } from '@/components/product/ProtectionAddOns.client';
+import { addonVariantIds } from '@/lib/product/addons';
+import { addonStore, useSelectedAddons } from '@/lib/product/addon-store';
 import { CaseTypeSelector } from '@/components/product/CaseTypeSelector.client';
 import { ModelSelector } from '@/components/product/ModelSelector.client';
 import { PriceTag } from '@/components/product/PriceTag.client';
@@ -54,13 +57,15 @@ function brandLineOf(product: ProductDetail): string | null {
 interface BuyBoxProps {
   product: ProductDetail;
   models: PhoneModel[];
+  /** Screen guards and lens protectors offered as add-ons on cover pages. */
+  accessories?: readonly ProductDetail[];
 }
 
 /**
  * Owns the variant selection for the page: initialises it (query → cookie → first in stock),
  * mirrors it into the URL with `replaceState`, and resets it when the page goes away.
  */
-export function BuyBox({ product, models }: BuyBoxProps) {
+export function BuyBox({ product, models, accessories = [] }: BuyBoxProps) {
   const { phone, setPhone } = useMyPhone();
   const selection = useVariantSelection();
 
@@ -69,6 +74,12 @@ export function BuyBox({ product, models }: BuyBoxProps) {
   const caseTypes = useMemo(() => CASE_TYPES.filter((c) => product.caseTypes.includes(c.type)), [product]);
 
   const initialised = useRef(false);
+  const selectedAddons = useSelectedAddons();
+  // Add-ons belong to one cover page; start each page with none ticked.
+  useEffect(() => {
+    addonStore.reset();
+    return () => addonStore.reset();
+  }, [product.id]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -173,8 +184,17 @@ export function BuyBox({ product, models }: BuyBoxProps) {
         />
       )}
 
+      {!product.accessory && accessories.length > 0 && (
+        <ProtectionAddOns accessories={accessories} model={selectedModel} coverPrice={price} />
+      )}
+
       <div id="buy-actions" className="flex flex-col gap-3">
-        <BuyButtons variantId={variant?.id ?? null} soldOut={soldOut} whatsappHref={fallbackHref} />
+        <BuyButtons
+          variantId={variant?.id ?? null}
+          soldOut={soldOut}
+          whatsappHref={fallbackHref}
+          extraVariantIds={product.accessory ? [] : addonVariantIds(accessories, selectedAddons, selectedModel?.slug ?? null)}
+        />
         <p className="text-caption text-fg-muted">{ORDER_NOTE}</p>
         <a
           href={whatsappHref}

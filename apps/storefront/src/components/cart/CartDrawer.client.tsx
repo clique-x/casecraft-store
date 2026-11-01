@@ -41,16 +41,22 @@ export function CartDrawer() {
         ) : (
           <>
             <div className="border-b border-border px-5 py-3">
-              <FreeShippingMeter subtotal={cart.itemSubtotal} />
+              <FreeShippingMeter subtotal={cart.itemSubtotal - cart.discountTotal} />
             </div>
             <div className="flex-1 overflow-y-auto px-5">
               <CartLines lines={cart.lines} onNavigate={close} />
             </div>
             <div className="flex flex-col gap-3 border-t border-border px-5 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
               {error && <p className="text-caption text-danger">{error}</p>}
+              {cart.discountTotal > 0 && (
+                <div className="flex items-baseline justify-between text-sm">
+                  <span className="text-fg-muted">Bundle saving</span>
+                  <span className="font-semibold text-success tabular-nums">−{formatInr(cart.discountTotal)}</span>
+                </div>
+              )}
               <div className="flex items-baseline justify-between">
                 <span className="text-sm text-fg-muted">Subtotal</span>
-                <span className="text-lg font-extrabold text-fg tabular-nums">{formatInr(cart.itemSubtotal)}</span>
+                <span className="text-lg font-extrabold text-fg tabular-nums">{formatInr(cart.itemSubtotal - cart.discountTotal)}</span>
               </div>
               <p className="text-caption text-fg-muted">Shipping is calculated at checkout. Prices include GST.</p>
               <Link

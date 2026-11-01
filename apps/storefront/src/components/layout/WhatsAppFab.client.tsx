@@ -1,6 +1,5 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { MessageCircle } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '@/lib/brand';
 import { useInView } from '@/lib/device/use-in-view';
@@ -18,8 +17,6 @@ export function WhatsAppFab() {
   const heroInView = useInView('#hero', heroPresent);
   const overHero = heroPresent && heroInView !== false;
   const stickyVisible = useStickyCtaVisible();
-  // Checkout has its own fixed action bar on phones and a WhatsApp link in the page.
-  const onCheckout = usePathname()?.startsWith('/checkout') ?? false;
 
   const text = phone
     ? `Hi! I'm looking for a back cover for my ${phone.model}.`
@@ -32,6 +29,7 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
+      data-whatsapp-fab=""
       aria-hidden={sheetOpen || undefined}
       tabIndex={sheetOpen ? -1 : undefined}
       className={cn(
@@ -42,7 +40,6 @@ export function WhatsAppFab() {
           : 'bottom-[calc(env(safe-area-inset-bottom)+1rem)] lg:bottom-6',
         sheetOpen && 'pointer-events-none translate-y-4 opacity-0',
         overHero && 'max-lg:invisible max-lg:translate-y-4 max-lg:opacity-0',
-        onCheckout && 'max-lg:hidden',
       )}
     >
       <MessageCircle className="size-7" aria-hidden="true" />

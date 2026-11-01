@@ -4,7 +4,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { photoSrc } from '../src/lib/catalog/photos';
-import { CASE_TYPES, PHONE_MODELS, PRODUCT_DETAILS, THEMES } from '../src/lib/medusa/fixtures';
+import { ACCESSORY_TYPE_LABEL } from '../src/lib/catalog/accessories';
+import { ACCESSORY_DETAILS, CASE_TYPES, PHONE_MODELS, PRODUCT_DETAILS, THEMES } from '../src/lib/medusa/fixtures';
 
 const OUT = path.resolve(import.meta.dirname, '../../backend/data/catalog.json');
 
@@ -20,8 +21,10 @@ const catalog = {
   })),
   themes: THEMES.map((t) => ({ handle: t.handle, name: t.name, blurb: t.blurb })),
   caseTypes: CASE_TYPES.map((c) => ({ type: c.type, name: c.name })),
-  products: PRODUCT_DETAILS.map((p) => ({
+  products: [
+    ...PRODUCT_DETAILS.map((p) => ({
     handle: p.handle,
+    productType: 'Phone cover',
     title: p.title,
     description: p.description,
     // Photographed covers get their photo as the product image (served by the storefront).
@@ -59,6 +62,37 @@ const catalog = {
       stock: v.stock,
     })),
   })),
+    ...ACCESSORY_DETAILS.map((p) => {
+      const a = p.accessory!;
+      return {
+        handle: p.handle,
+        productType: ACCESSORY_TYPE_LABEL[a.type],
+        title: p.title,
+        description: p.description,
+        imagePath: null,
+        collections: [],
+        category: null,
+        tags: [],
+        metadata: {
+          kind: 'accessory',
+          accessory_id: a.id,
+          accessory_type: a.type,
+          regular_inr: a.regularInr,
+          detail_material: a.details.material,
+          detail_in_box: a.details.inBox,
+          detail_fit: a.details.fit,
+          detail_care: a.details.care,
+        },
+        variants: p.variants.map((v) => ({
+          sku: v.sku,
+          modelSlug: v.modelSlug,
+          caseType: null,
+          priceInr: v.priceInr,
+          stock: v.stock,
+        })),
+      };
+    }),
+  ],
 };
 
 await fs.mkdir(path.dirname(OUT), { recursive: true });

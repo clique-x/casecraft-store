@@ -1,14 +1,26 @@
 import { cacheLife, cacheTag } from 'next/cache';
+import { ACCESSORIES, ACCESSORY_TYPE_LABEL } from '@/lib/catalog/accessories';
 import { PHOTOS, type PhotoEntry } from '@/lib/catalog/photos';
 import { DESIGNS } from '@/lib/designs/catalog';
 import { MEDUSA_REGION_ID, medusaEnabled, sdk } from './client';
-import { PHONE_MODELS, PRODUCT_DETAILS, type CaseType, type PhoneModel, type ProductDetail, type Variant } from './fixtures';
+import {
+  ACCESSORY_DETAILS,
+  PHONE_MODELS,
+  PRODUCT_DETAILS,
+  type CaseType,
+  type PhoneModel,
+  type ProductDetail,
+  type Variant,
+} from './fixtures';
 
 /** Tag on every cached catalogue read; POST /api/revalidate expires it after an admin change. */
 export const CATALOG_TAG = 'catalog';
 
 export interface Catalog {
+  /** Phone covers (photographed and procedural). */
   products: ProductDetail[];
+  /** Screen guards, lens protectors and back films. */
+  accessories: ProductDetail[];
   phoneModels: PhoneModel[];
 }
 
@@ -20,7 +32,9 @@ export async function getCatalog(): Promise<Catalog> {
   'use cache';
   cacheTag(CATALOG_TAG);
   cacheLife('hours');
-  return medusaEnabled ? fetchMedusaCatalog() : { products: [...PRODUCT_DETAILS], phoneModels: [...PHONE_MODELS] };
+  return medusaEnabled
+    ? fetchMedusaCatalog()
+    : { products: [...PRODUCT_DETAILS], accessories: [...ACCESSORY_DETAILS], phoneModels: [...PHONE_MODELS] };
 }
 
 /**
@@ -31,7 +45,7 @@ const HANDLES_TTL_MS = 60_000;
 let handlesMemo: { at: number; handles: Promise<string[]> } | null = null;
 
 export function getCatalogHandles(): Promise<string[]> {
-  if (!medusaEnabled) return Promise.resolve(PRODUCT_DETAILS.map((p) => p.handle));
+  if (!medusaEnabled) return Promise.resolve([...PRODUCT_DETAILS, ...ACCESSORY_DETAILS].map((p) => p.handle));
   const now = Date.now();
   if (handlesMemo && now - handlesMemo.at < HANDLES_TTL_MS) return handlesMemo.handles;
   const handles = fetchProductHandles();
@@ -97,11 +111,14 @@ interface MedusaPhoneModel {
 async function fetchMedusaCatalog(): Promise<Catalog> {
   const [phoneModels, products] = await Promise.all([fetchPhoneModels(), fetchAllProducts()]);
   const modelRank = new Map(phoneModels.map((m, i) => [m.slug, i]));
-  const mapped = products
-    .map((p) => toProductDetail(p, modelRank))
-    .filter((p): p is ProductDetail => p !== null)
-    .sort(byCatalogueOrder);
-  return { products: mapped, phoneModels };
+  const mapped = products.map((p) => toProductDetail(p, modelRank)).filter((p): p is ProductDetail => p !== null);
+  return {
+    products: mapped.filter((p) => !p.accessory).sort(byCatalogueOrder),
+    accessories: mapped
+      .filter((p) => p.accessory)
+      .sort((a, b) => ACCESSORIES.indexOf(a.accessory!) - ACCESSORIES.indexOf(b.accessory!)),
+    phoneModels,
+  };
 }
 
 async function fetchPhoneModels(): Promise<PhoneModel[]> {
@@ -184,6 +201,7 @@ function toVariant(v: MedusaVariant): Variant | null {
  */
 function toProductDetail(p: MedusaProduct, modelRank: Map<string, number>): ProductDetail | null {
   const meta = p.metadata;
+  if (str(meta, 'kind') === 'accessory') return toAccessory(p, modelRank);
   const photoId = num(meta, 'photo_id');
   const photo: PhotoEntry | undefined = photoId !== undefined ? PHOTOS.find((e) => e.id === photoId) : undefined;
   const design = photo ? undefined : DESIGNS.find((d) => d.id === str(meta, 'design_id'));
@@ -245,6 +263,45 @@ function toProductDetail(p: MedusaProduct, modelRank: Map<string, number>): Prod
       print: str(meta, 'detail_print') ?? '',
       fit: str(meta, 'detail_fit') ?? '',
       care: str(meta, 'detail_care') ?? '',
+    },
+  };
+}
+
+/** Accessories carry `accessory_id` in metadata, matching an entry in lib/catalog/accessories.ts. */
+function toAccessory(p: MedusaProduct, modelRank: Map<string, number>): ProductDetail | null {
+  const entry = ACCESSORIES.find((a) => a.id === str(p.metadata, 'accessory_id'));
+  if (!entry) {
+    console.warn(`[medusa] Skipping accessory "${p.handle}": unknown accessory_id`);
+    return null;
+  }
+  // Accessory variants vary by phone only; `soft` fills the case-type field the shared type expects.
+  const variants = (p.variants ?? [])
+    .map((v) => toVariant({ ...v, metadata: { ...v.metadata, case_type: 'soft' } }))
+    .filter((v): v is Variant => v !== null && modelRank.has(v.modelSlug))
+    .sort((a, b) => modelRank.get(a.modelSlug)! - modelRank.get(b.modelSlug)!);
+  if (variants.length === 0) return null;
+  return {
+    id: p.id,
+    handle: p.handle,
+    title: p.title,
+    designId: `acc_${entry.id}`,
+    family: 'minimal',
+    theme: 'minimal',
+    finish: 'soft',
+    holo: false,
+    priceFromInr: Math.min(...variants.map((v) => v.priceInr)),
+    regularInr: num(p.metadata, 'regular_inr') ?? entry.regularInr,
+    fitsModels: [...new Set(variants.map((v) => v.modelSlug))],
+    brandLine: ACCESSORY_TYPE_LABEL[entry.type],
+    accessory: entry,
+    description: p.description ?? entry.description,
+    caseTypes: [],
+    variants,
+    details: {
+      material: str(p.metadata, 'detail_material') ?? entry.details.material,
+      print: str(p.metadata, 'detail_in_box') ?? entry.details.inBox,
+      fit: str(p.metadata, 'detail_fit') ?? entry.details.fit,
+      care: str(p.metadata, 'detail_care') ?? entry.details.care,
     },
   };
 }

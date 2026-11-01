@@ -38,12 +38,18 @@ export function CartPage() {
         <CartLines lines={cart.lines} />
       </section>
       <aside className="flex flex-col gap-4 rounded-xl border border-border bg-surface p-5 lg:sticky lg:top-24 lg:col-span-5">
-        <FreeShippingMeter subtotal={cart.itemSubtotal} />
+        <FreeShippingMeter subtotal={cart.itemSubtotal - cart.discountTotal} />
         <dl className="flex flex-col gap-2 text-sm">
           <div className="flex justify-between">
             <dt className="text-fg-muted">Subtotal ({cart.count} {cart.count === 1 ? 'item' : 'items'})</dt>
             <dd className="font-semibold text-fg tabular-nums">{formatInr(cart.itemSubtotal)}</dd>
           </div>
+          {cart.discountTotal > 0 && (
+            <div className="flex justify-between">
+              <dt className="text-fg-muted">Bundle saving</dt>
+              <dd className="font-semibold text-success tabular-nums">−{formatInr(cart.discountTotal)}</dd>
+            </div>
+          )}
           <div className="flex justify-between">
             <dt className="text-fg-muted">Shipping</dt>
             <dd className="text-fg-muted">At checkout</dd>
@@ -54,7 +60,7 @@ export function CartPage() {
           href="/checkout"
           className="inline-flex h-13 items-center justify-center rounded-[10px] bg-fg text-[0.9375rem] font-semibold text-paper hover:bg-[#2b2b2b]"
         >
-          Checkout · {formatInr(cart.itemSubtotal)}
+          Checkout · {formatInr(cart.itemSubtotal - cart.discountTotal)}
         </Link>
         <p className="text-center text-caption text-fg-muted">UPI, cards, netbanking or Cash on Delivery. Prices include GST.</p>
       </aside>

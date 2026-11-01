@@ -6,12 +6,19 @@ export { findVariant, lowestPrice, MISSING_PRODUCT_HANDLE } from './variants';
 
 /** Photo and procedural products alike; photo handles are the catalogue slugs. */
 export async function getProduct(handle: string): Promise<ProductDetail | null> {
-  return (await getCatalog()).products.find((p) => p.handle === handle) ?? null;
+  const { products, accessories } = await getCatalog();
+  return products.find((p) => p.handle === handle) ?? accessories.find((p) => p.handle === handle) ?? null;
+}
+
+/** Screen guards, lens protectors and back films. */
+export async function getAccessories(): Promise<ProductDetail[]> {
+  return (await getCatalog()).accessories;
 }
 
 /** For generateStaticParams; cached with the rest of the catalogue. */
 export async function getProductHandles(): Promise<string[]> {
-  return (await getCatalog()).products.map((p) => p.handle);
+  const { products, accessories } = await getCatalog();
+  return [...products, ...accessories].map((p) => p.handle);
 }
 
 /** For src/proxy.ts, which runs outside the `use cache` scope. */

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
+import { AccessoryStage } from '@/components/accessory/AccessoryStage.client';
 import { Breadcrumb } from '@/components/product/Breadcrumb';
+import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
 import { DeliveryFacts } from '@/components/product/DeliveryFacts';
 import { ProductDetails } from '@/components/product/ProductDetails';
@@ -16,6 +18,7 @@ import { photoSrc, type PhotoEntry } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getPhoneModels } from '@/lib/medusa/home';
 import {
+  getAccessories,
   getAllProducts,
   getMoreForPhoneCandidates,
   getProduct,
@@ -123,9 +126,14 @@ async function ProductPageContent({ params }: ProductPageProps) {
   const product = await getProduct(handle);
   if (!product) notFound();
 
-  const [models, related, candidates] = await Promise.all([
+  const [models, accessories, related, candidates] = await Promise.all([
     getPhoneModels(),
-    product.photo ? relatedByLook(product) : getRelatedByTheme(product, RELATED_LIMIT),
+    getAccessories(),
+    product.accessory
+      ? getAccessories().then((all) => all.filter((p) => p.id !== product.id))
+      : product.photo
+        ? relatedByLook(product)
+        : getRelatedByTheme(product, RELATED_LIMIT),
     getMoreForPhoneCandidates(product),
   ]);
 
@@ -139,7 +147,9 @@ async function ProductPageContent({ params }: ProductPageProps) {
         <div className="mt-4 grid gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
           <div className="lg:col-span-7">
             <div className="lg:sticky lg:top-20">
-              {product.photo ? (
+              {product.accessory ? (
+                <AccessoryStage accessory={product.accessory} models={models} title={product.title} />
+              ) : product.photo ? (
                 // Rendered here rather than through ProductViewer so photo pages never ship the procedural viewer.
                 <PhotoStage entry={product.photo} title={product.title} />
               ) : (
@@ -149,16 +159,18 @@ async function ProductPageContent({ params }: ProductPageProps) {
           </div>
 
           <div className="flex flex-col gap-8 lg:col-span-5">
-            <BuyBox product={product} models={models} />
+            <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
             <DeliveryFacts />
             <ProductDetails product={product} />
           </div>
         </div>
       </div>
 
+      {!product.accessory && <BundleKits product={product} accessories={accessories} models={models} />}
+
       <RelatedRows product={product} related={related} candidates={candidates} models={models} />
 
-      <StickyBuyBar product={product} models={models} />
+      <StickyBuyBar product={product} models={models} accessories={product.accessory ? [] : accessories} />
     </>
   );
 }

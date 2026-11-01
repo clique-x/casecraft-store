@@ -25,6 +25,13 @@ function breadcrumbJsonLd(crumbs: readonly Crumb[]): string {
 
 /** Photo covers sit under their look; procedural designs keep the Trending trail. */
 function crumbsFor(product: ProductDetail): readonly Crumb[] {
+  if (product.accessory) {
+    return [
+      { name: 'Home', href: '/' },
+      { name: 'Accessories', href: '/accessories' },
+      { name: product.title, href: `/products/${product.handle}` },
+    ];
+  }
   const photo = product.photo;
   const look = photo ? LOOKS.find((l) => l.handle === photo.look) : undefined;
   const middle: Crumb = look ? { name: look.name, href: `/categories/${look.handle}` } : { name: 'Trending', href: '/trending' };

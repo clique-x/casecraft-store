@@ -13,14 +13,18 @@ const ITEMS: readonly { key: DetailKey; label: string }[] = [
 
 export function ProductDetails({ product }: { product: ProductDetail }) {
   const photo = product.photo;
-  const items = ITEMS.filter(({ key }) => product.details[key].trim().length > 0);
-  const features = photo ? featuresFor(photo) : null;
+  const accessory = product.accessory;
+  // Accessories keep "what's in the box" in the `print` slot.
+  const items = ITEMS.filter(({ key }) => product.details[key].trim().length > 0).map((item) =>
+    accessory && item.key === 'print' ? { ...item, label: 'In the box' } : item,
+  );
+  const features = accessory ? accessory.features : photo ? featuresFor(photo) : null;
 
   return (
     <section aria-labelledby="details-heading" className="flex flex-col gap-4">
       <div>
         <h2 id="details-heading" className="font-sans text-h3 font-bold text-fg">
-          {photo ? 'About this cover' : 'Design'}
+          {accessory ? 'About this product' : photo ? 'About this cover' : 'Design'}
         </h2>
         <p className="mt-2 text-body text-fg-muted">{product.description}</p>
       </div>

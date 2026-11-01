@@ -565,7 +565,7 @@ function Totals({
       </div>
       {cart.discountTotal > 0 && (
         <div className="flex justify-between">
-          <dt className="text-fg-muted">Discount</dt>
+          <dt className="text-fg-muted">Bundle saving</dt>
           <dd className="font-semibold text-success tabular-nums">−{formatInr(cart.discountTotal)}</dd>
         </div>
       )}

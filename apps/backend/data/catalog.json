@@ -217,6 +217,7 @@
   "products": [
     {
       "handle": "luxo-nano-fiber-magsafe-case-black-carbon-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Black Carbon · Luxo",
       "description": "Black Carbon is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
       "imagePath": "/products/photos/41280/960.webp",
@@ -255,6 +256,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-grey-tiger-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Grey Tiger · Luxo",
       "description": "Grey Tiger is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film.",
       "imagePath": "/products/photos/41282/960.webp",
@@ -291,6 +293,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-moonrise-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Moonrise · Luxo",
       "description": "Moonrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through.",
       "imagePath": "/products/photos/41284/960.webp",
@@ -329,6 +332,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-colourful-tiger-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Colourful Tiger · Luxo",
       "description": "Colourful Tiger is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film.",
       "imagePath": "/products/photos/41286/960.webp",
@@ -367,6 +371,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-greenrise-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Greenrise · Luxo",
       "description": "Greenrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through.",
       "imagePath": "/products/photos/41288/960.webp",
@@ -403,6 +408,7 @@
     },
     {
       "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-green-iphone-18-pro",
+      "productType": "Phone cover",
       "title": "Green · X-Level",
       "description": "Green is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
       "imagePath": "/products/photos/41162/960.webp",
@@ -439,6 +445,7 @@
     },
     {
       "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-glacier-iphone-18-pro",
+      "productType": "Phone cover",
       "title": "Glacier · X-Level",
       "description": "Glacier is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
       "imagePath": "/products/photos/41164/960.webp",
@@ -475,6 +482,7 @@
     },
     {
       "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-cherry-iphone-18-pro",
+      "productType": "Phone cover",
       "title": "Cherry · X-Level",
       "description": "Cherry is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
       "imagePath": "/products/photos/41166/960.webp",
@@ -511,6 +519,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sparkle-grey-samsung-fold-8",
+      "productType": "Phone cover",
       "title": "Sparkle Grey · Luxo",
       "description": "Sparkle Grey is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
       "imagePath": "/products/photos/41168/960.webp",
@@ -544,6 +553,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sunrise-samsung-fold-8",
+      "productType": "Phone cover",
       "title": "Sunrise · Luxo",
       "description": "Sunrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through. A separate hinge piece covers the spine when the phone is folded.",
       "imagePath": "/products/photos/41189/960.webp",
@@ -577,6 +587,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sparkle-redish-samsung-fold-8",
+      "productType": "Phone cover",
       "title": "Sparkle Redish · Luxo",
       "description": "Sparkle Redish is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
       "imagePath": "/products/photos/41190/960.webp",
@@ -613,6 +624,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-black-horse-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Black Horse · Luxo",
       "description": "Black Horse is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film. A separate hinge piece covers the spine when the phone is folded.",
       "imagePath": "/products/photos/41250/960.webp",
@@ -649,6 +661,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-redish-sparkle-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Redish Sparkle · Luxo",
       "description": "Redish Sparkle is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
       "imagePath": "/products/photos/41252/960.webp",
@@ -685,6 +698,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-moonrise-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Moonrise · Luxo",
       "description": "Moonrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through. A separate hinge piece covers the spine when the phone is folded.",
       "imagePath": "/products/photos/41254/960.webp",
@@ -718,6 +732,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-blue-horse-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Blue Horse · Luxo",
       "description": "Blue Horse is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film. A separate hinge piece covers the spine when the phone is folded.",
       "imagePath": "/products/photos/41256/960.webp",
@@ -751,6 +766,7 @@
     },
     {
       "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-grey-sparkle-samsung-fold-8-ultra",
+      "productType": "Phone cover",
       "title": "Grey Sparkle · Luxo",
       "description": "Grey Sparkle is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
       "imagePath": "/products/photos/41258/960.webp",
@@ -784,6 +800,7 @@
     },
     {
       "handle": "borluco-textured-silicone-case-with-stand-black-iphone-duo",
+      "productType": "Phone cover",
       "title": "Black · Borluco",
       "description": "Black is a Borluco Textured Silicone cover for the iPhone Duo, photographed in our Haridwar shop. One colour, a textured grip and a fold-out stand on the back.",
       "imagePath": "/products/photos/41154/960.webp",
@@ -817,6 +834,7 @@
     },
     {
       "handle": "midnight-marble",
+      "productType": "Phone cover",
       "title": "Midnight Marble",
       "description": "Midnight Marble takes the look of polished stone: veins that split and rejoin, a little depth under the surface, and a quiet base colour that does not shout. The veining is drawn for this cover rather than scanned from a slab, so it stays crisp at the corners where photographs of stone go soft.",
       "imagePath": null,
@@ -1015,6 +1033,7 @@
     },
     {
       "handle": "rose-quartz",
+      "productType": "Phone cover",
       "title": "Rose Quartz",
       "description": "Rose Quartz takes the look of polished stone: veins that split and rejoin, a little depth under the surface, and a quiet base colour that does not shout. The veining is drawn for this cover rather than scanned from a slab, so it stays crisp at the corners where photographs of stone go soft.",
       "imagePath": null,
@@ -1182,6 +1201,7 @@
     },
     {
       "handle": "ink-and-gold",
+      "productType": "Phone cover",
       "title": "Ink & Gold",
       "description": "Ink & Gold takes the look of polished stone: veins that split and rejoin, a little depth under the surface, and a quiet base colour that does not shout. The veining is drawn for this cover rather than scanned from a slab, so it stays crisp at the corners where photographs of stone go soft.",
       "imagePath": null,
@@ -1349,6 +1369,7 @@
     },
     {
       "handle": "sage-stone",
+      "productType": "Phone cover",
       "title": "Sage Stone",
       "description": "Sage Stone takes the look of polished stone: veins that split and rejoin, a little depth under the surface, and a quiet base colour that does not shout. The veining is drawn for this cover rather than scanned from a slab, so it stays crisp at the corners where photographs of stone go soft.",
       "imagePath": null,
@@ -1541,6 +1562,7 @@
     },
     {
       "handle": "holo-shift",
+      "productType": "Phone cover",
       "title": "Holo Shift",
       "description": "Holo Shift is a pale, near-silver base with a thin-film sheen on top. Tilt the phone and the sheen walks across the back in a slow band of colour; hold it still and it reads as a clean pearl grey.",
       "imagePath": null,
@@ -1725,6 +1747,7 @@
     },
     {
       "handle": "chrome-candy",
+      "productType": "Phone cover",
       "title": "Chrome Candy",
       "description": "Chrome Candy is a pale, near-silver base with a thin-film sheen on top. Tilt the phone and the sheen walks across the back in a slow band of colour; hold it still and it reads as a clean pearl grey.",
       "imagePath": null,
@@ -1906,6 +1929,7 @@
     },
     {
       "handle": "prism-pop",
+      "productType": "Phone cover",
       "title": "Prism Pop",
       "description": "Prism Pop is a pale, near-silver base with a thin-film sheen on top. Tilt the phone and the sheen walks across the back in a slow band of colour; hold it still and it reads as a clean pearl grey.",
       "imagePath": null,
@@ -2084,6 +2108,7 @@
     },
     {
       "handle": "oil-slick",
+      "productType": "Phone cover",
       "title": "Oil Slick",
       "description": "Oil Slick is a pale, near-silver base with a thin-film sheen on top. Tilt the phone and the sheen walks across the back in a slow band of colour; hold it still and it reads as a clean pearl grey.",
       "imagePath": null,
@@ -2307,6 +2332,7 @@
     },
     {
       "handle": "aurora-night",
+      "productType": "Phone cover",
       "title": "Aurora Night",
       "description": "Aurora Night is a near-black sky with ribbons of colour folded through it, soft at the edges and brighter where they cross. The composition is weighted toward the lower half so the camera island sits in the dark.",
       "imagePath": null,
@@ -2460,6 +2486,7 @@
     },
     {
       "handle": "northern-haze",
+      "productType": "Phone cover",
       "title": "Northern Haze",
       "description": "Northern Haze is a near-black sky with ribbons of colour folded through it, soft at the edges and brighter where they cross. The composition is weighted toward the lower half so the camera island sits in the dark.",
       "imagePath": null,
@@ -2613,6 +2640,7 @@
     },
     {
       "handle": "deep-nebula",
+      "productType": "Phone cover",
       "title": "Deep Nebula",
       "description": "Deep Nebula is a near-black sky with ribbons of colour folded through it, soft at the edges and brighter where they cross. The composition is weighted toward the lower half so the camera island sits in the dark.",
       "imagePath": null,
@@ -2833,6 +2861,7 @@
     },
     {
       "handle": "checker-wave",
+      "productType": "Phone cover",
       "title": "Checker Wave",
       "description": "Checker Wave is sharp geometry in candy colours: a grid that warps as it crosses the back, with a second colour showing through the gaps. It reads loud from across the room and clean up close.",
       "imagePath": null,
@@ -2937,6 +2966,7 @@
     },
     {
       "handle": "candy-grid",
+      "productType": "Phone cover",
       "title": "Candy Grid",
       "description": "Candy Grid is sharp geometry in candy colours: a grid that warps as it crosses the back, with a second colour showing through the gaps. It reads loud from across the room and clean up close.",
       "imagePath": null,
@@ -3055,6 +3085,7 @@
     },
     {
       "handle": "retro-tiles",
+      "productType": "Phone cover",
       "title": "Retro Tiles",
       "description": "Retro Tiles is sharp geometry in candy colours: a grid that warps as it crosses the back, with a second colour showing through the gaps. It reads loud from across the room and clean up close.",
       "imagePath": null,
@@ -3156,6 +3187,7 @@
     },
     {
       "handle": "main-character",
+      "productType": "Phone cover",
       "title": "Main Character",
       "description": "Main Character puts four words at most in large display type, tipped a few degrees so the back reads as a sticker rather than a label. The ground is a single warm colour with a faint texture so the letters have something to sit on.",
       "imagePath": null,
@@ -3256,6 +3288,7 @@
     },
     {
       "handle": "soft-launch",
+      "productType": "Phone cover",
       "title": "Soft Launch",
       "description": "Soft Launch puts four words at most in large display type, tipped a few degrees so the back reads as a sticker rather than a label. The ground is a single warm colour with a faint texture so the letters have something to sit on.",
       "imagePath": null,
@@ -3371,6 +3404,7 @@
     },
     {
       "handle": "no-thoughts",
+      "productType": "Phone cover",
       "title": "No Thoughts",
       "description": "No Thoughts puts four words at most in large display type, tipped a few degrees so the back reads as a sticker rather than a label. The ground is a single warm colour with a faint texture so the letters have something to sit on.",
       "imagePath": null,
@@ -3496,6 +3530,7 @@
     },
     {
       "handle": "chai-first",
+      "productType": "Phone cover",
       "title": "Chai First",
       "description": "Chai First puts four words at most in large display type, tipped a few degrees so the back reads as a sticker rather than a label. The ground is a single warm colour with a faint texture so the letters have something to sit on.",
       "imagePath": null,
@@ -3600,6 +3635,7 @@
     },
     {
       "handle": "sticker-bomb",
+      "productType": "Phone cover",
       "title": "Sticker Bomb",
       "description": "Sticker Bomb is a scatter of hand-drawn stickers piled over a bright base, each with its own white border and a hint of shadow. They are arranged so the camera island covers nothing you would miss.",
       "imagePath": null,
@@ -3704,6 +3740,7 @@
     },
     {
       "handle": "smiley-days",
+      "productType": "Phone cover",
       "title": "Smiley Days",
       "description": "Smiley Days is a scatter of hand-drawn stickers piled over a bright base, each with its own white border and a hint of shadow. They are arranged so the camera island covers nothing you would miss.",
       "imagePath": null,
@@ -3826,6 +3863,7 @@
     },
     {
       "handle": "star-sign",
+      "productType": "Phone cover",
       "title": "Star Sign",
       "description": "Star Sign is a scatter of hand-drawn stickers piled over a bright base, each with its own white border and a hint of shadow. They are arranged so the camera island covers nothing you would miss.",
       "imagePath": null,
@@ -3951,6 +3989,7 @@
     },
     {
       "handle": "less-is-more",
+      "productType": "Phone cover",
       "title": "Less Is More",
       "description": "Less Is More is one mark on an off-white ground: a line, an arc or a dot, placed low and slightly off-centre. The ground carries a faint paper grain so the back does not read as blank plastic.",
       "imagePath": null,
@@ -4038,6 +4077,7 @@
     },
     {
       "handle": "one-arc",
+      "productType": "Phone cover",
       "title": "One Arc",
       "description": "One Arc is one mark on an off-white ground: a line, an arc or a dot, placed low and slightly off-centre. The ground carries a faint paper grain so the back does not read as blank plastic.",
       "imagePath": null,
@@ -4149,6 +4189,7 @@
     },
     {
       "handle": "quiet-dot",
+      "productType": "Phone cover",
       "title": "Quiet Dot",
       "description": "Quiet Dot is one mark on an off-white ground: a line, an arc or a dot, placed low and slightly off-centre. The ground carries a faint paper grain so the back does not read as blank plastic.",
       "imagePath": null,
@@ -4231,6 +4272,781 @@
           "caseType": "soft",
           "priceInr": 299,
           "stock": 30
+        }
+      ]
+    },
+    {
+      "handle": "tempered-glass-screen-guard",
+      "productType": "Screen guard",
+      "title": "Edge-to-edge tempered glass",
+      "description": "A 0.33 mm tempered glass guard that covers the whole display up to the curve, with an oleophobic coat so fingerprints wipe off. It is cut for your exact model, so the earpiece and front camera stay open.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "glass-clear",
+        "accessory_type": "screen-guard",
+        "regular_inr": 399,
+        "detail_material": "Tempered glass, 9H surface hardness, oleophobic coating, 2.5D rounded edges.",
+        "detail_in_box": "Screen guard, alcohol wipe, dry cloth, dust stickers and an alignment frame.",
+        "detail_fit": "Cut for each listed model. Leaves room at the edges so it works with every cover we sell.",
+        "detail_care": "Clean with a dry microfibre cloth. Replace it if it cracks; it has done its job."
+      },
+      "variants": [
+        {
+          "sku": "ACC-GLACLE-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAA56",
+          "modelSlug": "galaxy-a56",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-ON13",
+          "modelSlug": "oneplus-13",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-ONNCE4",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-REN14P",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-REN13",
+          "modelSlug": "redmi-note-13",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-RE13P",
+          "modelSlug": "realme-13-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-RE14P",
+          "modelSlug": "realme-14-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-VIV40",
+          "modelSlug": "vivo-v40",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-VIV50",
+          "modelSlug": "vivo-v50",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-NOP3A",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-PI9A",
+          "modelSlug": "pixel-9a",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IPD",
+          "modelSlug": "iphone-duo",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "privacy-screen-guard",
+      "productType": "Screen guard",
+      "title": "Privacy tempered glass",
+      "description": "The same 9H glass with a privacy layer: straight on, the screen looks normal; from about 30° to either side, it turns dark. Useful on the metro, in queues and in office lifts.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "glass-privacy",
+        "accessory_type": "screen-guard",
+        "regular_inr": 549,
+        "detail_material": "Tempered glass with a micro-louvre privacy layer, 9H hardness, oleophobic coating.",
+        "detail_in_box": "Privacy guard, alcohol wipe, dry cloth, dust stickers and an alignment frame.",
+        "detail_fit": "Cut for each listed model, with cut-outs for the earpiece and front camera.",
+        "detail_care": "Clean with a dry microfibre cloth. Screen brightness may need one step up."
+      },
+      "variants": [
+        {
+          "sku": "ACC-GLAPRI-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAA56",
+          "modelSlug": "galaxy-a56",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-ON13",
+          "modelSlug": "oneplus-13",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-ONNCE4",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-REN14P",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-REN13",
+          "modelSlug": "redmi-note-13",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-RE13P",
+          "modelSlug": "realme-13-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-RE14P",
+          "modelSlug": "realme-14-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-VIV40",
+          "modelSlug": "vivo-v40",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-VIV50",
+          "modelSlug": "vivo-v50",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-NOP3A",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-PI9A",
+          "modelSlug": "pixel-9a",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IPD",
+          "modelSlug": "iphone-duo",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "camera-lens-protector",
+      "productType": "Camera lens protector",
+      "title": "Camera lens protector",
+      "description": "Individual glass rings that sit over each camera lens and keep the camera bump off the table. The glass is optically clear and coated against flare, so photos and night shots are unchanged.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "lens-glass",
+        "accessory_type": "lens-protector",
+        "regular_inr": 299,
+        "detail_material": "Optical glass lenses in aluminium rings, anti-reflective coating.",
+        "detail_in_box": "Lens protector set, alignment tray, alcohol wipe and dry cloth.",
+        "detail_fit": "Shaped to each listed model’s camera island.",
+        "detail_care": "Wipe with a dry cloth before taking photos for the clearest shots."
+      },
+      "variants": [
+        {
+          "sku": "ACC-LENGLA-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAA56",
+          "modelSlug": "galaxy-a56",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-ON13",
+          "modelSlug": "oneplus-13",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-ONNCE4",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-REN14P",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-REN13",
+          "modelSlug": "redmi-note-13",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-RE13P",
+          "modelSlug": "realme-13-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-RE14P",
+          "modelSlug": "realme-14-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-VIV40",
+          "modelSlug": "vivo-v40",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-VIV50",
+          "modelSlug": "vivo-v50",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-NOP3A",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-PI9A",
+          "modelSlug": "pixel-9a",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IPD",
+          "modelSlug": "iphone-duo",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "matte-back-film",
+      "productType": "Back film",
+      "title": "Full-frame matte back film",
+      "description": "A thin matte film that wraps the whole back and the side frame, with a cut-out for the camera. It keeps scratches off and adds grip for people who like their phone without a cover.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "film-matte",
+        "accessory_type": "back-film",
+        "regular_inr": 449,
+        "detail_material": "0.2 mm TPU film with a matte finish and a self-healing top layer.",
+        "detail_in_box": "Back film, squeegee card, alcohol wipe and dry cloth.",
+        "detail_fit": "Cut for each listed model, including the camera island and buttons.",
+        "detail_care": "Small scratches fade on their own. It peels off cleanly with no residue."
+      },
+      "variants": [
+        {
+          "sku": "ACC-FILMAT-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAA56",
+          "modelSlug": "galaxy-a56",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-ON13",
+          "modelSlug": "oneplus-13",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-ONNCE4",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-REN14P",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-REN13",
+          "modelSlug": "redmi-note-13",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-RE13P",
+          "modelSlug": "realme-13-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-RE14P",
+          "modelSlug": "realme-14-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-VIV40",
+          "modelSlug": "vivo-v40",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-VIV50",
+          "modelSlug": "vivo-v50",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-NOP3A",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-PI9A",
+          "modelSlug": "pixel-9a",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IPD",
+          "modelSlug": "iphone-duo",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "carbon-back-film",
+      "productType": "Back film",
+      "title": "Full-frame carbon back film",
+      "description": "A textured carbon-look film for the full back and sides. It changes the look of a bare phone and adds grip, and you can still wear a clear cover over it.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "film-carbon",
+        "accessory_type": "back-film",
+        "regular_inr": 499,
+        "detail_material": "0.25 mm textured vinyl film with an air-release adhesive.",
+        "detail_in_box": "Back film, squeegee card, alcohol wipe and dry cloth.",
+        "detail_fit": "Cut for each listed model, including the camera island and buttons.",
+        "detail_care": "Wipe with a damp cloth. It peels off cleanly with no residue."
+      },
+      "variants": [
+        {
+          "sku": "ACC-FILCAR-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAA56",
+          "modelSlug": "galaxy-a56",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-ON13",
+          "modelSlug": "oneplus-13",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-ONNCE4",
+          "modelSlug": "oneplus-nord-ce4",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-REN14P",
+          "modelSlug": "redmi-note-14-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-REN13",
+          "modelSlug": "redmi-note-13",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-RE13P",
+          "modelSlug": "realme-13-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-RE14P",
+          "modelSlug": "realme-14-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-VIV40",
+          "modelSlug": "vivo-v40",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-VIV50",
+          "modelSlug": "vivo-v50",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-NOP3A",
+          "modelSlug": "nothing-phone-3a",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-PI9A",
+          "modelSlug": "pixel-9a",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IPD",
+          "modelSlug": "iphone-duo",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
         }
       ]
     }

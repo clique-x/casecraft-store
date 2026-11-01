@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, useTransition, type ReactNode } from 'react';
-import { addToCart, getCart, setLineQuantity } from './actions';
+import { addManyToCart, addToCart, getCart, setLineQuantity } from './actions';
 import type { CartSummary } from './types';
 
 interface CartState {
@@ -15,6 +15,8 @@ interface CartState {
   drawerOpen: boolean;
   setDrawerOpen: (open: boolean) => void;
   add: (variantId: string, options?: { openDrawer?: boolean }) => Promise<boolean>;
+  /** Several variants at once: a cover with add-ons, or a ready-made bundle. */
+  addMany: (variantIds: string[], options?: { openDrawer?: boolean }) => Promise<boolean>;
   setQuantity: (lineId: string, quantity: number) => Promise<void>;
   refresh: () => Promise<void>;
   /** Replaces the local copy, e.g. after checkout saved the address. */
@@ -59,6 +61,18 @@ export function CartProvider({ enabled, children }: { enabled: boolean; children
     [],
   );
 
+  const addMany = useCallback(async (variantIds: string[], options?: { openDrawer?: boolean }) => {
+    setError(null);
+    const result = await addManyToCart(variantIds);
+    if (!result.ok) {
+      setError(result.error);
+      return false;
+    }
+    startTransition(() => setCart(result.value));
+    if (options?.openDrawer !== false) setDrawerOpen(true);
+    return true;
+  }, []);
+
   const setQuantity = useCallback(async (lineId: string, quantity: number) => {
     setError(null);
     const result = await setLineQuantity(lineId, quantity);
@@ -67,8 +81,8 @@ export function CartProvider({ enabled, children }: { enabled: boolean; children
   }, []);
 
   const value = useMemo<CartState>(
-    () => ({ enabled, cart, ready, pending, error, drawerOpen, setDrawerOpen, add, setQuantity, refresh, replace: setCart }),
-    [enabled, cart, ready, pending, error, drawerOpen, add, setQuantity, refresh],
+    () => ({ enabled, cart, ready, pending, error, drawerOpen, setDrawerOpen, add, addMany, setQuantity, refresh, replace: setCart }),
+    [enabled, cart, ready, pending, error, drawerOpen, add, addMany, setQuantity, refresh],
   );
   return <CartContext value={value}>{children}</CartContext>;
 }

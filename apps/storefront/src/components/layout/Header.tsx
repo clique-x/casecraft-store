@@ -13,6 +13,7 @@ const NAV = [
   { href: '/trending', label: 'Trending' },
   { href: '/categories', label: 'Looks' },
   { href: '/phones', label: 'Phones' },
+  { href: '/accessories', label: 'Accessories' },
 ] as const;
 
 const ICON_LINK =

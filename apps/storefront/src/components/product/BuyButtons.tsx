@@ -20,13 +20,15 @@ interface BuyButtonsProps {
   whatsappHref: string;
   /** Shown inside Buy now, e.g. "₹1,149"; the sticky bar uses it on phones where there is no price column. */
   priceLabel?: string;
+  /** Add-on variants (screen guard, lens protector) added together with the cover. */
+  extraVariantIds?: readonly string[];
   className?: string;
 }
 
 /** Add to cart + Buy now, shared by the buy box and the sticky bar. */
-export function BuyButtons({ variantId, soldOut, whatsappHref, priceLabel, className }: BuyButtonsProps) {
+export function BuyButtons({ variantId, soldOut, whatsappHref, priceLabel, extraVariantIds = [], className }: BuyButtonsProps) {
   const router = useRouter();
-  const { enabled, add } = useCart();
+  const { enabled, add, addMany } = useCart();
   const [busy, setBusy] = useState<'add' | 'buy' | null>(null);
 
   const price = priceLabel ? <span className="font-medium text-paper/70 tabular-nums">· {priceLabel}</span> : null;
@@ -62,7 +64,10 @@ export function BuyButtons({ variantId, soldOut, whatsappHref, priceLabel, class
   const run = async (kind: 'add' | 'buy') => {
     if (!variantId || busy) return;
     setBusy(kind);
-    const ok = await add(variantId, { openDrawer: kind === 'add' });
+    const ok =
+      extraVariantIds.length > 0
+        ? await addMany([variantId, ...extraVariantIds], { openDrawer: kind === 'add' })
+        : await add(variantId, { openDrawer: kind === 'add' });
     setBusy(null);
     if (ok && kind === 'buy') router.push('/checkout');
   };
@@ -78,7 +83,7 @@ export function BuyButtons({ variantId, soldOut, whatsappHref, priceLabel, class
         className={cn(BASE, OUTLINE)}
       >
         {busy === 'add' && <Loader2 className="size-4 animate-spin" aria-hidden="true" />}
-        {noPhone ? 'Choose phone' : 'Add to cart'}
+        {noPhone ? 'Choose phone' : extraVariantIds.length > 0 ? `Add ${extraVariantIds.length + 1} to cart` : 'Add to cart'}
       </button>
       <button type="button" onClick={() => run('buy')} disabled={noPhone || busy !== null} className={cn(BASE, SOLID)}>
         {busy === 'buy' && <Loader2 className="size-4 animate-spin" aria-hidden="true" />}

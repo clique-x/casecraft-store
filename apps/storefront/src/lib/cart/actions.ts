@@ -78,7 +78,10 @@ function toSummary(cart: HttpTypes.StoreCart): CartSummary {
       thumbnail: item.thumbnail ?? null,
       quantity: item.quantity,
       unitPrice: Number(item.unit_price ?? 0),
-      total: Number(item.total ?? Number(item.unit_price ?? 0) * item.quantity),
+      // The store API leaves line totals empty by default; the promotion adjustments are there.
+      total:
+        Number(item.unit_price ?? 0) * item.quantity -
+        (item.adjustments ?? []).reduce((n, adj) => n + Number(adj?.amount ?? 0), 0),
     }))
     .sort((a, b) => a.id.localeCompare(b.id));
   return {
@@ -144,6 +147,23 @@ export async function addToCart(variantId: string, quantity = 1): Promise<Action
     }
     const { cart: next } = await api().store.cart.createLineItem(cart.id, { variant_id: variantId, quantity });
     return toSummary(next);
+  });
+}
+
+/** Adds several variants in one go (a cover with its add-ons, or a ready-made bundle). */
+export async function addManyToCart(variantIds: string[]): Promise<ActionResult<CartSummary>> {
+  return guard(async () => {
+    const ids = [...new Set(variantIds.filter(Boolean))];
+    if (ids.length === 0) throw new Error('Nothing to add.');
+    let cart = await loadOrCreateCart();
+    for (const variantId of ids) {
+      const existing = cart.items?.find((i) => i.variant_id === variantId);
+      const res = existing
+        ? await api().store.cart.updateLineItem(cart.id, existing.id, { quantity: Math.min(MAX_QTY, existing.quantity + 1) })
+        : await api().store.cart.createLineItem(cart.id, { variant_id: variantId, quantity: 1 });
+      cart = res.cart;
+    }
+    return toSummary(cart);
   });
 }
 

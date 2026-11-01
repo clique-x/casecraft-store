@@ -16,6 +16,7 @@ interface RelatedRowsProps {
 
 /** Photo covers group by look; procedural designs by theme. */
 function groupOf(product: ProductDetail): { name: string; href: string } {
+  if (product.accessory) return { name: 'Protection', href: '/accessories' };
   const photo = product.photo;
   const look = photo ? LOOKS.find((l) => l.handle === photo.look) : undefined;
   if (look) return { name: look.name, href: `/categories/${look.handle}` };

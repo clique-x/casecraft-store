@@ -341,6 +341,14 @@
   color: var(--color-accent-2);
 }
 
+/* Checkout has its own fixed action bar on phones; the floating WhatsApp button would cover it.
+   CSS rather than usePathname(), which would make every route dynamic under cacheComponents. */
+@media (max-width: 63.99rem) {
+  body:has(#checkout-form) [data-whatsapp-fab] {
+    display: none;
+  }
+}
+
 /* Sections below the first screens render lazily */
 @utility cv-auto {
   content-visibility: auto;

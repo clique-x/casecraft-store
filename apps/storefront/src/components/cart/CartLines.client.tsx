@@ -2,7 +2,11 @@
 
 import Link from 'next/link';
 import { Minus, Plus, Trash2 } from 'lucide-react';
+import { AccessoryArt } from '@/components/accessory/AccessoryArt';
+import { ProcCaseThumb } from '@/components/product/ProcCaseThumb';
+import { ACCESSORIES } from '@/lib/catalog/accessories';
 import { formatInr } from '@/lib/catalog/photos';
+import { DESIGNS } from '@/lib/designs/catalog';
 import { useCart } from '@/lib/cart/cart-context';
 import type { CartLine } from '@/lib/cart/types';
 import { cn } from '@/lib/utils';
@@ -10,12 +14,21 @@ import { cn } from '@/lib/utils';
 const QTY_BTN =
   'grid size-8 place-items-center rounded-md text-fg transition-colors outline-none hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-brand disabled:opacity-40';
 
+/** Photo covers have a Medusa thumbnail; accessories and printed designs are drawn from the catalogue. */
 function Thumb({ line }: { line: CartLine }) {
+  const accessory = line.productHandle ? ACCESSORIES.find((a) => a.handle === line.productHandle) : undefined;
+  const design = !accessory && line.productHandle ? DESIGNS.find((d) => d.handle === line.productHandle) : undefined;
   return (
     <div className="h-20 w-16 shrink-0 overflow-hidden rounded-lg bg-surface-2">
       {line.thumbnail ? (
         // eslint-disable-next-line @next/next/no-img-element -- Medusa thumbnail URL, small fixed size
         <img src={line.thumbnail} alt="" width={64} height={80} className="size-full object-contain" />
+      ) : accessory ? (
+        <AccessoryArt accessory={accessory} />
+      ) : design ? (
+        <div className="mx-auto h-full w-10 py-1.5">
+          <ProcCaseThumb design={design} className="h-full w-full" />
+        </div>
       ) : null}
     </div>
   );
@@ -45,7 +58,12 @@ export function CartLines({ lines, editable = true, onNavigate }: { lines: CartL
                 )}
                 {line.variantTitle && <p className="text-caption text-fg-muted">{line.variantTitle}</p>}
               </div>
-              <p className="shrink-0 text-sm font-bold text-fg tabular-nums">{formatInr(line.total)}</p>
+              <p className="shrink-0 text-right text-sm font-bold text-fg tabular-nums">
+                {formatInr(line.total)}
+                {line.total < line.unitPrice * line.quantity && (
+                  <s className="block text-caption font-normal text-fg-muted">{formatInr(line.unitPrice * line.quantity)}</s>
+                )}
+              </p>
             </div>
             {editable ? (
               <div className="mt-auto flex items-center justify-between">

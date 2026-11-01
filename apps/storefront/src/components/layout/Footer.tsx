@@ -20,6 +20,7 @@ const COLUMNS: readonly { heading: string; links: readonly { href: string; label
       { href: '/trending', label: 'Trending' },
       { href: '/categories', label: 'Shop by look' },
       { href: '/phones', label: 'Shop by phone' },
+      { href: '/accessories', label: 'Screen guards & protection' },
       { href: '/search', label: 'Search' },
     ],
   },

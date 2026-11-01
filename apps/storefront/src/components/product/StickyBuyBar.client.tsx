@@ -12,10 +12,13 @@ import { SPRING_UI } from '@/lib/motion/tokens';
 import { usePickerSheetOpen } from '@/lib/phone/picker-sheet-store';
 import { useVariantSelection } from '@/lib/product/variant-store';
 import { askOnWhatsAppHref } from '@/lib/product/whatsapp-link';
+import { addonVariantIds } from '@/lib/product/addons';
+import { useSelectedAddons } from '@/lib/product/addon-store';
 
 interface StickyBuyBarProps {
   product: ProductDetail;
   models: PhoneModel[];
+  accessories?: readonly ProductDetail[];
 }
 
 /** Photo products carry one variant per model and no case type. */
@@ -30,8 +33,9 @@ function variantFor(product: ProductDetail, modelSlug: string | null, caseType: 
  * leave the screen, on every screen size, and hides again over the footer. It slides away
  * (but stays mounted) while the picker sheet is open, for the same focus-return reason as StickyPhoneCta.
  */
-export function StickyBuyBar({ product, models }: StickyBuyBarProps) {
+export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBarProps) {
   const selection = useVariantSelection();
+  const selectedAddons = useSelectedAddons();
   const sheetOpen = usePickerSheetOpen();
   const actionsInView = useInView('#buy-actions');
   const footerInView = useInView('footer');
@@ -91,6 +95,7 @@ export function StickyBuyBar({ product, models }: StickyBuyBarProps) {
               variantId={variant?.id ?? null}
               soldOut={soldOut}
               whatsappHref={whatsappHref}
+              extraVariantIds={product.accessory ? [] : addonVariantIds(accessories, selectedAddons, model?.slug ?? null)}
               priceLabel={priceLabel}
               className="w-full md:w-[22rem] md:shrink-0 md:[&>button>span]:hidden"
             />

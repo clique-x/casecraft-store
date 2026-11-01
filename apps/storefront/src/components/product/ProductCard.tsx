@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { AccessoryCard } from '@/components/accessory/AccessoryCard'
 import { TiltCard } from '@/components/motion/TiltCard.client'
 import { FitsLine } from '@/components/product/FitsLine.client'
 import { PhotoCard } from '@/components/product/PhotoCard'
@@ -25,6 +26,9 @@ interface ProductCardProps {
 
 /** Photo products render the photographed card; procedural designs keep the CSS thumb. */
 export function ProductCard({ product, rank, modelCount, priority, className }: ProductCardProps) {
+  if (product.accessory) {
+    return <AccessoryCard product={product} className={className} />
+  }
   if (hasPhoto(product)) {
     return <PhotoCard product={product} rank={rank} priority={priority} className={className} />
   }
