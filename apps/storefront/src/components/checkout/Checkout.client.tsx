@@ -9,7 +9,8 @@ import { BRAND_NAME } from '@/lib/brand';
 import { formatInr } from '@/lib/catalog/photos';
 import { getCheckoutOptions, placeOrder, saveCheckoutDetails, startPayment } from '@/lib/cart/actions';
 import { useCart } from '@/lib/cart/cart-context';
-import { INDIAN_STATES, lookupPincode } from '@/lib/cart/india';
+import { clearSavedDetails, readSavedDetails, writeSavedDetails } from '@/lib/cart/saved-details';
+import { AddressFields, INPUT } from './AddressFields.client';
 import type { CartAddress, CheckoutOptions, RazorpayLaunch } from '@/lib/cart/types';
 import { cn } from '@/lib/utils';
 
@@ -49,8 +50,6 @@ const EMPTY_ADDRESS: CartAddress = {
   postalCode: '',
 };
 
-const INPUT =
-  'h-12 w-full rounded-[10px] border border-border bg-paper px-3.5 text-[0.9375rem] text-fg placeholder:text-fg-muted/70 outline-none transition-colors focus:border-fg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-brand';
 const LABEL = 'flex flex-col gap-1.5 text-sm font-medium text-fg';
 
 function Field({ label, className, children }: { label: string; className?: string; children: React.ReactNode }) {
@@ -87,15 +86,35 @@ export function Checkout() {
       </div>
     );
   }
-  // Keyed by cart so a different cart starts a fresh form, prefilled from what that cart saved.
-  return <CheckoutForm key={cart.id} initialEmail={cart.email ?? ''} initialAddress={cart.address ?? EMPTY_ADDRESS} />;
+  // Keyed by cart so a different cart starts a fresh form. Prefill: what this cart saved, else the
+  // details from this browser's last checkout. This only renders on the client (ready is false on the server).
+  const saved = cart.address ? null : readSavedDetails();
+  return (
+    <CheckoutForm
+      key={cart.id}
+      initialEmail={cart.email ?? saved?.email ?? ''}
+      initialAddress={cart.address ?? saved?.address ?? EMPTY_ADDRESS}
+      fromSaved={saved !== null}
+    />
+  );
 }
 
-function CheckoutForm({ initialEmail, initialAddress }: { initialEmail: string; initialAddress: CartAddress }) {
+function CheckoutForm({
+  initialEmail,
+  initialAddress,
+  fromSaved,
+}: {
+  initialEmail: string;
+  initialAddress: CartAddress;
+  fromSaved: boolean;
+}) {
   const router = useRouter();
   const { cart, replace } = useCart();
   const [email, setEmail] = useState(initialEmail);
   const [address, setAddress] = useState<CartAddress>(initialAddress);
+  const [showSavedNote, setShowSavedNote] = useState(fromSaved);
+  // Remounts the address block (its local name and pincode state) after "Clear".
+  const [formKey, setFormKey] = useState(0);
   const [options, setOptions] = useState<CheckoutOptions | null>(null);
   const [shippingId, setShippingId] = useState<string | null>(null);
   const [providerId, setProviderId] = useState<string | null>(null);
@@ -122,25 +141,10 @@ function CheckoutForm({ initialEmail, initialAddress }: { initialEmail: string; 
     // Re-read when the subtotal changes: free shipping depends on it.
   }, [hasItems, itemSubtotal]);
 
-  // Pincode → city and state.
-  useEffect(() => {
-    const pin = address.postalCode.trim();
-    if (!/^[1-9]\d{5}$/.test(pin)) return;
-    const ctrl = new AbortController();
-    lookupPincode(pin, ctrl.signal).then((found) => {
-      if (!found) return;
-      setAddress((a) => ({ ...a, city: a.city || found.city, province: found.state }));
-    });
-    return () => ctrl.abort();
-  }, [address.postalCode]);
-
   const shipping = options?.shipping.find((s) => s.id === shippingId) ?? null;
   const payment = options?.payment.find((p) => p.providerId === providerId) ?? null;
   const shippingAmount = shipping?.amount ?? 0;
   const total = useMemo(() => (cart ? cart.itemSubtotal - cart.discountTotal + shippingAmount : 0), [cart, shippingAmount]);
-
-  const set = (key: keyof CartAddress) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
-    setAddress((a) => ({ ...a, [key]: e.target.value }));
 
   const finish = async () => {
     setStage('placing');
@@ -195,6 +199,7 @@ function CheckoutForm({ initialEmail, initialAddress }: { initialEmail: string; 
       return;
     }
     replace(saved.value);
+    writeSavedDetails({ email, address });
     const started = await startPayment(providerId);
     if (!started.ok) {
       setError(started.error);
@@ -220,10 +225,25 @@ function CheckoutForm({ initialEmail, initialAddress }: { initialEmail: string; 
     <form onSubmit={submit} className="grid gap-10 lg:grid-cols-12 lg:items-start" noValidate={false}>
       <div className="flex flex-col gap-8 lg:col-span-7">
         <Section step={1} title="Contact">
+          {showSavedNote && (
+            <p className="flex flex-wrap items-center gap-x-2 rounded-[10px] bg-surface-2 px-3 py-2.5 text-sm text-fg">
+              We filled in your details from your last order on this device.
+              <button
+                type="button"
+                className="font-semibold text-brand underline-offset-4 hover:underline"
+                onClick={() => {
+                  clearSavedDetails();
+                  setEmail('');
+                  setAddress(EMPTY_ADDRESS);
+                  setShowSavedNote(false);
+                  setFormKey((k) => k + 1);
+                }}
+              >
+                Not you? Clear
+              </button>
+            </p>
+          )}
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Email">
-              <input className={INPUT} type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" />
-            </Field>
             <Field label="Mobile number">
               <div className="flex">
                 <span className="grid h-12 place-items-center rounded-l-[10px] border border-r-0 border-border bg-surface-2 px-3 text-sm text-fg-muted">+91</span>
@@ -242,53 +262,15 @@ function CheckoutForm({ initialEmail, initialAddress }: { initialEmail: string; 
                 />
               </div>
             </Field>
+            <Field label="Email for your receipt">
+              <input className={INPUT} type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" />
+            </Field>
           </div>
-          <p className="text-caption text-fg-muted">We send order updates here. The courier calls this number on delivery.</p>
+          <p className="text-caption text-fg-muted">The courier calls this number on delivery.</p>
         </Section>
 
         <Section step={2} title="Delivery address">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="First name">
-              <input className={INPUT} autoComplete="given-name" required value={address.firstName} onChange={set('firstName')} />
-            </Field>
-            <Field label="Last name">
-              <input className={INPUT} autoComplete="family-name" value={address.lastName} onChange={set('lastName')} />
-            </Field>
-            <Field label="Flat, house no., building" className="sm:col-span-2">
-              <input className={INPUT} autoComplete="address-line1" required value={address.address1} onChange={set('address1')} />
-            </Field>
-            <Field label="Area, street, landmark (optional)" className="sm:col-span-2">
-              <input className={INPUT} autoComplete="address-line2" value={address.address2} onChange={set('address2')} />
-            </Field>
-            <Field label="Pincode">
-              <input
-                className={INPUT}
-                inputMode="numeric"
-                autoComplete="postal-code"
-                required
-                pattern="[1-9][0-9]{5}"
-                maxLength={6}
-                title="6-digit pincode"
-                value={address.postalCode}
-                onChange={(e) => setAddress((a) => ({ ...a, postalCode: e.target.value.replace(/\D/g, '').slice(0, 6) }))}
-              />
-            </Field>
-            <Field label="City">
-              <input className={INPUT} autoComplete="address-level2" required value={address.city} onChange={set('city')} />
-            </Field>
-            <Field label="State" className="sm:col-span-2">
-              <select className={INPUT} autoComplete="address-level1" required value={address.province} onChange={set('province')}>
-                <option value="" disabled>
-                  Choose your state
-                </option>
-                {INDIAN_STATES.map((s) => (
-                  <option key={s} value={s}>
-                    {s}
-                  </option>
-                ))}
-              </select>
-            </Field>
-          </div>
+          <AddressFields key={formKey} address={address} setAddress={setAddress} />
         </Section>
 
         <Section step={3} title="Delivery">
