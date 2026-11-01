@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Check, Loader2, Plus, Smartphone } from 'lucide-react';
 import { AccessoryArt } from '@/components/accessory/AccessoryArt';
+import { CoverCarousel } from '@/components/home/CoverCarousel.client';
+import { phoneHref } from '@/components/phone-picker/BrandOutline';
 import { ProcCaseThumb } from '@/components/product/ProcCaseThumb';
 import { BUNDLE_SAVING_INR, bundlePrice, kitsFor, type AccessoryEntry } from '@/lib/catalog/accessories';
 import { formatInr, photoSrc } from '@/lib/catalog/photos';
@@ -37,7 +39,6 @@ export interface ComboAccessory {
 }
 
 const MOST_PICKED = 'full';
-const COVER_CHOICES = 8;
 
 function CoverThumb({ cover }: { cover: ComboCover }) {
   if (cover.photoId !== null) {
@@ -61,7 +62,8 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
   const [busy, setBusy] = useState<string | null>(null);
 
   const slug = phone?.slug ?? null;
-  const choices = slug ? covers.filter((c) => inStock(c.variants, slug)).slice(0, COVER_CHOICES) : [];
+  // Every in-stock design for this phone, trending first.
+  const choices = slug ? covers.filter((c) => inStock(c.variants, slug)) : [];
   const cover = choices.find((c) => c.id === picked) ?? choices[0] ?? null;
   const coverVariant = cover && slug ? inStock(cover.variants, slug) : null;
   const cheapestCover = Math.min(...covers.flatMap((c) => c.variants.map((v) => v.priceInr)));
@@ -106,32 +108,20 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
           </button>
         </div>
 
-        {choices.length > 1 && (
-          <div className="mt-8">
-            <p className="text-sm font-semibold text-fg">Choose the cover</p>
-            <ul aria-label="Covers for the combos" className="mt-3 flex gap-2.5 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {choices.map((c) => {
-                const on = c.id === cover?.id;
-                return (
-                  <li key={c.id} className="shrink-0">
-                    <button
-                      type="button"
-                      aria-pressed={on}
-                      aria-label={c.title}
-                      title={c.title}
-                      onClick={() => setPicked(c.id)}
-                      className={cn(
-                        'block h-24 w-16 overflow-hidden rounded-xl border-2 bg-paper p-1 transition-colors outline-none focus-visible:outline-2 focus-visible:outline-brand',
-                        on ? 'border-fg' : 'border-transparent hover:border-fg/30',
-                      )}
-                    >
-                      <CoverThumb cover={c} />
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+        {phone && choices.length > 1 && (
+          <CoverCarousel
+            covers={choices.map((c) => ({
+              id: c.id,
+              handle: c.handle,
+              title: c.title,
+              priceInr: inStock(c.variants, phone.slug)?.priceInr ?? 0,
+              thumb: <CoverThumb cover={c} />,
+            }))}
+            selectedId={cover?.id ?? null}
+            onSelect={setPicked}
+            phoneName={phone.model}
+            allHref={phoneHref(phone)}
+          />
         )}
 
         {/* Phones: swipe one combo at a time, the next one peeking in. Larger screens: a grid. */}
