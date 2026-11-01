@@ -7,7 +7,7 @@ import { trackOrder, type TrackedOrder } from '@/lib/cart/track';
 import { cn } from '@/lib/utils';
 
 const INPUT =
-  'h-12 w-full rounded-[10px] border border-border bg-paper px-3.5 text-[0.9375rem] text-fg outline-none transition-colors focus:border-fg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-brand';
+  'h-12 w-full rounded-[10px] border border-border bg-paper px-3.5 text-base text-fg outline-none transition-colors focus:border-fg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-brand';
 
 const STEPS = ['Order placed', 'Packed', 'Shipped', 'Delivered'] as const;
 

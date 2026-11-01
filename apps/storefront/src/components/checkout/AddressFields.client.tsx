@@ -8,7 +8,7 @@ import type { CartAddress } from '@/lib/cart/types';
 import { cn } from '@/lib/utils';
 
 export const INPUT =
-  'h-12 w-full rounded-[10px] border border-border bg-paper px-3.5 text-[0.9375rem] text-fg placeholder:text-fg-muted/70 outline-none transition-colors focus:border-fg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-brand';
+  'h-12 w-full rounded-[10px] border border-border bg-paper px-3.5 text-base text-fg placeholder:text-fg-muted/70 outline-none transition-colors focus:border-fg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-brand';
 const LABEL = 'flex flex-col gap-1.5 text-sm font-medium text-fg';
 
 type PinStatus = 'idle' | 'checking' | 'found' | 'unknown';
@@ -94,7 +94,7 @@ export function AddressFields({ address, setAddress }: Props) {
           type="button"
           onClick={useLocation}
           disabled={locating}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-[10px] border border-brand/30 bg-brand/5 px-4 text-[0.9375rem] font-semibold text-brand transition-colors outline-none hover:bg-brand/10 focus-visible:outline-2 focus-visible:outline-brand disabled:opacity-70"
+          className="inline-flex h-12 items-center justify-center gap-2 rounded-[10px] border border-brand/30 bg-brand/5 px-4 text-base font-semibold text-brand transition-colors outline-none hover:bg-brand/10 focus-visible:outline-2 focus-visible:outline-brand disabled:opacity-70"
         >
           {locating ? <Loader2 className="size-4.5 animate-spin" aria-hidden="true" /> : <LocateFixed className="size-4.5" aria-hidden="true" />}
           {locating ? 'Finding your address…' : 'Use my current location'}
