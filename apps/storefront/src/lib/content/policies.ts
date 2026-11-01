@@ -288,7 +288,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
             'Your phone model, if you choose it on the site. It is saved in a small cookie on your device so we can show covers that fit; it is not linked to your name.',
             'Basic technical data that every website receives, such as your browser type and IP address, kept in server logs for security.',
             'Your location, only if you tap "Use my current location" at checkout and allow it. Your browser sends it to OpenStreetMap to look up your address; we do not store it.',
-            'Your contact and address from your last checkout, saved only in your own browser so the next checkout is filled in. You can clear it with "Not you? Clear" at checkout.',
+            'Your email and up to three delivery addresses from past checkouts, saved only in your own browser so you can pick one next time. Remove one with "Remove", or all of them with "Not you? Clear" at checkout.',
           ),
           p(
             'We do not see or store your card number, UPI PIN or netbanking password. Online payments are entered directly with Razorpay, our payment provider.',

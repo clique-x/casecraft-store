@@ -9,8 +9,9 @@ import { BRAND_NAME } from '@/lib/brand';
 import { formatInr } from '@/lib/catalog/photos';
 import { getCheckoutOptions, placeOrder, saveCheckoutDetails, startPayment } from '@/lib/cart/actions';
 import { useCart } from '@/lib/cart/cart-context';
-import { clearSavedDetails, readSavedDetails, writeSavedDetails } from '@/lib/cart/saved-details';
+import { clearSavedDetails, forgetAddress, readSavedDetails, rememberAddress } from '@/lib/cart/saved-details';
 import { AddressFields, INPUT } from './AddressFields.client';
+import { SavedAddresses } from './SavedAddresses.client';
 import type { CartAddress, CheckoutOptions, RazorpayLaunch } from '@/lib/cart/types';
 import { cn } from '@/lib/utils';
 
@@ -88,31 +89,40 @@ export function Checkout() {
   }
   // Keyed by cart so a different cart starts a fresh form. Prefill: what this cart saved, else the
   // details from this browser's last checkout. This only renders on the client (ready is false on the server).
-  const saved = cart.address ? null : readSavedDetails();
+  const saved = readSavedDetails();
   return (
     <CheckoutForm
       key={cart.id}
       initialEmail={cart.email ?? saved?.email ?? ''}
-      initialAddress={cart.address ?? saved?.address ?? EMPTY_ADDRESS}
-      fromSaved={saved !== null}
+      cartAddress={cart.address}
+      savedAddresses={saved?.addresses ?? []}
     />
   );
 }
 
+function sameAddress(a: CartAddress, b: CartAddress): boolean {
+  return a.address1 === b.address1 && a.postalCode === b.postalCode && a.phone === b.phone;
+}
+
 function CheckoutForm({
   initialEmail,
-  initialAddress,
-  fromSaved,
+  cartAddress,
+  savedAddresses,
 }: {
   initialEmail: string;
-  initialAddress: CartAddress;
-  fromSaved: boolean;
+  cartAddress: CartAddress | null;
+  savedAddresses: CartAddress[];
 }) {
   const router = useRouter();
   const { cart, replace } = useCart();
   const [email, setEmail] = useState(initialEmail);
-  const [address, setAddress] = useState<CartAddress>(initialAddress);
-  const [showSavedNote, setShowSavedNote] = useState(fromSaved);
+  // Start on the saved-address cards when there are any, with this cart's address (or the last used) selected.
+  const [saved, setSaved] = useState<CartAddress[]>(savedAddresses);
+  const cartMatch = cartAddress ? savedAddresses.findIndex((a) => sameAddress(a, cartAddress)) : -1;
+  const [selected, setSelected] = useState(cartMatch >= 0 ? cartMatch : 0);
+  const [mode, setMode] = useState<'saved' | 'new'>(savedAddresses.length > 0 && (!cartAddress || cartMatch >= 0) ? 'saved' : 'new');
+  const [address, setAddress] = useState<CartAddress>(cartAddress ?? savedAddresses[0] ?? EMPTY_ADDRESS);
+  const [showSavedNote, setShowSavedNote] = useState(savedAddresses.length > 0 && !cartAddress);
   // Remounts the address block (its local name and pincode state) after "Clear".
   const [formKey, setFormKey] = useState(0);
   const [options, setOptions] = useState<CheckoutOptions | null>(null);
@@ -199,7 +209,7 @@ function CheckoutForm({
       return;
     }
     replace(saved.value);
-    writeSavedDetails({ email, address });
+    rememberAddress(email, address);
     const started = await startPayment(providerId);
     if (!started.ok) {
       setError(started.error);
@@ -233,6 +243,8 @@ function CheckoutForm({
                 className="font-semibold text-brand underline-offset-4 hover:underline"
                 onClick={() => {
                   clearSavedDetails();
+                  setSaved([]);
+                  setMode('new');
                   setEmail('');
                   setAddress(EMPTY_ADDRESS);
                   setShowSavedNote(false);
@@ -270,7 +282,58 @@ function CheckoutForm({
         </Section>
 
         <Section step={2} title="Delivery address">
-          <AddressFields key={formKey} address={address} setAddress={setAddress} />
+          {mode === 'saved' && saved.length > 0 ? (
+            <SavedAddresses
+              addresses={saved}
+              selected={selected}
+              onSelect={(i) => {
+                setSelected(i);
+                // Keep a phone number the visitor just typed above if the saved one is empty.
+                setAddress((cur) => ({ ...saved[i], phone: saved[i].phone || cur.phone }));
+              }}
+              onEdit={(i) => {
+                setAddress(saved[i]);
+                setMode('new');
+                setFormKey((k) => k + 1);
+              }}
+              onRemove={(i) => {
+                const next = forgetAddress(saved[i])?.addresses ?? [];
+                setSaved(next);
+                if (next.length === 0) {
+                  setMode('new');
+                  setAddress((cur) => ({ ...EMPTY_ADDRESS, phone: cur.phone }));
+                  setFormKey((k) => k + 1);
+                  return;
+                }
+                const nextIndex = Math.min(i, next.length - 1);
+                setSelected(nextIndex);
+                setAddress(next[nextIndex]);
+              }}
+              onAddNew={() => {
+                setMode('new');
+                setAddress((cur) => ({ ...EMPTY_ADDRESS, phone: cur.phone }));
+                setFormKey((k) => k + 1);
+              }}
+            />
+          ) : (
+            <>
+              {saved.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMode('saved');
+                    const i = Math.min(selected, saved.length - 1);
+                    setSelected(i);
+                    setAddress(saved[i]);
+                  }}
+                  className="self-start text-sm font-semibold text-brand underline-offset-4 hover:underline"
+                >
+                  ← Use a saved address ({saved.length})
+                </button>
+              )}
+              <AddressFields key={formKey} address={address} setAddress={setAddress} />
+            </>
+          )}
         </Section>
 
         <Section step={3} title="Delivery">
