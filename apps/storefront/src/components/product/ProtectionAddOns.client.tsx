@@ -26,17 +26,30 @@ export function ProtectionAddOns({ accessories, model, coverPrice }: Props) {
   if (!enabled || offers.length === 0) return null;
 
   const chosen = offers.filter((a) => selected.includes(a.accessory!.id) && accessoryVariant(a, model?.slug ?? null));
+  const availableIds = offers.filter((a) => accessoryVariant(a, model?.slug ?? null)).map((a) => a.accessory!.id);
+  const allChosen = availableIds.length > 0 && availableIds.every((id) => selected.includes(id));
   const addOnTotal = chosen.reduce((n, a) => n + bundlePrice(a.priceFromInr), 0);
   // Savings are against today's selling price, the same ₹50 each the cart shows as "Bundle saving".
   const saved = chosen.reduce((n, a) => n + a.priceFromInr - bundlePrice(a.priceFromInr), 0);
 
   return (
     <section aria-labelledby="addons-heading" className="flex flex-col gap-3 rounded-xl border border-border p-4">
-      <div className="flex items-baseline justify-between gap-3">
-        <h2 id="addons-heading" className="text-sm font-bold text-fg">
-          Complete the protection
-        </h2>
-        <span className="text-caption font-semibold text-brand">Bundle price with this cover</span>
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h2 id="addons-heading" className="text-sm font-bold text-fg">
+            Complete the protection
+          </h2>
+          <p className="text-caption font-semibold text-brand">Bundle price with this cover</p>
+        </div>
+        {availableIds.length > 1 && (
+          <button
+            type="button"
+            onClick={() => addonStore.set(allChosen ? [] : availableIds)}
+            className="shrink-0 rounded-full border border-border px-3 py-1.5 text-caption font-semibold text-fg transition-colors hover:border-fg"
+          >
+            {allChosen ? 'Clear all' : `Select all ${availableIds.length}`}
+          </button>
+        )}
       </div>
       <ul className="flex flex-col gap-2">
         {offers.map((a) => {
