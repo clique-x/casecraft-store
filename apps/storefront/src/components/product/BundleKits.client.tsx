@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Loader2, Plus } from 'lucide-react';
 import { AccessoryArt } from '@/components/accessory/AccessoryArt';
 import { ProcCaseThumb } from '@/components/product/ProcCaseThumb';
-import { BUNDLE_KITS, bundlePrice } from '@/lib/catalog/accessories';
+import { bundlePrice, kitsFor } from '@/lib/catalog/accessories';
 import { formatInr, photoSrc } from '@/lib/catalog/photos';
 import { useCart } from '@/lib/cart/cart-context';
 import { getDesign } from '@/lib/designs/catalog';
@@ -44,7 +44,7 @@ export function BundleKits({ product, accessories, models }: Props) {
 
   const model = models.find((m) => m.slug === modelSlug) ?? null;
   const cover = coverVariant(product, modelSlug, caseType);
-  const kits = BUNDLE_KITS.map((kit) => {
+  const kits = kitsFor(modelSlug).map((kit) => {
     const items = kit.accessoryIds
       .map((id) => accessories.find((a) => a.accessory?.id === id))
       .filter((a): a is ProductDetail => Boolean(a));
@@ -65,7 +65,7 @@ export function BundleKits({ product, accessories, models }: Props) {
         </h2>
         <p className="mt-2 text-body text-fg-muted">This cover with the protection most people add. Everything is cut for the same phone.</p>
 
-        <ul className="mt-8 grid gap-4 md:grid-cols-3">
+        <ul className={cn('mt-8 grid gap-4 md:grid-cols-2', kits.length > 3 ? 'xl:grid-cols-4' : 'lg:grid-cols-3')}>
           {kits.map(({ kit, items, variantIds, regular, price, available }) => (
             <li key={kit.id} className="flex flex-col gap-4 rounded-xl border border-border bg-paper p-4">
               <div className="flex items-center gap-2" aria-hidden="true">

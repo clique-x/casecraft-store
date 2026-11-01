@@ -30,6 +30,7 @@ const SECTIONS: readonly { type: AccessoryType; heading: string; intro: string }
   { type: 'screen-guard', heading: 'Screen guards', intro: 'Tempered glass for the front, clear or privacy.' },
   { type: 'lens-protector', heading: 'Camera lens protectors', intro: 'Glass rings that keep the camera bump off the table.' },
   { type: 'back-film', heading: 'Full-frame back films', intro: 'For a bare phone: covers the back and sides.' },
+  { type: 'body-film', heading: 'Body protection film', intro: 'Clear, self-healing wrap for back, sides and camera. Cut for flagships only.' },
 ];
 
 export default async function AccessoriesPage() {

@@ -10,6 +10,9 @@ import { PhonePickerSection } from '@/components/home/PhonePickerSection';
 import { TrustSeam } from '@/components/home/TrustSeam';
 import { UpClose } from '@/components/home/UpClose';
 import { TrendingRow } from '@/components/home/TrendingRow';
+import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
+import type { ProductDetail } from '@/lib/medusa/fixtures';
+import { getAccessories, getAllProducts } from '@/lib/medusa/products';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { LookGrid } from '@/components/home/LookGrid';
 import { BrandRow } from '@/components/home/BrandRow';
@@ -70,13 +73,38 @@ function itemListJsonLd(products: HomeProduct[]): string {
   return JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 }
 
+/** Covers for the combo picker: trending first, then the rest; one soft-case variant per phone. */
+function toComboCovers(products: ProductDetail[]): ComboCover[] {
+  const rank = (p: ProductDetail) => p.trendingRank ?? 999;
+  return [...products]
+    .sort((a, b) => rank(a) - rank(b) || Number(Boolean(b.photo)) - Number(Boolean(a.photo)))
+    .map((p) => ({
+      id: p.id,
+      handle: p.handle,
+      title: p.title,
+      photoId: p.photo?.id ?? null,
+      designId: p.designId,
+      variants: p.variants
+        .filter((v) => v.caseType === 'soft')
+        .map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })),
+    }));
+}
+
 export default async function HomePage() {
-  const [trending, newArrivals, models, looks] = await Promise.all([
+  const [trending, newArrivals, models, looks, allCovers, accessories] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
     getLooks(),
+    getAllProducts(),
+    getAccessories(),
   ]);
+  const comboCovers = toComboCovers(allCovers);
+  const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
+    a.accessory
+      ? [{ entry: a.accessory, title: a.title, priceInr: a.priceFromInr, variants: a.variants.map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })) }]
+      : [],
+  );
 
   // The server never reads `my_phone`; HeroStage re-casts from the cookie on the client.
   const cast = castFor(null);
@@ -100,6 +128,7 @@ export default async function HomePage() {
       <TrustSeam />
       {front && <UpClose initial={front} />}
       <TrendingRow products={trending} />
+      <HomeCombos covers={comboCovers} accessories={comboAccessories} />
       <NewArrivalsRow products={newArrivals} models={models} />
       <LookGrid looks={looks} />
       <BrandRow brands={[...LAUNCH_BRANDS]} models={models} />

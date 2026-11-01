@@ -1,7 +1,7 @@
 /** Protection accessories sold per phone model, alongside the covers. Product content, not UI. */
 
-export type AccessoryType = 'screen-guard' | 'lens-protector' | 'back-film';
-export type AccessoryFinish = 'clear' | 'privacy' | 'glass' | 'matte' | 'carbon';
+export type AccessoryType = 'screen-guard' | 'lens-protector' | 'back-film' | 'body-film';
+export type AccessoryFinish = 'clear' | 'privacy' | 'glass' | 'matte' | 'carbon' | 'gloss';
 
 export interface AccessoryEntry {
   id: string;
@@ -16,12 +16,28 @@ export interface AccessoryEntry {
   description: string;
   features: [string, string, string];
   details: { material: string; inBox: string; fit: string; care: string };
+  /** Only these phone models (slugs); every model when absent. */
+  models?: readonly string[];
 }
+
+/** Current flagships in the catalogue; the body protection film is cut for these only. */
+export const FLAGSHIP_MODELS: readonly string[] = [
+  'iphone-16',
+  'iphone-16-pro',
+  'iphone-17',
+  'iphone-18-pro',
+  'iphone-duo',
+  'galaxy-s25',
+  'galaxy-z-fold-8',
+  'galaxy-z-fold-8-ultra',
+  'oneplus-13',
+];
 
 export const ACCESSORY_TYPE_LABEL: Record<AccessoryType, string> = {
   'screen-guard': 'Screen guard',
   'lens-protector': 'Camera lens protector',
   'back-film': 'Back film',
+  'body-film': 'Body protection film',
 };
 
 /**
@@ -130,6 +146,26 @@ export const ACCESSORIES: readonly AccessoryEntry[] = [
       care: 'Wipe with a damp cloth. It peels off cleanly with no residue.',
     },
   },
+  {
+    id: 'body-film',
+    handle: 'body-protection-film',
+    title: 'Body protection film',
+    type: 'body-film',
+    finish: 'gloss',
+    priceInr: 499,
+    regularInr: 899,
+    short: 'Clear wrap for back, sides and camera surround · flagships only',
+    description:
+      'A clear, self-healing film that wraps the whole body of the phone: back, side frame and the area around the camera, cut by machine for each flagship. It is thicker than our back films, nearly invisible, and keeps the phone looking new under or without a cover.',
+    features: ['Back, sides and camera surround', 'Self-healing, clear gloss finish', 'Cut only for flagship models'],
+    details: {
+      material: '0.2 mm thermoplastic polyurethane (TPU) with a self-healing top coat and UV-stable adhesive, so it does not yellow.',
+      inBox: 'Back panel film, two side-frame strips, camera surround piece, squeegee card, alcohol wipe and dry cloth.',
+      fit: 'Cut for each listed flagship, including the buttons, ports and camera island. Fits under our covers.',
+      care: 'Fine scratches fade in warm weather. It peels off cleanly with no residue.',
+    },
+    models: FLAGSHIP_MODELS,
+  },
 ];
 
 /** Ready-made kits shown on cover pages: the cover plus these accessories. */
@@ -138,10 +174,24 @@ export interface BundleKit {
   name: string;
   blurb: string;
   accessoryIds: string[];
+  /** Shown only for phones every listed accessory fits (the body film is flagship-only). */
+  flagshipOnly?: boolean;
 }
 
 export const BUNDLE_KITS: readonly BundleKit[] = [
   { id: 'essentials', name: 'Essentials', blurb: 'Cover + screen glass', accessoryIds: ['glass-clear'] },
   { id: 'full', name: 'Full protection', blurb: 'Cover + screen glass + lens protector', accessoryIds: ['glass-clear', 'lens-glass'] },
   { id: 'privacy', name: 'Privacy pack', blurb: 'Cover + privacy glass + lens protector', accessoryIds: ['glass-privacy', 'lens-glass'] },
+  {
+    id: 'total',
+    name: 'Total protection',
+    blurb: 'Cover + body film + screen glass + lens protector',
+    accessoryIds: ['body-film', 'glass-clear', 'lens-glass'],
+    flagshipOnly: true,
+  },
 ];
+
+/** Kits that apply to this phone: flagship-only kits appear for flagships. */
+export function kitsFor(modelSlug: string | null): BundleKit[] {
+  return BUNDLE_KITS.filter((k) => !k.flagshipOnly || (modelSlug !== null && FLAGSHIP_MODELS.includes(modelSlug)));
+}

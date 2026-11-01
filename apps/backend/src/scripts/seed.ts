@@ -1,8 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import type { ExecArgs } from '@medusajs/framework/types'
-import { ContainerRegistrationKeys, Modules, ProductStatus } from '@medusajs/framework/utils'
+import { ContainerRegistrationKeys, Modules, ProductStatus, RuleType } from '@medusajs/framework/utils'
 import {
+  batchPromotionRulesWorkflow,
   createApiKeysWorkflow,
   createCollectionsWorkflow,
   createInventoryLevelsWorkflow,
@@ -391,9 +392,26 @@ export default async function seed({ container }: ExecArgs) {
   // Bundle promotion -------------------------------------------------------------------------------
   // Automatic: every accessory (screen guard, lens protector, back film) is ₹50 less when the same cart
   // holds a phone cover. Medusa re-checks it on every cart change, so removing the cover removes it.
-  const { data: existingPromos } = await query.graph({ entity: 'promotion', fields: ['id'], filters: { code: BUNDLE_CODE } })
+  const accessoryTypeIds = typeNames.filter((t) => t !== COVER_TYPE).map((t) => typeId.get(t)!)
+  const { data: existingPromos } = await query.graph({
+    entity: 'promotion',
+    fields: ['id', 'application_method.target_rules.id', 'application_method.target_rules.attribute', 'application_method.target_rules.values.value'],
+    filters: { code: BUNDLE_CODE },
+  })
+  // A new accessory type (e.g. the body protection film) joins the existing promotion's targets.
+  const typeRule = existingPromos[0]?.application_method?.target_rules?.find((r) => r?.attribute === 'items.product.type_id')
+  const covered = new Set((typeRule?.values ?? []).map((v) => v?.value))
+  if (typeRule && accessoryTypeIds.some((id) => !covered.has(id))) {
+    await batchPromotionRulesWorkflow(container).run({
+      input: {
+        id: existingPromos[0].id,
+        rule_type: RuleType.TARGET_RULES,
+        update: [{ id: typeRule.id, values: accessoryTypeIds }],
+      },
+    })
+    logger.info(`${BUNDLE_CODE} now covers ${accessoryTypeIds.length} accessory types`)
+  }
   if (existingPromos.length === 0) {
-    const accessoryTypeIds = typeNames.filter((t) => t !== COVER_TYPE).map((t) => typeId.get(t)!)
     await createPromotionsWorkflow(container).run({
       input: {
         promotionsData: [

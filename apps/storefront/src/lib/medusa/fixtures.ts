@@ -384,7 +384,7 @@ function accessoryCode(id: string): string {
 
 /** One variant per phone model; accessories have no case type, so `soft` only fills the field. */
 function accessoryDetail(entry: AccessoryEntry): ProductDetail {
-  const fitsModels = PHONE_MODELS.map((m) => m.slug);
+  const fitsModels = PHONE_MODELS.map((m) => m.slug).filter((slug) => !entry.models || entry.models.includes(slug));
   return {
     id: `acc_${entry.id}`,
     handle: entry.handle,

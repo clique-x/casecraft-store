@@ -156,6 +156,22 @@ export function AccessoryArt({ accessory, island = 'square', className, title }:
           <rect x="52" y="24" width="96" height="202" rx="18" fill={`url(#sheen-${uid})`} opacity="0.4" />
         </g>
       )}
+      {type === 'body-film' && (
+        <g>
+          {/* phone back in titanium, side frame visible on the right */}
+          <g filter={`url(#shadow-${uid})`}>
+            <rect x="56" y="24" width="92" height="202" rx="20" fill="#8d9096" />
+            <rect x="52" y="24" width="92" height="202" rx="20" fill="#5d6168" />
+          </g>
+          <Lenses island={island} x={62} y={38} s={0.9} />
+          {/* the clear wrap: outline just outside the body, wrapping onto the frame */}
+          <rect x="49" y="21" width="102" height="208" rx="23" fill="#ffffff" fillOpacity="0.08" stroke="#ffffff" strokeOpacity="0.95" strokeWidth="1.4" />
+          <rect x="49" y="21" width="102" height="208" rx="23" fill={`url(#sheen-${uid})`} opacity="0.8" />
+          <path d="M 60 40 Q 58 120 64 200" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="2" fill="none" strokeLinecap="round" />
+          {/* peeling corner shows the film is separate */}
+          <path d="M 151 194 L 151 206 Q 151 229 128 229 L 116 229 Z" fill="#ffffff" fillOpacity="0.55" stroke="#ffffff" strokeOpacity="0.9" />
+        </g>
+      )}
     </svg>
   );
 }

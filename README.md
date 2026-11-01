@@ -130,7 +130,8 @@ To cut a product out of a photo on macOS, see [`scripts/photo-cutout/README.md`]
 - [x] Razorpay and Cash on Delivery
 - [x] Order confirmation and order tracking
 - [x] Shipping, returns, refunds, privacy, terms and contact pages
-- [x] Screen guards, lens protectors and back films, with add-ons and ready-made bundles on cover pages
+- [x] Screen guards, lens protectors, back films and a flagship body protection film, with add-ons and ready-made bundles on cover pages
+- [x] Phone-aware combo deals on the home page
 - [x] Step-by-step checkout with saved addresses, location and pincode autofill, and phone login (Twilio Verify)
 - [ ] Order emails (Resend) and GST invoices
 - [ ] Phone-model admin page

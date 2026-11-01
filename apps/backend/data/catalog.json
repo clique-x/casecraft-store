@@ -5049,6 +5049,91 @@
           "stock": 25
         }
       ]
+    },
+    {
+      "handle": "body-protection-film",
+      "productType": "Body protection film",
+      "title": "Body protection film",
+      "description": "A clear, self-healing film that wraps the whole body of the phone: back, side frame and the area around the camera, cut by machine for each flagship. It is thicker than our back films, nearly invisible, and keeps the phone looking new under or without a cover.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "body-film",
+        "accessory_type": "body-film",
+        "regular_inr": 899,
+        "detail_material": "0.2 mm thermoplastic polyurethane (TPU) with a self-healing top coat and UV-stable adhesive, so it does not yellow.",
+        "detail_in_box": "Back panel film, two side-frame strips, camera surround piece, squeegee card, alcohol wipe and dry cloth.",
+        "detail_fit": "Cut for each listed flagship, including the buttons, ports and camera island. Fits under our covers.",
+        "detail_care": "Fine scratches fade in warm weather. It peels off cleanly with no residue."
+      },
+      "variants": [
+        {
+          "sku": "ACC-BODFIL-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-BODFIL-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-BODFIL-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-BODFIL-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-BODFIL-ON13",
+          "modelSlug": "oneplus-13",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-BODFIL-GAZF8",
+          "modelSlug": "galaxy-z-fold-8",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-BODFIL-GAZF8U",
+          "modelSlug": "galaxy-z-fold-8-ultra",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-BODFIL-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-BODFIL-IPD",
+          "modelSlug": "iphone-duo",
+          "caseType": null,
+          "priceInr": 499,
+          "stock": 25
+        }
+      ]
     }
   ]
 }
