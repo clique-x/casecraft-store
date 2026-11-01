@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { AccessoryStage } from '@/components/accessory/AccessoryStage.client';
+import { AudioBuyBox } from '@/components/audio/AudioBuyBox.client';
+import { AudioStage } from '@/components/audio/AudioStage.client';
 import { Breadcrumb } from '@/components/product/Breadcrumb';
 import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
@@ -19,6 +21,7 @@ import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getPhoneModels } from '@/lib/medusa/home';
 import {
   getAccessories,
+  getAudio,
   getAllProducts,
   getMoreForPhoneCandidates,
   getProduct,
@@ -129,7 +132,9 @@ async function ProductPageContent({ params }: ProductPageProps) {
   const [models, accessories, related, candidates] = await Promise.all([
     getPhoneModels(),
     getAccessories(),
-    product.accessory
+    product.audio
+      ? getAudio().then((all) => all.filter((p) => p.id !== product.id))
+      : product.accessory
       ? getAccessories().then((all) => all.filter((p) => p.id !== product.id))
       : product.photo
         ? relatedByLook(product)
@@ -147,7 +152,9 @@ async function ProductPageContent({ params }: ProductPageProps) {
         <div className="mt-4 grid gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
           <div className="lg:col-span-7">
             <div className="lg:sticky lg:top-20">
-              {product.accessory ? (
+              {product.audio ? (
+                <AudioStage audio={product.audio} title={product.title} />
+              ) : product.accessory ? (
                 <AccessoryStage accessory={product.accessory} models={models} title={product.title} />
               ) : product.photo ? (
                 // Rendered here rather than through ProductViewer so photo pages never ship the procedural viewer.
@@ -159,18 +166,22 @@ async function ProductPageContent({ params }: ProductPageProps) {
           </div>
 
           <div className="flex flex-col gap-8 lg:col-span-5">
-            <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
+            {product.audio ? (
+              <AudioBuyBox product={product} />
+            ) : (
+              <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
+            )}
             <DeliveryFacts />
             <ProductDetails product={product} />
           </div>
         </div>
       </div>
 
-      {!product.accessory && <BundleKits product={product} accessories={accessories} models={models} />}
+      {!product.accessory && !product.audio && <BundleKits product={product} accessories={accessories} models={models} />}
 
-      <RelatedRows product={product} related={related} candidates={candidates} models={models} />
+      <RelatedRows product={product} related={related} candidates={product.audio ? [] : candidates} models={models} />
 
-      <StickyBuyBar product={product} models={models} accessories={product.accessory ? [] : accessories} />
+      <StickyBuyBar product={product} models={models} accessories={product.accessory || product.audio ? [] : accessories} />
     </>
   );
 }

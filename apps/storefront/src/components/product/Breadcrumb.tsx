@@ -25,6 +25,13 @@ function breadcrumbJsonLd(crumbs: readonly Crumb[]): string {
 
 /** Photo covers sit under their look; procedural designs keep the Trending trail. */
 function crumbsFor(product: ProductDetail): readonly Crumb[] {
+  if (product.audio) {
+    return [
+      { name: 'Home', href: '/' },
+      { name: 'Audio', href: '/audio' },
+      { name: product.title, href: `/products/${product.handle}` },
+    ];
+  }
   if (product.accessory) {
     return [
       { name: 'Home', href: '/' },

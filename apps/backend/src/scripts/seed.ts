@@ -52,7 +52,15 @@ interface Catalog {
     category: string | null
     tags: string[]
     metadata: Record<string, string | number | boolean>
-    variants: { sku: string; modelSlug: string; caseType: string | null; priceInr: number; stock: number }[]
+    /** Phone products set modelSlug (and caseType for covers); audio sets colour instead. */
+    variants: {
+      sku: string
+      modelSlug: string | null
+      caseType: string | null
+      colour?: { slug: string; name: string }
+      priceInr: number
+      stock: number
+    }[]
   }[]
 }
 
@@ -257,9 +265,13 @@ export default async function seed({ container }: ExecArgs) {
   const caseTypeName = new Map(catalog.caseTypes.map((c) => [c.type, c.name]))
 
   // Product options, collections and categories ---------------------------------------------------
+  const colourNames = [
+    ...new Set(catalog.products.flatMap((p) => p.variants.map((v) => v.colour?.name).filter((n): n is string => Boolean(n)))),
+  ]
   const optionValues = {
     'Phone Model': catalog.phoneModels.map((m) => m.name),
     'Case Type': catalog.caseTypes.map((c) => c.name),
+    ...(colourNames.length > 0 ? { Colour: colourNames } : {}),
   }
   const { data: existingOptions } = await query.graph({ entity: 'product_option', fields: ['id', 'title', 'values.value'] })
   const optionIds: Record<string, string> = {}
@@ -344,30 +356,42 @@ export default async function seed({ container }: ExecArgs) {
             ...(p.tags.length > 0 ? { tag_ids: p.tags.map((value) => tagId.get(value)!) } : {}),
             metadata: p.metadata,
             type_id: typeId.get(p.productType),
-            // Accessories vary by phone model only.
-            options: p.variants.some((v) => v.caseType)
-              ? [{ id: optionIds['Phone Model'] }, { id: optionIds['Case Type'] }]
-              : [{ id: optionIds['Phone Model'] }],
+            // Covers: phone model + case type. Accessories: phone model. Audio: colour.
+            options: p.variants.some((v) => v.colour)
+              ? [{ id: optionIds['Colour'] }]
+              : p.variants.some((v) => v.caseType)
+                ? [{ id: optionIds['Phone Model'] }, { id: optionIds['Case Type'] }]
+                : [{ id: optionIds['Phone Model'] }],
             sales_channels: [{ id: salesChannelId }],
-            variants: p.variants.map((v) => ({
+            variants: p.variants.map((v) => v.colour
+              ? {
+                  title: v.colour.name,
+                  sku: v.sku,
+                  manage_inventory: true,
+                  allow_backorder: false,
+                  options: { Colour: v.colour.name } as Record<string, string>,
+                  metadata: { colour: v.colour.slug } as Record<string, string>,
+                  prices: [{ currency_code: 'inr', amount: v.priceInr }],
+                }
+              : {
               title: v.caseType
-                ? `${modelName.get(v.modelSlug) ?? v.modelSlug} / ${caseTypeName.get(v.caseType) ?? v.caseType}`
-                : (modelName.get(v.modelSlug) ?? v.modelSlug),
+                ? `${modelName.get(v.modelSlug ?? "") ?? v.modelSlug ?? ""} / ${caseTypeName.get(v.caseType) ?? v.caseType}`
+                : (modelName.get(v.modelSlug ?? "") ?? v.modelSlug ?? ""),
               sku: v.sku,
               manage_inventory: true,
               allow_backorder: false,
               options: (v.caseType
                 ? {
-                    'Phone Model': modelName.get(v.modelSlug) ?? v.modelSlug,
+                    'Phone Model': modelName.get(v.modelSlug ?? "") ?? v.modelSlug ?? "",
                     'Case Type': caseTypeName.get(v.caseType) ?? v.caseType,
                   }
-                : { 'Phone Model': modelName.get(v.modelSlug) ?? v.modelSlug }) as Record<string, string>,
-              metadata: (v.caseType ? { model_slug: v.modelSlug, case_type: v.caseType } : { model_slug: v.modelSlug }) as Record<
+                : { 'Phone Model': modelName.get(v.modelSlug ?? "") ?? v.modelSlug ?? "" }) as Record<string, string>,
+              metadata: (v.caseType ? { model_slug: v.modelSlug ?? "", case_type: v.caseType } : { model_slug: v.modelSlug ?? "" }) as Record<
                 string,
                 string
               >,
               prices: [{ currency_code: 'inr', amount: v.priceInr }],
-            })),
+            }),
           }
         }),
       },
@@ -392,7 +416,10 @@ export default async function seed({ container }: ExecArgs) {
   // Bundle promotion -------------------------------------------------------------------------------
   // Automatic: every accessory (screen guard, lens protector, back film) is ₹50 less when the same cart
   // holds a phone cover. Medusa re-checks it on every cart change, so removing the cover removes it.
-  const accessoryTypeIds = typeNames.filter((t) => t !== COVER_TYPE).map((t) => typeId.get(t)!)
+  // Only accessories get the cover bundle price; audio and covers do not.
+  const accessoryTypeIds = [
+    ...new Set(catalog.products.filter((p) => p.metadata.kind === 'accessory').map((p) => p.productType)),
+  ].map((t) => typeId.get(t)!)
   const { data: existingPromos } = await query.graph({
     entity: 'promotion',
     fields: ['id', 'application_method.target_rules.id', 'application_method.target_rules.attribute', 'application_method.target_rules.values.value'],

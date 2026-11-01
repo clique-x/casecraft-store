@@ -6,8 +6,18 @@ export { findVariant, lowestPrice, MISSING_PRODUCT_HANDLE } from './variants';
 
 /** Photo and procedural products alike; photo handles are the catalogue slugs. */
 export async function getProduct(handle: string): Promise<ProductDetail | null> {
-  const { products, accessories } = await getCatalog();
-  return products.find((p) => p.handle === handle) ?? accessories.find((p) => p.handle === handle) ?? null;
+  const { products, accessories, audio } = await getCatalog();
+  return (
+    products.find((p) => p.handle === handle) ??
+    accessories.find((p) => p.handle === handle) ??
+    audio.find((p) => p.handle === handle) ??
+    null
+  );
+}
+
+/** Wireless earbuds, neckbands and Bluetooth speakers. */
+export async function getAudio(): Promise<ProductDetail[]> {
+  return (await getCatalog()).audio;
 }
 
 /** Screen guards, lens protectors and back films. */
@@ -17,8 +27,8 @@ export async function getAccessories(): Promise<ProductDetail[]> {
 
 /** For generateStaticParams; cached with the rest of the catalogue. */
 export async function getProductHandles(): Promise<string[]> {
-  const { products, accessories } = await getCatalog();
-  return [...products, ...accessories].map((p) => p.handle);
+  const { products, accessories, audio } = await getCatalog();
+  return [...products, ...accessories, ...audio].map((p) => p.handle);
 }
 
 /** For src/proxy.ts, which runs outside the `use cache` scope. */

@@ -60,7 +60,8 @@ export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBar
     sku: variant?.sku ?? null,
     intent: soldOut ? 'notify' : 'order',
   });
-  const detail = [model?.model, product.caseTypes.length > 0 ? caseTypeInfo.name : null].filter(Boolean).join(' · ');
+  const colour = product.audio?.colours.find((c) => c.slug === selection.modelSlug)?.name ?? null;
+  const detail = [colour ?? model?.model, product.caseTypes.length > 0 ? caseTypeInfo.name : null].filter(Boolean).join(' · ');
 
   return (
     <AnimatePresence>

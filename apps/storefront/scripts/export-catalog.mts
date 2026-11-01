@@ -5,7 +5,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { photoSrc } from '../src/lib/catalog/photos';
 import { ACCESSORY_TYPE_LABEL } from '../src/lib/catalog/accessories';
-import { ACCESSORY_DETAILS, CASE_TYPES, PHONE_MODELS, PRODUCT_DETAILS, THEMES } from '../src/lib/medusa/fixtures';
+import { AUDIO_TYPE_LABEL } from '../src/lib/catalog/audio';
+import { ACCESSORY_DETAILS, AUDIO_DETAILS, CASE_TYPES, PHONE_MODELS, PRODUCT_DETAILS, THEMES } from '../src/lib/medusa/fixtures';
 
 const OUT = path.resolve(import.meta.dirname, '../../backend/data/catalog.json');
 
@@ -87,6 +88,29 @@ const catalog = {
           sku: v.sku,
           modelSlug: v.modelSlug,
           caseType: null,
+          priceInr: v.priceInr,
+          stock: v.stock,
+        })),
+      };
+    }),
+    ...AUDIO_DETAILS.map((p) => {
+      const a = p.audio!;
+      return {
+        handle: p.handle,
+        productType: AUDIO_TYPE_LABEL[a.type],
+        title: p.title,
+        description: p.description,
+        imagePath: null,
+        collections: [],
+        category: null,
+        tags: [],
+        metadata: { kind: 'audio', audio_id: a.id, audio_type: a.type, regular_inr: a.regularInr, detail_in_box: a.inBox },
+        // Audio varies by colour; the storefront keeps the colour slug in modelSlug.
+        variants: p.variants.map((v) => ({
+          sku: v.sku,
+          modelSlug: null,
+          caseType: null,
+          colour: a.colours.find((c) => c.slug === v.modelSlug)!,
           priceInr: v.priceInr,
           stock: v.stock,
         })),

@@ -14,6 +14,7 @@ const NAV = [
   { href: '/categories', label: 'Looks' },
   { href: '/phones', label: 'Phones' },
   { href: '/accessories', label: 'Accessories' },
+  { href: '/audio', label: 'Audio' },
 ] as const;
 
 const ICON_LINK =

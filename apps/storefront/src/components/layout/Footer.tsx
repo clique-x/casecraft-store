@@ -21,6 +21,7 @@ const COLUMNS: readonly { heading: string; links: readonly { href: string; label
       { href: '/categories', label: 'Shop by look' },
       { href: '/phones', label: 'Shop by phone' },
       { href: '/accessories', label: 'Screen guards & protection' },
+      { href: '/audio', label: 'Earbuds & speakers' },
       { href: '/search', label: 'Search' },
     ],
   },

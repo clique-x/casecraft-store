@@ -5134,6 +5134,276 @@
           "stock": 25
         }
       ]
+    },
+    {
+      "handle": "wireless-earbuds-anc",
+      "productType": "Wireless earbuds",
+      "title": "Wireless earbuds ANC",
+      "description": "In-ear wireless earbuds with active noise cancellation for the metro and the office, and a transparency mode for when you need to hear the announcement. Four mics keep calls clear, and the case charges over USB-C.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "audio",
+        "audio_id": "buds-anc",
+        "audio_type": "earbuds",
+        "regular_inr": 3999,
+        "detail_in_box": "Earbuds, charging case, USB-C cable, three sizes of ear tips."
+      },
+      "variants": [
+        {
+          "sku": "AUD-BUDSANC-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "black",
+            "name": "Black",
+            "hex": "#1f2023"
+          },
+          "priceInr": 1999,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-BUDSANC-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "white",
+            "name": "White",
+            "hex": "#eeeeea"
+          },
+          "priceInr": 1999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "wireless-earbuds-lite",
+      "productType": "Wireless earbuds",
+      "title": "Wireless earbuds Lite",
+      "description": "Light everyday earbuds with a game mode that cuts audio delay for videos and mobile games. Tap controls on each bud, and they reconnect to your phone as soon as you open the case.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "audio",
+        "audio_id": "buds-lite",
+        "audio_type": "earbuds",
+        "regular_inr": 1999,
+        "detail_in_box": "Earbuds, charging case, USB-C cable, spare ear tips."
+      },
+      "variants": [
+        {
+          "sku": "AUD-BUDSLITE-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "black",
+            "name": "Black",
+            "hex": "#1f2023"
+          },
+          "priceInr": 999,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-BUDSLITE-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "white",
+            "name": "White",
+            "hex": "#eeeeea"
+          },
+          "priceInr": 999,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-BUDSLITE-BLUE",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "blue",
+            "name": "Blue",
+            "hex": "#2f4a6d"
+          },
+          "priceInr": 999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "neckband-pro",
+      "productType": "Neckband",
+      "title": "Neckband Pro",
+      "description": "A flexible neckband that sits comfortably all day, with call noise reduction for busy streets and magnetic earbuds that clip together when you are not listening. Ten minutes on the charger gives a full day of commuting.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "audio",
+        "audio_id": "neck-pro",
+        "audio_type": "neckband",
+        "regular_inr": 2499,
+        "detail_in_box": "Neckband, USB-C cable, spare ear tips."
+      },
+      "variants": [
+        {
+          "sku": "AUD-NECKPRO-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "black",
+            "name": "Black",
+            "hex": "#1f2023"
+          },
+          "priceInr": 1299,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-NECKPRO-BLUE",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "blue",
+            "name": "Blue",
+            "hex": "#2f4a6d"
+          },
+          "priceInr": 1299,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "neckband",
+      "productType": "Neckband",
+      "title": "Neckband",
+      "description": "A light, simple neckband for music and calls, with buttons you can find without looking and a flexible band that packs into a pocket.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "audio",
+        "audio_id": "neck-basic",
+        "audio_type": "neckband",
+        "regular_inr": 1499,
+        "detail_in_box": "Neckband, USB-C cable."
+      },
+      "variants": [
+        {
+          "sku": "AUD-NECKBASIC-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "black",
+            "name": "Black",
+            "hex": "#1f2023"
+          },
+          "priceInr": 799,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-NECKBASIC-GREEN",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "green",
+            "name": "Green",
+            "hex": "#3d5a48"
+          },
+          "priceInr": 799,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "pocket-bluetooth-speaker",
+      "productType": "Bluetooth speaker",
+      "title": "Pocket speaker",
+      "description": "A small, waterproof speaker with a strap for bags and bikes. Loud enough for a room, and two of them pair together for stereo.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "audio",
+        "audio_id": "spk-mini",
+        "audio_type": "speaker",
+        "regular_inr": 2199,
+        "detail_in_box": "Speaker, strap, USB-C cable."
+      },
+      "variants": [
+        {
+          "sku": "AUD-SPKMINI-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "black",
+            "name": "Black",
+            "hex": "#1f2023"
+          },
+          "priceInr": 1199,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-SPKMINI-BLUE",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "blue",
+            "name": "Blue",
+            "hex": "#2f4a6d"
+          },
+          "priceInr": 1199,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-SPKMINI-RED",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "red",
+            "name": "Red",
+            "hex": "#a3302b"
+          },
+          "priceInr": 1199,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "party-bluetooth-speaker",
+      "productType": "Bluetooth speaker",
+      "title": "Party speaker",
+      "description": "A 20 W speaker with a passive bass radiator for fuller sound and a light ring that follows the beat. Fifteen hours of playback covers a long evening, and it charges your phone in a pinch.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "audio",
+        "audio_id": "spk-party",
+        "audio_type": "speaker",
+        "regular_inr": 5999,
+        "detail_in_box": "Speaker, USB-C cable, AUX cable."
+      },
+      "variants": [
+        {
+          "sku": "AUD-SPKPARTY-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "colour": {
+            "slug": "black",
+            "name": "Black",
+            "hex": "#1f2023"
+          },
+          "priceInr": 2999,
+          "stock": 15
+        }
+      ]
     }
   ]
 }
