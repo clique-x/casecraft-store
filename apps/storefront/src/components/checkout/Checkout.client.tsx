@@ -11,6 +11,7 @@ import { getCheckoutOptions, placeOrder, saveCheckoutDetails, startPayment } fro
 import { useCart } from '@/lib/cart/cart-context';
 import { clearSavedDetails, forgetAddress, readSavedDetails, rememberAddress } from '@/lib/cart/saved-details';
 import { AddressFields, INPUT } from './AddressFields.client';
+import { PhoneLogin } from './PhoneLogin.client';
 import { SavedAddresses } from './SavedAddresses.client';
 import type { CartAddress, CheckoutOptions, RazorpayLaunch } from '@/lib/cart/types';
 import { cn } from '@/lib/utils';
@@ -123,6 +124,7 @@ function CheckoutForm({
   const [mode, setMode] = useState<'saved' | 'new'>(savedAddresses.length > 0 && (!cartAddress || cartMatch >= 0) ? 'saved' : 'new');
   const [address, setAddress] = useState<CartAddress>(cartAddress ?? savedAddresses[0] ?? EMPTY_ADDRESS);
   const [showSavedNote, setShowSavedNote] = useState(savedAddresses.length > 0 && !cartAddress);
+  const [verifiedNote, setVerifiedNote] = useState<string | null>(null);
   // Remounts the address block (its local name and pincode state) after "Clear".
   const [formKey, setFormKey] = useState(0);
   const [options, setOptions] = useState<CheckoutOptions | null>(null);
@@ -278,6 +280,25 @@ function CheckoutForm({
               <input className={INPUT} type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" />
             </Field>
           </div>
+          <PhoneLogin
+            phone={address.phone}
+            onFound={(foundEmail, found) => {
+              if (foundEmail && !email) setEmail(foundEmail);
+              if (found.length === 0) {
+                setVerifiedNote('No past orders with this number yet. Your address will be saved after this order.');
+                return;
+              }
+              // Past-order addresses first, then ones only saved on this device.
+              const merged = [...found, ...saved.filter((a) => !found.some((f) => sameAddress(f, a)))];
+              setSaved(merged);
+              setSelected(0);
+              setMode('saved');
+              setAddress(merged[0]);
+              setShowSavedNote(false);
+              setVerifiedNote(`Found ${found.length} ${found.length === 1 ? 'address' : 'addresses'} from your past orders.`);
+            }}
+          />
+          {verifiedNote && <p className="text-caption font-medium text-success">{verifiedNote}</p>}
           <p className="text-caption text-fg-muted">The courier calls this number on delivery.</p>
         </Section>
 

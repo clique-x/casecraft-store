@@ -14,6 +14,7 @@ The commerce backend for the storefront: products, prices, stock, phone models a
 | Razorpay | `src/modules/razorpay` | Payment provider: a Razorpay order per checkout, payment confirmed with Razorpay's API before an order is created, refunds from the admin, webhooks. Turned on when its keys are set. |
 | Cash on Delivery | built in | Medusa's manual provider (`pp_system_default`), shown as Cash on Delivery. Mark the payment as captured in the admin once the courier remits. |
 | Order tracking API | `src/api/store/order-lookup/route.ts` | `GET /store/order-lookup?order=&contact=`: order number plus the email or phone on the order. |
+| Phone login | `src/lib/phone-otp.ts`, `src/api/store/otp`, `src/api/store/my-addresses` | Twilio Verify sends a code; after a correct code, the addresses of past orders with that phone show at checkout. Rate limited. Off until `TWILIO_VERIFY_SERVICE_SID` is set. |
 | Storefront refresh | `src/subscribers/revalidate-storefront.ts` | Tells the storefront to refresh its cached catalogue when products, prices or stock change. |
 
 Product metadata carries what the storefront needs to draw each cover: `photo_id` for photographed covers, `design_id` for procedural designs, plus `trending_rank`, `is_new`, `badge`, `regular_inr` and the `detail_*` copy. Each variant has `model_slug` and `case_type` in its metadata.
@@ -63,6 +64,14 @@ The seed is safe to run again. It only adds what is missing and never overwrites
 5. Switch to live keys only at launch.
 
 Unit tests for the provider: `TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules npx jest src/modules/razorpay`.
+
+## Phone login (Twilio Verify)
+
+1. In the Twilio Console open Identity, then Verify, then Services, and create a service with SMS on. Creating a service needs an upgraded (paid) Twilio account.
+2. Set `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN` and `TWILIO_VERIFY_SERVICE_SID` in `.env` and restart Medusa.
+3. Checkout then shows "Ordered before? Find my saved addresses" under the mobile number.
+
+Limits: 3 codes per number per 10 minutes, 5 code checks per number per 10 minutes, 10 sends per IP per hour. They are kept in memory, so they reset when Medusa restarts.
 
 ## Production notes
 

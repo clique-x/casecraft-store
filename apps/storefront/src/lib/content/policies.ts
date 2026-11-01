@@ -289,6 +289,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
             'Basic technical data that every website receives, such as your browser type and IP address, kept in server logs for security.',
             'Your location, only if you tap "Use my current location" at checkout and allow it. Your browser sends it to OpenStreetMap to look up your address; we do not store it.',
             'Your email and up to three delivery addresses from past checkouts, saved only in your own browser so you can pick one next time. Remove one with "Remove", or all of them with "Not you? Clear" at checkout.',
+            'If you use "Find my saved addresses" at checkout, your mobile number is sent to Twilio, our SMS provider, to deliver a one-time code. After you enter the code, we show the delivery addresses of your past orders with that number. Without the code, nobody can see them.',
           ),
           p(
             'We do not see or store your card number, UPI PIN or netbanking password. Online payments are entered directly with Razorpay, our payment provider.',
