@@ -9,7 +9,6 @@ import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
 import { DeliveryFacts } from '@/components/product/DeliveryFacts';
 import { PhotoMedia } from '@/components/product/PhotoMedia.client';
-import { StickySide } from '@/components/product/StickySide.client';
 import { ProductDetails } from '@/components/product/ProductDetails';
 import { ProductJsonLd } from '@/components/product/ProductJsonLd';
 import { RelatedRows } from '@/components/product/RelatedRows';
@@ -150,7 +149,7 @@ async function ProductPageContent({ params }: ProductPageProps) {
     getMoreForPhoneCandidates(product),
   ]);
 
-  // Photographed covers with a gallery scroll every image down the left column; the buy column holds.
+  // Photographed covers with a gallery scroll every image down the left column; the buy column stays put.
   const media = product.photo && (product.photo.gallery?.length ?? 0) > 0 ? product.photo : null;
 
   const buyColumn = (
@@ -193,7 +192,9 @@ async function ProductPageContent({ params }: ProductPageProps) {
           </div>
 
           {media ? (
-            <StickySide className="flex flex-col gap-8 lg:col-span-5">{buyColumn}</StickySide>
+            // Pinned under the header until the image column runs out; when its buttons sit below the
+            // fold, StickyBuyBar offers Add to cart and Buy now instead.
+            <div className="flex flex-col gap-8 lg:sticky lg:top-20 lg:col-span-5 lg:self-start">{buyColumn}</div>
           ) : (
             <div className="flex flex-col gap-8 lg:col-span-5">{buyColumn}</div>
           )}

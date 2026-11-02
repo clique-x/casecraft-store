@@ -29,15 +29,15 @@ function variantFor(product: ProductDetail, modelSlug: string | null, caseType: 
 }
 
 /**
- * Bottom bar with Add to cart and Buy now. It slides up as soon as the buy box's own buttons
- * leave the screen, on every screen size, and hides again over the footer. It slides away
+ * Bottom bar with Add to cart and Buy now. It slides up as soon as the buy box's own buttons are
+ * not wholly on screen (scrolled past, or below the fold of the pinned buy column), on every screen size, and hides again over the footer. It slides away
  * (but stays mounted) while the picker sheet is open, for the same focus-return reason as StickyPhoneCta.
  */
 export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBarProps) {
   const selection = useVariantSelection();
   const selectedAddons = useSelectedAddons();
   const sheetOpen = usePickerSheetOpen();
-  const actionsInView = useInView('#buy-actions');
+  const actionsInView = useInView('#buy-buttons', true, true);
   const footerInView = useInView('footer');
   const shown = actionsInView === false && footerInView === false;
   const visible = shown && !sheetOpen;
