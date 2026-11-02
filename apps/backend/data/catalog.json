@@ -136,40 +136,49 @@
       "rank": 14
     },
     {
-      "slug": "galaxy-z-fold-8",
-      "brand": "Samsung",
-      "name": "Galaxy Z Fold 8",
-      "series": "Galaxy Z",
-      "releaseYear": 2026,
-      "islandStyle": "pills",
+      "slug": "iphone-13-pro",
+      "brand": "Apple",
+      "name": "iPhone 13 Pro",
+      "series": "iPhone",
+      "releaseYear": 2021,
+      "islandStyle": "square",
       "rank": 15
     },
     {
-      "slug": "galaxy-z-fold-8-ultra",
-      "brand": "Samsung",
-      "name": "Galaxy Z Fold 8 Ultra",
-      "series": "Galaxy Z",
-      "releaseYear": 2026,
-      "islandStyle": "pills",
+      "slug": "iphone-14",
+      "brand": "Apple",
+      "name": "iPhone 14",
+      "series": "iPhone",
+      "releaseYear": 2022,
+      "islandStyle": "square",
       "rank": 16
     },
     {
-      "slug": "iphone-18-pro",
+      "slug": "iphone-14-pro",
       "brand": "Apple",
-      "name": "iPhone 18 Pro",
+      "name": "iPhone 14 Pro",
       "series": "iPhone",
-      "releaseYear": 2026,
+      "releaseYear": 2022,
       "islandStyle": "square",
       "rank": 17
     },
     {
-      "slug": "iphone-duo",
+      "slug": "iphone-15",
       "brand": "Apple",
-      "name": "iPhone Duo",
+      "name": "iPhone 15",
       "series": "iPhone",
-      "releaseYear": 2026,
-      "islandStyle": "pills",
+      "releaseYear": 2023,
+      "islandStyle": "square",
       "rank": 18
+    },
+    {
+      "slug": "iphone-15-pro",
+      "brand": "Apple",
+      "name": "iPhone 15 Pro",
+      "series": "iPhone",
+      "releaseYear": 2023,
+      "islandStyle": "square",
+      "rank": 19
     }
   ],
   "themes": [
@@ -216,50 +225,734 @@
   ],
   "products": [
     {
-      "handle": "luxo-nano-fiber-magsafe-case-black-carbon-samsung-fold-8-ultra",
+      "handle": "neza-anti-yellow-magsafe-clear-case-clear-iphone-13-pro",
       "productType": "Phone cover",
-      "title": "Black Carbon · Luxo",
-      "description": "Black Carbon is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
-      "imagePath": "/products/photos/41280/960.webp",
+      "title": "Clear · Neza",
+      "description": "Clear is a Neza Anti-Yellow MagSafe Clear cover for the iPhone 13 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50101/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50101,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Neza Anti-Yellow MagSafe Clear",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the iPhone 13 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50101-IP13P",
+          "modelSlug": "iphone-13-pro",
+          "caseType": "soft",
+          "priceInr": 250,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-midnight-blue-iphone-13-pro",
+      "productType": "Phone cover",
+      "title": "Midnight Blue · CaseCraft",
+      "description": "Midnight Blue is a CaseCraft Silicone MagSafe cover for the iPhone 13 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50102/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50102,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 13 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50102-IP13P",
+          "modelSlug": "iphone-13-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-sky-blue-iphone-13-pro",
+      "productType": "Phone cover",
+      "title": "Sky Blue · CaseCraft",
+      "description": "Sky Blue is a CaseCraft Silicone MagSafe cover for the iPhone 13 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50103/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50103,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 13 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50103-IP13P",
+          "modelSlug": "iphone-13-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "neza-anti-yellow-magsafe-clear-case-clear-iphone-14-pro",
+      "productType": "Phone cover",
+      "title": "Clear · Neza",
+      "description": "Clear is a Neza Anti-Yellow MagSafe Clear cover for the iPhone 14 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50104/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50104,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Neza Anti-Yellow MagSafe Clear",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the iPhone 14 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50104-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": "soft",
+          "priceInr": 250,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "cg-mobile-scuderia-ferrari-silicone-case-red-iphone-14-pro",
+      "productType": "Phone cover",
+      "title": "Red · CG Mobile",
+      "description": "Red is a CG Mobile Scuderia Ferrari Silicone cover for the iPhone 14 Pro, stocked in our Haridwar shop. The artwork runs across the whole back rather than sitting in one corner.",
+      "imagePath": "/products/photos/50105/960.webp",
       "collections": [
-        "trending",
-        "new-arrivals"
+        "trending"
       ],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "photo",
-        "photo_id": 41280,
+        "photo_id": 50105,
         "family": "minimal",
         "theme": "minimal",
         "finish": "soft",
         "holo": false,
-        "is_new": true,
+        "trending_rank": 7,
+        "brand_line": "CG Mobile Scuderia Ferrari Silicone",
+        "regular_inr": 500,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Tonal prancing horse printed across the back.",
+        "detail_fit": "Made for the iPhone 14 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50105-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": "soft",
+          "priceInr": 500,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-beige-iphone-14-pro",
+      "productType": "Phone cover",
+      "title": "Beige · CaseCraft",
+      "description": "Beige is a CaseCraft Silicone MagSafe cover for the iPhone 14 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50106/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50106,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 14 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50106-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-black-iphone-14-pro",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Silicone MagSafe cover for the iPhone 14 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50107/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50107,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 14 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50107-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-sky-blue-iphone-14-pro",
+      "productType": "Phone cover",
+      "title": "Sky Blue · CaseCraft",
+      "description": "Sky Blue is a CaseCraft Silicone MagSafe cover for the iPhone 14 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50108/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50108,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 14 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50108-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "neza-anti-yellow-magsafe-clear-case-clear-iphone-14",
+      "productType": "Phone cover",
+      "title": "Clear · Neza",
+      "description": "Clear is a Neza Anti-Yellow MagSafe Clear cover for the iPhone 14, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50109/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50109,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Neza Anti-Yellow MagSafe Clear",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the iPhone 14. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50109-IP14",
+          "modelSlug": "iphone-14",
+          "caseType": "soft",
+          "priceInr": 250,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magsafe-frame-case-black-iphone-14",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear MagSafe Frame cover for the iPhone 14, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50110/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50110,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Clear MagSafe Frame",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Nothing printed: a clear back with a black MagSafe ring.",
+        "detail_fit": "Made for the iPhone 14. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50110-IP14",
+          "modelSlug": "iphone-14",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "dulero-rugged-ring-stand-case-navy-grey-iphone-14",
+      "productType": "Phone cover",
+      "title": "Navy Grey · Dulero",
+      "description": "Navy Grey is a Dulero Rugged Ring Stand cover for the iPhone 14, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50111/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50111,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Dulero Rugged Ring Stand",
+        "regular_inr": 599,
+        "case_types": "",
+        "detail_material": "Hard textured back, soft bumper and a fold-out ring stand",
+        "detail_print": "Moulded textured panels; nothing is printed on.",
+        "detail_fit": "Made for the iPhone 14. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50111-IP14",
+          "modelSlug": "iphone-14",
+          "caseType": "soft",
+          "priceInr": 599,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "neza-anti-yellow-magsafe-clear-case-clear-iphone-15-pro",
+      "productType": "Phone cover",
+      "title": "Clear · Neza",
+      "description": "Clear is a Neza Anti-Yellow MagSafe Clear cover for the iPhone 15 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50112/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50112,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Neza Anti-Yellow MagSafe Clear",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the iPhone 15 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50112-IP15P",
+          "modelSlug": "iphone-15-pro",
+          "caseType": "soft",
+          "priceInr": 250,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-black-iphone-15-pro",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Silicone MagSafe cover for the iPhone 15 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50113/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50113,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 15 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50113-IP15P",
+          "modelSlug": "iphone-15-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-midnight-blue-iphone-15-pro",
+      "productType": "Phone cover",
+      "title": "Midnight Blue · CaseCraft",
+      "description": "Midnight Blue is a CaseCraft Silicone MagSafe cover for the iPhone 15 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50114/960.webp",
+      "collections": [
+        "trending"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50114,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
         "trending_rank": 5,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1099,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
         "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 15 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
         "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
       },
       "variants": [
         {
-          "sku": "PH-41280-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "PH-50114-IP15P",
+          "modelSlug": "iphone-15-pro",
           "caseType": "soft",
-          "priceInr": 1099,
+          "priceInr": 350,
           "stock": 8
         }
       ]
     },
     {
-      "handle": "luxo-nano-fiber-magsafe-case-grey-tiger-samsung-fold-8-ultra",
+      "handle": "casecraft-clear-magsafe-frame-case-black-iphone-15",
       "productType": "Phone cover",
-      "title": "Grey Tiger · Luxo",
-      "description": "Grey Tiger is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film.",
-      "imagePath": "/products/photos/41282/960.webp",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear MagSafe Frame cover for the iPhone 15, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50115/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50115,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Clear MagSafe Frame",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Nothing printed: a clear back with a black MagSafe ring.",
+        "detail_fit": "Made for the iPhone 15. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50115-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "cg-mobile-scuderia-ferrari-case-cream-iphone-15",
+      "productType": "Phone cover",
+      "title": "Cream · CG Mobile",
+      "description": "Cream is a CG Mobile Scuderia Ferrari cover for the iPhone 15, stocked in our Haridwar shop. The artwork runs across the whole back rather than sitting in one corner.",
+      "imagePath": "/products/photos/50116/960.webp",
+      "collections": [
+        "trending"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50116,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "trending_rank": 4,
+        "brand_line": "CG Mobile Scuderia Ferrari",
+        "regular_inr": 500,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Grey prancing horse printed across the back.",
+        "detail_fit": "Made for the iPhone 15. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50116-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": "soft",
+          "priceInr": 500,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-black-iphone-15",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Ring Stand Camera Slider cover for the iPhone 15, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50117/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50117,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 15. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50117-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-mocha-brown-iphone-15",
+      "productType": "Phone cover",
+      "title": "Mocha Brown · CaseCraft",
+      "description": "Mocha Brown is a CaseCraft Ring Stand Camera Slider cover for the iPhone 15, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50118/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50118,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 15. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50118-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-titanium-grey-iphone-15",
+      "productType": "Phone cover",
+      "title": "Titanium Grey · CaseCraft",
+      "description": "Titanium Grey is a CaseCraft Ring Stand Camera Slider cover for the iPhone 15, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50119/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50119,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 15. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50119-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "dulero-rugged-ring-stand-case-silver-white-iphone-15",
+      "productType": "Phone cover",
+      "title": "Silver White · Dulero",
+      "description": "Silver White is a Dulero Rugged Ring Stand cover for the iPhone 15, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50120/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50120,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "Dulero Rugged Ring Stand",
+        "regular_inr": 599,
+        "case_types": "",
+        "detail_material": "Hard textured back, soft bumper and a fold-out ring stand",
+        "detail_print": "Moulded textured panels; nothing is printed on.",
+        "detail_fit": "Made for the iPhone 15. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50120-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": "soft",
+          "priceInr": 599,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-logo-case-lavender-grey-iphone-15",
+      "productType": "Phone cover",
+      "title": "Lavender Grey · CaseCraft",
+      "description": "Lavender Grey is a CaseCraft Silicone Logo cover for the iPhone 15, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50121/960.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50121,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "brand_line": "CaseCraft Silicone Logo",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour with a printed logo, as in the photos.",
+        "detail_fit": "Made for the iPhone 15. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50121-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "neza-anti-yellow-magsafe-clear-case-clear-iphone-16-pro",
+      "productType": "Phone cover",
+      "title": "Clear · Neza",
+      "description": "Clear is a Neza Anti-Yellow MagSafe Clear cover for the iPhone 16 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50122/960.webp",
       "collections": [
         "new-arrivals"
       ],
@@ -267,36 +960,147 @@
       "tags": [],
       "metadata": {
         "kind": "photo",
-        "photo_id": 41282,
+        "photo_id": 50122,
         "family": "minimal",
         "theme": "minimal",
         "finish": "soft",
         "holo": false,
         "is_new": true,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1099,
+        "brand_line": "Neza Anti-Yellow MagSafe Clear",
+        "regular_inr": 250,
         "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the iPhone 16 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
         "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
       },
       "variants": [
         {
-          "sku": "PH-41282-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "PH-50122-IP16P",
+          "modelSlug": "iphone-16-pro",
           "caseType": "soft",
-          "priceInr": 1099,
+          "priceInr": 250,
           "stock": 8
         }
       ]
     },
     {
-      "handle": "luxo-nano-fiber-magsafe-case-moonrise-samsung-fold-8-ultra",
+      "handle": "casecraft-frosted-magsafe-case-black-orange-iphone-16-pro",
       "productType": "Phone cover",
-      "title": "Moonrise · Luxo",
-      "description": "Moonrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through.",
-      "imagePath": "/products/photos/41284/960.webp",
+      "title": "Black Orange · CaseCraft",
+      "description": "Black Orange is a CaseCraft Frosted MagSafe cover for the iPhone 16 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50123/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50123,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the iPhone 16 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50123-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-magsafe-case-orange-iphone-16-pro",
+      "productType": "Phone cover",
+      "title": "Orange · CaseCraft",
+      "description": "Orange is a CaseCraft Frosted MagSafe cover for the iPhone 16 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50124/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50124,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the iPhone 16 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50124-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-titanium-grey-iphone-16-pro",
+      "productType": "Phone cover",
+      "title": "Titanium Grey · CaseCraft",
+      "description": "Titanium Grey is a CaseCraft Ring Stand Camera Slider cover for the iPhone 16 Pro, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50125/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50125,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 16 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50125-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "dulero-rugged-ring-stand-case-silver-white-iphone-16-pro",
+      "productType": "Phone cover",
+      "title": "Silver White · Dulero",
+      "description": "Silver White is a Dulero Rugged Ring Stand cover for the iPhone 16 Pro, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50126/960.webp",
       "collections": [
         "trending",
         "new-arrivals"
@@ -305,37 +1109,226 @@
       "tags": [],
       "metadata": {
         "kind": "photo",
-        "photo_id": 41284,
+        "photo_id": 50126,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "trending_rank": 2,
+        "brand_line": "Dulero Rugged Ring Stand",
+        "regular_inr": 599,
+        "case_types": "",
+        "detail_material": "Hard textured back, soft bumper and a fold-out ring stand",
+        "detail_print": "Moulded textured panels; nothing is printed on.",
+        "detail_fit": "Made for the iPhone 16 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50126-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 599,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-logo-case-charcoal-grey-iphone-16-pro",
+      "productType": "Phone cover",
+      "title": "Charcoal Grey · CaseCraft",
+      "description": "Charcoal Grey is a CaseCraft Silicone Logo cover for the iPhone 16 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50127/960.webp",
+      "collections": [
+        "trending",
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50127,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "trending_rank": 6,
+        "brand_line": "CaseCraft Silicone Logo",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour with a printed logo, as in the photos.",
+        "detail_fit": "Made for the iPhone 16 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50127-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "spigen-clear-case-clear-iphone-16-pro",
+      "productType": "Phone cover",
+      "title": "Clear · Spigen",
+      "description": "Clear is a Spigen Clear cover for the iPhone 16 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50128/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50128,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Spigen Clear",
+        "regular_inr": 699,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a fully clear back.",
+        "detail_fit": "Made for the iPhone 16 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50128-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 699,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-sf-carbon-case-grey-iphone-16",
+      "productType": "Phone cover",
+      "title": "Grey · CaseCraft",
+      "description": "Grey is a CaseCraft SF Carbon cover for the iPhone 16, stocked in our Haridwar shop. The back has a fibre-look texture with a raised surround at the camera.",
+      "imagePath": "/products/photos/50129/960.webp",
+      "collections": [
+        "trending",
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50129,
         "family": "minimal",
         "theme": "minimal",
         "finish": "soft",
         "holo": false,
         "is_new": true,
         "trending_rank": 1,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1099,
+        "brand_line": "CaseCraft SF Carbon",
+        "regular_inr": 500,
         "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Raised red SF lettering and a yellow shield badge on a perforated back.",
+        "detail_fit": "Made for the iPhone 16. The camera opening follows that phone's island and the buttons and ports stay open.",
         "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
       },
       "variants": [
         {
-          "sku": "PH-41284-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "PH-50129-IP16",
+          "modelSlug": "iphone-16",
           "caseType": "soft",
-          "priceInr": 1099,
+          "priceInr": 500,
           "stock": 8
         }
       ]
     },
     {
-      "handle": "luxo-nano-fiber-magsafe-case-colourful-tiger-samsung-fold-8-ultra",
+      "handle": "casecraft-camera-flip-stand-case-black-iphone-16",
       "productType": "Phone cover",
-      "title": "Colourful Tiger · Luxo",
-      "description": "Colourful Tiger is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film.",
-      "imagePath": "/products/photos/41286/960.webp",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Camera Flip Stand cover for the iPhone 16, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50130/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50130,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Camera Flip Stand",
+        "regular_inr": 450,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a black frame and a flip-up camera stand.",
+        "detail_fit": "Made for the iPhone 16. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50130-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 450,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-magsafe-case-black-orange-iphone-16",
+      "productType": "Phone cover",
+      "title": "Black Orange · CaseCraft",
+      "description": "Black Orange is a CaseCraft Frosted MagSafe cover for the iPhone 16, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50131/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50131,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the iPhone 16. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50131-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-magsafe-case-orange-iphone-16",
+      "productType": "Phone cover",
+      "title": "Orange · CaseCraft",
+      "description": "Orange is a CaseCraft Frosted MagSafe cover for the iPhone 16, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50132/960.webp",
       "collections": [
         "trending",
         "new-arrivals"
@@ -344,37 +1337,113 @@
       "tags": [],
       "metadata": {
         "kind": "photo",
-        "photo_id": 41286,
+        "photo_id": 50132,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "trending_rank": 8,
+        "brand_line": "CaseCraft Frosted MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the iPhone 16. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50132-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-mocha-brown-iphone-16",
+      "productType": "Phone cover",
+      "title": "Mocha Brown · CaseCraft",
+      "description": "Mocha Brown is a CaseCraft Ring Stand Camera Slider cover for the iPhone 16, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50133/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50133,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 16. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50133-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-orange-iphone-16",
+      "productType": "Phone cover",
+      "title": "Orange · CaseCraft",
+      "description": "Orange is a CaseCraft Ring Stand Camera Slider cover for the iPhone 16, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50134/960.webp",
+      "collections": [
+        "trending",
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50134,
         "family": "minimal",
         "theme": "minimal",
         "finish": "soft",
         "holo": false,
         "is_new": true,
         "trending_rank": 3,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1099,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
         "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 16. The camera opening follows that phone's island and the buttons and ports stay open.",
         "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
       },
       "variants": [
         {
-          "sku": "PH-41286-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "PH-50134-IP16",
+          "modelSlug": "iphone-16",
           "caseType": "soft",
-          "priceInr": 1099,
+          "priceInr": 400,
           "stock": 8
         }
       ]
     },
     {
-      "handle": "luxo-nano-fiber-magsafe-case-greenrise-samsung-fold-8-ultra",
+      "handle": "dulero-rugged-ring-stand-case-navy-grey-iphone-16",
       "productType": "Phone cover",
-      "title": "Greenrise · Luxo",
-      "description": "Greenrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through.",
-      "imagePath": "/products/photos/41288/960.webp",
+      "title": "Navy Grey · Dulero",
+      "description": "Navy Grey is a Dulero Rugged Ring Stand cover for the iPhone 16, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50135/960.webp",
       "collections": [
         "new-arrivals"
       ],
@@ -382,452 +1451,26 @@
       "tags": [],
       "metadata": {
         "kind": "photo",
-        "photo_id": 41288,
+        "photo_id": 50135,
         "family": "minimal",
         "theme": "minimal",
         "finish": "soft",
         "holo": false,
         "is_new": true,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1099,
+        "brand_line": "Dulero Rugged Ring Stand",
+        "regular_inr": 599,
         "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_material": "Hard textured back, soft bumper and a fold-out ring stand",
+        "detail_print": "Moulded textured panels; nothing is printed on.",
+        "detail_fit": "Made for the iPhone 16. The camera opening follows that phone's island and the buttons and ports stay open.",
         "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
       },
       "variants": [
         {
-          "sku": "PH-41288-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "PH-50135-IP16",
+          "modelSlug": "iphone-16",
           "caseType": "soft",
-          "priceInr": 1099,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-green-iphone-18-pro",
-      "productType": "Phone cover",
-      "title": "Green · X-Level",
-      "description": "Green is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
-      "imagePath": "/products/photos/41162/960.webp",
-      "collections": [
-        "trending"
-      ],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41162,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "trending_rank": 2,
-        "brand_line": "X-Level Leader Steed Nano Fiber",
-        "regular_inr": 1199,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41162-IP18P",
-          "modelSlug": "iphone-18-pro",
-          "caseType": "soft",
-          "priceInr": 1199,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-glacier-iphone-18-pro",
-      "productType": "Phone cover",
-      "title": "Glacier · X-Level",
-      "description": "Glacier is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
-      "imagePath": "/products/photos/41164/960.webp",
-      "collections": [
-        "new-arrivals"
-      ],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41164,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "is_new": true,
-        "brand_line": "X-Level Leader Steed Nano Fiber",
-        "regular_inr": 1199,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41164-IP18P",
-          "modelSlug": "iphone-18-pro",
-          "caseType": "soft",
-          "priceInr": 1199,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "x-level-leader-steed-nano-fiber-case-with-magsafe-cherry-iphone-18-pro",
-      "productType": "Phone cover",
-      "title": "Cherry · X-Level",
-      "description": "Cherry is a X-Level Leader Steed Nano Fiber cover for the iPhone 18 Pro, photographed in our Haridwar shop. The back is a thin aramid-fibre weave with a raised ring around the camera.",
-      "imagePath": "/products/photos/41166/960.webp",
-      "collections": [
-        "trending"
-      ],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41166,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "trending_rank": 7,
-        "brand_line": "X-Level Leader Steed Nano Fiber",
-        "regular_inr": 1199,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41166-IP18P",
-          "modelSlug": "iphone-18-pro",
-          "caseType": "soft",
-          "priceInr": 1199,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sparkle-grey-samsung-fold-8",
-      "productType": "Phone cover",
-      "title": "Sparkle Grey · Luxo",
-      "description": "Sparkle Grey is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
-      "imagePath": "/products/photos/41168/960.webp",
-      "collections": [],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41168,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1299,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41168-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
-          "caseType": "soft",
-          "priceInr": 1299,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sunrise-samsung-fold-8",
-      "productType": "Phone cover",
-      "title": "Sunrise · Luxo",
-      "description": "Sunrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through. A separate hinge piece covers the spine when the phone is folded.",
-      "imagePath": "/products/photos/41189/960.webp",
-      "collections": [],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41189,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1299,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41189-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
-          "caseType": "soft",
-          "priceInr": 1299,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-sparkle-redish-samsung-fold-8",
-      "productType": "Phone cover",
-      "title": "Sparkle Redish · Luxo",
-      "description": "Sparkle Redish is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
-      "imagePath": "/products/photos/41190/960.webp",
-      "collections": [
-        "trending"
-      ],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41190,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "trending_rank": 8,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1299,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41190-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
-          "caseType": "soft",
-          "priceInr": 1299,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-black-horse-samsung-fold-8-ultra",
-      "productType": "Phone cover",
-      "title": "Black Horse · Luxo",
-      "description": "Black Horse is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film. A separate hinge piece covers the spine when the phone is folded.",
-      "imagePath": "/products/photos/41250/960.webp",
-      "collections": [
-        "trending"
-      ],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41250,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "trending_rank": 6,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1299,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41250-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
-          "caseType": "soft",
-          "priceInr": 1299,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-redish-sparkle-samsung-fold-8-ultra",
-      "productType": "Phone cover",
-      "title": "Redish Sparkle · Luxo",
-      "description": "Redish Sparkle is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
-      "imagePath": "/products/photos/41252/960.webp",
-      "collections": [
-        "trending"
-      ],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41252,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "trending_rank": 4,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1299,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41252-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
-          "caseType": "soft",
-          "priceInr": 1299,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-moonrise-samsung-fold-8-ultra",
-      "productType": "Phone cover",
-      "title": "Moonrise · Luxo",
-      "description": "Moonrise is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. Two colours fade into each other across the back, with the weave showing through. A separate hinge piece covers the spine when the phone is folded.",
-      "imagePath": "/products/photos/41254/960.webp",
-      "collections": [],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41254,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1299,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41254-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
-          "caseType": "soft",
-          "priceInr": 1299,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-blue-horse-samsung-fold-8-ultra",
-      "productType": "Phone cover",
-      "title": "Blue Horse · Luxo",
-      "description": "Blue Horse is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The pattern is part of the woven back, not a printed film. A separate hinge piece covers the spine when the phone is folded.",
-      "imagePath": "/products/photos/41256/960.webp",
-      "collections": [],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41256,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1299,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41256-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
-          "caseType": "soft",
-          "priceInr": 1299,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "luxo-nano-fiber-magsafe-case-with-hing-protection-grey-sparkle-samsung-fold-8-ultra",
-      "productType": "Phone cover",
-      "title": "Grey Sparkle · Luxo",
-      "description": "Grey Sparkle is a Luxo Nano Fiber Magsafe cover for the Samsung Fold 8 Ultra, photographed in our Haridwar shop. The glitter is set into the shell itself, so it does not flake or rub off. A separate hinge piece covers the spine when the phone is folded.",
-      "imagePath": "/products/photos/41258/960.webp",
-      "collections": [],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41258,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "brand_line": "Luxo Nano Fiber Magsafe",
-        "regular_inr": 1299,
-        "case_types": "",
-        "detail_material": "Aramid fibre (nano fibre) shell with a soft inner lining",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the Samsung Fold 8 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41258-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
-          "caseType": "soft",
-          "priceInr": 1299,
-          "stock": 8
-        }
-      ]
-    },
-    {
-      "handle": "borluco-textured-silicone-case-with-stand-black-iphone-duo",
-      "productType": "Phone cover",
-      "title": "Black · Borluco",
-      "description": "Black is a Borluco Textured Silicone cover for the iPhone Duo, photographed in our Haridwar shop. One colour, a textured grip and a fold-out stand on the back.",
-      "imagePath": "/products/photos/41154/960.webp",
-      "collections": [],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "photo",
-        "photo_id": 41154,
-        "family": "minimal",
-        "theme": "minimal",
-        "finish": "soft",
-        "holo": false,
-        "brand_line": "Borluco Textured Silicone",
-        "regular_inr": 1399,
-        "case_types": "",
-        "detail_material": "Textured silicone with a fold-out stand",
-        "detail_print": "The finish in the photo is the shell itself; nothing is printed on afterwards.",
-        "detail_fit": "Made for the iPhone Duo. The camera opening follows that phone's island and the buttons and ports stay open.",
-        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
-      },
-      "variants": [
-        {
-          "sku": "PH-41154-IPD",
-          "modelSlug": "iphone-duo",
-          "caseType": "soft",
-          "priceInr": 1399,
+          "priceInr": 599,
           "stock": 8
         }
       ]
@@ -4401,29 +5044,36 @@
           "stock": 25
         },
         {
-          "sku": "ACC-GLACLE-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
+          "sku": "ACC-GLACLE-IP13P",
+          "modelSlug": "iphone-13-pro",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
         },
         {
-          "sku": "ACC-GLACLE-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "ACC-GLACLE-IP14",
+          "modelSlug": "iphone-14",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
         },
         {
-          "sku": "ACC-GLACLE-IP18P",
-          "modelSlug": "iphone-18-pro",
+          "sku": "ACC-GLACLE-IP14P",
+          "modelSlug": "iphone-14-pro",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
         },
         {
-          "sku": "ACC-GLACLE-IPD",
-          "modelSlug": "iphone-duo",
+          "sku": "ACC-GLACLE-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP15P",
+          "modelSlug": "iphone-15-pro",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
@@ -4556,29 +5206,36 @@
           "stock": 25
         },
         {
-          "sku": "ACC-GLAPRI-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
+          "sku": "ACC-GLAPRI-IP13P",
+          "modelSlug": "iphone-13-pro",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
         },
         {
-          "sku": "ACC-GLAPRI-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "ACC-GLAPRI-IP14",
+          "modelSlug": "iphone-14",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
         },
         {
-          "sku": "ACC-GLAPRI-IP18P",
-          "modelSlug": "iphone-18-pro",
+          "sku": "ACC-GLAPRI-IP14P",
+          "modelSlug": "iphone-14-pro",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
         },
         {
-          "sku": "ACC-GLAPRI-IPD",
-          "modelSlug": "iphone-duo",
+          "sku": "ACC-GLAPRI-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP15P",
+          "modelSlug": "iphone-15-pro",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -4711,29 +5368,36 @@
           "stock": 25
         },
         {
-          "sku": "ACC-LENGLA-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
+          "sku": "ACC-LENGLA-IP13P",
+          "modelSlug": "iphone-13-pro",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
         },
         {
-          "sku": "ACC-LENGLA-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "ACC-LENGLA-IP14",
+          "modelSlug": "iphone-14",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
         },
         {
-          "sku": "ACC-LENGLA-IP18P",
-          "modelSlug": "iphone-18-pro",
+          "sku": "ACC-LENGLA-IP14P",
+          "modelSlug": "iphone-14-pro",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
         },
         {
-          "sku": "ACC-LENGLA-IPD",
-          "modelSlug": "iphone-duo",
+          "sku": "ACC-LENGLA-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP15P",
+          "modelSlug": "iphone-15-pro",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
@@ -4866,29 +5530,36 @@
           "stock": 25
         },
         {
-          "sku": "ACC-FILMAT-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
+          "sku": "ACC-FILMAT-IP13P",
+          "modelSlug": "iphone-13-pro",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
         },
         {
-          "sku": "ACC-FILMAT-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "ACC-FILMAT-IP14",
+          "modelSlug": "iphone-14",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
         },
         {
-          "sku": "ACC-FILMAT-IP18P",
-          "modelSlug": "iphone-18-pro",
+          "sku": "ACC-FILMAT-IP14P",
+          "modelSlug": "iphone-14-pro",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
         },
         {
-          "sku": "ACC-FILMAT-IPD",
-          "modelSlug": "iphone-duo",
+          "sku": "ACC-FILMAT-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP15P",
+          "modelSlug": "iphone-15-pro",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
@@ -5021,29 +5692,36 @@
           "stock": 25
         },
         {
-          "sku": "ACC-FILCAR-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
+          "sku": "ACC-FILCAR-IP13P",
+          "modelSlug": "iphone-13-pro",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
         },
         {
-          "sku": "ACC-FILCAR-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
+          "sku": "ACC-FILCAR-IP14",
+          "modelSlug": "iphone-14",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
         },
         {
-          "sku": "ACC-FILCAR-IP18P",
-          "modelSlug": "iphone-18-pro",
+          "sku": "ACC-FILCAR-IP14P",
+          "modelSlug": "iphone-14-pro",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
         },
         {
-          "sku": "ACC-FILCAR-IPD",
-          "modelSlug": "iphone-duo",
+          "sku": "ACC-FILCAR-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP15P",
+          "modelSlug": "iphone-15-pro",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -5101,34 +5779,6 @@
         {
           "sku": "ACC-BODFIL-ON13",
           "modelSlug": "oneplus-13",
-          "caseType": null,
-          "priceInr": 499,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-BODFIL-GAZF8",
-          "modelSlug": "galaxy-z-fold-8",
-          "caseType": null,
-          "priceInr": 499,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-BODFIL-GAZF8U",
-          "modelSlug": "galaxy-z-fold-8-ultra",
-          "caseType": null,
-          "priceInr": 499,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-BODFIL-IP18P",
-          "modelSlug": "iphone-18-pro",
-          "caseType": null,
-          "priceInr": 499,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-BODFIL-IPD",
-          "modelSlug": "iphone-duo",
           "caseType": null,
           "priceInr": 499,
           "stock": 25

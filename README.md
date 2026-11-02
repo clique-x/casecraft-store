@@ -116,6 +116,7 @@ Product photo tools, run from `apps/storefront`:
 |---|---|
 | `pnpm photos` | Generate 320 to 960 px WebP variants from catalogue originals |
 | `pnpm photos:shots <dir>` | Turn hand-held shots into 4:5 card images |
+| `pnpm photos:gallery <dir>` | Turn `<id>/<n>-<Label>.jpg` files into the square product-page gallery, in display order |
 
 To cut a product out of a photo on macOS, see [`scripts/photo-cutout/README.md`](scripts/photo-cutout/README.md).
 

@@ -8,6 +8,7 @@ import { Breadcrumb } from '@/components/product/Breadcrumb';
 import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
 import { DeliveryFacts } from '@/components/product/DeliveryFacts';
+import { PhotoGallery } from '@/components/product/PhotoGallery';
 import { ProductDetails } from '@/components/product/ProductDetails';
 import { ProductJsonLd } from '@/components/product/ProductJsonLd';
 import { RelatedRows } from '@/components/product/RelatedRows';
@@ -17,7 +18,7 @@ import { ProductViewer } from '@/components/product/viewer/ProductViewer.client'
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 import { DEPARTMENT_OF } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
-import { photoSrc, type PhotoEntry } from '@/lib/catalog/photos';
+import { gallerySrc, photoSrc, type PhotoEntry } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getPhoneModels } from '@/lib/medusa/home';
 import {
@@ -46,6 +47,11 @@ export async function generateStaticParams(): Promise<{ handle: string }[]> {
 }
 
 function ogImageFor(photo: PhotoEntry): { url: string; width: number; height: number; alt: string } {
+  const alt = `${photo.design} ${photo.brand} ${photo.series} cover for ${photo.modelLabel}`;
+  // The first gallery image has a backdrop; a transparent cutout previews on black in most apps.
+  if (photo.gallery && photo.gallery.length > 0) {
+    return { url: new URL(gallerySrc(photo.id, 0, 960), SITE_URL).toString(), width: 960, height: 960, alt };
+  }
   const width = Math.min(OG_WIDTH, photo.imageW);
   const height = Math.round((photo.imageH * width) / photo.imageW);
   return {
@@ -177,6 +183,8 @@ async function ProductPageContent({ params }: ProductPageProps) {
           </div>
         </div>
       </div>
+
+      {product.photo && <PhotoGallery entry={product.photo} />}
 
       {!product.accessory && !product.gadget && <BundleKits product={product} accessories={accessories} models={models} />}
 

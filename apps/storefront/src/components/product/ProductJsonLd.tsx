@@ -1,6 +1,6 @@
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 import { LOOKS } from '@/lib/catalog/looks';
-import { photoSrc } from '@/lib/catalog/photos';
+import { gallerySrc, photoSrc } from '@/lib/catalog/photos';
 import { THEMES, type ProductDetail } from '@/lib/medusa/fixtures';
 import { lowestPrice } from '@/lib/medusa/variants';
 
@@ -28,7 +28,14 @@ function productJsonLd(product: ProductDetail): string {
     name: product.title,
     description: product.description,
     url,
-    ...(photo ? { image: new URL(photoSrc(photo.id, 960), SITE_URL).toString() } : {}),
+    ...(photo
+      ? {
+          image: new URL(
+            photo.gallery && photo.gallery.length > 0 ? gallerySrc(photo.id, 0, 960) : photoSrc(photo.id, 960),
+            SITE_URL,
+          ).toString(),
+        }
+      : {}),
     sku: product.variants[0]?.sku,
     brand: { '@type': 'Brand', name: photo ? photo.brand : BRAND_NAME },
     category: categoryOf(product),

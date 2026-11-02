@@ -58,7 +58,7 @@ function LookThumbs({ others, className }: { others: PhotoEntry[]; className?: s
 }
 
 /**
- * Six looks. Phones: the look's lead cover fills a 4:5 frame with name and count below it. Desktop:
+ * One tile per look. Phones: the look's lead cover fills a 4:5 frame with name and count below it. Desktop:
  * a studio-grey panel (name, blurb, other covers, count) beside the photo. No shade is laid over
  * the photo at any size, so the cover always reads as photographed.
  */
@@ -77,7 +77,7 @@ export function LookGrid({ looks }: { looks: LookWithCover[] }) {
             </h2>
             <AccentBar className="mt-4" />
           </div>
-          <p className="text-body text-fg-muted">Six looks. Every cover photographed in stock.</p>
+          <p className="text-body text-fg-muted">{looks.length} looks. Every cover photographed in stock.</p>
         </Reveal>
 
         <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-5 lg:grid-cols-3 lg:gap-5">

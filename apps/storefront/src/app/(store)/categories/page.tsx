@@ -10,7 +10,7 @@ import { getLooks } from '@/lib/medusa/home';
 
 const TITLE = 'Shop phone back covers by look';
 const DESCRIPTION =
-  'Carbon and aramid, sparkle, animal print, gradient, solid and fold covers. Every cover photographed in our shop.';
+  'Carbon, animal print, solid, clear and frosted, and ring and stand covers. Every cover photographed in our shop.';
 const URL_PATH = '/categories';
 const TILE_SIZES = '(max-width: 768px) 46vw, (max-width: 1024px) 31vw, 400px';
 
@@ -60,7 +60,7 @@ export default async function CategoriesPage() {
       <ListingHeader
         trail={[{ name: 'Looks', href: URL_PATH }]}
         title="Shop by look"
-        intro="Six looks. Every cover is photographed in our shop, so what you see is what arrives."
+        intro={`${looks.length} looks. Every cover is photographed in our shop, so what you see is what arrives.`}
       />
 
       <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-5 md:grid-cols-3 lg:mt-10">

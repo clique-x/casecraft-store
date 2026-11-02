@@ -12,7 +12,9 @@ const CATALOG = path.join(ROOT, 'src/lib/catalog/photo-catalog.json');
 const PUBLIC = path.join(ROOT, 'public');
 const WIDTHS = [320, 480, 720, 960];
 const TRIM_THRESHOLD = 8;
-const ASPECT_MIN = 0.5;
+// A phone cover standing upright is a little narrower than 1:2 (an iPhone 15 case is about 0.48),
+// and one turned slightly to the side narrower still (about 0.41).
+const ASPECT_MIN = 0.4;
 const ASPECT_MAX = 1.6;
 const WEBP = { quality: 78, alphaQuality: 90, effort: 4 };
 // Placeholder completion (`complete: true`): today's shop photos stop where the glove held the case, so

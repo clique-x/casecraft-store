@@ -322,21 +322,23 @@ function proceduralDetail(product: HomeProduct): ProductDetail {
 }
 
 const LOOK_COPY: Record<PhotoEntry['look'], string> = {
-  'carbon-and-aramid': 'The back is a thin aramid-fibre weave with a raised ring around the camera.',
+  'carbon-and-aramid': 'The back has a fibre-look texture with a raised surround at the camera.',
   sparkle: 'The glitter is set into the shell itself, so it does not flake or rub off.',
-  'animal-print': 'The pattern is part of the woven back, not a printed film.',
+  'animal-print': 'The artwork runs across the whole back rather than sitting in one corner.',
   gradient: 'Two colours fade into each other across the back, with the weave showing through.',
-  solid: 'One colour, a textured grip and a fold-out stand on the back.',
+  solid: 'One colour all over, with a soft finish that is easy to grip.',
+  clear: "A clear or frosted back lets the phone's own colour show through.",
+  stand: 'A built-in stand props the phone up for video calls and films.',
 };
 
-const MATERIAL_ARAMID = 'Aramid fibre (nano fibre) shell with a soft inner lining';
-const MATERIAL_SILICONE = 'Textured silicone with a fold-out stand';
+/** Fallback when a photo-catalog entry has no `material` line of its own. */
+const MATERIAL_PHOTO = 'Protective shell with raised edges around the screen and camera';
 const PRINT_PHOTO = 'The finish in the photo is the shell itself; nothing is printed on afterwards.';
 const CARE_PHOTO = 'Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell.';
 
 function photoDescription(photo: PhotoEntry): string {
   const hinge = photo.tags?.includes('hinge') ? ' A separate hinge piece covers the spine when the phone is folded.' : '';
-  return `${photo.design} is a ${photo.brand} ${photo.series} cover for the ${photo.modelLabel}, photographed in our ${SHOP_CITY} shop. ${LOOK_COPY[photo.look]}${hinge}`;
+  return `${photo.design} is a ${photo.brand} ${photo.series} cover for the ${photo.modelLabel}, stocked in our ${SHOP_CITY} shop. ${LOOK_COPY[photo.look]}${hinge}`;
 }
 
 function photoVariants(photo: PhotoEntry): Variant[] {
@@ -360,8 +362,8 @@ function photoDetail(product: HomeProduct, photo: PhotoEntry): ProductDetail {
     caseTypes: [],
     variants: photoVariants(photo),
     details: {
-      material: photo.brand === 'Borluco' ? MATERIAL_SILICONE : MATERIAL_ARAMID,
-      print: PRINT_PHOTO,
+      material: photo.material ?? MATERIAL_PHOTO,
+      print: photo.print ?? PRINT_PHOTO,
       fit: `Made for the ${photo.modelLabel}. The camera opening follows that phone's island and the buttons and ports stay open.`,
       care: CARE_PHOTO,
     },

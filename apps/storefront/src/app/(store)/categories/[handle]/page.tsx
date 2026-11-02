@@ -18,7 +18,7 @@ interface Category {
   handle: string;
   name: string;
   blurb: string;
-  /** Looks are the six photographed groups; themes group the printed designs (linked from their product pages). */
+  /** Looks are the photographed groups; themes group the printed designs (linked from their product pages). */
   kind: 'look' | 'theme';
 }
 

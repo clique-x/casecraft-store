@@ -2,7 +2,7 @@ import type { PhoneModel } from '@/lib/medusa/fixtures';
 import raw from './photo-catalog.json';
 
 export type PhotoCut = 'faded' | 'full';
-export type PhotoLook = 'carbon-and-aramid' | 'sparkle' | 'animal-print' | 'gradient' | 'solid';
+export type PhotoLook = 'carbon-and-aramid' | 'sparkle' | 'animal-print' | 'gradient' | 'solid' | 'clear' | 'stand';
 export type PhotoWidth = 320 | 480 | 720 | 960;
 
 export interface PhotoEntry {
@@ -32,6 +32,15 @@ export interface PhotoEntry {
   angles?: string[];
   /** Hand-held card shots at /products/photos/<id>/shot-<n>-<w>.webp; 0 is front-on. */
   shots?: number;
+  /**
+   * Square product-page gallery at /products/photos/<id>/g-<n>-<w>.webp, one label per image in
+   * display order: the back on its own first, then in hand, then the rest, the spec card last.
+   */
+  gallery?: string[];
+  /** Shell material line for the product details; a generic line is used when absent. */
+  material?: string;
+  /** What the finish or artwork is, for the product details; a generic line is used when absent. */
+  print?: string;
   stock?: number;
   hidden?: boolean;
   variants: number[];
@@ -51,10 +60,11 @@ const WIDE_ASPECT = 1.15;
 
 /** Phone models that exist because a photographed cover fits them; `PHONE_MODELS` spreads them in. */
 export const PHOTO_PHONE_MODELS: readonly PhoneModel[] = [
-  { slug: 'galaxy-z-fold-8', brand: 'Samsung', model: 'Galaxy Z Fold 8', series: 'Galaxy Z', releaseYear: 2026, islandStyle: 'pills' },
-  { slug: 'galaxy-z-fold-8-ultra', brand: 'Samsung', model: 'Galaxy Z Fold 8 Ultra', series: 'Galaxy Z', releaseYear: 2026, islandStyle: 'pills' },
-  { slug: 'iphone-18-pro', brand: 'Apple', model: 'iPhone 18 Pro', series: 'iPhone', releaseYear: 2026, islandStyle: 'square' },
-  { slug: 'iphone-duo', brand: 'Apple', model: 'iPhone Duo', series: 'iPhone', releaseYear: 2026, islandStyle: 'pills' },
+  { slug: 'iphone-13-pro', brand: 'Apple', model: 'iPhone 13 Pro', series: 'iPhone', releaseYear: 2021, islandStyle: 'square' },
+  { slug: 'iphone-14', brand: 'Apple', model: 'iPhone 14', series: 'iPhone', releaseYear: 2022, islandStyle: 'square' },
+  { slug: 'iphone-14-pro', brand: 'Apple', model: 'iPhone 14 Pro', series: 'iPhone', releaseYear: 2022, islandStyle: 'square' },
+  { slug: 'iphone-15', brand: 'Apple', model: 'iPhone 15', series: 'iPhone', releaseYear: 2023, islandStyle: 'square' },
+  { slug: 'iphone-15-pro', brand: 'Apple', model: 'iPhone 15 Pro', series: 'iPhone', releaseYear: 2023, islandStyle: 'square' },
 ];
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -103,7 +113,7 @@ function cutOf(r: Record<string, unknown>): PhotoCut {
   return v === 'faded' || v === 'full' ? v : fail(r.id, 'cut', "'faded' or 'full'");
 }
 
-const LOOKS: readonly PhotoLook[] = ['carbon-and-aramid', 'sparkle', 'animal-print', 'gradient', 'solid'];
+const LOOKS: readonly PhotoLook[] = ['carbon-and-aramid', 'sparkle', 'animal-print', 'gradient', 'solid', 'clear', 'stand'];
 
 function lookOf(r: Record<string, unknown>): PhotoLook {
   const v = r.look;
@@ -161,6 +171,9 @@ function parseEntry(v: unknown): PhotoEntry {
   if (stock !== undefined) entry.stock = stock;
   const hidden = optBool(v, 'hidden');
   if (hidden !== undefined) entry.hidden = hidden;
+  if (v.gallery !== undefined) entry.gallery = strList(v, 'gallery');
+  if (v.material !== undefined) entry.material = str(v, 'material');
+  if (v.print !== undefined) entry.print = str(v, 'print');
   return entry;
 }
 
@@ -268,4 +281,15 @@ export function shotSrc(id: number, n: number, w: (typeof SHOT_WIDTHS)[number] =
 
 export function shotSrcSet(id: number, n: number): string {
   return SHOT_WIDTHS.map((w) => `${shotSrc(id, n, w)} ${w}w`).join(', ');
+}
+
+/** Widths written by scripts/photo-gallery.mjs; every gallery image is square. */
+export const GALLERY_WIDTHS = [480, 960, 1440] as const;
+
+export function gallerySrc(id: number, n: number, w: (typeof GALLERY_WIDTHS)[number] = 960): string {
+  return `/products/photos/${id}/g-${n}-${w}.webp`;
+}
+
+export function gallerySrcSet(id: number, n: number): string {
+  return GALLERY_WIDTHS.map((w) => `${gallerySrc(id, n, w)} ${w}w`).join(', ');
 }

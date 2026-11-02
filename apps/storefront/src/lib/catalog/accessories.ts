@@ -25,11 +25,7 @@ export const FLAGSHIP_MODELS: readonly string[] = [
   'iphone-16',
   'iphone-16-pro',
   'iphone-17',
-  'iphone-18-pro',
-  'iphone-duo',
   'galaxy-s25',
-  'galaxy-z-fold-8',
-  'galaxy-z-fold-8-ultra',
   'oneplus-13',
 ];
 

@@ -28,10 +28,14 @@ const ANDROID_CODES: Record<string, RegExp> = {
 
 /** Screen size in CSS points (portrait), per iPhone in the catalogue. */
 const IPHONE_SCREENS: Record<string, string> = {
+  'iphone-13-pro': '390x844',
+  'iphone-14': '390x844',
+  'iphone-14-pro': '393x852',
+  'iphone-15': '393x852',
+  'iphone-15-pro': '393x852',
   'iphone-16': '393x852',
   'iphone-16-pro': '402x874',
   'iphone-17': '402x874',
-  'iphone-18-pro': '402x874',
 };
 
 export type Detection =

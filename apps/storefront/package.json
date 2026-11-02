@@ -10,6 +10,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "photos": "node scripts/photo-variants.mjs",
     "photos:shots": "node scripts/photo-shots.mjs",
+    "photos:gallery": "node scripts/photo-gallery.mjs",
     "catalog:export": "tsx --tsconfig tsconfig.json scripts/export-catalog.mts"
   },
   "dependencies": {

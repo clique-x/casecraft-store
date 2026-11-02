@@ -21,7 +21,7 @@ export const LAUNCH_BRANDS: readonly string[] = [
 /** Where the photos are shot; appears in the "Up close" and "Why buy here" copy. */
 export const SHOP_CITY = 'Haridwar';
 /** Case makers we stock, shown as plain text only (no third-party logos). */
-export const CASE_BRANDS: readonly string[] = ['Luxo', 'X-Level', 'Borluco', 'NIMMY', 'KUZOOM'];
+export const CASE_BRANDS: readonly string[] = ['CG Mobile', 'Dulero', 'Spigen', 'Neza'];
 /** Label on the cover pill; becomes "Buy now" once checkout exists. */
 export const PRODUCT_CTA_LABEL = 'View';
 

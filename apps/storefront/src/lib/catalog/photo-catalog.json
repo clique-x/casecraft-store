@@ -1,685 +1,1646 @@
 [
   {
-    "id": 41280,
-    "slug": "luxo-nano-fiber-magsafe-case-black-carbon-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Black Carbon",
-    "title": "Black Carbon · Luxo",
-    "priceInr": 1099,
-    "regularInr": 1099,
+    "id": 50101,
+    "slug": "neza-anti-yellow-magsafe-clear-case-clear-iphone-13-pro",
+    "brand": "Neza",
+    "series": "Anti-Yellow MagSafe Clear",
+    "design": "Clear",
+    "title": "Clear · Neza",
+    "priceInr": 250,
+    "regularInr": 250,
     "models": [
-      "Z Fold 8 Ultra"
+      "iPhone 13 Pro"
     ],
     "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
+      "iphone-13-pro"
     ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41280.webp",
-    "imageW": 627,
-    "imageH": 1254,
+    "modelLabel": "iPhone 13 Pro",
+    "image": "/products/photos/50101.webp",
+    "imageW": 796,
+    "imageH": 1531,
     "cut": "full",
-    "look": "carbon-and-aramid",
-    "heroEligible": true,
-    "heroRank": 4,
-    "trendingRank": 5,
-    "isNew": true,
+    "look": "clear",
+    "heroEligible": false,
     "features": [
-      "Raised camera ring",
-      "Thin aramid-weave back",
-      "MagSafe ring built in"
+      "MagSafe ring built in",
+      "Air-cushion corners",
+      "Anti-yellow clear back"
     ],
-    "stock": 8,
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
     "variants": [
       320,
       480,
       720,
       960
     ],
-    "source": "mobiicare.in placeholder, replace with own photo",
+    "source": "AI-styled from our shop photo",
     "shots": 2,
-    "complete": true
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
   },
   {
-    "id": 41282,
-    "slug": "luxo-nano-fiber-magsafe-case-grey-tiger-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Grey Tiger",
-    "title": "Grey Tiger · Luxo",
-    "priceInr": 1099,
-    "regularInr": 1099,
+    "id": 50102,
+    "slug": "casecraft-silicone-magsafe-case-midnight-blue-iphone-13-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Midnight Blue",
+    "title": "Midnight Blue · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
     "models": [
-      "Z Fold 8 Ultra"
+      "iPhone 13 Pro"
     ],
     "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
+      "iphone-13-pro"
     ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41282.webp",
-    "imageW": 622,
-    "imageH": 1244,
+    "modelLabel": "iPhone 13 Pro",
+    "image": "/products/photos/50102.webp",
+    "imageW": 644,
+    "imageH": 1287,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50103,
+    "slug": "casecraft-silicone-magsafe-case-sky-blue-iphone-13-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Sky Blue",
+    "title": "Sky Blue · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 13 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-13-pro"
+    ],
+    "modelLabel": "iPhone 13 Pro",
+    "image": "/products/photos/50103.webp",
+    "imageW": 721,
+    "imageH": 1434,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50104,
+    "slug": "neza-anti-yellow-magsafe-clear-case-clear-iphone-14-pro",
+    "brand": "Neza",
+    "series": "Anti-Yellow MagSafe Clear",
+    "design": "Clear",
+    "title": "Clear · Neza",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "iPhone 14 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-14-pro"
+    ],
+    "modelLabel": "iPhone 14 Pro",
+    "image": "/products/photos/50104.webp",
+    "imageW": 669,
+    "imageH": 1329,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Air-cushion corners",
+      "Anti-yellow clear back"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50105,
+    "slug": "cg-mobile-scuderia-ferrari-silicone-case-red-iphone-14-pro",
+    "brand": "CG Mobile",
+    "series": "Scuderia Ferrari Silicone",
+    "design": "Red",
+    "title": "Red · CG Mobile",
+    "priceInr": 500,
+    "regularInr": 500,
+    "models": [
+      "iPhone 14 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-14-pro"
+    ],
+    "modelLabel": "iPhone 14 Pro",
+    "image": "/products/photos/50105.webp",
+    "imageW": 1363,
+    "imageH": 1600,
     "cut": "full",
     "look": "animal-print",
+    "heroEligible": false,
+    "trendingRank": 7,
+    "features": [
+      "Tonal prancing horse print",
+      "Soft-touch silicone finish",
+      "Scuderia Ferrari retail box"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Tonal prancing horse printed across the back.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "Our shop photo",
+    "shots": 2,
+    "gallery": [
+      "In the box",
+      "In hand",
+      "Side",
+      "Unboxed",
+      "Inside",
+      "Box back",
+      "Features"
+    ]
+  },
+  {
+    "id": 50106,
+    "slug": "casecraft-silicone-magsafe-case-beige-iphone-14-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Beige",
+    "title": "Beige · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 14 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-14-pro"
+    ],
+    "modelLabel": "iPhone 14 Pro",
+    "image": "/products/photos/50106.webp",
+    "imageW": 670,
+    "imageH": 1306,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": true,
+    "heroRank": 9,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50107,
+    "slug": "casecraft-silicone-magsafe-case-black-iphone-14-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 14 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-14-pro"
+    ],
+    "modelLabel": "iPhone 14 Pro",
+    "image": "/products/photos/50107.webp",
+    "imageW": 734,
+    "imageH": 1486,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50108,
+    "slug": "casecraft-silicone-magsafe-case-sky-blue-iphone-14-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Sky Blue",
+    "title": "Sky Blue · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 14 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-14-pro"
+    ],
+    "modelLabel": "iPhone 14 Pro",
+    "image": "/products/photos/50108.webp",
+    "imageW": 778,
+    "imageH": 1574,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50109,
+    "slug": "neza-anti-yellow-magsafe-clear-case-clear-iphone-14",
+    "brand": "Neza",
+    "series": "Anti-Yellow MagSafe Clear",
+    "design": "Clear",
+    "title": "Clear · Neza",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "iPhone 14"
+    ],
+    "modelSlugs": [
+      "iphone-14"
+    ],
+    "modelLabel": "iPhone 14",
+    "image": "/products/photos/50109.webp",
+    "imageW": 846,
+    "imageH": 1600,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Air-cushion corners",
+      "Anti-yellow clear back"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50110,
+    "slug": "casecraft-clear-magsafe-frame-case-black-iphone-14",
+    "brand": "CaseCraft",
+    "series": "Clear MagSafe Frame",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 14"
+    ],
+    "modelSlugs": [
+      "iphone-14"
+    ],
+    "modelLabel": "iPhone 14",
+    "image": "/products/photos/50110.webp",
+    "imageW": 763,
+    "imageH": 1500,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Clear back, black frame",
+      "Raised camera lip"
+    ],
+    "material": "Hard back with a soft TPU frame",
+    "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50111,
+    "slug": "dulero-rugged-ring-stand-case-navy-grey-iphone-14",
+    "brand": "Dulero",
+    "series": "Rugged Ring Stand",
+    "design": "Navy Grey",
+    "title": "Navy Grey · Dulero",
+    "priceInr": 599,
+    "regularInr": 599,
+    "models": [
+      "iPhone 14"
+    ],
+    "modelSlugs": [
+      "iphone-14"
+    ],
+    "modelLabel": "iPhone 14",
+    "image": "/products/photos/50111.webp",
+    "imageW": 667,
+    "imageH": 1311,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": false,
+    "features": [
+      "Fold-out ring stand",
+      "Textured armour back",
+      "Raised camera surround"
+    ],
+    "material": "Hard textured back, soft bumper and a fold-out ring stand",
+    "print": "Moulded textured panels; nothing is printed on.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Box",
+      "Features"
+    ]
+  },
+  {
+    "id": 50112,
+    "slug": "neza-anti-yellow-magsafe-clear-case-clear-iphone-15-pro",
+    "brand": "Neza",
+    "series": "Anti-Yellow MagSafe Clear",
+    "design": "Clear",
+    "title": "Clear · Neza",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "iPhone 15 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-15-pro"
+    ],
+    "modelLabel": "iPhone 15 Pro",
+    "image": "/products/photos/50112.webp",
+    "imageW": 697,
+    "imageH": 1371,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Air-cushion corners",
+      "Anti-yellow clear back"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50113,
+    "slug": "casecraft-silicone-magsafe-case-black-iphone-15-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 15 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-15-pro"
+    ],
+    "modelLabel": "iPhone 15 Pro",
+    "image": "/products/photos/50113.webp",
+    "imageW": 662,
+    "imageH": 1324,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50114,
+    "slug": "casecraft-silicone-magsafe-case-midnight-blue-iphone-15-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Midnight Blue",
+    "title": "Midnight Blue · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 15 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-15-pro"
+    ],
+    "modelLabel": "iPhone 15 Pro",
+    "image": "/products/photos/50114.webp",
+    "imageW": 690,
+    "imageH": 1377,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": true,
+    "heroRank": 6,
+    "trendingRank": 5,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50115,
+    "slug": "casecraft-clear-magsafe-frame-case-black-iphone-15",
+    "brand": "CaseCraft",
+    "series": "Clear MagSafe Frame",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 15"
+    ],
+    "modelSlugs": [
+      "iphone-15"
+    ],
+    "modelLabel": "iPhone 15",
+    "image": "/products/photos/50115.webp",
+    "imageW": 793,
+    "imageH": 1565,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "features": [
+      "MagSafe ring built in",
+      "Clear back, black frame",
+      "Raised camera lip"
+    ],
+    "material": "Hard back with a soft TPU frame",
+    "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50116,
+    "slug": "cg-mobile-scuderia-ferrari-case-cream-iphone-15",
+    "brand": "CG Mobile",
+    "series": "Scuderia Ferrari",
+    "design": "Cream",
+    "title": "Cream · CG Mobile",
+    "priceInr": 500,
+    "regularInr": 500,
+    "models": [
+      "iPhone 15"
+    ],
+    "modelSlugs": [
+      "iphone-15"
+    ],
+    "modelLabel": "iPhone 15",
+    "image": "/products/photos/50116.webp",
+    "imageW": 813,
+    "imageH": 1600,
+    "cut": "full",
+    "look": "animal-print",
+    "heroEligible": true,
+    "heroRank": 4,
+    "trendingRank": 4,
+    "features": [
+      "Large prancing horse print",
+      "Soft-touch finish",
+      "Scuderia Ferrari retail box"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Grey prancing horse printed across the back.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "Our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "In the box",
+      "Box in hand",
+      "Inside",
+      "Features"
+    ]
+  },
+  {
+    "id": 50117,
+    "slug": "casecraft-ring-stand-camera-slider-case-black-iphone-15",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 15"
+    ],
+    "modelSlugs": [
+      "iphone-15"
+    ],
+    "modelLabel": "iPhone 15",
+    "image": "/products/photos/50117.webp",
+    "imageW": 664,
+    "imageH": 1335,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": false,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Close up",
+      "Features"
+    ]
+  },
+  {
+    "id": 50118,
+    "slug": "casecraft-ring-stand-camera-slider-case-mocha-brown-iphone-15",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Mocha Brown",
+    "title": "Mocha Brown · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 15"
+    ],
+    "modelSlugs": [
+      "iphone-15"
+    ],
+    "modelLabel": "iPhone 15",
+    "image": "/products/photos/50118.webp",
+    "imageW": 710,
+    "imageH": 1424,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": true,
+    "heroRank": 11,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50119,
+    "slug": "casecraft-ring-stand-camera-slider-case-titanium-grey-iphone-15",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Titanium Grey",
+    "title": "Titanium Grey · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 15"
+    ],
+    "modelSlugs": [
+      "iphone-15"
+    ],
+    "modelLabel": "iPhone 15",
+    "image": "/products/photos/50119.webp",
+    "imageW": 678,
+    "imageH": 1360,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": false,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50120,
+    "slug": "dulero-rugged-ring-stand-case-silver-white-iphone-15",
+    "brand": "Dulero",
+    "series": "Rugged Ring Stand",
+    "design": "Silver White",
+    "title": "Silver White · Dulero",
+    "priceInr": 599,
+    "regularInr": 599,
+    "models": [
+      "iPhone 15"
+    ],
+    "modelSlugs": [
+      "iphone-15"
+    ],
+    "modelLabel": "iPhone 15",
+    "image": "/products/photos/50120.webp",
+    "imageW": 680,
+    "imageH": 1338,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": false,
+    "features": [
+      "Fold-out ring stand",
+      "Textured armour back",
+      "Raised camera surround"
+    ],
+    "material": "Hard textured back, soft bumper and a fold-out ring stand",
+    "print": "Moulded textured panels; nothing is printed on.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Box",
+      "Features"
+    ]
+  },
+  {
+    "id": 50121,
+    "slug": "casecraft-silicone-logo-case-lavender-grey-iphone-15",
+    "brand": "CaseCraft",
+    "series": "Silicone Logo",
+    "design": "Lavender Grey",
+    "title": "Lavender Grey · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 15"
+    ],
+    "modelSlugs": [
+      "iphone-15"
+    ],
+    "modelLabel": "iPhone 15",
+    "image": "/products/photos/50121.webp",
+    "imageW": 650,
+    "imageH": 1264,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "features": [
+      "Soft-touch silicone finish",
+      "Contrast camera surround",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour with a printed logo, as in the photos.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50122,
+    "slug": "neza-anti-yellow-magsafe-clear-case-clear-iphone-16-pro",
+    "brand": "Neza",
+    "series": "Anti-Yellow MagSafe Clear",
+    "design": "Clear",
+    "title": "Clear · Neza",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "iPhone 16 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-16-pro"
+    ],
+    "modelLabel": "iPhone 16 Pro",
+    "image": "/products/photos/50122.webp",
+    "imageW": 617,
+    "imageH": 1521,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Air-cushion corners",
+      "Anti-yellow clear back"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50123,
+    "slug": "casecraft-frosted-magsafe-case-black-orange-iphone-16-pro",
+    "brand": "CaseCraft",
+    "series": "Frosted MagSafe",
+    "design": "Black Orange",
+    "title": "Black Orange · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 16 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-16-pro"
+    ],
+    "modelLabel": "iPhone 16 Pro",
+    "image": "/products/photos/50123.webp",
+    "imageW": 692,
+    "imageH": 1390,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Frosted translucent back",
+      "Contrast camera rim"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50124,
+    "slug": "casecraft-frosted-magsafe-case-orange-iphone-16-pro",
+    "brand": "CaseCraft",
+    "series": "Frosted MagSafe",
+    "design": "Orange",
+    "title": "Orange · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 16 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-16-pro"
+    ],
+    "modelLabel": "iPhone 16 Pro",
+    "image": "/products/photos/50124.webp",
+    "imageW": 682,
+    "imageH": 1358,
+    "cut": "full",
+    "look": "clear",
     "heroEligible": true,
     "heroRank": 7,
     "isNew": true,
     "features": [
-      "Raised camera ring",
-      "Thin aramid-weave back",
-      "MagSafe ring built in"
+      "MagSafe ring built in",
+      "Frosted translucent back",
+      "Contrast camera rim"
     ],
-    "stock": 8,
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
     "variants": [
       320,
       480,
       720,
       960
     ],
-    "source": "mobiicare.in placeholder, replace with own photo",
+    "source": "AI-styled from our shop photo",
     "shots": 2,
-    "complete": true
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
   },
   {
-    "id": 41284,
-    "slug": "luxo-nano-fiber-magsafe-case-moonrise-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Moonrise",
-    "title": "Moonrise · Luxo",
-    "priceInr": 1099,
-    "regularInr": 1099,
+    "id": 50125,
+    "slug": "casecraft-ring-stand-camera-slider-case-titanium-grey-iphone-16-pro",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Titanium Grey",
+    "title": "Titanium Grey · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
     "models": [
-      "Z Fold 8 Ultra"
+      "iPhone 16 Pro"
     ],
     "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
+      "iphone-16-pro"
     ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41284.webp",
-    "imageW": 626,
-    "imageH": 1252,
+    "modelLabel": "iPhone 16 Pro",
+    "image": "/products/photos/50125.webp",
+    "imageW": 658,
+    "imageH": 1338,
     "cut": "full",
-    "look": "gradient",
+    "look": "stand",
+    "heroEligible": true,
+    "heroRank": 10,
+    "isNew": true,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50126,
+    "slug": "dulero-rugged-ring-stand-case-silver-white-iphone-16-pro",
+    "brand": "Dulero",
+    "series": "Rugged Ring Stand",
+    "design": "Silver White",
+    "title": "Silver White · Dulero",
+    "priceInr": 599,
+    "regularInr": 599,
+    "models": [
+      "iPhone 16 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-16-pro"
+    ],
+    "modelLabel": "iPhone 16 Pro",
+    "image": "/products/photos/50126.webp",
+    "imageW": 679,
+    "imageH": 1338,
+    "cut": "full",
+    "look": "stand",
     "heroEligible": true,
     "heroRank": 1,
+    "trendingRank": 2,
+    "isNew": true,
+    "features": [
+      "Fold-out ring stand",
+      "Textured armour back",
+      "Raised camera surround"
+    ],
+    "material": "Hard textured back, soft bumper and a fold-out ring stand",
+    "print": "Moulded textured panels; nothing is printed on.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Box",
+      "Features"
+    ]
+  },
+  {
+    "id": 50127,
+    "slug": "casecraft-silicone-logo-case-charcoal-grey-iphone-16-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone Logo",
+    "design": "Charcoal Grey",
+    "title": "Charcoal Grey · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 16 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-16-pro"
+    ],
+    "modelLabel": "iPhone 16 Pro",
+    "image": "/products/photos/50127.webp",
+    "imageW": 649,
+    "imageH": 1292,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "trendingRank": 6,
+    "isNew": true,
+    "features": [
+      "Soft-touch silicone finish",
+      "Contrast camera surround",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour with a printed logo, as in the photos.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50128,
+    "slug": "spigen-clear-case-clear-iphone-16-pro",
+    "brand": "Spigen",
+    "series": "Clear",
+    "design": "Clear",
+    "title": "Clear · Spigen",
+    "priceInr": 699,
+    "regularInr": 699,
+    "models": [
+      "iPhone 16 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-16-pro"
+    ],
+    "modelLabel": "iPhone 16 Pro",
+    "image": "/products/photos/50128.webp",
+    "imageW": 729,
+    "imageH": 1465,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Crystal-clear back",
+      "Camera Control cut-out",
+      "Slim fit"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a fully clear back.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50129,
+    "slug": "casecraft-sf-carbon-case-grey-iphone-16",
+    "brand": "CaseCraft",
+    "series": "SF Carbon",
+    "design": "Grey",
+    "title": "Grey · CaseCraft",
+    "priceInr": 500,
+    "regularInr": 500,
+    "models": [
+      "iPhone 16"
+    ],
+    "modelSlugs": [
+      "iphone-16"
+    ],
+    "modelLabel": "iPhone 16",
+    "image": "/products/photos/50129.webp",
+    "imageW": 699,
+    "imageH": 1436,
+    "cut": "full",
+    "look": "carbon-and-aramid",
+    "heroEligible": true,
+    "heroRank": 2,
     "trendingRank": 1,
     "isNew": true,
     "features": [
-      "Raised camera ring",
-      "Thin aramid-weave back",
-      "MagSafe ring built in"
+      "Raised SF lettering",
+      "Perforated grip texture",
+      "Shield badge"
     ],
-    "stock": 8,
+    "material": "Hard back with a soft TPU frame",
+    "print": "Raised red SF lettering and a yellow shield badge on a perforated back.",
     "variants": [
       320,
       480,
       720,
       960
     ],
-    "source": "mobiicare.in placeholder, replace with own photo",
+    "source": "AI-styled from our shop photo",
     "shots": 2,
-    "complete": true
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Box",
+      "Features"
+    ]
   },
   {
-    "id": 41286,
-    "slug": "luxo-nano-fiber-magsafe-case-colourful-tiger-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Colourful Tiger",
-    "title": "Colourful Tiger · Luxo",
-    "priceInr": 1099,
-    "regularInr": 1099,
+    "id": 50130,
+    "slug": "casecraft-camera-flip-stand-case-black-iphone-16",
+    "brand": "CaseCraft",
+    "series": "Camera Flip Stand",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 450,
+    "regularInr": 450,
     "models": [
-      "Z Fold 8 Ultra"
+      "iPhone 16"
     ],
     "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
+      "iphone-16"
     ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41286.webp",
-    "imageW": 628,
-    "imageH": 1256,
+    "modelLabel": "iPhone 16",
+    "image": "/products/photos/50130.webp",
+    "imageW": 654,
+    "imageH": 1330,
     "cut": "full",
-    "look": "animal-print",
+    "look": "stand",
+    "heroEligible": true,
+    "heroRank": 12,
+    "isNew": true,
+    "features": [
+      "Flip-up camera stand",
+      "MagSafe ring built in",
+      "Frosted back"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a black frame and a flip-up camera stand.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50131,
+    "slug": "casecraft-frosted-magsafe-case-black-orange-iphone-16",
+    "brand": "CaseCraft",
+    "series": "Frosted MagSafe",
+    "design": "Black Orange",
+    "title": "Black Orange · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 16"
+    ],
+    "modelSlugs": [
+      "iphone-16"
+    ],
+    "modelLabel": "iPhone 16",
+    "image": "/products/photos/50131.webp",
+    "imageW": 742,
+    "imageH": 1462,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": true,
+    "heroRank": 5,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Frosted translucent back",
+      "Contrast camera rim"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50132,
+    "slug": "casecraft-frosted-magsafe-case-orange-iphone-16",
+    "brand": "CaseCraft",
+    "series": "Frosted MagSafe",
+    "design": "Orange",
+    "title": "Orange · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 16"
+    ],
+    "modelSlugs": [
+      "iphone-16"
+    ],
+    "modelLabel": "iPhone 16",
+    "image": "/products/photos/50132.webp",
+    "imageW": 672,
+    "imageH": 1324,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "trendingRank": 8,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Frosted translucent back",
+      "Contrast camera rim"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50133,
+    "slug": "casecraft-ring-stand-camera-slider-case-mocha-brown-iphone-16",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Mocha Brown",
+    "title": "Mocha Brown · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 16"
+    ],
+    "modelSlugs": [
+      "iphone-16"
+    ],
+    "modelLabel": "iPhone 16",
+    "image": "/products/photos/50133.webp",
+    "imageW": 669,
+    "imageH": 1342,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50134,
+    "slug": "casecraft-ring-stand-camera-slider-case-orange-iphone-16",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Orange",
+    "title": "Orange · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 16"
+    ],
+    "modelSlugs": [
+      "iphone-16"
+    ],
+    "modelLabel": "iPhone 16",
+    "image": "/products/photos/50134.webp",
+    "imageW": 730,
+    "imageH": 1422,
+    "cut": "full",
+    "look": "stand",
     "heroEligible": true,
     "heroRank": 3,
     "trendingRank": 3,
     "isNew": true,
     "features": [
-      "Raised camera ring",
-      "Thin aramid-weave back",
-      "MagSafe ring built in"
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
     ],
-    "stock": 8,
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
     "variants": [
       320,
       480,
       720,
       960
     ],
-    "source": "mobiicare.in placeholder, replace with own photo",
+    "source": "AI-styled from our shop photo",
     "shots": 2,
-    "complete": true
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
   },
   {
-    "id": 41288,
-    "slug": "luxo-nano-fiber-magsafe-case-greenrise-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Greenrise",
-    "title": "Greenrise · Luxo",
-    "priceInr": 1099,
-    "regularInr": 1099,
+    "id": 50135,
+    "slug": "dulero-rugged-ring-stand-case-navy-grey-iphone-16",
+    "brand": "Dulero",
+    "series": "Rugged Ring Stand",
+    "design": "Navy Grey",
+    "title": "Navy Grey · Dulero",
+    "priceInr": 599,
+    "regularInr": 599,
     "models": [
-      "Z Fold 8 Ultra"
+      "iPhone 16"
     ],
     "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
+      "iphone-16"
     ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41288.webp",
-    "imageW": 599,
-    "imageH": 1198,
+    "modelLabel": "iPhone 16",
+    "image": "/products/photos/50135.webp",
+    "imageW": 691,
+    "imageH": 1361,
     "cut": "full",
-    "look": "gradient",
-    "heroEligible": true,
-    "heroRank": 6,
-    "isNew": true,
-    "features": [
-      "Raised camera ring",
-      "Thin aramid-weave back",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2,
-    "complete": true
-  },
-  {
-    "id": 41162,
-    "slug": "x-level-leader-steed-nano-fiber-case-with-magsafe-green-iphone-18-pro",
-    "brand": "X-Level",
-    "series": "Leader Steed Nano Fiber",
-    "design": "Green",
-    "title": "Green · X-Level",
-    "priceInr": 1199,
-    "regularInr": 1199,
-    "models": [
-      "iPhone 18 Pro"
-    ],
-    "modelSlugs": [
-      "iphone-18-pro"
-    ],
-    "modelLabel": "iPhone 18 Pro",
-    "image": "/products/photos/41162.webp",
-    "imageW": 624,
-    "imageH": 1248,
-    "cut": "full",
-    "look": "carbon-and-aramid",
-    "heroEligible": true,
-    "heroRank": 2,
-    "trendingRank": 2,
-    "features": [
-      "Metal camera frame",
-      "Thin aramid-weave back",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2,
-    "complete": true
-  },
-  {
-    "id": 41164,
-    "slug": "x-level-leader-steed-nano-fiber-case-with-magsafe-glacier-iphone-18-pro",
-    "brand": "X-Level",
-    "series": "Leader Steed Nano Fiber",
-    "design": "Glacier",
-    "title": "Glacier · X-Level",
-    "priceInr": 1199,
-    "regularInr": 1199,
-    "models": [
-      "iPhone 18 Pro"
-    ],
-    "modelSlugs": [
-      "iphone-18-pro"
-    ],
-    "modelLabel": "iPhone 18 Pro",
-    "image": "/products/photos/41164.webp",
-    "imageW": 632,
-    "imageH": 1264,
-    "cut": "full",
-    "look": "carbon-and-aramid",
+    "look": "stand",
     "heroEligible": true,
     "heroRank": 8,
     "isNew": true,
     "features": [
-      "Metal camera frame",
-      "Thin aramid-weave back",
-      "MagSafe ring built in"
+      "Fold-out ring stand",
+      "Textured armour back",
+      "Raised camera surround"
     ],
-    "stock": 8,
+    "material": "Hard textured back, soft bumper and a fold-out ring stand",
+    "print": "Moulded textured panels; nothing is printed on.",
     "variants": [
       320,
       480,
       720,
       960
     ],
-    "source": "mobiicare.in placeholder, replace with own photo",
+    "source": "AI-styled from our shop photo",
     "shots": 2,
-    "complete": true
-  },
-  {
-    "id": 41166,
-    "slug": "x-level-leader-steed-nano-fiber-case-with-magsafe-cherry-iphone-18-pro",
-    "brand": "X-Level",
-    "series": "Leader Steed Nano Fiber",
-    "design": "Cherry",
-    "title": "Cherry · X-Level",
-    "priceInr": 1199,
-    "regularInr": 1199,
-    "models": [
-      "iPhone 18 Pro"
-    ],
-    "modelSlugs": [
-      "iphone-18-pro"
-    ],
-    "modelLabel": "iPhone 18 Pro",
-    "image": "/products/photos/41166.webp",
-    "imageW": 616,
-    "imageH": 1232,
-    "cut": "full",
-    "look": "carbon-and-aramid",
-    "heroEligible": true,
-    "heroRank": 5,
-    "trendingRank": 7,
-    "features": [
-      "Metal camera frame",
-      "Thin aramid-weave back",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2,
-    "complete": true
-  },
-  {
-    "id": 41168,
-    "slug": "luxo-nano-fiber-magsafe-case-with-hing-protection-sparkle-grey-samsung-fold-8",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Sparkle Grey",
-    "title": "Sparkle Grey · Luxo",
-    "priceInr": 1299,
-    "regularInr": 1299,
-    "models": [
-      "Z Fold 8"
-    ],
-    "modelSlugs": [
-      "galaxy-z-fold-8"
-    ],
-    "modelLabel": "Samsung Fold 8",
-    "image": "/products/photos/41168.webp",
-    "imageW": 1315,
-    "imageH": 1061,
-    "cut": "faded",
-    "look": "sparkle",
-    "tags": [
-      "hinge"
-    ],
-    "heroEligible": false,
-    "features": [
-      "Hinge cover included",
-      "Raised camera ring",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
-  },
-  {
-    "id": 41189,
-    "slug": "luxo-nano-fiber-magsafe-case-with-hing-protection-sunrise-samsung-fold-8",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Sunrise",
-    "title": "Sunrise · Luxo",
-    "priceInr": 1299,
-    "regularInr": 1299,
-    "models": [
-      "Z Fold 8"
-    ],
-    "modelSlugs": [
-      "galaxy-z-fold-8"
-    ],
-    "modelLabel": "Samsung Fold 8",
-    "image": "/products/photos/41189.webp",
-    "imageW": 895,
-    "imageH": 1062,
-    "cut": "faded",
-    "look": "gradient",
-    "tags": [
-      "hinge"
-    ],
-    "heroEligible": false,
-    "features": [
-      "Hinge cover included",
-      "Raised camera ring",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
-  },
-  {
-    "id": 41190,
-    "slug": "luxo-nano-fiber-magsafe-case-with-hing-protection-sparkle-redish-samsung-fold-8",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Sparkle Redish",
-    "title": "Sparkle Redish · Luxo",
-    "priceInr": 1299,
-    "regularInr": 1299,
-    "models": [
-      "Z Fold 8"
-    ],
-    "modelSlugs": [
-      "galaxy-z-fold-8"
-    ],
-    "modelLabel": "Samsung Fold 8",
-    "image": "/products/photos/41190.webp",
-    "imageW": 885,
-    "imageH": 1062,
-    "cut": "faded",
-    "look": "sparkle",
-    "tags": [
-      "hinge"
-    ],
-    "heroEligible": false,
-    "trendingRank": 8,
-    "features": [
-      "Hinge cover included",
-      "Raised camera ring",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
-  },
-  {
-    "id": 41250,
-    "slug": "luxo-nano-fiber-magsafe-case-with-hing-protection-black-horse-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Black Horse",
-    "title": "Black Horse · Luxo",
-    "priceInr": 1299,
-    "regularInr": 1299,
-    "models": [
-      "Z Fold 8 Ultra"
-    ],
-    "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
-    ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41250.webp",
-    "imageW": 999,
-    "imageH": 1071,
-    "cut": "faded",
-    "look": "animal-print",
-    "tags": [
-      "hinge"
-    ],
-    "heroEligible": false,
-    "trendingRank": 6,
-    "features": [
-      "Hinge cover included",
-      "Raised camera ring",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
-  },
-  {
-    "id": 41252,
-    "slug": "luxo-nano-fiber-magsafe-case-with-hing-protection-redish-sparkle-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Redish Sparkle",
-    "title": "Redish Sparkle · Luxo",
-    "priceInr": 1299,
-    "regularInr": 1299,
-    "models": [
-      "Z Fold 8 Ultra"
-    ],
-    "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
-    ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41252.webp",
-    "imageW": 920,
-    "imageH": 1065,
-    "cut": "faded",
-    "look": "sparkle",
-    "tags": [
-      "hinge"
-    ],
-    "heroEligible": false,
-    "trendingRank": 4,
-    "features": [
-      "Hinge cover included",
-      "Raised camera ring",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
-  },
-  {
-    "id": 41254,
-    "slug": "luxo-nano-fiber-magsafe-case-with-hing-protection-moonrise-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Moonrise",
-    "title": "Moonrise · Luxo",
-    "priceInr": 1299,
-    "regularInr": 1299,
-    "models": [
-      "Z Fold 8 Ultra"
-    ],
-    "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
-    ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41254.webp",
-    "imageW": 930,
-    "imageH": 1063,
-    "cut": "faded",
-    "look": "gradient",
-    "tags": [
-      "hinge"
-    ],
-    "heroEligible": false,
-    "features": [
-      "Hinge cover included",
-      "Raised camera ring",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
-  },
-  {
-    "id": 41256,
-    "slug": "luxo-nano-fiber-magsafe-case-with-hing-protection-blue-horse-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Blue Horse",
-    "title": "Blue Horse · Luxo",
-    "priceInr": 1299,
-    "regularInr": 1299,
-    "models": [
-      "Z Fold 8 Ultra"
-    ],
-    "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
-    ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41256.webp",
-    "imageW": 964,
-    "imageH": 1074,
-    "cut": "faded",
-    "look": "animal-print",
-    "tags": [
-      "hinge"
-    ],
-    "heroEligible": false,
-    "features": [
-      "Hinge cover included",
-      "Raised camera ring",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
-  },
-  {
-    "id": 41258,
-    "slug": "luxo-nano-fiber-magsafe-case-with-hing-protection-grey-sparkle-samsung-fold-8-ultra",
-    "brand": "Luxo",
-    "series": "Nano Fiber Magsafe",
-    "design": "Grey Sparkle",
-    "title": "Grey Sparkle · Luxo",
-    "priceInr": 1299,
-    "regularInr": 1299,
-    "models": [
-      "Z Fold 8 Ultra"
-    ],
-    "modelSlugs": [
-      "galaxy-z-fold-8-ultra"
-    ],
-    "modelLabel": "Samsung Fold 8 Ultra",
-    "image": "/products/photos/41258.webp",
-    "imageW": 890,
-    "imageH": 1064,
-    "cut": "faded",
-    "look": "sparkle",
-    "tags": [
-      "hinge"
-    ],
-    "heroEligible": false,
-    "features": [
-      "Hinge cover included",
-      "Raised camera ring",
-      "MagSafe ring built in"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
-  },
-  {
-    "id": 41154,
-    "slug": "borluco-textured-silicone-case-with-stand-black-iphone-duo",
-    "brand": "Borluco",
-    "series": "Textured Silicone",
-    "design": "Black",
-    "title": "Black · Borluco",
-    "priceInr": 1399,
-    "regularInr": 1399,
-    "models": [
-      "iPhone Duo"
-    ],
-    "modelSlugs": [
-      "iphone-duo"
-    ],
-    "modelLabel": "iPhone Duo",
-    "image": "/products/photos/41154.webp",
-    "imageW": 1395,
-    "imageH": 1058,
-    "cut": "faded",
-    "look": "solid",
-    "heroEligible": false,
-    "features": [
-      "Built-in stand",
-      "Textured grip",
-      "Raised camera ring"
-    ],
-    "stock": 8,
-    "variants": [
-      320,
-      480,
-      720,
-      960
-    ],
-    "source": "mobiicare.in placeholder, replace with own photo",
-    "shots": 2
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Box",
+      "Features"
+    ]
   }
 ]

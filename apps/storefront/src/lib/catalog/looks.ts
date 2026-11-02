@@ -24,22 +24,10 @@ export const LOOKS: readonly Look[] = [
     match: (e) => e.look === 'carbon-and-aramid',
   },
   {
-    handle: 'sparkle',
-    name: 'Sparkle',
-    blurb: 'Glitter set into the shell, so it never flakes.',
-    match: (e) => e.look === 'sparkle',
-  },
-  {
     handle: 'animal-print',
     name: 'Animal print',
-    blurb: 'Tiger and horse patterns in the weave.',
+    blurb: 'Tiger and horse artwork across the back.',
     match: (e) => e.look === 'animal-print',
-  },
-  {
-    handle: 'gradient',
-    name: 'Gradient',
-    blurb: 'Two colours fading into each other across the back.',
-    match: (e) => e.look === 'gradient',
   },
   {
     handle: 'solid',
@@ -48,10 +36,16 @@ export const LOOKS: readonly Look[] = [
     match: (e) => e.look === 'solid',
   },
   {
-    handle: 'fold-hinge-protection',
-    name: 'Fold & hinge',
-    blurb: 'A hinge piece covers the spine of folding phones.',
-    match: (e) => e.tags?.includes('hinge') ?? false,
+    handle: 'clear',
+    name: 'Clear & frosted',
+    blurb: 'See-through and frosted backs that show off the phone.',
+    match: (e) => e.look === 'clear',
+  },
+  {
+    handle: 'stand',
+    name: 'Ring & stand',
+    blurb: 'Fold-out rings, camera sliders and flip stands.',
+    match: (e) => e.look === 'stand',
   },
 ];
 
