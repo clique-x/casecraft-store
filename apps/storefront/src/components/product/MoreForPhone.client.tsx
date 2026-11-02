@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { ScrollRail } from '@/components/listing/ScrollRail.client';
 import { ArrowRightIcon } from 'lucide-react';
 import { AccentBar } from '@/components/brand/AccentBar';
 import { phoneHref } from '@/components/phone-picker/BrandOutline';
@@ -44,16 +45,13 @@ export function MoreForPhone({ candidates, models }: MoreForPhoneProps) {
           </Link>
         </div>
 
-        <ul
-          aria-label={`More covers for ${model.model}`}
-          className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 max-lg:[scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:mx-0 lg:gap-5 lg:scroll-px-0 lg:px-0 lg:pb-4 lg:[scrollbar-width:thin] max-lg:[&::-webkit-scrollbar]:hidden"
-        >
+        <ScrollRail label={`More covers for ${model.model}`}>
           {items.map((product) => (
             <li key={product.id} className="w-[41%] shrink-0 snap-start sm:w-[31%] lg:w-[calc((100%-4*1.25rem)/5)]">
               <ProductCard product={product} rank={product.trendingRank} modelCount={models.length} />
             </li>
           ))}
-        </ul>
+        </ScrollRail>
       </div>
     </section>
   );

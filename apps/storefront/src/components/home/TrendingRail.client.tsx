@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Reveal } from '@/components/motion/Reveal.client'
+import { ScrollRail } from '@/components/listing/ScrollRail.client'
 import { PhotoCard } from '@/components/product/PhotoCard'
 import { useFinePointer } from '@/lib/device/use-fine-pointer'
 import type { HomeProduct, PhotoProduct } from '@/lib/medusa/fixtures'
@@ -76,14 +76,9 @@ export function TrendingRail({
   }, [fine, itemsKey])
 
   return (
-    <ul
-      ref={listRef}
-      aria-label={label}
-      // Touch rows hide the scrollbar; at lg it stays visible so wheel-only mouse users can reach every card.
-      className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 max-lg:[scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:mx-0 lg:gap-5 lg:scroll-px-0 lg:px-0 lg:pb-4 lg:[scrollbar-width:thin] max-lg:[&::-webkit-scrollbar]:hidden"
-    >
-      {items.map((product, i) => (
-        <Reveal as="li" key={product.id} delay={i < 6 ? i * 0.05 : 0} className={cn('shrink-0 snap-start', WIDTH[variant])}>
+    <ScrollRail ref={listRef} label={label}>
+      {items.map((product) => (
+        <li key={product.id} className={cn('shrink-0 snap-start', WIDTH[variant])}>
           <div data-product-id={product.id} className="h-full">
             <PhotoCard
               product={product}
@@ -94,8 +89,8 @@ export function TrendingRail({
               sizes={variant === 'new' ? NEW_SIZES : undefined}
             />
           </div>
-        </Reveal>
+        </li>
       ))}
-    </ul>
+    </ScrollRail>
   )
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { DEPARTMENTS, DEPARTMENT_OF } from '@/lib/catalog/gadgets';
+import { ScrollRail } from '@/components/listing/ScrollRail.client';
 import { ArrowRightIcon } from 'lucide-react';
 import { AccentBar } from '@/components/brand/AccentBar';
 import { Reveal } from '@/components/motion/Reveal.client';
@@ -53,21 +54,13 @@ export function RelatedRows({ product, related, candidates, models }: RelatedRow
               </Link>
             </Reveal>
 
-            <ul
-              aria-label={`More ${group.name} covers`}
-              className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 max-lg:[scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:mx-0 lg:gap-5 lg:scroll-px-0 lg:px-0 lg:pb-4 lg:[scrollbar-width:thin] max-lg:[&::-webkit-scrollbar]:hidden"
-            >
-              {related.map((item, i) => (
-                <Reveal
-                  as="li"
-                  key={item.id}
-                  delay={i * 0.05}
-                  className="w-[41%] shrink-0 snap-start sm:w-[31%] lg:w-[calc((100%-5*1.25rem)/6)]"
-                >
+            <ScrollRail label={`More ${group.name} covers`}>
+              {related.map((item) => (
+                <li key={item.id} className="w-[41%] shrink-0 snap-start sm:w-[31%] lg:w-[calc((100%-5*1.25rem)/6)]">
                   <ProductCard product={item} modelCount={models.length} />
-                </Reveal>
+                </li>
               ))}
-            </ul>
+            </ScrollRail>
           </div>
         </section>
       )}

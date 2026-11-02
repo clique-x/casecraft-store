@@ -76,7 +76,7 @@ export function GadgetRow({ department, products }: { department: Department; pr
 
         <ul
           aria-label={copy.eyebrow}
-          className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-6 [&::-webkit-scrollbar]:hidden"
+          className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-6 [&::-webkit-scrollbar]:hidden"
         >
           {shown.map((p) => (
             <li key={p.id} className="w-[44%] shrink-0 snap-start sm:w-auto">

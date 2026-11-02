@@ -39,7 +39,9 @@ export function CoverCarousel({ covers, selectedId, onSelect, phoneName, allHref
     const el = track.current;
     if (!el) return;
     const max = el.scrollWidth - el.clientWidth;
-    setEdges({ start: el.scrollLeft <= 4, end: el.scrollLeft >= max - 4 });
+    const start = el.scrollLeft <= 4;
+    const end = el.scrollLeft >= max - 4;
+    setEdges((prev) => (prev.start === start && prev.end === end ? prev : { start, end }));
   }, []);
 
   useEffect(() => {
@@ -97,7 +99,7 @@ export function CoverCarousel({ covers, selectedId, onSelect, phoneName, allHref
         <ul
           ref={track}
           aria-label={`Designs for ${phoneName}`}
-          className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-4 px-4 pt-1 pb-3 [scrollbar-width:none] sm:mx-0 sm:scroll-px-0 sm:px-0 [&::-webkit-scrollbar]:hidden"
+          className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-4 pt-1 pb-3 [scrollbar-width:none] sm:mx-0 sm:scroll-px-0 sm:px-0 [&::-webkit-scrollbar]:hidden"
         >
           {covers.map((c) => {
             const on = c.id === selectedId;
