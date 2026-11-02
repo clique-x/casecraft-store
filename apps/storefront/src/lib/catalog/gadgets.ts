@@ -3,7 +3,7 @@
  * for one phone, so each comes in options (colours, or cable lengths) instead of phone models.
  *
  * Audio is the shop's real stock: sealed boAt and realme earbuds and neckbands, with the brand's
- * own product images (see `photos`). Chargers and cables are still PLACEHOLDER CONTENT.
+ * own product images (see `photos`). Chargers and cables are PLACEHOLDER CONTENT, hidden by SHOW_CHARGING.
  *
  * PRICES: `priceInr` is the shop's sticker where one was photographed (Airdopes Alpha Gen 2,
  * realme Buds T200x); otherwise it is the brand's own online price on 2 Nov 2026, and
@@ -838,7 +838,10 @@ const CHARGING: readonly GadgetEntry[] = [
   },
 ];
 
-export const GADGETS: readonly GadgetEntry[] = [...AUDIO, ...CHARGING];
+/** Chargers and cables are placeholder listings (no stock, no photos) and stay off until they are real. */
+const SHOW_CHARGING = false;
+
+export const GADGETS: readonly GadgetEntry[] = SHOW_CHARGING ? [...AUDIO, ...CHARGING] : AUDIO;
 
 /** Price of one option, falling back to the product's. */
 export function optionPrice(entry: GadgetEntry, option: GadgetOption): { priceInr: number; regularInr: number } {

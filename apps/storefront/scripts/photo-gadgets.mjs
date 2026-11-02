@@ -28,8 +28,21 @@ async function imagesFor(dir) {
     .sort((a, b) => a.n - b.n);
 }
 
+/**
+ * Transparent sources are flattened onto the backdrop. Opaque ones (brand shots on a white studio background)
+ * are multiplied by the backdrop colour, so their white turns into the backdrop exactly and every card and
+ * gallery tile shares one background; the product itself shifts by a few percent at most.
+ */
+async function onBackdrop(file) {
+  const { data, info } = await sharp(file).rotate().toBuffer({ resolveWithObject: true });
+  const meta = await sharp(data).metadata();
+  if (meta.hasAlpha) return sharp(data).flatten({ background: BACKDROP }).toBuffer();
+  const tint = { create: { width: info.width, height: info.height, channels: 3, background: BACKDROP } };
+  return sharp(data).composite([{ input: tint, blend: 'multiply' }]).toBuffer();
+}
+
 async function writeImage(file, id, n) {
-  const flat = await sharp(file).rotate().flatten({ background: BACKDROP }).toBuffer();
+  const flat = await onBackdrop(file);
   const dir = path.join(OUT, id);
   for (const width of GALLERY_WIDTHS) {
     await sharp(flat)

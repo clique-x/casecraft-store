@@ -162,6 +162,7 @@ function mediaFor(product: ProductDetail): {
 } | null {
   const photo = product.photo;
   if (photo && (photo.gallery?.length ?? 0) > 0) {
+    if (photo.stage === false) return { images: coverMedia(photo) };
     return {
       images: coverMedia(photo),
       lead: {

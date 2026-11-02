@@ -253,7 +253,7 @@
     "cut": "full",
     "look": "solid",
     "heroEligible": true,
-    "heroRank": 9,
+    "heroRank": 8,
     "features": [
       "MagSafe ring built in",
       "Soft-touch silicone finish",
@@ -445,6 +445,7 @@
     ],
     "material": "Hard back with a soft TPU frame",
     "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -623,7 +624,7 @@
     "cut": "full",
     "look": "solid",
     "heroEligible": true,
-    "heroRank": 6,
+    "heroRank": 5,
     "trendingRank": 5,
     "features": [
       "MagSafe ring built in",
@@ -678,6 +679,7 @@
     ],
     "material": "Hard back with a soft TPU frame",
     "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -810,7 +812,7 @@
     "cut": "full",
     "look": "stand",
     "heroEligible": true,
-    "heroRank": 11,
+    "heroRank": 10,
     "features": [
       "Sliding camera cover",
       "Fold-out ring stand",
@@ -1003,6 +1005,7 @@
     ],
     "material": "Flexible clear TPU shell",
     "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1048,6 +1051,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame",
     "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1086,7 +1090,7 @@
     "cut": "full",
     "look": "clear",
     "heroEligible": true,
-    "heroRank": 7,
+    "heroRank": 6,
     "isNew": true,
     "features": [
       "MagSafe ring built in",
@@ -1134,7 +1138,7 @@
     "cut": "full",
     "look": "stand",
     "heroEligible": true,
-    "heroRank": 10,
+    "heroRank": 9,
     "isNew": true,
     "features": [
       "Sliding camera cover",
@@ -1376,8 +1380,7 @@
     "imageH": 1330,
     "cut": "full",
     "look": "stand",
-    "heroEligible": true,
-    "heroRank": 12,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "Flip-up camera stand",
@@ -1386,6 +1389,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame",
     "print": "Frosted back with a black frame and a flip-up camera stand.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1423,8 +1427,7 @@
     "imageH": 1462,
     "cut": "full",
     "look": "clear",
-    "heroEligible": true,
-    "heroRank": 5,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "MagSafe ring built in",
@@ -1433,6 +1436,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame",
     "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1616,7 +1620,7 @@
     "cut": "full",
     "look": "stand",
     "heroEligible": true,
-    "heroRank": 8,
+    "heroRank": 7,
     "isNew": true,
     "features": [
       "Fold-out ring stand",

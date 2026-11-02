@@ -73,6 +73,12 @@ const BASE_PHONE_MODELS: readonly PhoneModel[] = [
 
 export const PHONE_MODELS: readonly PhoneModel[] = [...BASE_PHONE_MODELS, ...PHOTO_PHONE_MODELS];
 
+/**
+ * The drawn "printed design" covers are sample products, not stock, so they stay off the store until real
+ * printed covers are photographed. Flip this to bring them (and their theme categories) back.
+ */
+const SHOW_PRINTED_DESIGNS = false;
+
 const THEME_META: readonly { handle: ThemeHandle; name: string; blurb: string }[] = [
   { handle: 'marble', name: 'Marble', blurb: 'Veined stone finishes that look carved, not printed.' },
   { handle: 'holographic', name: 'Holographic', blurb: 'Rainbow sheen that shifts every time the phone turns.' },
@@ -85,7 +91,7 @@ const THEME_META: readonly { handle: ThemeHandle; name: string; blurb: string }[
 export const THEMES: readonly Theme[] = THEME_META.map((meta) => ({
   ...meta,
   designIds: DESIGNS.filter((d) => d.theme === meta.handle).map((d) => d.id),
-}));
+})).filter(() => SHOW_PRINTED_DESIGNS);
 
 // Deterministic per-design subset of 9–15 model slugs (mulberry32 on the design seed).
 function fitsFor(seed: number): string[] {
@@ -143,7 +149,9 @@ export const PROCEDURAL_PRODUCTS: readonly HomeProduct[] = DESIGNS.map((d) => ({
   finish: d.finish,
 }));
 
-export const PRODUCTS: readonly HomeProduct[] = [...PHOTO_PRODUCTS, ...PROCEDURAL_PRODUCTS];
+export const PRODUCTS: readonly HomeProduct[] = SHOW_PRINTED_DESIGNS
+  ? [...PHOTO_PRODUCTS, ...PROCEDURAL_PRODUCTS]
+  : PHOTO_PRODUCTS;
 
 export type CaseType = 'soft' | 'glass';
 

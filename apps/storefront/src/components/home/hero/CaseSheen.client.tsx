@@ -15,12 +15,9 @@ interface Mask {
 const LIGHT_CSS = `
 .hero-light{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;
 -webkit-mask-size:contain;mask-size:contain;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
-background-image:
-linear-gradient(115deg,transparent 38%,rgb(255 255 255 / 0.30) 48%,rgb(255 255 255 / 0.08) 52%,transparent 64%),
-linear-gradient(to right,color-mix(in srgb,var(--color-accent-2) 55%,transparent) 0%,transparent 16%),
-linear-gradient(to left,color-mix(in srgb,var(--color-highlight,var(--color-accent)) 35%,transparent) 0%,transparent 12%);
-background-size:250% 100%,100% 100%,100% 100%;background-repeat:no-repeat;
-background-position:calc(50% + var(--sheen-x,0%) + var(--scroll-sheen,0%) + var(--sweep,0) * 100%) 0,0 0,0 0;
+background-image:linear-gradient(115deg,transparent 38%,rgb(255 255 255 / 0.30) 48%,rgb(255 255 255 / 0.08) 52%,transparent 64%);
+background-size:250% 100%;background-repeat:no-repeat;
+background-position:calc(50% + var(--sheen-x,0%) + var(--scroll-sheen,0%) + var(--sweep,0) * 100%) 0;
 transition:background-position 120ms linear}
 .hero-light[data-cut=faded]{-webkit-mask-composite:source-in;mask-composite:intersect}
 @media (prefers-reduced-motion:reduce){.hero-light{transition:none}}

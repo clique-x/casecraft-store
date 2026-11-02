@@ -41,6 +41,11 @@ export interface PhotoEntry {
   material?: string;
   /** What the finish or artwork is, for the product details; a generic line is used when absent. */
   print?: string;
+  /**
+   * False when the transparent cutout is not clean enough to stand on its own: the cover then stays out
+   * of the home hero and the product page opens on its gallery instead of the tilt stage.
+   */
+  stage?: boolean;
   stock?: number;
   hidden?: boolean;
   variants: number[];
@@ -174,6 +179,8 @@ function parseEntry(v: unknown): PhotoEntry {
   if (v.gallery !== undefined) entry.gallery = strList(v, 'gallery');
   if (v.material !== undefined) entry.material = str(v, 'material');
   if (v.print !== undefined) entry.print = str(v, 'print');
+  const stage = optBool(v, 'stage');
+  if (stage !== undefined) entry.stage = stage;
   return entry;
 }
 

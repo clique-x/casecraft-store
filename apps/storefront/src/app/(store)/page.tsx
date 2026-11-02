@@ -93,7 +93,7 @@ function toComboCovers(products: ProductDetail[]): ComboCover[] {
 }
 
 export default async function HomePage() {
-  const [trending, newArrivals, models, looks, allCovers, accessories, audio, charging] = await Promise.all([
+  const [trending, newArrivals, models, looks, allCovers, accessories, audio] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
@@ -101,7 +101,6 @@ export default async function HomePage() {
     getAllProducts(),
     getAccessories(),
     getGadgets('audio'),
-    getGadgets('charging'),
   ]);
   const comboCovers = toComboCovers(allCovers);
   const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
@@ -136,7 +135,6 @@ export default async function HomePage() {
       <TrendingRow products={trending} />
       <HomeCombos covers={comboCovers} accessories={comboAccessories} />
       <GadgetRow department="audio" products={audio} />
-      <GadgetRow department="charging" products={charging} />
       <NewArrivalsRow products={newArrivals} models={models} />
       <LookGrid looks={looks} />
       <BrandRow brands={[...LAUNCH_BRANDS]} models={models} />
