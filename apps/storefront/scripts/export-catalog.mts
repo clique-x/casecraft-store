@@ -5,8 +5,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { photoSrc } from '../src/lib/catalog/photos';
 import { ACCESSORY_TYPE_LABEL } from '../src/lib/catalog/accessories';
-import { AUDIO_TYPE_LABEL } from '../src/lib/catalog/audio';
-import { ACCESSORY_DETAILS, AUDIO_DETAILS, CASE_TYPES, PHONE_MODELS, PRODUCT_DETAILS, THEMES } from '../src/lib/medusa/fixtures';
+import { DEPARTMENT_OF, GADGET_TYPE_LABEL } from '../src/lib/catalog/gadgets';
+import { ACCESSORY_DETAILS, GADGET_DETAILS, CASE_TYPES, PHONE_MODELS, PRODUCT_DETAILS, THEMES } from '../src/lib/medusa/fixtures';
 
 const OUT = path.resolve(import.meta.dirname, '../../backend/data/catalog.json');
 
@@ -93,27 +93,39 @@ const catalog = {
         })),
       };
     }),
-    ...AUDIO_DETAILS.map((p) => {
-      const a = p.audio!;
+    ...GADGET_DETAILS.map((p) => {
+      const g = p.gadget!;
+      const optionTitle = g.optionKind === 'colour' ? 'Colour' : 'Length';
       return {
         handle: p.handle,
-        productType: AUDIO_TYPE_LABEL[a.type],
+        productType: GADGET_TYPE_LABEL[g.type],
         title: p.title,
         description: p.description,
         imagePath: null,
         collections: [],
         category: null,
         tags: [],
-        metadata: { kind: 'audio', audio_id: a.id, audio_type: a.type, regular_inr: a.regularInr, detail_in_box: a.inBox },
-        // Audio varies by colour; the storefront keeps the colour slug in modelSlug.
-        variants: p.variants.map((v) => ({
-          sku: v.sku,
-          modelSlug: null,
-          caseType: null,
-          colour: a.colours.find((c) => c.slug === v.modelSlug)!,
-          priceInr: v.priceInr,
-          stock: v.stock,
-        })),
+        metadata: {
+          kind: 'gadget',
+          gadget_id: g.id,
+          gadget_type: g.type,
+          department: DEPARTMENT_OF[g.type],
+          regular_inr: p.regularInr ?? g.regularInr,
+          detail_in_box: g.inBox,
+          ...(g.original ? { original_brand: g.original.brand } : {}),
+        },
+        // Gadgets vary by colour or cable length; the storefront keeps the option slug in modelSlug.
+        variants: p.variants.map((v) => {
+          const o = g.options.find((c) => c.slug === v.modelSlug)!;
+          return {
+            sku: v.sku,
+            modelSlug: null,
+            caseType: null,
+            option: { title: optionTitle, slug: o.slug, name: o.name },
+            priceInr: v.priceInr,
+            stock: v.stock,
+          };
+        }),
       };
     }),
   ],

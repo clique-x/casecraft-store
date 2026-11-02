@@ -1,6 +1,6 @@
 import { SHOP_CITY } from '@/lib/brand';
 import { ACCESSORIES, ACCESSORY_TYPE_LABEL, type AccessoryEntry } from '@/lib/catalog/accessories';
-import { AUDIO, AUDIO_TYPE_LABEL, type AudioEntry } from '@/lib/catalog/audio';
+import { DEPARTMENT_OF, GADGETS, GADGET_TYPE_LABEL, optionPrice, type GadgetEntry } from '@/lib/catalog/gadgets';
 import { DEFAULT_STOCK, PHOTO_PHONE_MODELS, PHOTOS, type PhotoEntry } from '@/lib/catalog/photos';
 import { DESIGNS, type Family, type Finish, type ThemeHandle } from '@/lib/designs/catalog';
 
@@ -43,8 +43,8 @@ export interface HomeProduct {
   stock?: number;
   /** Present on screen guards, lens protectors and back films (lib/catalog/accessories.ts). */
   accessory?: AccessoryEntry;
-  /** Present on earbuds, neckbands and speakers (lib/catalog/audio.ts). */
-  audio?: AudioEntry;
+  /** Present on wireless audio, chargers and cables (lib/catalog/gadgets.ts). */
+  gadget?: GadgetEntry;
 }
 
 export type PhotoProduct = HomeProduct & { photo: PhotoEntry };
@@ -426,38 +426,42 @@ function accessoryDetail(entry: AccessoryEntry): ProductDetail {
 
 export const ACCESSORY_DETAILS: readonly ProductDetail[] = ACCESSORIES.map(accessoryDetail);
 
-// --- wireless audio ------------------------------------------------------------------------------
+// --- gadgets: wireless audio, chargers, cables -----------------------------------------------------
 
-const AUDIO_STOCK = 15;
+const GADGET_STOCK = 15;
+const SKU_PREFIX = { audio: 'AUD', charging: 'CHG' } as const;
 
 /**
- * One variant per colour. Audio does not fit a phone, so `modelSlug` carries the colour slug: the
- * shared selection store, cart and sticky bar then work unchanged. `fitsModels` stays empty.
+ * One variant per option (colour or cable length). Gadgets do not fit one phone, so `modelSlug`
+ * carries the option slug: the shared selection store, cart and sticky bar then work unchanged.
+ * `fitsModels` stays empty.
  */
-function audioDetail(entry: AudioEntry): ProductDetail {
+function gadgetDetail(entry: GadgetEntry): ProductDetail {
+  const prefix = SKU_PREFIX[DEPARTMENT_OF[entry.type]];
   const code = entry.id.toUpperCase().replace(/-/g, '');
+  const variants = entry.options.map((o) => {
+    const sku = `${prefix}-${code}-${o.slug.toUpperCase()}`;
+    return { id: `variant_${sku.toLowerCase()}`, sku, modelSlug: o.slug, caseType: 'soft' as const, priceInr: optionPrice(entry, o).priceInr, stock: GADGET_STOCK };
+  });
   return {
-    id: `aud_${entry.id}`,
+    id: `gad_${entry.id}`,
     handle: entry.handle,
     title: entry.title,
-    designId: `aud_${entry.id}`,
+    designId: `gad_${entry.id}`,
     family: 'minimal',
     theme: 'minimal',
-    priceFromInr: entry.priceInr,
-    regularInr: entry.regularInr,
+    priceFromInr: Math.min(...variants.map((v) => v.priceInr)),
+    regularInr: optionPrice(entry, entry.options[0]).regularInr,
     fitsModels: [],
     holo: false,
     finish: 'soft',
-    brandLine: AUDIO_TYPE_LABEL[entry.type],
-    audio: entry,
+    brandLine: entry.original ? `Original ${entry.original.brand}` : GADGET_TYPE_LABEL[entry.type],
+    gadget: entry,
     description: entry.description,
     caseTypes: [],
-    variants: entry.colours.map((c) => {
-      const sku = `AUD-${code}-${c.slug.toUpperCase()}`;
-      return { id: `variant_${sku.toLowerCase()}`, sku, modelSlug: c.slug, caseType: 'soft' as const, priceInr: entry.priceInr, stock: AUDIO_STOCK };
-    }),
+    variants,
     details: { material: '', print: entry.inBox, fit: '', care: '' },
   };
 }
 
-export const AUDIO_DETAILS: readonly ProductDetail[] = AUDIO.map(audioDetail);
+export const GADGET_DETAILS: readonly ProductDetail[] = GADGETS.map(gadgetDetail);

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { DEPARTMENTS, DEPARTMENT_OF } from '@/lib/catalog/gadgets';
 import { ArrowRightIcon } from 'lucide-react';
 import { AccentBar } from '@/components/brand/AccentBar';
 import { Reveal } from '@/components/motion/Reveal.client';
@@ -16,7 +17,10 @@ interface RelatedRowsProps {
 
 /** Photo covers group by look; procedural designs by theme. */
 function groupOf(product: ProductDetail): { name: string; href: string } {
-  if (product.audio) return { name: 'Audio', href: '/audio' };
+  if (product.gadget) {
+    const d = DEPARTMENTS[DEPARTMENT_OF[product.gadget.type]];
+    return { name: d.name, href: d.path };
+  }
   if (product.accessory) return { name: 'Protection', href: '/accessories' };
   const photo = product.photo;
   const look = photo ? LOOKS.find((l) => l.handle === photo.look) : undefined;

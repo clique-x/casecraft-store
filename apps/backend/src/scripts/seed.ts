@@ -9,6 +9,7 @@ import {
   createInventoryLevelsWorkflow,
   createProductCategoriesWorkflow,
   createProductOptionsWorkflow,
+  updateProductOptionsWorkflow,
   createProductTagsWorkflow,
   createProductTypesWorkflow,
   createPromotionsWorkflow,
@@ -52,12 +53,12 @@ interface Catalog {
     category: string | null
     tags: string[]
     metadata: Record<string, string | number | boolean>
-    /** Phone products set modelSlug (and caseType for covers); audio sets colour instead. */
+    /** Phone products set modelSlug (and caseType for covers); gadgets set an option (Colour or Length) instead. */
     variants: {
       sku: string
       modelSlug: string | null
       caseType: string | null
-      colour?: { slug: string; name: string }
+      option?: { title: string; slug: string; name: string }
       priceInr: number
       stock: number
     }[]
@@ -265,13 +266,15 @@ export default async function seed({ container }: ExecArgs) {
   const caseTypeName = new Map(catalog.caseTypes.map((c) => [c.type, c.name]))
 
   // Product options, collections and categories ---------------------------------------------------
-  const colourNames = [
-    ...new Set(catalog.products.flatMap((p) => p.variants.map((v) => v.colour?.name).filter((n): n is string => Boolean(n)))),
-  ]
-  const optionValues = {
+  const optionValues: Record<string, string[]> = {
     'Phone Model': catalog.phoneModels.map((m) => m.name),
     'Case Type': catalog.caseTypes.map((c) => c.name),
-    ...(colourNames.length > 0 ? { Colour: colourNames } : {}),
+  }
+  // Gadget options (Colour, Length) and their values, in catalogue order.
+  for (const v of catalog.products.flatMap((p) => p.variants)) {
+    if (!v.option) continue
+    const values = (optionValues[v.option.title] ??= [])
+    if (!values.includes(v.option.name)) values.push(v.option.name)
   }
   const { data: existingOptions } = await query.graph({ entity: 'product_option', fields: ['id', 'title', 'values.value'] })
   const optionIds: Record<string, string> = {}
@@ -279,9 +282,13 @@ export default async function seed({ container }: ExecArgs) {
     const existing = existingOptions.find((o) => o.title === title)
     if (existing) {
       optionIds[title] = existing.id
-      const missing = values.filter((v) => !existing.values?.some((ev) => ev?.value === v))
+      const current = (existing.values ?? []).map((ev) => ev?.value).filter((v): v is string => Boolean(v))
+      const missing = values.filter((v) => !current.includes(v))
       if (missing.length > 0) {
-        logger.warn(`Option "${title}" is missing values ${missing.join(', ')}; add them in the admin before seeding those products`)
+        await updateProductOptionsWorkflow(container).run({
+          input: { selector: { id: existing.id }, update: { values: [...current, ...missing] } },
+        })
+        logger.info(`Option "${title}": added ${missing.join(', ')}`)
       }
       continue
     }
@@ -356,21 +363,21 @@ export default async function seed({ container }: ExecArgs) {
             ...(p.tags.length > 0 ? { tag_ids: p.tags.map((value) => tagId.get(value)!) } : {}),
             metadata: p.metadata,
             type_id: typeId.get(p.productType),
-            // Covers: phone model + case type. Accessories: phone model. Audio: colour.
-            options: p.variants.some((v) => v.colour)
-              ? [{ id: optionIds['Colour'] }]
+            // Covers: phone model + case type. Accessories: phone model. Gadgets: colour or length.
+            options: p.variants[0]?.option
+              ? [{ id: optionIds[p.variants[0].option.title] }]
               : p.variants.some((v) => v.caseType)
                 ? [{ id: optionIds['Phone Model'] }, { id: optionIds['Case Type'] }]
                 : [{ id: optionIds['Phone Model'] }],
             sales_channels: [{ id: salesChannelId }],
-            variants: p.variants.map((v) => v.colour
+            variants: p.variants.map((v) => v.option
               ? {
-                  title: v.colour.name,
+                  title: v.option.name,
                   sku: v.sku,
                   manage_inventory: true,
                   allow_backorder: false,
-                  options: { Colour: v.colour.name } as Record<string, string>,
-                  metadata: { colour: v.colour.slug } as Record<string, string>,
+                  options: { [v.option.title]: v.option.name } as Record<string, string>,
+                  metadata: { option: v.option.slug } as Record<string, string>,
                   prices: [{ currency_code: 'inr', amount: v.priceInr }],
                 }
               : {

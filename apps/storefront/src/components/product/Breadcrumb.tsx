@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { DEPARTMENTS, DEPARTMENT_OF } from '@/lib/catalog/gadgets';
 import { ChevronRightIcon } from 'lucide-react';
 import { SITE_URL } from '@/lib/brand';
 import { LOOKS } from '@/lib/catalog/looks';
@@ -25,10 +26,10 @@ function breadcrumbJsonLd(crumbs: readonly Crumb[]): string {
 
 /** Photo covers sit under their look; procedural designs keep the Trending trail. */
 function crumbsFor(product: ProductDetail): readonly Crumb[] {
-  if (product.audio) {
+  if (product.gadget) {
     return [
       { name: 'Home', href: '/' },
-      { name: 'Audio', href: '/audio' },
+      { name: DEPARTMENTS[DEPARTMENT_OF[product.gadget.type]].name, href: DEPARTMENTS[DEPARTMENT_OF[product.gadget.type]].path },
       { name: product.title, href: `/products/${product.handle}` },
     ];
   }

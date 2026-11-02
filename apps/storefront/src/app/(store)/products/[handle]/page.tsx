@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { AccessoryStage } from '@/components/accessory/AccessoryStage.client';
-import { AudioBuyBox } from '@/components/audio/AudioBuyBox.client';
-import { AudioStage } from '@/components/audio/AudioStage.client';
+import { GadgetBuyBox } from '@/components/gadget/GadgetBuyBox.client';
+import { GadgetStage } from '@/components/gadget/GadgetStage.client';
 import { Breadcrumb } from '@/components/product/Breadcrumb';
 import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
@@ -15,13 +15,14 @@ import { StickyBuyBar } from '@/components/product/StickyBuyBar.client';
 import { PhotoStage } from '@/components/product/viewer/PhotoStage.client';
 import { ProductViewer } from '@/components/product/viewer/ProductViewer.client';
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { DEPARTMENT_OF } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
 import { photoSrc, type PhotoEntry } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getPhoneModels } from '@/lib/medusa/home';
 import {
   getAccessories,
-  getAudio,
+  getGadgets,
   getAllProducts,
   getMoreForPhoneCandidates,
   getProduct,
@@ -132,8 +133,8 @@ async function ProductPageContent({ params }: ProductPageProps) {
   const [models, accessories, related, candidates] = await Promise.all([
     getPhoneModels(),
     getAccessories(),
-    product.audio
-      ? getAudio().then((all) => all.filter((p) => p.id !== product.id))
+    product.gadget
+      ? getGadgets(DEPARTMENT_OF[product.gadget.type]).then((all) => all.filter((p) => p.id !== product.id))
       : product.accessory
       ? getAccessories().then((all) => all.filter((p) => p.id !== product.id))
       : product.photo
@@ -152,8 +153,8 @@ async function ProductPageContent({ params }: ProductPageProps) {
         <div className="mt-4 grid gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
           <div className="lg:col-span-7">
             <div className="lg:sticky lg:top-20">
-              {product.audio ? (
-                <AudioStage audio={product.audio} title={product.title} />
+              {product.gadget ? (
+                <GadgetStage gadget={product.gadget} title={product.title} />
               ) : product.accessory ? (
                 <AccessoryStage accessory={product.accessory} models={models} title={product.title} />
               ) : product.photo ? (
@@ -166,8 +167,8 @@ async function ProductPageContent({ params }: ProductPageProps) {
           </div>
 
           <div className="flex flex-col gap-8 lg:col-span-5">
-            {product.audio ? (
-              <AudioBuyBox product={product} />
+            {product.gadget ? (
+              <GadgetBuyBox product={product} />
             ) : (
               <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
             )}
@@ -177,11 +178,11 @@ async function ProductPageContent({ params }: ProductPageProps) {
         </div>
       </div>
 
-      {!product.accessory && !product.audio && <BundleKits product={product} accessories={accessories} models={models} />}
+      {!product.accessory && !product.gadget && <BundleKits product={product} accessories={accessories} models={models} />}
 
-      <RelatedRows product={product} related={related} candidates={product.audio ? [] : candidates} models={models} />
+      <RelatedRows product={product} related={related} candidates={product.gadget ? [] : candidates} models={models} />
 
-      <StickyBuyBar product={product} models={models} accessories={product.accessory || product.audio ? [] : accessories} />
+      <StickyBuyBar product={product} models={models} accessories={product.accessory || product.gadget ? [] : accessories} />
     </>
   );
 }

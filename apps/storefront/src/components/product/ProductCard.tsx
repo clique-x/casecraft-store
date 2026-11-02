@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { AccessoryCard } from '@/components/accessory/AccessoryCard'
-import { AudioCard } from '@/components/audio/AudioCard'
+import { GadgetCard } from '@/components/gadget/GadgetCard'
 import { TiltCard } from '@/components/motion/TiltCard.client'
 import { FitsLine } from '@/components/product/FitsLine.client'
 import { PhotoCard } from '@/components/product/PhotoCard'
@@ -27,8 +27,8 @@ interface ProductCardProps {
 
 /** Photo products render the photographed card; procedural designs keep the CSS thumb. */
 export function ProductCard({ product, rank, modelCount, priority, className }: ProductCardProps) {
-  if (product.audio) {
-    return <AudioCard product={product} className={className} />
+  if (product.gadget) {
+    return <GadgetCard product={product} className={className} />
   }
   if (product.accessory) {
     return <AccessoryCard product={product} className={className} />

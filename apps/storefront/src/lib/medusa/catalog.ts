@@ -1,12 +1,12 @@
 import { cacheLife, cacheTag } from 'next/cache';
 import { ACCESSORIES, ACCESSORY_TYPE_LABEL } from '@/lib/catalog/accessories';
-import { AUDIO, AUDIO_TYPE_LABEL } from '@/lib/catalog/audio';
+import { GADGETS, GADGET_TYPE_LABEL, optionPrice } from '@/lib/catalog/gadgets';
 import { PHOTOS, type PhotoEntry } from '@/lib/catalog/photos';
 import { DESIGNS } from '@/lib/designs/catalog';
 import { MEDUSA_REGION_ID, medusaEnabled, sdk } from './client';
 import {
   ACCESSORY_DETAILS,
-  AUDIO_DETAILS,
+  GADGET_DETAILS,
   PHONE_MODELS,
   PRODUCT_DETAILS,
   type CaseType,
@@ -23,8 +23,8 @@ export interface Catalog {
   products: ProductDetail[];
   /** Screen guards, lens protectors and back films. */
   accessories: ProductDetail[];
-  /** Wireless earbuds, neckbands and Bluetooth speakers. */
-  audio: ProductDetail[];
+  /** Wireless audio, chargers and data cables (lib/catalog/gadgets.ts). */
+  gadgets: ProductDetail[];
   phoneModels: PhoneModel[];
 }
 
@@ -41,7 +41,7 @@ export async function getCatalog(): Promise<Catalog> {
     : {
         products: [...PRODUCT_DETAILS],
         accessories: [...ACCESSORY_DETAILS],
-        audio: [...AUDIO_DETAILS],
+        gadgets: [...GADGET_DETAILS],
         phoneModels: [...PHONE_MODELS],
       };
 }
@@ -54,7 +54,7 @@ const HANDLES_TTL_MS = 60_000;
 let handlesMemo: { at: number; handles: Promise<string[]> } | null = null;
 
 export function getCatalogHandles(): Promise<string[]> {
-  if (!medusaEnabled) return Promise.resolve([...PRODUCT_DETAILS, ...ACCESSORY_DETAILS, ...AUDIO_DETAILS].map((p) => p.handle));
+  if (!medusaEnabled) return Promise.resolve([...PRODUCT_DETAILS, ...ACCESSORY_DETAILS, ...GADGET_DETAILS].map((p) => p.handle));
   const now = Date.now();
   if (handlesMemo && now - handlesMemo.at < HANDLES_TTL_MS) return handlesMemo.handles;
   const handles = fetchProductHandles();
@@ -122,8 +122,8 @@ async function fetchMedusaCatalog(): Promise<Catalog> {
   const modelRank = new Map(phoneModels.map((m, i) => [m.slug, i]));
   const mapped = products.map((p) => toProductDetail(p, modelRank)).filter((p): p is ProductDetail => p !== null);
   return {
-    products: mapped.filter((p) => !p.accessory && !p.audio).sort(byCatalogueOrder),
-    audio: mapped.filter((p) => p.audio).sort((a, b) => AUDIO.indexOf(a.audio!) - AUDIO.indexOf(b.audio!)),
+    products: mapped.filter((p) => !p.accessory && !p.gadget).sort(byCatalogueOrder),
+    gadgets: mapped.filter((p) => p.gadget).sort((a, b) => GADGETS.indexOf(a.gadget!) - GADGETS.indexOf(b.gadget!)),
     accessories: mapped
       .filter((p) => p.accessory)
       .sort((a, b) => ACCESSORIES.indexOf(a.accessory!) - ACCESSORIES.indexOf(b.accessory!)),
@@ -212,7 +212,8 @@ function toVariant(v: MedusaVariant): Variant | null {
 function toProductDetail(p: MedusaProduct, modelRank: Map<string, number>): ProductDetail | null {
   const meta = p.metadata;
   if (str(meta, 'kind') === 'accessory') return toAccessory(p, modelRank);
-  if (str(meta, 'kind') === 'audio') return toAudio(p);
+  // `audio` / `audio_id` / `colour` are the names the first audio seed used.
+  if (str(meta, 'kind') === 'gadget' || str(meta, 'kind') === 'audio') return toGadget(p);
   const photoId = num(meta, 'photo_id');
   const photo: PhotoEntry | undefined = photoId !== undefined ? PHOTOS.find((e) => e.id === photoId) : undefined;
   const design = photo ? undefined : DESIGNS.find((d) => d.id === str(meta, 'design_id'));
@@ -317,33 +318,37 @@ function toAccessory(p: MedusaProduct, modelRank: Map<string, number>): ProductD
   };
 }
 
-/** Audio carries `audio_id` in metadata and `colour` on each variant; the colour goes in `modelSlug`. */
-function toAudio(p: MedusaProduct): ProductDetail | null {
-  const entry = AUDIO.find((a) => a.id === str(p.metadata, 'audio_id'));
+/** Gadgets carry `gadget_id` in metadata and `option` on each variant; the option slug goes in `modelSlug`. */
+function toGadget(p: MedusaProduct): ProductDetail | null {
+  const id = str(p.metadata, 'gadget_id') ?? str(p.metadata, 'audio_id');
+  const entry = GADGETS.find((a) => a.id === id);
   if (!entry) {
-    console.warn(`[medusa] Skipping audio product "${p.handle}": unknown audio_id`);
+    console.warn(`[medusa] Skipping gadget product "${p.handle}": unknown gadget_id`);
     return null;
   }
-  const order = entry.colours.map((c) => c.slug);
+  const order = entry.options.map((c) => c.slug);
   const variants = (p.variants ?? [])
-    .map((v) => toVariant({ ...v, metadata: { ...v.metadata, model_slug: str(v.metadata, 'colour'), case_type: 'soft' } }))
+    .map((v) =>
+      toVariant({ ...v, metadata: { ...v.metadata, model_slug: str(v.metadata, 'option') ?? str(v.metadata, 'colour'), case_type: 'soft' } }),
+    )
     .filter((v): v is Variant => v !== null && order.includes(v.modelSlug))
     .sort((a, b) => order.indexOf(a.modelSlug) - order.indexOf(b.modelSlug));
   if (variants.length === 0) return null;
+  const first = entry.options.find((o) => o.slug === variants[0].modelSlug)!;
   return {
     id: p.id,
     handle: p.handle,
     title: p.title,
-    designId: `aud_${entry.id}`,
+    designId: `gad_${entry.id}`,
     family: 'minimal',
     theme: 'minimal',
     finish: 'soft',
     holo: false,
     priceFromInr: Math.min(...variants.map((v) => v.priceInr)),
-    regularInr: num(p.metadata, 'regular_inr') ?? entry.regularInr,
+    regularInr: num(p.metadata, 'regular_inr') ?? optionPrice(entry, first).regularInr,
     fitsModels: [],
-    brandLine: AUDIO_TYPE_LABEL[entry.type],
-    audio: entry,
+    brandLine: entry.original ? `Original ${entry.original.brand}` : GADGET_TYPE_LABEL[entry.type],
+    gadget: entry,
     description: p.description ?? entry.description,
     caseTypes: [],
     variants,

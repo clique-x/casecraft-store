@@ -1,5 +1,5 @@
 import { AccessoryCard } from '@/components/accessory/AccessoryCard';
-import { AudioCard } from '@/components/audio/AudioCard';
+import { GadgetCard } from '@/components/gadget/GadgetCard';
 import { PhotoCard } from '@/components/product/PhotoCard';
 import { ProductCard } from '@/components/product/ProductCard';
 import { hasPhoto, type HomeProduct } from '@/lib/medusa/fixtures';
@@ -45,8 +45,8 @@ export function ProductGrid({
         const priority = eager && i < EAGER_COUNT;
         return (
           <li key={product.id}>
-            {product.audio ? (
-              <AudioCard product={product} />
+            {product.gadget ? (
+              <GadgetCard product={product} />
             ) : product.accessory ? (
               <AccessoryCard product={product} />
             ) : hasPhoto(product) ? (

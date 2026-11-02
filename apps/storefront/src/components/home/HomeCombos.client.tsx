@@ -46,7 +46,7 @@ function CoverThumb({ cover }: { cover: ComboCover }) {
     return <img src={photoSrc(cover.photoId, 320)} alt="" className="h-full w-full object-contain" loading="lazy" />;
   }
   const design = getDesign(cover.designId);
-  return design ? <ProcCaseThumb design={design} className="h-full w-full" /> : null;
+  return design ? <ProcCaseThumb design={design} className="h-full w-auto" /> : null;
 }
 
 const inStock = (variants: ComboVariant[], slug: string) => variants.find((v) => v.modelSlug === slug && v.stock > 0) ?? null;
@@ -153,7 +153,7 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
                 </span>
 
                 <div className="flex items-center justify-center gap-1.5 bg-surface-2/70 px-4 pt-12 pb-5" aria-hidden="true">
-                  <span className="flex h-28 w-16 items-center justify-center overflow-hidden rounded-lg bg-paper">
+                  <span className="flex h-28 w-16 items-center justify-center overflow-hidden rounded-lg bg-paper py-2">
                     {cover ? <CoverThumb cover={cover} /> : <span className="px-1 text-center text-[0.625rem] font-semibold text-fg-muted">Your cover</span>}
                   </span>
                   {items.map((a) => (

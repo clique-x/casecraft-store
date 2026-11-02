@@ -111,11 +111,11 @@ export function CoverCarousel({ covers, selectedId, onSelect, phoneName, allHref
                 >
                   <span
                     className={cn(
-                      'relative block aspect-[3/4] w-full overflow-hidden rounded-xl bg-paper p-2 transition-shadow',
+                      'relative block aspect-[2/3] w-full overflow-hidden rounded-xl bg-paper px-3 py-3 transition-shadow',
                       on ? 'ring-2 ring-fg' : 'ring-1 ring-border group-hover/tile:ring-fg/40',
                     )}
                   >
-                    <span className="flex h-full w-full items-center justify-center [&>*]:max-h-full [&>*]:max-w-full">{c.thumb}</span>
+                    <span className="flex h-full w-full items-center justify-center [&>*]:drop-shadow-sm">{c.thumb}</span>
                     {on && (
                       <span className="absolute top-1.5 right-1.5 grid size-5 place-items-center rounded-full bg-fg text-paper">
                         <Check className="size-3" aria-hidden="true" />

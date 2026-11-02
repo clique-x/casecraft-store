@@ -48,7 +48,10 @@ export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBar
   useEffect(() => () => chromeStore.setStickyCtaVisible(false), []);
 
   const model = selection.modelSlug ? (models.find((x) => x.slug === selection.modelSlug) ?? null) : null;
-  const variant = variantFor(product, model?.slug ?? null, selection.caseType);
+  // Gadgets keep a colour or cable length in modelSlug, not a phone.
+  const variant = product.gadget
+    ? (product.variants.find((v) => v.modelSlug === selection.modelSlug) ?? null)
+    : variantFor(product, model?.slug ?? null, selection.caseType);
   const caseTypeInfo = CASE_TYPES.find((c) => c.type === selection.caseType) ?? CASE_TYPES[0];
   const price = variant ? variant.priceInr : lowestPrice(product);
   const priceLabel = `${variant ? '' : 'from '}${formatInr(price)}`;
@@ -60,8 +63,8 @@ export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBar
     sku: variant?.sku ?? null,
     intent: soldOut ? 'notify' : 'order',
   });
-  const colour = product.audio?.colours.find((c) => c.slug === selection.modelSlug)?.name ?? null;
-  const detail = [colour ?? model?.model, product.caseTypes.length > 0 ? caseTypeInfo.name : null].filter(Boolean).join(' · ');
+  const optionName = product.gadget?.options.find((c) => c.slug === selection.modelSlug)?.name ?? null;
+  const detail = [optionName ?? model?.model, product.caseTypes.length > 0 ? caseTypeInfo.name : null].filter(Boolean).join(' · ');
 
   return (
     <AnimatePresence>

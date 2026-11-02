@@ -1,3 +1,4 @@
+import { DEPARTMENT_OF, type Department } from '@/lib/catalog/gadgets';
 import { getCatalog, getCatalogHandles } from './catalog';
 import type { HomeProduct, ProductDetail } from './fixtures';
 
@@ -6,18 +7,19 @@ export { findVariant, lowestPrice, MISSING_PRODUCT_HANDLE } from './variants';
 
 /** Photo and procedural products alike; photo handles are the catalogue slugs. */
 export async function getProduct(handle: string): Promise<ProductDetail | null> {
-  const { products, accessories, audio } = await getCatalog();
+  const { products, accessories, gadgets } = await getCatalog();
   return (
     products.find((p) => p.handle === handle) ??
     accessories.find((p) => p.handle === handle) ??
-    audio.find((p) => p.handle === handle) ??
+    gadgets.find((p) => p.handle === handle) ??
     null
   );
 }
 
-/** Wireless earbuds, neckbands and Bluetooth speakers. */
-export async function getAudio(): Promise<ProductDetail[]> {
-  return (await getCatalog()).audio;
+/** Wireless audio, chargers and cables; pass a department for just one of them. */
+export async function getGadgets(department?: Department): Promise<ProductDetail[]> {
+  const { gadgets } = await getCatalog();
+  return department ? gadgets.filter((p) => p.gadget && DEPARTMENT_OF[p.gadget.type] === department) : gadgets;
 }
 
 /** Screen guards, lens protectors and back films. */
@@ -27,8 +29,8 @@ export async function getAccessories(): Promise<ProductDetail[]> {
 
 /** For generateStaticParams; cached with the rest of the catalogue. */
 export async function getProductHandles(): Promise<string[]> {
-  const { products, accessories, audio } = await getCatalog();
-  return [...products, ...accessories, ...audio].map((p) => p.handle);
+  const { products, accessories, gadgets } = await getCatalog();
+  return [...products, ...accessories, ...gadgets].map((p) => p.handle);
 }
 
 /** For src/proxy.ts, which runs outside the `use cache` scope. */

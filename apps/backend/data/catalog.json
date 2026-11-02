@@ -5145,9 +5145,10 @@
       "category": null,
       "tags": [],
       "metadata": {
-        "kind": "audio",
-        "audio_id": "buds-anc",
-        "audio_type": "earbuds",
+        "kind": "gadget",
+        "gadget_id": "buds-anc",
+        "gadget_type": "earbuds",
+        "department": "audio",
         "regular_inr": 3999,
         "detail_in_box": "Earbuds, charging case, USB-C cable, three sizes of ear tips."
       },
@@ -5156,10 +5157,10 @@
           "sku": "AUD-BUDSANC-BLACK",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "black",
-            "name": "Black",
-            "hex": "#1f2023"
+            "name": "Black"
           },
           "priceInr": 1999,
           "stock": 15
@@ -5168,10 +5169,10 @@
           "sku": "AUD-BUDSANC-WHITE",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "white",
-            "name": "White",
-            "hex": "#eeeeea"
+            "name": "White"
           },
           "priceInr": 1999,
           "stock": 15
@@ -5188,9 +5189,10 @@
       "category": null,
       "tags": [],
       "metadata": {
-        "kind": "audio",
-        "audio_id": "buds-lite",
-        "audio_type": "earbuds",
+        "kind": "gadget",
+        "gadget_id": "buds-lite",
+        "gadget_type": "earbuds",
+        "department": "audio",
         "regular_inr": 1999,
         "detail_in_box": "Earbuds, charging case, USB-C cable, spare ear tips."
       },
@@ -5199,10 +5201,10 @@
           "sku": "AUD-BUDSLITE-BLACK",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "black",
-            "name": "Black",
-            "hex": "#1f2023"
+            "name": "Black"
           },
           "priceInr": 999,
           "stock": 15
@@ -5211,10 +5213,10 @@
           "sku": "AUD-BUDSLITE-WHITE",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "white",
-            "name": "White",
-            "hex": "#eeeeea"
+            "name": "White"
           },
           "priceInr": 999,
           "stock": 15
@@ -5223,10 +5225,10 @@
           "sku": "AUD-BUDSLITE-BLUE",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "blue",
-            "name": "Blue",
-            "hex": "#2f4a6d"
+            "name": "Blue"
           },
           "priceInr": 999,
           "stock": 15
@@ -5243,9 +5245,10 @@
       "category": null,
       "tags": [],
       "metadata": {
-        "kind": "audio",
-        "audio_id": "neck-pro",
-        "audio_type": "neckband",
+        "kind": "gadget",
+        "gadget_id": "neck-pro",
+        "gadget_type": "neckband",
+        "department": "audio",
         "regular_inr": 2499,
         "detail_in_box": "Neckband, USB-C cable, spare ear tips."
       },
@@ -5254,10 +5257,10 @@
           "sku": "AUD-NECKPRO-BLACK",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "black",
-            "name": "Black",
-            "hex": "#1f2023"
+            "name": "Black"
           },
           "priceInr": 1299,
           "stock": 15
@@ -5266,10 +5269,10 @@
           "sku": "AUD-NECKPRO-BLUE",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "blue",
-            "name": "Blue",
-            "hex": "#2f4a6d"
+            "name": "Blue"
           },
           "priceInr": 1299,
           "stock": 15
@@ -5286,9 +5289,10 @@
       "category": null,
       "tags": [],
       "metadata": {
-        "kind": "audio",
-        "audio_id": "neck-basic",
-        "audio_type": "neckband",
+        "kind": "gadget",
+        "gadget_id": "neck-basic",
+        "gadget_type": "neckband",
+        "department": "audio",
         "regular_inr": 1499,
         "detail_in_box": "Neckband, USB-C cable."
       },
@@ -5297,10 +5301,10 @@
           "sku": "AUD-NECKBASIC-BLACK",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "black",
-            "name": "Black",
-            "hex": "#1f2023"
+            "name": "Black"
           },
           "priceInr": 799,
           "stock": 15
@@ -5309,10 +5313,10 @@
           "sku": "AUD-NECKBASIC-GREEN",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "green",
-            "name": "Green",
-            "hex": "#3d5a48"
+            "name": "Green"
           },
           "priceInr": 799,
           "stock": 15
@@ -5329,9 +5333,10 @@
       "category": null,
       "tags": [],
       "metadata": {
-        "kind": "audio",
-        "audio_id": "spk-mini",
-        "audio_type": "speaker",
+        "kind": "gadget",
+        "gadget_id": "spk-mini",
+        "gadget_type": "speaker",
+        "department": "audio",
         "regular_inr": 2199,
         "detail_in_box": "Speaker, strap, USB-C cable."
       },
@@ -5340,10 +5345,10 @@
           "sku": "AUD-SPKMINI-BLACK",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "black",
-            "name": "Black",
-            "hex": "#1f2023"
+            "name": "Black"
           },
           "priceInr": 1199,
           "stock": 15
@@ -5352,10 +5357,10 @@
           "sku": "AUD-SPKMINI-BLUE",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "blue",
-            "name": "Blue",
-            "hex": "#2f4a6d"
+            "name": "Blue"
           },
           "priceInr": 1199,
           "stock": 15
@@ -5364,10 +5369,10 @@
           "sku": "AUD-SPKMINI-RED",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "red",
-            "name": "Red",
-            "hex": "#a3302b"
+            "name": "Red"
           },
           "priceInr": 1199,
           "stock": 15
@@ -5384,9 +5389,10 @@
       "category": null,
       "tags": [],
       "metadata": {
-        "kind": "audio",
-        "audio_id": "spk-party",
-        "audio_type": "speaker",
+        "kind": "gadget",
+        "gadget_id": "spk-party",
+        "gadget_type": "speaker",
+        "department": "audio",
         "regular_inr": 5999,
         "detail_in_box": "Speaker, USB-C cable, AUX cable."
       },
@@ -5395,12 +5401,440 @@
           "sku": "AUD-SPKPARTY-BLACK",
           "modelSlug": null,
           "caseType": null,
-          "colour": {
+          "option": {
+            "title": "Colour",
             "slug": "black",
-            "name": "Black",
-            "hex": "#1f2023"
+            "name": "Black"
           },
           "priceInr": 2999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "20w-usb-c-fast-charger",
+      "productType": "Charger",
+      "title": "20 W USB-C fast charger",
+      "description": "A compact 20 W USB-C wall charger with Power Delivery, the fast-charging standard iPhone, Pixel and Nothing phones use. It charges any USB-C phone, and cuts power if it gets too hot or sees a surge.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "chg-20w",
+        "gadget_type": "charger",
+        "department": "charging",
+        "regular_inr": 1199,
+        "detail_in_box": "Charger. Cable sold separately."
+      },
+      "variants": [
+        {
+          "sku": "CHG-CHG20W-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "white",
+            "name": "White"
+          },
+          "priceInr": 599,
+          "stock": 15
+        },
+        {
+          "sku": "CHG-CHG20W-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 599,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "33w-dual-port-charger",
+      "productType": "Charger",
+      "title": "33 W dual-port charger",
+      "description": "One plug, two ports: USB-C for your phone and USB-A for earbuds, a watch or an older cable. It shares 33 W between them and works with almost any phone.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "chg-33w-dual",
+        "gadget_type": "charger",
+        "department": "charging",
+        "regular_inr": 1799,
+        "detail_in_box": "Charger. Cable sold separately."
+      },
+      "variants": [
+        {
+          "sku": "CHG-CHG33WDUAL-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "white",
+            "name": "White"
+          },
+          "priceInr": 899,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "45w-pps-fast-charger",
+      "productType": "Charger",
+      "title": "45 W PPS fast charger",
+      "description": "A 45 W USB-C charger with PPS, the variable-voltage fast charging that Samsung Galaxy phones need for their top speed. It also speaks Power Delivery, so it fast-charges iPhone, Pixel and Nothing phones and powers a tablet.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "chg-45w-pps",
+        "gadget_type": "charger",
+        "department": "charging",
+        "regular_inr": 2499,
+        "detail_in_box": "Charger. Cable sold separately; use a 5 A USB-C cable for 45 W."
+      },
+      "variants": [
+        {
+          "sku": "CHG-CHG45WPPS-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 1299,
+          "stock": 15
+        },
+        {
+          "sku": "CHG-CHG45WPPS-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "white",
+            "name": "White"
+          },
+          "priceInr": 1299,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "65w-gan-charger-3-port",
+      "productType": "Charger",
+      "title": "65 W GaN charger, 3 ports",
+      "description": "Gallium nitride (GaN) parts keep this 65 W charger about the size of a phone charger. Two USB-C ports and one USB-A share the power, enough for a laptop and a phone at the same time.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "chg-65w-gan",
+        "gadget_type": "charger",
+        "department": "charging",
+        "regular_inr": 3999,
+        "detail_in_box": "Charger. Cable sold separately."
+      },
+      "variants": [
+        {
+          "sku": "CHG-CHG65WGAN-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 1999,
+          "stock": 15
+        },
+        {
+          "sku": "CHG-CHG65WGAN-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "white",
+            "name": "White"
+          },
+          "priceInr": 1999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "car-charger-38w",
+      "productType": "Car charger",
+      "title": "Car charger 38 W",
+      "description": "A small metal car charger that sits almost flush in the 12/24 V socket. USB-C fast-charges your phone on the way while USB-A looks after a passenger’s phone.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "chg-car-38w",
+        "gadget_type": "car-charger",
+        "department": "charging",
+        "regular_inr": 1299,
+        "detail_in_box": "Car charger. Cable sold separately."
+      },
+      "variants": [
+        {
+          "sku": "CHG-CHGCAR38W-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 699,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "original-apple-usb-c-cable",
+      "productType": "Data cable",
+      "title": "Original Apple USB-C to USB-C cable",
+      "description": "Apple’s own woven USB-C charge cable, sealed in its retail box. It fast-charges iPhone 15 and newer with a 20 W or higher USB-C charger, and syncs with a Mac or PC.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cab-apple-c",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 1900,
+        "detail_in_box": "Apple USB-C charge cable (1 m), in Apple’s sealed box.",
+        "original_brand": "Apple"
+      },
+      "variants": [
+        {
+          "sku": "CHG-CABAPPLEC-1M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "1m",
+            "name": "1 m"
+          },
+          "priceInr": 1900,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "original-apple-usb-c-to-lightning-cable",
+      "productType": "Data cable",
+      "title": "Original Apple USB-C to Lightning cable",
+      "description": "Apple’s own USB-C to Lightning cable, sealed in its retail box. With a 20 W USB-C charger it fast-charges iPhone 8 to iPhone 14 to 50% in about 30 minutes.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cab-apple-l",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 1900,
+        "detail_in_box": "Apple USB-C to Lightning cable (1 m), in Apple’s sealed box.",
+        "original_brand": "Apple"
+      },
+      "variants": [
+        {
+          "sku": "CHG-CABAPPLEL-1M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "1m",
+            "name": "1 m"
+          },
+          "priceInr": 1900,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "original-samsung-usb-c-cable",
+      "productType": "Data cable",
+      "title": "Original Samsung USB-C cable 3 A",
+      "description": "Samsung’s own USB-C to USB-C cable, sealed. Rated for 3 A, it carries 25 W fast charging to Galaxy phones from a PPS charger.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cab-samsung",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 799,
+        "detail_in_box": "Samsung USB-C cable (1 m), sealed.",
+        "original_brand": "Samsung"
+      },
+      "variants": [
+        {
+          "sku": "CHG-CABSAMSUNG-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "white",
+            "name": "White"
+          },
+          "priceInr": 799,
+          "stock": 15
+        },
+        {
+          "sku": "CHG-CABSAMSUNG-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 799,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "original-oneplus-supervooc-cable",
+      "productType": "Data cable",
+      "title": "Original OnePlus SUPERVOOC cable",
+      "description": "OnePlus’s own SUPERVOOC cable, sealed. SUPERVOOC needs the brand’s cable and charger together; with them, a OnePlus phone charges at its full rated speed. It also charges any USB-C phone normally.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cab-oneplus",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 699,
+        "detail_in_box": "OnePlus SUPERVOOC cable (1 m), sealed.",
+        "original_brand": "OnePlus"
+      },
+      "variants": [
+        {
+          "sku": "CHG-CABONEPLUS-1M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "1m",
+            "name": "1 m"
+          },
+          "priceInr": 699,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "braided-usb-c-cable-60w",
+      "productType": "Data cable",
+      "title": "Braided USB-C to USB-C cable 60 W",
+      "description": "Our everyday USB-C cable with a nylon braid and strain relief at both ends, so it survives bags and bedside tables. 60 W covers fast charging on every USB-C phone and most laptops.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cab-braid-c",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 799,
+        "detail_in_box": "Braided USB-C cable with a strap."
+      },
+      "variants": [
+        {
+          "sku": "CHG-CABBRAIDC-1M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "1m",
+            "name": "1 m"
+          },
+          "priceInr": 399,
+          "stock": 15
+        },
+        {
+          "sku": "CHG-CABBRAIDC-2M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "2m",
+            "name": "2 m"
+          },
+          "priceInr": 499,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "braided-usb-c-to-lightning-cable",
+      "productType": "Data cable",
+      "title": "Braided USB-C to Lightning cable",
+      "description": "A braided USB-C to Lightning cable for iPhone 14 and older. With a 20 W USB-C charger it fast-charges as quickly as the cable in Apple’s box.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cab-braid-l",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 899,
+        "detail_in_box": "Braided USB-C to Lightning cable with a strap."
+      },
+      "variants": [
+        {
+          "sku": "CHG-CABBRAIDL-1M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "1m",
+            "name": "1 m"
+          },
+          "priceInr": 449,
+          "stock": 15
+        },
+        {
+          "sku": "CHG-CABBRAIDL-2M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "2m",
+            "name": "2 m"
+          },
+          "priceInr": 549,
           "stock": 15
         }
       ]

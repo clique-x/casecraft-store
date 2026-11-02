@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { Minus, Plus, Trash2 } from 'lucide-react';
 import { AccessoryArt } from '@/components/accessory/AccessoryArt';
 import { ProcCaseThumb } from '@/components/product/ProcCaseThumb';
-import { AudioArt } from '@/components/audio/AudioArt';
+import { GadgetArt } from '@/components/gadget/GadgetArt';
 import { ACCESSORIES } from '@/lib/catalog/accessories';
-import { AUDIO } from '@/lib/catalog/audio';
+import { GADGETS } from '@/lib/catalog/gadgets';
 import { formatInr } from '@/lib/catalog/photos';
 import { DESIGNS } from '@/lib/designs/catalog';
 import { useCart } from '@/lib/cart/cart-context';
@@ -19,10 +19,10 @@ const QTY_BTN =
 /** Photo covers have a Medusa thumbnail; accessories and printed designs are drawn from the catalogue. */
 function Thumb({ line }: { line: CartLine }) {
   const accessory = line.productHandle ? ACCESSORIES.find((a) => a.handle === line.productHandle) : undefined;
-  const audio = !accessory && line.productHandle ? AUDIO.find((a) => a.handle === line.productHandle) : undefined;
-  const design = !accessory && !audio && line.productHandle ? DESIGNS.find((d) => d.handle === line.productHandle) : undefined;
-  // Audio variant titles are the colour name ("White").
-  const audioHex = audio?.colours.find((c) => c.name === line.variantTitle)?.hex ?? audio?.colours[0]?.hex;
+  const gadget = !accessory && line.productHandle ? GADGETS.find((a) => a.handle === line.productHandle) : undefined;
+  const design = !accessory && !gadget && line.productHandle ? DESIGNS.find((d) => d.handle === line.productHandle) : undefined;
+  // Gadget variant titles are the option name ("White", "2 m").
+  const gadgetHex = gadget?.options.find((c) => c.name === line.variantTitle)?.hex ?? gadget?.options[0]?.hex;
   return (
     <div className="h-20 w-16 shrink-0 overflow-hidden rounded-lg bg-surface-2">
       {line.thumbnail ? (
@@ -30,11 +30,11 @@ function Thumb({ line }: { line: CartLine }) {
         <img src={line.thumbnail} alt="" width={64} height={80} className="size-full object-contain" />
       ) : accessory ? (
         <AccessoryArt accessory={accessory} />
-      ) : audio ? (
-        <AudioArt audio={audio} hex={audioHex} />
+      ) : gadget ? (
+        <GadgetArt gadget={gadget} hex={gadgetHex} />
       ) : design ? (
-        <div className="mx-auto h-full w-10 py-1.5">
-          <ProcCaseThumb design={design} className="h-full w-full" />
+        <div className="flex h-full items-center justify-center py-1.5">
+          <ProcCaseThumb design={design} className="h-full w-auto" />
         </div>
       ) : null}
     </div>

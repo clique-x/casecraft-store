@@ -14,18 +14,18 @@ const ITEMS: readonly { key: DetailKey; label: string }[] = [
 export function ProductDetails({ product }: { product: ProductDetail }) {
   const photo = product.photo;
   const accessory = product.accessory;
-  const audio = product.audio;
+  const gadget = product.gadget;
   // Accessories keep "what's in the box" in the `print` slot.
   const items = ITEMS.filter(({ key }) => product.details[key].trim().length > 0).map((item) =>
-    (accessory || audio) && item.key === 'print' ? { ...item, label: 'In the box' } : item,
+    (accessory || gadget) && item.key === 'print' ? { ...item, label: 'In the box' } : item,
   );
-  const features = audio ? audio.features : accessory ? accessory.features : photo ? featuresFor(photo) : null;
+  const features = gadget ? gadget.features : accessory ? accessory.features : photo ? featuresFor(photo) : null;
 
   return (
     <section aria-labelledby="details-heading" className="flex flex-col gap-4">
       <div>
         <h2 id="details-heading" className="font-sans text-h3 font-bold text-fg">
-          {accessory || audio ? 'About this product' : photo ? 'About this cover' : 'Design'}
+          {accessory || gadget ? 'About this product' : photo ? 'About this cover' : 'Design'}
         </h2>
         <p className="mt-2 text-body text-fg-muted">{product.description}</p>
       </div>
@@ -41,9 +41,9 @@ export function ProductDetails({ product }: { product: ProductDetail }) {
         </ul>
       )}
 
-      {audio && (
+      {gadget && (
         <dl aria-label="Specifications" className="divide-y divide-border rounded-xl border border-border text-sm">
-          {audio.specs.map((spec) => (
+          {gadget.specs.map((spec) => (
             <div key={spec.label} className="grid grid-cols-[8rem_1fr] gap-3 px-4 py-2.5">
               <dt className="text-fg-muted">{spec.label}</dt>
               <dd className="text-fg">{spec.value}</dd>

@@ -12,8 +12,8 @@ import { UpClose } from '@/components/home/UpClose';
 import { TrendingRow } from '@/components/home/TrendingRow';
 import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
 import type { ProductDetail } from '@/lib/medusa/fixtures';
-import { getAccessories, getAllProducts, getAudio } from '@/lib/medusa/products';
-import { AudioRow } from '@/components/home/AudioRow';
+import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
+import { GadgetRow } from '@/components/home/GadgetRow';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { LookGrid } from '@/components/home/LookGrid';
 import { BrandRow } from '@/components/home/BrandRow';
@@ -92,14 +92,15 @@ function toComboCovers(products: ProductDetail[]): ComboCover[] {
 }
 
 export default async function HomePage() {
-  const [trending, newArrivals, models, looks, allCovers, accessories, audio] = await Promise.all([
+  const [trending, newArrivals, models, looks, allCovers, accessories, audio, charging] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
     getLooks(),
     getAllProducts(),
     getAccessories(),
-    getAudio(),
+    getGadgets('audio'),
+    getGadgets('charging'),
   ]);
   const comboCovers = toComboCovers(allCovers);
   const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
@@ -131,7 +132,8 @@ export default async function HomePage() {
       {front && <UpClose initial={front} />}
       <TrendingRow products={trending} />
       <HomeCombos covers={comboCovers} accessories={comboAccessories} />
-      <AudioRow products={audio} />
+      <GadgetRow department="audio" products={audio} />
+      <GadgetRow department="charging" products={charging} />
       <NewArrivalsRow products={newArrivals} models={models} />
       <LookGrid looks={looks} />
       <BrandRow brands={[...LAUNCH_BRANDS]} models={models} />

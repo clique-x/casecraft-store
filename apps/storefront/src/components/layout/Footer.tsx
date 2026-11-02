@@ -22,6 +22,7 @@ const COLUMNS: readonly { heading: string; links: readonly { href: string; label
       { href: '/phones', label: 'Shop by phone' },
       { href: '/accessories', label: 'Screen guards & protection' },
       { href: '/audio', label: 'Earbuds & speakers' },
+      { href: '/charging', label: 'Chargers & cables' },
       { href: '/search', label: 'Search' },
     ],
   },

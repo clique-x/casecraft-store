@@ -32,7 +32,7 @@ function CoverThumb({ product }: { product: ProductDetail }) {
     return <img src={photoSrc(product.photo.id, 320)} alt="" className="h-full w-full object-contain" loading="lazy" />;
   }
   const design = getDesign(product.designId);
-  return design ? <ProcCaseThumb design={design} className="h-full w-full" /> : null;
+  return design ? <ProcCaseThumb design={design} className="h-full w-auto" /> : null;
 }
 
 /** Ready-made kits for this cover: the cover plus screen glass and/or lens protector, at bundle price. */
@@ -69,7 +69,7 @@ export function BundleKits({ product, accessories, models }: Props) {
           {kits.map(({ kit, items, variantIds, regular, price, available }) => (
             <li key={kit.id} className="flex flex-col gap-4 rounded-xl border border-border bg-paper p-4">
               <div className="flex items-center gap-2" aria-hidden="true">
-                <span className="h-24 w-14 shrink-0 overflow-hidden rounded-lg bg-surface-2">
+                <span className="flex h-24 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-surface-2 py-1.5">
                   <CoverThumb product={product} />
                 </span>
                 {items.map((a) => (
