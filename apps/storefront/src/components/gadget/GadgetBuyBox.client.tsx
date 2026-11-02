@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
-import { BadgeCheck, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { BuyButtons } from '@/components/product/BuyButtons';
 import { PriceTag } from '@/components/product/PriceTag.client';
 import { StockLine } from '@/components/product/StockLine.client';
+import { GadgetAssurance } from '@/components/gadget/GadgetAssurance';
 import { PhoneFitNote } from '@/components/gadget/PhoneFitNote.client';
 import { keepTogether } from '@/components/gadget/keep-together';
 import { GADGET_TYPE_LABEL, optionPrice } from '@/lib/catalog/gadgets';
@@ -66,15 +67,6 @@ export function GadgetBuyBox({ product }: { product: ProductDetail }) {
           <StockLine stock={variant ? variant.stock : null} />
         </div>
         <p className="text-body text-fg-muted">{gadget.short}</p>
-        {gadget.original && (
-          <p className="flex items-start gap-2 rounded-lg bg-brand/8 px-3 py-2 text-sm text-fg">
-            <BadgeCheck className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden="true" />
-            <span>
-              <strong>Original {gadget.original.brand}</strong>, in the sealed {gadget.original.brand} box, with our GST invoice for the brand
-              warranty.
-            </span>
-          </p>
-        )}
         <PhoneFitNote gadget={gadget} className="text-sm" />
       </header>
 
@@ -129,6 +121,7 @@ export function GadgetBuyBox({ product }: { product: ProductDetail }) {
       <div id="buy-actions" className="flex flex-col gap-3">
         <BuyButtons variantId={variant?.id ?? null} soldOut={soldOut} whatsappHref={whatsappHref} />
         <p className="text-caption text-fg-muted">Pay by UPI, card, netbanking or Cash on Delivery at checkout.</p>
+        <GadgetAssurance gadget={gadget} className="mt-2" />
         <a
           href={askOnWhatsAppHref({ productName: product.title, modelName: null, caseTypeName: null, sku: null })}
           target="_blank"

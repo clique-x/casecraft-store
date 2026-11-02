@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { DepartmentPage } from '@/components/gadget/DepartmentPage';
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 
-const TITLE = 'Wireless earbuds, neckbands and Bluetooth speakers';
+const TITLE = 'boAt and realme wireless earbuds and neckbands';
 const DESCRIPTION =
-  'Wireless earbuds, neckbands and Bluetooth speakers that work with every phone, with Cash on Delivery and free shipping over ₹499.';
+  'Sealed boAt and realme earbuds and neckbands with the 1-year brand warranty, for every phone, with Cash on Delivery and free shipping over ₹499.';
 const URL_PATH = '/audio';
 
 export const metadata: Metadata = {

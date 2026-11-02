@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { AccessoryStage } from '@/components/accessory/AccessoryStage.client';
 import { GadgetBuyBox } from '@/components/gadget/GadgetBuyBox.client';
+import { GadgetGallery } from '@/components/gadget/GadgetGallery';
 import { GadgetStage } from '@/components/gadget/GadgetStage.client';
 import { Breadcrumb } from '@/components/product/Breadcrumb';
 import { BundleKits } from '@/components/product/BundleKits.client';
@@ -16,7 +17,7 @@ import { StickyBuyBar } from '@/components/product/StickyBuyBar.client';
 import { PhotoStage } from '@/components/product/viewer/PhotoStage.client';
 import { ProductViewer } from '@/components/product/viewer/ProductViewer.client';
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
-import { DEPARTMENT_OF } from '@/lib/catalog/gadgets';
+import { DEPARTMENT_OF, GADGET_TYPE_LABEL, gadgetGallerySrc, gadgetHeroIndex } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
 import { gallerySrc, photoSrc, type PhotoEntry } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
@@ -68,8 +69,21 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   if (!product) return { title: 'Cover not found', robots: { index: false, follow: true } };
 
   const photo = product.photo;
-  const title = photo ? `${photo.title} · ${photo.modelLabel} back cover` : `${product.title} phone back cover`;
+  const gadget = product.gadget;
+  const title = photo
+    ? `${photo.title} · ${photo.modelLabel} back cover`
+    : gadget
+      ? `${product.title} · ${GADGET_TYPE_LABEL[gadget.type]}`
+      : `${product.title} phone back cover`;
   const url = new URL(`/products/${product.handle}`, SITE_URL).toString();
+  const gadgetImage = gadget?.photos
+    ? {
+        url: new URL(gadgetGallerySrc(gadget.photos, gadgetHeroIndex(gadget.photos, gadget.options[0]?.slug), 960), SITE_URL).toString(),
+        width: 960,
+        height: 960,
+        alt: `${product.title}, ${gadget.options[0]?.name ?? ''}`.replace(/, $/, ''),
+      }
+    : null;
   return {
     title,
     description: product.description,
@@ -81,7 +95,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       title: `${title} · ${BRAND_NAME}`,
       description: product.description,
       url,
-      ...(photo ? { images: [ogImageFor(photo)] } : {}),
+      ...(photo ? { images: [ogImageFor(photo)] } : gadgetImage ? { images: [gadgetImage] } : {}),
     },
   };
 }
@@ -178,13 +192,14 @@ async function ProductPageContent({ params }: ProductPageProps) {
             ) : (
               <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
             )}
-            <DeliveryFacts />
+            <DeliveryFacts gadget={product.gadget} />
             <ProductDetails product={product} />
           </div>
         </div>
       </div>
 
       {product.photo && <PhotoGallery entry={product.photo} />}
+      {product.gadget && <GadgetGallery gadget={product.gadget} title={product.title} />}
 
       {!product.accessory && !product.gadget && <BundleKits product={product} accessories={accessories} models={models} />}
 
