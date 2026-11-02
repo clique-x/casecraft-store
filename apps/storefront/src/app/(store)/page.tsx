@@ -5,6 +5,7 @@ import { castFor, formatInr, heroChipModels, PHOTOS, photoSrc, srcSetFor } from 
 import type { HomeProduct } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { Hero } from '@/components/home/hero/Hero';
+import { GsapMount } from '@/components/motion/GsapMount.client';
 import { HERO_SIZES } from '@/components/home/hero/heroConfig';
 import { PhonePickerSection } from '@/components/home/PhonePickerSection';
 import { TrustSeam } from '@/components/home/TrustSeam';
@@ -126,6 +127,8 @@ export default async function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trending) }} />
+      {/* Only the home page animates with GSAP; other routes never download it. */}
+      <GsapMount />
       <Hero cast={cast} models={models} chipModels={chipModels} />
       <PhonePickerSection models={models} />
       <TrustSeam />

@@ -55,6 +55,8 @@ interface PhotoStageProps {
   /** Product title for the accessible name. */
   title: string;
   className?: string;
+  /** Fetch the cutout eagerly at high priority. Off where a preload already covers it or it may be hidden. */
+  priority?: boolean;
 }
 
 function getServerTier(): SceneTier | null {
@@ -71,7 +73,7 @@ function clamp(v: number, min: number, max: number): number {
  * angle on hold, scrubs turntable frames when the entry has `angles`, and answers the
  * arrow keys. Flat layers only; nothing here imports three.
  */
-export function PhotoStage({ entry, title, className }: PhotoStageProps) {
+export function PhotoStage({ entry, title, className, priority = true }: PhotoStageProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const caseRef = useRef<HTMLDivElement>(null);
   const imgBoxRef = useRef<HTMLDivElement>(null);
@@ -360,7 +362,7 @@ export function PhotoStage({ entry, title, className }: PhotoStageProps) {
             entry={entry}
             role="upclose"
             sizes={SIZES}
-            priority
+            priority={priority}
             className="size-full"
             imgProps={{ draggable: false, className: 'size-full object-contain' }}
           />

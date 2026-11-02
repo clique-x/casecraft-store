@@ -1,10 +1,12 @@
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { GADGET_TYPE_LABEL, gadgetGallerySrc, gadgetHeroIndex } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
 import { gallerySrc, photoSrc } from '@/lib/catalog/photos';
 import { THEMES, type ProductDetail } from '@/lib/medusa/fixtures';
 import { lowestPrice } from '@/lib/medusa/variants';
 
 function categoryOf(product: ProductDetail): string {
+  if (product.gadget) return GADGET_TYPE_LABEL[product.gadget.type];
   if (product.photo) {
     const look = LOOKS.find((l) => l.handle === product.photo?.look);
     return look ? `${look.name} phone back covers` : 'Phone back covers';
@@ -22,6 +24,10 @@ function productJsonLd(product: ProductDetail): string {
   const url = new URL(`/products/${product.handle}`, SITE_URL).toString();
   const inStock = product.variants.some((v) => v.stock > 0);
   const photo = product.photo;
+  const gadget = product.gadget;
+  const gadgetImage = gadget?.photos
+    ? new URL(gadgetGallerySrc(gadget.photos, gadgetHeroIndex(gadget.photos, gadget.options[0]?.slug), 960), SITE_URL).toString()
+    : null;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -35,11 +41,13 @@ function productJsonLd(product: ProductDetail): string {
             SITE_URL,
           ).toString(),
         }
-      : {}),
+      : gadgetImage
+        ? { image: gadgetImage }
+        : {}),
     sku: product.variants[0]?.sku,
-    brand: { '@type': 'Brand', name: photo ? photo.brand : BRAND_NAME },
+    brand: { '@type': 'Brand', name: photo ? photo.brand : (gadget?.original?.brand ?? BRAND_NAME) },
     category: categoryOf(product),
-    material: materialOf(product),
+    ...(gadget ? {} : { material: materialOf(product) }),
     offers: {
       '@type': 'Offer',
       url,

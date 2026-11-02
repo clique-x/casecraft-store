@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { AnimatePresence, m } from 'motion/react';
 import { BuyButtons } from '@/components/product/BuyButtons';
+import { gadgetCardSrc, gadgetHeroIndex } from '@/lib/catalog/gadgets';
 import { formatInr, photoSrc } from '@/lib/catalog/photos';
 import { useInView } from '@/lib/device/use-in-view';
 import { chromeStore } from '@/lib/layout/chrome-store';
@@ -87,6 +88,16 @@ export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBar
                   width={44}
                   height={55}
                   className="h-14 w-11 shrink-0 rounded-md bg-surface-2 object-contain"
+                />
+              )}
+              {product.gadget?.photos && (
+                // eslint-disable-next-line @next/next/no-img-element -- local catalogue photo at a fixed small size
+                <img
+                  src={gadgetCardSrc(product.gadget.photos, gadgetHeroIndex(product.gadget.photos, selection.modelSlug), 320)}
+                  alt=""
+                  width={44}
+                  height={55}
+                  className="h-14 w-11 shrink-0 rounded-md bg-surface-2 object-cover"
                 />
               )}
               <div className="min-w-0">

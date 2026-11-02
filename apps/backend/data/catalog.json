@@ -5786,69 +5786,267 @@
       ]
     },
     {
-      "handle": "wireless-earbuds-anc",
+      "handle": "boat-airdopes-alpha-gen-2",
       "productType": "Wireless earbuds",
-      "title": "Wireless earbuds ANC",
-      "description": "In-ear wireless earbuds with active noise cancellation for the metro and the office, and a transparency mode for when you need to hear the announcement. Four mics keep calls clear, and the case charges over USB-C.",
-      "imagePath": null,
+      "title": "boAt Airdopes Alpha Gen 2",
+      "description": "The second-generation Airdopes Alpha: a stem-style earbud with a 45-hour total playtime, four mics with ENx noise reduction for calls, and a 50 ms BEAST mode for games and video. The 13 mm drivers carry boAt’s signature bass, Bluetooth 5.4 holds a steady link, and IWP pairs the buds the moment the lid opens. Ten minutes on the charger buys two and a half hours of music.",
+      "imagePath": "/products/photos/gadgets/boat-alpha-gen2/card-0-720.webp",
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "gadget",
-        "gadget_id": "buds-anc",
+        "gadget_id": "boat-alpha-gen2",
         "gadget_type": "earbuds",
         "department": "audio",
-        "regular_inr": 3999,
-        "detail_in_box": "Earbuds, charging case, USB-C cable, three sizes of ear tips."
+        "regular_inr": 3990,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
       },
       "variants": [
         {
-          "sku": "AUD-BUDSANC-BLACK",
+          "sku": "AUD-BOATALPHAGEN2-MIDNIGHT-BLACK",
           "modelSlug": null,
           "caseType": null,
           "option": {
             "title": "Colour",
-            "slug": "black",
-            "name": "Black"
+            "slug": "midnight-black",
+            "name": "Midnight Black"
           },
-          "priceInr": 1999,
+          "priceInr": 1400,
           "stock": 15
         },
         {
-          "sku": "AUD-BUDSANC-WHITE",
+          "sku": "AUD-BOATALPHAGEN2-OCEAN-BLUE",
           "modelSlug": null,
           "caseType": null,
           "option": {
             "title": "Colour",
-            "slug": "white",
-            "name": "White"
+            "slug": "ocean-blue",
+            "name": "Ocean Blue"
           },
-          "priceInr": 1999,
+          "priceInr": 1400,
           "stock": 15
         }
       ]
     },
     {
-      "handle": "wireless-earbuds-lite",
+      "handle": "boat-airdopes-alpha",
       "productType": "Wireless earbuds",
-      "title": "Wireless earbuds Lite",
-      "description": "Light everyday earbuds with a game mode that cuts audio delay for videos and mobile games. Tap controls on each bud, and they reconnect to your phone as soon as you open the case.",
+      "title": "boAt Airdopes Alpha",
+      "description": "A light stem-style earbud with 35 hours of total playtime and boAt Signature Sound from 13 mm drivers. Dual mics with ENx keep your voice clear on calls, BEAST mode drops latency to 50 ms for games, and IWP connects the buds as soon as the case opens. Ten minutes of ASAP charge gives two hours of playback.",
+      "imagePath": "/products/photos/gadgets/boat-alpha/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-alpha",
+        "gadget_type": "earbuds",
+        "department": "audio",
+        "regular_inr": 3490,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATALPHA-DEEP-BLUE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "deep-blue",
+            "name": "Deep Blue"
+          },
+          "priceInr": 799,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-BOATALPHA-PINE-GREEN",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "pine-green",
+            "name": "Pine Green"
+          },
+          "priceInr": 799,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-airdopes-161-metallic",
+      "productType": "Wireless earbuds",
+      "title": "boAt Airdopes 161 Metallic",
+      "description": "The metallic edition of boAt’s long-running Airdopes 161: a brushed-finish case with 50 hours of total playtime and 13 mm drivers. Dual EQ switches between Signature and Balanced sound, BEAST mode keeps games at 50 ms, and IWP pairs the buds when the lid opens. Ten minutes of ASAP charge gives two hours of music.",
+      "imagePath": "/products/photos/gadgets/boat-161/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-161",
+        "gadget_type": "earbuds",
+        "department": "audio",
+        "regular_inr": 2490,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOAT161-CARBON-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "carbon-black",
+            "name": "Carbon Black"
+          },
+          "priceInr": 799,
+          "stock": 15
+        },
+        {
+          "sku": "AUD-BOAT161-ASH-GREY",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "ash-grey",
+            "name": "Ash Grey"
+          },
+          "priceInr": 799,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-airdopes-212",
+      "productType": "Wireless earbuds",
+      "title": "boAt Airdopes 212",
+      "description": "A compact case with a translucent lid and 50 hours of total playtime. Dual mics with ENx handle calls, BEAST mode brings latency down to 45 ms for games and video, and IWP with Bluetooth 5.4 connects the buds as the lid opens. Ten minutes of ASAP charge gives 140 minutes of playback.",
+      "imagePath": "/products/photos/gadgets/boat-212/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-212",
+        "gadget_type": "earbuds",
+        "department": "audio",
+        "regular_inr": 3290,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOAT212-IVORY",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "ivory",
+            "name": "Ivory"
+          },
+          "priceInr": 899,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-airdopes-219",
+      "productType": "Wireless earbuds",
+      "title": "boAt Airdopes 219",
+      "description": "In-ear buds with silicone tips that seal out the street, 40 hours of total playtime and four mics with ENx for calls. The 13 mm drivers carry boAt Signature Sound, BEAST mode keeps games at 45 ms, and IWP with Bluetooth 5.4 pairs the buds when the lid opens. Made in India; ten minutes of ASAP charge gives two hours of music.",
+      "imagePath": "/products/photos/gadgets/boat-219/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-219",
+        "gadget_type": "earbuds",
+        "department": "audio",
+        "regular_inr": 3990,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOAT219-CARBON-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "carbon-black",
+            "name": "Carbon Black"
+          },
+          "priceInr": 999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-airdopes-prime-800-hidef",
+      "productType": "Wireless earbuds",
+      "title": "boAt Airdopes Prime 800 HiDef",
+      "description": "boAt Labs’ Hi-Res earbud: LDAC streams up to 990 kbps from phones that support it, a HiFi DSP core renders 24-bit spatial audio, and Adaptive EQ by Mimi tunes the sound to your hearing profile. Four mics with AI ENx are trained on Indian street noise, Google Fast Pair and in-ear detection handle the everyday, and multipoint keeps the buds on your phone and laptop at once. Forty hours of total playtime; ten minutes of ASAP charge gives 200 minutes.",
+      "imagePath": "/products/photos/gadgets/boat-800-hidef/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-800-hidef",
+        "gadget_type": "earbuds",
+        "department": "audio",
+        "regular_inr": 7490,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOAT800HIDEF-GRAPHITE-GREY",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "graphite-grey",
+            "name": "Graphite Grey"
+          },
+          "priceInr": 1499,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "realme-buds-t200",
+      "productType": "Wireless earbuds",
+      "title": "realme Buds T200",
+      "description": "realme’s mid-range earbud with active noise cancellation up to 32 dB, Hi-Res Audio over LDAC and 3D spatial audio. The 12.4 mm dynamic bass driver fills in the low end, total playtime with the case reaches 50 hours, and IP55 covers dust, sweat and rain. Bluetooth 5.4 pairs with Android and iPhone; the realme Link app sets the EQ and the touch controls.",
       "imagePath": null,
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "gadget",
-        "gadget_id": "buds-lite",
+        "gadget_id": "realme-t200",
         "gadget_type": "earbuds",
         "department": "audio",
         "regular_inr": 1999,
-        "detail_in_box": "Earbuds, charging case, USB-C cable, spare ear tips."
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "realme",
+        "warranty_months": 12
       },
       "variants": [
         {
-          "sku": "AUD-BUDSLITE-BLACK",
+          "sku": "AUD-REALMET200-BLACK",
           "modelSlug": null,
           "caseType": null,
           "option": {
@@ -5856,11 +6054,11 @@
             "slug": "black",
             "name": "Black"
           },
-          "priceInr": 999,
+          "priceInr": 1999,
           "stock": 15
         },
         {
-          "sku": "AUD-BUDSLITE-WHITE",
+          "sku": "AUD-REALMET200-WHITE",
           "modelSlug": null,
           "caseType": null,
           "option": {
@@ -5868,43 +6066,67 @@
             "slug": "white",
             "name": "White"
           },
-          "priceInr": 999,
-          "stock": 15
-        },
-        {
-          "sku": "AUD-BUDSLITE-BLUE",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Colour",
-            "slug": "blue",
-            "name": "Blue"
-          },
-          "priceInr": 999,
+          "priceInr": 1999,
           "stock": 15
         }
       ]
     },
     {
-      "handle": "neckband-pro",
-      "productType": "Neckband",
-      "title": "Neckband Pro",
-      "description": "A flexible neckband that sits comfortably all day, with call noise reduction for busy streets and magnetic earbuds that clip together when you are not listening. Ten minutes on the charger gives a full day of commuting.",
+      "handle": "realme-buds-t200-lite",
+      "productType": "Wireless earbuds",
+      "title": "realme Buds T200 Lite",
+      "description": "The entry point to realme’s T200 family: a 12.4 mm dynamic bass driver, 48 hours of total playtime with the case and AI environmental noise cancellation on calls. A low-latency game mode keeps audio in step with the screen, Google Fast Pair connects it to an Android phone in one tap, and the buds are IPX4 rated for sweat.",
       "imagePath": null,
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "gadget",
-        "gadget_id": "neck-pro",
-        "gadget_type": "neckband",
+        "gadget_id": "realme-t200-lite",
+        "gadget_type": "earbuds",
+        "department": "audio",
+        "regular_inr": 1399,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "realme",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-REALMET200LITE-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 1399,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "realme-buds-t200x",
+      "productType": "Wireless earbuds",
+      "title": "realme Buds T200x",
+      "description": "Active noise cancellation up to 25 dB at an everyday price, with realme’s 12.4 mm dynamic bass driver, 48 hours of total playtime with the case and an IP55 rating against dust, sweat and rain. Bluetooth 5.4 pairs with Android and iPhone, and three sizes of ear tips come in the box so the seal fits.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "realme-t200x",
+        "gadget_type": "earbuds",
         "department": "audio",
         "regular_inr": 2499,
-        "detail_in_box": "Neckband, USB-C cable, spare ear tips."
+        "detail_in_box": "Earbuds, charging case, user guide and ear tips in S, M and L, in the sealed realme box.",
+        "original_brand": "realme",
+        "warranty_months": 12
       },
       "variants": [
         {
-          "sku": "AUD-NECKPRO-BLACK",
+          "sku": "AUD-REALMET200X-BLACK",
           "modelSlug": null,
           "caseType": null,
           "option": {
@@ -5912,143 +6134,67 @@
             "slug": "black",
             "name": "Black"
           },
-          "priceInr": 1299,
-          "stock": 15
-        },
-        {
-          "sku": "AUD-NECKPRO-BLUE",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Colour",
-            "slug": "blue",
-            "name": "Blue"
-          },
-          "priceInr": 1299,
+          "priceInr": 1600,
           "stock": 15
         }
       ]
     },
     {
-      "handle": "neckband",
-      "productType": "Neckband",
-      "title": "Neckband",
-      "description": "A light, simple neckband for music and calls, with buttons you can find without looking and a flexible band that packs into a pocket.",
+      "handle": "realme-buds-t310",
+      "productType": "Wireless earbuds",
+      "title": "realme Buds T310",
+      "description": "Hybrid active noise cancellation up to 46 dB with three mics on each bud, adjustable in three levels, plus AI deep call noise reduction. The 12.4 mm dynamic bass driver and 360° spatial audio handle music and film, a 45 ms game mode keeps games in sync, and IP55 covers dust and rain. Forty hours of total playtime with ANC off, 26 with it on; ten minutes of charge gives five hours.",
       "imagePath": null,
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "gadget",
-        "gadget_id": "neck-basic",
-        "gadget_type": "neckband",
+        "gadget_id": "realme-t310",
+        "gadget_type": "earbuds",
         "department": "audio",
-        "regular_inr": 1499,
-        "detail_in_box": "Neckband, USB-C cable."
+        "regular_inr": 2499,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "realme",
+        "warranty_months": 12
       },
       "variants": [
         {
-          "sku": "AUD-NECKBASIC-BLACK",
+          "sku": "AUD-REALMET310-WHITE",
           "modelSlug": null,
           "caseType": null,
           "option": {
             "title": "Colour",
-            "slug": "black",
-            "name": "Black"
+            "slug": "white",
+            "name": "White"
           },
-          "priceInr": 799,
-          "stock": 15
-        },
-        {
-          "sku": "AUD-NECKBASIC-GREEN",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Colour",
-            "slug": "green",
-            "name": "Green"
-          },
-          "priceInr": 799,
+          "priceInr": 2199,
           "stock": 15
         }
       ]
     },
     {
-      "handle": "pocket-bluetooth-speaker",
-      "productType": "Bluetooth speaker",
-      "title": "Pocket speaker",
-      "description": "A small, waterproof speaker with a strap for bags and bikes. Loud enough for a room, and two of them pair together for stereo.",
+      "handle": "realme-buds-air-7",
+      "productType": "Wireless earbuds",
+      "title": "realme Buds Air 7",
+      "description": "realme’s flagship-grade earbud: active noise cancellation up to 52 dB, Hi-Res Audio over LHDC and a 12.4 mm dynamic bass driver. Total playtime with the case reaches 52 hours, IP55 covers dust and rain, and Bluetooth 5.4 pairs with Android and iPhone. The realme Link app sets the EQ, the ANC level and the touch controls.",
       "imagePath": null,
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "gadget",
-        "gadget_id": "spk-mini",
-        "gadget_type": "speaker",
+        "gadget_id": "realme-air-7",
+        "gadget_type": "earbuds",
         "department": "audio",
-        "regular_inr": 2199,
-        "detail_in_box": "Speaker, strap, USB-C cable."
+        "regular_inr": 3299,
+        "detail_in_box": "Earbuds, charging case, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "realme",
+        "warranty_months": 12
       },
       "variants": [
         {
-          "sku": "AUD-SPKMINI-BLACK",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Colour",
-            "slug": "black",
-            "name": "Black"
-          },
-          "priceInr": 1199,
-          "stock": 15
-        },
-        {
-          "sku": "AUD-SPKMINI-BLUE",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Colour",
-            "slug": "blue",
-            "name": "Blue"
-          },
-          "priceInr": 1199,
-          "stock": 15
-        },
-        {
-          "sku": "AUD-SPKMINI-RED",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Colour",
-            "slug": "red",
-            "name": "Red"
-          },
-          "priceInr": 1199,
-          "stock": 15
-        }
-      ]
-    },
-    {
-      "handle": "party-bluetooth-speaker",
-      "productType": "Bluetooth speaker",
-      "title": "Party speaker",
-      "description": "A 20 W speaker with a passive bass radiator for fuller sound and a light ring that follows the beat. Fifteen hours of playback covers a long evening, and it charges your phone in a pinch.",
-      "imagePath": null,
-      "collections": [],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "gadget",
-        "gadget_id": "spk-party",
-        "gadget_type": "speaker",
-        "department": "audio",
-        "regular_inr": 5999,
-        "detail_in_box": "Speaker, USB-C cable, AUX cable."
-      },
-      "variants": [
-        {
-          "sku": "AUD-SPKPARTY-BLACK",
+          "sku": "AUD-REALMEAIR7-BLACK",
           "modelSlug": null,
           "caseType": null,
           "option": {
@@ -6057,6 +6203,108 @@
             "name": "Black"
           },
           "priceInr": 2999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-rockerz-110",
+      "productType": "Neckband",
+      "title": "boAt Rockerz 110",
+      "description": "A flexible neckband with 40 hours of playtime, made in India. ENx mics keep calls clear, BEAST mode holds latency at 60 ms for games, and Bluetooth 5.3 with dual pairing keeps it on your phone and laptop at once. The magnetic earbuds clip together round your neck, IPX5 shrugs off sweat, and ten minutes of ASAP charge gives ten hours.",
+      "imagePath": "/products/photos/gadgets/boat-rockerz-110/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-rockerz-110",
+        "gadget_type": "neckband",
+        "department": "audio",
+        "regular_inr": 2490,
+        "detail_in_box": "Neckband, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATROCKERZ110-ACTIVE-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "active-black",
+            "name": "Active Black"
+          },
+          "priceInr": 799,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-rockerz-235-pro",
+      "productType": "Neckband",
+      "title": "boAt Rockerz 235 Pro",
+      "description": "A workout neckband with secure-fit ear hooks, 20 hours of playtime and a vibration alert so you feel an incoming call over the music. ENx mics cut wind and street noise on calls, BEAST mode keeps video in sync, and the magnetic earbuds snap together when you take them out. Ten minutes of ASAP charge gives ten hours.",
+      "imagePath": "/products/photos/gadgets/boat-rockerz-235-pro/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-rockerz-235-pro",
+        "gadget_type": "neckband",
+        "department": "audio",
+        "regular_inr": 1990,
+        "detail_in_box": "Neckband, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATROCKERZ235PRO-GREY",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "grey",
+            "name": "Grey"
+          },
+          "priceInr": 699,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-rockerz-245-pro",
+      "productType": "Neckband",
+      "title": "boAt Rockerz 245 Pro",
+      "description": "boAt’s neckband for games and calls: BEAST mode brings latency down to 40 ms, ENx mics pick up your voice and drop the background, and Bluetooth 5.3 with dual pairing keeps it on two devices. Twenty hours of playtime, magnetic earbuds, IPX4 against sweat, and ten minutes of ASAP charge for ten hours.",
+      "imagePath": "/products/photos/gadgets/boat-rockerz-245-pro/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-rockerz-245-pro",
+        "gadget_type": "neckband",
+        "department": "audio",
+        "regular_inr": 2499,
+        "detail_in_box": "Neckband, USB-C charging cable, spare ear tips and the user guide, in the sealed brand box.",
+        "original_brand": "boAt",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATROCKERZ245PRO-FUSION-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "fusion-black",
+            "name": "Fusion Black"
+          },
+          "priceInr": 999,
           "stock": 15
         }
       ]

@@ -179,6 +179,19 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
         ],
       },
       {
+        heading: 'Earbuds, neckbands and other sealed electronics',
+        blocks: [
+          p(
+            'boAt and realme earbuds and neckbands are sold sealed, exactly as the brand packs them, with our GST invoice. Because they go in the ear, an opened unit cannot be returned or exchanged, and we do not accept change of mind on them.',
+          ),
+          list(
+            'Wrong item, or damaged in transit: tell us within 48 hours of delivery with your unboxing video and photos of the box, and we replace it.',
+            'Faulty after use: the brand covers it. Take the unit and our invoice to any boAt or realme service centre, or raise the claim on the brand’s website; the brand repairs or replaces it under its one-year warranty terms.',
+            'Not sure which model or colour to pick? Message us on WhatsApp before you order.',
+          ),
+        ],
+      },
+      {
         heading: 'How to ask for a replacement',
         blocks: [
           list(

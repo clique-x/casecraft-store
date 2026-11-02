@@ -3,7 +3,6 @@ import { getPhoneModels } from '@/lib/medusa/home';
 import { medusaEnabled } from '@/lib/medusa/client';
 import { CartProvider } from '@/lib/cart/cart-context';
 import { CartDrawer } from '@/components/cart/CartDrawer.client';
-import { GsapMount } from '@/components/motion/GsapMount.client';
 import { MotionProvider } from '@/components/motion/MotionProvider';
 import { MyPhoneProvider } from '@/components/phone-picker/MyPhoneProvider';
 import { DeviceDetect } from '@/components/phone-picker/DeviceDetect.client';
@@ -20,7 +19,6 @@ export default async function StoreLayout({ children }: { children: ReactNode })
   // MyPhoneProvider reads the cookie on the client and swaps text in reserved slots.
   return (
     <MotionProvider>
-      <GsapMount />
       <CartProvider enabled={medusaEnabled}>
         <MyPhoneProvider initialSlug={null} models={models}>
           <AnnouncementBar />

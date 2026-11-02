@@ -283,8 +283,8 @@ export function shotSrcSet(id: number, n: number): string {
   return SHOT_WIDTHS.map((w) => `${shotSrc(id, n, w)} ${w}w`).join(', ');
 }
 
-/** Widths written by scripts/photo-gallery.mjs; every gallery image is square. */
-export const GALLERY_WIDTHS = [480, 960, 1440] as const;
+/** Widths written by scripts/photo-gallery.mjs; every gallery image is square. 160 feeds the thumbnail strip. */
+export const GALLERY_WIDTHS = [160, 480, 960, 1440] as const;
 
 export function gallerySrc(id: number, n: number, w: (typeof GALLERY_WIDTHS)[number] = 960): string {
   return `/products/photos/${id}/g-${n}-${w}.webp`;

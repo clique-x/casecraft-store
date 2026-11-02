@@ -117,6 +117,7 @@ Product photo tools, run from `apps/storefront`:
 | `pnpm photos` | Generate 320 to 960 px WebP variants from catalogue originals |
 | `pnpm photos:shots <dir>` | Turn hand-held shots into 4:5 card images |
 | `pnpm photos:gallery <dir>` | Turn `<id>/<n>-<Label>.jpg` files into the square product-page gallery, in display order |
+| `pnpm photos:gadgets <dir>` | Turn a brand's product images, `<gadgetId>/<n>-<Caption>.jpg`, into the gallery and card variants for earbuds and neckbands |
 
 To cut a product out of a photo on macOS, see [`scripts/photo-cutout/README.md`](scripts/photo-cutout/README.md).
 
@@ -133,7 +134,7 @@ To cut a product out of a photo on macOS, see [`scripts/photo-cutout/README.md`]
 - [x] Shipping, returns, refunds, privacy, terms and contact pages
 - [x] Screen guards, lens protectors, back films and a flagship body protection film, with add-ons and ready-made bundles on cover pages
 - [x] Phone-aware combo deals on the home page
-- [x] Wireless audio: earbuds, neckbands and Bluetooth speakers with colour options (`/audio`)
+- [x] Wireless audio: sealed boAt and realme earbuds and neckbands in stock, with the brand's images, colour options and the 1-year brand warranty (`/audio`)
 - [x] Chargers and original data cables with phone-fit notes (`/charging`)
 - [x] Step-by-step checkout with saved addresses, location and pincode autofill, and phone login (Twilio Verify)
 - [ ] Order emails (Resend) and GST invoices
