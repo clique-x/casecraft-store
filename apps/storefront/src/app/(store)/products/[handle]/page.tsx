@@ -8,7 +8,8 @@ import { Breadcrumb } from '@/components/product/Breadcrumb';
 import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
 import { DeliveryFacts } from '@/components/product/DeliveryFacts';
-import { PhotoGallery } from '@/components/product/PhotoGallery';
+import { PhotoMedia } from '@/components/product/PhotoMedia.client';
+import { StickySide } from '@/components/product/StickySide.client';
 import { ProductDetails } from '@/components/product/ProductDetails';
 import { ProductJsonLd } from '@/components/product/ProductJsonLd';
 import { RelatedRows } from '@/components/product/RelatedRows';
@@ -149,6 +150,21 @@ async function ProductPageContent({ params }: ProductPageProps) {
     getMoreForPhoneCandidates(product),
   ]);
 
+  // Photographed covers with a gallery scroll every image down the left column; the buy column holds.
+  const media = product.photo && (product.photo.gallery?.length ?? 0) > 0 ? product.photo : null;
+
+  const buyColumn = (
+    <>
+      {product.gadget ? (
+        <GadgetBuyBox product={product} />
+      ) : (
+        <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
+      )}
+      <DeliveryFacts />
+      <ProductDetails product={product} />
+    </>
+  );
+
   return (
     <>
       <ProductJsonLd product={product} />
@@ -157,40 +173,44 @@ async function ProductPageContent({ params }: ProductPageProps) {
         <Breadcrumb product={product} />
 
         <div className="mt-4 grid gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
-          <div className="lg:col-span-7">
-            <div className="lg:sticky lg:top-20">
-              {product.gadget ? (
-                <GadgetStage gadget={product.gadget} title={product.title} />
-              ) : product.accessory ? (
-                <AccessoryStage accessory={product.accessory} models={models} title={product.title} />
-              ) : product.photo ? (
-                // Rendered here rather than through ProductViewer so photo pages never ship the procedural viewer.
-                <PhotoStage entry={product.photo} title={product.title} />
-              ) : (
-                <ProductViewer product={product} models={models} />
-              )}
-            </div>
+          <div className="min-w-0 lg:col-span-7">
+            {media ? (
+              <PhotoMedia entry={media} title={product.title} />
+            ) : (
+              <div className="lg:sticky lg:top-20">
+                {product.gadget ? (
+                  <GadgetStage gadget={product.gadget} title={product.title} />
+                ) : product.accessory ? (
+                  <AccessoryStage accessory={product.accessory} models={models} title={product.title} />
+                ) : product.photo ? (
+                  // Rendered here rather than through ProductViewer so photo pages never ship the procedural viewer.
+                  <PhotoStage entry={product.photo} title={product.title} />
+                ) : (
+                  <ProductViewer product={product} models={models} />
+                )}
+              </div>
+            )}
           </div>
 
-          <div className="flex flex-col gap-8 lg:col-span-5">
-            {product.gadget ? (
-              <GadgetBuyBox product={product} />
-            ) : (
-              <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
-            )}
-            <DeliveryFacts />
-            <ProductDetails product={product} />
-          </div>
+          {media ? (
+            <StickySide className="flex flex-col gap-8 lg:col-span-5">{buyColumn}</StickySide>
+          ) : (
+            <div className="flex flex-col gap-8 lg:col-span-5">{buyColumn}</div>
+          )}
         </div>
       </div>
 
-      {product.photo && <PhotoGallery entry={product.photo} />}
-
-      {!product.accessory && !product.gadget && <BundleKits product={product} accessories={accessories} models={models} />}
+      {!product.accessory && !product.gadget && (
+        <BundleKits product={product} accessories={accessories} models={models} />
+      )}
 
       <RelatedRows product={product} related={related} candidates={product.gadget ? [] : candidates} models={models} />
 
-      <StickyBuyBar product={product} models={models} accessories={product.accessory || product.gadget ? [] : accessories} />
+      <StickyBuyBar
+        product={product}
+        models={models}
+        accessories={product.accessory || product.gadget ? [] : accessories}
+      />
     </>
   );
 }
