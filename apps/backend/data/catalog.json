@@ -2670,7 +2670,7 @@
       "productType": "Wireless earbuds",
       "title": "realme Buds T310",
       "description": "Hybrid active noise cancellation up to 46 dB with three mics on each bud, adjustable in three levels, plus AI deep call noise reduction. The 12.4 mm dynamic bass driver and 360° spatial audio handle music and film, a 45 ms game mode keeps games in sync, and IP55 covers dust and rain. Forty hours of total playtime with ANC off, 26 with it on; ten minutes of charge gives five hours.",
-      "imagePath": null,
+      "imagePath": "/products/photos/gadgets/realme-t310/card-0-720.webp",
       "collections": [],
       "category": null,
       "tags": [],
@@ -2704,7 +2704,7 @@
       "productType": "Wireless earbuds",
       "title": "realme Buds Air 7",
       "description": "realme’s flagship-grade earbud: active noise cancellation up to 52 dB, Hi-Res Audio over LHDC and a 12.4 mm dynamic bass driver. Total playtime with the case reaches 52 hours, IP55 covers dust and rain, and Bluetooth 5.4 pairs with Android and iPhone. The realme Link app sets the EQ, the ANC level and the touch controls.",
-      "imagePath": null,
+      "imagePath": "/products/photos/gadgets/realme-air-7/card-0-720.webp",
       "collections": [],
       "category": null,
       "tags": [],
@@ -2726,7 +2726,7 @@
           "option": {
             "title": "Colour",
             "slug": "black",
-            "name": "Black"
+            "name": "Slate Grey"
           },
           "priceInr": 2999,
           "stock": 15

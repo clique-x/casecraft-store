@@ -452,6 +452,11 @@ const AUDIO: readonly GadgetEntry[] = [
     options: [{ slug: 'white', name: 'White', hex: '#eeeeea' }],
     original: REALME,
     warrantyMonths: ONE_YEAR,
+    photos: {
+      id: 'realme-t310',
+      gallery: ['White', 'Agile White', '360 degree spatial audio'],
+      heroByOption: { white: 0 },
+    },
   },
   {
     id: 'realme-air-7',
@@ -476,9 +481,15 @@ const AUDIO: readonly GadgetEntry[] = [
     ],
     inBox: SEALED_BUDS,
     optionKind: 'colour',
-    options: [{ slug: 'black', name: 'Black', hex: '#1f2023' }],
+    // realme's name for the dark grey in stock; the slug stays so existing SKUs keep working.
+    options: [{ slug: 'black', name: 'Slate Grey', hex: '#3b3d40' }],
     original: REALME,
     warrantyMonths: ONE_YEAR,
+    photos: {
+      id: 'realme-air-7',
+      gallery: ['Slate Grey', 'Slate Grey finish'],
+      heroByOption: { black: 0 },
+    },
   },
   {
     id: 'boat-rockerz-110',
