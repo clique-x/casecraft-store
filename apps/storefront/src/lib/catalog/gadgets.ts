@@ -3,7 +3,7 @@
  * for one phone, so each comes in options (colours, or cable lengths) instead of phone models.
  *
  * Audio is the shop's real stock: sealed boAt and realme earbuds and neckbands, with the brand's
- * own product images (see `photos`). Chargers and cables are PLACEHOLDER CONTENT, hidden by SHOW_CHARGING.
+ * own product images (see `photos`; realme T200 family from its Flipkart listings). Chargers and cables are PLACEHOLDER CONTENT, hidden by SHOW_CHARGING.
  *
  * PRICES: `priceInr` is the shop's sticker where one was photographed (Airdopes Alpha Gen 2,
  * realme Buds T200x); otherwise it is the brand's own online price on 2 Nov 2026, and
@@ -371,6 +371,11 @@ const AUDIO: readonly GadgetEntry[] = [
     ],
     original: REALME,
     warrantyMonths: ONE_YEAR,
+    photos: {
+      id: 'realme-t200',
+      gallery: ['Black', 'White', 'Hi-Res certified'],
+      heroByOption: { black: 0, white: 1 },
+    },
   },
   {
     id: 'realme-t200-lite',
@@ -397,6 +402,11 @@ const AUDIO: readonly GadgetEntry[] = [
     options: [{ slug: 'black', name: 'Black', hex: '#1f2023' }],
     original: REALME,
     warrantyMonths: ONE_YEAR,
+    photos: {
+      id: 'realme-t200-lite',
+      gallery: ['Black', 'Features', '48 hours of playback', '12.4 mm bass driver'],
+      heroByOption: { black: 0 },
+    },
   },
   {
     id: 'realme-t200x',
@@ -424,6 +434,11 @@ const AUDIO: readonly GadgetEntry[] = [
     options: [{ slug: 'black', name: 'Black', hex: '#1f2023' }],
     original: REALME,
     warrantyMonths: ONE_YEAR,
+    photos: {
+      id: 'realme-t200x',
+      gallery: ['Black', 'Earbuds', 'Case closed'],
+      heroByOption: { black: 0 },
+    },
   },
   {
     id: 'realme-t310',
