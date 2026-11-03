@@ -15,7 +15,7 @@ import {
   WHATSAPP_NUMBER,
 } from '@/lib/brand';
 import { coverCounts, coversLabel, findBrand, findModel, sortForListing } from '@/lib/catalog/listing';
-import { formatInr, photoSrc } from '@/lib/catalog/photos';
+import { formatInr, photoSrc, gallerySrc } from '@/lib/catalog/photos';
 import type { HomeProduct, PhoneModel } from '@/lib/medusa/fixtures';
 import { getPhoneModels, getProductsForPhone } from '@/lib/medusa/home';
 import { getAllProducts } from '@/lib/medusa/products';
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: ModelPageProps): Promise<Meta
         ? {
             images: [
               {
-                url: new URL(photoSrc(lead.id, OG_WIDTH), SITE_URL).toString(),
+                url: new URL(lead.gallery?.length ? gallerySrc(lead.id, 0, 960) : photoSrc(lead.id, OG_WIDTH), SITE_URL).toString(),
                 alt: `${lead.design} ${lead.brand} ${lead.series} cover for ${model.model}`,
               },
             ],

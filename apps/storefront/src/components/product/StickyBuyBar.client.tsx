@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { AnimatePresence, m } from 'motion/react';
 import { BuyButtons } from '@/components/product/BuyButtons';
 import { gadgetCardSrc, gadgetHeroIndex } from '@/lib/catalog/gadgets';
-import { formatInr, photoSrc } from '@/lib/catalog/photos';
+import { formatInr, backdropThumbSrc } from '@/lib/catalog/photos';
 import { useInView } from '@/lib/device/use-in-view';
 import { chromeStore } from '@/lib/layout/chrome-store';
 import { CASE_TYPES, type PhoneModel, type ProductDetail, type Variant } from '@/lib/medusa/fixtures';
@@ -83,11 +83,11 @@ export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBar
               {product.photo && (
                 // eslint-disable-next-line @next/next/no-img-element -- local catalogue photo at a fixed small size
                 <img
-                  src={photoSrc(product.photo.id, 320)}
+                  src={backdropThumbSrc(product.photo, 160)}
                   alt=""
                   width={44}
                   height={55}
-                  className="h-14 w-11 shrink-0 rounded-md bg-surface-2 object-contain"
+                  className="h-14 w-11 shrink-0 rounded-md bg-surface-2 object-cover"
                 />
               )}
               {product.gadget?.photos && (

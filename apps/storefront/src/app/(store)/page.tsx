@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { preload } from 'react-dom';
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 import { ACCESSORIES } from '@/lib/catalog/accessories';
-import { castFor, formatInr, PHOTOS, photoSrc, srcSetFor, type PhotoEntry } from '@/lib/catalog/photos';
+import { castFor, formatInr, gallerySrc, PHOTOS, photoSrc, srcSetFor, type PhotoEntry } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
@@ -19,7 +19,6 @@ import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
 import { WhyUs } from '@/components/home/WhyUs';
 
-const OG_WIDTH = 960;
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
 const TITLE = `${BRAND_NAME} · Phone covers, earbuds, neckbands and screen protection`;
@@ -54,7 +53,7 @@ function itemListJsonLd(products: HomeProduct[]): string {
         '@type': 'Product',
         name: p.title,
         url: absolute(`/products/${p.handle}`),
-        ...(p.photo ? { image: absolute(photoSrc(p.photo.id, OG_WIDTH)), brand: { '@type': 'Brand', name: p.photo.brand } } : {}),
+        ...(p.photo ? { image: absolute(gallerySrc(p.photo.id, 0, 960)), brand: { '@type': 'Brand', name: p.photo.brand } } : {}),
         ...(p.gadget?.original ? { brand: { '@type': 'Brand', name: p.gadget.original.brand } } : {}),
         offers: { '@type': 'Offer', price: p.priceFromInr, priceCurrency: 'INR', availability: 'https://schema.org/InStock' },
       },

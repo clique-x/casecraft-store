@@ -153,7 +153,7 @@ export function PhonePicker({ models, variant = 'section', onNavigate, className
   }
 
   return (
-    <div ref={rootRef} className={cn('flex flex-col gap-6', t.text, className)}>
+    <div ref={rootRef} className={cn('flex min-w-0 flex-col gap-6', t.text, className)}>
       {collapsed && phone ? (
         <div className="flex flex-wrap items-center gap-3">
           <span
@@ -184,12 +184,12 @@ export function PhonePicker({ models, variant = 'section', onNavigate, className
             setBrand(next)
             setQuery('')
           }}
-          className="gap-5"
+          className="min-w-0 gap-5"
         >
           <TabsList
             variant="line"
             aria-label="Phone brand"
-            className="-mx-1 h-auto w-full flex-wrap justify-start group-data-horizontal/tabs:h-auto gap-1 px-1 pb-1.5 sm:snap-x sm:flex-nowrap sm:scroll-px-1 sm:overflow-x-auto sm:[scrollbar-width:none] sm:[&::-webkit-scrollbar]:hidden"
+            className="-mx-1 h-auto w-full max-w-full flex-wrap justify-start gap-x-1 gap-y-2 px-1 pb-1.5 group-data-horizontal/tabs:h-auto"
           >
             {groups.map((group) => (
               <TabsTrigger
@@ -197,7 +197,7 @@ export function PhonePicker({ models, variant = 'section', onNavigate, className
                 value={group.brand}
                 data-brand-tab=""
                 className={cn(
-                  'h-auto min-h-11 flex-none snap-start gap-2 rounded-lg px-3 text-sm font-medium after:bg-brand-coral focus-visible:border-transparent focus-visible:ring-accent-2/60 data-active:bg-transparent',
+                  'h-auto min-h-11 flex-none gap-2 rounded-lg px-2.5 text-sm font-medium sm:px-3 after:bg-brand-coral focus-visible:border-transparent focus-visible:ring-accent-2/60 data-active:bg-transparent',
                   t.tab,
                 )}
               >
@@ -213,9 +213,9 @@ export function PhonePicker({ models, variant = 'section', onNavigate, className
               ? group.models.filter((model) => model.model.toLowerCase().includes(q))
               : group.models
             return (
-              <TabsContent key={group.brand} value={group.brand} className="flex flex-col gap-3">
+              <TabsContent key={group.brand} value={group.brand} className="flex min-w-0 flex-col gap-3">
                 {!inline && group.models.length > SEARCH_THRESHOLD && (
-                  <div className="relative max-w-xs">
+                  <div className="relative w-full sm:max-w-xs">
                     <SearchIcon
                       className={cn('pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2', t.muted)}
                       aria-hidden="true"
@@ -230,7 +230,7 @@ export function PhonePicker({ models, variant = 'section', onNavigate, className
                     />
                   </div>
                 )}
-                <div role="group" aria-label={`${group.brand} models`} className="flex flex-wrap gap-2">
+                <div role="group" aria-label={`${group.brand} models`} className="grid grid-cols-2 gap-2 min-[480px]:grid-cols-3 md:grid-cols-[repeat(auto-fill,minmax(9rem,1fr))]">
                   {visible.map((model) => {
                     const selected = phone?.slug === model.slug
                     return (
@@ -241,7 +241,7 @@ export function PhonePicker({ models, variant = 'section', onNavigate, className
                         aria-pressed={selected}
                         onClick={() => choose(model.slug)}
                         className={cn(
-                          'min-h-11 rounded-pill px-4 text-sm font-medium transition-colors outline-none focus-visible:outline-2 focus-visible:outline-offset-4',
+                          'min-h-11 min-w-0 truncate rounded-pill px-3 text-sm font-medium transition-colors outline-none focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-4',
                           t.chipFocus,
                           selected ? cn(t.chipSelected, 'ring-2 ring-accent-2 ring-offset-2') : t.chip,
                         )}
@@ -251,7 +251,7 @@ export function PhonePicker({ models, variant = 'section', onNavigate, className
                     )
                   })}
                   {visible.length === 0 && (
-                    <p className={cn('min-h-11 py-2.5 text-sm', t.muted)}>No models match “{query.trim()}”.</p>
+                    <p className={cn('col-span-full min-h-11 py-2.5 text-sm', t.muted)}>No models match “{query.trim()}”.</p>
                   )}
                 </div>
               </TabsContent>

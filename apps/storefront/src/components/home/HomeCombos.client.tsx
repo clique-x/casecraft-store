@@ -7,7 +7,7 @@ import { CoverCarousel } from '@/components/home/CoverCarousel.client';
 import { phoneHref } from '@/components/phone-picker/BrandOutline';
 import { ProcCaseThumb } from '@/components/product/ProcCaseThumb';
 import { BUNDLE_SAVING_INR, bundlePrice, kitsFor, type AccessoryEntry } from '@/lib/catalog/accessories';
-import { formatInr, photoSrc } from '@/lib/catalog/photos';
+import { formatInr, backdropThumbSrc, backdropThumbSrcSet, getPhoto } from '@/lib/catalog/photos';
 import { useCart } from '@/lib/cart/cart-context';
 import { getDesign } from '@/lib/designs/catalog';
 import { pickerSheet } from '@/lib/phone/picker-sheet-store';
@@ -42,8 +42,13 @@ const MOST_PICKED = 'full';
 
 function CoverThumb({ cover }: { cover: ComboCover }) {
   if (cover.photoId !== null) {
-    // eslint-disable-next-line @next/next/no-img-element -- small catalogue photo at a fixed size
-    return <img src={photoSrc(cover.photoId, 320)} alt="" className="h-full w-full object-contain" loading="lazy" />;
+    const entry = getPhoto(cover.photoId);
+    if (entry) {
+      return (
+        // eslint-disable-next-line @next/next/no-img-element -- small catalogue photo at a fixed size
+        <img src={backdropThumbSrc(entry, 160)} srcSet={backdropThumbSrcSet(entry)} sizes="128px" alt="" className="h-full w-full object-cover" loading="lazy" />
+      );
+    }
   }
   const design = getDesign(cover.designId);
   return design ? <ProcCaseThumb design={design} className="h-full w-auto" /> : null;
@@ -153,7 +158,7 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
                 </span>
 
                 <div className="flex items-center justify-center gap-1.5 bg-surface-2/70 px-4 pt-12 pb-5" aria-hidden="true">
-                  <span className="flex h-28 w-16 items-center justify-center overflow-hidden rounded-lg bg-paper py-2">
+                  <span className="flex h-28 w-16 items-center justify-center overflow-hidden rounded-lg bg-paper">
                     {cover ? <CoverThumb cover={cover} /> : <span className="px-1 text-center text-[0.625rem] font-semibold text-fg-muted">Your cover</span>}
                   </span>
                   {items.map((a) => (

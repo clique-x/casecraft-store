@@ -57,7 +57,7 @@ export function PhonePickerSheet({ models }: { models: PhoneModel[] }) {
   if (desktop) {
     return (
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="max-h-[85svh] overflow-y-auto rounded-card bg-surface p-6 text-fg ring-border sm:max-w-2xl">
+        <DialogContent className="max-h-[85svh] grid-cols-1 overflow-y-auto rounded-card bg-surface p-6 text-fg ring-border sm:max-w-2xl sm:p-8">
           <DialogHeader>
             <DialogTitle className="font-sans text-h3 font-bold text-fg">{TITLE}</DialogTitle>
             <DialogDescription className="text-fg-muted">{DESCRIPTION}</DialogDescription>

@@ -5,7 +5,7 @@ import { Loader2, Plus } from 'lucide-react';
 import { AccessoryArt } from '@/components/accessory/AccessoryArt';
 import { ProcCaseThumb } from '@/components/product/ProcCaseThumb';
 import { bundlePrice, kitsFor } from '@/lib/catalog/accessories';
-import { formatInr, photoSrc } from '@/lib/catalog/photos';
+import { formatInr, backdropThumbSrc, backdropThumbSrcSet } from '@/lib/catalog/photos';
 import { useCart } from '@/lib/cart/cart-context';
 import { getDesign } from '@/lib/designs/catalog';
 import type { PhoneModel, ProductDetail, Variant } from '@/lib/medusa/fixtures';
@@ -28,8 +28,17 @@ function coverVariant(product: ProductDetail, modelSlug: string | null, caseType
 
 function CoverThumb({ product }: { product: ProductDetail }) {
   if (product.photo) {
-    // eslint-disable-next-line @next/next/no-img-element -- small catalogue photo at a fixed size
-    return <img src={photoSrc(product.photo.id, 320)} alt="" className="h-full w-full object-contain" loading="lazy" />;
+    return (
+      // eslint-disable-next-line @next/next/no-img-element -- small catalogue photo at a fixed size
+      <img
+        src={backdropThumbSrc(product.photo, 160)}
+        srcSet={backdropThumbSrcSet(product.photo)}
+        sizes="112px"
+        alt=""
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    );
   }
   const design = getDesign(product.designId);
   return design ? <ProcCaseThumb design={design} className="h-full w-auto" /> : null;
@@ -69,7 +78,7 @@ export function BundleKits({ product, accessories, models }: Props) {
           {kits.map(({ kit, items, variantIds, regular, price, available }) => (
             <li key={kit.id} className="flex flex-col gap-4 rounded-xl border border-border bg-paper p-4">
               <div className="flex items-center gap-2" aria-hidden="true">
-                <span className="flex h-24 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-surface-2 py-1.5">
+                <span className="flex h-24 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-surface-2">
                   <CoverThumb product={product} />
                 </span>
                 {items.map((a) => (

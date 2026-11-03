@@ -306,6 +306,21 @@ export function gallerySrc(id: number, n: number, w: (typeof GALLERY_WIDTHS)[num
   return `/products/photos/${id}/g-${n}-${w}.webp`;
 }
 
+/**
+ * A small image of a cover with its studio background: the front-on shot, else the first gallery
+ * image, else the cutout. Thumbnails use it because a transparent cutout of a clear or frosted cover
+ * turns to grain at small sizes.
+ */
+export function backdropThumbSrc(entry: PhotoEntry, w: 160 | 480 = 480): string {
+  if ((entry.shots ?? 0) > 0) return shotSrc(entry.id, 0, w);
+  if ((entry.gallery?.length ?? 0) > 0) return gallerySrc(entry.id, 0, w);
+  return photoSrc(entry.id, 480);
+}
+
+export function backdropThumbSrcSet(entry: PhotoEntry): string {
+  return `${backdropThumbSrc(entry, 160)} 160w, ${backdropThumbSrc(entry, 480)} 480w`;
+}
+
 export function gallerySrcSet(id: number, n: number): string {
   return GALLERY_WIDTHS.map((w) => `${gallerySrc(id, n, w)} ${w}w`).join(', ');
 }

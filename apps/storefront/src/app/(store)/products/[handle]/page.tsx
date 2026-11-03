@@ -23,7 +23,7 @@ import {
   gadgetHeroIndex,
 } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
-import { gallerySrc, photoSrc, srcSetFor, type PhotoEntry } from '@/lib/catalog/photos';
+import { gallerySrc, photoSrc, srcSetFor, type PhotoEntry, backdropThumbSrc } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { coverMedia, gadgetMedia } from '@/lib/product/media';
 import { getPhoneModels } from '@/lib/medusa/home';
@@ -169,8 +169,7 @@ function mediaFor(product: ProductDetail): {
         // Not `priority`: phones never show it, and desktop fetches it from the column's preload.
         node: <PhotoStage entry={photo} title={product.title} priority={false} className="lg:aspect-square" />,
         label: 'Turn the cover',
-        thumbSrc: photoSrc(photo.id, 320),
-        thumbContain: true,
+        thumbSrc: backdropThumbSrc(photo, 160),
         preload: { src: photoSrc(photo.id, 480), srcSet: srcSetFor(photo), sizes: PHOTO_STAGE_SIZES },
       },
     };
