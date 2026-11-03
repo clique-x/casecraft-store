@@ -1,28 +1,24 @@
 #!/usr/bin/env bash
-# One-time setup of a fresh Ubuntu 22.04/24.04 VPS (Hostinger KVM 2) for the CaseCraft backend.
+# One-time setup of a fresh Ubuntu 22.04/24.04 VPS (Hostinger KVM 2) for the whole CaseCraft platform.
 # Run as root:
 #   curl -fsSL https://raw.githubusercontent.com/clique-x/casecraft-store/main/infra/prod/setup-vps.sh -o setup-vps.sh
-#   bash setup-vps.sh api.gadgetshub.io https://gadgetshub.io
+#   bash setup-vps.sh gadgetshub.io
 #
-# It installs Docker, a firewall (22, 80, 443 only), fail2ban and automatic security updates, adds 2 GB of
-# swap, clones the repository to /opt/casecraft, writes infra/prod/.env with random secrets, and schedules
-# a nightly database backup. It does not start anything: run deploy.sh next.
+# The store is served at https://<domain> (www redirects to it) and the Medusa API and admin at
+# https://api.<domain>. It installs Docker, a firewall (22, 80, 443 only), fail2ban and automatic security
+# updates, adds 2 GB of swap, clones the repository to /opt/casecraft, writes infra/prod/.env with random
+# secrets, and schedules a nightly database backup. It does not start anything: run deploy.sh next.
 set -euo pipefail
 
-API_DOMAIN="${1:-}"
-STOREFRONT_URL="${2:-https://gadgetshub.io}"
-# Other origins the storefront is served from (the www name is added automatically).
-EXTRA_ORIGINS="${EXTRA_ORIGINS:-https://casecraft-store.vercel.app}"
+SITE_DOMAIN="${1:-}"
+API_DOMAIN="${API_DOMAIN:-api.$SITE_DOMAIN}"
+# Other origins that may call the API from a browser, comma-separated (optional).
+EXTRA_ORIGINS="${EXTRA_ORIGINS:-}"
 REPO_URL="${REPO_URL:-https://github.com/clique-x/casecraft-store.git}"
 APP_DIR="${APP_DIR:-/opt/casecraft}"
 
 if [[ $EUID -ne 0 ]]; then echo "Run as root (sudo bash setup-vps.sh ...)." >&2; exit 1; fi
-if [[ -z "$API_DOMAIN" ]]; then
-  ip=$(curl -fsS https://api.ipify.org || hostname -I | awk '{print $1}')
-  echo "Usage: bash setup-vps.sh <api-domain> [storefront-url]" >&2
-  echo "No domain yet? Use api.${ip//./-}.sslip.io" >&2
-  exit 1
-fi
+if [[ -z "$SITE_DOMAIN" ]]; then echo "Usage: bash setup-vps.sh <domain>   e.g. bash setup-vps.sh gadgetshub.io" >&2; exit 1; fi
 
 echo "==> Packages"
 export DEBIAN_FRONTEND=noninteractive
@@ -63,12 +59,11 @@ if [[ ! -f "$ENV_FILE" ]]; then
   echo "==> Writing $ENV_FILE with new secrets"
   cp "$APP_DIR/infra/prod/.env.example" "$ENV_FILE"
   set_var() { sed -i "s|^$1=.*|$1=$2|" "$ENV_FILE"; }
-  set_var API_DOMAIN "$API_DOMAIN"
-  set_var STOREFRONT_URL "$STOREFRONT_URL"
-  origins="$STOREFRONT_URL"
-  host="${STOREFRONT_URL#https://}"
-  [[ "$host" != www.* ]] && origins="$origins,https://www.$host"
+  origins="https://$SITE_DOMAIN,https://www.$SITE_DOMAIN"
   [[ -n "$EXTRA_ORIGINS" ]] && origins="$origins,$EXTRA_ORIGINS"
+  set_var SITE_DOMAIN "$SITE_DOMAIN"
+  set_var API_DOMAIN "$API_DOMAIN"
+  set_var STOREFRONT_URL "https://$SITE_DOMAIN"
   set_var STORE_CORS "$origins"
   set_var ADMIN_CORS "https://$API_DOMAIN"
   set_var AUTH_CORS "https://$API_DOMAIN,$origins"
@@ -88,8 +83,7 @@ ip=$(curl -fsS https://api.ipify.org 2>/dev/null || hostname -I | awk '{print $1
 cat <<NEXT
 
 Done. Next:
-  1. Point $API_DOMAIN (DNS A record) at $ip, unless it is an sslip.io name.
-  2. Start the backend:   $APP_DIR/infra/prod/deploy.sh
-  3. Load the store:      $APP_DIR/infra/prod/first-run.sh you@example.com
-  4. Put the values first-run.sh prints into the storefront's Vercel settings.
+  1. DNS (hPanel → Domains → $SITE_DOMAIN → DNS): A records @, www and api → $ip
+  2. Start the backend:          $APP_DIR/infra/prod/deploy.sh
+  3. Load the store and go live: $APP_DIR/infra/prod/first-run.sh you@example.com
 NEXT

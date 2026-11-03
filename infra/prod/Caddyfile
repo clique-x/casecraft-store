@@ -1,5 +1,18 @@
-# Serves the Medusa API and admin on the API domain over HTTPS.
-# Caddy fetches and renews the certificate itself once the domain's A record points at this server.
+# HTTPS for the whole platform. Caddy fetches and renews each certificate itself once the domain's
+# DNS A record points at this server.
+
+# Storefront
+{$SITE_DOMAIN} {
+	encode zstd gzip
+	reverse_proxy storefront:3000
+}
+
+# www → the bare domain
+www.{$SITE_DOMAIN} {
+	redir https://{$SITE_DOMAIN}{uri} permanent
+}
+
+# Medusa API and admin (/app)
 {$API_DOMAIN} {
 	encode zstd gzip
 	reverse_proxy medusa-server:9000

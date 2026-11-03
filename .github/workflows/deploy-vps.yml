@@ -1,19 +1,20 @@
-# Deploys the Medusa backend to the VPS whenever backend or infra code lands on main, or on demand
-# (Actions → Deploy backend → Run workflow). It SSHes in and runs infra/prod/deploy.sh, which pulls main,
-# rebuilds the image on the server and restarts it. Set up once: infra/prod/README.md, "Deploy on every push".
-name: Deploy backend
+# Deploys the platform (storefront and Medusa backend) to the VPS whenever their code lands on main, or on
+# demand (Actions → Deploy to VPS → Run workflow). It SSHes in and runs infra/prod/deploy.sh, which pulls main,
+# rebuilds the images on the server and restarts them. Set up once: infra/prod/README.md, "Deploy on every push".
+name: Deploy to VPS
 
 on:
   push:
     branches: [main]
     paths:
       - apps/backend/**
+      - apps/storefront/**
       - infra/prod/**
       - pnpm-lock.yaml
   workflow_dispatch:
 
 concurrency:
-  group: deploy-backend
+  group: deploy-vps
   cancel-in-progress: false
 
 permissions:

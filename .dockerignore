@@ -1,4 +1,4 @@
-# Keep the backend image's build context small: no installs, builds, git history or storefront photos.
+# Build context for the storefront image: no installs, builds, secrets or git history.
 **/node_modules
 **/.medusa
 **/.next
@@ -6,5 +6,4 @@
 **/.env.*
 !**/.env.example
 .git
-apps/storefront/public
 infra/prod/.env

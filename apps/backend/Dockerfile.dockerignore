@@ -1,0 +1,10 @@
+# Build context for the backend image (used instead of the root .dockerignore): also leave out the storefront's photos.
+**/node_modules
+**/.medusa
+**/.next
+**/.env
+**/.env.*
+!**/.env.example
+.git
+apps/storefront/public
+infra/prod/.env

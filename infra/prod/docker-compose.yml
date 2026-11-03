@@ -1,9 +1,10 @@
-# Production stack for the Medusa backend on one VPS (Hostinger KVM 2 or any Ubuntu server with Docker).
-# The storefront stays on Vercel; this serves the API and the admin at https://$API_DOMAIN.
+# Production stack for the whole platform on one VPS (Hostinger KVM 2 or any Ubuntu server with Docker):
+# the storefront at https://$SITE_DOMAIN (www redirects to it) and the Medusa API and admin at https://$API_DOMAIN.
 #
 #   docker compose -f infra/prod/docker-compose.yml --env-file infra/prod/.env up -d --build
 #
 # Postgres and Redis are only reachable inside this Docker network. Caddy is the only thing on ports 80/443.
+# The storefront is in the "web" profile: deploy.sh and first-run.sh start it once the store keys exist.
 name: casecraft
 
 x-logging: &logging
@@ -65,6 +66,9 @@ services:
       REDIS_URL: redis://redis:6379
       MEDUSA_WORKER_MODE: server
     command: ["sh", "-c", "npx medusa db:migrate && exec npx medusa start"]
+    # Loopback only: the storefront build reads the catalogue from here. Not reachable from outside.
+    ports:
+      - "127.0.0.1:9000:9000"
 
   # Subscribers and scheduled jobs (storefront refresh, emails later). Starts after the server is healthy,
   # so migrations have run.
@@ -81,13 +85,32 @@ services:
     healthcheck:
       disable: true
 
-  # HTTPS for the API domain, with automatic Let's Encrypt certificates.
+  # Next.js storefront. deploy.sh builds the image (docker build --network host, so the build can read the
+  # live catalogue from Medusa on 127.0.0.1:9000 and prerender the pages); at runtime it talks to Medusa over
+  # this private network. Browsers never call Medusa directly.
+  storefront:
+    profiles: ["web"]
+    image: casecraft-storefront:latest
+    pull_policy: never
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      MEDUSA_BACKEND_URL: http://medusa-server:9000
+      MEDUSA_PUBLISHABLE_KEY: ${MEDUSA_PUBLISHABLE_KEY:-}
+      MEDUSA_REGION_ID: ${MEDUSA_REGION_ID:-}
+      REVALIDATE_SECRET: ${STOREFRONT_REVALIDATE_SECRET:?set STOREFRONT_REVALIDATE_SECRET in infra/prod/.env}
+    depends_on:
+      medusa-server:
+        condition: service_healthy
+
+  # HTTPS for the site and API domains, with automatic Let's Encrypt certificates.
   caddy:
     image: caddy:2-alpine
     restart: unless-stopped
     logging: *logging
     environment:
       API_DOMAIN: ${API_DOMAIN:?set API_DOMAIN in infra/prod/.env}
+      SITE_DOMAIN: ${SITE_DOMAIN:?set SITE_DOMAIN in infra/prod/.env}
     ports:
       - "80:80"
       - "443:443"
