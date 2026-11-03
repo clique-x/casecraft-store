@@ -18,12 +18,20 @@ the store API through Caddy, the worker, the storefront reading from it, deploy 
 In Hostinger hPanel, set up the KVM 2 with **Ubuntu 24.04** (plain OS, no panel) and note its IP and root
 password. KVM 2 (2 vCPU, 8 GB) runs this stack in about 2-3 GB.
 
-## 2. Pick the API address
+## 2. DNS for gadgetshub.io
 
-- With a domain: add a DNS **A record** `api` → the VPS IP (for example `api.yourstore.in`).
-- Without one: use `api.<ip-with-dashes>.sslip.io`, for example `api.203-0-113-7.sslip.io`. It resolves to
-  your IP with no DNS setup, and Caddy still gets a real HTTPS certificate. Switch to your domain later by
-  changing `API_DOMAIN` (and the CORS lines) in `.env` and running `deploy.sh`.
+The domain's DNS is at Hostinger: hPanel → Domains → gadgetshub.io → DNS / Nameservers → DNS records.
+Delete the parking `A @` record and the `CNAME www` record, then add:
+
+| Type | Name | Points to | Why |
+|---|---|---|---|
+| A | `@` | `216.198.79.1` | Storefront on Vercel |
+| A | `@` | `64.29.17.1` | Storefront on Vercel (second address) |
+| CNAME | `www` | `0ec59bc793d4bcca.vercel-dns-017.com` | `www` redirects to gadgetshub.io |
+| A | `api` | the VPS IP | Medusa API and admin |
+
+Both domains are already attached to the Vercel project, which issues their HTTPS certificates once
+these records resolve. Caddy on the VPS does the same for `api.gadgetshub.io`.
 
 ## 3. Set up and start (about 10 minutes)
 
@@ -34,7 +42,7 @@ curl -fsSL https://raw.githubusercontent.com/clique-x/casecraft-store/main/infra
 ```
 
 ```bash
-bash setup-vps.sh api.yourstore.in https://casecraft-store.vercel.app
+bash setup-vps.sh api.gadgetshub.io https://gadgetshub.io
 ```
 
 ```bash

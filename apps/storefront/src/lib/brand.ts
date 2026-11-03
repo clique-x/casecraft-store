@@ -1,6 +1,6 @@
 export const BRAND_NAME = 'CaseCraft';
 /** Absolute origin for canonical, Open Graph and JSON-LD URLs; no trailing slash. */
-export const SITE_URL = 'https://casecraft-store.vercel.app';
+export const SITE_URL = 'https://gadgetshub.io';
 export const FREE_SHIPPING_THRESHOLD_INR = 499;
 export const REPLACEMENT_DAYS = 7;
 export const COD_FEE_INR = 0;

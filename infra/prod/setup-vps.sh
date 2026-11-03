@@ -2,7 +2,7 @@
 # One-time setup of a fresh Ubuntu 22.04/24.04 VPS (Hostinger KVM 2) for the CaseCraft backend.
 # Run as root:
 #   curl -fsSL https://raw.githubusercontent.com/clique-x/casecraft-store/main/infra/prod/setup-vps.sh -o setup-vps.sh
-#   bash setup-vps.sh api.yourstore.in https://casecraft-store.vercel.app
+#   bash setup-vps.sh api.gadgetshub.io https://gadgetshub.io
 #
 # It installs Docker, a firewall (22, 80, 443 only), fail2ban and automatic security updates, adds 2 GB of
 # swap, clones the repository to /opt/casecraft, writes infra/prod/.env with random secrets, and schedules
@@ -10,7 +10,9 @@
 set -euo pipefail
 
 API_DOMAIN="${1:-}"
-STOREFRONT_URL="${2:-https://casecraft-store.vercel.app}"
+STOREFRONT_URL="${2:-https://gadgetshub.io}"
+# Other origins the storefront is served from (the www name is added automatically).
+EXTRA_ORIGINS="${EXTRA_ORIGINS:-https://casecraft-store.vercel.app}"
 REPO_URL="${REPO_URL:-https://github.com/clique-x/casecraft-store.git}"
 APP_DIR="${APP_DIR:-/opt/casecraft}"
 
@@ -63,9 +65,13 @@ if [[ ! -f "$ENV_FILE" ]]; then
   set_var() { sed -i "s|^$1=.*|$1=$2|" "$ENV_FILE"; }
   set_var API_DOMAIN "$API_DOMAIN"
   set_var STOREFRONT_URL "$STOREFRONT_URL"
-  set_var STORE_CORS "$STOREFRONT_URL"
+  origins="$STOREFRONT_URL"
+  host="${STOREFRONT_URL#https://}"
+  [[ "$host" != www.* ]] && origins="$origins,https://www.$host"
+  [[ -n "$EXTRA_ORIGINS" ]] && origins="$origins,$EXTRA_ORIGINS"
+  set_var STORE_CORS "$origins"
   set_var ADMIN_CORS "https://$API_DOMAIN"
-  set_var AUTH_CORS "https://$API_DOMAIN,$STOREFRONT_URL"
+  set_var AUTH_CORS "https://$API_DOMAIN,$origins"
   for k in POSTGRES_PASSWORD JWT_SECRET COOKIE_SECRET STOREFRONT_REVALIDATE_SECRET; do set_var "$k" "$(openssl rand -hex 32)"; done
   chmod 600 "$ENV_FILE"
 else
