@@ -4,9 +4,24 @@
 # The storefront is built once first-run.sh has written the store keys into .env.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
-envget() { grep "^$1=" infra/prod/.env | tail -1 | cut -d= -f2-; }
+envget() { { grep "^$1=" infra/prod/.env || true; } | tail -1 | cut -d= -f2-; }
 # Caddy serves 80/443 unless the server's own nginx does (PROXY=nginx, set by use-host-nginx.sh).
-if [[ "$(envget PROXY)" == nginx ]]; then PROXY_PROFILE=""; else PROXY_PROFILE="caddy"; fi
+# If another program already holds port 80, Caddy could not start anyway: skip it and say what to do.
+proxy="$(envget PROXY)"
+if [[ "$proxy" != nginx ]]; then
+  holder=""
+  if command -v ss >/dev/null; then
+    holder=$(ss -tlnpH 'sport = :80' 2>/dev/null | grep -o 'users:(("[^"]*' | cut -d'"' -f2 | head -1 || true)
+  elif (exec 3<>/dev/tcp/127.0.0.1/80) 2>/dev/null && [[ "$(docker inspect -f '{{.State.Running}}' casecraft-caddy-1 2>/dev/null)" != true ]]; then
+    holder="another program"
+  fi
+  if [[ -n "$holder" && "$holder" != docker-proxy ]]; then
+    echo "==> Port 80 is held by $holder, so Caddy is not started. Run infra/prod/use-host-nginx.sh <email> to serve the domains through it."
+    proxy=nginx
+    docker rm -f casecraft-caddy-1 >/dev/null 2>&1 || true
+  fi
+fi
+if [[ "$proxy" == nginx ]]; then PROXY_PROFILE=""; else PROXY_PROFILE="caddy"; fi
 compose() { COMPOSE_PROFILES="${PROFILES:-$PROXY_PROFILE}" docker compose -f infra/prod/docker-compose.yml --env-file infra/prod/.env "$@"; }
 
 wait_healthy() {  # service, tries

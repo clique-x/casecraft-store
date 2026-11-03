@@ -3,7 +3,7 @@
 # instead of Caddy. Adds one nginx site for the store, www and api domains, gets their HTTPS certificates
 # with certbot, and sets PROXY=nginx in infra/prod/.env. Other nginx sites are left as they are.
 #   /opt/casecraft/infra/prod/use-host-nginx.sh you@example.com
-# Then run deploy.sh (and first-run.sh the first time).
+# It then runs deploy.sh, so the store is built and started too.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 ENV_FILE=infra/prod/.env
@@ -12,7 +12,7 @@ if [[ $EUID -ne 0 ]]; then echo "Run as root." >&2; exit 1; fi
 if [[ -z "$email" ]]; then echo "Usage: use-host-nginx.sh <email for certificate notices>" >&2; exit 1; fi
 command -v nginx >/dev/null || { echo "nginx is not installed on this server." >&2; exit 1; }
 
-envget() { grep "^$1=" "$ENV_FILE" | tail -1 | cut -d= -f2-; }
+envget() { { grep "^$1=" "$ENV_FILE" || true; } | tail -1 | cut -d= -f2-; }
 set_var() { if grep -q "^$1=" "$ENV_FILE"; then sed -i "s|^$1=.*|$1=$2|" "$ENV_FILE"; else echo "$1=$2" >> "$ENV_FILE"; fi; }
 site=$(envget SITE_DOMAIN); api=$(envget API_DOMAIN)
 sport=$(envget STOREFRONT_HOST_PORT); sport="${sport:-3100}"
@@ -49,10 +49,11 @@ certbot --nginx --non-interactive --agree-tos -m "$email" --redirect \
   -d "$site" -d "www.$site" -d "$api"
 nginx -t && systemctl reload nginx
 
+echo "==> Building and starting CaseCraft"
+"$(dirname "$0")/deploy.sh"
+
 cat <<NEXT
 
 Done: nginx now sends $site and $api to CaseCraft (other sites unchanged).
-Next:
-  /opt/casecraft/infra/prod/deploy.sh
-  /opt/casecraft/infra/prod/first-run.sh $email     (first time only)
+First time only, if the store has no products yet:  /opt/casecraft/infra/prod/first-run.sh $email
 NEXT
