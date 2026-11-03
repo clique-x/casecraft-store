@@ -4,7 +4,7 @@ import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 import { ACCESSORIES } from '@/lib/catalog/accessories';
 import { formatInr, gallerySrc, PHOTO_WIDTHS, PHOTOS, photoSrc } from '@/lib/catalog/photos';
 import { gadgetCutSrc, gadgetCutSrcSet } from '@/lib/catalog/gadgets';
-import type { HeroItem } from '@/components/home/hub/HeroFlythrough.client';
+import type { HeroItem } from '@/components/home/hub/HubHero';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
@@ -36,8 +36,9 @@ export const metadata: Metadata = {
 /** Audio picked for the hero, the spotlight and the trending mix, in this order when they exist. */
 const AUDIO_PICKS = ['boat-800-hidef', 'realme-air-7', 'boat-alpha-gen2', 'realme-t310', 'boat-rockerz-110', 'boat-219'];
 const HERO_EARBUDS = 'boat-alpha-gen2';
-/** Covers floating in the hero, in this order: SF carbon, red Ferrari, ring stand, camera slider, cream Ferrari, midnight blue. */
-const HERO_COVERS = [50129, 50105, 50126, 50134, 50116, 50114];
+/** The cover on the hero glass, first of these that exists: SF carbon, red Ferrari, ring stand. */
+const HERO_COVERS = [50129, 50105, 50126];
+const HERO_FEATURED = 'boat-800-hidef';
 const FEATURE_AUDIO = 'realme-air-7';
 
 function absolute(path: string): string {
@@ -139,33 +140,30 @@ export default async function HomePage() {
     ...phoneBrands.map((b) => ({ name: b, href: `/phones/${b.toLowerCase()}`, tag: 'Covers', logo: { phoneBrand: b } })),
   ];
 
-  // The hero room: trending covers and audio as transparent cutouts, floating without cards, twelve in all.
+  // The hero glass: three real products as transparent cutouts, plus the screen guard.
+  const toHeroCover = (p: HomeProduct): HeroItem => ({
+    href: `/products/${p.handle}`,
+    src: photoSrc(p.photo!.id, 960),
+    srcSet: PHOTO_WIDTHS.map((w) => `${photoSrc(p.photo!.id, w)} ${w}w`).join(', '),
+    w: p.photo!.imageW,
+    h: p.photo!.imageH,
+    title: `${p.photo!.design} · ${p.photo!.brand} ${p.photo!.series}`,
+    price: formatInr(p.priceFromInr),
+  });
+  const toHeroAudio = (p: HomeProduct): HeroItem => ({
+    href: `/products/${p.handle}`,
+    src: gadgetCutSrc(p.gadget!.photos!, 960),
+    srcSet: gadgetCutSrcSet(p.gadget!.photos!),
+    w: p.gadget!.photos!.cut!.w,
+    h: p.gadget!.photos!.cut!.h,
+    title: p.title,
+    price: formatInr(p.priceFromInr),
+  });
+  const withCut = audioWithPhotos.filter((p) => p.gadget?.photos?.cut);
+  const heroFeatured = withCut.find((p) => p.gadget?.id === HERO_FEATURED) ?? withCut.find((p) => p.gadget?.type === 'earbuds');
+  const heroBand = withCut.find((p) => p.gadget?.type === 'neckband');
   const coverPool = [...allCovers, ...trending];
-  const heroCovers: HeroItem[] = HERO_COVERS.flatMap((id) => {
-    const p = coverPool.find((c) => c.photo?.id === id && c.photo.variants.length > 0);
-    return p ? [p] : [];
-  }).map((p) => ({
-      href: `/products/${p.handle}`,
-      src: photoSrc(p.photo!.id, 960),
-      srcSet: PHOTO_WIDTHS.map((w) => `${photoSrc(p.photo!.id, w)} ${w}w`).join(', '),
-      w: p.photo!.imageW,
-      h: p.photo!.imageH,
-      title: `${p.photo!.design} · ${p.photo!.brand} ${p.photo!.series}`,
-      price: formatInr(p.priceFromInr),
-    }));
-  const heroAudio: HeroItem[] = audioWithPhotos
-    .filter((p) => p.gadget?.photos?.cut)
-    .slice(0, 6)
-    .map((p) => ({
-      href: `/products/${p.handle}`,
-      src: gadgetCutSrc(p.gadget!.photos!, 960),
-      srcSet: gadgetCutSrcSet(p.gadget!.photos!),
-      w: p.gadget!.photos!.cut!.w,
-      h: p.gadget!.photos!.cut!.h,
-      title: p.title,
-      price: formatInr(p.priceFromInr),
-    }));
-  const heroItems = interleave(heroCovers, heroAudio);
+  const heroCover = HERO_COVERS.map((id) => coverPool.find((c) => c.photo?.id === id && c.photo.variants.length > 0)).find(Boolean);
 
   const comboCovers = toComboCovers(allCovers);
   const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
@@ -174,13 +172,13 @@ export default async function HomePage() {
       : [],
   );
 
-  const first = heroItems[0];
-  if (first) preload(first.src, { as: 'image', fetchPriority: 'high', imageSrcSet: first.srcSet, imageSizes: '(min-width: 1024px) 480px, 70vw' });
+  const hero = heroFeatured && heroBand && heroCover && guard ? { featured: toHeroAudio(heroFeatured), cover: toHeroCover(heroCover), neckband: toHeroAudio(heroBand), guard } : null;
+  if (hero) preload(hero.featured.src, { as: 'image', fetchPriority: 'high', imageSrcSet: hero.featured.srcSet, imageSizes: '(min-width: 1024px) 420px, 80vw' });
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trendingMix) }} />
-      <HubHero items={heroItems} />
+      {hero && <HubHero {...hero} />}
       <TrustSeam />
       {heroEarbuds && heroNeckband && guard && (
         <CategoryBento
