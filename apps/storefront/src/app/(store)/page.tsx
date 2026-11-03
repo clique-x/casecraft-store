@@ -4,7 +4,7 @@ import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 import { ACCESSORIES } from '@/lib/catalog/accessories';
 import { backdropThumbSrc, backdropThumbSrcSet, formatInr, gallerySrc, PHOTOS } from '@/lib/catalog/photos';
 import { gadgetCardSrc, gadgetCardSrcSet } from '@/lib/catalog/gadgets';
-import type { ShelfItem } from '@/components/home/hub/HeroStudio.client';
+import type { HeroItem } from '@/components/home/hub/HeroFlythrough.client';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
@@ -137,8 +137,8 @@ export default async function HomePage() {
     ...phoneBrands.map((b) => ({ name: b, href: `/phones/${b.toLowerCase()}`, tag: 'Covers', logo: { phoneBrand: b } })),
   ];
 
-  // The hero shelves: trending covers (studio shots) woven with audio (product shots), twelve in all.
-  const shelfCovers: ShelfItem[] = trending
+  // The hero room: trending covers (studio shots) woven with audio (product shots), twelve in all.
+  const heroCovers: HeroItem[] = trending
     .flatMap((p) => (p.photo && (p.photo.shots ?? 0) > 0 ? [p] : []))
     .slice(0, 6)
     .map((p) => ({
@@ -149,7 +149,7 @@ export default async function HomePage() {
       price: formatInr(p.priceFromInr),
       tone: 'dark' as const,
     }));
-  const shelfAudio: ShelfItem[] = audioWithPhotos.slice(0, 6).map((p) => ({
+  const heroAudio: HeroItem[] = audioWithPhotos.slice(0, 6).map((p) => ({
     href: `/products/${p.handle}`,
     src: gadgetCardSrc(p.gadget!.photos!, 0, 480),
     srcSet: gadgetCardSrcSet(p.gadget!.photos!, 0),
@@ -157,7 +157,7 @@ export default async function HomePage() {
     price: formatInr(p.priceFromInr),
     tone: 'light' as const,
   }));
-  const shelfItems = interleave(shelfCovers, shelfAudio);
+  const heroItems = interleave(heroCovers, heroAudio);
 
   const comboCovers = toComboCovers(allCovers);
   const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
@@ -166,13 +166,13 @@ export default async function HomePage() {
       : [],
   );
 
-  const first = shelfItems[0];
-  if (first) preload(first.src, { as: 'image', fetchPriority: 'high', imageSrcSet: first.srcSet, imageSizes: '(min-width: 1024px) 180px, (min-width: 640px) 22vw, 28vw' });
+  const first = heroItems[0];
+  if (first) preload(first.src, { as: 'image', fetchPriority: 'high', imageSrcSet: first.srcSet, imageSizes: '(min-width: 1024px) 240px, 40vw' });
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trendingMix) }} />
-      <HubHero items={shelfItems} />
+      <HubHero items={heroItems} />
       <TrustSeam />
       {heroEarbuds && heroNeckband && guard && (
         <CategoryBento
