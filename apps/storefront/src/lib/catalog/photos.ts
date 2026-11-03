@@ -2,7 +2,7 @@ import type { PhoneModel } from '@/lib/medusa/fixtures';
 import raw from './photo-catalog.json';
 
 export type PhotoCut = 'faded' | 'full';
-export type PhotoLook = 'carbon-and-aramid' | 'sparkle' | 'animal-print' | 'gradient' | 'solid' | 'clear' | 'stand';
+export type PhotoLook = 'carbon-and-aramid' | 'sparkle' | 'animal-print' | 'gradient' | 'print' | 'solid' | 'clear' | 'stand';
 export type PhotoWidth = 320 | 480 | 720 | 960;
 
 export interface PhotoEntry {
@@ -65,6 +65,15 @@ export const PHOTO_PHONE_MODELS: readonly PhoneModel[] = [
   { slug: 'iphone-14-pro', brand: 'Apple', model: 'iPhone 14 Pro', series: 'iPhone', releaseYear: 2022, islandStyle: 'square' },
   { slug: 'iphone-15', brand: 'Apple', model: 'iPhone 15', series: 'iPhone', releaseYear: 2023, islandStyle: 'square' },
   { slug: 'iphone-15-pro', brand: 'Apple', model: 'iPhone 15 Pro', series: 'iPhone', releaseYear: 2023, islandStyle: 'square' },
+  { slug: 'iphone-17-air', brand: 'Apple', model: 'iPhone 17 Air', series: 'iPhone', releaseYear: 2025, islandStyle: 'pills' },
+  { slug: 'iphone-17-pro', brand: 'Apple', model: 'iPhone 17 Pro', series: 'iPhone', releaseYear: 2025, islandStyle: 'square' },
+  { slug: 'iphone-18', brand: 'Apple', model: 'iPhone 18', series: 'iPhone', releaseYear: 2026, islandStyle: 'square' },
+  { slug: 'iphone-18-pro', brand: 'Apple', model: 'iPhone 18 Pro', series: 'iPhone', releaseYear: 2026, islandStyle: 'square' },
+  { slug: 'galaxy-s23-fe', brand: 'Samsung', model: 'Galaxy S23 FE', series: 'Galaxy S', releaseYear: 2023, islandStyle: 'pills' },
+  { slug: 'galaxy-s23-ultra', brand: 'Samsung', model: 'Galaxy S23 Ultra', series: 'Galaxy S', releaseYear: 2023, islandStyle: 'pills' },
+  { slug: 'galaxy-s24-ultra', brand: 'Samsung', model: 'Galaxy S24 Ultra', series: 'Galaxy S', releaseYear: 2024, islandStyle: 'pills' },
+  { slug: 'galaxy-s25-ultra', brand: 'Samsung', model: 'Galaxy S25 Ultra', series: 'Galaxy S', releaseYear: 2025, islandStyle: 'pills' },
+  { slug: 'pixel-9', brand: 'Google', model: 'Pixel 9', series: 'Pixel', releaseYear: 2024, islandStyle: 'pills' },
 ];
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -113,7 +122,7 @@ function cutOf(r: Record<string, unknown>): PhotoCut {
   return v === 'faded' || v === 'full' ? v : fail(r.id, 'cut', "'faded' or 'full'");
 }
 
-const LOOKS: readonly PhotoLook[] = ['carbon-and-aramid', 'sparkle', 'animal-print', 'gradient', 'solid', 'clear', 'stand'];
+const LOOKS: readonly PhotoLook[] = ['carbon-and-aramid', 'sparkle', 'animal-print', 'gradient', 'print', 'solid', 'clear', 'stand'];
 
 function lookOf(r: Record<string, unknown>): PhotoLook {
   const v = r.look;

@@ -30,6 +30,12 @@ export const LOOKS: readonly Look[] = [
     match: (e) => e.look === 'animal-print',
   },
   {
+    handle: 'print',
+    name: 'Prints & checks',
+    blurb: 'Woven-check and printed backs.',
+    match: (e) => e.look === 'print',
+  },
+  {
     handle: 'solid',
     name: 'Solid',
     blurb: 'One colour and a textured grip.',

@@ -15,6 +15,10 @@ import type { PhoneModel } from '@/lib/medusa/fixtures';
  */
 const ANDROID_CODES: Record<string, RegExp> = {
   'galaxy-s25': /^SM-S931[A-Z0-9]*$/i,
+  'galaxy-s23-fe': /^SM-S711[A-Z0-9]*$/i,
+  'galaxy-s23-ultra': /^SM-S918[A-Z0-9]*$/i,
+  'galaxy-s24-ultra': /^SM-S928[A-Z0-9]*$/i,
+  'galaxy-s25-ultra': /^SM-S938[A-Z0-9]*$/i,
   'galaxy-a56': /^SM-A566[A-Z0-9]*$/i,
   'oneplus-13': /^(CPH2649|CPH2653|CPH2655|PJZ110)$/i,
   'oneplus-nord-ce4': /^CPH2613$/i,
@@ -36,6 +40,9 @@ const IPHONE_SCREENS: Record<string, string> = {
   'iphone-16': '393x852',
   'iphone-16-pro': '402x874',
   'iphone-17': '402x874',
+  'iphone-17-pro': '402x874',
+  'iphone-17-air': '420x912',
+  // iPhone 18 and 18 Pro are not listed: their screen sizes are not confirmed, so the visitor is asked to pick.
 };
 
 export type Detection =

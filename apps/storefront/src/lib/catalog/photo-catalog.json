@@ -1642,5 +1642,1702 @@
       "Box",
       "Features"
     ]
+  },
+  {
+    "id": 50136,
+    "slug": "casecraft-frosted-camera-slider-case-black-iphone-17",
+    "brand": "CaseCraft",
+    "series": "Frosted Camera Slider",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 17"
+    ],
+    "modelSlugs": [
+      "iphone-17"
+    ],
+    "modelLabel": "iPhone 17",
+    "image": "/products/photos/50136.webp",
+    "imageW": 576,
+    "imageH": 1157,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Sliding camera cover",
+      "Frosted translucent back"
+    ],
+    "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+    "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50137,
+    "slug": "casecraft-clear-magsafe-frame-case-black-iphone-17",
+    "brand": "CaseCraft",
+    "series": "Clear MagSafe Frame",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 17"
+    ],
+    "modelSlugs": [
+      "iphone-17"
+    ],
+    "modelLabel": "iPhone 17",
+    "image": "/products/photos/50137.webp",
+    "imageW": 473,
+    "imageH": 953,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Clear back, black frame",
+      "Raised camera lip"
+    ],
+    "material": "Hard back with a soft TPU frame",
+    "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50138,
+    "slug": "casecraft-ring-stand-camera-slider-case-navy-iphone-17",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Navy",
+    "title": "Navy · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 17"
+    ],
+    "modelSlugs": [
+      "iphone-17"
+    ],
+    "modelLabel": "iPhone 17",
+    "image": "/products/photos/50138.webp",
+    "imageW": 542,
+    "imageH": 1106,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": true,
+    "heroRank": 13,
+    "isNew": true,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50139,
+    "slug": "casecraft-frosted-magsafe-case-orange-iphone-17",
+    "brand": "CaseCraft",
+    "series": "Frosted MagSafe",
+    "design": "Orange",
+    "title": "Orange · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 17"
+    ],
+    "modelSlugs": [
+      "iphone-17"
+    ],
+    "modelLabel": "iPhone 17",
+    "image": "/products/photos/50139.webp",
+    "imageW": 504,
+    "imageH": 1002,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": true,
+    "heroRank": 16,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Frosted translucent back",
+      "Raised camera lip"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50140,
+    "slug": "casecraft-frosted-magsafe-case-brown-iphone-17",
+    "brand": "CaseCraft",
+    "series": "Frosted MagSafe",
+    "design": "Brown",
+    "title": "Brown · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 17"
+    ],
+    "modelSlugs": [
+      "iphone-17"
+    ],
+    "modelLabel": "iPhone 17",
+    "image": "/products/photos/50140.webp",
+    "imageW": 554,
+    "imageH": 1102,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Frosted translucent back",
+      "Raised camera lip"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50141,
+    "slug": "casecraft-clear-magsafe-case-clear-iphone-17",
+    "brand": "CaseCraft",
+    "series": "Clear MagSafe",
+    "design": "Clear",
+    "title": "Clear · CaseCraft",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "iPhone 17"
+    ],
+    "modelSlugs": [
+      "iphone-17"
+    ],
+    "modelLabel": "iPhone 17",
+    "image": "/products/photos/50141.webp",
+    "imageW": 559,
+    "imageH": 1119,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Air-cushion corners",
+      "Clear back"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50142,
+    "slug": "casecraft-ring-stand-camera-slider-case-taupe-iphone-17",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Taupe",
+    "title": "Taupe · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 17"
+    ],
+    "modelSlugs": [
+      "iphone-17"
+    ],
+    "modelLabel": "iPhone 17",
+    "image": "/products/photos/50142.webp",
+    "imageW": 525,
+    "imageH": 1074,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": true,
+    "heroRank": 19,
+    "isNew": true,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50143,
+    "slug": "casecraft-ring-stand-camera-slider-case-black-iphone-17",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 17"
+    ],
+    "modelSlugs": [
+      "iphone-17"
+    ],
+    "modelLabel": "iPhone 17",
+    "image": "/products/photos/50143.webp",
+    "imageW": 538,
+    "imageH": 1069,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50144,
+    "slug": "casecraft-silicone-magsafe-case-midnight-blue-iphone-17-air",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Midnight Blue",
+    "title": "Midnight Blue · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 17 Air"
+    ],
+    "modelSlugs": [
+      "iphone-17-air"
+    ],
+    "modelLabel": "iPhone 17 Air",
+    "image": "/products/photos/50144.webp",
+    "imageW": 515,
+    "imageH": 1026,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "Features"
+    ]
+  },
+  {
+    "id": 50145,
+    "slug": "spigen-neo-hybrid-crystal-case-clear-iphone-17-air",
+    "brand": "Spigen",
+    "series": "Neo Hybrid Crystal",
+    "design": "Clear",
+    "title": "Clear · Spigen",
+    "priceInr": 699,
+    "regularInr": 699,
+    "models": [
+      "iPhone 17 Air"
+    ],
+    "modelSlugs": [
+      "iphone-17-air"
+    ],
+    "modelLabel": "iPhone 17 Air",
+    "image": "/products/photos/50145.webp",
+    "imageW": 558,
+    "imageH": 1119,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Crystal-clear back",
+      "Raised edges around the camera",
+      "Slim fit"
+    ],
+    "material": "Hard clear back with a flexible TPU frame",
+    "print": "Nothing printed: a fully clear back.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50146,
+    "slug": "casecraft-silicone-magsafe-case-lilac-iphone-17-air",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Lilac",
+    "title": "Lilac · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 17 Air"
+    ],
+    "modelSlugs": [
+      "iphone-17-air"
+    ],
+    "modelLabel": "iPhone 17 Air",
+    "image": "/products/photos/50146.webp",
+    "imageW": 474,
+    "imageH": 945,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "Features"
+    ]
+  },
+  {
+    "id": 50147,
+    "slug": "casecraft-clear-magsafe-case-clear-iphone-17-air",
+    "brand": "CaseCraft",
+    "series": "Clear MagSafe",
+    "design": "Clear",
+    "title": "Clear · CaseCraft",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "iPhone 17 Air"
+    ],
+    "modelSlugs": [
+      "iphone-17-air"
+    ],
+    "modelLabel": "iPhone 17 Air",
+    "image": "/products/photos/50147.webp",
+    "imageW": 489,
+    "imageH": 944,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Air-cushion corners",
+      "Clear back"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50148,
+    "slug": "dulero-rugged-ring-stand-case-silver-white-iphone-17-pro",
+    "brand": "Dulero",
+    "series": "Rugged Ring Stand",
+    "design": "Silver White",
+    "title": "Silver White · Dulero",
+    "priceInr": 599,
+    "regularInr": 599,
+    "models": [
+      "iPhone 17 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-17-pro"
+    ],
+    "modelLabel": "iPhone 17 Pro",
+    "image": "/products/photos/50148.webp",
+    "imageW": 548,
+    "imageH": 1103,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": true,
+    "heroRank": 17,
+    "isNew": true,
+    "features": [
+      "Fold-out ring stand",
+      "Textured armour back",
+      "Raised camera surround"
+    ],
+    "material": "Hard textured back, soft bumper and a fold-out ring stand",
+    "print": "Moulded textured panels; nothing is printed on.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "Box",
+      "Features"
+    ]
+  },
+  {
+    "id": 50149,
+    "slug": "cg-mobile-scuderia-ferrari-silicone-case-red-iphone-17-pro",
+    "brand": "CG Mobile",
+    "series": "Scuderia Ferrari Silicone",
+    "design": "Red",
+    "title": "Red · CG Mobile",
+    "priceInr": 500,
+    "regularInr": 500,
+    "models": [
+      "iPhone 17 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-17-pro"
+    ],
+    "modelLabel": "iPhone 17 Pro",
+    "image": "/products/photos/50149.webp",
+    "imageW": 559,
+    "imageH": 1110,
+    "cut": "full",
+    "look": "animal-print",
+    "heroEligible": true,
+    "heroRank": 14,
+    "isNew": true,
+    "features": [
+      "Tonal prancing horse print",
+      "Soft-touch silicone finish",
+      "Scuderia Ferrari retail box"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Tonal prancing horse printed across the back.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50150,
+    "slug": "casecraft-plaid-magsafe-case-beige-check-iphone-17-pro",
+    "brand": "CaseCraft",
+    "series": "Plaid MagSafe",
+    "design": "Beige Check",
+    "title": "Beige Check · CaseCraft",
+    "priceInr": 450,
+    "regularInr": 450,
+    "models": [
+      "iPhone 17 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-17-pro"
+    ],
+    "modelLabel": "iPhone 17 Pro",
+    "image": "/products/photos/50150.webp",
+    "imageW": 572,
+    "imageH": 1122,
+    "cut": "full",
+    "look": "print",
+    "heroEligible": true,
+    "heroRank": 20,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Woven-check back panel",
+      "Raised camera surround"
+    ],
+    "material": "Hard back with a fabric-look check panel and a soft frame",
+    "print": "Check pattern printed across the back panel.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50151,
+    "slug": "casecraft-frosted-camera-slider-case-orange-iphone-17-pro",
+    "brand": "CaseCraft",
+    "series": "Frosted Camera Slider",
+    "design": "Orange",
+    "title": "Orange · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 17 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-17-pro"
+    ],
+    "modelLabel": "iPhone 17 Pro",
+    "image": "/products/photos/50151.webp",
+    "imageW": 522,
+    "imageH": 1026,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Sliding camera cover",
+      "Frosted translucent back"
+    ],
+    "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+    "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50152,
+    "slug": "casecraft-frosted-camera-slider-case-black-iphone-17-pro",
+    "brand": "CaseCraft",
+    "series": "Frosted Camera Slider",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 17 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-17-pro"
+    ],
+    "modelLabel": "iPhone 17 Pro",
+    "image": "/products/photos/50152.webp",
+    "imageW": 561,
+    "imageH": 1137,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Sliding camera cover",
+      "Frosted translucent back"
+    ],
+    "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+    "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50153,
+    "slug": "casecraft-clear-magsafe-frame-case-black-iphone-17-pro",
+    "brand": "CaseCraft",
+    "series": "Clear MagSafe Frame",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 17 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-17-pro"
+    ],
+    "modelLabel": "iPhone 17 Pro",
+    "image": "/products/photos/50153.webp",
+    "imageW": 560,
+    "imageH": 1121,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Clear back, black frame",
+      "Raised camera lip"
+    ],
+    "material": "Hard back with a soft TPU frame",
+    "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50154,
+    "slug": "casecraft-frosted-magsafe-case-black-orange-iphone-18",
+    "brand": "CaseCraft",
+    "series": "Frosted MagSafe",
+    "design": "Black Orange",
+    "title": "Black Orange · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 18"
+    ],
+    "modelSlugs": [
+      "iphone-18"
+    ],
+    "modelLabel": "iPhone 18",
+    "image": "/products/photos/50154.webp",
+    "imageW": 542,
+    "imageH": 1099,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Frosted translucent back",
+      "Contrast camera rim"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50155,
+    "slug": "casecraft-frosted-magsafe-case-brown-iphone-18",
+    "brand": "CaseCraft",
+    "series": "Frosted MagSafe",
+    "design": "Brown",
+    "title": "Brown · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 18"
+    ],
+    "modelSlugs": [
+      "iphone-18"
+    ],
+    "modelLabel": "iPhone 18",
+    "image": "/products/photos/50155.webp",
+    "imageW": 587,
+    "imageH": 1172,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Frosted translucent back",
+      "Raised camera lip"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50156,
+    "slug": "casecraft-frosted-camera-slider-case-periwinkle-blue-iphone-18-pro",
+    "brand": "CaseCraft",
+    "series": "Frosted Camera Slider",
+    "design": "Periwinkle Blue",
+    "title": "Periwinkle Blue · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 18 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-18-pro"
+    ],
+    "modelLabel": "iPhone 18 Pro",
+    "image": "/products/photos/50156.webp",
+    "imageW": 501,
+    "imageH": 1004,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": true,
+    "heroRank": 21,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Sliding camera cover",
+      "Frosted translucent back"
+    ],
+    "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+    "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50157,
+    "slug": "casecraft-silicone-magsafe-case-black-iphone-18-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 18 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-18-pro"
+    ],
+    "modelLabel": "iPhone 18 Pro",
+    "image": "/products/photos/50157.webp",
+    "imageW": 582,
+    "imageH": 1176,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "Features"
+    ]
+  },
+  {
+    "id": 50158,
+    "slug": "casecraft-silicone-magsafe-case-lilac-grey-iphone-18-pro",
+    "brand": "CaseCraft",
+    "series": "Silicone MagSafe",
+    "design": "Lilac Grey",
+    "title": "Lilac Grey · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 18 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-18-pro"
+    ],
+    "modelLabel": "iPhone 18 Pro",
+    "image": "/products/photos/50158.webp",
+    "imageW": 540,
+    "imageH": 1081,
+    "cut": "full",
+    "look": "solid",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Soft-touch silicone finish",
+      "Raised camera lip"
+    ],
+    "material": "Liquid silicone shell with a soft microfibre lining",
+    "print": "Plain colour all over with a printed MagSafe guide ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "Features"
+    ]
+  },
+  {
+    "id": 50159,
+    "slug": "casecraft-clear-magsafe-case-clear-iphone-18-pro",
+    "brand": "CaseCraft",
+    "series": "Clear MagSafe",
+    "design": "Clear",
+    "title": "Clear · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 18 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-18-pro"
+    ],
+    "modelLabel": "iPhone 18 Pro",
+    "image": "/products/photos/50159.webp",
+    "imageW": 654,
+    "imageH": 1314,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Clear back",
+      "Raised camera lip"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50160,
+    "slug": "dulero-rugged-ring-stand-case-navy-grey-iphone-18-pro",
+    "brand": "Dulero",
+    "series": "Rugged Ring Stand",
+    "design": "Navy Grey",
+    "title": "Navy Grey · Dulero",
+    "priceInr": 599,
+    "regularInr": 599,
+    "models": [
+      "iPhone 18 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-18-pro"
+    ],
+    "modelLabel": "iPhone 18 Pro",
+    "image": "/products/photos/50160.webp",
+    "imageW": 509,
+    "imageH": 1018,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": true,
+    "heroRank": 15,
+    "isNew": true,
+    "features": [
+      "Fold-out ring stand",
+      "Textured armour back",
+      "Raised camera surround"
+    ],
+    "material": "Hard textured back, soft bumper and a fold-out ring stand",
+    "print": "Moulded textured panels; nothing is printed on.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "Box",
+      "Features"
+    ]
+  },
+  {
+    "id": 50161,
+    "slug": "dulero-rugged-ring-stand-case-silver-white-iphone-18-pro",
+    "brand": "Dulero",
+    "series": "Rugged Ring Stand",
+    "design": "Silver White",
+    "title": "Silver White · Dulero",
+    "priceInr": 599,
+    "regularInr": 599,
+    "models": [
+      "iPhone 18 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-18-pro"
+    ],
+    "modelLabel": "iPhone 18 Pro",
+    "image": "/products/photos/50161.webp",
+    "imageW": 570,
+    "imageH": 1143,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": true,
+    "heroRank": 18,
+    "isNew": true,
+    "features": [
+      "Fold-out ring stand",
+      "Textured armour back",
+      "Raised camera surround"
+    ],
+    "material": "Hard textured back, soft bumper and a fold-out ring stand",
+    "print": "Moulded textured panels; nothing is printed on.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "Box",
+      "Features"
+    ]
+  },
+  {
+    "id": 50162,
+    "slug": "casecraft-frosted-camera-slider-case-black-iphone-18-pro",
+    "brand": "CaseCraft",
+    "series": "Frosted Camera Slider",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "iPhone 18 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-18-pro"
+    ],
+    "modelLabel": "iPhone 18 Pro",
+    "image": "/products/photos/50162.webp",
+    "imageW": 503,
+    "imageH": 1028,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Sliding camera cover",
+      "Frosted translucent back"
+    ],
+    "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+    "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50163,
+    "slug": "casecraft-clear-magsafe-frame-case-black-iphone-18-pro",
+    "brand": "CaseCraft",
+    "series": "Clear MagSafe Frame",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "iPhone 18 Pro"
+    ],
+    "modelSlugs": [
+      "iphone-18-pro"
+    ],
+    "modelLabel": "iPhone 18 Pro",
+    "image": "/products/photos/50163.webp",
+    "imageW": 540,
+    "imageH": 1076,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "MagSafe ring built in",
+      "Clear back, black frame",
+      "Raised camera lip"
+    ],
+    "material": "Hard back with a soft TPU frame",
+    "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50164,
+    "slug": "casecraft-clear-magnetic-frame-case-black-galaxy-s23-fe",
+    "brand": "CaseCraft",
+    "series": "Clear Magnetic Frame",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "Galaxy S23 FE"
+    ],
+    "modelSlugs": [
+      "galaxy-s23-fe"
+    ],
+    "modelLabel": "Galaxy S23 FE",
+    "image": "/products/photos/50164.webp",
+    "imageW": 568,
+    "imageH": 1134,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Magnetic ring built in",
+      "Clear back, black frame",
+      "Raised camera lip"
+    ],
+    "material": "Hard back with a soft TPU frame",
+    "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50165,
+    "slug": "casecraft-clear-magnetic-frame-case-black-galaxy-s23-ultra",
+    "brand": "CaseCraft",
+    "series": "Clear Magnetic Frame",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "Galaxy S23 Ultra"
+    ],
+    "modelSlugs": [
+      "galaxy-s23-ultra"
+    ],
+    "modelLabel": "Galaxy S23 Ultra",
+    "image": "/products/photos/50165.webp",
+    "imageW": 516,
+    "imageH": 1056,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Magnetic ring built in",
+      "Clear back, black frame",
+      "Raised camera lip"
+    ],
+    "material": "Hard back with a soft TPU frame",
+    "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50166,
+    "slug": "casecraft-frosted-magnetic-case-black-orange-galaxy-s23-ultra",
+    "brand": "CaseCraft",
+    "series": "Frosted Magnetic",
+    "design": "Black Orange",
+    "title": "Black Orange · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "Galaxy S23 Ultra"
+    ],
+    "modelSlugs": [
+      "galaxy-s23-ultra"
+    ],
+    "modelLabel": "Galaxy S23 Ultra",
+    "image": "/products/photos/50166.webp",
+    "imageW": 592,
+    "imageH": 1198,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Magnetic ring built in",
+      "Frosted translucent back",
+      "Contrast camera rim"
+    ],
+    "material": "Frosted hard back with a soft TPU frame",
+    "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50167,
+    "slug": "casecraft-ring-stand-camera-slider-case-taupe-galaxy-s24-ultra",
+    "brand": "CaseCraft",
+    "series": "Ring Stand Camera Slider",
+    "design": "Taupe",
+    "title": "Taupe · CaseCraft",
+    "priceInr": 400,
+    "regularInr": 400,
+    "models": [
+      "Galaxy S24 Ultra"
+    ],
+    "modelSlugs": [
+      "galaxy-s24-ultra"
+    ],
+    "modelLabel": "Galaxy S24 Ultra",
+    "image": "/products/photos/50167.webp",
+    "imageW": 536,
+    "imageH": 1083,
+    "cut": "full",
+    "look": "stand",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Sliding camera cover",
+      "Fold-out ring stand",
+      "Clear back"
+    ],
+    "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+    "print": "Frame, slider and ring in one colour; the back is clear.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "Close up",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50168,
+    "slug": "casecraft-clear-magnetic-frame-case-black-galaxy-s25",
+    "brand": "CaseCraft",
+    "series": "Clear Magnetic Frame",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 350,
+    "regularInr": 350,
+    "models": [
+      "Galaxy S25"
+    ],
+    "modelSlugs": [
+      "galaxy-s25"
+    ],
+    "modelLabel": "Galaxy S25",
+    "image": "/products/photos/50168.webp",
+    "imageW": 530,
+    "imageH": 1070,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Magnetic ring built in",
+      "Clear back, black frame",
+      "Raised camera lip"
+    ],
+    "material": "Hard back with a soft TPU frame",
+    "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50169,
+    "slug": "neza-anti-yellow-magnetic-clear-case-clear-galaxy-s25-ultra",
+    "brand": "Neza",
+    "series": "Anti-Yellow Magnetic Clear",
+    "design": "Clear",
+    "title": "Clear · Neza",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "Galaxy S25 Ultra"
+    ],
+    "modelSlugs": [
+      "galaxy-s25-ultra"
+    ],
+    "modelLabel": "Galaxy S25 Ultra",
+    "image": "/products/photos/50169.webp",
+    "imageW": 538,
+    "imageH": 1092,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Magnetic ring built in",
+      "Air-cushion corners",
+      "Anti-yellow clear back"
+    ],
+    "material": "Flexible clear TPU shell",
+    "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50170,
+    "slug": "casecraft-anti-burst-bumper-case-navy-pixel-9",
+    "brand": "CaseCraft",
+    "series": "Anti-Burst Bumper",
+    "design": "Navy",
+    "title": "Navy · CaseCraft",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "Pixel 9"
+    ],
+    "modelSlugs": [
+      "pixel-9"
+    ],
+    "modelLabel": "Pixel 9",
+    "image": "/products/photos/50170.webp",
+    "imageW": 604,
+    "imageH": 1243,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Anti-burst corner bumper",
+      "Clear back",
+      "Raised camera surround"
+    ],
+    "material": "Hard clear back with a soft TPU bumper",
+    "print": "Nothing printed: a clear back with a coloured bumper.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
+  },
+  {
+    "id": 50171,
+    "slug": "casecraft-anti-burst-bumper-case-black-pixel-9",
+    "brand": "CaseCraft",
+    "series": "Anti-Burst Bumper",
+    "design": "Black",
+    "title": "Black · CaseCraft",
+    "priceInr": 250,
+    "regularInr": 250,
+    "models": [
+      "Pixel 9"
+    ],
+    "modelSlugs": [
+      "pixel-9"
+    ],
+    "modelLabel": "Pixel 9",
+    "image": "/products/photos/50171.webp",
+    "imageW": 489,
+    "imageH": 1011,
+    "cut": "full",
+    "look": "clear",
+    "heroEligible": false,
+    "isNew": true,
+    "features": [
+      "Anti-burst corner bumper",
+      "Clear back",
+      "Raised camera surround"
+    ],
+    "material": "Hard clear back with a soft TPU bumper",
+    "print": "Nothing printed: a clear back with a coloured bumper.",
+    "variants": [
+      320,
+      480,
+      720,
+      960
+    ],
+    "source": "AI-styled from our shop photo",
+    "shots": 2,
+    "gallery": [
+      "Back",
+      "In hand",
+      "Side",
+      "With box",
+      "On the phone",
+      "Features"
+    ]
   }
 ]

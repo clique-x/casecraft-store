@@ -179,6 +179,87 @@
       "releaseYear": 2023,
       "islandStyle": "square",
       "rank": 19
+    },
+    {
+      "slug": "iphone-17-air",
+      "brand": "Apple",
+      "name": "iPhone 17 Air",
+      "series": "iPhone",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 20
+    },
+    {
+      "slug": "iphone-17-pro",
+      "brand": "Apple",
+      "name": "iPhone 17 Pro",
+      "series": "iPhone",
+      "releaseYear": 2025,
+      "islandStyle": "square",
+      "rank": 21
+    },
+    {
+      "slug": "iphone-18",
+      "brand": "Apple",
+      "name": "iPhone 18",
+      "series": "iPhone",
+      "releaseYear": 2026,
+      "islandStyle": "square",
+      "rank": 22
+    },
+    {
+      "slug": "iphone-18-pro",
+      "brand": "Apple",
+      "name": "iPhone 18 Pro",
+      "series": "iPhone",
+      "releaseYear": 2026,
+      "islandStyle": "square",
+      "rank": 23
+    },
+    {
+      "slug": "galaxy-s23-fe",
+      "brand": "Samsung",
+      "name": "Galaxy S23 FE",
+      "series": "Galaxy S",
+      "releaseYear": 2023,
+      "islandStyle": "pills",
+      "rank": 24
+    },
+    {
+      "slug": "galaxy-s23-ultra",
+      "brand": "Samsung",
+      "name": "Galaxy S23 Ultra",
+      "series": "Galaxy S",
+      "releaseYear": 2023,
+      "islandStyle": "pills",
+      "rank": 25
+    },
+    {
+      "slug": "galaxy-s24-ultra",
+      "brand": "Samsung",
+      "name": "Galaxy S24 Ultra",
+      "series": "Galaxy S",
+      "releaseYear": 2024,
+      "islandStyle": "pills",
+      "rank": 26
+    },
+    {
+      "slug": "galaxy-s25-ultra",
+      "brand": "Samsung",
+      "name": "Galaxy S25 Ultra",
+      "series": "Galaxy S",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 27
+    },
+    {
+      "slug": "pixel-9",
+      "brand": "Google",
+      "name": "Pixel 9",
+      "series": "Pixel",
+      "releaseYear": 2024,
+      "islandStyle": "pills",
+      "rank": 28
     }
   ],
   "themes": [
@@ -1471,6 +1552,1338 @@
           "modelSlug": "iphone-16",
           "caseType": "soft",
           "priceInr": 599,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-camera-slider-case-black-iphone-17",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Frosted Camera Slider cover for the iPhone 17, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50136/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50136,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+        "detail_print": "Frosted back with a MagSafe ring in the frame colour.",
+        "detail_fit": "Made for the iPhone 17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50136-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magsafe-frame-case-black-iphone-17",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear MagSafe Frame cover for the iPhone 17, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50137/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50137,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear MagSafe Frame",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Nothing printed: a clear back with a black MagSafe ring.",
+        "detail_fit": "Made for the iPhone 17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50137-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-navy-iphone-17",
+      "productType": "Phone cover",
+      "title": "Navy · CaseCraft",
+      "description": "Navy is a CaseCraft Ring Stand Camera Slider cover for the iPhone 17, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50138/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50138,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50138-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-magsafe-case-orange-iphone-17",
+      "productType": "Phone cover",
+      "title": "Orange · CaseCraft",
+      "description": "Orange is a CaseCraft Frosted MagSafe cover for the iPhone 17, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50139/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50139,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the iPhone 17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50139-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-magsafe-case-brown-iphone-17",
+      "productType": "Phone cover",
+      "title": "Brown · CaseCraft",
+      "description": "Brown is a CaseCraft Frosted MagSafe cover for the iPhone 17, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50140/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50140,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the iPhone 17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50140-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magsafe-case-clear-iphone-17",
+      "productType": "Phone cover",
+      "title": "Clear · CaseCraft",
+      "description": "Clear is a CaseCraft Clear MagSafe cover for the iPhone 17, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50141/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50141,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear MagSafe",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the iPhone 17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50141-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 250,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-taupe-iphone-17",
+      "productType": "Phone cover",
+      "title": "Taupe · CaseCraft",
+      "description": "Taupe is a CaseCraft Ring Stand Camera Slider cover for the iPhone 17, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50142/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50142,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50142-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-black-iphone-17",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Ring Stand Camera Slider cover for the iPhone 17, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50143/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50143,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the iPhone 17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50143-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-midnight-blue-iphone-17-air",
+      "productType": "Phone cover",
+      "title": "Midnight Blue · CaseCraft",
+      "description": "Midnight Blue is a CaseCraft Silicone MagSafe cover for the iPhone 17 Air, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50144/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50144,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 17 Air. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50144-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "spigen-neo-hybrid-crystal-case-clear-iphone-17-air",
+      "productType": "Phone cover",
+      "title": "Clear · Spigen",
+      "description": "Clear is a Spigen Neo Hybrid Crystal cover for the iPhone 17 Air, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50145/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50145,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Spigen Neo Hybrid Crystal",
+        "regular_inr": 699,
+        "case_types": "",
+        "detail_material": "Hard clear back with a flexible TPU frame",
+        "detail_print": "Nothing printed: a fully clear back.",
+        "detail_fit": "Made for the iPhone 17 Air. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50145-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": "soft",
+          "priceInr": 699,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-lilac-iphone-17-air",
+      "productType": "Phone cover",
+      "title": "Lilac · CaseCraft",
+      "description": "Lilac is a CaseCraft Silicone MagSafe cover for the iPhone 17 Air, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50146/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50146,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 17 Air. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50146-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magsafe-case-clear-iphone-17-air",
+      "productType": "Phone cover",
+      "title": "Clear · CaseCraft",
+      "description": "Clear is a CaseCraft Clear MagSafe cover for the iPhone 17 Air, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50147/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50147,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear MagSafe",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the iPhone 17 Air. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50147-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": "soft",
+          "priceInr": 250,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "dulero-rugged-ring-stand-case-silver-white-iphone-17-pro",
+      "productType": "Phone cover",
+      "title": "Silver White · Dulero",
+      "description": "Silver White is a Dulero Rugged Ring Stand cover for the iPhone 17 Pro, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50148/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50148,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Dulero Rugged Ring Stand",
+        "regular_inr": 599,
+        "case_types": "",
+        "detail_material": "Hard textured back, soft bumper and a fold-out ring stand",
+        "detail_print": "Moulded textured panels; nothing is printed on.",
+        "detail_fit": "Made for the iPhone 17 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50148-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": "soft",
+          "priceInr": 599,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "cg-mobile-scuderia-ferrari-silicone-case-red-iphone-17-pro",
+      "productType": "Phone cover",
+      "title": "Red · CG Mobile",
+      "description": "Red is a CG Mobile Scuderia Ferrari Silicone cover for the iPhone 17 Pro, stocked in our Haridwar shop. The artwork runs across the whole back rather than sitting in one corner.",
+      "imagePath": "/products/photos/50149/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50149,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CG Mobile Scuderia Ferrari Silicone",
+        "regular_inr": 500,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Tonal prancing horse printed across the back.",
+        "detail_fit": "Made for the iPhone 17 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50149-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": "soft",
+          "priceInr": 500,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-plaid-magsafe-case-beige-check-iphone-17-pro",
+      "productType": "Phone cover",
+      "title": "Beige Check · CaseCraft",
+      "description": "Beige Check is a CaseCraft Plaid MagSafe cover for the iPhone 17 Pro, stocked in our Haridwar shop. The pattern covers the back panel, with the camera and MagSafe ring left clear.",
+      "imagePath": "/products/photos/50150/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50150,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Plaid MagSafe",
+        "regular_inr": 450,
+        "case_types": "",
+        "detail_material": "Hard back with a fabric-look check panel and a soft frame",
+        "detail_print": "Check pattern printed across the back panel.",
+        "detail_fit": "Made for the iPhone 17 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50150-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": "soft",
+          "priceInr": 450,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-camera-slider-case-orange-iphone-17-pro",
+      "productType": "Phone cover",
+      "title": "Orange · CaseCraft",
+      "description": "Orange is a CaseCraft Frosted Camera Slider cover for the iPhone 17 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50151/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50151,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+        "detail_print": "Frosted back with a MagSafe ring in the frame colour.",
+        "detail_fit": "Made for the iPhone 17 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50151-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-camera-slider-case-black-iphone-17-pro",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Frosted Camera Slider cover for the iPhone 17 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50152/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50152,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+        "detail_print": "Frosted back with a MagSafe ring in the frame colour.",
+        "detail_fit": "Made for the iPhone 17 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50152-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magsafe-frame-case-black-iphone-17-pro",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear MagSafe Frame cover for the iPhone 17 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50153/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50153,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear MagSafe Frame",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Nothing printed: a clear back with a black MagSafe ring.",
+        "detail_fit": "Made for the iPhone 17 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50153-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-magsafe-case-black-orange-iphone-18",
+      "productType": "Phone cover",
+      "title": "Black Orange · CaseCraft",
+      "description": "Black Orange is a CaseCraft Frosted MagSafe cover for the iPhone 18, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50154/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50154,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the iPhone 18. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50154-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-magsafe-case-brown-iphone-18",
+      "productType": "Phone cover",
+      "title": "Brown · CaseCraft",
+      "description": "Brown is a CaseCraft Frosted MagSafe cover for the iPhone 18, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50155/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50155,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the iPhone 18. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50155-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-camera-slider-case-periwinkle-blue-iphone-18-pro",
+      "productType": "Phone cover",
+      "title": "Periwinkle Blue · CaseCraft",
+      "description": "Periwinkle Blue is a CaseCraft Frosted Camera Slider cover for the iPhone 18 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50156/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50156,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+        "detail_print": "Frosted back with a MagSafe ring in the frame colour.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50156-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-black-iphone-18-pro",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Silicone MagSafe cover for the iPhone 18 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50157/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50157,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50157-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-silicone-magsafe-case-lilac-grey-iphone-18-pro",
+      "productType": "Phone cover",
+      "title": "Lilac Grey · CaseCraft",
+      "description": "Lilac Grey is a CaseCraft Silicone MagSafe cover for the iPhone 18 Pro, stocked in our Haridwar shop. One colour all over, with a soft finish that is easy to grip.",
+      "imagePath": "/products/photos/50158/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50158,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Silicone MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Liquid silicone shell with a soft microfibre lining",
+        "detail_print": "Plain colour all over with a printed MagSafe guide ring.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50158-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magsafe-case-clear-iphone-18-pro",
+      "productType": "Phone cover",
+      "title": "Clear · CaseCraft",
+      "description": "Clear is a CaseCraft Clear MagSafe cover for the iPhone 18 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50159/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50159,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear MagSafe",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50159-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "dulero-rugged-ring-stand-case-navy-grey-iphone-18-pro",
+      "productType": "Phone cover",
+      "title": "Navy Grey · Dulero",
+      "description": "Navy Grey is a Dulero Rugged Ring Stand cover for the iPhone 18 Pro, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50160/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50160,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Dulero Rugged Ring Stand",
+        "regular_inr": 599,
+        "case_types": "",
+        "detail_material": "Hard textured back, soft bumper and a fold-out ring stand",
+        "detail_print": "Moulded textured panels; nothing is printed on.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50160-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 599,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "dulero-rugged-ring-stand-case-silver-white-iphone-18-pro",
+      "productType": "Phone cover",
+      "title": "Silver White · Dulero",
+      "description": "Silver White is a Dulero Rugged Ring Stand cover for the iPhone 18 Pro, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50161/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50161,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Dulero Rugged Ring Stand",
+        "regular_inr": 599,
+        "case_types": "",
+        "detail_material": "Hard textured back, soft bumper and a fold-out ring stand",
+        "detail_print": "Moulded textured panels; nothing is printed on.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50161-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 599,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-camera-slider-case-black-iphone-18-pro",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Frosted Camera Slider cover for the iPhone 18 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50162/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50162,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
+        "detail_print": "Frosted back with a MagSafe ring in the frame colour.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50162-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magsafe-frame-case-black-iphone-18-pro",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear MagSafe Frame cover for the iPhone 18 Pro, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50163/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50163,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear MagSafe Frame",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Nothing printed: a clear back with a black MagSafe ring.",
+        "detail_fit": "Made for the iPhone 18 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50163-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magnetic-frame-case-black-galaxy-s23-fe",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear Magnetic Frame cover for the Galaxy S23 FE, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50164/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50164,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear Magnetic Frame",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Nothing printed: a clear back with a black MagSafe ring.",
+        "detail_fit": "Made for the Galaxy S23 FE. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50164-GAS23F",
+          "modelSlug": "galaxy-s23-fe",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magnetic-frame-case-black-galaxy-s23-ultra",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear Magnetic Frame cover for the Galaxy S23 Ultra, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50165/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50165,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear Magnetic Frame",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Nothing printed: a clear back with a black MagSafe ring.",
+        "detail_fit": "Made for the Galaxy S23 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50165-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-frosted-magnetic-case-black-orange-galaxy-s23-ultra",
+      "productType": "Phone cover",
+      "title": "Black Orange · CaseCraft",
+      "description": "Black Orange is a CaseCraft Frosted Magnetic cover for the Galaxy S23 Ultra, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50166/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50166,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Frosted Magnetic",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Frosted hard back with a soft TPU frame",
+        "detail_print": "Frosted back with a coloured frame and MagSafe ring.",
+        "detail_fit": "Made for the Galaxy S23 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50166-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-ring-stand-camera-slider-case-taupe-galaxy-s24-ultra",
+      "productType": "Phone cover",
+      "title": "Taupe · CaseCraft",
+      "description": "Taupe is a CaseCraft Ring Stand Camera Slider cover for the Galaxy S24 Ultra, stocked in our Haridwar shop. A built-in stand props the phone up for video calls and films.",
+      "imagePath": "/products/photos/50167/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50167,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Ring Stand Camera Slider",
+        "regular_inr": 400,
+        "case_types": "",
+        "detail_material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
+        "detail_print": "Frame, slider and ring in one colour; the back is clear.",
+        "detail_fit": "Made for the Galaxy S24 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50167-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": "soft",
+          "priceInr": 400,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-magnetic-frame-case-black-galaxy-s25",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear Magnetic Frame cover for the Galaxy S25, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50168/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50168,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear Magnetic Frame",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Hard back with a soft TPU frame",
+        "detail_print": "Nothing printed: a clear back with a black MagSafe ring.",
+        "detail_fit": "Made for the Galaxy S25. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50168-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "neza-anti-yellow-magnetic-clear-case-clear-galaxy-s25-ultra",
+      "productType": "Phone cover",
+      "title": "Clear · Neza",
+      "description": "Clear is a Neza Anti-Yellow Magnetic Clear cover for the Galaxy S25 Ultra, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50169/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50169,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Neza Anti-Yellow Magnetic Clear",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Flexible clear TPU shell",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe ring.",
+        "detail_fit": "Made for the Galaxy S25 Ultra. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50169-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": "soft",
+          "priceInr": 250,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-anti-burst-bumper-case-navy-pixel-9",
+      "productType": "Phone cover",
+      "title": "Navy · CaseCraft",
+      "description": "Navy is a CaseCraft Anti-Burst Bumper cover for the Pixel 9, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50170/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50170,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Anti-Burst Bumper",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Hard clear back with a soft TPU bumper",
+        "detail_print": "Nothing printed: a clear back with a coloured bumper.",
+        "detail_fit": "Made for the Pixel 9. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50170-PI9",
+          "modelSlug": "pixel-9",
+          "caseType": "soft",
+          "priceInr": 250,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-anti-burst-bumper-case-black-pixel-9",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Anti-Burst Bumper cover for the Pixel 9, stocked in our Haridwar shop. A clear or frosted back lets the phone's own colour show through.",
+      "imagePath": "/products/photos/50171/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50171,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Anti-Burst Bumper",
+        "regular_inr": 250,
+        "case_types": "",
+        "detail_material": "Hard clear back with a soft TPU bumper",
+        "detail_print": "Nothing printed: a clear back with a coloured bumper.",
+        "detail_fit": "Made for the Pixel 9. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50171-PI9",
+          "modelSlug": "pixel-9",
+          "caseType": "soft",
+          "priceInr": 250,
           "stock": 8
         }
       ]
@@ -5077,6 +6490,69 @@
           "caseType": null,
           "priceInr": 199,
           "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS23F",
+          "modelSlug": "galaxy-s23-fe",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-PI9",
+          "modelSlug": "pixel-9",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
         }
       ]
     },
@@ -5236,6 +6712,69 @@
         {
           "sku": "ACC-GLAPRI-IP15P",
           "modelSlug": "iphone-15-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS23F",
+          "modelSlug": "galaxy-s23-fe",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-PI9",
+          "modelSlug": "pixel-9",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -5401,6 +6940,69 @@
           "caseType": null,
           "priceInr": 149,
           "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS23F",
+          "modelSlug": "galaxy-s23-fe",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-PI9",
+          "modelSlug": "pixel-9",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
         }
       ]
     },
@@ -5563,6 +7165,69 @@
           "caseType": null,
           "priceInr": 249,
           "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS23F",
+          "modelSlug": "galaxy-s23-fe",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-PI9",
+          "modelSlug": "pixel-9",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
         }
       ]
     },
@@ -5722,6 +7387,69 @@
         {
           "sku": "ACC-FILCAR-IP15P",
           "modelSlug": "iphone-15-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS23F",
+          "modelSlug": "galaxy-s23-fe",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-PI9",
+          "modelSlug": "pixel-9",
           "caseType": null,
           "priceInr": 299,
           "stock": 25

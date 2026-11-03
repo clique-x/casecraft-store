@@ -118,7 +118,7 @@ Product photo tools, run from `apps/storefront`:
 | `pnpm photos:shots <dir>` | Turn hand-held shots into 4:5 card images |
 | `pnpm photos:gallery <dir>` | Turn `<id>/<n>-<Label>.jpg` files into the square product-page gallery, in display order |
 
-To cut a product out of a photo on macOS, see [`scripts/photo-cutout/README.md`](scripts/photo-cutout/README.md).
+To cut a product out of a photo, see [`scripts/photo-cutout/README.md`](scripts/photo-cutout/README.md): a Swift tool for macOS, and `greenscreen.py` for flat photos on the green sheet on any OS.
 
 ## Roadmap
 
@@ -131,6 +131,7 @@ To cut a product out of a photo on macOS, see [`scripts/photo-cutout/README.md`]
 - [x] Razorpay and Cash on Delivery
 - [x] Order confirmation and order tracking
 - [x] Shipping, returns, refunds, privacy, terms and contact pages
+- [x] Batch 2: 36 more cases for iPhone 17, 17 Air, 17 Pro, 18 and 18 Pro, Galaxy S23 FE to S25 Ultra and Pixel 9 (7 held back, see [`claudedocs/batch2-held-back.md`](claudedocs/batch2-held-back.md))
 - [x] Screen guards, lens protectors, back films and a flagship body protection film, with add-ons and ready-made bundles on cover pages
 - [x] Phone-aware combo deals on the home page
 - [x] Wireless audio: earbuds, neckbands and Bluetooth speakers with colour options (`/audio`)

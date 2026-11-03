@@ -326,6 +326,7 @@ const LOOK_COPY: Record<PhotoEntry['look'], string> = {
   sparkle: 'The glitter is set into the shell itself, so it does not flake or rub off.',
   'animal-print': 'The artwork runs across the whole back rather than sitting in one corner.',
   gradient: 'Two colours fade into each other across the back, with the weave showing through.',
+  print: 'The pattern covers the back panel, with the camera and MagSafe ring left clear.',
   solid: 'One colour all over, with a soft finish that is easy to grip.',
   clear: "A clear or frosted back lets the phone's own colour show through.",
   stand: 'A built-in stand props the phone up for video calls and films.',
