@@ -64,6 +64,20 @@ bash setup-vps.sh gadgetshub.io
 Check: https://gadgetshub.io shows the store, https://api.gadgetshub.io/health says OK and
 https://api.gadgetshub.io/app shows the admin login.
 
+## If the server already runs nginx (other sites)
+
+When nginx already holds ports 80 and 443, Caddy cannot start and the domain shows the other site. Serve
+CaseCraft through that nginx instead. It adds one site for the store, www and api names, gets their
+certificates with certbot, and leaves the other nginx sites alone:
+
+```bash
+/opt/casecraft/infra/prod/use-host-nginx.sh you@example.com
+```
+
+Then run `deploy.sh` (and `first-run.sh` the first time). It sets `PROXY=nginx` in `.env`, so deploys skip
+Caddy; the store and API listen on 127.0.0.1:3100 and 127.0.0.1:9100 for nginx
+(`STOREFRONT_HOST_PORT`, `MEDUSA_HOST_PORT`).
+
 ## Deploy on every push (optional)
 
 `.github/workflows/deploy-vps.yml` runs `deploy.sh` over SSH when storefront, backend or infra code lands on

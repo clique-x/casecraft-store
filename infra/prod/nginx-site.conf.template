@@ -1,0 +1,50 @@
+# CaseCraft behind the server's own nginx. Written to /etc/nginx/sites-available/casecraft.conf by
+# use-host-nginx.sh, which fills in the domains and ports; certbot then adds the HTTPS parts.
+# Other sites on this nginx (their own server_name) are not touched.
+
+# Storefront
+server {
+    listen 80;
+    listen [::]:80;
+    server_name __SITE_DOMAIN__;
+    client_max_body_size 20m;
+
+    location / {
+        proxy_pass http://127.0.0.1:__STOREFRONT_PORT__;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+}
+
+# www → the bare domain (inside a location, so certificate challenges still reach certbot)
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.__SITE_DOMAIN__;
+
+    location / {
+        return 301 https://__SITE_DOMAIN__$request_uri;
+    }
+}
+
+# Medusa API and admin (/app)
+server {
+    listen 80;
+    listen [::]:80;
+    server_name __API_DOMAIN__;
+    client_max_body_size 50m;
+
+    location / {
+        proxy_pass http://127.0.0.1:__MEDUSA_PORT__;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 300s;
+    }
+}

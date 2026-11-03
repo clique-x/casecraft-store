@@ -80,6 +80,17 @@ cat > /etc/cron.d/casecraft-backup <<CRON
 CRON
 
 ip=$(curl -fsS https://api.ipify.org 2>/dev/null || hostname -I | awk '{print $1}')
+if ss -tlnp 2>/dev/null | grep -E ':(80|443) ' | grep -q nginx; then
+cat <<NEXT
+
+Done. This server already runs nginx on ports 80/443 (other sites), so CaseCraft goes through it:
+  1. DNS (hPanel → Domains → $SITE_DOMAIN → DNS): A records @, www and api → $ip
+  2. Add the site to nginx:      $APP_DIR/infra/prod/use-host-nginx.sh you@example.com
+  3. Start the backend:          $APP_DIR/infra/prod/deploy.sh
+  4. Load the store and go live: $APP_DIR/infra/prod/first-run.sh you@example.com
+NEXT
+exit 0
+fi
 cat <<NEXT
 
 Done. Next:

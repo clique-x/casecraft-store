@@ -66,9 +66,10 @@ services:
       REDIS_URL: redis://redis:6379
       MEDUSA_WORKER_MODE: server
     command: ["sh", "-c", "npx medusa db:migrate && exec npx medusa start"]
-    # Loopback only: the storefront build reads the catalogue from here. Not reachable from outside.
+    # Loopback only: the storefront build reads the catalogue from here, and a host nginx (PROXY=nginx)
+    # forwards api.<domain> to it. Not reachable from outside.
     ports:
-      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:${MEDUSA_HOST_PORT:-9100}:9000"
 
   # Subscribers and scheduled jobs (storefront refresh, emails later). Starts after the server is healthy,
   # so migrations have run.
@@ -92,6 +93,9 @@ services:
     profiles: ["web"]
     image: casecraft-storefront:latest
     pull_policy: never
+    # Loopback only, for a host nginx (PROXY=nginx). Caddy reaches it over the Docker network instead.
+    ports:
+      - "127.0.0.1:${STOREFRONT_HOST_PORT:-3100}:3000"
     restart: unless-stopped
     logging: *logging
     environment:
@@ -103,8 +107,10 @@ services:
       medusa-server:
         condition: service_healthy
 
-  # HTTPS for the site and API domains, with automatic Let's Encrypt certificates.
+  # HTTPS for the site and API domains, with automatic Let's Encrypt certificates. Not started when the
+  # server already runs nginx on 80/443 (PROXY=nginx in .env, see use-host-nginx.sh).
   caddy:
+    profiles: ["caddy"]
     image: caddy:2-alpine
     restart: unless-stopped
     logging: *logging
