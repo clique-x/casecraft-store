@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { HeadphonesIcon, ShieldCheckIcon, SmartphoneIcon, type LucideIcon } from 'lucide-react';
+import { ChevronDownIcon, HeadphonesIcon, ShieldCheckIcon, SmartphoneIcon, type LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { HeroRing, type RingItem } from './HeroRing.client';
+import { HeroStudio, type ShelfItem } from './HeroStudio.client';
 import { SHELL } from './hub-styles';
 
 const SHORTCUTS: readonly { href: string; label: string; Icon: LucideIcon }[] = [
@@ -11,21 +11,21 @@ const SHORTCUTS: readonly { href: string; label: string; Icon: LucideIcon }[] = 
   { href: '/accessories', label: 'Protection', Icon: ShieldCheckIcon },
 ];
 
-/** Opening band: a short line, a turning 3D ring of real products, and one-tap shortcuts. */
-export function HubHero({ items }: { items: RingItem[] }) {
+/** Opening screen: one line, one-tap shortcuts, and a 3D shop wall of real products on shelves. */
+export function HubHero({ items }: { items: ShelfItem[] }) {
   return (
     <section
       id="hero"
       aria-labelledby="hub-hero-heading"
-      className="relative isolate overflow-hidden bg-[#071518] pt-24 pb-12 text-paper lg:pt-28 lg:pb-16"
+      className="relative isolate flex min-h-svh flex-col justify-center overflow-hidden bg-[#071518] pt-28 pb-10 text-paper lg:pt-24 lg:pb-12"
     >
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_70%_45%,#0f3b44_0%,#0a2329_45%,#071518_80%)]"
       />
       <div aria-hidden="true" className="absolute -top-24 -left-24 -z-10 size-80 rounded-full bg-brand-coral/15 blur-3xl" />
-      <div className={cn(SHELL, 'grid items-center gap-8 lg:grid-cols-12 lg:gap-6')}>
-        <div className="flex flex-col items-center gap-6 text-center lg:col-span-5 lg:items-start lg:text-left">
+      <div className={cn(SHELL, 'grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-8')}>
+        <div className="relative z-10 flex flex-col items-center gap-6 text-center lg:col-span-4 lg:items-start lg:text-left">
           <h1
             id="hub-hero-heading"
             className="font-display text-[clamp(2.4rem,1.5rem+4vw,4.5rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-balance"
@@ -46,9 +46,16 @@ export function HubHero({ items }: { items: RingItem[] }) {
               </Link>
             ))}
           </nav>
+          <a
+            href="#categories"
+            className="mt-2 hidden items-center gap-2 text-sm font-semibold text-paper/60 transition-colors hover:text-paper lg:inline-flex"
+          >
+            <ChevronDownIcon className="size-4 animate-bounce" aria-hidden="true" />
+            Scroll to shop
+          </a>
         </div>
-        <div className="min-w-0 lg:col-span-7">
-          <HeroRing items={items} />
+        <div className="min-w-0 lg:col-span-8">
+          <HeroStudio items={items} />
         </div>
       </div>
     </section>
