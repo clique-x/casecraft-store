@@ -29,10 +29,6 @@ export function GadgetArt({ gadget, hex = '#1f2023', className, title }: Props) 
   return (
     <svg viewBox="0 0 200 250" role="img" aria-label={title} className={cn('block h-full w-full', className)}>
       <defs>
-        <linearGradient id={`bg-${uid}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#f6f5f1" />
-          <stop offset="1" stopColor="#eceae4" />
-        </linearGradient>
         <linearGradient id={`hl-${uid}`} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#ffffff" stopOpacity="0.45" />
           <stop offset="0.5" stopColor="#ffffff" stopOpacity="0" />
@@ -44,7 +40,8 @@ export function GadgetArt({ gadget, hex = '#1f2023', className, title }: Props) 
           <circle cx="3" cy="3" r="1.1" fill={shade} opacity={light ? 0.6 : 0.35} />
         </pattern>
       </defs>
-      <rect width="200" height="250" fill={`url(#bg-${uid})`} />
+      {/* Flat card colour, the same backdrop the product photos sit on, so drawn and photographed items match. */}
+      <rect width="200" height="250" fill="var(--color-surface-2)" />
 
       {gadget.type === 'earbuds' && (
         <g filter={`url(#sh-${uid})`}>

@@ -8,12 +8,11 @@ import type { HomeProduct } from '@/lib/medusa/fixtures';
 const COPY: Record<Department, { eyebrow: string; heading: string; sub: string; shortcuts: readonly { id: string; label: string }[] }> = {
   audio: {
     eyebrow: 'Wireless audio',
-    heading: 'Earbuds, neckbands and speakers',
-    sub: 'Work with every phone. Same Cash on Delivery and free shipping over ₹499.',
+    heading: 'boAt and realme earbuds and neckbands',
+    sub: 'Sealed, with the brand warranty. Work with every phone; same Cash on Delivery and free shipping over ₹499.',
     shortcuts: [
       { id: 'earbuds', label: 'Earbuds' },
       { id: 'neckband', label: 'Neckbands' },
-      { id: 'speaker', label: 'Speakers' },
     ],
   },
   charging: {

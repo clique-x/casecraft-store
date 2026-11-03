@@ -3,15 +3,18 @@ import { BadgeCheck } from 'lucide-react';
 import { GadgetArt } from '@/components/gadget/GadgetArt';
 import { PhoneFitNote } from '@/components/gadget/PhoneFitNote.client';
 import { keepTogether } from '@/components/gadget/keep-together';
-import { GADGET_TYPE_LABEL } from '@/lib/catalog/gadgets';
+import { GADGET_TYPE_LABEL, gadgetCardSrc, gadgetCardSrcSet, gadgetHeroIndex } from '@/lib/catalog/gadgets';
 import { formatInr } from '@/lib/catalog/photos';
 import type { HomeProduct } from '@/lib/medusa/fixtures';
 import { cn } from '@/lib/utils';
+
+const CARD_SIZES = '(max-width: 768px) 46vw, (max-width: 1024px) 31vw, (max-width: 1280px) 23vw, 240px';
 
 /** Grid card for audio, chargers and cables, with the colours or lengths it comes in. */
 export function GadgetCard({ product, className }: { product: HomeProduct; className?: string }) {
   const g = product.gadget;
   if (!g) return null;
+  const hero = g.photos ? gadgetHeroIndex(g.photos, g.options[0]?.slug) : 0;
   const regular = product.regularInr !== undefined && product.regularInr > product.priceFromInr ? product.regularInr : null;
   const fromPrice = new Set(product.gadget?.options.map((o) => o.priceInr ?? g.priceInr)).size > 1;
   return (
@@ -20,7 +23,22 @@ export function GadgetCard({ product, className }: { product: HomeProduct; class
       className={cn('group/card flex h-full flex-col gap-3 rounded-card outline-none focus-visible:ring-3 focus-visible:ring-brand', className)}
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card bg-surface-2">
-        <GadgetArt gadget={g} hex={g.options[0]?.hex} className="transition-transform duration-500 ease-out-expo group-hover/card:scale-[1.03]" />
+        {g.photos ? (
+          // eslint-disable-next-line @next/next/no-img-element -- static pre-sized variants, no optimizer
+          <img
+            src={gadgetCardSrc(g.photos, hero)}
+            srcSet={gadgetCardSrcSet(g.photos, hero)}
+            sizes={CARD_SIZES}
+            width={480}
+            height={600}
+            alt=""
+            decoding="async"
+            loading="lazy"
+            className="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out-expo group-hover/card:scale-[1.03]"
+          />
+        ) : (
+          <GadgetArt gadget={g} hex={g.options[0]?.hex} className="transition-transform duration-500 ease-out-expo group-hover/card:scale-[1.03]" />
+        )}
         {g.original ? (
           <span className="absolute top-2 left-2 inline-flex items-center gap-1 rounded-full bg-paper px-2 py-0.5 text-[0.6875rem] font-bold text-fg shadow-sm">
             <BadgeCheck className="size-3.5 text-brand" aria-hidden="true" />

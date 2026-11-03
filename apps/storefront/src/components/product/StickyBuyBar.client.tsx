@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { AnimatePresence, m } from 'motion/react';
 import { BuyButtons } from '@/components/product/BuyButtons';
+import { gadgetCardSrc, gadgetHeroIndex } from '@/lib/catalog/gadgets';
 import { formatInr, photoSrc } from '@/lib/catalog/photos';
 import { useInView } from '@/lib/device/use-in-view';
 import { chromeStore } from '@/lib/layout/chrome-store';
@@ -29,15 +30,15 @@ function variantFor(product: ProductDetail, modelSlug: string | null, caseType: 
 }
 
 /**
- * Bottom bar with Add to cart and Buy now. It slides up as soon as the buy box's own buttons
- * leave the screen, on every screen size, and hides again over the footer. It slides away
+ * Bottom bar with Add to cart and Buy now. It slides up as soon as the buy box's own buttons are
+ * not wholly on screen (scrolled past, or below the fold of the pinned buy column), on every screen size, and hides again over the footer. It slides away
  * (but stays mounted) while the picker sheet is open, for the same focus-return reason as StickyPhoneCta.
  */
 export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBarProps) {
   const selection = useVariantSelection();
   const selectedAddons = useSelectedAddons();
   const sheetOpen = usePickerSheetOpen();
-  const actionsInView = useInView('#buy-actions');
+  const actionsInView = useInView('#buy-buttons', true, true);
   const footerInView = useInView('footer');
   const shown = actionsInView === false && footerInView === false;
   const visible = shown && !sheetOpen;
@@ -87,6 +88,16 @@ export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBar
                   width={44}
                   height={55}
                   className="h-14 w-11 shrink-0 rounded-md bg-surface-2 object-contain"
+                />
+              )}
+              {product.gadget?.photos && (
+                // eslint-disable-next-line @next/next/no-img-element -- local catalogue photo at a fixed small size
+                <img
+                  src={gadgetCardSrc(product.gadget.photos, gadgetHeroIndex(product.gadget.photos, selection.modelSlug), 320)}
+                  alt=""
+                  width={44}
+                  height={55}
+                  className="h-14 w-11 shrink-0 rounded-md bg-surface-2 object-cover"
                 />
               )}
               <div className="min-w-0">

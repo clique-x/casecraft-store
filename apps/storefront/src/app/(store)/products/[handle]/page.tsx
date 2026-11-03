@@ -8,7 +8,7 @@ import { Breadcrumb } from '@/components/product/Breadcrumb';
 import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
 import { DeliveryFacts } from '@/components/product/DeliveryFacts';
-import { PhotoGallery } from '@/components/product/PhotoGallery';
+import { MediaColumn, type MediaImage, type MediaLead } from '@/components/product/MediaColumn.client';
 import { ProductDetails } from '@/components/product/ProductDetails';
 import { ProductJsonLd } from '@/components/product/ProductJsonLd';
 import { RelatedRows } from '@/components/product/RelatedRows';
@@ -16,10 +16,16 @@ import { StickyBuyBar } from '@/components/product/StickyBuyBar.client';
 import { PhotoStage } from '@/components/product/viewer/PhotoStage.client';
 import { ProductViewer } from '@/components/product/viewer/ProductViewer.client';
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
-import { DEPARTMENT_OF } from '@/lib/catalog/gadgets';
+import {
+  DEPARTMENT_OF,
+  GADGET_TYPE_LABEL,
+  gadgetGallerySrc,
+  gadgetHeroIndex,
+} from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
-import { gallerySrc, photoSrc, type PhotoEntry } from '@/lib/catalog/photos';
+import { gallerySrc, photoSrc, srcSetFor, type PhotoEntry } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
+import { coverMedia, gadgetMedia } from '@/lib/product/media';
 import { getPhoneModels } from '@/lib/medusa/home';
 import {
   getAccessories,
@@ -68,8 +74,21 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   if (!product) return { title: 'Cover not found', robots: { index: false, follow: true } };
 
   const photo = product.photo;
-  const title = photo ? `${photo.title} · ${photo.modelLabel} back cover` : `${product.title} phone back cover`;
+  const gadget = product.gadget;
+  const title = photo
+    ? `${photo.title} · ${photo.modelLabel} back cover`
+    : gadget
+      ? `${product.title} · ${GADGET_TYPE_LABEL[gadget.type]}`
+      : `${product.title} phone back cover`;
   const url = new URL(`/products/${product.handle}`, SITE_URL).toString();
+  const gadgetImage = gadget?.photos
+    ? {
+        url: new URL(gadgetGallerySrc(gadget.photos, gadgetHeroIndex(gadget.photos, gadget.options[0]?.slug), 960), SITE_URL).toString(),
+        width: 960,
+        height: 960,
+        alt: `${product.title}, ${gadget.options[0]?.name ?? ''}`.replace(/, $/, ''),
+      }
+    : null;
   return {
     title,
     description: product.description,
@@ -81,7 +100,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       title: `${title} · ${BRAND_NAME}`,
       description: product.description,
       url,
-      ...(photo ? { images: [ogImageFor(photo)] } : {}),
+      ...(photo ? { images: [ogImageFor(photo)] } : gadgetImage ? { images: [gadgetImage] } : {}),
     },
   };
 }
@@ -131,6 +150,45 @@ function ProductPageFallback() {
   );
 }
 
+/** Must match PhotoStage's own `sizes`, so the preload is the image it shows. */
+const PHOTO_STAGE_SIZES = '(min-width: 64rem) 560px, 90vw';
+
+/** The image column for a photographed cover or a gadget with brand images; null keeps the single stage. */
+function mediaFor(product: ProductDetail): {
+  images: MediaImage[];
+  lead?: MediaLead;
+  badge?: string;
+  optionIndex?: Readonly<Record<string, number>>;
+} | null {
+  const photo = product.photo;
+  if (photo && (photo.gallery?.length ?? 0) > 0) {
+    if (photo.stage === false) return { images: coverMedia(photo) };
+    return {
+      images: coverMedia(photo),
+      lead: {
+        // Not `priority`: phones never show it, and desktop fetches it from the column's preload.
+        node: <PhotoStage entry={photo} title={product.title} priority={false} className="lg:aspect-square" />,
+        label: 'Turn the cover',
+        thumbSrc: photoSrc(photo.id, 320),
+        thumbContain: true,
+        preload: { src: photoSrc(photo.id, 480), srcSet: srcSetFor(photo), sizes: PHOTO_STAGE_SIZES },
+      },
+    };
+  }
+  const gadget = product.gadget;
+  const photos = gadget?.photos;
+  if (gadget && photos && photos.gallery.length > 0) {
+    // The gallery opens on the colours in stock, so picking a colour scrolls to its image instead of a
+    // separate stage repeating the first one.
+    return {
+      images: gadgetMedia(photos, product.title),
+      badge: gadget.original ? `Original ${gadget.original.brand}` : undefined,
+      optionIndex: photos.heroByOption,
+    };
+  }
+  return null;
+}
+
 async function ProductPageContent({ params }: ProductPageProps) {
   const { handle } = await params;
   const product = await getProduct(handle);
@@ -149,6 +207,21 @@ async function ProductPageContent({ params }: ProductPageProps) {
     getMoreForPhoneCandidates(product),
   ]);
 
+  // Products with a gallery scroll every image down the left column; the buy column stays put.
+  const media = mediaFor(product);
+
+  const buyColumn = (
+    <>
+      {product.gadget ? (
+        <GadgetBuyBox product={product} />
+      ) : (
+        <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
+      )}
+      <DeliveryFacts gadget={product.gadget} />
+      <ProductDetails product={product} />
+    </>
+  );
+
   return (
     <>
       <ProductJsonLd product={product} />
@@ -157,40 +230,57 @@ async function ProductPageContent({ params }: ProductPageProps) {
         <Breadcrumb product={product} />
 
         <div className="mt-4 grid gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
-          <div className="lg:col-span-7">
-            <div className="lg:sticky lg:top-20">
-              {product.gadget ? (
-                <GadgetStage gadget={product.gadget} title={product.title} />
-              ) : product.accessory ? (
-                <AccessoryStage accessory={product.accessory} models={models} title={product.title} />
-              ) : product.photo ? (
-                // Rendered here rather than through ProductViewer so photo pages never ship the procedural viewer.
-                <PhotoStage entry={product.photo} title={product.title} />
-              ) : (
-                <ProductViewer product={product} models={models} />
-              )}
-            </div>
+          <div className="min-w-0 lg:col-span-7">
+            {media ? (
+              <MediaColumn
+                title={product.title}
+                images={media.images}
+                lead={media.lead}
+                badge={media.badge}
+                optionIndex={media.optionIndex}
+              />
+            ) : (
+              <div className="lg:sticky lg:top-20">
+                {product.gadget ? (
+                  <GadgetStage gadget={product.gadget} title={product.title} />
+                ) : product.accessory ? (
+                  <AccessoryStage accessory={product.accessory} models={models} title={product.title} />
+                ) : product.photo ? (
+                  // Rendered here rather than through ProductViewer so photo pages never ship the procedural viewer.
+                  <PhotoStage entry={product.photo} title={product.title} />
+                ) : (
+                  <ProductViewer product={product} models={models} />
+                )}
+              </div>
+            )}
           </div>
 
-          <div className="flex flex-col gap-8 lg:col-span-5">
-            {product.gadget ? (
-              <GadgetBuyBox product={product} />
-            ) : (
-              <BuyBox product={product} models={models} accessories={product.accessory ? [] : accessories} />
-            )}
-            <DeliveryFacts />
-            <ProductDetails product={product} />
-          </div>
+          {media ? (
+            // Pinned under the header until the image column runs out; when its buttons sit below the
+            // fold, StickyBuyBar offers Add to cart and Buy now instead.
+            <div className="flex flex-col gap-8 lg:sticky lg:top-20 lg:col-span-5 lg:self-start">{buyColumn}</div>
+          ) : (
+            <div className="flex flex-col gap-8 lg:col-span-5">{buyColumn}</div>
+          )}
         </div>
       </div>
 
-      {product.photo && <PhotoGallery entry={product.photo} />}
+      {/* Below the fold: skipped by layout and paint, and their lazy images wait, until scrolled near. */}
+      {!product.accessory && !product.gadget && (
+        <div className="cv-auto">
+          <BundleKits product={product} accessories={accessories} models={models} />
+        </div>
+      )}
 
-      {!product.accessory && !product.gadget && <BundleKits product={product} accessories={accessories} models={models} />}
+      <div className="cv-auto [contain-intrinsic-size:auto_1100px]">
+        <RelatedRows product={product} related={related} candidates={product.gadget ? [] : candidates} models={models} />
+      </div>
 
-      <RelatedRows product={product} related={related} candidates={product.gadget ? [] : candidates} models={models} />
-
-      <StickyBuyBar product={product} models={models} accessories={product.accessory || product.gadget ? [] : accessories} />
+      <StickyBuyBar
+        product={product}
+        models={models}
+        accessories={product.accessory || product.gadget ? [] : accessories}
+      />
     </>
   );
 }

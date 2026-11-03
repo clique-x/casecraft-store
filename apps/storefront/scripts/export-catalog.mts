@@ -5,7 +5,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { photoSrc } from '../src/lib/catalog/photos';
 import { ACCESSORY_TYPE_LABEL } from '../src/lib/catalog/accessories';
-import { DEPARTMENT_OF, GADGET_TYPE_LABEL } from '../src/lib/catalog/gadgets';
+import { DEPARTMENT_OF, GADGET_TYPE_LABEL, gadgetCardSrc, gadgetHeroIndex } from '../src/lib/catalog/gadgets';
 import { ACCESSORY_DETAILS, GADGET_DETAILS, CASE_TYPES, PHONE_MODELS, PRODUCT_DETAILS, THEMES } from '../src/lib/medusa/fixtures';
 
 const OUT = path.resolve(import.meta.dirname, '../../backend/data/catalog.json');
@@ -101,7 +101,7 @@ const catalog = {
         productType: GADGET_TYPE_LABEL[g.type],
         title: p.title,
         description: p.description,
-        imagePath: null,
+        imagePath: g.photos ? gadgetCardSrc(g.photos, gadgetHeroIndex(g.photos, g.options[0]?.slug), 720) : null,
         collections: [],
         category: null,
         tags: [],
@@ -113,6 +113,7 @@ const catalog = {
           regular_inr: p.regularInr ?? g.regularInr,
           detail_in_box: g.inBox,
           ...(g.original ? { original_brand: g.original.brand } : {}),
+          ...(g.warrantyMonths ? { warranty_months: g.warrantyMonths } : {}),
         },
         // Gadgets vary by colour or cable length; the storefront keeps the option slug in modelSlug.
         variants: p.variants.map((v) => {

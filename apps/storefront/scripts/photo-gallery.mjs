@@ -1,6 +1,6 @@
 // Turns a product's gallery images into the square product-page gallery:
 // <srcDir>/<id>/<n>-<Label>.jpg (n = 0, 1, …; the label names the view, dashes for spaces)
-// → public/products/photos/<id>/g-<n>-{480,960,1440}.webp, and writes `gallery: [labels]` into
+// → public/products/photos/<id>/g-<n>-{160,480,960,1440}.webp (160 is the thumbnail strip), and writes `gallery: [labels]` into
 // photo-catalog.json. Order is the display order: the back on its own, then in hand, then the
 // other views, the spec card last. Run with `pnpm photos:gallery <srcDir>`.
 import fs from 'node:fs/promises';
@@ -11,7 +11,7 @@ import sharp from 'sharp';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CATALOG = path.join(ROOT, 'src/lib/catalog/photo-catalog.json');
 const OUT = path.join(ROOT, 'public/products/photos');
-const WIDTHS = [480, 960, 1440];
+const WIDTHS = [160, 480, 960, 1440];
 const WEBP = { quality: 80, effort: 4 };
 const NAME = /^(\d+)-(.+)\.(jpe?g|png|webp)$/i;
 

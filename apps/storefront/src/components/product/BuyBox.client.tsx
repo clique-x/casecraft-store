@@ -189,12 +189,14 @@ export function BuyBox({ product, models, accessories = [] }: BuyBoxProps) {
       )}
 
       <div id="buy-actions" className="flex flex-col gap-3">
-        <BuyButtons
-          variantId={variant?.id ?? null}
-          soldOut={soldOut}
-          whatsappHref={fallbackHref}
-          extraVariantIds={product.accessory ? [] : addonVariantIds(accessories, selectedAddons, selectedModel?.slug ?? null)}
-        />
+        <div id="buy-buttons">
+          <BuyButtons
+            variantId={variant?.id ?? null}
+            soldOut={soldOut}
+            whatsappHref={fallbackHref}
+            extraVariantIds={product.accessory ? [] : addonVariantIds(accessories, selectedAddons, selectedModel?.slug ?? null)}
+          />
+        </div>
         <p className="text-caption text-fg-muted">{ORDER_NOTE}</p>
         <a
           href={whatsappHref}

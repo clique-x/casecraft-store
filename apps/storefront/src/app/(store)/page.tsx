@@ -5,6 +5,7 @@ import { castFor, formatInr, heroChipModels, PHOTOS, photoSrc, srcSetFor } from 
 import type { HomeProduct } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { Hero } from '@/components/home/hero/Hero';
+import { GsapMount } from '@/components/motion/GsapMount.client';
 import { HERO_SIZES } from '@/components/home/hero/heroConfig';
 import { PhonePickerSection } from '@/components/home/PhonePickerSection';
 import { TrustSeam } from '@/components/home/TrustSeam';
@@ -92,7 +93,7 @@ function toComboCovers(products: ProductDetail[]): ComboCover[] {
 }
 
 export default async function HomePage() {
-  const [trending, newArrivals, models, looks, allCovers, accessories, audio, charging] = await Promise.all([
+  const [trending, newArrivals, models, looks, allCovers, accessories, audio] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
@@ -100,7 +101,6 @@ export default async function HomePage() {
     getAllProducts(),
     getAccessories(),
     getGadgets('audio'),
-    getGadgets('charging'),
   ]);
   const comboCovers = toComboCovers(allCovers);
   const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
@@ -126,6 +126,8 @@ export default async function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trending) }} />
+      {/* Only the home page animates with GSAP; other routes never download it. */}
+      <GsapMount />
       <Hero cast={cast} models={models} chipModels={chipModels} />
       <PhonePickerSection models={models} />
       <TrustSeam />
@@ -133,7 +135,6 @@ export default async function HomePage() {
       <TrendingRow products={trending} />
       <HomeCombos covers={comboCovers} accessories={comboAccessories} />
       <GadgetRow department="audio" products={audio} />
-      <GadgetRow department="charging" products={charging} />
       <NewArrivalsRow products={newArrivals} models={models} />
       <LookGrid looks={looks} />
       <BrandRow brands={[...LAUNCH_BRANDS]} models={models} />

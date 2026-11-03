@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
 /**
- * Phone maker logos, single colour (currentColor), from Simple Icons (CC0, simpleicons.org).
+ * Phone maker logos in each brand's own colour, from Simple Icons (CC0, simpleicons.org).
  * They identify which phones a cover fits; the marks belong to their owners.
  * Realme and Nothing have no Simple Icons entry, so they render as styled names.
  */
@@ -38,8 +38,21 @@ const LOGOS: Record<string, { viewBox: string; wordmark: boolean; d: string }> =
   },
 };
 
+/** Brand colours as the makers use them (Simple Icons' published hex values). */
+const BRAND_COLOR: Record<string, string> = {
+  Apple: '#000000',
+  Samsung: '#1428A0',
+  OnePlus: '#F5010C',
+  Xiaomi: '#FF6900',
+  Vivo: '#415FFF',
+  Google: '#4285F4',
+  Nothing: '#000000',
+};
+
 const TEXT_MARKS: Record<string, string> = {
-  Realme: 'lowercase font-extrabold tracking-[-0.02em] text-[0.95rem]',
+  // realme's mark is black type on its yellow.
+  Realme:
+    'lowercase font-extrabold tracking-[-0.02em] text-[0.85rem] text-black bg-[#FFC915] rounded-[0.3rem] px-1.5 py-0.5',
   Nothing: 'uppercase font-semibold tracking-[0.2em] text-[0.7rem]',
 };
 
@@ -58,7 +71,11 @@ export function PhoneBrandLogo({ brand, className }: PhoneBrandLogoProps) {
   const logo = LOGOS[brand];
   if (!logo) {
     return (
-      <span aria-hidden="true" className={cn('leading-none whitespace-nowrap', TEXT_MARKS[brand] ?? 'font-semibold', className)}>
+      <span
+        aria-hidden="true"
+        style={BRAND_COLOR[brand] ? { color: BRAND_COLOR[brand] } : undefined}
+        className={cn('leading-none whitespace-nowrap', TEXT_MARKS[brand] ?? 'font-semibold', className)}
+      >
         {brand}
       </span>
     );
@@ -66,14 +83,16 @@ export function PhoneBrandLogo({ brand, className }: PhoneBrandLogoProps) {
   // Wordmarks get an explicit size from their aspect ratio: inline styles win over icon-size
   // rules in parent components (e.g. tab triggers force every svg to size-4).
   const [, , vw, vh] = logo.viewBox.split(' ').map(Number);
-  const wordmarkStyle = logo.wordmark ? { height: '0.75rem', width: `${((0.75 * vw) / vh).toFixed(3)}rem` } : undefined;
+  const size = logo.wordmark ? { height: '0.75rem', width: `${((0.75 * vw) / vh).toFixed(3)}rem` } : {};
+  // Inline, so the brand colour wins over the text colour of whatever tab or chip holds the logo.
+  const style = { ...size, ...(BRAND_COLOR[brand] ? { color: BRAND_COLOR[brand] } : {}) };
   return (
     <svg
       viewBox={logo.viewBox}
       aria-hidden="true"
       focusable="false"
       fill="currentColor"
-      style={wordmarkStyle}
+      style={style}
       className={cn('shrink-0', logo.wordmark ? '' : 'size-[1.125rem]', className)}
     >
       <path d={logo.d} />
