@@ -200,7 +200,7 @@
     ],
     "modelLabel": "iPhone 14 Pro",
     "image": "/products/photos/50105.webp",
-    "imageW": 1015,
+    "imageW": 837,
     "imageH": 1600,
     "cut": "full",
     "look": "animal-print",
@@ -1677,6 +1677,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
     "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1724,6 +1725,7 @@
     ],
     "material": "Hard back with a soft TPU frame",
     "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1762,8 +1764,7 @@
     "imageH": 1106,
     "cut": "full",
     "look": "stand",
-    "heroEligible": true,
-    "heroRank": 13,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "Sliding camera cover",
@@ -1772,6 +1773,7 @@
     ],
     "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
     "print": "Frame, slider and ring in one colour; the back is clear.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1810,8 +1812,7 @@
     "imageH": 1002,
     "cut": "full",
     "look": "clear",
-    "heroEligible": true,
-    "heroRank": 16,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "MagSafe ring built in",
@@ -1820,6 +1821,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame",
     "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1867,6 +1869,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame",
     "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1914,6 +1917,7 @@
     ],
     "material": "Flexible clear TPU shell",
     "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -1952,8 +1956,7 @@
     "imageH": 1074,
     "cut": "full",
     "look": "stand",
-    "heroEligible": true,
-    "heroRank": 19,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "Sliding camera cover",
@@ -1962,6 +1965,7 @@
     ],
     "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
     "print": "Frame, slider and ring in one colour; the back is clear.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2009,6 +2013,7 @@
     ],
     "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
     "print": "Frame, slider and ring in one colour; the back is clear.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2102,6 +2107,7 @@
     ],
     "material": "Hard clear back with a flexible TPU frame",
     "print": "Nothing printed: a fully clear back.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2195,6 +2201,7 @@
     ],
     "material": "Flexible clear TPU shell",
     "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2233,8 +2240,7 @@
     "imageH": 1103,
     "cut": "full",
     "look": "stand",
-    "heroEligible": true,
-    "heroRank": 17,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "Fold-out ring stand",
@@ -2243,6 +2249,7 @@
     ],
     "material": "Hard textured back, soft bumper and a fold-out ring stand",
     "print": "Moulded textured panels; nothing is printed on.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2281,8 +2288,7 @@
     "imageH": 1110,
     "cut": "full",
     "look": "animal-print",
-    "heroEligible": true,
-    "heroRank": 14,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "Tonal prancing horse print",
@@ -2291,6 +2297,7 @@
     ],
     "material": "Liquid silicone shell with a soft microfibre lining",
     "print": "Tonal prancing horse printed across the back.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2329,8 +2336,7 @@
     "imageH": 1122,
     "cut": "full",
     "look": "print",
-    "heroEligible": true,
-    "heroRank": 20,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "MagSafe ring built in",
@@ -2339,6 +2345,7 @@
     ],
     "material": "Hard back with a fabric-look check panel and a soft frame",
     "print": "Check pattern printed across the back panel.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2386,6 +2393,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
     "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2433,6 +2441,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
     "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2480,6 +2489,7 @@
     ],
     "material": "Hard back with a soft TPU frame",
     "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2527,6 +2537,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame",
     "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2574,6 +2585,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame",
     "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2612,8 +2624,7 @@
     "imageH": 1004,
     "cut": "full",
     "look": "clear",
-    "heroEligible": true,
-    "heroRank": 21,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "MagSafe ring built in",
@@ -2622,6 +2633,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
     "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2761,6 +2773,7 @@
     ],
     "material": "Flexible clear TPU shell",
     "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2799,8 +2812,7 @@
     "imageH": 1018,
     "cut": "full",
     "look": "stand",
-    "heroEligible": true,
-    "heroRank": 15,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "Fold-out ring stand",
@@ -2809,6 +2821,7 @@
     ],
     "material": "Hard textured back, soft bumper and a fold-out ring stand",
     "print": "Moulded textured panels; nothing is printed on.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2847,8 +2860,7 @@
     "imageH": 1143,
     "cut": "full",
     "look": "stand",
-    "heroEligible": true,
-    "heroRank": 18,
+    "heroEligible": false,
     "isNew": true,
     "features": [
       "Fold-out ring stand",
@@ -2857,6 +2869,7 @@
     ],
     "material": "Hard textured back, soft bumper and a fold-out ring stand",
     "print": "Moulded textured panels; nothing is printed on.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2904,6 +2917,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame and a sliding camera cover",
     "print": "Frosted back with a MagSafe ring in the frame colour.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -2999,6 +3013,7 @@
     ],
     "material": "Hard back with a soft TPU frame",
     "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -3046,6 +3061,7 @@
     ],
     "material": "Hard back with a soft TPU frame",
     "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -3093,6 +3109,7 @@
     ],
     "material": "Frosted hard back with a soft TPU frame",
     "print": "Frosted back with a coloured frame and MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -3140,6 +3157,7 @@
     ],
     "material": "TPU frame with a clear hard back, a sliding camera cover and a ring stand",
     "print": "Frame, slider and ring in one colour; the back is clear.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -3187,6 +3205,7 @@
     ],
     "material": "Hard back with a soft TPU frame",
     "print": "Nothing printed: a clear back with a black MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -3234,6 +3253,7 @@
     ],
     "material": "Flexible clear TPU shell",
     "print": "Nothing printed: a clear back with a white MagSafe ring.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -3281,6 +3301,7 @@
     ],
     "material": "Hard clear back with a soft TPU bumper",
     "print": "Nothing printed: a clear back with a coloured bumper.",
+    "stage": false,
     "variants": [
       320,
       480,
@@ -3328,6 +3349,7 @@
     ],
     "material": "Hard clear back with a soft TPU bumper",
     "print": "Nothing printed: a clear back with a coloured bumper.",
+    "stage": false,
     "variants": [
       320,
       480,
