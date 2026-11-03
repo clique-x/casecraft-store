@@ -1,4 +1,4 @@
-import { CameraIcon, MessageCircleIcon, WalletIcon, type LucideIcon } from 'lucide-react'
+import { BadgeCheckIcon, CameraIcon, MessageCircleIcon, WalletIcon, type LucideIcon } from 'lucide-react'
 import { AccentBar } from '@/components/brand/AccentBar'
 import { Reveal } from '@/components/motion/Reveal.client'
 import { REPLACEMENT_DAYS, SHOP_CITY, WHATSAPP_NUMBER } from '@/lib/brand'
@@ -9,13 +9,18 @@ interface Reason {
   body: string
 }
 
-const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi! I have a question about a cover.')}`
+const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi! I have a question about a product.')}`
 
 const REASONS: readonly Reason[] = [
   {
     Icon: CameraIcon,
     title: 'Shot in our shop',
-    body: `Photographed in our ${SHOP_CITY} shop. The cover you see is the cover we ship.`,
+    body: `Every cover is photographed in our ${SHOP_CITY} shop. The cover you see is the cover we ship.`,
+  },
+  {
+    Icon: BadgeCheckIcon,
+    title: 'Sealed originals',
+    body: 'boAt and realme audio in the sealed brand box, with our GST invoice for the 1-year brand warranty.',
   },
   {
     Icon: WalletIcon,
@@ -42,7 +47,7 @@ export function WhyUs() {
         </Reveal>
 
         <div className="relative mt-8">
-          <ul className="grid gap-4 md:grid-cols-3 md:gap-6">
+          <ul className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
             {REASONS.map(({ Icon, title, body }, i) => (
               <Reveal as="li" key={title} delay={i * 0.06}>
                 <article

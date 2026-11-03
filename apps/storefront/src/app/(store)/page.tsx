@@ -1,58 +1,51 @@
 import type { Metadata } from 'next';
 import { preload } from 'react-dom';
-import { BRAND_NAME, LAUNCH_BRANDS, SITE_URL } from '@/lib/brand';
-import { castFor, formatInr, heroChipModels, PHOTOS, photoSrc, srcSetFor } from '@/lib/catalog/photos';
-import type { HomeProduct } from '@/lib/medusa/fixtures';
+import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { ACCESSORIES } from '@/lib/catalog/accessories';
+import { castFor, formatInr, PHOTOS, photoSrc, srcSetFor, type PhotoEntry } from '@/lib/catalog/photos';
+import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
-import { Hero } from '@/components/home/hero/Hero';
-import { GsapMount } from '@/components/motion/GsapMount.client';
-import { HERO_SIZES } from '@/components/home/hero/heroConfig';
-import { PhonePickerSection } from '@/components/home/PhonePickerSection';
-import { TrustSeam } from '@/components/home/TrustSeam';
-import { UpClose } from '@/components/home/UpClose';
-import { TrendingRow } from '@/components/home/TrendingRow';
-import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
-import type { ProductDetail } from '@/lib/medusa/fixtures';
 import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
-import { GadgetRow } from '@/components/home/GadgetRow';
-import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
+import { HubHero } from '@/components/home/hub/HubHero';
+import { CategoryBento } from '@/components/home/hub/CategoryBento';
+import { TrendingHub } from '@/components/home/hub/TrendingHub';
+import { AudioSpotlight } from '@/components/home/hub/AudioSpotlight';
+import { CoversSection } from '@/components/home/hub/CoversSection';
+import { BrandsWall, type LogoBrand } from '@/components/home/hub/BrandsWall';
+import { HubFinalCta } from '@/components/home/hub/HubFinalCta';
+import { TrustSeam } from '@/components/home/TrustSeam';
 import { LookGrid } from '@/components/home/LookGrid';
-import { BrandRow } from '@/components/home/BrandRow';
+import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
+import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
 import { WhyUs } from '@/components/home/WhyUs';
-import { FinalCta } from '@/components/home/FinalCta';
-import { StickyPhoneCta } from '@/components/home/StickyPhoneCta.client';
 
-const FAN_COUNT = 3;
 const OG_WIDTH = 960;
-const FROM_INR = formatInr(Math.min(...PHOTOS.map((e) => e.priceInr)));
+const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
-const TITLE = `${BRAND_NAME} · Phone back covers that fit your phone`;
-const DESCRIPTION = `Real phone back covers photographed in our shop, from ${FROM_INR}. Pick your phone once, browse only the covers that fit, and pay with UPI, cards or Cash on Delivery.`;
+const TITLE = `${BRAND_NAME} · Phone covers, earbuds, neckbands and screen protection`;
+const DESCRIPTION = `Covers cut for your exact phone from ${formatInr(COVER_FROM)}, sealed boAt and realme earbuds and neckbands with the brand warranty, and screen protection. UPI, cards or Cash on Delivery across India.`;
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: SITE_URL },
-  openGraph: {
-    type: 'website',
-    locale: 'en_IN',
-    siteName: BRAND_NAME,
-    title: TITLE,
-    description: DESCRIPTION,
-    url: SITE_URL,
-  },
+  openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: TITLE, description: DESCRIPTION, url: SITE_URL },
 };
+
+/** Audio picked for the hero, the spotlight and the trending mix, in this order when they exist. */
+const AUDIO_PICKS = ['boat-800-hidef', 'realme-air-7', 'boat-alpha-gen2', 'realme-t310', 'boat-rockerz-110', 'boat-219'];
+const HERO_EARBUDS = 'boat-alpha-gen2';
+const FEATURE_AUDIO = 'realme-air-7';
 
 function absolute(path: string): string {
   return new URL(path, SITE_URL).toString();
 }
 
 function itemListJsonLd(products: HomeProduct[]): string {
-  const jsonLd = {
+  return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Trending phone back covers',
-    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    name: 'Trending at the hub',
     numberOfItems: products.length,
     itemListElement: products.map((p, i) => ({
       '@type': 'ListItem',
@@ -61,21 +54,14 @@ function itemListJsonLd(products: HomeProduct[]): string {
         '@type': 'Product',
         name: p.title,
         url: absolute(`/products/${p.handle}`),
-        ...(p.photo ? { image: absolute(photoSrc(p.photo.id, OG_WIDTH)) } : {}),
-        ...(p.photo ? { brand: { '@type': 'Brand', name: p.photo.brand } } : {}),
-        offers: {
-          '@type': 'Offer',
-          price: p.priceFromInr,
-          priceCurrency: 'INR',
-          availability: 'https://schema.org/InStock',
-        },
+        ...(p.photo ? { image: absolute(photoSrc(p.photo.id, OG_WIDTH)), brand: { '@type': 'Brand', name: p.photo.brand } } : {}),
+        ...(p.gadget?.original ? { brand: { '@type': 'Brand', name: p.gadget.original.brand } } : {}),
+        offers: { '@type': 'Offer', price: p.priceFromInr, priceCurrency: 'INR', availability: 'https://schema.org/InStock' },
       },
     })),
-  };
-  return JSON.stringify(jsonLd).replace(/</g, '\\u003c');
+  }).replace(/</g, '\\u003c');
 }
 
-/** Covers for the combo picker: trending first, then the rest; one soft-case variant per phone. */
 function toComboCovers(products: ProductDetail[]): ComboCover[] {
   const rank = (p: ProductDetail) => p.trendingRank ?? 999;
   return [...products]
@@ -86,10 +72,33 @@ function toComboCovers(products: ProductDetail[]): ComboCover[] {
       title: p.title,
       photoId: p.photo?.id ?? null,
       designId: p.designId,
-      variants: p.variants
-        .filter((v) => v.caseType === 'soft')
-        .map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })),
+      variants: p.variants.filter((v) => v.caseType === 'soft').map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })),
     }));
+}
+
+/** Two lists woven together: a, b, a, b … */
+function interleave<T>(a: T[], b: T[]): T[] {
+  const out: T[] = [];
+  for (let i = 0; i < Math.max(a.length, b.length); i++) {
+    if (a[i]) out.push(a[i]);
+    if (b[i]) out.push(b[i]);
+  }
+  return out;
+}
+
+function byPicks(products: ProductDetail[]): ProductDetail[] {
+  const pos = (p: ProductDetail) => {
+    const i = AUDIO_PICKS.indexOf(p.gadget?.id ?? '');
+    return i === -1 ? 99 : i;
+  };
+  return [...products].sort((a, b) => pos(a) - pos(b));
+}
+
+/** Four audio products for the spotlight grid that are not already in the trending mix or the feature. */
+function audioPicks(audio: ProductDetail[], shown: HomeProduct[], featureId: string): ProductDetail[] {
+  const seen = new Set([...shown.map((p) => p.id), featureId]);
+  const fresh = audio.filter((p) => !seen.has(p.id));
+  return (fresh.length >= 4 ? fresh : [...fresh, ...audio.filter((p) => p.id !== featureId && !fresh.includes(p))]).slice(0, 4);
 }
 
 export default async function HomePage() {
@@ -102,6 +111,32 @@ export default async function HomePage() {
     getAccessories(),
     getGadgets('audio'),
   ]);
+
+  const audioWithPhotos = byPicks(audio.filter((p) => p.gadget?.photos));
+  const earbuds = audio.filter((p) => p.gadget?.type === 'earbuds');
+  const neckbands = audio.filter((p) => p.gadget?.type === 'neckband');
+  const heroEarbuds = (audioWithPhotos.find((p) => p.gadget?.id === HERO_EARBUDS) ?? audioWithPhotos.find((p) => p.gadget?.type === 'earbuds'))?.gadget;
+  const heroNeckband = audioWithPhotos.find((p) => p.gadget?.type === 'neckband')?.gadget;
+  const featureProduct = audioWithPhotos.find((p) => p.gadget?.id === FEATURE_AUDIO) ?? audioWithPhotos[0];
+  const guard = ACCESSORIES.find((a) => a.type === 'screen-guard') ?? ACCESSORIES[0];
+
+  const front: PhotoEntry | undefined = castFor(null)[0];
+  const coverPhones = new Set(PHOTOS.flatMap((e) => e.modelSlugs));
+  const phoneBrands = ['Apple', 'Samsung', 'Google', 'OnePlus', 'Xiaomi'].filter((b) =>
+    models.some((m) => m.brand === b && coverPhones.has(m.slug)),
+  );
+  const coverShots = [...PHOTOS]
+    .filter((e) => (e.shots ?? 0) > 0)
+    .sort((a, b) => (a.trendingRank ?? 99) - (b.trendingRank ?? 99));
+
+  const trendingMix = interleave(trending.slice(0, 5), audioWithPhotos.slice(0, 5));
+  const audioBrands = [...new Set(audio.flatMap((p) => (p.gadget?.original ? [p.gadget.original.brand] : [])))];
+  const brandLogos: LogoBrand[] = [
+    ...(audioBrands.includes('boAt') ? [{ name: 'boAt', href: '/audio', tag: 'Audio', logo: { src: '/brand/partners/boat.svg', width: 152, height: 62 } }] : []),
+    ...(audioBrands.includes('realme') ? [{ name: 'realme', href: '/audio#earbuds', tag: 'Audio', logo: { phoneBrand: 'Realme' } }] : []),
+    ...phoneBrands.map((b) => ({ name: b, href: `/phones/${b.toLowerCase()}`, tag: 'Covers', logo: { phoneBrand: b } })),
+  ];
+
   const comboCovers = toComboCovers(allCovers);
   const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
     a.accessory
@@ -109,39 +144,63 @@ export default async function HomePage() {
       : [],
   );
 
-  // The server never reads `my_phone`; HeroStage re-casts from the cookie on the client.
-  const cast = castFor(null);
-  const chipModels = heroChipModels();
-  const front = cast[0];
-
   if (front) {
-    preload(photoSrc(front.id, 480), {
-      as: 'image',
-      fetchPriority: 'high',
-      imageSrcSet: srcSetFor(front),
-      imageSizes: HERO_SIZES,
-    });
+    preload(photoSrc(front.id, 480), { as: 'image', fetchPriority: 'high', imageSrcSet: srcSetFor(front), imageSizes: '(min-width: 1024px) 300px, 50vw' });
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trending) }} />
-      {/* Only the home page animates with GSAP; other routes never download it. */}
-      <GsapMount />
-      <Hero cast={cast} models={models} chipModels={chipModels} />
-      <PhonePickerSection models={models} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trendingMix) }} />
+      {front && heroEarbuds && heroNeckband && guard && (
+        <HubHero
+          cover={front}
+          coverFromInr={COVER_FROM}
+          earbuds={heroEarbuds}
+          neckband={heroNeckband}
+          accessory={guard}
+          stats={[
+            { value: PHOTOS.length, label: 'covers', icon: 'covers' },
+            { value: audio.length, label: 'audio', icon: 'audio' },
+            { value: coverPhones.size, label: 'phones', icon: 'phones' },
+          ]}
+        />
+      )}
       <TrustSeam />
-      {front && <UpClose initial={front} />}
-      <TrendingRow products={trending} />
-      <HomeCombos covers={comboCovers} accessories={comboAccessories} />
-      <GadgetRow department="audio" products={audio} />
-      <NewArrivalsRow products={newArrivals} models={models} />
+      {heroEarbuds && heroNeckband && guard && (
+        <CategoryBento
+          counts={{
+            covers: PHOTOS.length,
+            coverPhones: coverPhones.size,
+            earbuds: earbuds.length,
+            neckbands: neckbands.length,
+            protection: accessories.length,
+            phoneModels: coverPhones.size,
+            looks: looks.slice(0, 4).map((l) => ({ name: l.look.name, href: `/categories/${l.look.handle}` })),
+            phoneBrands,
+          }}
+          coverShots={coverShots}
+          earbuds={heroEarbuds}
+          neckband={heroNeckband}
+          accessory={guard}
+        />
+      )}
+      <TrendingHub products={trendingMix} />
+      {featureProduct?.gadget && (
+        <AudioSpotlight
+          feature={featureProduct.gadget}
+          featureHandle={featureProduct.handle}
+          products={audioPicks(audioWithPhotos, trendingMix, featureProduct.id)}
+          total={audio.length}
+          brands={audioBrands}
+        />
+      )}
+      <CoversSection models={models} covers={PHOTOS.length} />
       <LookGrid looks={looks} />
-      <BrandRow brands={[...LAUNCH_BRANDS]} models={models} />
+      <NewArrivalsRow products={newArrivals} models={models} />
+      <HomeCombos covers={comboCovers} accessories={comboAccessories} />
+      <BrandsWall brands={brandLogos} />
       <WhyUs />
-      <FinalCta fan={cast.slice(0, FAN_COUNT)} />
-      {/* Mounted with the page so it follows this page's hero, not a stale one. */}
-      <StickyPhoneCta models={models} />
+      <HubFinalCta />
     </>
   );
 }

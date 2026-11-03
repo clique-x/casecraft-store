@@ -1,3 +1,4 @@
+import { Wordmark } from '@/components/brand/Wordmark';
 import Link from 'next/link';
 import { EarthCliqueMark } from '@/components/brand/EarthCliqueMark';
 import {
@@ -54,9 +55,9 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-4 pt-14 pb-[calc(env(safe-area-inset-bottom)+6rem)] sm:px-6 md:pb-12 lg:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div className="max-w-xs">
-            <p className="font-sans text-xl leading-none font-extrabold tracking-[-0.02em]">{BRAND_NAME}</p>
+            <p><Wordmark className="text-xl" /></p>
             <p className="mt-3 text-sm text-fg-on-ink-muted">
-              Back covers photographed in our {SHOP_CITY} shop. UPI, cards and Cash on Delivery. Free shipping over ₹
+              Phone covers, earbuds, neckbands and screen protection from our {SHOP_CITY} shop. UPI, cards and Cash on Delivery. Free shipping over ₹
               {FREE_SHIPPING_THRESHOLD_INR}.
             </p>
             <a
@@ -87,7 +88,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-fg-on-ink/10 pt-6 text-xs text-fg-on-ink-muted sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-2">
-            <p>© {COPYRIGHT_YEAR} {BRAND_NAME}. Covers photographed in our {SHOP_CITY} shop.</p>
+            <p>© {COPYRIGHT_YEAR} {BRAND_NAME}. Phone gear from our {SHOP_CITY} shop.</p>
             <p>GSTIN: pending registration · Ships from India</p>
           </div>
           {/* The mark is placed as supplied: 32 px, untouched, with 32 px of clear space around it. */}

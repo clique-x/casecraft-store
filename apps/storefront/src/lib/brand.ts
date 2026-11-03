@@ -1,4 +1,4 @@
-export const BRAND_NAME = 'CaseCraft';
+export const BRAND_NAME = 'GadgetsHub';
 /** Absolute origin for canonical, Open Graph and JSON-LD URLs; no trailing slash. */
 export const SITE_URL = 'https://gadgetshub.io';
 export const FREE_SHIPPING_THRESHOLD_INR = 499;

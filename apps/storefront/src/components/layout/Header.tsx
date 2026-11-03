@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Search } from 'lucide-react';
 import { CartButton } from './CartButton.client';
+import { Wordmark } from '@/components/brand/Wordmark';
 import { BRAND_NAME, PARENT_BRAND, SHOW_PARENT_BRAND } from '@/lib/brand';
 import { HeaderScrollState } from './HeaderScrollState.client';
 import { MyPhoneChip } from './MyPhoneChip.client';
@@ -32,7 +33,7 @@ export function Header({ solid = false }: HeaderProps) {
           className="flex min-w-0 flex-col rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2"
           aria-label={`${BRAND_NAME} home`}
         >
-          <span className="truncate font-sans text-xl leading-none font-extrabold tracking-[-0.02em]">{BRAND_NAME}</span>
+          <Wordmark className="truncate text-xl" />
           {SHOW_PARENT_BRAND && (
             <span className="mt-1 hidden font-sans text-label leading-none font-bold tracking-[0.2em] text-fg-on-ink-muted uppercase md:block">
               by {PARENT_BRAND}

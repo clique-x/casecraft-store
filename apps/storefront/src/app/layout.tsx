@@ -6,11 +6,11 @@ import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${BRAND_NAME} · Trending phone back covers, cut for your phone`,
+    default: `${BRAND_NAME} · Phone covers, earbuds and protection`,
     template: `%s · ${BRAND_NAME}`,
   },
   description:
-    'Trending phone back covers in India, cut for your exact model. Pick your phone once, browse only the designs that fit, and pay with UPI, cards or Cash on Delivery.',
+    'Phone covers cut for your exact model, sealed boAt and realme earbuds and neckbands, and screen protection. UPI, cards or Cash on Delivery across India.',
   applicationName: BRAND_NAME,
   robots: { index: true, follow: true },
 };
