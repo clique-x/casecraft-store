@@ -25,7 +25,7 @@ export function Header({ solid = false }: HeaderProps) {
   return (
     <HeaderScrollState
       solid={solid}
-      className="fixed inset-x-0 top-8 z-40 border-b border-border bg-paper/95 text-fg backdrop-blur-md transition-[top] duration-(--dur-ui) ease-out-expo data-past:top-0"
+      className="fixed inset-x-0 top-8 z-40 border-b border-border bg-paper text-fg transition-[top] duration-(--dur-ui) ease-out-expo data-past:top-0"
     >
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
         <Link

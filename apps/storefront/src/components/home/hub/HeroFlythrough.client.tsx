@@ -2,36 +2,42 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
-import { cn } from '@/lib/utils';
 import { useReducedMotion } from '@/lib/device/use-reduced-motion';
 
 export interface HeroItem {
   href: string;
+  /** A transparent cutout, so the product floats on its own. */
   src: string;
   srcSet?: string;
+  /** Pixel size of the cutout, for its aspect. */
+  w: number;
+  h: number;
   title: string;
   price: string;
-  /** Light product shots (audio) sit on a light card; studio cover shots fill a dark one. */
-  tone: 'dark' | 'light';
 }
 
-/** Where each product hangs in the room: x in vw and y in vh from the centre, z in px into the screen. The camera flies in; later ones sit at the edges so they pass beside the shortcuts, not over them. */
+/**
+ * Where each product hangs in the room: x in vw and y in vh from the centre, z in px into the screen.
+ * The near ones keep clear of the headline; later ones sit at the edges so they pass beside the
+ * department cards, not over them.
+ */
 const SLOTS: readonly [number, number, number][] = [
-  [-31, -20, 100],
-  [31, -16, 300],
-  [-27, 21, 500],
-  [33, 22, 680],
-  [2, -31, 880],
-  [-36, 1, 1060],
-  [29, -25, 1260],
-  [-17, 30, 1440],
-  [36, 8, 1640],
-  [-33, -24, 1840],
-  [34, 26, 2040],
-  [-36, 26, 2240],
+  [-30, -16, 100],
+  [34, -20, 260],
+  [-27, 27, 480],
+  [34, 28, 660],
+  [0, -46, 860],
+  [-42, -2, 1040],
+  [30, -32, 1240],
+  [-16, 36, 1420],
+  [40, 10, 1620],
+  [-36, -28, 1820],
+  [36, 28, 2020],
+  [-38, 28, 2220],
 ];
 const DEPTH = 2400;
-const END_Z = 2550;
+/** The camera arrives here at this share of the scroll and holds, so the ending settles. */
+const ARRIVE_AT = 0.82;
 const PERSPECTIVE = 900;
 const PARTICLES = 28;
 const LERP = 0.09;
@@ -45,17 +51,21 @@ const DUST = Array.from({ length: PARTICLES }, (_, i) => {
 
 const CSS = `
 .fly-stage{perspective:${PERSPECTIVE}px;perspective-origin:50% 50%}
-.fly-world,.fly-layer{transform-style:preserve-3d}
+.fly-world,.fly-layer{transform-style:preserve-3d;pointer-events:none}
+.fly-item{pointer-events:auto}
 .fly-item,.fly-dust,.fly-text{position:absolute;left:50%;top:50%;will-change:transform,opacity;backface-visibility:hidden}
-.fly-item{width:clamp(7.5rem,15vw,15rem);margin:calc(clamp(7.5rem,15vw,15rem) * -0.625) 0 0 calc(clamp(7.5rem,15vw,15rem) / -2)}
-.fly-card{transition:transform .5s var(--ease-out-expo),box-shadow .5s var(--ease-out-expo)}
-@media (hover:hover){.fly-item:hover .fly-card,.fly-item:focus-within .fly-card{transform:scale(1.06);box-shadow:0 50px 80px -30px rgba(0,0,0,.95)}
+.fly-item{width:calc(var(--w) * var(--k));margin-left:calc(var(--w) * var(--k) / -2);margin-top:calc(var(--w) * var(--k) / var(--ar) / -2)}
+.fly-img{display:block;width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55));transition:transform .5s var(--ease-out-expo)}
+.fly-glow{position:absolute;left:50%;top:50%;width:140%;height:140%;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(closest-side,rgba(46,196,214,.28),transparent);z-index:-1;transition:opacity .5s var(--ease-out-expo);opacity:.55}
+@media (hover:hover){.fly-item:hover .fly-img,.fly-item:focus-within .fly-img{transform:translateY(-6px) scale(1.05)}
+  .fly-item:hover .fly-glow,.fly-item:focus-within .fly-glow{opacity:1}
   .fly-item:hover .fly-tag,.fly-item:focus-within .fly-tag{opacity:1;transform:translateY(0)}}
 @keyframes fly-cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .fly-cue{animation:fly-cue 1.8s var(--ease-in-out-quart) infinite}
-@keyframes fly-glow{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-46%,-54%) scale(1.15)}}
-.fly-glow{animation:fly-glow 9s ease-in-out infinite}
-@media (prefers-reduced-motion:reduce){.fly-cue,.fly-glow{animation:none}}
+@keyframes fly-breathe{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-46%,-54%) scale(1.15)}}
+.fly-breathe{animation:fly-breathe 9s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.fly-cue,.fly-breathe{animation:none}}
 `;
 
 function clamp(v: number, lo: number, hi: number) {
@@ -63,10 +73,10 @@ function clamp(v: number, lo: number, hi: number) {
 }
 
 /**
- * The first screen is a room you fly through. Products hang in space at different depths around a
- * headline; scrolling moves the camera forward past them, with dust drifting by, until the shortcuts
- * and the call to action arrive at the far end. The pointer tilts the room a little. It opens as a
- * straight studio shot with the camera at rest.
+ * The first screen is a room you fly through. Products float in space at different depths around a
+ * headline; scrolling moves the camera forward past them, with dust drifting by, until the department
+ * cards and the call to action arrive at the far end and the camera comes to rest. The pointer tilts
+ * the room a little. It opens as a straight studio shot with the camera still.
  */
 export function HeroFlythrough({ items, headline, end }: { items: HeroItem[]; headline: ReactNode; end: ReactNode }) {
   const reduced = useReducedMotion();
@@ -92,8 +102,9 @@ export function HeroFlythrough({ items, headline, end }: { items: HeroItem[]; he
     const render = (t: number) => {
       const r = section.getBoundingClientRect();
       const travel = Math.max(1, r.height - window.innerHeight);
-      const target = clamp(-r.top / travel, 0, 1) * DEPTH;
-      cam = reduced ? target : cam + (target - cam) * LERP;
+      const progress = clamp(-r.top / travel / ARRIVE_AT, 0, 1);
+      const target = progress * DEPTH;
+      cam = reduced || Math.abs(target - cam) < 0.3 ? target : cam + (target - cam) * LERP;
       if (fine && !reduced) {
         rx += (tilt.current.x - rx) * 0.06;
         ry += (tilt.current.y - ry) * 0.06;
@@ -103,16 +114,17 @@ export function HeroFlythrough({ items, headline, end }: { items: HeroItem[]; he
       itemEls.forEach((el, i) => {
         const [x, y, z] = SLOTS[i]!;
         const rel = cam - z;
-        if (rel > 760) {
+        if (rel > 640 || rel < -1650) {
           el.style.opacity = '0';
           el.style.visibility = 'hidden';
           return;
         }
-        const near = rel > 420 ? 1 - (rel - 420) / 340 : 1;
-        const fog = rel < -1100 ? clamp(1 - (-rel - 1100) / 1100, 0.12, 1) : 1;
+        // Fades out as it sweeps past the camera; the far ones emerge from the dark as it nears them.
+        const near = rel > 360 ? 1 - (rel - 360) / 280 : 1;
+        const far = rel < -1150 ? clamp(1 - (-rel - 1150) / 500, 0, 1) : 1;
         const bob = reduced ? 0 : Math.sin(t / 1400 + i * 1.7) * 6;
         el.style.visibility = 'visible';
-        el.style.opacity = (near * fog).toFixed(3);
+        el.style.opacity = (near * far).toFixed(3);
         el.style.transform = `translate3d(${x}vw, calc(${y}vh + ${bob.toFixed(1)}px), ${rel.toFixed(1)}px)`;
       });
       dustEls.forEach((el, i) => {
@@ -125,10 +137,11 @@ export function HeroFlythrough({ items, headline, end }: { items: HeroItem[]; he
       textEls.forEach((el) => {
         const z = Number(el.dataset.z);
         const rel = cam - z;
-        const show = el.dataset.end !== undefined ? clamp(1 - (-rel - 300) / 700, 0, 1) : clamp(1 - rel / 330, 0, 1);
+        // The headline fades as the camera passes it; the ending fades in over the last stretch and lands at full size.
+        const show = el.dataset.end !== undefined ? clamp(1 - (-rel - 140) / 560, 0, 1) : clamp(1 - rel / 330, 0, 1);
         el.style.opacity = show.toFixed(3);
         el.style.visibility = show > 0.01 ? 'visible' : 'hidden';
-        el.style.pointerEvents = show > 0.5 ? 'auto' : 'none';
+        el.style.pointerEvents = el.dataset.end !== undefined && show > 0.6 ? 'auto' : 'none';
         el.style.transform = `translate3d(-50%, -50%, ${clamp(rel, -3000, 700).toFixed(1)}px)`;
       });
       if (cueRef.current) cueRef.current.style.opacity = clamp(1 - cam / 160, 0, 1).toFixed(2);
@@ -148,11 +161,11 @@ export function HeroFlythrough({ items, headline, end }: { items: HeroItem[]; he
   };
 
   return (
-    <div ref={sectionRef} className="relative h-[260svh] bg-[#06151a]" onPointerMove={onPointerMove} onPointerLeave={onPointerLeave}>
+    <div ref={sectionRef} className="relative h-[280svh] bg-[#06151a]" onPointerMove={onPointerMove} onPointerLeave={onPointerLeave}>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
-      <div className="fly-stage sticky top-0 h-svh overflow-hidden text-paper">
+      <div className="fly-stage sticky top-0 h-svh overflow-hidden text-paper [--w:clamp(11rem,22vw,22rem)]">
         <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_55%,#10434c_0%,#0a2a31_40%,#06151a_75%)]" />
-        <div aria-hidden="true" className="fly-glow absolute top-1/2 left-1/2 size-[70vmin] rounded-full bg-[#2ec4d6]/20 blur-3xl" />
+        <div aria-hidden="true" className="fly-breathe absolute top-1/2 left-1/2 size-[70vmin] rounded-full bg-[#2ec4d6]/20 blur-3xl" />
         <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/3 bg-[linear-gradient(to_top,rgba(0,0,0,.55),transparent)]" />
         <div ref={worldRef} className="fly-world absolute inset-0">
           <div className="fly-layer absolute inset-0" aria-hidden="true">
@@ -160,48 +173,52 @@ export function HeroFlythrough({ items, headline, end }: { items: HeroItem[]; he
               <span key={i} className="fly-dust rounded-full bg-white/70" style={{ width: d.s, height: d.s }} />
             ))}
           </div>
-          <div className="fly-text w-[min(92vw,56rem)] text-center" data-z="0">
+          <div className="fly-text pointer-events-none w-[min(94vw,60rem)] text-center" data-z="0">
+            <div aria-hidden="true" className="absolute inset-[-30%] -z-10 bg-[radial-gradient(closest-side,rgba(6,21,26,.75),transparent)]" />
             {headline}
           </div>
           <ul aria-label="Floating products" className="fly-layer absolute inset-0 list-none">
-            {slots.map((it, i) => (
-              <li key={it.href} className="fly-item" style={{ ['--i' as string]: i } as CSSProperties}>
-                <Link
-                  href={it.href}
-                  aria-label={`${it.title}, ${it.price}`}
-                  draggable={false}
-                  className={cn(
-                    'fly-card relative block aspect-[4/5] overflow-hidden rounded-[16px] shadow-[0_40px_70px_-30px_rgba(0,0,0,.9)] ring-1 outline-none focus-visible:ring-2 focus-visible:ring-[#7fd3dc] sm:rounded-[22px]',
-                    it.tone === 'dark' ? 'bg-[#0b2b33] ring-white/10' : 'bg-surface-2 ring-white/40',
-                  )}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element -- static pre-sized variants */}
-                  <img
-                    src={it.src}
-                    srcSet={it.srcSet}
-                    sizes="(min-width: 1024px) 240px, 40vw"
-                    alt=""
-                    width={480}
-                    height={600}
+            {slots.map((it, i) => {
+              const ar = it.w / it.h;
+              // Tall cutouts (covers) take less width than squarish ones (audio), so they read at a similar size.
+              const k = ar < 0.7 ? 0.62 : 1;
+              return (
+                <li key={it.href} className="fly-item" style={{ ['--ar' as string]: ar.toFixed(3), ['--k' as string]: k } as CSSProperties}>
+                  <span aria-hidden="true" className="fly-glow" />
+                  <Link
+                    href={it.href}
+                    aria-label={`${it.title}, ${it.price}`}
                     draggable={false}
-                    loading={i < 6 ? 'eager' : 'lazy'}
-                    fetchPriority={i === 0 ? 'high' : 'auto'}
-                    className="size-full object-cover"
-                  />
-                  <span className="absolute bottom-2 left-2 rounded-pill bg-paper/95 px-2 py-0.5 text-[11px] font-bold text-fg tabular-nums shadow sm:text-xs">
+                    className="block rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-[#7fd3dc] focus-visible:ring-offset-8 focus-visible:ring-offset-[#06151a]"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element -- static pre-sized variants */}
+                    <img
+                      src={it.src}
+                      srcSet={it.srcSet}
+                      sizes="(min-width: 1024px) 480px, 70vw"
+                      alt=""
+                      width={it.w}
+                      height={it.h}
+                      draggable={false}
+                      loading={i < 6 ? 'eager' : 'lazy'}
+                      fetchPriority={i === 0 ? 'high' : 'auto'}
+                      className="fly-img"
+                    />
+                  </Link>
+                  <span className="pointer-events-none absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-pill bg-paper/95 px-2.5 py-1 text-[11px] font-bold whitespace-nowrap text-fg tabular-nums shadow-lg sm:text-xs">
                     {it.price}
                   </span>
-                </Link>
-                <span
-                  aria-hidden="true"
-                  className="fly-tag pointer-events-none absolute inset-x-0 -bottom-8 hidden translate-y-2 truncate text-center text-xs font-semibold text-paper/90 opacity-0 transition-[opacity,transform] duration-300 sm:block"
-                >
-                  {it.title}
-                </span>
-              </li>
-            ))}
+                  <span
+                    aria-hidden="true"
+                    className="fly-tag pointer-events-none absolute inset-x-[-40%] -bottom-10 hidden translate-y-2 truncate text-center text-xs font-semibold text-paper/90 opacity-0 transition-[opacity,transform] duration-300 sm:block"
+                  >
+                    {it.title}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
-          <div className="fly-text w-[min(92vw,40rem)] text-center" data-z={END_Z} data-end="">
+          <div className="fly-text w-[min(94vw,52rem)]" data-z={DEPTH - 60} data-end="">
             {end}
           </div>
         </div>
