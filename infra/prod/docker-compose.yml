@@ -1,0 +1,107 @@
+# Production stack for the Medusa backend on one VPS (Hostinger KVM 2 or any Ubuntu server with Docker).
+# The storefront stays on Vercel; this serves the API and the admin at https://$API_DOMAIN.
+#
+#   docker compose -f infra/prod/docker-compose.yml --env-file infra/prod/.env up -d --build
+#
+# Postgres and Redis are only reachable inside this Docker network. Caddy is the only thing on ports 80/443.
+name: casecraft
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: 10m
+    max-file: "3"
+
+x-medusa: &medusa
+  build:
+    context: ../..
+    dockerfile: apps/backend/Dockerfile
+  image: casecraft-backend:latest
+  env_file: .env
+  restart: unless-stopped
+  logging: *logging
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      POSTGRES_USER: casecraft
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in infra/prod/.env}
+      POSTGRES_DB: casecraft
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U casecraft -d casecraft"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    logging: *logging
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # API and admin. Applies database migrations before it starts, so a deploy never runs on an old schema.
+  # sslmode=disable: Postgres is on this private Docker network; Medusa would otherwise try SSL in production.
+  medusa-server:
+    <<: *medusa
+    environment:
+      DATABASE_URL: postgres://casecraft:${POSTGRES_PASSWORD}@postgres:5432/casecraft?sslmode=disable
+      REDIS_URL: redis://redis:6379
+      MEDUSA_WORKER_MODE: server
+    command: ["sh", "-c", "npx medusa db:migrate && exec npx medusa start"]
+
+  # Subscribers and scheduled jobs (storefront refresh, emails later). Starts after the server is healthy,
+  # so migrations have run.
+  medusa-worker:
+    <<: *medusa
+    environment:
+      DATABASE_URL: postgres://casecraft:${POSTGRES_PASSWORD}@postgres:5432/casecraft?sslmode=disable
+      REDIS_URL: redis://redis:6379
+      MEDUSA_WORKER_MODE: worker
+      DISABLE_MEDUSA_ADMIN: "true"
+    depends_on:
+      medusa-server:
+        condition: service_healthy
+    healthcheck:
+      disable: true
+
+  # HTTPS for the API domain, with automatic Let's Encrypt certificates.
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      API_DOMAIN: ${API_DOMAIN:?set API_DOMAIN in infra/prod/.env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      medusa-server:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  redisdata:
+  caddy_data:
+  caddy_config:

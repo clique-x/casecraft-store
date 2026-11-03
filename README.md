@@ -141,7 +141,8 @@ To cut a product out of a photo, see [`scripts/photo-cutout/README.md`](scripts/
 - [ ] Order emails (Resend) and GST invoices
 - [ ] Phone-model admin page
 - [ ] Shiprocket shipping and order tracking
-- [ ] Deployment to the VPS behind Cloudflare
+- [x] Backend deployment kit for a VPS: Docker, Caddy HTTPS, deploy on push and nightly backups ([`infra/prod/README.md`](infra/prod/README.md))
+- [ ] Cloudflare in front of the API, off-server backups
 
 ## License
 

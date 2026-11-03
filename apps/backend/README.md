@@ -78,6 +78,8 @@ Limits: 3 codes per number per 10 minutes, 5 code checks per number per 10 minut
 
 ## Production notes
 
+To run it on a VPS (Hostinger KVM 2 or any Ubuntu server), follow [`infra/prod/README.md`](../../infra/prod/README.md).
+
 - Set `REDIS_URL`. Events, workflows, locks and the cache then go through Redis, so a separate worker process can share them.
 - Run one process with `MEDUSA_WORKER_MODE=server` and one with `MEDUSA_WORKER_MODE=worker`.
 - Generate real `JWT_SECRET`, `COOKIE_SECRET` and `STOREFRONT_REVALIDATE_SECRET` values. Never commit `.env`.

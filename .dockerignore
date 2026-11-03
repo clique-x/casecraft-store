@@ -1,0 +1,10 @@
+# Keep the backend image's build context small: no installs, builds, git history or storefront photos.
+**/node_modules
+**/.medusa
+**/.next
+**/.env
+**/.env.*
+!**/.env.example
+.git
+apps/storefront/public
+infra/prod/.env

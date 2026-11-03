@@ -24,6 +24,9 @@ importers:
       '@medusajs/caching':
         specifier: 2.22.2
         version: 2.22.2(@medusajs/framework@2.22.2(@medusajs/cli@2.22.2(@types/node@20.19.43))(@types/node@20.19.43)(ioredis@5.11.1)(vite@7.3.7(@types/node@20.19.43)(jiti@1.21.7)(lightningcss@1.32.0)(tsx@4.23.15)(yaml@2.9.1))(zod@4.2.0))(awilix@8.0.1)
+      '@medusajs/caching-redis':
+        specifier: 2.22.2
+        version: 2.22.2(@medusajs/framework@2.22.2(@medusajs/cli@2.22.2(@types/node@20.19.43))(@types/node@20.19.43)(ioredis@5.11.1)(vite@7.3.7(@types/node@20.19.43)(jiti@1.21.7)(lightningcss@1.32.0)(tsx@4.23.15)(yaml@2.9.1))(zod@4.2.0))
       '@medusajs/cli':
         specifier: 2.22.2
         version: 2.22.2(@types/node@20.19.43)

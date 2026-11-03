@@ -1,0 +1,6 @@
+# Serves the Medusa API and admin on the API domain over HTTPS.
+# Caddy fetches and renews the certificate itself once the domain's A record points at this server.
+{$API_DOMAIN} {
+	encode zstd gzip
+	reverse_proxy medusa-server:9000
+}

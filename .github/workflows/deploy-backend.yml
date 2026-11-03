@@ -1,0 +1,53 @@
+# Deploys the Medusa backend to the VPS whenever backend or infra code lands on main, or on demand
+# (Actions → Deploy backend → Run workflow). It SSHes in and runs infra/prod/deploy.sh, which pulls main,
+# rebuilds the image on the server and restarts it. Set up once: infra/prod/README.md, "Deploy on every push".
+name: Deploy backend
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - apps/backend/**
+      - infra/prod/**
+      - pnpm-lock.yaml
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-backend
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check the VPS secrets
+        id: check
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          if [ -z "$VPS_HOST" ] || [ -z "$VPS_SSH_KEY" ]; then
+            echo "VPS_HOST or VPS_SSH_KEY is not set, so nothing was deployed. See infra/prod/README.md." >> "$GITHUB_STEP_SUMMARY"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy over SSH
+        if: steps.check.outputs.skip != 'true'
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          if [ -n "$VPS_KNOWN_HOSTS" ]; then
+            printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          else
+            ssh-keyscan -H "$VPS_HOST" > ~/.ssh/known_hosts 2>/dev/null
+          fi
+          ssh -i ~/.ssh/deploy -o BatchMode=yes "${VPS_USER:-root}@$VPS_HOST" /opt/casecraft/infra/prod/deploy.sh

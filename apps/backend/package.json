@@ -19,6 +19,7 @@
     "@medusajs/admin-sdk": "2.22.2",
     "@medusajs/admin-shared": "2.22.2",
     "@medusajs/caching": "2.22.2",
+    "@medusajs/caching-redis": "2.22.2",
     "@medusajs/cli": "2.22.2",
     "@medusajs/dashboard": "2.22.2",
     "@medusajs/draft-order": "2.22.2",
