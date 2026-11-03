@@ -176,7 +176,7 @@ const AUDIO: readonly GadgetEntry[] = [
     warrantyMonths: ONE_YEAR,
     photos: {
       id: 'boat-alpha-gen2',
-      cut: { w: 1440, h: 1402 },
+      cut: { w: 872, h: 1293 },
       gallery: ['Midnight Black', 'Ocean Blue', 'boAt Signature Sound', 'Features', '45 hours of playback', 'Quad mics with ENx', 'ASAP charge'],
       heroByOption: { 'midnight-black': 0, 'ocean-blue': 1 },
     },
@@ -310,7 +310,7 @@ const AUDIO: readonly GadgetEntry[] = [
     warrantyMonths: ONE_YEAR,
     photos: {
       id: 'boat-219',
-      cut: { w: 1351, h: 1424 },
+      cut: { w: 1346, h: 1423 },
       gallery: ['Carbon Black', 'Four mics with ENx', 'IPX4 and instant pairing', 'BEAST mode low latency', '13 mm drivers', '40 hours of playback', 'Features'],
     },
   },
@@ -343,7 +343,7 @@ const AUDIO: readonly GadgetEntry[] = [
     warrantyMonths: ONE_YEAR,
     photos: {
       id: 'boat-800-hidef',
-      cut: { w: 1440, h: 1423 },
+      cut: { w: 960, h: 933 },
       gallery: ['Graphite Grey', 'Features', 'Hi-Res Audio with LDAC', 'boAt Signature Sound', 'AI ENx clear calls', 'Multipoint connectivity', '40 hours of playback'],
     },
   },
@@ -378,7 +378,7 @@ const AUDIO: readonly GadgetEntry[] = [
     warrantyMonths: ONE_YEAR,
     photos: {
       id: 'realme-t200',
-      cut: { w: 1320, h: 1373 },
+      cut: { w: 1318, h: 1369 },
       gallery: ['Black', 'White', 'Hi-Res certified'],
       heroByOption: { black: 0, white: 1 },
     },
@@ -475,7 +475,6 @@ const AUDIO: readonly GadgetEntry[] = [
     warrantyMonths: ONE_YEAR,
     photos: {
       id: 'realme-t310',
-      cut: { w: 1338, h: 1249 },
       gallery: ['White', 'Agile White', '360 degree spatial audio'],
       heroByOption: { white: 0 },
     },
@@ -509,7 +508,7 @@ const AUDIO: readonly GadgetEntry[] = [
     warrantyMonths: ONE_YEAR,
     photos: {
       id: 'realme-air-7',
-      cut: { w: 1235, h: 1340 },
+      cut: { w: 1232, h: 1337 },
       gallery: ['Slate Grey', 'Slate Grey finish'],
       heroByOption: { black: 0 },
     },
@@ -542,7 +541,7 @@ const AUDIO: readonly GadgetEntry[] = [
     warrantyMonths: ONE_YEAR,
     photos: {
       id: 'boat-rockerz-110',
-      cut: { w: 1406, h: 1290 },
+      cut: { w: 1403, h: 1286 },
       gallery: ['Active Black', '40 hours of playback', 'ENx clear calls', 'BEAST mode low latency', 'boAt Signature Sound', 'Features', 'Also in Deep Purple'],
     },
   },
@@ -574,7 +573,7 @@ const AUDIO: readonly GadgetEntry[] = [
     warrantyMonths: ONE_YEAR,
     photos: {
       id: 'boat-rockerz-235-pro',
-      cut: { w: 1026, h: 1332 },
+      cut: { w: 1024, h: 1328 },
       gallery: ['Grey', 'Features', 'BEAST mode low latency', 'Vibration call alert', 'ASAP charge', 'Also in Black', 'Also in Blue'],
     },
   },
