@@ -39,6 +39,9 @@ export function WhatsAppFab() {
           ? 'bottom-[calc(env(safe-area-inset-bottom)+4.75rem)] lg:bottom-[6rem]'
           : 'bottom-[calc(env(safe-area-inset-bottom)+1rem)] lg:bottom-6',
         sheetOpen && 'pointer-events-none translate-y-4 opacity-0',
+        // Phones: the sticky buy bar is up and the buy box has its own WhatsApp link, so the floating
+        // button would only cover the product details. It comes back when the bar goes.
+        stickyVisible && 'max-lg:invisible max-lg:pointer-events-none max-lg:translate-y-4 max-lg:opacity-0',
         overHero && 'max-lg:invisible max-lg:translate-y-4 max-lg:opacity-0',
       )}
     >

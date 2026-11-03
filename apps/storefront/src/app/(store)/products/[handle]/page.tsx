@@ -135,9 +135,9 @@ function ProductPageFallback() {
       className="mx-auto w-full max-w-7xl px-4 pt-20 pb-10 sm:px-6 lg:px-8 lg:pt-24 lg:pb-16"
     >
       <div className="h-4 w-48 rounded-pill bg-surface-2" />
-      <div className="mt-4 grid gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
+      <div className="mt-4 grid grid-cols-1 gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
         <div className="stage-glow aspect-[4/5] max-h-[60svh] w-full rounded-card bg-ink lg:col-span-7 lg:aspect-[7/8] lg:max-h-none" />
-        <div className="flex flex-col gap-4 lg:col-span-5">
+        <div className="flex min-w-0 flex-col gap-4 lg:col-span-5">
           <div className="h-4 w-24 rounded-pill bg-surface-2" />
           <div className="h-10 w-3/4 rounded-pill bg-surface-2" />
           <div className="h-6 w-28 rounded-pill bg-surface-2" />
@@ -229,7 +229,7 @@ async function ProductPageContent({ params }: ProductPageProps) {
       <div className="mx-auto w-full max-w-7xl px-4 pt-20 pb-10 sm:px-6 lg:px-8 lg:pt-24 lg:pb-16">
         <Breadcrumb product={product} />
 
-        <div className="mt-4 grid gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
+        <div className="mt-4 grid grid-cols-1 gap-8 lg:mt-6 lg:grid-cols-12 lg:items-start lg:gap-10">
           <div className="min-w-0 lg:col-span-7">
             {media ? (
               <MediaColumn
@@ -258,9 +258,9 @@ async function ProductPageContent({ params }: ProductPageProps) {
           {media ? (
             // Pinned under the header until the image column runs out; when its buttons sit below the
             // fold, StickyBuyBar offers Add to cart and Buy now instead.
-            <div className="flex flex-col gap-8 lg:sticky lg:top-20 lg:col-span-5 lg:self-start">{buyColumn}</div>
+            <div className="flex min-w-0 flex-col gap-8 lg:sticky lg:top-20 lg:col-span-5 lg:self-start">{buyColumn}</div>
           ) : (
-            <div className="flex flex-col gap-8 lg:col-span-5">{buyColumn}</div>
+            <div className="flex min-w-0 flex-col gap-8 lg:col-span-5">{buyColumn}</div>
           )}
         </div>
       </div>
