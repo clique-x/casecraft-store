@@ -30,10 +30,10 @@ export function Header({ solid = false }: HeaderProps) {
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 flex-col rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2"
+          className="flex shrink-0 flex-col rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2"
           aria-label={`${BRAND_NAME} home`}
         >
-          <Wordmark className="truncate text-xl" />
+          <Wordmark className="text-lg sm:text-xl" />
           {SHOW_PARENT_BRAND && (
             <span className="mt-1 hidden font-sans text-label leading-none font-bold tracking-[0.2em] text-fg-on-ink-muted uppercase md:block">
               by {PARENT_BRAND}
@@ -53,7 +53,7 @@ export function Header({ solid = false }: HeaderProps) {
           ))}
         </nav>
 
-        <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-2">
+        <div className="ml-auto flex min-w-0 items-center gap-1 sm:gap-2">
           <MyPhoneChip />
           <Link href="/search" className={ICON_LINK} aria-label="Search">
             <Search className="size-5" aria-hidden="true" />

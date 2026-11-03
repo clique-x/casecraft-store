@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { preload } from 'react-dom';
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
 import { ACCESSORIES } from '@/lib/catalog/accessories';
-import { castFor, formatInr, gallerySrc, PHOTOS, photoSrc, srcSetFor, type PhotoEntry } from '@/lib/catalog/photos';
+import { backdropThumbSrc, backdropThumbSrcSet, formatInr, gallerySrc, PHOTOS } from '@/lib/catalog/photos';
+import { gadgetCardSrc, gadgetCardSrcSet } from '@/lib/catalog/gadgets';
+import type { RingItem } from '@/components/home/hub/HeroRing.client';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
@@ -119,7 +121,6 @@ export default async function HomePage() {
   const featureProduct = audioWithPhotos.find((p) => p.gadget?.id === FEATURE_AUDIO) ?? audioWithPhotos[0];
   const guard = ACCESSORIES.find((a) => a.type === 'screen-guard') ?? ACCESSORIES[0];
 
-  const front: PhotoEntry | undefined = castFor(null)[0];
   const coverPhones = new Set(PHOTOS.flatMap((e) => e.modelSlugs));
   const phoneBrands = ['Apple', 'Samsung', 'Google', 'OnePlus', 'Xiaomi'].filter((b) =>
     models.some((m) => m.brand === b && coverPhones.has(m.slug)),
@@ -136,6 +137,28 @@ export default async function HomePage() {
     ...phoneBrands.map((b) => ({ name: b, href: `/phones/${b.toLowerCase()}`, tag: 'Covers', logo: { phoneBrand: b } })),
   ];
 
+  // The 3D ring: trending covers (studio shots) woven with audio (product shots), twelve in all.
+  const ringCovers: RingItem[] = trending
+    .flatMap((p) => (p.photo && (p.photo.shots ?? 0) > 0 ? [p] : []))
+    .slice(0, 6)
+    .map((p) => ({
+      href: `/products/${p.handle}`,
+      src: backdropThumbSrc(p.photo!, 480),
+      srcSet: backdropThumbSrcSet(p.photo!),
+      title: `${p.photo!.design} · ${p.photo!.brand} ${p.photo!.series}`,
+      price: formatInr(p.priceFromInr),
+      tone: 'dark' as const,
+    }));
+  const ringAudio: RingItem[] = audioWithPhotos.slice(0, 6).map((p) => ({
+    href: `/products/${p.handle}`,
+    src: gadgetCardSrc(p.gadget!.photos!, 0, 480),
+    srcSet: gadgetCardSrcSet(p.gadget!.photos!, 0),
+    title: p.title,
+    price: formatInr(p.priceFromInr),
+    tone: 'light' as const,
+  }));
+  const ringItems = interleave(ringCovers, ringAudio);
+
   const comboCovers = toComboCovers(allCovers);
   const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
     a.accessory
@@ -143,27 +166,13 @@ export default async function HomePage() {
       : [],
   );
 
-  if (front) {
-    preload(photoSrc(front.id, 480), { as: 'image', fetchPriority: 'high', imageSrcSet: srcSetFor(front), imageSizes: '(min-width: 1024px) 300px, 50vw' });
-  }
+  const first = ringItems[0];
+  if (first) preload(first.src, { as: 'image', fetchPriority: 'high', imageSrcSet: first.srcSet, imageSizes: '(min-width: 1024px) 200px, 140px' });
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trendingMix) }} />
-      {front && heroEarbuds && heroNeckband && guard && (
-        <HubHero
-          cover={front}
-          coverFromInr={COVER_FROM}
-          earbuds={heroEarbuds}
-          neckband={heroNeckband}
-          accessory={guard}
-          stats={[
-            { value: PHOTOS.length, label: 'covers', icon: 'covers' },
-            { value: audio.length, label: 'audio', icon: 'audio' },
-            { value: coverPhones.size, label: 'phones', icon: 'phones' },
-          ]}
-        />
-      )}
+      <HubHero items={ringItems} />
       <TrustSeam />
       {heroEarbuds && heroNeckband && guard && (
         <CategoryBento

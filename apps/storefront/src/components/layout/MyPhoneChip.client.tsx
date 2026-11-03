@@ -20,7 +20,7 @@ export function MyPhoneChip({ className }: { className?: string }) {
       )}
     >
       <Smartphone className="size-4 shrink-0" aria-hidden="true" />
-      <span className="max-w-24 truncate sm:max-w-44">{phone ? phone.model : 'My phone'}</span>
+      <span className="max-w-[5.5rem] truncate sm:max-w-44">{phone ? phone.model : 'My phone'}</span>
       <ChevronDown className="hidden size-3.5 shrink-0 opacity-70 sm:block" aria-hidden="true" />
     </button>
   );
