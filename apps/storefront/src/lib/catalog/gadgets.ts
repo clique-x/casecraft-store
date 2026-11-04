@@ -102,10 +102,10 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
   audio: {
     path: '/audio',
     name: 'Audio',
-    title: 'Wireless audio',
+    title: 'Audio',
     intro: 'Sealed boAt and realme earbuds and neckbands with the brand warranty. They pair with any phone; pick a colour on the product page.',
     sections: [
-      { id: 'earbuds', types: ['earbuds'], heading: 'Wireless earbuds', intro: 'True wireless, with a charging case. Pairs with Android and iPhone.' },
+      { id: 'earbuds', types: ['earbuds'], heading: 'Earbuds', intro: 'True wireless, with a charging case. Pairs with Android and iPhone.' },
       { id: 'neckband', types: ['neckband'], heading: 'Neckbands', intro: 'All-day battery and clear calls, always round your neck.' },
     ],
   },

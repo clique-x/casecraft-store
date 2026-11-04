@@ -53,6 +53,7 @@ const s = {
   panelDepts: 'sc-panelDepts',
   panelTitle: 'sc-panelTitle',
   plinth: 'sc-plinth',
+  productLink: 'sc-productLink',
   stage: 'sc-stage',
   title: 'sc-title',
   titleLg: 'sc-titleLg',
@@ -325,6 +326,9 @@ export function ShowcaseHero() {
               <div key={art.id} className={s.layer} style={poseVars(slide, art)} data-layer={art.id}>
                 <div className={s.depth} style={{ '--d': art.depth } as Vars}>
                   <div className={s.float} style={{ '--float-dur': FLOAT[art.id][0], '--float-delay': FLOAT[art.id][1] } as Vars}>
+                    {/* The art is hidden from assistive tech, so this link is mouse/touch only; the
+                        department buttons and "Explore the collection" give keyboard users the same places. */}
+                    <Link href={art.href} className={s.productLink} tabIndex={-1} aria-label={art.label} draggable={false}>
                     {/* eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer */}
                     <img
                       src={art.src}
@@ -337,6 +341,7 @@ export function ShowcaseHero() {
                       fetchPriority={art.id === 'phone' ? 'high' : 'auto'}
                       draggable={false}
                     />
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -13,7 +13,7 @@ interface HeaderProps {
 }
 
 const NAV = [
-  { href: '/categories', label: 'Cases' },
+  { href: '/covers', label: 'Cases' },
   { href: '/audio', label: 'Audio' },
   { href: '/accessories', label: 'Accessories' },
 ] as const;

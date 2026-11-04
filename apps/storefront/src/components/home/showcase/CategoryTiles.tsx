@@ -28,7 +28,7 @@ const PLINTH_SIZES = '(min-width: 64rem) 300px, (min-width: 48rem) 260px, 60vw';
 const TILES: readonly Tile[] = [
   {
     title: ['Cases with', 'character'],
-    href: '/categories',
+    href: '/covers',
     tone: 'dark',
     surface: 'bg-[radial-gradient(120%_130%_at_82%_20%,#11565a_0%,#06363b_42%,#021d20_100%)]',
     // CaseCraft SF Carbon on an iPhone 16 (photo 50129, "On the phone").

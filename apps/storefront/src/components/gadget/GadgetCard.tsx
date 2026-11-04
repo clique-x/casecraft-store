@@ -75,6 +75,12 @@ export function GadgetCard({ product, className }: { product: HomeProduct; class
         )}
         <PhoneFitNote gadget={g} />
       </div>
+      <span
+        aria-hidden="true"
+        className="mt-auto inline-flex h-10 items-center justify-center gap-1.5 rounded-pill bg-fg text-sm font-bold text-paper transition-colors duration-(--dur-micro) group-hover/card:bg-brand"
+      >
+        {g.options.length > 1 ? (g.optionKind === 'colour' ? 'Choose colour' : 'Choose length') : 'Buy now'}
+      </span>
     </Link>
   );
 }

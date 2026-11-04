@@ -48,6 +48,10 @@ export interface ShowcaseArt {
   width: { sm: number; lg: number };
   /** Pointer parallax travel in px (desktop). */
   depth: number;
+  /** The listing of everything in this product's department, opened by clicking the product. */
+  href: string;
+  /** Accessible name for that link. */
+  label: string;
 }
 
 export interface SceneArt {
@@ -63,7 +67,7 @@ export const SLIDES: readonly ShowcaseSlide[] = [
     id: 'cases',
     department: 'Cases',
     edit: 'The magnetic edit',
-    href: '/categories',
+    href: '/covers',
     hotspot: { label: 'Magnetic essentials', href: '/search?q=MagSafe', x: 53, y: 53 },
     sm: {
       phone: { x: 9, y: -6, s: 1, r: 20, z: 3 },
@@ -120,6 +124,8 @@ const home = (name: string, widths: readonly number[]) => widths.map((w) => `/ho
 export const PRODUCT_ART: readonly ShowcaseArt[] = [
   {
     id: 'phone',
+    href: '/covers',
+    label: 'Shop all covers',
     // CaseCraft Silicone MagSafe, black, on an iPhone 15 Pro (photo 50113, "On the phone").
     src: '/home/phone-magsafe-560.webp',
     srcSet: home('phone-magsafe', [320, 560]),
@@ -131,6 +137,8 @@ export const PRODUCT_ART: readonly ShowcaseArt[] = [
   },
   {
     id: 'buds',
+    href: '/audio',
+    label: 'Shop all earbuds and neckbands',
     // boAt Airdopes Prime 800 HiDef, the shop's own cutout (public/products/photos/gadgets).
     src: '/products/photos/gadgets/boat-800-hidef/cut-960.webp',
     srcSet: '/products/photos/gadgets/boat-800-hidef/cut-480.webp 480w, /products/photos/gadgets/boat-800-hidef/cut-960.webp 960w',
@@ -142,6 +150,8 @@ export const PRODUCT_ART: readonly ShowcaseArt[] = [
   },
   {
     id: 'guard',
+    href: '/accessories',
+    label: 'Shop all screen guards',
     src: '/home/guard-640.webp',
     srcSet: home('guard', [320, 640]),
     sizes: '(min-width: 64rem) 240px, 190px',

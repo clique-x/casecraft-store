@@ -251,6 +251,23 @@
   mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
 }
 
+/* Each product opens its department listing. The art layer ignores the pointer so swipes reach the
+   hero; only the product itself takes clicks. */
+.sc-productLink {
+  display: block;
+  pointer-events: auto;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms var(--ease-slide), filter 400ms var(--ease-slide);
+}
+
+@media (hover: hover) {
+  .sc-productLink:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(0 18px 30px rgb(0 0 0 / 0.35));
+  }
+}
+
 /* One product: placed by the slide (outer), nudged by the pointer (middle), floating (inner). */
 .sc-layer {
   position: absolute;
