@@ -1,0 +1,457 @@
+/*
+ * Home page brand intro (BrandIntro.client.tsx). Every class carries the gh-intro prefix, and the overlay only
+ * shows while the controller in <head> (intro-boot.ts) sets <html data-gh-intro>: "play", then "leave" or
+ * "skip" while it fades out. Timings, easing and colours arrive from intro-config.ts as --gi-* variables on
+ * <html>, set by the same script, so they are always present when the overlay is.
+ * Motion is transform, opacity and SVG stroke only; the glow is static and only fades.
+ */
+
+/* The overlay ships with an inline display:none; only an important rule can show it. (Not the hidden attribute:
+   Tailwind's preflight makes [hidden] display:none !important inside @layer base, and a layered !important
+   beats any unlayered one.) */
+html[data-gh-intro] .gh-intro {
+  display: grid !important;
+}
+
+.gh-intro {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--gi-z);
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  align-items: center;
+  padding:
+    max(1.25rem, env(safe-area-inset-top))
+    max(1.25rem, env(safe-area-inset-right))
+    max(0.75rem, env(safe-area-inset-bottom))
+    max(1.25rem, env(safe-area-inset-left));
+  overflow: hidden;
+  background: var(--gi-backdrop);
+  color: var(--gi-ivory);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  touch-action: none;
+  overscroll-behavior: contain;
+  contain: layout paint style;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Fail-safe: if the controller ever stalled, the overlay gives way on its own. */
+html[data-gh-intro='play'] .gh-intro {
+  animation: gh-intro-failsafe 0.3s linear 4.6s forwards;
+}
+
+@keyframes gh-intro-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ---------- 1. Arrival: a soft aqua light, then the orbital arc ---------- */
+
+.gh-intro-glow {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 110vmax;
+  height: 72vmax;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    rgba(var(--gi-aqua), 0.22),
+    rgba(var(--gi-aqua), 0.07) 50%,
+    transparent 78%
+  );
+  opacity: 0;
+  animation: gh-intro-fade var(--gi-glow) var(--gi-ease-out) forwards;
+  pointer-events: none;
+}
+
+.gh-intro-stage {
+  grid-row: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.25rem, 5vh, 2.75rem);
+  max-width: 100%;
+  text-align: center;
+}
+
+.gh-intro-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+}
+
+.gh-intro-orbit {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 142%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.gh-intro-orbit-turn {
+  transform-box: view-box;
+  transform-origin: 300px 110px;
+  transform: rotate(-12deg);
+  opacity: 0;
+  animation: gh-intro-turn var(--gi-arc-dur) var(--gi-ease-sweep) var(--gi-arc-delay) forwards;
+}
+
+.gh-intro-arc-back {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: gh-intro-draw var(--gi-arc-dur) var(--gi-ease-sweep) var(--gi-arc-delay) forwards;
+}
+
+.gh-intro-arc-front {
+  opacity: 0;
+  animation: gh-intro-front 700ms var(--gi-ease-out) calc(var(--gi-arc-delay) + var(--gi-arc-dur) * 0.55) forwards;
+}
+
+.gh-intro-node {
+  opacity: 0;
+  animation: gh-intro-fade 500ms var(--gi-ease-out) calc(var(--gi-arc-delay) + var(--gi-arc-dur) * 0.78) forwards;
+}
+
+/* ---------- 2. Store reveal: GadgetsHub rises out of a mask ---------- */
+
+.gh-intro-word {
+  position: relative;
+  margin: 0;
+  font-weight: 800;
+  /* Fluid with the width, held back on short landscape screens and under large text settings. */
+  font-size: min(clamp(2.25rem, 1.2rem + 7.2vw, 5.75rem), 0.4rem + 13vh, 15.5vw);
+  font-size: min(clamp(2.25rem, 1.2rem + 7.2vw, 5.75rem), 0.4rem + 13svh, 15.5vw);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+/* The mask: padding keeps the ascenders and the descender of "g" inside the clip. */
+.gh-intro-mask {
+  display: inline-flex;
+  overflow: hidden;
+  padding: 0.12em 0.06em 0.22em;
+  margin: -0.12em -0.06em -0.22em;
+  vertical-align: top;
+}
+
+.gh-intro-gadgets,
+.gh-intro-hub {
+  display: inline-block;
+  transform: translateY(112%);
+  opacity: 0;
+  animation: gh-intro-rise var(--gi-word-dur) var(--gi-ease-out) var(--gi-word-delay) forwards;
+}
+
+.gh-intro-gadgets {
+  color: var(--gi-ivory);
+}
+
+.gh-intro-hub {
+  color: var(--gi-mint);
+  animation-delay: calc(var(--gi-word-delay) + var(--gi-hub-lag));
+}
+
+/* ---------- 3. Creator signature ---------- */
+
+.gh-intro-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  max-width: 100%;
+}
+
+.gh-intro-by {
+  margin: 0;
+  font-size: clamp(0.8125rem, 0.74rem + 0.3vw, 0.9375rem);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(246, 241, 232, 0.7);
+  transform: translateY(8px);
+  opacity: 0;
+  animation: gh-intro-rise var(--gi-credit-dur) var(--gi-ease-out) var(--gi-credit-delay) forwards;
+}
+
+/*
+ * The logo is drawn exactly as supplied, on its own black canvas. The plate is that same black, softened at
+ * its edge, so the canvas never shows as a rectangle against the teal and no blend mode touches the artwork.
+ * Its width never passes 368 px (the 736 px file at 2x).
+ */
+.gh-intro-plate {
+  display: block;
+  width: min(clamp(8.75rem, 7rem + 9vw, 13.5rem), 368px, 72vw, 42vh);
+  max-width: 100%;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: #000;
+  /* Pure black right round the artwork, then a long, soft falloff into the teal. */
+  box-shadow:
+    0 0 0.9rem 0.45rem #000,
+    0 0 2.6rem 1.1rem rgba(0, 0, 0, 0.55);
+  transform: scale(0.985);
+  opacity: 0;
+  animation: gh-intro-settle var(--gi-logo-dur) var(--gi-ease-out) var(--gi-logo-delay) forwards;
+}
+
+.gh-intro-plate img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 736 / 209;
+  -webkit-user-drag: none;
+}
+
+/* The name is in the logo; it appears as text only when the logo could not load. */
+.gh-intro-by-name {
+  display: none;
+}
+
+html[data-gh-intro-nologo] .gh-intro-plate {
+  display: none;
+}
+
+html[data-gh-intro-nologo] .gh-intro-by-name {
+  display: inline;
+}
+
+/* ---------- Status and Skip intro ---------- */
+
+.gh-intro-foot {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  max-width: 100%;
+}
+
+.gh-intro-status {
+  margin: 0;
+  min-height: 1.3em;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  color: rgba(246, 241, 232, 0.72);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 400ms var(--gi-ease-out);
+}
+
+html[data-gh-intro-slow] .gh-intro-status {
+  opacity: 1;
+}
+
+.gh-intro-skip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  max-width: 100%;
+  padding: 0.5rem 1.125rem;
+  border: 1px solid rgba(246, 241, 232, 0.24);
+  border-radius: 9999px;
+  background: rgba(0, 22, 25, 0.4);
+  color: rgba(246, 241, 232, 0.84);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  cursor: pointer;
+  opacity: 0;
+  animation: gh-intro-fade 400ms ease 120ms forwards;
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease;
+}
+
+.gh-intro-skip:hover {
+  color: var(--gi-ivory);
+  border-color: rgba(166, 240, 220, 0.6);
+  background: rgba(0, 40, 44, 0.6);
+}
+
+.gh-intro-skip:focus-visible {
+  outline: 2px solid var(--gi-mint);
+  outline-offset: 3px;
+}
+
+/* Short landscape screens: smaller gaps, status beside the button. */
+@media (max-height: 30rem) {
+  .gh-intro-stage {
+    gap: clamp(0.75rem, 4vh, 1.25rem);
+  }
+
+  .gh-intro-foot {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+}
+
+/* ---------- 4. Homepage reveal ---------- */
+
+html[data-gh-intro='leave'] .gh-intro,
+html[data-gh-intro='skip'] .gh-intro {
+  opacity: 0;
+  transform: translateY(-14px);
+  pointer-events: none;
+  animation: none;
+  transition:
+    opacity var(--gi-exit) var(--gi-ease-exit),
+    transform var(--gi-exit) var(--gi-ease-exit);
+}
+
+html[data-gh-intro='skip'] .gh-intro {
+  --gi-exit: var(--gi-exit-skip);
+}
+
+/* The hero waits, a little low and transparent, under the overlay; then headline, artwork and CTA rise in turn. */
+html[data-gh-intro] [data-intro-reveal] {
+  opacity: 0;
+  translate: 0 18px;
+}
+
+html[data-gh-intro='leave'] [data-intro-reveal],
+html[data-gh-intro='skip'] [data-intro-reveal] {
+  opacity: 1;
+  translate: none;
+  transition:
+    opacity var(--gi-reveal) var(--gi-ease-out) var(--gi-rd, 0ms),
+    translate var(--gi-reveal) var(--gi-ease-out) var(--gi-rd, 0ms);
+}
+
+html[data-gh-intro='leave'] [data-intro-reveal='1'] {
+  --gi-rd: var(--gi-r1);
+}
+html[data-gh-intro='leave'] [data-intro-reveal='2'] {
+  --gi-rd: var(--gi-r2);
+}
+html[data-gh-intro='leave'] [data-intro-reveal='3'] {
+  --gi-rd: var(--gi-r3);
+}
+html[data-gh-intro='skip'] [data-intro-reveal] {
+  --gi-reveal: var(--gi-reveal-skip);
+}
+html[data-gh-intro='skip'] [data-intro-reveal='1'] {
+  --gi-rd: var(--gi-r1-skip);
+}
+html[data-gh-intro='skip'] [data-intro-reveal='2'] {
+  --gi-rd: var(--gi-r2-skip);
+}
+html[data-gh-intro='skip'] [data-intro-reveal='3'] {
+  --gi-rd: var(--gi-r3-skip);
+}
+
+/* Focus handed to the page when the skip button disappears; the page itself needs no ring. */
+[data-gh-intro-focus]:focus {
+  outline: none;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes gh-intro-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gh-intro-rise {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes gh-intro-settle {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes gh-intro-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes gh-intro-turn {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes gh-intro-front {
+  to {
+    opacity: 0.32;
+  }
+}
+
+/* ---------- Reduced motion: one quiet fade, no sweep, nothing moves ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .gh-intro-glow,
+  .gh-intro-orbit-turn,
+  .gh-intro-node,
+  .gh-intro-gadgets,
+  .gh-intro-hub,
+  .gh-intro-by,
+  .gh-intro-plate,
+  .gh-intro-skip {
+    transform: none;
+    opacity: 1;
+    animation: none;
+  }
+
+  .gh-intro-orbit-turn {
+    transform: none;
+  }
+
+  .gh-intro-arc-back {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+
+  .gh-intro-arc-front {
+    opacity: 0.32;
+    animation: none;
+  }
+
+  .gh-intro-stage {
+    opacity: 0;
+    animation: gh-intro-fade 240ms ease-out forwards;
+  }
+
+  html[data-gh-intro='leave'] .gh-intro,
+  html[data-gh-intro='skip'] .gh-intro {
+    transform: none;
+    transition: opacity 320ms ease-out;
+  }
+
+  html[data-gh-intro] [data-intro-reveal] {
+    translate: none;
+  }
+
+  html[data-gh-intro='leave'] [data-intro-reveal],
+  html[data-gh-intro='skip'] [data-intro-reveal] {
+    transition: opacity 320ms ease-out;
+  }
+}

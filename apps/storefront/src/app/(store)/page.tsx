@@ -4,6 +4,7 @@ import { formatInr, gallerySrc, PHOTOS } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
+import { BrandIntro } from '@/components/intro/BrandIntro.client';
 import { ShowcaseHero } from '@/components/home/showcase/ShowcaseHero.client';
 import { ServiceStrip } from '@/components/home/showcase/ServiceStrip';
 import { CategoryTiles } from '@/components/home/showcase/CategoryTiles';
@@ -134,6 +135,8 @@ export default async function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trendingMix) }} />
+      {/* First visit in a tab session: the brand intro, over the hero it hands off to. */}
+      <BrandIntro />
       {/* Header, hero, service strip and category tiles: the storefront's opening screens. */}
       <ShowcaseHero />
       <ServiceStrip />

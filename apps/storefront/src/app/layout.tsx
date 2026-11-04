@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { manrope, unbounded } from '@/lib/fonts';
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { IntroBoot } from '@/components/intro/IntroBoot';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -25,7 +26,12 @@ export const viewport: Viewport = {
 // Store chrome (header, footer, providers) lives in app/(store)/layout.tsx.
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en-IN" className={`${unbounded.variable} ${manrope.variable} h-full antialiased`}>
+    // suppressHydrationWarning: the intro controller in <head> may set data-gh-intro and an inline style on
+    // <html> before React hydrates (one level only; children are still checked).
+    <html lang="en-IN" className={`${unbounded.variable} ${manrope.variable} h-full antialiased`} suppressHydrationWarning>
+      <head>
+        <IntroBoot />
+      </head>
       <body className="flex min-h-full flex-col font-sans">
         <a href="#main" className="skip-link">
           Skip to content

@@ -288,8 +288,10 @@ export function ShowcaseHero() {
       </div>
 
       <div className={s.copy}>
-        <p className={s.eyebrow}>Your world. Upgraded.</p>
-        <h1 className={s.title}>
+        <p className={s.eyebrow} data-intro-reveal="1">
+          Your world. Upgraded.
+        </p>
+        <h1 className={s.title} data-intro-reveal="1">
           <span className={s.titleSm}>
             Everyday tech.
             <br />
@@ -303,14 +305,16 @@ export function ShowcaseHero() {
             <em>Extraordinary everyday.</em>
           </span>
         </h1>
-        <p className={s.lede}>Discover accessories made for your world.</p>
-        <Link href={slide.href} className={s.cta} aria-label={`Explore the collection: ${slide.department}`}>
+        <p className={s.lede} data-intro-reveal="1">
+          Discover accessories made for your world.
+        </p>
+        <Link href={slide.href} className={s.cta} data-intro-reveal="3" aria-label={`Explore the collection: ${slide.department}`}>
           Explore the collection <ArrowUpRight className="size-5" strokeWidth={2.25} aria-hidden="true" />
         </Link>
       </div>
 
       <div className={s.stage} data-stage="">
-        <div aria-hidden="true" className={s.art}>
+        <div aria-hidden="true" className={s.art} data-intro-reveal="2">
           <div className={s.orbit} style={{ '--or-sm': slide.orbit.sm, '--or-lg': slide.orbit.lg } as Vars}>
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer */}
@@ -339,6 +343,7 @@ export function ShowcaseHero() {
                       alt=""
                       decoding="async"
                       fetchPriority={art.id === 'phone' ? 'high' : 'auto'}
+                      data-intro-critical={art.id === 'phone' ? '' : undefined}
                       draggable={false}
                     />
                     </Link>
@@ -371,7 +376,7 @@ export function ShowcaseHero() {
         </button>
       </div>
 
-      <div className={s.panel}>
+      <div className={s.panel} data-intro-reveal="3">
         <div className="min-w-0">
           <p className={s.panelTitle}>{slide.edit}</p>
           <ul className={s.panelDepts} aria-label="Departments">
