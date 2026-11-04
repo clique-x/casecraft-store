@@ -1,0 +1,702 @@
+/*
+ * Home hero. Every class and keyframe carries the sc- prefix and every rule hangs off .sc-hero, so nothing here
+ * reaches other sections or pages (component CSS stays loaded after navigation, so it must not collide).
+ * Phones and tablets: one immersive full-screen scene under a transparent header.
+ * From 64rem: an ivory header above a cinematic split hero.
+ * Motion is transform and opacity only; [data-paused] (off screen or tab hidden) and
+ * prefers-reduced-motion stop the ambient loops.
+ */
+
+.sc-hero {
+  --teal: #00282c;
+  --night: #001619;
+  --mint: #a6f0dc;
+  --ivory: #f6f1e8;
+  --ease-slide: cubic-bezier(0.22, 1, 0.36, 1);
+  --pad-x: max(1.25rem, env(safe-area-inset-left), env(safe-area-inset-right));
+  --drag: 0px;
+  --px: 0;
+  --py: 0;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(env(safe-area-inset-top) + 5.25rem) var(--pad-x) calc(env(safe-area-inset-bottom) + 0.5rem);
+  overflow: hidden;
+  overflow: clip;
+  background: var(--teal);
+  color: #fff;
+  /* Vertical page scrolling stays native; horizontal moves reach the swipe handler. */
+  touch-action: pan-y pinch-zoom;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Backdrop: one continuous teal room with slow-moving light ---------- */
+
+.sc-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 70% at 70% 58%, #0b4d51 0%, rgba(4, 52, 56, 0.6) 32%, transparent 66%),
+    radial-gradient(90% 60% at 20% 100%, rgba(0, 60, 63, 0.75), transparent 70%),
+    linear-gradient(180deg, #00262a 0%, var(--teal) 42%, #00262a 78%, var(--night) 100%);
+}
+
+.sc-glow {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+  animation: sc-drift 24s ease-in-out infinite alternate;
+}
+
+/* Soft aqua light behind the products. */
+.sc-glowA {
+  left: 22%;
+  top: 30%;
+  width: 95vmax;
+  height: 70vmax;
+  background: radial-gradient(closest-side, rgba(38, 196, 178, 0.32), rgba(38, 196, 178, 0.1) 55%, transparent);
+}
+
+/* A cooler wash drifting across the lower half. */
+.sc-glowB {
+  left: -30%;
+  top: 55%;
+  width: 90vmax;
+  height: 60vmax;
+  background: radial-gradient(closest-side, rgba(110, 220, 210, 0.14), transparent);
+  animation-duration: 31s;
+  animation-direction: alternate-reverse;
+}
+
+/* Keeps the headline on quiet, dark negative space. */
+.sc-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 22, 25, 0.78) 0%, rgba(0, 22, 25, 0.35) 24%, transparent 40%),
+    linear-gradient(0deg, rgba(0, 22, 25, 0.55) 0%, transparent 22%);
+}
+
+@keyframes sc-drift {
+  from {
+    transform: translate3d(-6%, -3%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(6%, 4%, 0) scale(1.08);
+  }
+}
+
+/* ---------- Copy ---------- */
+
+.sc-copy {
+  position: relative;
+  z-index: 6;
+  max-width: 34rem;
+}
+
+.sc-eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.sc-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(2.3rem, 1.2rem + 4.6vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.sc-title em {
+  font-style: normal;
+  color: var(--mint);
+}
+
+.sc-titleLg,
+.sc-lede,
+.sc-cta,
+.sc-controlsLg,
+.sc-hotspot {
+  display: none;
+}
+
+.sc-lede {
+  margin: 1.25rem 0 0;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.sc-cta {
+  margin-top: 2rem;
+  align-items: center;
+  gap: 0.6rem;
+  height: 3.5rem;
+  padding: 0 1.75rem;
+  border-radius: 9999px;
+  background: var(--ivory);
+  color: var(--teal);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 300ms var(--ease-slide),
+    background-color 300ms var(--ease-slide);
+}
+
+.sc-cta:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.sc-cta svg,
+.sc-panelCta svg,
+.sc-hotspotPill svg {
+  flex: none;
+  transition: transform 300ms var(--ease-slide);
+}
+
+.sc-cta:hover svg,
+.sc-panelCta:hover svg,
+.sc-hotspot:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* ---------- Stage: where the products live ---------- */
+
+.sc-stage {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  min-height: 22rem;
+  margin: 0.5rem calc(-1 * var(--pad-x)) 0;
+}
+
+/* The size container for every cqw/cqh below. It is absolutely positioned so its height is definite even
+   when the stage itself is sized by flexbox (container units against a flex-sized container resolve to 0). */
+.sc-art {
+  position: absolute;
+  inset: 0;
+  container-type: size;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sc-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+}
+
+/* Every product moves with a finger during a swipe, then settles. */
+.sc-track {
+  position: absolute;
+  inset: 0;
+  transform: translate3d(var(--drag), 0, 0);
+  transition: transform 500ms var(--ease-slide);
+}
+
+.sc-hero[data-dragging] .sc-track {
+  transition: none;
+}
+
+.sc-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150cqw;
+  transform: translate(-50%, -50%) translate(0, 5cqh) rotate(calc(var(--or-sm, 0) * 1deg));
+  transition: transform 1400ms var(--ease-slide);
+}
+
+.sc-orbit > div {
+  animation: sc-breathe 14s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.sc-orbit img {
+  opacity: 0.95;
+}
+
+@keyframes sc-breathe {
+  from {
+    transform: scale(0.985) rotate(-0.6deg);
+  }
+  to {
+    transform: scale(1.025) rotate(0.6deg);
+  }
+}
+
+.sc-plinth {
+  position: absolute;
+  left: 50%;
+  bottom: -16cqh;
+  width: 108cqw;
+  transform: translateX(-50%);
+  opacity: 0.55;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+}
+
+/* One product: placed by the slide (outer), nudged by the pointer (middle), floating (inner). */
+.sc-layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--w-sm) * 1cqh);
+  z-index: var(--z-sm);
+  transform: translate(-50%, -50%) translate(calc(var(--x-sm) * 1cqw), calc(var(--y-sm) * 1cqh)) rotate(calc(var(--r-sm) * 1deg)) scale(var(--s-sm));
+  transition: transform 1100ms var(--ease-slide);
+  will-change: transform;
+}
+
+.sc-depth {
+  transform: translate3d(calc(var(--px) * var(--d) * 1px), calc(var(--py) * var(--d) * 0.6px), 0);
+  transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sc-float {
+  animation: sc-float var(--float-dur, 8s) ease-in-out var(--float-delay, 0s) infinite alternate;
+  will-change: transform;
+}
+
+.sc-float img {
+  filter: drop-shadow(0 26px 30px rgba(0, 10, 12, 0.55));
+}
+
+@keyframes sc-float {
+  from {
+    transform: translate3d(0, -6px, 0) rotate(-0.7deg);
+  }
+  to {
+    transform: translate3d(0, 8px, 0) rotate(0.7deg);
+  }
+}
+
+/* ---------- Phones: glass shopping panel, indicators, drag hint ---------- */
+
+.sc-panel {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  padding: 1rem 1rem 1rem 1.25rem;
+  border-radius: 1.5rem;
+  /* Glass without backdrop-filter: blurring the moving scene every frame is too heavy for phones. */
+  background:
+    linear-gradient(180deg, rgba(166, 240, 220, 0.12), rgba(166, 240, 220, 0.03) 60%),
+    rgba(0, 38, 42, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 24px 48px -24px rgba(0, 0, 0, 0.7);
+}
+
+.sc-panelTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.sc-panelDepts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0.5rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.sc-panelDepts li + li::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+.sc-panelDepts [aria-current] {
+  color: var(--mint);
+  font-weight: 700;
+}
+
+.sc-panelCta {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0 1.15rem;
+  border-radius: 9999px;
+  background: var(--ivory);
+  color: var(--teal);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Phones: stack the panel (title and departments, then the button) rather than squeeze the title. */
+@media (max-width: 29.99rem) {
+  .sc-panel {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 1rem 1rem 1.15rem;
+  }
+  .sc-panelCta {
+    width: 100%;
+  }
+}
+
+.sc-dotsRow {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: 0.25rem;
+}
+
+.sc-dots {
+  display: flex;
+  align-items: center;
+}
+
+.sc-dot {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+}
+
+.sc-dot span {
+  display: block;
+  width: 1.5rem;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.28);
+  transition:
+    width 400ms var(--ease-slide),
+    background-color 400ms var(--ease-slide);
+}
+
+.sc-dot[aria-current] span {
+  width: 2.25rem;
+  background: #fff;
+}
+
+.sc-dragHint {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: -0.25rem 0 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.sc-dragHint svg {
+  opacity: 0.8;
+}
+
+/* ---------- Tablets: same scene, more room ---------- */
+
+@media (min-width: 40rem) {
+  .sc-orbit {
+    width: 128cqw;
+  }
+  .sc-hero {
+    --pad-x: max(2rem, env(safe-area-inset-left), env(safe-area-inset-right));
+    padding-top: calc(env(safe-area-inset-top) + 6.5rem);
+  }
+  .sc-panel {
+    align-self: center;
+    width: min(100%, 38rem);
+  }
+}
+
+/* ---------- From 64rem: ivory header above a cinematic split hero ---------- */
+
+@media (min-width: 64rem) {
+  .sc-hero {
+    display: block;
+    min-height: 0;
+    height: clamp(31rem, 60svh, 38rem);
+    margin-top: 4rem;
+    padding: 0;
+    touch-action: auto;
+  }
+
+  .sc-backdrop {
+    background:
+      radial-gradient(70% 95% at 70% 50%, #0b4d51 0%, rgba(4, 52, 56, 0.6) 36%, transparent 70%),
+      linear-gradient(90deg, var(--night) 0%, #00262a 22%, var(--teal) 50%, #002f33 100%);
+  }
+
+  .sc-glowA {
+    left: 38%;
+    top: -30%;
+    width: 70vw;
+    height: 75vw;
+  }
+
+  .sc-glowB {
+    left: -10%;
+    top: 30%;
+    width: 60vw;
+    height: 40vw;
+  }
+
+  .sc-vignette {
+    background:
+      linear-gradient(90deg, rgba(0, 22, 25, 0.7) 0%, rgba(0, 22, 25, 0.25) 32%, transparent 48%),
+      linear-gradient(0deg, rgba(0, 22, 25, 0.5) 0%, transparent 20%);
+  }
+
+  .sc-copy {
+    position: absolute;
+    left: clamp(2.5rem, 4.2vw, 4.5rem);
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: none;
+    width: 46%;
+    padding-bottom: 3rem;
+  }
+
+  .sc-eyebrow,
+  .sc-titleSm {
+    display: none;
+  }
+
+  .sc-titleLg {
+    display: inline;
+  }
+
+  .sc-title {
+    font-size: clamp(2.6rem, 3.55vw, 4.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+  }
+
+  .sc-lede {
+    display: block;
+  }
+
+  .sc-cta {
+    display: inline-flex;
+    align-self: flex-start;
+  }
+
+  .sc-stage {
+    position: absolute;
+    inset: 0 0 0 41%;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .sc-orbit {
+    width: 96cqw;
+    transform: translate(-50%, -50%) translate(2cqw, 6cqh) rotate(calc(var(--or-lg, 0) * 1deg));
+  }
+
+  .sc-plinth {
+    bottom: -16cqh;
+    width: 74cqw;
+    opacity: 0.9;
+  }
+
+  .sc-layer {
+    width: calc(var(--w-lg) * 1cqh);
+    z-index: var(--z-lg);
+    transform: translate(-50%, -50%) translate(calc(var(--x-lg) * 1cqw), calc(var(--y-lg) * 1cqh)) rotate(calc(var(--r-lg) * 1deg)) scale(var(--s-lg));
+  }
+
+  .sc-panel,
+  .sc-dotsRow {
+    display: none;
+  }
+
+  /* Shopping hotspot: label, leader line, and a dot that sits on the featured product. */
+  .sc-hotspot {
+    position: absolute;
+    z-index: 8;
+    left: calc(var(--hx) * 1%);
+    top: calc(var(--hy) * 1%);
+    display: flex;
+    align-items: center;
+    transform: translate(calc(-100% + 0.4rem), -50%);
+    animation: sc-hotspot-in 700ms var(--ease-slide) 500ms both;
+  }
+
+  .sc-hotspotPill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    height: 2.75rem;
+    padding: 0 1.1rem;
+    border-radius: 9999px;
+    background: var(--ivory);
+    color: var(--teal);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.7);
+  }
+
+  .sc-hotspotLine {
+    width: 3.25rem;
+    height: 1.5px;
+    background: linear-gradient(90deg, rgba(246, 241, 232, 0.9), rgba(246, 241, 232, 0.5));
+  }
+
+  .sc-hotspotDot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow:
+      0 0 0 4px rgba(255, 255, 255, 0.22),
+      0 0 18px rgba(166, 240, 220, 0.8);
+  }
+
+  .sc-controlsLg {
+    position: absolute;
+    z-index: 6;
+    left: clamp(2.5rem, 4.2vw, 4.5rem);
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .sc-counter {
+    margin: 0 0.75rem 0 0;
+    font-size: 0.9375rem;
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .sc-counter b {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .sc-arrow {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease;
+  }
+
+  .sc-arrow:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .sc-bars {
+    display: flex;
+    align-items: center;
+  }
+
+  .sc-bar {
+    display: grid;
+    place-items: center;
+    height: 2.75rem;
+    padding: 0 0.2rem;
+  }
+
+  .sc-bar span {
+    display: block;
+    width: 2.75rem;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.25);
+    transition: background-color 400ms var(--ease-slide);
+  }
+
+  .sc-bar[aria-current] span {
+    background: #fff;
+  }
+}
+
+@media (min-width: 90rem) {
+  .sc-copy {
+    left: max(4.5rem, calc((100vw - 90rem) / 2 + 3.5rem));
+  }
+  .sc-controlsLg {
+    left: max(4.5rem, calc((100vw - 90rem) / 2 + 3.5rem));
+  }
+}
+
+@keyframes sc-hotspot-in {
+  from {
+    opacity: 0;
+    transform: translate(calc(-100% + 0.4rem), -50%) translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(calc(-100% + 0.4rem), -50%);
+  }
+}
+
+/* Focus rings stay visible on every surface of the hero. */
+.sc-hero :is(a, button):focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
+}
+
+/* Off screen or tab hidden: the ambient loops wait. */
+.sc-hero[data-paused] :is(.sc-glow, .sc-float, .sc-orbit > div) {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-glow,
+  .sc-float,
+  .sc-orbit > div,
+  .sc-hotspot {
+    animation: none !important;
+  }
+  .sc-layer,
+  .sc-orbit,
+  .sc-track,
+  .sc-depth {
+    transition: none !important;
+  }
+}

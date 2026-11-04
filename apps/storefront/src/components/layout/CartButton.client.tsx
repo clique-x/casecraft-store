@@ -19,7 +19,7 @@ export function CartButton({ className }: { className: string }) {
         setDrawerOpen(true);
       }}
     >
-      <ShoppingBag className="size-5" aria-hidden="true" />
+      <ShoppingBag className="size-[1.375rem]" strokeWidth={1.75} aria-hidden="true" />
       {count > 0 && (
         <span className="absolute -top-0.5 -right-0.5 grid h-4.5 min-w-4.5 place-items-center rounded-full bg-brand-coral px-1 text-[0.625rem] font-bold text-fg tabular-nums">
           {count}

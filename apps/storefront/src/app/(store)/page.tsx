@@ -1,21 +1,17 @@
 import type { Metadata } from 'next';
-import { preload } from 'react-dom';
 import { BRAND_NAME, SITE_URL } from '@/lib/brand';
-import { ACCESSORIES } from '@/lib/catalog/accessories';
-import { formatInr, gallerySrc, PHOTO_WIDTHS, PHOTOS, photoSrc } from '@/lib/catalog/photos';
-import { gadgetCutSrc, gadgetCutSrcSet } from '@/lib/catalog/gadgets';
-import type { HeroItem } from '@/components/home/hub/HubHero';
+import { formatInr, gallerySrc, PHOTOS } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
-import { HubHero } from '@/components/home/hub/HubHero';
-import { CategoryBento } from '@/components/home/hub/CategoryBento';
+import { ShowcaseHero } from '@/components/home/showcase/ShowcaseHero.client';
+import { ServiceStrip } from '@/components/home/showcase/ServiceStrip';
+import { CategoryTiles } from '@/components/home/showcase/CategoryTiles';
 import { TrendingHub } from '@/components/home/hub/TrendingHub';
 import { AudioSpotlight } from '@/components/home/hub/AudioSpotlight';
 import { CoversSection } from '@/components/home/hub/CoversSection';
 import { BrandsWall, type LogoBrand } from '@/components/home/hub/BrandsWall';
 import { HubFinalCta } from '@/components/home/hub/HubFinalCta';
-import { TrustSeam } from '@/components/home/TrustSeam';
 import { LookGrid } from '@/components/home/LookGrid';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
@@ -33,12 +29,8 @@ export const metadata: Metadata = {
   openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: TITLE, description: DESCRIPTION, url: SITE_URL },
 };
 
-/** Audio picked for the hero, the spotlight and the trending mix, in this order when they exist. */
+/** Audio picked for the spotlight and the trending mix, in this order when they exist. */
 const AUDIO_PICKS = ['boat-800-hidef', 'realme-air-7', 'boat-alpha-gen2', 'realme-t310', 'boat-rockerz-110', 'boat-219'];
-const HERO_EARBUDS = 'boat-alpha-gen2';
-/** The cover on the hero glass, first of these that exists: SF carbon, red Ferrari, ring stand. */
-const HERO_COVERS = [50129, 50105, 50126];
-const HERO_FEATURED = 'boat-800-hidef';
 const FEATURE_AUDIO = 'realme-air-7';
 
 function absolute(path: string): string {
@@ -117,20 +109,12 @@ export default async function HomePage() {
   ]);
 
   const audioWithPhotos = byPicks(audio.filter((p) => p.gadget?.photos));
-  const earbuds = audio.filter((p) => p.gadget?.type === 'earbuds');
-  const neckbands = audio.filter((p) => p.gadget?.type === 'neckband');
-  const heroEarbuds = (audioWithPhotos.find((p) => p.gadget?.id === HERO_EARBUDS) ?? audioWithPhotos.find((p) => p.gadget?.type === 'earbuds'))?.gadget;
-  const heroNeckband = audioWithPhotos.find((p) => p.gadget?.type === 'neckband')?.gadget;
   const featureProduct = audioWithPhotos.find((p) => p.gadget?.id === FEATURE_AUDIO) ?? audioWithPhotos[0];
-  const guard = ACCESSORIES.find((a) => a.type === 'screen-guard') ?? ACCESSORIES[0];
 
   const coverPhones = new Set(PHOTOS.flatMap((e) => e.modelSlugs));
   const phoneBrands = ['Apple', 'Samsung', 'Google', 'OnePlus', 'Xiaomi'].filter((b) =>
     models.some((m) => m.brand === b && coverPhones.has(m.slug)),
   );
-  const coverShots = [...PHOTOS]
-    .filter((e) => (e.shots ?? 0) > 0)
-    .sort((a, b) => (a.trendingRank ?? 99) - (b.trendingRank ?? 99));
 
   const trendingMix = interleave(trending.slice(0, 5), audioWithPhotos.slice(0, 5));
   const audioBrands = [...new Set(audio.flatMap((p) => (p.gadget?.original ? [p.gadget.original.brand] : [])))];
@@ -140,31 +124,6 @@ export default async function HomePage() {
     ...phoneBrands.map((b) => ({ name: b, href: `/phones/${b.toLowerCase()}`, tag: 'Covers', logo: { phoneBrand: b } })),
   ];
 
-  // The hero glass: three real products as transparent cutouts, plus the screen guard.
-  const toHeroCover = (p: HomeProduct): HeroItem => ({
-    href: `/products/${p.handle}`,
-    src: photoSrc(p.photo!.id, 960),
-    srcSet: PHOTO_WIDTHS.map((w) => `${photoSrc(p.photo!.id, w)} ${w}w`).join(', '),
-    w: p.photo!.imageW,
-    h: p.photo!.imageH,
-    title: `${p.photo!.design} · ${p.photo!.brand} ${p.photo!.series}`,
-    price: formatInr(p.priceFromInr),
-  });
-  const toHeroAudio = (p: HomeProduct): HeroItem => ({
-    href: `/products/${p.handle}`,
-    src: gadgetCutSrc(p.gadget!.photos!, 960),
-    srcSet: gadgetCutSrcSet(p.gadget!.photos!),
-    w: p.gadget!.photos!.cut!.w,
-    h: p.gadget!.photos!.cut!.h,
-    title: p.title,
-    price: formatInr(p.priceFromInr),
-  });
-  const withCut = audioWithPhotos.filter((p) => p.gadget?.photos?.cut);
-  const heroFeatured = withCut.find((p) => p.gadget?.id === HERO_FEATURED) ?? withCut.find((p) => p.gadget?.type === 'earbuds');
-  const heroBand = withCut.find((p) => p.gadget?.type === 'neckband');
-  const coverPool = [...allCovers, ...trending];
-  const heroCover = HERO_COVERS.map((id) => coverPool.find((c) => c.photo?.id === id && c.photo.variants.length > 0)).find(Boolean);
-
   const comboCovers = toComboCovers(allCovers);
   const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
     a.accessory
@@ -172,32 +131,13 @@ export default async function HomePage() {
       : [],
   );
 
-  const hero = heroFeatured && heroBand && heroCover && guard ? { featured: toHeroAudio(heroFeatured), cover: toHeroCover(heroCover), neckband: toHeroAudio(heroBand), guard } : null;
-  if (hero) preload(hero.featured.src, { as: 'image', fetchPriority: 'high', imageSrcSet: hero.featured.srcSet, imageSizes: '(min-width: 1024px) 420px, 80vw' });
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trendingMix) }} />
-      {hero && <HubHero {...hero} />}
-      <TrustSeam />
-      {heroEarbuds && heroNeckband && guard && (
-        <CategoryBento
-          counts={{
-            covers: PHOTOS.length,
-            coverPhones: coverPhones.size,
-            earbuds: earbuds.length,
-            neckbands: neckbands.length,
-            protection: accessories.length,
-            phoneModels: coverPhones.size,
-            looks: looks.slice(0, 4).map((l) => ({ name: l.look.name, href: `/categories/${l.look.handle}` })),
-            phoneBrands,
-          }}
-          coverShots={coverShots}
-          earbuds={heroEarbuds}
-          neckband={heroNeckband}
-          accessory={guard}
-        />
-      )}
+      {/* Header, hero, service strip and category tiles: the storefront's opening screens. */}
+      <ShowcaseHero />
+      <ServiceStrip />
+      <CategoryTiles />
       <TrendingHub products={trendingMix} />
       {featureProduct?.gadget && (
         <AudioSpotlight

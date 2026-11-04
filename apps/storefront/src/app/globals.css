@@ -8,6 +8,27 @@
 /* Viewports at least 900 px tall: the hero sub on phones, where the stacked CTA row leaves no room for it below. */
 @custom-variant tall (@media (min-height: 900px));
 
+/* Home page chrome. The home hero renders [data-home-hero] and removes it when Activity hides the page,
+   so these never leak onto the next route. CSS rather than usePathname(), which would make every route
+   dynamic under cacheComponents (same reason as the checkout rule further down). */
+@custom-variant home (body:has([data-home-hero]) &);
+/* Below lg on the home page, until the page scrolls: the header floats over the hero in white. */
+@custom-variant over-hero {
+  @media (max-width: 63.99rem) {
+    body:has([data-home-hero]) [data-site-header]:not([data-past]) & {
+      @slot;
+    }
+  }
+}
+/* The same state, for the <header> element itself. */
+@custom-variant header-over-hero {
+  @media (max-width: 63.99rem) {
+    body:has([data-home-hero]) &[data-site-header]:not([data-past]) {
+      @slot;
+    }
+  }
+}
+
 @theme {
   /* Light retail palette: white pages, warm studio-grey bands, near-black type and buttons,
      brand teal and coral as small accents. The `ink` names are kept from the old dark stage so components
@@ -97,6 +118,16 @@
 
   --radius-card: 0.875rem;
   --radius-pill: 9999px;
+
+  /* Storefront showcase palette: header, home hero, service strip and category tiles. */
+  --color-gh-teal: #00282c;
+  --color-gh-night: #001619;
+  --color-gh-mint: #a6f0dc;
+  --color-gh-ivory: #f6f1e8;
+  --color-gh-ivory-2: #efe8dc;
+  --color-gh-line: #e2d9ca;
+  --color-gh-ink: #0d1d1f;
+  --color-gh-ink-muted: #4b5a5b;
 }
 
 /* shadcn primitive variables, mapped onto the brand tokens */
@@ -347,6 +378,12 @@
   body:has(#checkout-form) [data-whatsapp-fab] {
     display: none;
   }
+}
+
+/* Home: the service strip under the hero carries the same four facts, so the announcement bar steps aside
+   and the header starts at the very top, over the hero on phones. */
+body:has([data-home-hero]) [data-announcement] {
+  display: none;
 }
 
 /* Sections below the first screens render lazily */

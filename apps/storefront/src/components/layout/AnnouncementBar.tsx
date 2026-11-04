@@ -14,7 +14,7 @@ export function AnnouncementBar() {
     `Ships in ${DISPATCH_WINDOW}`,
   ];
   return (
-    <div className="relative z-50 flex h-8 items-center justify-center overflow-hidden bg-brand px-4 text-[0.75rem] font-semibold text-paper">
+    <div data-announcement="" className="relative z-50 flex h-8 items-center justify-center overflow-hidden bg-brand px-4 text-[0.75rem] font-semibold text-paper">
       <p className="truncate sm:hidden">{items.slice(0, 2).join(' · ')}</p>
       <ul className="hidden items-center gap-6 sm:flex">
         {items.map((item, i) => (

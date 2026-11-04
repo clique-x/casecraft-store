@@ -35,6 +35,7 @@ export function HeaderScrollState({ solid = false, className, children }: Header
 
   return (
     <header
+      data-site-header=""
       data-scrolled={scrolled || solid || !heroPresent ? '' : undefined}
       data-past={scrolled ? '' : undefined}
       className={className}

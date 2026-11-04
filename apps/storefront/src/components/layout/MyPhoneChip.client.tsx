@@ -1,10 +1,14 @@
 'use client';
 
-import { ChevronDown, Smartphone } from 'lucide-react';
+import { Smartphone } from 'lucide-react';
 import { useMyPhone } from '@/lib/phone/use-my-phone';
 import { pickerSheet } from '@/lib/phone/picker-sheet-store';
 import { cn } from '@/lib/utils';
 
+/**
+ * "Find my device": opens the phone picker sheet. A pill with its label from lg, a round icon below lg.
+ * Once a phone is picked, the pill shows that model instead.
+ */
 export function MyPhoneChip({ className }: { className?: string }) {
   const { phone } = useMyPhone();
   return (
@@ -12,16 +16,17 @@ export function MyPhoneChip({ className }: { className?: string }) {
       type="button"
       onClick={() => pickerSheet.open()}
       aria-haspopup="dialog"
-      aria-label={phone ? `My phone: ${phone.model}. Change phone` : 'Select your phone'}
+      aria-label={phone ? `My phone: ${phone.model}. Change phone` : 'Find my device'}
       className={cn(
-        'inline-flex h-10 min-w-0 items-center gap-2 rounded-pill border border-fg-on-ink/15 bg-surface-glass px-3 text-sm font-medium text-fg-on-ink transition-colors duration-(--dur-micro) hover:border-fg-on-ink/30 hover:bg-fg-on-ink/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2',
-        phone && 'border-accent-2/60',
+        'relative inline-flex size-11 min-w-0 shrink-0 items-center justify-center gap-2 rounded-pill text-sm font-semibold transition-colors duration-(--dur-micro) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand lg:w-auto lg:border lg:px-4',
+        'text-gh-ink hover:bg-gh-ink/5 lg:border-gh-ink/20 lg:hover:border-gh-ink/35',
+        'over-hero:text-white over-hero:hover:bg-white/10',
         className,
       )}
     >
-      <Smartphone className="size-4 shrink-0" aria-hidden="true" />
-      <span className="max-w-[5.5rem] truncate sm:max-w-44">{phone ? phone.model : 'My phone'}</span>
-      <ChevronDown className="hidden size-3.5 shrink-0 opacity-70 sm:block" aria-hidden="true" />
+      <Smartphone className="size-5 shrink-0 lg:size-4" aria-hidden="true" />
+      <span className="hidden max-w-40 truncate lg:inline">{phone ? phone.model : 'Find my device'}</span>
+      {phone && <span aria-hidden="true" className="absolute top-2 right-2 size-2 rounded-full bg-brand ring-2 ring-gh-ivory lg:hidden" />}
     </button>
   );
 }

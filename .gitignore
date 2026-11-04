@@ -11,3 +11,6 @@ dist/
 .medusa/
 *.tsbuildinfo
 dump.rdb
+
+# ISNet model downloaded by scripts/hero-art/fetch-model.sh
+scripts/hero-art/.models/
