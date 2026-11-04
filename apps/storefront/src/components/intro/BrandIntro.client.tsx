@@ -35,8 +35,8 @@ export function BrandIntro() {
     <div ref={ref} id={INTRO_DOM.overlayId} className="gh-intro" style={{ display: 'none' }}>
       <div className="gh-intro-glow" aria-hidden="true" />
 
-      <div className="gh-intro-stage" aria-hidden="true">
-        <div className="gh-intro-mark">
+      <div className="gh-intro-stage">
+        <div className="gh-intro-mark" aria-hidden="true">
           <svg className="gh-intro-orbit" viewBox="0 0 600 220" focusable="false">
             <defs>
               <linearGradient id="gh-intro-arc-stroke" x1="0" y1="0" x2="1" y2="0">
@@ -89,6 +89,11 @@ export function BrandIntro() {
           </p>
         </div>
 
+        {/* Filled once, by the controller, only if the hero image is late. */}
+        <p className="gh-intro-status" role="status" {...{ [INTRO_DOM.statusAttr]: '' }} suppressHydrationWarning />
+      </div>
+
+      <div className="gh-intro-foot" aria-hidden="true">
         <div className="gh-intro-credit">
           <p className="gh-intro-by">
             {INTRO_COPY.credit}
@@ -112,13 +117,9 @@ export function BrandIntro() {
         </div>
       </div>
 
-      <div className="gh-intro-foot">
-        {/* Filled once, by the controller, only if the hero image is late. */}
-        <p className="gh-intro-status" role="status" {...{ [INTRO_DOM.statusAttr]: '' }} suppressHydrationWarning />
-        <button type="button" className="gh-intro-skip" {...{ [INTRO_DOM.skipAttr]: '' }}>
-          {INTRO_COPY.skip}
-        </button>
-      </div>
+      <button type="button" className="gh-intro-skip" {...{ [INTRO_DOM.skipAttr]: '' }}>
+        {INTRO_COPY.skip}
+      </button>
     </div>
   );
 }

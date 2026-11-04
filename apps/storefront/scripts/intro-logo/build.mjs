@@ -2,7 +2,8 @@
 // the logo on pure black) to the logo plus a small black margin, without touching a single logo pixel: no
 // resampling at native size, no colour change, no keying. Writes public/brand/intro/:
 //   earthclique-logo.png       trimmed master, lossless
-//   earthclique-logo-<w>.webp  native width and half width, lossless, for the intro's srcset
+//   earthclique-logo-<w>.webp  native width and half width, lossless, on black as supplied
+//   earthclique-logo-alpha*    the same with the black lifted out to transparency (used by the intro)
 // and prints the sizes to paste into src/components/intro/intro-config.ts. Run: node scripts/intro-logo/build.mjs
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -40,4 +41,25 @@ await trimmed.clone().png({ compressionLevel: 9 }).toFile(path.join(OUT, 'earthc
 const half = Math.round(width / 2);
 await trimmed.clone().webp({ lossless: true }).toFile(path.join(OUT, `earthclique-logo-${width}.webp`));
 await trimmed.clone().resize({ width: half, kernel: 'lanczos3' }).webp({ lossless: true }).toFile(path.join(OUT, `earthclique-logo-${half}.webp`));
-console.log(JSON.stringify({ crop: { left, top, width, height }, files: [`earthclique-logo-${half}.webp`, `earthclique-logo-${width}.webp`], aspect: +(width / height).toFixed(4) }));
+// Transparent version: the artwork is light on pure black, so each pixel's alpha is its brightest channel and its
+// colour is divided back out of the black (un-premultiplied). Laid over black it reproduces the supplied file
+// exactly; over the intro's glass it shows the same white, cyan and orange with clean anti-aliased edges.
+const { data: px, info: ti } = await trimmed.clone().raw().toBuffer({ resolveWithObject: true });
+const rgba = Buffer.alloc(ti.width * ti.height * 4);
+for (let i = 0, j = 0; i < px.length; i += 3, j += 4) {
+  const m = Math.max(px[i], px[i + 1], px[i + 2]);
+  // 0–2 is compression noise in the black canvas, not artwork.
+  const a = m <= 2 ? 0 : m;
+  rgba[j + 3] = a;
+  if (a) {
+    rgba[j] = Math.min(255, Math.round((px[i] * 255) / a));
+    rgba[j + 1] = Math.min(255, Math.round((px[i + 1] * 255) / a));
+    rgba[j + 2] = Math.min(255, Math.round((px[i + 2] * 255) / a));
+  }
+}
+const alpha = () => sharp(rgba, { raw: { width: ti.width, height: ti.height, channels: 4 } });
+await alpha().png({ compressionLevel: 9 }).toFile(path.join(OUT, 'earthclique-logo-alpha.png'));
+await alpha().webp({ lossless: true }).toFile(path.join(OUT, `earthclique-logo-alpha-${width}.webp`));
+await alpha().resize({ width: half, kernel: 'lanczos3' }).webp({ lossless: true }).toFile(path.join(OUT, `earthclique-logo-alpha-${half}.webp`));
+
+console.log(JSON.stringify({ crop: { left, top, width, height }, files: [`earthclique-logo-alpha-${half}.webp`, `earthclique-logo-alpha-${width}.webp`], aspect: +(width / height).toFixed(4) }));

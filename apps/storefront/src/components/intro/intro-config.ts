@@ -67,12 +67,12 @@ export const INTRO_COPY = {
   skip: 'Skip intro',
 } as const;
 
-/** The supplied logo, trimmed of its empty black frame by scripts/intro-logo/build.mjs. */
+/** The supplied logo, trimmed of its empty black frame and lifted off its black to transparency by scripts/intro-logo/build.mjs. */
 export const INTRO_LOGO = {
-  src: '/brand/intro/earthclique-logo-736.webp',
-  srcSet: '/brand/intro/earthclique-logo-368.webp 368w, /brand/intro/earthclique-logo-736.webp 736w',
-  /** Matches the widest the logo is drawn in intro.css (13.5rem, never past 368 px). */
-  sizes: '(min-width: 48rem) 216px, 160px',
+  src: '/brand/intro/earthclique-logo-alpha-736.webp',
+  srcSet: '/brand/intro/earthclique-logo-alpha-368.webp 368w, /brand/intro/earthclique-logo-alpha-736.webp 736w',
+  /** Matches the widest the logo is drawn in intro.css (9.75rem, never past 368 px). */
+  sizes: '(min-width: 48rem) 156px, 120px',
   width: 736,
   height: 209,
 } as const;

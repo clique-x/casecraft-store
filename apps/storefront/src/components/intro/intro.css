@@ -166,47 +166,65 @@ html[data-gh-intro='play'] .gh-intro {
   animation-delay: calc(var(--gi-word-delay) + var(--gi-hub-lag));
 }
 
-/* ---------- 3. Creator signature ---------- */
+/* ---------- 3. Creator signature: a small glass pill at the bottom centre ---------- */
 
-.gh-intro-credit {
+.gh-intro-foot {
+  grid-row: 2;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.25rem;
   max-width: 100%;
+  padding-bottom: clamp(0.25rem, 2.5vh, 1.75rem);
 }
 
-.gh-intro-by {
-  margin: 0;
-  font-size: clamp(0.8125rem, 0.74rem + 0.3vw, 0.9375rem);
-  line-height: 1.3;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: rgba(246, 241, 232, 0.7);
-  transform: translateY(8px);
+.gh-intro-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  padding: 0.5rem 1.125rem 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+  /* Frosted glass: a faint white wash, a top highlight and a small-area blur of the light behind it. */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 18px 40px -24px rgba(0, 0, 0, 0.75);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  transform: translateY(10px);
   opacity: 0;
   animation: gh-intro-rise var(--gi-credit-dur) var(--gi-ease-out) var(--gi-credit-delay) forwards;
 }
 
+/* No backdrop-filter: a solid tint of the same glass. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .gh-intro-credit {
+    background: rgba(18, 62, 66, 0.86);
+  }
+}
+
+.gh-intro-by {
+  margin: 0;
+  padding-right: 0.75rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: rgba(246, 241, 232, 0.74);
+}
+
 /*
- * The logo is drawn exactly as supplied, on its own black canvas. The plate is that same black, softened at
- * its edge, so the canvas never shows as a rectangle against the teal and no blend mode touches the artwork.
- * Its width never passes 368 px (the 736 px file at 2x).
+ * The supplied logo with its black lifted out to transparency (scripts/intro-logo/build.mjs), so it sits
+ * directly on the glass. Width never passes 368 px (the 736 px file at 2x).
  */
 .gh-intro-plate {
   display: block;
-  width: min(clamp(8.75rem, 7rem + 9vw, 13.5rem), 368px, 72vw, 42vh);
-  max-width: 100%;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  background: #000;
-  /* Pure black right round the artwork, then a long, soft falloff into the teal. */
-  box-shadow:
-    0 0 0.9rem 0.45rem #000,
-    0 0 2.6rem 1.1rem rgba(0, 0, 0, 0.55);
-  transform: scale(0.985);
+  width: min(clamp(6.75rem, 5.5rem + 5vw, 9.75rem), 368px, 46vw, 30vh);
+  flex: none;
   opacity: 0;
-  animation: gh-intro-settle var(--gi-logo-dur) var(--gi-ease-out) var(--gi-logo-delay) forwards;
+  animation: gh-intro-fade var(--gi-logo-dur) var(--gi-ease-out) var(--gi-logo-delay) forwards;
 }
 
 .gh-intro-plate img {
@@ -226,20 +244,16 @@ html[data-gh-intro-nologo] .gh-intro-plate {
   display: none;
 }
 
+html[data-gh-intro-nologo] .gh-intro-by {
+  padding-right: 0;
+  border-right: 0;
+}
+
 html[data-gh-intro-nologo] .gh-intro-by-name {
   display: inline;
 }
 
-/* ---------- Status and Skip intro ---------- */
-
-.gh-intro-foot {
-  grid-row: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.375rem;
-  max-width: 100%;
-}
+/* ---------- Status (under the wordmark) and Skip intro (top right) ---------- */
 
 .gh-intro-status {
   margin: 0;
@@ -257,22 +271,26 @@ html[data-gh-intro-slow] .gh-intro-status {
 }
 
 .gh-intro-skip {
+  position: absolute;
+  top: max(0.75rem, env(safe-area-inset-top));
+  right: max(0.75rem, env(safe-area-inset-right));
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 2.75rem;
   min-height: 2.75rem;
-  max-width: 100%;
   padding: 0.5rem 1.125rem;
-  border: 1px solid rgba(246, 241, 232, 0.24);
+  border: 1px solid rgba(246, 241, 232, 0.2);
   border-radius: 9999px;
-  background: rgba(0, 22, 25, 0.4);
+  background: rgba(255, 255, 255, 0.05);
   color: rgba(246, 241, 232, 0.84);
   font: inherit;
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.2;
+  white-space: nowrap;
   cursor: pointer;
   opacity: 0;
   animation: gh-intro-fade 400ms ease 120ms forwards;
@@ -285,7 +303,7 @@ html[data-gh-intro-slow] .gh-intro-status {
 .gh-intro-skip:hover {
   color: var(--gi-ivory);
   border-color: rgba(166, 240, 220, 0.6);
-  background: rgba(0, 40, 44, 0.6);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .gh-intro-skip:focus-visible {
@@ -293,15 +311,18 @@ html[data-gh-intro-slow] .gh-intro-status {
   outline-offset: 3px;
 }
 
-/* Short landscape screens: smaller gaps, status beside the button. */
+/* Short landscape screens: tighter spacing. */
 @media (max-height: 30rem) {
   .gh-intro-stage {
-    gap: clamp(0.75rem, 4vh, 1.25rem);
+    gap: clamp(0.5rem, 3vh, 1rem);
   }
 
   .gh-intro-foot {
-    flex-direction: row;
-    gap: 0.75rem;
+    padding-bottom: 0;
+  }
+
+  .gh-intro-credit {
+    padding-block: 0.375rem;
   }
 }
 
@@ -413,7 +434,7 @@ html[data-gh-intro='skip'] [data-intro-reveal='3'] {
   .gh-intro-node,
   .gh-intro-gadgets,
   .gh-intro-hub,
-  .gh-intro-by,
+  .gh-intro-credit,
   .gh-intro-plate,
   .gh-intro-skip {
     transform: none;
