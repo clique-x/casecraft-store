@@ -43,11 +43,9 @@ nginx -t
 systemctl reload nginx
 
 echo "==> HTTPS certificates (Let's Encrypt)"
-export DEBIAN_FRONTEND=noninteractive
-command -v certbot >/dev/null || { apt-get update -y && apt-get install -y certbot python3-certbot-nginx; }
-certbot --nginx --non-interactive --agree-tos -m "$email" --redirect \
-  -d "$site" -d "www.$site" -d "$api"
-nginx -t && systemctl reload nginx
+# A name whose DNS does not point here yet is listed and left out, so it cannot block the others.
+"$(dirname "$0")/fix-https.sh" "$email" \
+  || echo "==> HTTPS is not complete yet (see above). Fix that, then run infra/prod/fix-https.sh again."
 
 echo "==> Building and starting CaseCraft"
 "$(dirname "$0")/deploy.sh"

@@ -24,7 +24,9 @@ root password. The stack uses about 3-4 GB of the 8 GB.
 ## 2. DNS for gadgetshub.io
 
 The domain is in the same Hostinger account: hPanel → Domains → gadgetshub.io → DNS / Nameservers →
-DNS records. Delete the parking `A @` record and the `CNAME www` record, then add:
+DNS records. Delete the parking `A @` record, the `CNAME www` record and any `AAAA` record for `@`, `www`
+or `api` (an old IPv6 record sends phone networks that use IPv6 to the parking server, which shows a
+certificate error), then add:
 
 | Type | Name | Points to | TTL |
 |---|---|---|---|
@@ -77,6 +79,19 @@ certificates with certbot, and leaves the other nginx sites alone:
 Then run `deploy.sh` (and `first-run.sh` the first time). It sets `PROXY=nginx` in `.env`, so deploys skip
 Caddy; the store and API listen on 127.0.0.1:3100 and 127.0.0.1:9100 for nginx
 (`STOREFRONT_HOST_PORT`, `MEDUSA_HOST_PORT`).
+
+## Certificate errors
+
+If a browser says the connection is not private for gadgetshub.io, www or api, run this on the VPS:
+
+```bash
+/opt/casecraft/infra/prod/fix-https.sh
+```
+
+It checks that each name's DNS points at this server, by IPv4 and IPv6, and says exactly which record to
+change in hPanel if one does not. Then it gets or extends the certificate for every name that does, checks
+that renewal works by itself, and tests all three addresses over HTTPS. After a DNS change, wait a few
+minutes and run it again. Pass an email (`fix-https.sh you@example.com`) only if it asks for one.
 
 ## Deploy on every push (optional)
 
