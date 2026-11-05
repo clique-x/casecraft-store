@@ -388,7 +388,7 @@ export function ShowcaseHero() {
           </ul>
         </div>
         <Link href={slide.href} className={s.panelCta} aria-label={`Explore collection: ${slide.department}`}>
-          Explore collection <ArrowUpRight className="size-4" strokeWidth={2.25} aria-hidden="true" />
+          <span className="sc-panelCtaLabel">Explore</span> <ArrowUpRight className="size-4" strokeWidth={2.25} aria-hidden="true" />
         </Link>
       </div>
 

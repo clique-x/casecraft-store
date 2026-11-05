@@ -117,9 +117,6 @@ export function BrandIntro() {
         </div>
       </div>
 
-      <button type="button" className="gh-intro-skip" {...{ [INTRO_DOM.skipAttr]: '' }}>
-        {INTRO_COPY.skip}
-      </button>
     </div>
   );
 }

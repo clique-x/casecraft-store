@@ -34,6 +34,8 @@ html[data-gh-intro] .gh-intro {
   font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   touch-action: none;
   overscroll-behavior: contain;
+  /* A tap or click anywhere skips the intro. */
+  cursor: pointer;
   contain: layout paint style;
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
@@ -253,7 +255,7 @@ html[data-gh-intro-nologo] .gh-intro-by-name {
   display: inline;
 }
 
-/* ---------- Status (under the wordmark) and Skip intro (top right) ---------- */
+/* ---------- Status, under the wordmark ---------- */
 
 .gh-intro-status {
   margin: 0;
@@ -268,47 +270,6 @@ html[data-gh-intro-nologo] .gh-intro-by-name {
 
 html[data-gh-intro-slow] .gh-intro-status {
   opacity: 1;
-}
-
-.gh-intro-skip {
-  position: absolute;
-  top: max(0.75rem, env(safe-area-inset-top));
-  right: max(0.75rem, env(safe-area-inset-right));
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2.75rem;
-  min-height: 2.75rem;
-  padding: 0.5rem 1.125rem;
-  border: 1px solid rgba(246, 241, 232, 0.2);
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(246, 241, 232, 0.84);
-  font: inherit;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  line-height: 1.2;
-  white-space: nowrap;
-  cursor: pointer;
-  opacity: 0;
-  animation: gh-intro-fade 400ms ease 120ms forwards;
-  transition:
-    color 200ms ease,
-    border-color 200ms ease,
-    background-color 200ms ease;
-}
-
-.gh-intro-skip:hover {
-  color: var(--gi-ivory);
-  border-color: rgba(166, 240, 220, 0.6);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.gh-intro-skip:focus-visible {
-  outline: 2px solid var(--gi-mint);
-  outline-offset: 3px;
 }
 
 /* Short landscape screens: tighter spacing. */
@@ -435,8 +396,7 @@ html[data-gh-intro='skip'] [data-intro-reveal='3'] {
   .gh-intro-gadgets,
   .gh-intro-hub,
   .gh-intro-credit,
-  .gh-intro-plate,
-  .gh-intro-skip {
+  .gh-intro-plate {
     transform: none;
     opacity: 1;
     animation: none;

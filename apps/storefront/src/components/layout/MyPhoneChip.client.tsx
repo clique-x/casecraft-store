@@ -16,6 +16,7 @@ export function MyPhoneChip({ className }: { className?: string }) {
       type="button"
       onClick={() => pickerSheet.open()}
       aria-haspopup="dialog"
+      data-device-chip=""
       aria-label={phone ? `My phone: ${phone.model}. Change phone` : 'Find my device'}
       className={cn(
         'relative inline-flex size-11 min-w-0 shrink-0 items-center justify-center gap-2 rounded-pill text-sm font-semibold transition-colors duration-(--dur-micro) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand lg:w-auto lg:border lg:px-4',

@@ -27,7 +27,7 @@ export const INTRO_TIMING = {
   minimumReduced: 450,
   /** Overlay fade and lift on the way out. */
   exit: 560,
-  /** The same exit after Skip intro or Escape. */
+  /** The same exit after a tap on the intro or Escape. */
   exitSkip: 300,
   /** Hero headline, artwork and CTA after the overlay starts to leave. */
   revealDelays: [130, 220, 310] as const,
@@ -64,7 +64,6 @@ export const INTRO_COPY = {
   credit: 'by',
   creditName: 'EarthClique',
   slow: 'Loading the store…',
-  skip: 'Skip intro',
 } as const;
 
 /** The supplied logo, trimmed of its empty black frame and lifted off its black to transparency by scripts/intro-logo/build.mjs. */
@@ -85,7 +84,6 @@ export const INTRO_DOM = {
   slowAttr: 'data-gh-intro-slow',
   noLogoAttr: 'data-gh-intro-nologo',
   overlayId: 'gh-intro',
-  skipAttr: 'data-gh-intro-skip',
   statusAttr: 'data-gh-intro-status',
   logoAttr: 'data-gh-intro-logo',
   /** Images the intro waits for (bounded by hardMaximum): the hero's main product. */

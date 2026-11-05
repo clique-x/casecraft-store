@@ -23,7 +23,6 @@ interface BootConfig {
   slow: string;
   noLogo: string;
   overlayId: string;
-  skip: string;
   status: string;
   logo: string;
   critical: string;
@@ -141,9 +140,6 @@ function introBoot(c: BootConfig): void {
       else root.style.removeProperty('scrollbar-gutter');
     }
   }
-  function skipButton(): HTMLElement | null {
-    return overlay ? overlay.querySelector<HTMLElement>('[' + c.skip + ']') : null;
-  }
 
   function finish() {
     if (phase === 2) return;
@@ -163,11 +159,11 @@ function introBoot(c: BootConfig): void {
     if (phase !== 0) return;
     phase = 1;
     const active = d.activeElement;
-    const focusInside = !!overlay && !!active && overlay.contains(active);
+    const focusInside = !!overlay && !!active && active !== d.body && overlay.contains(active);
     root.setAttribute(c.state, fast ? 'skip' : 'leave');
     root.removeAttribute(c.slow);
     restore();
-    // The skip button is about to disappear; hand focus to the content it was hiding.
+    // Focus inside the overlay is about to disappear with it; hand it to the content the overlay was hiding.
     if (focusInside) {
       const main = d.getElementById('main');
       if (main) {
@@ -245,10 +241,10 @@ function introBoot(c: BootConfig): void {
     link.setAttribute('imagesizes', c.preload.sizes);
     d.head.appendChild(link);
 
-    // Skip intro (and Escape) work before React hydrates.
+    // A tap or click anywhere on the intro, or Escape, skips it; both work before React hydrates.
     on(d, 'click', function (e) {
       const t = e.target as Element | null;
-      if (phase === 0 && t && t.closest && t.closest('[' + c.skip + ']')) {
+      if (phase === 0 && t && t.closest && t.closest('#' + c.overlayId)) {
         e.preventDefault();
         leave(true);
       }
@@ -256,23 +252,18 @@ function introBoot(c: BootConfig): void {
     on(d, 'keydown', function (e) {
       if (phase !== 0) return;
       const k = (e as KeyboardEvent).key;
-      if (k === 'Escape') leave(true);
-      else if (k === 'Tab') {
-        // The skip button is the only control while the page is covered.
-        const b = skipButton();
-        if (b) {
-          e.preventDefault();
-          b.focus({ preventScroll: true });
-        }
+      if (k === 'Escape' || k === 'Enter' || k === ' ') {
+        e.preventDefault();
+        leave(true);
+      } else if (k === 'Tab') {
+        // Nothing behind the intro may take focus while it covers the page.
+        e.preventDefault();
       }
     }, true);
     on(d, 'focusin', function (e) {
       if (phase !== 0 || !overlay) return;
-      const t = e.target as Node | null;
-      if (t && !overlay.contains(t)) {
-        const b = skipButton();
-        if (b) b.focus({ preventScroll: true });
-      }
+      const t = e.target as HTMLElement | null;
+      if (t && !overlay.contains(t) && t.blur) t.blur();
     }, true);
     // A logo that fails to load is hidden; the text credit stays.
     on(d, 'error', function (e) {
@@ -373,7 +364,6 @@ export function introBootScript(): string {
     slow: INTRO_DOM.slowAttr,
     noLogo: INTRO_DOM.noLogoAttr,
     overlayId: INTRO_DOM.overlayId,
-    skip: INTRO_DOM.skipAttr,
     status: INTRO_DOM.statusAttr,
     logo: INTRO_DOM.logoAttr,
     critical: INTRO_DOM.critical,
