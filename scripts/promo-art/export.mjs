@@ -4,8 +4,10 @@
 //   node scripts/promo-art/export.mjs SRC_DIR
 //
 // SRC_DIR holds brand-hero.png, audio-sealed.png, covers-character.png and combo-protection.png
-// (covers-character.png after clean-covers.py, see README.md). Writes:
-//   <name>-600.webp, <name>-1200.webp   the home page banners
+// (covers-character.png after clean-covers.py, see README.md), and the wide desktop versions listed in
+// WIDE, such as combo-protection-wide.png. Writes:
+//   <name>-600.webp, <name>-1200.webp   the home page banners (square)
+//   <wide>-1200.webp, <wide>-2000.webp  the desktop versions of a banner (their own ratio)
 //   og-brand-hero-1200x630.jpg          link previews (the square centred on the site's ink colour)
 //   og-brand-hero-1200x1200.jpg         square link previews
 // Link previews are JPEG: some chat apps still show no preview for WebP.
@@ -20,6 +22,8 @@ const sharp = createRequire(path.join(storefront, 'package.json'))('sharp');
 const OUT = path.join(storefront, 'public/promo');
 const NAMES = ['brand-hero', 'audio-sealed', 'covers-character', 'combo-protection'];
 const WIDTHS = [600, 1200];
+/** Desktop versions of a banner: output name -> widths (capped at the source width). */
+const WIDE = { 'combo-protection-wide': [1200, 2000] };
 const INK = '#0D1D1F';
 
 const src = process.argv[2];
@@ -36,6 +40,17 @@ for (const name of NAMES) {
   for (const w of WIDTHS) {
     const out = path.join(OUT, `${name}-${w}.webp`);
     await sharp(file).resize(w, w, { kernel: 'lanczos3' }).webp({ quality: 84, effort: 6, smartSubsample: true }).toFile(out);
+    await report(out);
+  }
+}
+
+for (const [name, widths] of Object.entries(WIDE)) {
+  const file = path.join(src, `${name}.png`);
+  const meta = await sharp(file).metadata();
+  for (const want of widths) {
+    const w = Math.min(want, meta.width);
+    const out = path.join(OUT, `${name}-${want}.webp`);
+    await sharp(file).resize(w, Math.round((meta.height * w) / meta.width), { kernel: 'lanczos3' }).webp({ quality: 84, effort: 6, smartSubsample: true }).toFile(out);
     await report(out);
   }
 }
