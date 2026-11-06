@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Fragment } from 'react';
 import { Crumbs } from '@/components/listing/Crumbs';
 import { PAGE_SHELL } from '@/components/listing/ListingHeader';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 import { getPolicy, POLICIES, POLICIES_UPDATED, POLICY_SLUGS, type Block, type Inline } from '@/lib/content/policies';
 
 interface PolicyPageProps {
@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: PolicyPageProps): Promise<Met
       title: `${page.title} · ${BRAND_NAME}`,
       description: page.description,
       url,
+      images: [OG_IMAGE],
     },
   };
 }

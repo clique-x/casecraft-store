@@ -15,7 +15,7 @@ import { RelatedRows } from '@/components/product/RelatedRows';
 import { StickyBuyBar } from '@/components/product/StickyBuyBar.client';
 import { PhotoStage } from '@/components/product/viewer/PhotoStage.client';
 import { ProductViewer } from '@/components/product/viewer/ProductViewer.client';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 import {
   DEPARTMENT_OF,
   GADGET_TYPE_LABEL,
@@ -100,7 +100,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       title: `${title} · ${BRAND_NAME}`,
       description: product.description,
       url,
-      ...(photo ? { images: [ogImageFor(photo)] } : gadgetImage ? { images: [gadgetImage] } : {}),
+      ...(photo ? { images: [ogImageFor(photo)] } : gadgetImage ? { images: [gadgetImage] } : { images: [OG_IMAGE] }),
     },
   };
 }

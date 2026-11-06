@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { PhoneBrandLogo } from '@/components/brand/PhoneBrandLogo';
 import { ListingHeader, PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ModelLinks } from '@/components/listing/ModelLinks';
-import { BRAND_NAME, FREE_SHIPPING_THRESHOLD_INR, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, FREE_SHIPPING_THRESHOLD_INR, SITE_URL, OG_IMAGE } from '@/lib/brand';
 import { coverCounts, findBrand, groupByBrand } from '@/lib/catalog/listing';
 import { getPhoneModels } from '@/lib/medusa/home';
 import { getAllProducts } from '@/lib/medusa/products';
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: BrandPageProps): Promise<Meta
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: `${title} · ${BRAND_NAME}`, description, url },
+    openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: `${title} · ${BRAND_NAME}`, description, url, images: [OG_IMAGE] },
   };
 }
 

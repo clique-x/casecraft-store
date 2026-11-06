@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { manrope, unbounded } from '@/lib/fonts';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, OG_IMAGE, SITE_URL } from '@/lib/brand';
 import { IntroBoot } from '@/components/intro/IntroBoot';
 
 export const metadata: Metadata = {
@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     'Phone covers cut for your exact model, sealed boAt and realme earbuds and neckbands, and screen protection. UPI, cards or Cash on Delivery across India.',
   applicationName: BRAND_NAME,
   robots: { index: true, follow: true },
+  // Pages that set their own openGraph replace this whole object, so each of them names an image too.
+  openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, images: [OG_IMAGE] },
+  // No images here: Next fills twitter:image from each page's own openGraph images.
+  twitter: { card: 'summary_large_image' },
 };
 
 export const viewport: Viewport = {

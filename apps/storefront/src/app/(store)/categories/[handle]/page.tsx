@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ListingHeader, PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ProductGrid } from '@/components/listing/ProductGrid';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 import { coversLabel, productsInLook, sortForListing } from '@/lib/catalog/listing';
 import { LOOKS } from '@/lib/catalog/looks';
 import type { HomeProduct } from '@/lib/medusa/fixtures';
@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: `${title} · ${BRAND_NAME}`, description, url },
+    openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: `${title} · ${BRAND_NAME}`, description, url, images: [OG_IMAGE] },
   };
 }
 

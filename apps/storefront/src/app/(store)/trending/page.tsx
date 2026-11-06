@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { ListingHeader, PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ProductGrid } from '@/components/listing/ProductGrid';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 import { trendingList } from '@/lib/catalog/listing';
 import { getPhoneModels } from '@/lib/medusa/home';
 import { getAllProducts } from '@/lib/medusa/products';
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     title: `${TITLE} · ${BRAND_NAME}`,
     description: DESCRIPTION,
     url: new URL(URL_PATH, SITE_URL).toString(),
+    images: [OG_IMAGE],
   },
 };
 

@@ -7,6 +7,16 @@ export const COD_FEE_INR = 0;
 export const MIN_PRICE_INR = 299;
 export const WHATSAPP_NUMBER = '91XXXXXXXXXX';
 export const DISPATCH_WINDOW = '24–72 h';
+/**
+ * Link preview for pages without a photo of their own: the brand campaign square centred on the site's
+ * ink colour (public/promo, built by scripts/promo-art). The alt text is the image's own wording.
+ */
+export const OG_IMAGE = {
+  url: '/promo/og-brand-hero-1200x630.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'GadgetsHub. Everyday tech. Extraordinary style. Cash on Delivery, free shipping over ₹499, 7-day replacement.',
+};
 export const LAUNCH_BRANDS: readonly string[] = [
   'Apple',
   'Samsung',

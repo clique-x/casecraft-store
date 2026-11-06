@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, OG_IMAGE, SITE_URL } from '@/lib/brand';
 import { formatInr, gallerySrc, PHOTOS } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
@@ -18,6 +18,7 @@ import { LookGrid } from '@/components/home/LookGrid';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
 import { WhyUs } from '@/components/home/WhyUs';
+import { PROMOS, PromoBanners } from '@/components/home/PromoBanners';
 
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
@@ -28,7 +29,17 @@ export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: SITE_URL },
-  openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: TITLE, description: DESCRIPTION, url: SITE_URL },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    siteName: BRAND_NAME,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    // Wide first: chat apps and social sites use the first image.
+    images: [OG_IMAGE, { ...OG_IMAGE, url: '/promo/og-brand-hero-1200x1200.jpg', height: 1200 }],
+  },
+  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE] },
 };
 
 /** Audio picked for the spotlight and the trending mix, in this order when they exist. */
@@ -154,9 +165,12 @@ export default async function HomePage() {
           brands={audioBrands}
         />
       )}
+      {/* Campaign images: audio right after the audio picks, covers right before the covers opener. */}
+      <PromoBanners promos={[PROMOS.audio, PROMOS.covers]} className="bg-paper pb-14 lg:pb-20" />
       <CoversSection models={models} covers={PHOTOS.length} />
       <LookGrid looks={looks} />
       <NewArrivalsRow products={newArrivals} models={models} />
+      <PromoBanners promos={[PROMOS.combo]} className="bg-surface-2" />
       <HomeCombos covers={comboCovers} accessories={comboAccessories} />
       <BrandsWall brands={brandLogos} />
       <WhyUs />

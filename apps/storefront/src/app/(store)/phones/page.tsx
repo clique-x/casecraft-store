@@ -4,7 +4,7 @@ import { ArrowRightIcon } from 'lucide-react';
 import { logoIsWordmark, PhoneBrandLogo } from '@/components/brand/PhoneBrandLogo';
 import { ListingHeader, PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ModelLinks } from '@/components/listing/ModelLinks';
-import { BRAND_NAME, SITE_URL, WHATSAPP_NUMBER } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, WHATSAPP_NUMBER, OG_IMAGE } from '@/lib/brand';
 import { coverCounts, groupByBrand } from '@/lib/catalog/listing';
 import { getPhoneModels } from '@/lib/medusa/home';
 import { getAllProducts } from '@/lib/medusa/products';
@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     title: `${TITLE} · ${BRAND_NAME}`,
     description: DESCRIPTION,
     url: new URL(URL_PATH, SITE_URL).toString(),
+    images: [OG_IMAGE],
   },
 };
 

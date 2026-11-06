@@ -4,7 +4,7 @@ import { BadgePercent } from 'lucide-react';
 import { DepartmentHeader, DepartmentSection } from '@/components/listing/DepartmentHeader';
 import { PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ProductGrid } from '@/components/listing/ProductGrid';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 import { ACCESSORY_TYPE_LABEL, BUNDLE_SAVING_INR, type AccessoryType } from '@/lib/catalog/accessories';
 import { formatInr } from '@/lib/catalog/photos';
 import { getAccessories } from '@/lib/medusa/products';
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     title: `${TITLE} · ${BRAND_NAME}`,
     description: DESCRIPTION,
     url: new URL(URL_PATH, SITE_URL).toString(),
+    images: [OG_IMAGE],
   },
 };
 

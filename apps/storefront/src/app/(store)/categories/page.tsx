@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRightIcon } from 'lucide-react';
 import { CaseCutout } from '@/components/home/hero/CaseCutout';
 import { ListingHeader, PAGE_SHELL } from '@/components/listing/ListingHeader';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 import { coversLabel } from '@/lib/catalog/listing';
 import { shotSrc, shotSrcSet, type PhotoEntry } from '@/lib/catalog/photos';
 import { getLooks } from '@/lib/medusa/home';
@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     title: `${TITLE} · ${BRAND_NAME}`,
     description: DESCRIPTION,
     url: new URL(URL_PATH, SITE_URL).toString(),
+    images: [OG_IMAGE],
   },
 };
 

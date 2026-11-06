@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { DepartmentPage } from '@/components/gadget/DepartmentPage';
-import { BRAND_NAME, SITE_URL } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 
 const TITLE = 'boAt and realme wireless earbuds and neckbands';
 const DESCRIPTION =
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: `${TITLE} · ${BRAND_NAME}`,
     description: DESCRIPTION,
     url: new URL(URL_PATH, SITE_URL).toString(),
+    images: [OG_IMAGE],
   },
 };
 
