@@ -70,6 +70,8 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
   // Every in-stock design for this phone, trending first.
   const choices = slug ? covers.filter((c) => inStock(c.variants, slug)) : [];
   const cover = choices.find((c) => c.id === picked) ?? choices[0] ?? null;
+  // Before a phone is picked, a photographed cover stands in as the example (the price still reads "from").
+  const shownCover = cover ?? covers.find((c) => c.photoId) ?? covers[0] ?? null;
   const coverVariant = cover && slug ? inStock(cover.variants, slug) : null;
   const cheapestCover = Math.min(...covers.flatMap((c) => c.variants.map((v) => v.priceInr)));
 
@@ -159,7 +161,7 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
 
                 <div className="flex items-center justify-center gap-1.5 bg-surface-2/70 px-4 pt-12 pb-5" aria-hidden="true">
                   <span className="flex h-28 w-16 items-center justify-center overflow-hidden rounded-lg bg-paper">
-                    {cover ? <CoverThumb cover={cover} /> : <span className="px-1 text-center text-[0.625rem] font-semibold text-fg-muted">Your cover</span>}
+                    {shownCover && <CoverThumb cover={shownCover} />}
                   </span>
                   {items.map((a) => (
                     <span key={a.entry.id} className="flex items-center gap-1.5">
