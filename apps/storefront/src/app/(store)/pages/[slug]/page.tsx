@@ -18,7 +18,7 @@ const UPDATED_LABEL = new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 
 const LINK =
   'rounded-sm font-semibold text-fg underline underline-offset-4 transition-colors duration-(--dur-micro) hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2';
 
-// The six help pages; any other slug falls through to notFound().
+// The help and policy pages; any other slug falls through to notFound().
 export function generateStaticParams(): { slug: string }[] {
   return POLICY_SLUGS.map((slug) => ({ slug }));
 }
@@ -52,6 +52,14 @@ function InlineText({ parts }: { parts: readonly Inline[] }) {
         <Link key={i} href={part.href} className={LINK}>
           {part.label}
         </Link>
+      );
+    }
+    // Phone and email open the dialer or mail app in place; only web links get a new tab.
+    if (/^(tel|mailto):/.test(part.href)) {
+      return (
+        <a key={i} href={part.href} className={LINK}>
+          {part.label}
+        </a>
       );
     }
     return (

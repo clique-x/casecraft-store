@@ -1,18 +1,21 @@
 import {
   BRAND_NAME,
+  BUSINESS,
+  BUSINESS_ADDRESS,
   COD_FEE_INR,
   DISPATCH_WINDOW,
   FREE_SHIPPING_THRESHOLD_INR,
-  PARENT_BRAND,
   REPLACEMENT_DAYS,
   SHOP_CITY,
   WHATSAPP_NUMBER,
 } from '@/lib/brand';
 
 /**
- * Help and policy pages under /pages/[slug]. Plain English for shoppers in India; every number
- * comes from src/lib/brand.ts so the pages change when the shop's settings do. Legal identifiers
- * (GSTIN, registered address, grievance officer) are left for the owner to add, never invented.
+ * Help and policy pages under /pages/[slug]. Plain English for shoppers in India; every number and
+ * business detail comes from src/lib/brand.ts so the pages change when the shop's settings do.
+ * Razorpay's website review looks for: contact details with the business name, address, phone and
+ * email; terms; privacy; cancellation and refunds with timelines; shipping with timelines. The
+ * Consumer Protection (E-Commerce) Rules, 2020 add the grievance officer. GSTIN shows only once set.
  */
 
 /** A run of text, or an inline link. Internal links start with "/". */
@@ -40,11 +43,11 @@ export interface PolicyPage {
   sections: PolicySection[];
 }
 
-export const POLICY_SLUGS = ['shipping', 'returns', 'refunds', 'privacy', 'terms', 'contact'] as const;
+export const POLICY_SLUGS = ['shipping', 'returns', 'refunds', 'privacy', 'terms', 'contact', 'about'] as const;
 export type PolicySlug = (typeof POLICY_SLUGS)[number];
 
 /** ISO date shown as "Last updated" on every page. */
-export const POLICIES_UPDATED = '2026-11-01';
+export const POLICIES_UPDATED = '2026-11-06';
 
 /** Hours someone reads WhatsApp; messages outside them are answered the next working day. */
 export const SUPPORT_HOURS = 'Monday to Saturday, 10 am to 7 pm IST';
@@ -59,6 +62,35 @@ const DAYS = `${REPLACEMENT_DAYS} days`;
 
 const whatsapp: Inline = { href: WHATSAPP_HREF, label: 'WhatsApp' };
 const account: Inline = { href: '/account', label: 'your account' };
+const phone: Inline = { href: BUSINESS.phone.href, label: BUSINESS.phone.label };
+const email: Inline = { href: `mailto:${BUSINESS.email}`, label: BUSINESS.email };
+const officer = BUSINESS.grievanceOfficer;
+const RUN_BY = `${BRAND_NAME} is an online shop run by ${BUSINESS.name}, ${BUSINESS_ADDRESS}.`;
+
+/** Name, address, phone, email and GSTIN (once registered), for the contact and about pages. */
+const businessRows = (): { label: string; value: Inline[] }[] => [
+  { label: 'Business name', value: [BUSINESS.name] },
+  { label: 'Office & warehouse', value: [BUSINESS_ADDRESS] },
+  { label: 'Phone & WhatsApp', value: [phone, ' · ', { href: WHATSAPP_HREF, label: 'Chat on WhatsApp' }] },
+  { label: 'Email', value: [email] },
+  ...(BUSINESS.gstin ? [{ label: 'GSTIN', value: [BUSINESS.gstin] }] : []),
+];
+
+/** The grievance officer and the response times the E-Commerce Rules set. */
+const grievanceBlocks = (): Block[] => [
+  {
+    kind: 'facts',
+    rows: [
+      { label: 'Grievance officer', value: [`${officer.name}, ${officer.role}, ${BUSINESS.name}`] },
+      { label: 'Email', value: [email] },
+      { label: 'Phone', value: [phone] },
+      { label: 'Address', value: [BUSINESS_ADDRESS] },
+    ],
+  },
+  p(
+    'Write to the grievance officer if you are not satisfied with our answer about an order, a refund or your personal data. We acknowledge every complaint within 48 hours and resolve it within one month of receiving it.',
+  ),
+];
 
 const p = (...text: Inline[]): Block => ({ kind: 'p', text });
 const list = (...items: (Inline | Inline[])[]): Block => ({
@@ -73,9 +105,24 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
     navLabel: 'Shipping',
     description: `Orders ship from ${SHOP_CITY} in ${DISPATCH_WINDOW} through Shiprocket courier partners. Free shipping on orders over ${FREE_OVER}.`,
     intro: [
-      `We pack every order in our ${SHOP_CITY} shop and hand it to a courier within ${DISPATCH_WINDOW}. Here is what happens after you order.`,
+      `We pack every order at our ${SHOP_CITY} warehouse and hand it to a courier within ${DISPATCH_WINDOW}. Here is what happens after you order.`,
     ],
     sections: [
+      {
+        heading: 'At a glance',
+        blocks: [
+          {
+            kind: 'facts',
+            rows: [
+              { label: 'Ships from', value: [BUSINESS_ADDRESS] },
+              { label: 'Dispatch', value: [`Within ${DISPATCH_WINDOW} of your order`] },
+              { label: 'Delivery', value: ['Usually 3 to 7 working days after dispatch; remote areas can take longer'] },
+              { label: 'Shipping charge', value: [`Free on orders over ${FREE_OVER}; below that, shown at checkout before you pay`] },
+              { label: 'Where', value: ['Across India, wherever our courier partners deliver'] },
+            ],
+          },
+        ],
+      },
       {
         heading: 'Where we ship',
         blocks: [
@@ -231,6 +278,10 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
           p(
             'Message us on ',
             whatsapp,
+            ', call ',
+            phone,
+            ' or email ',
+            email,
             ' with your order number. If the order has not been handed to the courier yet, we cancel it and refund you in full.',
           ),
           p(
@@ -289,7 +340,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
     navLabel: 'Privacy',
     description: `What personal information ${BRAND_NAME} collects, why, who we share it with, and how to ask us to change or delete it.`,
     intro: [
-      `${BRAND_NAME} is a phone-cover shop run by ${PARENT_BRAND} from ${SHOP_CITY}, India. This policy explains what we collect when you browse or order, and what we do with it. We follow the Digital Personal Data Protection Act, 2023 and other Indian law that applies to us.`,
+      `${RUN_BY} This policy explains what we collect when you browse or order, and what we do with it. We follow the Digital Personal Data Protection Act, 2023 and other Indian law that applies to us.`,
     ],
     sections: [
       {
@@ -339,6 +390,17 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
         ],
       },
       {
+        heading: 'Cookies and browser storage',
+        blocks: [
+          list(
+            'A cart cookie, so your cart is still there when you come back. It lasts 30 days.',
+            'The phone-model cookie described above.',
+            'Small markers in your browser’s storage so the welcome animation and the phone-picker tip show only once.',
+          ),
+          p('We do not use advertising or analytics cookies, and no other company tracks you on this site.'),
+        ],
+      },
+      {
         heading: 'How long we keep it',
         blocks: [
           p(
@@ -352,13 +414,16 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
           p(
             'You can ask us to show you the personal information we hold about you, correct it, or delete it where we are not required to keep it. You can also withdraw any consent you have given. Message us on ',
             whatsapp,
+            ' or email ',
+            email,
             ' and we will reply as quickly as we can.',
           ),
           p(
-            'If you are not happy with our reply, you can raise a complaint with our grievance officer. Their name and contact details will be listed here.',
+            'Our shop is meant for adults. If you are under 18, please order with a parent or guardian; we do not knowingly collect a child’s personal data without a parent’s or guardian’s consent.',
           ),
         ],
       },
+      { heading: 'Grievance officer', blocks: grievanceBlocks() },
       {
         heading: 'Security and changes',
         blocks: [
@@ -372,13 +437,21 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
 
   terms: {
     slug: 'terms',
-    title: 'Terms of service',
-    navLabel: 'Terms',
-    description: `The terms for buying phone covers from ${BRAND_NAME}: orders, prices, payment, delivery, replacements and use of the site.`,
+    title: 'Terms and conditions',
+    navLabel: 'Terms & conditions',
+    description: `The terms for buying from ${BRAND_NAME}, run by ${BUSINESS.name}: orders, prices, payment, delivery, replacements and use of the site.`,
     intro: [
-      `These terms apply when you use this website or buy from ${BRAND_NAME}, a shop run by ${PARENT_BRAND} in ${SHOP_CITY}, India. By placing an order you agree to them.`,
+      `${RUN_BY} These terms apply when you use this website or buy from us. By placing an order you agree to them.`,
     ],
     sections: [
+      {
+        heading: 'Who can buy',
+        blocks: [
+          p(
+            'You need to be 18 or older to place an order, or order with the consent of a parent or guardian. Please give a correct name, phone number and delivery address so the courier can reach you.',
+          ),
+        ],
+      },
       {
         heading: 'Our products',
         blocks: [
@@ -448,6 +521,13 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
           p('We may update these terms from time to time; the date at the top of this page shows the latest version.'),
         ],
       },
+      {
+        heading: 'Contact and grievances',
+        blocks: [
+          p('For questions about an order, message us on ', whatsapp, ', call ', phone, ' or email ', email, '.'),
+          ...grievanceBlocks(),
+        ],
+      },
     ],
   },
 
@@ -455,21 +535,22 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
     slug: 'contact',
     title: 'Contact us',
     navLabel: 'Contact',
-    description: `Message ${BRAND_NAME} on WhatsApp for help with orders, fit, replacements and refunds. Support hours and order tracking.`,
+    description: `Call, WhatsApp or email ${BRAND_NAME} (${BUSINESS.name}, ${SHOP_CITY}) for help with orders, fit, replacements and refunds.`,
     intro: [
-      'The quickest way to reach us is WhatsApp. A real person from the shop reads every message, and we can send photos of a cover if you want a closer look before you buy.',
+      'The quickest way to reach us is WhatsApp on ',
+      phone,
+      '. A real person from the shop reads every message, and we can send photos of a cover if you want a closer look before you buy.',
     ],
     sections: [
       {
-        heading: 'Message us',
+        heading: 'Reach us',
         blocks: [
           {
             kind: 'facts',
             rows: [
-              { label: 'WhatsApp', value: [{ href: WHATSAPP_HREF, label: 'Chat with us on WhatsApp' }] },
+              ...businessRows(),
               { label: 'Support hours', value: [SUPPORT_HOURS] },
               { label: 'Reply time', value: [`Usually ${SUPPORT_REPLY_TIME}; messages outside them are answered the next working day.`] },
-              { label: 'Shop', value: [`${SHOP_CITY}, India. The registered address will be listed here.`] },
             ],
           },
         ],
@@ -498,6 +579,44 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
             ['Which covers fit my phone? Find your model under ', { href: '/phones', label: 'Shop by phone' }, '.'],
           ),
         ],
+      },
+      { heading: 'Grievance officer', blocks: grievanceBlocks() },
+    ],
+  },
+
+  about: {
+    slug: 'about',
+    title: 'About us',
+    navLabel: 'About us',
+    description: `${BRAND_NAME} sells phone covers, earbuds, neckbands and screen protection across India. It is run by ${BUSINESS.name} from SIDCUL, ${SHOP_CITY}.`,
+    intro: [
+      `${BRAND_NAME} sells phone covers, sealed boAt and realme earbuds and neckbands, and screen protection online, across India. It is run by ${BUSINESS.name} from our office and warehouse in SIDCUL, ${SHOP_CITY}, where every order is checked and packed.`,
+    ],
+    sections: [
+      {
+        heading: 'What we sell',
+        blocks: [
+          list(
+            ['Phone covers made for each phone model and photographed in our shop. ', { href: '/phones', label: 'Find yours by phone' }, '.'],
+            ['boAt and realme earbuds and neckbands, sold sealed as the brand packs them, with the brand’s one-year warranty. ', { href: '/audio', label: 'See audio' }, '.'],
+            ['Screen glass, camera lens protectors and back films cut for each phone. ', { href: '/accessories', label: 'See protection' }, '.'],
+          ),
+        ],
+      },
+      {
+        heading: 'How buying works',
+        blocks: [
+          list(
+            'Prices are in Indian rupees and include taxes.',
+            `Pay online through Razorpay with UPI, cards, netbanking or wallets, or choose Cash on Delivery ${COD_CHARGE}.`,
+            ['Orders leave our warehouse within ', DISPATCH_WINDOW, `, with free shipping over ${FREE_OVER}. `, { href: '/pages/shipping', label: 'Shipping policy' }, '.'],
+            [`If something arrives damaged, faulty or wrong, tell us within ${DAYS} and we replace it. `, { href: '/pages/returns', label: 'Replacement policy' }, '.'],
+          ),
+        ],
+      },
+      {
+        heading: 'Business details',
+        blocks: [{ kind: 'facts', rows: businessRows() }],
       },
     ],
   },
