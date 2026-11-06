@@ -18,7 +18,8 @@ import { LookGrid } from '@/components/home/LookGrid';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
 import { WhyUs } from '@/components/home/WhyUs';
-import { PROMOS, PromoBanners } from '@/components/home/PromoBanners';
+import { PROMOS, PromoBanner } from '@/components/home/PromoBanners';
+import { PromoStage } from '@/components/home/promo-stage/PromoStage.client';
 
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
@@ -166,11 +167,11 @@ export default async function HomePage() {
         />
       )}
       {/* Campaign images: audio right after the audio picks, covers right before the covers opener. */}
-      <PromoBanners promos={[PROMOS.audio, PROMOS.covers]} className="bg-paper pb-14 lg:pb-20" />
+      <PromoStage />
       <CoversSection models={models} covers={PHOTOS.length} />
       <LookGrid looks={looks} />
       <NewArrivalsRow products={newArrivals} models={models} />
-      <PromoBanners promos={[PROMOS.combo]} className="bg-surface-2" />
+      <PromoBanner promo={PROMOS.combo} className="bg-surface-2" />
       <HomeCombos covers={comboCovers} accessories={comboAccessories} />
       <BrandsWall brands={brandLogos} />
       <WhyUs />

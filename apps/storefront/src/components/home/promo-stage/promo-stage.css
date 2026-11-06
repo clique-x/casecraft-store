@@ -1,0 +1,165 @@
+/*
+ * Offers stage: the audio and covers campaign cards on a dark stage, in 3D.
+ * Plain global CSS with a "p3-" prefix (the Turbopack CSS rule runs every *.css through Tailwind, which
+ * drops CSS-module scoping; see showcase.css). Tailwind classes in PromoStage.client.tsx do the layout.
+ *
+ * Desktop: the two cards stand angled toward the centre (--p3-side: 1 left, -1 right), turn to face you
+ * on hover and follow the mouse (--p3-rx/--p3-ry from the component), with a moving sheen.
+ * Phones: a swipe row where each card turns as it moves across the screen (a scroll-driven animation,
+ * where the browser has it; elsewhere the cards stay flat).
+ * Reduced motion: no tilt, no turning, no transitions.
+ */
+
+.p3-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 55% at 26% 42%, rgb(166 240 220 / 0.16), transparent 70%),
+    radial-gradient(40% 55% at 74% 58%, rgb(166 240 220 / 0.12), transparent 70%),
+    radial-gradient(120% 70% at 50% 120%, rgb(0 0 0 / 0.55), transparent 60%),
+    linear-gradient(180deg, #00282c 0%, #001c1f 55%, #001619 100%);
+}
+
+/* A faint horizon the cards stand on. */
+.p3-glow::after {
+  content: '';
+  position: absolute;
+  inset: auto 6% 22% 6%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(166 240 220 / 0.28), transparent);
+}
+
+.p3-card {
+  --p3-rx: 0deg;
+  --p3-ry: 0deg;
+  --p3-base: 0deg;
+  transform: perspective(1400px) rotateY(calc(var(--p3-base) + var(--p3-ry))) rotateX(var(--p3-rx));
+  transform-style: preserve-3d;
+  transition: transform 700ms var(--ease-out-expo);
+}
+
+/* While the mouse is moving over a card it follows quickly; on leave it eases back. */
+.p3-card[data-tilting] {
+  transition-duration: 140ms;
+}
+
+@media (min-width: 40rem) {
+  .p3-card {
+    --p3-base: calc(var(--p3-side, 0) * 7deg);
+  }
+  .p3-card:hover,
+  .p3-card:focus-visible {
+    --p3-base: 0deg;
+  }
+}
+
+.p3-frame {
+  box-shadow:
+    0 1px 0 0 rgb(255 255 255 / 0.14) inset,
+    0 40px 70px -30px rgb(0 0 0 / 0.75),
+    0 18px 30px -18px rgb(0 0 0 / 0.6);
+  transition: box-shadow 700ms var(--ease-out-expo);
+}
+
+.p3-card:hover .p3-frame {
+  box-shadow:
+    0 1px 0 0 rgb(255 255 255 / 0.18) inset,
+    0 56px 90px -34px rgb(0 0 0 / 0.8),
+    0 0 0 1px rgb(166 240 220 / 0.25),
+    0 0 60px -10px rgb(166 240 220 / 0.25);
+}
+
+/* Light catching the card where the mouse is. */
+.p3-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--p3-mx, 30%) var(--p3-my, 0%), rgb(255 255 255 / 0.32), transparent 48%);
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.p3-card:hover .p3-sheen {
+  opacity: 1;
+}
+
+/*
+ * The button floats in front of the card. Phones: fully under the card, so it covers none of the artwork
+ * at that size. From sm: over the card's bottom edge, where the artwork leaves room.
+ */
+.p3-cta {
+  --p3-drop: calc(100% + 0.875rem);
+  transform: translate(-50%, var(--p3-drop)) translateZ(36px);
+  transition:
+    transform 700ms var(--ease-out-expo),
+    background-color 300ms;
+}
+
+.p3-card:hover .p3-cta {
+  transform: translate(-50%, var(--p3-drop)) translateZ(64px);
+}
+
+/* Shadow on the stage floor under each card (on phones the item's bottom padding holds the button). */
+.p3-floor {
+  position: absolute;
+  inset: auto 10% 3.5rem 10%;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(0 0 0 / 0.6), transparent);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+@media (min-width: 40rem) {
+  .p3-cta {
+    --p3-drop: 50%;
+  }
+  .p3-floor {
+    bottom: -0.5rem;
+  }
+}
+
+/* Phones: cards turn as they cross the screen; the centred one faces you. */
+@supports (animation-timeline: view()) {
+  @media (max-width: 39.99rem) and (prefers-reduced-motion: no-preference) {
+    .p3-item {
+      animation: p3-flow linear both;
+      animation-timeline: view(inline);
+    }
+  }
+}
+
+@keyframes p3-flow {
+  0% {
+    transform: perspective(900px) rotateY(26deg) scale(0.88);
+    opacity: 0.6;
+  }
+  50% {
+    transform: perspective(900px) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(900px) rotateY(-26deg) scale(0.88);
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p3-card,
+  .p3-card:hover {
+    transform: none;
+    transition: none;
+  }
+  .p3-cta,
+  .p3-card:hover .p3-cta {
+    transform: translate(-50%, var(--p3-drop));
+    transition: none;
+  }
+  .p3-sheen,
+  .p3-frame {
+    transition: none;
+  }
+}
