@@ -24,7 +24,7 @@ export function DepartmentHeader({ trail, title, groups, warranty }: { trail: re
       <Crumbs trail={trail} />
       <h1 className="font-display text-h2 font-extrabold text-fg">{title}</h1>
       {groups.length > 1 && (
-        <nav aria-label={`${title} sections`} className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
+        <nav aria-label={`${title} sections`} className="-mx-4 flex gap-2 overflow-x-auto px-4 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0 [&::-webkit-scrollbar]:hidden">
           {groups.map((g) => (
             <Link key={g.id} href={`#${g.id}`} className={JUMP}>
               {g.heading}

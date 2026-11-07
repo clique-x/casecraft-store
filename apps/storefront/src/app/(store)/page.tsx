@@ -22,7 +22,7 @@ import { GadgetRow } from '@/components/home/GadgetRow';
 import { HomeDuo, type DuoFeature } from '@/components/home/HomeDuo';
 import { ProtectionRow } from '@/components/home/ProtectionRow';
 import { ReviewsSection } from '@/components/reviews/ReviewsSection';
-import { gadgetCardSrc, gadgetCutSrc, gadgetHeroIndex, type GadgetType } from '@/lib/catalog/gadgets';
+import { gadgetCutSrc, gadgetGallerySrc, gadgetHeroIndex, type GadgetType } from '@/lib/catalog/gadgets';
 
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
@@ -104,7 +104,7 @@ function audioPicks(audio: ProductDetail[], shown: HomeProduct[], featureId: str
 /** One rail card per range, in shop order: each with its cheapest price and a photo of one of its products. */
 const RAIL: readonly { label: string; href: string; types: readonly GadgetType[]; pick?: string }[] = [
   { label: 'Earbuds', href: '/audio#earbuds', types: ['earbuds'], pick: 'boat-alpha-gen2' },
-  { label: 'Neckbands', href: '/audio#neckband', types: ['neckband'], pick: 'boat-rockerz-235-pro' },
+  { label: 'Neckbands', href: '/audio#neckband', types: ['neckband'], pick: 'boat-rockerz-110' },
   { label: 'Speakers', href: '/audio#speakers', types: ['speaker'], pick: 'boat-stone-arc-pro' },
   { label: 'Memory cards', href: '/storage#cards', types: ['memory-card'], pick: 'sandisk-extreme-microsd' },
   { label: 'Pen drives', href: '/storage#cards', types: ['pen-drive'], pick: 'sandisk-cruzer-blade' },
@@ -119,7 +119,8 @@ function railCategories(gadgets: ProductDetail[]): RailCategory[] {
     const lead = items.find((p) => p.gadget?.id === c.pick && p.gadget?.photos) ?? items.find((p) => p.gadget?.photos);
     const g = lead?.gadget;
     if (!g?.photos) return [];
-    const image = g.photos.cut ? gadgetCutSrc(g.photos, 480) : gadgetCardSrc(g.photos, gadgetHeroIndex(g.photos, g.options[0]?.slug), 480);
+    // The square gallery photo, not the 4:5 card crop, so nothing is cut off in the square tile.
+    const image = g.photos.cut ? gadgetCutSrc(g.photos, 480) : gadgetGallerySrc(g.photos, gadgetHeroIndex(g.photos, g.options[0]?.slug), 480);
     return [{ label: c.label, href: c.href, image, cutout: Boolean(g.photos.cut), fromInr: Math.min(...items.map((p) => p.priceFromInr)) }];
   });
 }
