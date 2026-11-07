@@ -21,6 +21,7 @@ import { CategoryRail, type RailCategory } from '@/components/home/CategoryRail'
 import { GadgetRow } from '@/components/home/GadgetRow';
 import { HomeDuo, type DuoFeature } from '@/components/home/HomeDuo';
 import { ProtectionRow } from '@/components/home/ProtectionRow';
+import { ReviewsSection } from '@/components/reviews/ReviewsSection';
 import { gadgetCardSrc, gadgetCutSrc, gadgetHeroIndex, type GadgetType } from '@/lib/catalog/gadgets';
 
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
@@ -218,6 +219,8 @@ export default async function HomePage() {
       <GadgetRow department="storage" products={storage} />
       <HomeDuo features={duoFeatures(cameras, audio)} />
       <ProtectionRow products={accessories} />
+      {/* Real customer reviews only; until there are some, an invitation to write one. */}
+      <ReviewsSection />
       <BrandsWall brands={brandLogos} />
       <WhyUs />
       <HubFinalCta />
