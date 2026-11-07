@@ -1,0 +1,302 @@
+[
+ {
+  "n": 1,
+  "folder": "01-geonix-microsd-64gb",
+  "zipFolder": "01_Storage/Memory-Cards/Geonix-MicroSD-64GB",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV8-Showroom.webp",
+   "2-POV7-Features.webp",
+   "3-POV5-Lifestyle.webp"
+  ]
+ },
+ {
+  "n": 3,
+  "folder": "03-samsung-ram-hold",
+  "zipFolder": "01_Storage/RAM/Samsung-RAM-Desktop-DDR",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV8-Showroom.webp",
+   "2-POV3-Side.webp",
+   "3-POV5-Lifestyle.webp"
+  ]
+ },
+ {
+  "n": 4,
+  "folder": "04-cablet-hd2533-sata-enclosure",
+  "zipFolder": "01_Storage/SSD-Enclosures/Gecoblet-2.5in-SATA-Enclosure",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV8-Showroom.webp",
+   "2-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 5,
+  "folder": "05-cablet-ms902-nvme-enclosure",
+  "zipFolder": "01_Storage/SSD-Enclosures/Gecoblet-M2-NVMe-Enclosure",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV8-Showroom.webp",
+   "2-POV7-Features.webp",
+   "3-POV3-Side.webp"
+  ]
+ },
+ {
+  "n": 6,
+  "folder": "06-consistent-s7-nvme-256gb",
+  "zipFolder": "01_Storage/SSD-Internal/Consistent-S7-NVMe-M2-256GB",
+  "kept": [
+   "0-POV8-Showroom.webp",
+   "1-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 7,
+  "folder": "07-consistent-s7-sata-128gb",
+  "zipFolder": "01_Storage/SSD-Internal/Consistent-S7-SATA-2.5in-128GB",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV8-Showroom.webp",
+   "2-POV7-Features.webp",
+   "3-POV9-Fitted.webp"
+  ]
+ },
+ {
+  "n": 8,
+  "folder": "08-consistent-s7-sata-256gb",
+  "zipFolder": "01_Storage/SSD-Internal/Consistent-S7-SATA-2.5in-256GB",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV8-Showroom.webp",
+   "2-POV7-Features.webp",
+   "3-POV5-Lifestyle.webp",
+   "4-POV9-Fitted.webp"
+  ]
+ },
+ {
+  "n": 9,
+  "folder": "09-sandisk-cruzer-blade-16gb",
+  "zipFolder": "01_Storage/USB-Flash-Drives/SanDisk-Cruzer-Blade-16GB",
+  "kept": [
+   "0-POV8-Studio.webp",
+   "1-POV2-Back.webp",
+   "2-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 10,
+  "folder": "10-sandisk-cruzer-blade-32gb",
+  "zipFolder": "01_Storage/USB-Flash-Drives/SanDisk-Cruzer-Blade-32GB",
+  "kept": [
+   "0-POV8-Studio.webp",
+   "1-POV2-Back.webp",
+   "2-POV3-Side.webp",
+   "3-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 11,
+  "folder": "11-sandisk-cruzer-blade-64gb",
+  "zipFolder": "01_Storage/USB-Flash-Drives/SanDisk-Cruzer-Blade-64GB",
+  "kept": [
+   "0-POV8-Studio.webp",
+   "1-POV2-Back.webp",
+   "2-POV3-Side.webp",
+   "3-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 12,
+  "folder": "12-sandisk-ultra-flair-128gb",
+  "zipFolder": "01_Storage/USB-Flash-Drives/SanDisk-Ultra-Flair-128GB",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV5-Lifestyle.webp",
+   "2-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 13,
+  "folder": "13-ranz-otg-rz-ut01",
+  "zipFolder": "02_Connectivity/OTG-Adapters/Ranz-USB-C-to-USB-OTG",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV3-Side.webp",
+   "2-POV5-Lifestyle.webp",
+   "3-POV8-Showroom.webp",
+   "4-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 14,
+  "folder": "14-hydrogel-iphone",
+  "zipFolder": "03_Screen-Protectors/Hydrogel-Film/Unbreakable-Membrane-iPhone",
+  "kept": [
+   "0-POV8-Studio.webp",
+   "1-POV2-Back.webp",
+   "2-POV3-Side.webp"
+  ]
+ },
+ {
+  "n": 15,
+  "folder": "15-flayr-borderless-iphone",
+  "zipFolder": "03_Screen-Protectors/Tempered-Glass/FLAYR-8K-Borderless-iPhone",
+  "kept": [
+   "0-POV3-Side.webp",
+   "1-POV5-Lifestyle.webp",
+   "2-POV9-Fitted.webp",
+   "3-POV2-Back.webp"
+  ]
+ },
+ {
+  "n": 16,
+  "folder": "16-gtel-fantacy-samsung",
+  "zipFolder": "03_Screen-Protectors/Tempered-Glass/Fantacy-3D-Fingerprint-Samsung",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV9-Fitted.webp",
+   "2-POV5-Lifestyle.webp"
+  ]
+ },
+ {
+  "n": 17,
+  "folder": "17-flayr-super-large-arc",
+  "zipFolder": "03_Screen-Protectors/Tempered-Glass/Super-Large-Arc",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV8-Showroom.webp",
+   "2-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 18,
+  "folder": "18-gtel-super-x",
+  "zipFolder": "03_Screen-Protectors/Tempered-Glass/SuperX-Curved-Glass",
+  "kept": [
+   "0-POV2-Back.webp"
+  ]
+ },
+ {
+  "n": 19,
+  "folder": "19-hello-kitty-realme-16",
+  "zipFolder": "04_Phone-Cases/Character-HelloKitty/Realme",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 20,
+  "folder": "20-tom-jerry-redmi-a2-black",
+  "zipFolder": "04_Phone-Cases/Character-TomAndJerry/Black",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV9-Fitted.webp",
+   "2-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 21,
+  "folder": "21-tom-jerry-redmi-9c-maroon",
+  "zipFolder": "04_Phone-Cases/Character-TomAndJerry/Redmi-9C-Maroon",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV9-Fitted.webp",
+   "2-POV7-Features.webp",
+   "3-POV8-Showroom.webp"
+  ]
+ },
+ {
+  "n": 22,
+  "folder": "22-tom-jerry-oppo-a17-black",
+  "zipFolder": "04_Phone-Cases/Character-TomAndJerry/Redmi-A1",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV7-Features.webp",
+   "2-POV8-Showroom.webp"
+  ]
+ },
+ {
+  "n": 23,
+  "folder": "23-clear-bumper-edge-40-neo",
+  "zipFolder": "04_Phone-Cases/Clear-Bumper/Motorola-Edge-40-Neo",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV9-Fitted.webp",
+   "2-POV8-Showroom.webp",
+   "3-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 24,
+  "folder": "24-clear-bumper-edge-60-pro",
+  "zipFolder": "04_Phone-Cases/Clear-Bumper/Motorola-Edge-60-Pro-5G",
+  "kept": [
+   "0-POV8-Showroom.webp",
+   "1-POV5-Lifestyle.webp",
+   "2-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 26,
+  "folder": "26-floral-glitter-redmi-13c",
+  "zipFolder": "04_Phone-Cases/Glitter-Fashion/Floral-Glitter-Redmi-13C-5G",
+  "kept": [
+   "0-POV3-Side.webp",
+   "1-POV5-Lifestyle.webp"
+  ]
+ },
+ {
+  "n": 27,
+  "folder": "27-purple-hearts-glitter-redmi-13c",
+  "zipFolder": "04_Phone-Cases/Glitter-Fashion/Purple-Glitter-Redmi-13C-5G",
+  "kept": [
+   "0-POV9-Fitted.webp",
+   "1-POV5-Lifestyle.webp",
+   "2-POV2-Back.webp",
+   "3-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 28,
+  "folder": "28-neza-magnetic-edge-50-fusion",
+  "zipFolder": "04_Phone-Cases/MagSafe-Clear/NEZA-Motorola-Edge-60-Pro",
+  "kept": [
+   "0-POV2-Back.webp",
+   "1-POV9-Fitted.webp",
+   "2-POV5-Lifestyle.webp",
+   "3-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 29,
+  "folder": "29-neza-magnetic-edge-70",
+  "zipFolder": "04_Phone-Cases/MagSafe-Clear/NEZA-Motorola-Edge-70",
+  "kept": [
+   "0-POV5-Lifestyle.webp",
+   "1-POV2-Back.webp",
+   "2-POV9-Fitted.webp",
+   "3-POV3-Side.webp",
+   "4-POV7-Features.webp"
+  ]
+ },
+ {
+  "n": 30,
+  "folder": "30-metal-frame-iphone-16-pro",
+  "zipFolder": "04_Phone-Cases/Metal-Frame/Metal-Pure-Frame-Case-iPhone",
+  "kept": [
+   "0-POV9-Fitted.webp",
+   "1-POV5-Lifestyle.webp",
+   "2-POV3-Side.webp"
+  ]
+ },
+ {
+  "n": 31,
+  "folder": "31-detachable-frame-hold",
+  "zipFolder": "05_Grips-Stands/Detachable-MagSafe-Grip",
+  "kept": [
+   "0-POV2-Back.webp"
+  ]
+ }
+]

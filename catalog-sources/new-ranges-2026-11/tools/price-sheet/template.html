@@ -1,0 +1,508 @@
+<title>GadgetsHub Price Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a shop counter ledger. Sticky header with progress, section chips, then
+   product lines as quiet cards; each size is one row: what it is → online price → your price → stock. */
+:root {
+  --bg: #eef4f4;
+  --surface: #ffffff;
+  --surface-2: #f5f9f9;
+  --ink: #0d2226;
+  --muted: #557075;
+  --line: #d3e1e2;
+  --accent: #00727f;
+  --accent-ink: #ffffff;
+  --accent-soft: #d8f1f3;
+  --price: #004f58;
+  --shop: #1d7d47;
+  --shop-soft: #dcf2e4;
+  --order: #9a5a00;
+  --order-soft: #fbecd2;
+  --skip: #6b7a7c;
+  --skip-soft: #e6eced;
+  --ask: #8a3ea8;
+  --ask-soft: #f1e3f7;
+  --danger: #b3261e;
+  --font-display: "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-num: "Spline Sans Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #071518; --surface: #0e2227; --surface-2: #11292f; --ink: #e2f0f1; --muted: #8eb0b4;
+    --line: #1f3b41; --accent: #2bd0e4; --accent-ink: #04232a; --accent-soft: #10363d; --price: #7fe6f2;
+    --shop: #5fd393; --shop-soft: #12352a; --order: #f0b05a; --order-soft: #3a2a12; --skip: #93a5a8; --skip-soft: #1b2c30;
+    --ask: #d59af0; --ask-soft: #33203d; --danger: #ff8a80; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #071518; --surface: #0e2227; --surface-2: #11292f; --ink: #e2f0f1; --muted: #8eb0b4;
+  --line: #1f3b41; --accent: #2bd0e4; --accent-ink: #04232a; --accent-soft: #10363d; --price: #7fe6f2;
+  --shop: #5fd393; --shop-soft: #12352a; --order: #f0b05a; --order-soft: #3a2a12; --skip: #93a5a8; --skip-soft: #1b2c30;
+  --ask: #d59af0; --ask-soft: #33203d; --danger: #ff8a80; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.45; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.top-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; padding-block: 12px; }
+.brand { display: flex; flex-direction: column; min-width: 0; flex: 1 1 260px; }
+.brand h1 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.45rem; letter-spacing: -0.01em; text-wrap: balance; }
+.brand .sub { color: var(--muted); font-size: 0.85rem; }
+.progress { display: flex; align-items: center; gap: 10px; flex: 1 1 240px; min-width: 0; }
+.bar { flex: 1; height: 8px; border-radius: 99px; background: var(--skip-soft); overflow: hidden; }
+.bar > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s ease; }
+.progress b { font-family: var(--font-num); font-size: 0.85rem; white-space: nowrap; }
+.save-state { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+.save-state.ok { color: var(--shop); }
+.save-state.warn { color: var(--order); }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-block: 0 12px; }
+.chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex: 1 1 100%; padding-bottom: 2px; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); border-radius: 99px; padding: 5px 12px; font: 600 0.8rem var(--font-body); cursor: pointer; text-decoration: none; display: inline-flex; gap: 6px; align-items: center; }
+.chip span { font-family: var(--font-num); font-weight: 500; color: var(--muted); }
+.chip:hover { border-color: var(--accent); }
+.filter { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; flex: 1 1 100%; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface-2); }
+.seg button { border: 0; background: transparent; color: var(--muted); padding: 6px 11px; font: 600 0.8rem var(--font-body); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+input.search { flex: 1 1 180px; min-width: 0; border: 1px solid var(--line); border-radius: 10px; padding: 7px 11px; font: 500 0.9rem var(--font-body); background: var(--surface-2); color: var(--ink); }
+button.copy { border: 1px solid var(--accent); background: transparent; color: var(--accent); border-radius: 10px; padding: 6px 12px; font: 600 0.8rem var(--font-body); cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; padding-block: 18px 6px; }
+.rule { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-size: 0.85rem; color: var(--muted); }
+.rule b { display: block; color: var(--ink); font-family: var(--font-num); font-size: 1rem; font-weight: 600; }
+
+section.sec { padding-block: 22px 4px; scroll-margin-top: 150px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 10px; }
+.sec-head h2 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; text-wrap: balance; }
+.sec-head .count { font-family: var(--font-num); font-size: 0.8rem; color: var(--muted); }
+.sec-head p { margin: 0; flex-basis: 100%; color: var(--muted); font-size: 0.88rem; max-width: 70ch; }
+
+.line { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; overflow: hidden; }
+.line-head { display: flex; gap: 12px; align-items: center; padding: 10px 14px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+.line-head img, .line-head .noimg { width: 44px; height: 44px; border-radius: 8px; flex: none; object-fit: cover; background: #08252e; }
+.line-head .t { min-width: 0; }
+.line-head h3 { margin: 0; font-size: 0.98rem; font-weight: 700; }
+.line-head .spec { color: var(--muted); font-size: 0.8rem; }
+
+.row { display: grid; grid-template-columns: 56px minmax(0, 1.5fr) minmax(0, 1.25fr) minmax(0, 1fr) auto; gap: 10px 16px; align-items: center; padding: 12px 14px; border-top: 1px solid var(--line); }
+.row:first-of-type { border-top: 0; }
+.line-head + .row { border-top: 0; }
+.row.is-skip { opacity: 0.55; }
+.row .thumb { width: 56px; height: 56px; border-radius: 9px; object-fit: cover; background: #08252e; }
+.row .noimg { width: 56px; height: 56px; border-radius: 9px; background: var(--skip-soft); display: grid; place-items: center; color: var(--muted); font-size: 0.65rem; text-align: center; }
+.info { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.info .v { font-weight: 700; }
+.info .pn { font-family: var(--font-num); font-size: 0.72rem; color: var(--muted); word-break: break-all; }
+.info .spec { font-size: 0.78rem; color: var(--muted); }
+.info .note { font-size: 0.8rem; color: var(--ask); }
+.links { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
+.links a { font-size: 0.75rem; font-weight: 600; color: var(--accent); text-decoration: none; border: 1px solid var(--line); border-radius: 7px; padding: 2px 8px; }
+.links a:hover { border-color: var(--accent); }
+.badge { align-self: flex-start; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 6px; padding: 2px 7px; }
+.badge.ready { background: var(--shop-soft); color: var(--shop); }
+.badge.box { background: var(--accent-soft); color: var(--accent); }
+.badge.ask { background: var(--ask-soft); color: var(--ask); }
+.badge.hold { background: var(--skip-soft); color: var(--skip); }
+
+.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; min-width: 0; }
+.field { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.field label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.money { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-2); padding-left: 9px; min-width: 0; }
+.money:focus-within { border-color: var(--accent); }
+.money span { color: var(--muted); font-family: var(--font-num); font-size: 0.85rem; }
+.money input { width: 100%; min-width: 0; border: 0; background: transparent; color: var(--ink); padding: 7px 8px 7px 4px; font: 600 0.95rem var(--font-num); font-variant-numeric: tabular-nums; }
+.money input:focus { outline: none; }
+.field .hint { font-size: 0.72rem; color: var(--muted); }
+
+.ours { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ours label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.ours .big { display: flex; align-items: baseline; gap: 2px; }
+.ours .big span { font-family: var(--font-num); color: var(--price); font-size: 1rem; }
+.ours input { width: 100%; min-width: 0; max-width: 8.5ch; border: 1px dashed transparent; border-radius: 8px; background: transparent; color: var(--price); font: 600 1.35rem var(--font-num); font-variant-numeric: tabular-nums; padding: 1px 4px; }
+.ours input:hover { border-color: var(--line); }
+.ours input:focus { border-color: var(--accent); outline: none; background: var(--surface-2); }
+.ours input::placeholder { color: var(--muted); font-size: 1rem; }
+.ours .why { font-size: 0.72rem; color: var(--muted); }
+.ours .why button { border: 0; background: none; color: var(--accent); font: 600 0.72rem var(--font-body); padding: 0; cursor: pointer; text-decoration: underline; }
+.ours .why.over { color: var(--order); }
+
+.stock { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface-2); }
+.stock button { border: 0; background: transparent; color: var(--muted); padding: 7px 9px; font: 600 0.76rem var(--font-body); cursor: pointer; white-space: nowrap; }
+.stock button[data-v="shop"][aria-pressed="true"] { background: var(--shop-soft); color: var(--shop); }
+.stock button[data-v="order"][aria-pressed="true"] { background: var(--order-soft); color: var(--order); }
+.stock button[data-v="skip"][aria-pressed="true"] { background: var(--skip-soft); color: var(--ink); }
+
+.empty { padding: 30px 0; color: var(--muted); text-align: center; }
+.missing { margin-block: 24px 40px; padding: 14px 16px; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: 0.88rem; max-width: 80ch; }
+.missing b { color: var(--ink); }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--bg); padding: 9px 16px; border-radius: 10px; font-weight: 600; font-size: 0.85rem; z-index: 20; }
+textarea.fallback { width: 100%; min-height: 160px; font: 0.75rem var(--font-num); border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); color: var(--ink); padding: 10px; }
+
+@media (max-width: 820px) {
+  .brand .sub { display: none; }
+  .top-inner { padding-block: 10px 8px; }
+  .row { grid-template-columns: 56px minmax(0, 1fr); }
+  .row .inputs, .row .ours, .row .stock-cell { grid-column: 1 / -1; }
+  .row .ours { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+  .row .ours label { flex-basis: 100%; }
+  .stock { width: 100%; }
+  .stock button { flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="top-inner">
+      <div class="brand">
+        <h1>GadgetsHub price sheet</h1>
+        <span class="sub">Type the lowest Amazon or Flipkart price. Your price is worked out for you.</span>
+      </div>
+      <div class="progress" aria-live="polite">
+        <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+        <b id="prog">0 of 0 priced</b>
+        <span class="save-state" id="saveState">Connecting…</span>
+      </div>
+    </div>
+    <div class="tools">
+      <nav class="chips" id="chips" aria-label="Sections"></nav>
+      <div class="filter">
+        <div class="seg" role="group" aria-label="Show">
+          <button type="button" id="f-all" aria-pressed="true">All</button>
+          <button type="button" id="f-todo" aria-pressed="false">Still to price</button>
+          <button type="button" id="f-done" aria-pressed="false">Priced</button>
+        </div>
+        <input class="search" id="q" type="search" placeholder="Find a product, size or part number" autocomplete="off">
+        <button class="copy" type="button" id="copyBtn">Copy all prices</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="rules" aria-label="Pricing rules">
+    <div class="rule"><b>Online − ₹90 to ₹100</b>Most products. Rounded to end in 9.</div>
+    <div class="rule"><b>boAt 1200 Pro − ₹400</b>Stone Arc Pro is online − ₹300.</div>
+    <div class="rule"><b>OTG adapter ₹170</b>Fixed, as you asked.</div>
+    <div class="rule"><b>3–5 days</b>Items not on your shelf show this delivery time.</div>
+  </div>
+  <div id="list"></div>
+  <p class="empty" id="empty" hidden>Nothing matches. Clear the search or pick All.</p>
+  <div class="missing">
+    <b>Not on this sheet yet.</b> Crucial and Kingston SSDs, and Kingston memory cards: their websites block automatic checks, so I have no official sizes or photos. If you stock them, send me the model names or box photos.
+  </div>
+  <div id="fallbackBox" hidden>
+    <p>Copying didn't work here. Select this text and copy it:</p>
+    <textarea class="fallback" id="fallbackText" readonly></textarea>
+  </div>
+</main>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const SECTIONS = DATA.sections;
+const ROWS = DATA.rows;
+const THUMBS = DATA.thumbs || {};
+const BY_ID = Object.fromEntries(ROWS.map(r => [r.id, r]));
+const LS_KEY = "gh-price-sheet-v1";
+
+/* state per row: {online, mrp, ours, stock} — ours is an override (null = use the rule) */
+const state = {};
+for (const r of ROWS) state[r.id] = { online: null, mrp: r.mrp ?? null, ours: null, stock: r.stock || "order" };
+
+let db = null;
+let pushedLocal = false;
+let canWrite = true;
+let filter = "all";
+let query = "";
+
+const inr = n => "₹" + Math.round(n).toLocaleString("en-IN");
+const num = v => { const n = Number(String(v).replace(/[^\d.]/g, "")); return Number.isFinite(n) && n > 0 ? Math.round(n) : null; };
+
+function rulePrice(r, online) {
+  if (r.rule === "fixed170") return 170;
+  if (online == null) return null;
+  if (r.rule === "minus400") return online - 400;
+  if (r.rule === "minus300") return online - 300;
+  let x = online - 100;              /* first value in [online-100, online-91] ending in 9 */
+  while (((x % 10) + 10) % 10 !== 9) x++;
+  return x > 0 ? x : null;
+}
+function priceInfo(r) {
+  const s = state[r.id];
+  const base = s.online ?? (r.ref ?? null);
+  const fromRef = s.online == null && r.ref != null;
+  const auto = rulePrice(r, base);
+  const final = s.ours ?? auto;
+  return { auto, final, fromRef, base };
+}
+function isPriced(r) { return priceInfo(r).final != null; }
+
+/* ---------- render ---------- */
+const list = document.getElementById("list");
+const chips = document.getElementById("chips");
+
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
+    if (k === "class") e.className = v;
+    else if (k === "text") e.textContent = v;
+    else e.setAttribute(k, v);
+  }
+  for (const k of kids) if (k != null) e.append(k);
+  return e;
+}
+function searchLinks(q) {
+  const enc = encodeURIComponent(q);
+  return el("div", { class: "links" },
+    el("a", { href: "https://www.amazon.in/s?k=" + enc, target: "_blank", rel: "noopener", text: "Amazon ↗" }),
+    el("a", { href: "https://www.flipkart.com/search?q=" + enc, target: "_blank", rel: "noopener", text: "Flipkart ↗" }));
+}
+const BADGE = { ready: "Photos ready", box: "Box photos only", ask: "Question for you", hold: "On hold" };
+
+function buildRow(r, showLine) {
+  const s = state[r.id];
+  const thumb = r.thumb ? el("img", { class: "thumb", src: THUMBS[r.thumb], alt: "", loading: "lazy", width: 56, height: 56 })
+                        : el("div", { class: "noimg", text: "photo needed" });
+  const info = el("div", { class: "info" },
+    r.badge ? el("span", { class: "badge " + r.badge, text: BADGE[r.badge] }) : null,
+    showLine ? el("span", { class: "v", text: r.line }) : null,
+    el("span", { class: showLine ? "spec" : "v", text: r.variant }),
+    r.part ? el("span", { class: "pn", text: r.part }) : null,
+    showLine && r.spec ? el("span", { class: "spec", text: r.spec }) : null,
+    r.note ? el("span", { class: "note", text: r.note }) : null,
+    searchLinks(r.q));
+
+  const onlineIn = el("input", { id: "on-" + r.id, inputmode: "numeric", autocomplete: "off", "aria-label": "Lowest online price for " + r.line + " " + r.variant });
+  const mrpIn = el("input", { id: "mrp-" + r.id, inputmode: "numeric", autocomplete: "off", "aria-label": "MRP for " + r.line + " " + r.variant });
+  const onlineField = el("div", { class: "field" }, el("label", { for: onlineIn.id, text: "Online price" }),
+    el("div", { class: "money" }, el("span", { text: "₹" }), onlineIn),
+    r.ref ? el("span", { class: "hint", text: r.refLabel + ": " + inr(r.ref) }) : null);
+  const mrpField = el("div", { class: "field" }, el("label", { for: mrpIn.id, text: "MRP" }),
+    el("div", { class: "money" }, el("span", { text: "₹" }), mrpIn));
+  if (r.rule === "fixed170") onlineField.querySelector("label").textContent = "Online price (optional)";
+
+  const oursIn = el("input", { id: "ours-" + r.id, inputmode: "numeric", autocomplete: "off", "aria-label": "Your price for " + r.line + " " + r.variant });
+  const why = el("span", { class: "why" });
+  const ours = el("div", { class: "ours" }, el("label", { for: oursIn.id, text: "Your price" }),
+    el("div", { class: "big" }, el("span", { text: "₹" }), oursIn), why);
+
+  const stock = el("div", { class: "stock", role: "group", "aria-label": "Stock" });
+  for (const [v, label] of [["shop", "In shop"], ["order", "3–5 days"], ["skip", "Skip"]]) {
+    const b = el("button", { type: "button", "data-v": v, "aria-pressed": String(s.stock === v), text: label });
+    b.addEventListener("click", () => { if (state[r.id].stock === v) return; state[r.id].stock = v; refreshRow(r.id); queueSave(r.id, 0); });
+    stock.append(b);
+  }
+
+  const row = el("div", { class: "row", id: "row-" + r.id, "data-id": r.id },
+    thumb, info, el("div", { class: "inputs" }, onlineField, mrpField), ours, el("div", { class: "stock-cell" }, stock));
+
+  onlineIn.addEventListener("input", () => { state[r.id].online = num(onlineIn.value); refreshRow(r.id, "online"); queueSave(r.id); });
+  mrpIn.addEventListener("input", () => { state[r.id].mrp = num(mrpIn.value); refreshRow(r.id, "mrp"); queueSave(r.id); });
+  oursIn.addEventListener("input", () => {
+    const v = num(oursIn.value), auto = priceInfo(r).auto;
+    state[r.id].ours = (v == null || v === auto) ? null : v;
+    refreshRow(r.id, "ours"); queueSave(r.id);
+  });
+  for (const i of [onlineIn, mrpIn, oursIn]) i.addEventListener("blur", () => flush(r.id));
+  return row;
+}
+
+function refreshRow(id, typing) {
+  const r = BY_ID[id], s = state[id], row = document.getElementById("row-" + id);
+  if (!row) return;
+  const p = priceInfo(r);
+  const on = row.querySelector("#on-" + CSS.escape(id)), mrp = row.querySelector("#mrp-" + CSS.escape(id)), ours = row.querySelector("#ours-" + CSS.escape(id));
+  if (typing !== "online" && document.activeElement !== on) on.value = s.online ?? "";
+  if (typing !== "mrp" && document.activeElement !== mrp) mrp.value = s.mrp ?? "";
+  if (typing !== "ours" && document.activeElement !== ours) ours.value = p.final ?? "";
+  ours.placeholder = "—";
+  const why = row.querySelector(".why");
+  why.replaceChildren();
+  why.classList.toggle("over", s.ours != null);
+  if (s.ours != null) {
+    why.append("Your own price. ");
+    const reset = el("button", { type: "button", text: p.auto != null ? "Use " + inr(p.auto) : "Clear" });
+    reset.addEventListener("click", () => { state[id].ours = null; refreshRow(id); queueSave(id, 0); });
+    why.append(reset);
+  } else if (r.rule === "fixed170") {
+    why.textContent = "Fixed price";
+  } else if (p.final != null) {
+    const gap = p.base - p.final;
+    let t = inr(gap) + " below " + (p.fromRef ? "boAt store" : "online");
+    if (s.mrp && s.mrp > p.final) t += " · " + Math.round((1 - p.final / s.mrp) * 100) + "% off MRP";
+    why.textContent = t;
+  } else {
+    why.textContent = "Add the online price";
+  }
+  if (s.mrp && p.final && p.final > s.mrp) { why.classList.add("over"); why.textContent = "Higher than MRP. Check the price."; }
+  row.classList.toggle("is-skip", s.stock === "skip");
+  row.querySelectorAll(".stock button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === s.stock)));
+  applyFilterTo(row, r);
+  updateProgress();
+}
+
+function render() {
+  list.replaceChildren(); chips.replaceChildren();
+  for (const sec of SECTIONS) {
+    const rows = ROWS.filter(r => r.sec === sec.id);
+    const secEl = el("section", { class: "sec", id: "sec-" + sec.id, "aria-labelledby": "h-" + sec.id },
+      el("div", { class: "sec-head" }, el("h2", { id: "h-" + sec.id, text: sec.title }),
+        el("span", { class: "count", id: "count-" + sec.id }), el("p", { text: sec.blurb })));
+    let i = 0;
+    while (i < rows.length) {
+      let j = i; while (j < rows.length && rows[j].line === rows[i].line) j++;
+      const group = rows.slice(i, j);
+      const lineEl = el("div", { class: "line" });
+      if (group.length > 1) {
+        const r0 = group[0];
+        lineEl.append(el("div", { class: "line-head" },
+          r0.thumb && group.every(g => g.thumb === r0.thumb) ? el("img", { src: THUMBS[r0.thumb], alt: "", width: 44, height: 44 }) : null,
+          el("div", { class: "t" }, el("h3", { text: r0.line }), r0.spec ? el("div", { class: "spec", text: r0.spec }) : null)));
+      }
+      for (const r of group) lineEl.append(buildRow(r, group.length === 1));
+      secEl.append(lineEl);
+      i = j;
+    }
+    list.append(secEl);
+    const chip = el("a", { class: "chip", href: "#sec-" + sec.id }, sec.title, el("span", { id: "chipc-" + sec.id }));
+    chips.append(chip);
+  }
+  for (const r of ROWS) refreshRow(r.id);
+}
+
+function applyFilterTo(row, r) {
+  const priced = isPriced(r);
+  let show = filter === "all" || (filter === "todo" && !priced && state[r.id].stock !== "skip") || (filter === "done" && priced);
+  if (show && query) {
+    const hay = (r.line + " " + r.variant + " " + (r.part || "") + " " + (r.spec || "")).toLowerCase();
+    show = query.split(/\s+/).every(w => hay.includes(w));
+  }
+  row.hidden = !show;
+}
+function applyFilter() {
+  for (const r of ROWS) { const row = document.getElementById("row-" + r.id); if (row) applyFilterTo(row, r); }
+  let any = false;
+  document.querySelectorAll(".line").forEach(l => { const vis = [...l.querySelectorAll(".row")].some(x => !x.hidden); l.hidden = !vis; any ||= vis; });
+  document.querySelectorAll("section.sec").forEach(s => { s.hidden = ![...s.querySelectorAll(".line")].some(x => !x.hidden); });
+  document.getElementById("empty").hidden = any;
+}
+function updateProgress() {
+  const live = ROWS.filter(r => state[r.id].stock !== "skip");
+  const done = live.filter(isPriced).length;
+  document.getElementById("prog").textContent = done + " of " + live.length + " priced";
+  document.getElementById("bar").style.width = (live.length ? (done / live.length) * 100 : 0) + "%";
+  for (const sec of SECTIONS) {
+    const rs = ROWS.filter(r => r.sec === sec.id && state[r.id].stock !== "skip");
+    const d = rs.filter(isPriced).length;
+    const c = document.getElementById("count-" + sec.id); if (c) c.textContent = d + " / " + rs.length + " priced";
+    const cc = document.getElementById("chipc-" + sec.id); if (cc) cc.textContent = d + "/" + rs.length;
+  }
+}
+
+/* ---------- filters ---------- */
+const fBtns = { all: "f-all", todo: "f-todo", done: "f-done" };
+for (const [k, id] of Object.entries(fBtns)) {
+  document.getElementById(id).addEventListener("click", () => {
+    filter = k;
+    for (const [k2, id2] of Object.entries(fBtns)) document.getElementById(id2).setAttribute("aria-pressed", String(k2 === k));
+    applyFilter();
+  });
+}
+let qTimer;
+document.getElementById("q").addEventListener("input", e => { clearTimeout(qTimer); qTimer = setTimeout(() => { query = e.target.value.trim().toLowerCase(); applyFilter(); }, 120); });
+
+/* ---------- saving ---------- */
+const saveState = document.getElementById("saveState");
+function setSave(text, cls) { saveState.textContent = text; saveState.className = "save-state" + (cls ? " " + cls : ""); }
+const timers = {}, inflight = {}, dirty = new Set();
+function bodyFor(id) {
+  const r = BY_ID[id], s = state[id], p = priceInfo(r);
+  return { line: r.line, variant: r.variant, online: s.online, mrp: s.mrp, ours: s.ours, final: p.final, stock: s.stock, updatedAt: new Date().toISOString() };
+}
+function saveLocal() {
+  try { const out = {}; for (const r of ROWS) out[r.id] = state[r.id]; localStorage.setItem(LS_KEY, JSON.stringify(out)); } catch (e) {}
+}
+function queueSave(id, delay = 700) {
+  dirty.add(id);
+  saveLocal();
+  clearTimeout(timers[id]);
+  timers[id] = setTimeout(() => flush(id), delay);
+}
+async function flush(id) {
+  clearTimeout(timers[id]);
+  if (!dirty.has(id)) return;
+  if (!db || !canWrite) { setSave(db ? "View only: changes stay on this device" : "Saved on this device", db ? "warn" : ""); return; }
+  if (inflight[id]) { await inflight[id].catch(() => {}); return flush(id); }
+  dirty.delete(id);
+  setSave("Saving…");
+  inflight[id] = db.doc("prices/" + id).set(bodyFor(id));
+  try { await inflight[id]; setSave("All changes saved", "ok"); }
+  catch (e) {
+    if (e && (e.code === "invalid_argument" || e.code === "not_granted")) { canWrite = false; setSave("View only: changes stay on this device", "warn"); }
+    else if (e && e.code === "unavailable") { dirty.add(id); setTimeout(() => flush(id), 1500 + Math.random() * 1500); setSave("Retrying…", "warn"); }
+    else { dirty.add(id); setSave("Couldn't save. Your changes are kept on this device.", "warn"); }
+  } finally { inflight[id] = null; }
+}
+
+/* ---------- copy ---------- */
+function summaryText() {
+  const lines = ["id\tproduct\tsize\tonline\tmrp\tyour price\tstock"];
+  for (const r of ROWS) {
+    const s = state[r.id], p = priceInfo(r);
+    lines.push([r.id, r.line, r.variant, s.online ?? "", s.mrp ?? "", p.final ?? "", s.stock].join("\t"));
+  }
+  return lines.join("\n");
+}
+function toast(t) { const e = document.getElementById("toast"); e.textContent = t; e.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => e.hidden = true, 2200); }
+document.getElementById("copyBtn").addEventListener("click", () => {
+  const text = summaryText();
+  const fallback = () => { const b = document.getElementById("fallbackBox"), t = document.getElementById("fallbackText"); t.value = text; b.hidden = false; t.focus(); t.select(); b.scrollIntoView({ block: "center" }); };
+  try { navigator.clipboard.writeText(text).then(() => toast("Copied. Paste it to Claude in the chat."), fallback); } catch (e) { fallback(); }
+});
+
+/* ---------- boot ---------- */
+try {
+  const saved = JSON.parse(localStorage.getItem(LS_KEY) || "null");
+  if (saved) for (const [id, s] of Object.entries(saved)) if (state[id]) Object.assign(state[id], s);
+} catch (e) {}
+render();
+applyFilter();
+
+(async () => {
+  let api = null;
+  try { api = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch (e) { api = null; }
+  if (!api) { setSave("Saved on this device only"); return; }
+  db = api;
+  const loading = setTimeout(() => setSave("Can't reach your saved prices yet", "warn"), 10000);
+  db.collection("prices").onSnapshot(snap => {
+    if (!snap.metadata.fromCache) clearTimeout(loading);
+    for (const d of snap.docs) {
+      const id = d.id; if (!state[id] || dirty.has(id)) continue;
+      const v = d.data() || {};
+      state[id] = { online: v.online ?? null, mrp: v.mrp ?? BY_ID[id].mrp ?? null, ours: v.ours ?? null, stock: v.stock || BY_ID[id].stock || "order" };
+      refreshRow(id);
+    }
+    applyFilter();
+    if (!snap.metadata.fromCache && !dirty.size) setSave("All changes saved", "ok");
+    /* push anything typed before the store answered (or kept locally from an earlier visit) */
+    if (!snap.metadata.fromCache && !pushedLocal) {
+      pushedLocal = true;
+      const have = new Set(snap.docs.map(d => d.id));
+      for (const r of ROWS) {
+        const s = state[r.id];
+        const touched = s.online != null || s.ours != null || (s.mrp ?? null) !== (r.mrp ?? null) || s.stock !== (r.stock || "order");
+        if (touched && !have.has(r.id)) queueSave(r.id, 50);
+      }
+    }
+  }, err => { clearTimeout(loading); setSave("Saved on this device only", "warn"); db = null; });
+})();
+</script>

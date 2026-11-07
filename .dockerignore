@@ -7,3 +7,5 @@
 !**/.env.example
 .git
 infra/prod/.env
+# Catalogue source material (photos, research): not part of the site
+catalog-sources

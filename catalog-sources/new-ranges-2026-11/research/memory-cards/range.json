@@ -1,0 +1,1386 @@
+{
+  "title": "GadgetsHub microSD research sheet",
+  "researchedOn": "2026-11-06",
+  "method": "Plain curl requests (default curl user agent, 2s spacing) to official brand sites only; no Amazon/Flipkart fetching. Search URLs are constructed, not fetched.",
+  "excluded": "Geonix 64GB A2 V30 150/70 MB/s (shop's own stock card) - documented elsewhere, not researched.",
+  "blockedHosts": {
+    "images.samsung.com": "all Samsung product photos (gallery front / adapter / pack) - allow to download recorded image URLs",
+    "api.sandisk.com": "SanDisk live price/stock data for India PDPs",
+    "indiastore.sandisk.com": "SanDisk India store (seller STPL) - possible INR prices",
+    "documents.sandisk.com": "SanDisk data sheets (PDF)",
+    "static.sandisk.com": "SanDisk site scripts/fonts (product images themselves are on www.sandisk.com)",
+    "www.kingston.com": "not attempted - known to block automated requests"
+  },
+  "lines": [
+    {
+      "line": "SanDisk Ultra microSD",
+      "brand": "SanDisk",
+      "officialName": "SanDisk Ultra microSD (page title); SKU name 'SanDisk Ultra microSD UHS-I Card <capacity>'",
+      "officialPage": "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd",
+      "region": "India (en-in)",
+      "status": "Listed on SanDisk India site",
+      "variants": [
+        {
+          "capacity": "32GB",
+          "partNumber": "SDSQUA4-032G-GN6MN",
+          "readMBps": 120,
+          "writeMBps": null,
+          "writeNote": "Not quantified. India page footnote: 'Write speeds lower.'",
+          "readNote": "Page footnote: [256GB-512GB; 1TB-1.5TB] up to 150MB/s, [64GB-128GB] up to 140MB/s, [32GB] up to 120MB/s read; proprietary tech beyond UHS-I 104MB/s, needs compatible devices.",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": null,
+            "videoSpeedClass": null,
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Page text states only UHS-I interface and A1 (1500 read / 500 write IOPS). U-class, V-class and Class 10 are NOT stated in page text; the official card image (128GB) shows U1 and Class 10 marks - verify on retail pack before listing."
+          },
+          "adapter": false,
+          "adapterNote": "India spec table 'In The Box: SanDisk Ultra microSD card' (card only).",
+          "warranty": "10-Year Limited Warranty (India page). Policy page: India is a SanDisk warranty region; warranty only if bought from an authorized distributor/reseller.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": null,
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - price is loaded client-side from api.sandisk.com / indiastore.sandisk.com (both blocked by network policy); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd?sku=SDSQUA4-032G-GN6MN",
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd",
+            "https://shop.sandisk.com/en-in/support/store/warranty-policy"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-32gb.png",
+              "localPath": null,
+              "size": null,
+              "background": null,
+              "status": "not downloaded (available on allowed host www.sandisk.com)"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Ultra+microSD+32GB+SDSQUA4-032G-GN6MN",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Ultra+microSD+32GB+SDSQUA4-032G-GN6MN"
+        },
+        {
+          "capacity": "64GB",
+          "partNumber": "SDSQUAB-064G-GN6MN",
+          "readMBps": 140,
+          "writeMBps": null,
+          "writeNote": "Not quantified. India page footnote: 'Write speeds lower.'",
+          "readNote": "Page footnote: [256GB-512GB; 1TB-1.5TB] up to 150MB/s, [64GB-128GB] up to 140MB/s, [32GB] up to 120MB/s read; proprietary tech beyond UHS-I 104MB/s, needs compatible devices.",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": null,
+            "videoSpeedClass": null,
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Page text states only UHS-I interface and A1 (1500 read / 500 write IOPS). U-class, V-class and Class 10 are NOT stated in page text; the official card image (128GB) shows U1 and Class 10 marks - verify on retail pack before listing."
+          },
+          "adapter": false,
+          "adapterNote": "India spec table 'In The Box: SanDisk Ultra microSD card' (card only).",
+          "warranty": "10-Year Limited Warranty (India page). Policy page: India is a SanDisk warranty region; warranty only if bought from an authorized distributor/reseller.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": null,
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - price is loaded client-side from api.sandisk.com / indiastore.sandisk.com (both blocked by network policy); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd?sku=SDSQUAB-064G-GN6MN",
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd",
+            "https://shop.sandisk.com/en-in/support/store/warranty-policy"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-64gb.png",
+              "localPath": "raw/sandisk-ultra/img/sandisk-ultra-microsd-64gb-front.png",
+              "size": "1680x1680 PNG",
+              "background": "transparent",
+              "status": "downloaded"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Ultra+microSD+64GB+SDSQUAB-064G-GN6MN",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Ultra+microSD+64GB+SDSQUAB-064G-GN6MN"
+        },
+        {
+          "capacity": "128GB",
+          "partNumber": "SDSQUAB-128G-GN6MN",
+          "readMBps": 140,
+          "writeMBps": null,
+          "writeNote": "Not quantified. India page footnote: 'Write speeds lower.'",
+          "readNote": "Page footnote: [256GB-512GB; 1TB-1.5TB] up to 150MB/s, [64GB-128GB] up to 140MB/s, [32GB] up to 120MB/s read; proprietary tech beyond UHS-I 104MB/s, needs compatible devices.",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": null,
+            "videoSpeedClass": null,
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Page text states only UHS-I interface and A1 (1500 read / 500 write IOPS). U-class, V-class and Class 10 are NOT stated in page text; the official card image (128GB) shows U1 and Class 10 marks - verify on retail pack before listing."
+          },
+          "adapter": false,
+          "adapterNote": "India spec table 'In The Box: SanDisk Ultra microSD card' (card only).",
+          "warranty": "10-Year Limited Warranty (India page). Policy page: India is a SanDisk warranty region; warranty only if bought from an authorized distributor/reseller.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": null,
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - price is loaded client-side from api.sandisk.com / indiastore.sandisk.com (both blocked by network policy); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd?sku=SDSQUAB-128G-GN6MN",
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd",
+            "https://shop.sandisk.com/en-in/support/store/warranty-policy"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-128gb.png",
+              "localPath": "raw/sandisk-ultra/img/sandisk-ultra-microsd-128gb-front.png",
+              "size": "1680x1680 PNG",
+              "background": "transparent",
+              "status": "downloaded"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Ultra+microSD+128GB+SDSQUAB-128G-GN6MN",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Ultra+microSD+128GB+SDSQUAB-128G-GN6MN"
+        },
+        {
+          "capacity": "256GB",
+          "partNumber": "SDSQUAC-256G-GN6MN",
+          "readMBps": 150,
+          "writeMBps": null,
+          "writeNote": "Not quantified. India page footnote: 'Write speeds lower.'",
+          "readNote": "Page footnote: [256GB-512GB; 1TB-1.5TB] up to 150MB/s, [64GB-128GB] up to 140MB/s, [32GB] up to 120MB/s read; proprietary tech beyond UHS-I 104MB/s, needs compatible devices.",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": null,
+            "videoSpeedClass": null,
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Page text states only UHS-I interface and A1 (1500 read / 500 write IOPS). U-class, V-class and Class 10 are NOT stated in page text; the official card image (128GB) shows U1 and Class 10 marks - verify on retail pack before listing."
+          },
+          "adapter": false,
+          "adapterNote": "India spec table 'In The Box: SanDisk Ultra microSD card' (card only).",
+          "warranty": "10-Year Limited Warranty (India page). Policy page: India is a SanDisk warranty region; warranty only if bought from an authorized distributor/reseller.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": null,
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - price is loaded client-side from api.sandisk.com / indiastore.sandisk.com (both blocked by network policy); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd?sku=SDSQUAC-256G-GN6MN",
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd",
+            "https://shop.sandisk.com/en-in/support/store/warranty-policy"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-256gb.png",
+              "localPath": "raw/sandisk-ultra/img/sandisk-ultra-microsd-256gb-front.png",
+              "size": "1680x1680 PNG",
+              "background": "transparent",
+              "status": "downloaded"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Ultra+microSD+256GB+SDSQUAC-256G-GN6MN",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Ultra+microSD+256GB+SDSQUAC-256G-GN6MN"
+        },
+        {
+          "capacity": "512GB",
+          "partNumber": "SDSQUAC-512G-GN6MN",
+          "readMBps": 150,
+          "writeMBps": null,
+          "writeNote": "Not quantified. India page footnote: 'Write speeds lower.'",
+          "readNote": "Page footnote: [256GB-512GB; 1TB-1.5TB] up to 150MB/s, [64GB-128GB] up to 140MB/s, [32GB] up to 120MB/s read; proprietary tech beyond UHS-I 104MB/s, needs compatible devices.",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": null,
+            "videoSpeedClass": null,
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Page text states only UHS-I interface and A1 (1500 read / 500 write IOPS). U-class, V-class and Class 10 are NOT stated in page text; the official card image (128GB) shows U1 and Class 10 marks - verify on retail pack before listing."
+          },
+          "adapter": false,
+          "adapterNote": "India spec table 'In The Box: SanDisk Ultra microSD card' (card only).",
+          "warranty": "10-Year Limited Warranty (India page). Policy page: India is a SanDisk warranty region; warranty only if bought from an authorized distributor/reseller.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": null,
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - price is loaded client-side from api.sandisk.com / indiastore.sandisk.com (both blocked by network policy); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd?sku=SDSQUAC-512G-GN6MN",
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd",
+            "https://shop.sandisk.com/en-in/support/store/warranty-policy"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-512gb.png",
+              "localPath": null,
+              "size": null,
+              "background": null,
+              "status": "not downloaded (available on allowed host www.sandisk.com)"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Ultra+microSD+512GB+SDSQUAC-512G-GN6MN",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Ultra+microSD+512GB+SDSQUAC-512G-GN6MN"
+        },
+        {
+          "capacity": "1TB",
+          "partNumber": "SDSQUAC-1T00-GN6MN",
+          "readMBps": 150,
+          "writeMBps": null,
+          "writeNote": "Not quantified. India page footnote: 'Write speeds lower.'",
+          "readNote": "Page footnote: [256GB-512GB; 1TB-1.5TB] up to 150MB/s, [64GB-128GB] up to 140MB/s, [32GB] up to 120MB/s read; proprietary tech beyond UHS-I 104MB/s, needs compatible devices.",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": null,
+            "videoSpeedClass": null,
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Page text states only UHS-I interface and A1 (1500 read / 500 write IOPS). U-class, V-class and Class 10 are NOT stated in page text; the official card image (128GB) shows U1 and Class 10 marks - verify on retail pack before listing."
+          },
+          "adapter": false,
+          "adapterNote": "India spec table 'In The Box: SanDisk Ultra microSD card' (card only).",
+          "warranty": "10-Year Limited Warranty (India page). Policy page: India is a SanDisk warranty region; warranty only if bought from an authorized distributor/reseller.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": null,
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - price is loaded client-side from api.sandisk.com / indiastore.sandisk.com (both blocked by network policy); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd?sku=SDSQUAC-1T00-GN6MN",
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd",
+            "https://shop.sandisk.com/en-in/support/store/warranty-policy"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-1tb.png",
+              "localPath": null,
+              "size": null,
+              "background": null,
+              "status": "not downloaded (available on allowed host www.sandisk.com)"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Ultra+microSD+1TB+SDSQUAC-1T00-GN6MN",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Ultra+microSD+1TB+SDSQUAC-1T00-GN6MN"
+        },
+        {
+          "capacity": "1.5TB",
+          "partNumber": "SDSQUAC-1T50-GN6MN",
+          "readMBps": 150,
+          "writeMBps": null,
+          "writeNote": "Not quantified. India page footnote: 'Write speeds lower.'",
+          "readNote": "Page footnote: [256GB-512GB; 1TB-1.5TB] up to 150MB/s, [64GB-128GB] up to 140MB/s, [32GB] up to 120MB/s read; proprietary tech beyond UHS-I 104MB/s, needs compatible devices.",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": null,
+            "videoSpeedClass": null,
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Page text states only UHS-I interface and A1 (1500 read / 500 write IOPS). U-class, V-class and Class 10 are NOT stated in page text; the official card image (128GB) shows U1 and Class 10 marks - verify on retail pack before listing."
+          },
+          "adapter": false,
+          "adapterNote": "India spec table 'In The Box: SanDisk Ultra microSD card' (card only).",
+          "warranty": "10-Year Limited Warranty (India page). Policy page: India is a SanDisk warranty region; warranty only if bought from an authorized distributor/reseller.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": null,
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - price is loaded client-side from api.sandisk.com / indiastore.sandisk.com (both blocked by network policy); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd?sku=SDSQUAC-1T50-GN6MN",
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-ultra-uhs-i-microsd",
+            "https://shop.sandisk.com/en-in/support/store/warranty-policy"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-15tb.png",
+              "localPath": null,
+              "size": null,
+              "background": null,
+              "status": "not downloaded (available on allowed host www.sandisk.com)"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Ultra+microSD+1.5TB+SDSQUAC-1T50-GN6MN",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Ultra+microSD+1.5TB+SDSQUAC-1T50-GN6MN"
+        }
+      ],
+      "lineImages": [
+        {
+          "role": "card front 128GB",
+          "localPath": "raw/sandisk-ultra/img/sandisk-ultra-microsd-128gb-front.png",
+          "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-128gb.png",
+          "size": "1680x1680",
+          "background": "transparent"
+        },
+        {
+          "role": "card front 64GB",
+          "localPath": "raw/sandisk-ultra/img/sandisk-ultra-microsd-64gb-front.png",
+          "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-64gb.png",
+          "size": "1680x1680",
+          "background": "transparent"
+        },
+        {
+          "role": "card front 256GB",
+          "localPath": "raw/sandisk-ultra/img/sandisk-ultra-microsd-256gb-front.png",
+          "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-256gb.png",
+          "size": "1680x1680",
+          "background": "transparent"
+        }
+      ],
+      "notes": [
+        "India page offers no card+adapter or retail-pack photo; only per-capacity card fronts, a lifestyle photo (rejected) and a video thumbnail.",
+        "Datasheet links on SanDisk pages redirect to documents.sandisk.com (blocked)."
+      ]
+    },
+    {
+      "line": "SanDisk Extreme microSD",
+      "brand": "SanDisk",
+      "officialName": "SanDisk Extreme® microSDXC™ UHS-I CARD",
+      "officialPage": "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd",
+      "region": "India (en-in)",
+      "status": "Listed on SanDisk India site (64GB-1TB)",
+      "variants": [
+        {
+          "capacity": "64GB",
+          "partNumber": "SDSQXAH-064G-GN6MN",
+          "readMBps": 170,
+          "writeMBps": 80,
+          "speedNote": "Per-capacity speeds from India page disclosure #9 (64GB: up to 170 read/80 write; 128GB: 190/90; 256GB-1TB: 190/130), which match the global page spec table. CONFLICT: the India page spec table lists 'Sequential Read 100 MB/s, Write 60 MB/s' for every capacity (appears to be the 32GB row copied across). Speeds above 104MB/s need compatible readers/devices (SanDisk QuickFlow).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": null,
+            "note": "U3 and V30 stated in page copy; A2 per disclosure 'For 64GB-1TB: A2 performance is 4000 read IOPS, 2000 write IOPS'. Spec-table bullet 'Class 10 for Full HD video playback' looks like copied template text and is not used."
+          },
+          "adapter": null,
+          "adapterNote": "Not stated for India SKUs (no 'In The Box' row). The page gallery includes an official card+SD-adapter photo, but that does not confirm box contents - check the retail pack.",
+          "warranty": "Lifetime Limited Warranty (India page); disclosure: 30-year warranty in Germany, Canada and regions not recognizing lifetime warranty.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": "Shockproof, temperature-proof, waterproof and X-ray-proof (card only; see sandisk.com/proof).",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - India PDP shows 'Sold by: STPL' but prices load client-side from api.sandisk.com (blocked); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAH-064G-GN6MN",
+            "https://www.sandisk.com/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-512G-GN6MA"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-64gb.png",
+              "localPath": null,
+              "size": null,
+              "background": null,
+              "status": "not downloaded (available on allowed host www.sandisk.com)"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Extreme+microSD+64GB+SDSQXAH-064G-GN6MN",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Extreme+microSD+64GB+SDSQXAH-064G-GN6MN"
+        },
+        {
+          "capacity": "128GB",
+          "partNumber": "SDSQXAA-128G-IN6MS",
+          "readMBps": 190,
+          "writeMBps": 90,
+          "speedNote": "Per-capacity speeds from India page disclosure #9 (64GB: up to 170 read/80 write; 128GB: 190/90; 256GB-1TB: 190/130), which match the global page spec table. CONFLICT: the India page spec table lists 'Sequential Read 100 MB/s, Write 60 MB/s' for every capacity (appears to be the 32GB row copied across). Speeds above 104MB/s need compatible readers/devices (SanDisk QuickFlow).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": null,
+            "note": "U3 and V30 stated in page copy; A2 per disclosure 'For 64GB-1TB: A2 performance is 4000 read IOPS, 2000 write IOPS'. Spec-table bullet 'Class 10 for Full HD video playback' looks like copied template text and is not used."
+          },
+          "adapter": null,
+          "adapterNote": "Not stated for India SKUs (no 'In The Box' row). The page gallery includes an official card+SD-adapter photo, but that does not confirm box contents - check the retail pack.",
+          "warranty": "Lifetime Limited Warranty (India page); disclosure: 30-year warranty in Germany, Canada and regions not recognizing lifetime warranty.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": "Shockproof, temperature-proof, waterproof and X-ray-proof (card only; see sandisk.com/proof).",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - India PDP shows 'Sold by: STPL' but prices load client-side from api.sandisk.com (blocked); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAA-128G-IN6MS",
+            "https://www.sandisk.com/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-512G-GN6MA"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-128gb.png",
+              "localPath": "raw/sandisk-extreme/img/sandisk-extreme-microsd-128gb-front.png",
+              "size": "1680x1680 PNG",
+              "background": "transparent",
+              "status": "downloaded"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Extreme+microSD+128GB+SDSQXAA-128G-IN6MS",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Extreme+microSD+128GB+SDSQXAA-128G-IN6MS"
+        },
+        {
+          "capacity": "256GB",
+          "partNumber": "SDSQXAV-256G-IN6MS",
+          "readMBps": 190,
+          "writeMBps": 130,
+          "speedNote": "Per-capacity speeds from India page disclosure #9 (64GB: up to 170 read/80 write; 128GB: 190/90; 256GB-1TB: 190/130), which match the global page spec table. CONFLICT: the India page spec table lists 'Sequential Read 100 MB/s, Write 60 MB/s' for every capacity (appears to be the 32GB row copied across). Speeds above 104MB/s need compatible readers/devices (SanDisk QuickFlow).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": null,
+            "note": "U3 and V30 stated in page copy; A2 per disclosure 'For 64GB-1TB: A2 performance is 4000 read IOPS, 2000 write IOPS'. Spec-table bullet 'Class 10 for Full HD video playback' looks like copied template text and is not used."
+          },
+          "adapter": null,
+          "adapterNote": "Not stated for India SKUs (no 'In The Box' row). The page gallery includes an official card+SD-adapter photo, but that does not confirm box contents - check the retail pack.",
+          "warranty": "Lifetime Limited Warranty (India page); disclosure: 30-year warranty in Germany, Canada and regions not recognizing lifetime warranty.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": "Shockproof, temperature-proof, waterproof and X-ray-proof (card only; see sandisk.com/proof).",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - India PDP shows 'Sold by: STPL' but prices load client-side from api.sandisk.com (blocked); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-256G-IN6MS",
+            "https://www.sandisk.com/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-512G-GN6MA"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-256gb.png",
+              "localPath": "raw/sandisk-extreme/img/sandisk-extreme-microsd-256gb-front.png",
+              "size": "1680x1680 PNG",
+              "background": "transparent",
+              "status": "downloaded"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Extreme+microSD+256GB+SDSQXAV-256G-IN6MS",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Extreme+microSD+256GB+SDSQXAV-256G-IN6MS"
+        },
+        {
+          "capacity": "512GB",
+          "partNumber": "SDSQXAV-512G-IN6MS",
+          "readMBps": 190,
+          "writeMBps": 130,
+          "speedNote": "Per-capacity speeds from India page disclosure #9 (64GB: up to 170 read/80 write; 128GB: 190/90; 256GB-1TB: 190/130), which match the global page spec table. CONFLICT: the India page spec table lists 'Sequential Read 100 MB/s, Write 60 MB/s' for every capacity (appears to be the 32GB row copied across). Speeds above 104MB/s need compatible readers/devices (SanDisk QuickFlow).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": null,
+            "note": "U3 and V30 stated in page copy; A2 per disclosure 'For 64GB-1TB: A2 performance is 4000 read IOPS, 2000 write IOPS'. Spec-table bullet 'Class 10 for Full HD video playback' looks like copied template text and is not used."
+          },
+          "adapter": null,
+          "adapterNote": "Not stated for India SKUs (no 'In The Box' row). The page gallery includes an official card+SD-adapter photo, but that does not confirm box contents - check the retail pack.",
+          "warranty": "Lifetime Limited Warranty (India page); disclosure: 30-year warranty in Germany, Canada and regions not recognizing lifetime warranty.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": "Shockproof, temperature-proof, waterproof and X-ray-proof (card only; see sandisk.com/proof).",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - India PDP shows 'Sold by: STPL' but prices load client-side from api.sandisk.com (blocked); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-512G-IN6MS",
+            "https://www.sandisk.com/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-512G-GN6MA"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-512gb.png",
+              "localPath": null,
+              "size": null,
+              "background": null,
+              "status": "not downloaded (available on allowed host www.sandisk.com)"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Extreme+microSD+512GB+SDSQXAV-512G-IN6MS",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Extreme+microSD+512GB+SDSQXAV-512G-IN6MS"
+        },
+        {
+          "capacity": "1TB",
+          "partNumber": "SDSQXAV-1T00-IN6MS",
+          "readMBps": 190,
+          "writeMBps": 130,
+          "speedNote": "Per-capacity speeds from India page disclosure #9 (64GB: up to 170 read/80 write; 128GB: 190/90; 256GB-1TB: 190/130), which match the global page spec table. CONFLICT: the India page spec table lists 'Sequential Read 100 MB/s, Write 60 MB/s' for every capacity (appears to be the 32GB row copied across). Speeds above 104MB/s need compatible readers/devices (SanDisk QuickFlow).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": null,
+            "note": "U3 and V30 stated in page copy; A2 per disclosure 'For 64GB-1TB: A2 performance is 4000 read IOPS, 2000 write IOPS'. Spec-table bullet 'Class 10 for Full HD video playback' looks like copied template text and is not used."
+          },
+          "adapter": null,
+          "adapterNote": "Not stated for India SKUs (no 'In The Box' row). The page gallery includes an official card+SD-adapter photo, but that does not confirm box contents - check the retail pack.",
+          "warranty": "Lifetime Limited Warranty (India page); disclosure: 30-year warranty in Germany, Canada and regions not recognizing lifetime warranty.",
+          "operatingTempC": "-25 to 85 (non-operating -40 to 85)",
+          "durabilityClaims": "Shockproof, temperature-proof, waterproof and X-ray-proof (card only; see sandisk.com/proof).",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - India PDP shows 'Sold by: STPL' but prices load client-side from api.sandisk.com (blocked); no INR price in server HTML (checked 2026-11-06).",
+          "sources": [
+            "https://www.sandisk.com/en-in/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-1T00-IN6MS",
+            "https://www.sandisk.com/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-512G-GN6MA"
+          ],
+          "images": [
+            {
+              "role": "card front (capacity-specific)",
+              "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-1tb.png",
+              "localPath": null,
+              "size": null,
+              "background": null,
+              "status": "not downloaded (available on allowed host www.sandisk.com)"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=SanDisk+Extreme+microSD+1TB+SDSQXAV-1T00-IN6MS",
+          "flipkartSearch": "https://www.flipkart.com/search?q=SanDisk+Extreme+microSD+1TB+SDSQXAV-1T00-IN6MS"
+        }
+      ],
+      "lineImages": [
+        {
+          "role": "card front 128GB",
+          "localPath": "raw/sandisk-extreme/img/sandisk-extreme-microsd-128gb-front.png",
+          "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-128gb.png",
+          "size": "1680x1680",
+          "background": "transparent"
+        },
+        {
+          "role": "card front 256GB",
+          "localPath": "raw/sandisk-extreme/img/sandisk-extreme-microsd-256gb-front.png",
+          "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-256gb.png",
+          "size": "1680x1680",
+          "background": "transparent"
+        },
+        {
+          "role": "card + SD adapter (no capacity printed on card)",
+          "localPath": "raw/sandisk-extreme/img/sandisk-extreme-microsd-card-with-sd-adapter.jpg",
+          "sourceUrl": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/featured/extreme-uhs-i-microsd-adapter.jpg",
+          "size": "1680x1680",
+          "background": "white"
+        }
+      ],
+      "globalOnlyCapacities": [
+        {
+          "capacity": "32GB",
+          "partNumber": "SDSQXAF-032G-GN6MA",
+          "readMBps": 100,
+          "writeMBps": 60,
+          "note": "Global page only (not on India page); disclosure: 32GB is A1.",
+          "source": "https://www.sandisk.com/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-512G-GN6MA"
+        },
+        {
+          "capacity": "2TB",
+          "partNumber": "SDSQXAV-2T00-GN6MA",
+          "readMBps": null,
+          "writeMBps": null,
+          "note": "Global page only; its spec row is malformed (read blank, '150MB/s' under write) and feature text says up to 240MB/s read / 140MB/s write with a QuickFlow reader - speeds left null.",
+          "source": "https://www.sandisk.com/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAV-512G-GN6MA"
+        }
+      ],
+      "notes": [
+        "India SKUs mix suffixes (64GB -GN6MN, others -IN6MS); global SKUs end -GN6MA.",
+        "India spec table speed conflict - see variant speedNote."
+      ]
+    },
+    {
+      "line": "Samsung EVO Plus microSD (2024 model, MB-MCxxxSA)",
+      "brand": "Samsung",
+      "officialName": "EVO Plus microSD Card (page title 'EVO Plus microSD Card MB-MC128SA/EU')",
+      "officialPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-128gb-mb-mc128sa-eu/",
+      "region": "UK official site used as global source (not listed on samsung.com/in)",
+      "status": "Current model on Samsung global sites; NOT on Samsung India site",
+      "variants": [
+        {
+          "capacity": "64GB",
+          "partNumber": "MB-MC64SA/EU",
+          "readMBps": 160,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U1",
+            "videoSpeedClass": "V10",
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Spec table: U1, V10, A1 for 64GB. Page footnote: 'Speed and rating apply to 128GB, 256GB, 512GB and 1TB cards. 64GB card is U1 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - this model is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK page shows GBP RRP only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-64gb-mb-mc64sa-eu/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc64sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc64sa-eu-540814043",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc64sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc64sa-eu-540814043?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-64gb-mb-mc64sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc64sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc64sa-eu-540814031",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc64sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc64sa-eu-540814031?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-64gb-mb-mc64sa-eu/"
+            },
+            {
+              "role": "retail pack front",
+              "galleryLabel": "front-pkg",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc64sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc64sa-eu-540814032",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc64sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc64sa-eu-540814032?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-64gb-mb-mc64sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC64SA+microSD+64GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC64SA+microSD+64GB",
+          "notes": "India-region part number (e.g. MB-MC128SA/IN) is not shown on any reachable official page; the UK page shows the /EU suffix. Specs taken from the official UK page because samsung.com/in does not list this model and semiconductor.samsung.com consumer pages now redirect to samsung.com/us (whose specs load client-side)."
+        },
+        {
+          "capacity": "128GB",
+          "partNumber": "MB-MC128SA/EU",
+          "readMBps": 160,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy: 'U3, class 10 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - this model is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK page shows GBP RRP only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-128gb-mb-mc128sa-eu/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc128sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc128sa-eu-540813961",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc128sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc128sa-eu-540813961?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-128gb-mb-mc128sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc128sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc128sa-eu-540813949",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc128sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc128sa-eu-540813949?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-128gb-mb-mc128sa-eu/"
+            },
+            {
+              "role": "retail pack front",
+              "galleryLabel": "front-pkg",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc128sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc128sa-eu-540813950",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc128sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc128sa-eu-540813950?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-128gb-mb-mc128sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC128SA+microSD+128GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC128SA+microSD+128GB",
+          "notes": "India-region part number (e.g. MB-MC128SA/IN) is not shown on any reachable official page; the UK page shows the /EU suffix. Specs taken from the official UK page because samsung.com/in does not list this model and semiconductor.samsung.com consumer pages now redirect to samsung.com/us (whose specs load client-side)."
+        },
+        {
+          "capacity": "256GB",
+          "partNumber": "MB-MC256SA/EU",
+          "readMBps": 160,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy: 'U3, class 10 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - this model is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK page shows GBP RRP only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-256gb-mb-mc256sa-eu/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc256sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc256sa-eu-540814003",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc256sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc256sa-eu-540814003?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-256gb-mb-mc256sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc256sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc256sa-eu-540813991",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc256sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc256sa-eu-540813991?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-256gb-mb-mc256sa-eu/"
+            },
+            {
+              "role": "retail pack front",
+              "galleryLabel": "front-pkg",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc256sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc256sa-eu-540813992",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc256sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc256sa-eu-540813992?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-256gb-mb-mc256sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC256SA+microSD+256GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC256SA+microSD+256GB",
+          "notes": "India-region part number (e.g. MB-MC128SA/IN) is not shown on any reachable official page; the UK page shows the /EU suffix. Specs taken from the official UK page because samsung.com/in does not list this model and semiconductor.samsung.com consumer pages now redirect to samsung.com/us (whose specs load client-side)."
+        },
+        {
+          "capacity": "512GB",
+          "partNumber": "MB-MC512SA/EU",
+          "readMBps": 160,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy: 'U3, class 10 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - this model is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK page shows GBP RRP only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-512gb-mb-mc512sa-eu/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc512sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc512sa-eu-540814022",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc512sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc512sa-eu-540814022?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-512gb-mb-mc512sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc512sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc512sa-eu-540814010",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc512sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc512sa-eu-540814010?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-512gb-mb-mc512sa-eu/"
+            },
+            {
+              "role": "retail pack front",
+              "galleryLabel": "front-pkg",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc512sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc512sa-eu-540814011",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc512sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc512sa-eu-540814011?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-512gb-mb-mc512sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC512SA+microSD+512GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC512SA+microSD+512GB",
+          "notes": "India-region part number (e.g. MB-MC128SA/IN) is not shown on any reachable official page; the UK page shows the /EU suffix. Specs taken from the official UK page because samsung.com/in does not list this model and semiconductor.samsung.com consumer pages now redirect to samsung.com/us (whose specs load client-side)."
+        },
+        {
+          "capacity": "1TB",
+          "partNumber": "MB-MC1T0SA/EU",
+          "readMBps": 160,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy: 'U3, class 10 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - this model is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK page shows GBP RRP only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-1tb-mb-mc1t0sa-eu/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc1t0sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc1t0sa-eu-540813980",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc1t0sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc1t0sa-eu-540813980?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-1tb-mb-mc1t0sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc1t0sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc1t0sa-eu-540813968",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc1t0sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc1t0sa-eu-540813968?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/evo-plus-microsd-card-1tb-mb-mc1t0sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC1T0SA+microSD+1TB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC1T0SA+microSD+1TB",
+          "notes": "India-region part number (e.g. MB-MC128SA/IN) is not shown on any reachable official page; the UK page shows the /EU suffix. Specs taken from the official UK page because samsung.com/in does not list this model and semiconductor.samsung.com consumer pages now redirect to samsung.com/us (whose specs load client-side)."
+        }
+      ],
+      "notes": [
+        "All product images are on images.samsung.com (blocked); URLs recorded per variant.",
+        "UK sitemap also lists older EVO Plus SKUs (MB-MC32GA, MB-MCxxxHA, MB-MCxxxKA) - not researched."
+      ]
+    },
+    {
+      "line": "Samsung EVO Plus microSD (2021 model, MB-MCxxxKA/IN) - India site",
+      "brand": "Samsung",
+      "officialName": "EVO Plus microSDXC Memory Card",
+      "officialPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-in/",
+      "region": "India",
+      "status": "Listed on samsung.com/in but marked 'Not for sale' / 'Out of Stock' (seen 2026-11-06)",
+      "variants": [
+        {
+          "capacity": "64GB",
+          "partNumber": "MB-MC64KA/IN",
+          "readMBps": 130,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U1",
+            "videoSpeedClass": "V10",
+            "appPerformanceClass": "A1",
+            "sdSpeedClass": null,
+            "note": "Spec table: U1, V10, A1. Footnote: '64GB card is U1 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - samsung.com/in shows 'Not for sale' / 'Out of Stock' and no price (seen 2026-11-06).",
+          "sources": [
+            "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-64gb-microsd-card-2021-mb-mc64ka-in/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc64ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc64ka-in-530723545",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc64ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc64ka-in-530723545?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-64gb-microsd-card-2021-mb-mc64ka-in/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc64ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc64ka-in-530723537",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc64ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc64ka-in-530723537?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-64gb-microsd-card-2021-mb-mc64ka-in/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC64KA+microSD+64GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC64KA+microSD+64GB",
+          "notes": "India page title 'EVO Plus microSDXC Memory Card'; URL marks it '2021 model'; spec 'Launch date: January 1st, 2022'; country of origin Philippines; imported by Samsung India Electronics Pvt. Ltd."
+        },
+        {
+          "capacity": "128GB",
+          "partNumber": "MB-MC128KA/IN",
+          "readMBps": 130,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy 'U3, class 10 rated'. (Page footnote 3 says A2/V30 'apply to 128GB and 256GB cards' but the 512GB spec table also lists U3, V30, A2.)"
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - samsung.com/in shows 'Not for sale' / 'Out of Stock' and no price (seen 2026-11-06).",
+          "sources": [
+            "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-in/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc128ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc128ka-in-530723500",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc128ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc128ka-in-530723500?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-in/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc128ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc128ka-in-530723487",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc128ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc128ka-in-530723487?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-in/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC128KA+microSD+128GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC128KA+microSD+128GB",
+          "notes": "India page title 'EVO Plus microSDXC Memory Card'; URL marks it '2021 model'; spec 'Launch date: January 1st, 2022'; country of origin Philippines; imported by Samsung India Electronics Pvt. Ltd."
+        },
+        {
+          "capacity": "256GB",
+          "partNumber": "MB-MC256KA/IN",
+          "readMBps": 130,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy 'U3, class 10 rated'. (Page footnote 3 says A2/V30 'apply to 128GB and 256GB cards' but the 512GB spec table also lists U3, V30, A2.)"
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - samsung.com/in shows 'Not for sale' / 'Out of Stock' and no price (seen 2026-11-06).",
+          "sources": [
+            "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-256gb-microsd-card-2021-mb-mc256ka-in/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc256ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc256ka-in-530723515",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc256ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc256ka-in-530723515?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-256gb-microsd-card-2021-mb-mc256ka-in/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc256ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc256ka-in-530723507",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc256ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc256ka-in-530723507?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-256gb-microsd-card-2021-mb-mc256ka-in/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC256KA+microSD+256GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC256KA+microSD+256GB",
+          "notes": "India page title 'EVO Plus microSDXC Memory Card'; URL marks it '2021 model'; spec 'Launch date: January 1st, 2022'; country of origin Philippines; imported by Samsung India Electronics Pvt. Ltd."
+        },
+        {
+          "capacity": "512GB",
+          "partNumber": "MB-MC512KA/IN",
+          "readMBps": 130,
+          "writeMBps": null,
+          "writeNote": "Spec table: 'Write : Lower than Read Speed' (not quantified).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy 'U3, class 10 rated'. (Page footnote 3 says A2/V30 'apply to 128GB and 256GB cards' but the 512GB spec table also lists U3, V30, A2.)"
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - samsung.com/in shows 'Not for sale' / 'Out of Stock' and no price (seen 2026-11-06).",
+          "sources": [
+            "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-512gb-microsd-card-2021-mb-mc512ka-in/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc512ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc512ka-in-530723530",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc512ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc512ka-in-530723530?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-512gb-microsd-card-2021-mb-mc512ka-in/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc512ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc512ka-in-530723522",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc512ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc512ka-in-530723522?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/in/memory-storage/memory-card/evo-plus-512gb-microsd-card-2021-mb-mc512ka-in/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+EVO+Plus+MB-MC512KA+microSD+512GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+EVO+Plus+MB-MC512KA+microSD+512GB",
+          "notes": "India page title 'EVO Plus microSDXC Memory Card'; URL marks it '2021 model'; spec 'Launch date: January 1st, 2022'; country of origin Philippines; imported by Samsung India Electronics Pvt. Ltd."
+        }
+      ],
+      "notes": [
+        "Only EVO Plus SKUs present in the India memory sitemap. Probably legacy stock in market - verify before listing."
+      ]
+    },
+    {
+      "line": "Samsung PRO Plus microSD (2023 model, MB-MDxxxSA)",
+      "brand": "Samsung",
+      "officialName": "PRO Plus microSD Card (UK page title 'PRO Plus Micro SD Card 128GB MB-MD128SA'; US: '128GB PRO Plus microSDXC Card UHS-I + Adapter')",
+      "officialPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-128gb-mb-md128sa-eu/",
+      "region": "UK official site used as global source (not listed on samsung.com/in)",
+      "status": "Current model on Samsung global sites; NOT on Samsung India site",
+      "variants": [
+        {
+          "capacity": "128GB",
+          "partNumber": "MB-MD128SA/EU",
+          "readMBps": 180,
+          "writeMBps": 130,
+          "writeNote": "Spec table: 'Read : up to 180MB/s Write : up to 130MB/s' (same on all four capacity pages; footnote says actual speeds may vary by capacity).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy: 'U3, Class 10 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - PRO Plus is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK/US pages show GBP/USD only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-128gb-mb-md128sa-eu/",
+            "https://www.samsung.com/us/memory-storage/memory-card/pro-plus-adapter-microsdxc-128gb-sku-mb-md128sa-am/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md128sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md128sa-eu-535808106",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md128sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md128sa-eu-535808106?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-128gb-mb-md128sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md128sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md128sa-eu-535808094",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md128sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md128sa-eu-535808094?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-128gb-mb-md128sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+PRO+Plus+MB-MD128SA+microSD+128GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+PRO+Plus+MB-MD128SA+microSD+128GB",
+          "notes": "India-region part number not shown on any reachable official page (UK page: /EU suffix; US page: MB-MD128SA/AM). The US page header also states '180MB/s Read | 130MB/s Write' for 128GB."
+        },
+        {
+          "capacity": "256GB",
+          "partNumber": "MB-MD256SA/EU",
+          "readMBps": 180,
+          "writeMBps": 130,
+          "writeNote": "Spec table: 'Read : up to 180MB/s Write : up to 130MB/s' (same on all four capacity pages; footnote says actual speeds may vary by capacity).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy: 'U3, Class 10 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - PRO Plus is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK/US pages show GBP/USD only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-256gb-mb-md256sa-eu/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md256sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md256sa-eu-535808125",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md256sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md256sa-eu-535808125?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-256gb-mb-md256sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md256sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md256sa-eu-535808113",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md256sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md256sa-eu-535808113?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-256gb-mb-md256sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+PRO+Plus+MB-MD256SA+microSD+256GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+PRO+Plus+MB-MD256SA+microSD+256GB",
+          "notes": "India-region part number not shown on any reachable official page (UK page: /EU suffix; US page: MB-MD128SA/AM). The US page header also states '180MB/s Read | 130MB/s Write' for 128GB."
+        },
+        {
+          "capacity": "512GB",
+          "partNumber": "MB-MD512SA/EU",
+          "readMBps": 180,
+          "writeMBps": 130,
+          "writeNote": "Spec table: 'Read : up to 180MB/s Write : up to 130MB/s' (same on all four capacity pages; footnote says actual speeds may vary by capacity).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy: 'U3, Class 10 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - PRO Plus is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK/US pages show GBP/USD only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-512gb-mb-md512sa-eu/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md512sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md512sa-eu-535808182",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md512sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md512sa-eu-535808182?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-512gb-mb-md512sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md512sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md512sa-eu-535808167",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md512sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md512sa-eu-535808167?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-512gb-mb-md512sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+PRO+Plus+MB-MD512SA+microSD+512GB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+PRO+Plus+MB-MD512SA+microSD+512GB",
+          "notes": "India-region part number not shown on any reachable official page (UK page: /EU suffix; US page: MB-MD128SA/AM). The US page header also states '180MB/s Read | 130MB/s Write' for 128GB."
+        },
+        {
+          "capacity": "1TB",
+          "partNumber": "MB-MD1T0SA/EU",
+          "readMBps": 180,
+          "writeMBps": 130,
+          "writeNote": "Spec table: 'Read : up to 180MB/s Write : up to 130MB/s' (same on all four capacity pages; footnote says actual speeds may vary by capacity).",
+          "classes": {
+            "busInterface": "UHS-I",
+            "uhsSpeedClass": "U3",
+            "videoSpeedClass": "V30",
+            "appPerformanceClass": "A2",
+            "sdSpeedClass": "Class 10",
+            "note": "Spec table: U3, V30, A2; feature copy: 'U3, Class 10 rated'."
+          },
+          "adapter": true,
+          "adapterNote": "Spec table 'Accessory: SD adapter'.",
+          "warranty": "Limited 10 year warranty. Warranty does not extend to dashcam, CCTV, surveillance camera and other write-intensive uses. Warranty for SD adapter is limited to 1 year.",
+          "operatingTempC": "-25 to 85 (storage -40 to 85)",
+          "durabilityClaims": "Water (72h seawater), temperature (op -25 to 85C, non-op -40 to 85C), X-ray (100mGy), magnetic (15,000 gauss), drop (5 m), wearout (10,000 swipes); card only, not the adapter. Spec table: 10,000 mating cycles.",
+          "officialPriceInr": null,
+          "officialPriceNote": "unknown - PRO Plus is not listed on samsung.com/in (India sitemap + URL check 2026-11-06); UK/US pages show GBP/USD only (not recorded).",
+          "sources": [
+            "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-1tb-mb-md1t0sa-eu/"
+          ],
+          "images": [
+            {
+              "role": "card front (first/main gallery image)",
+              "galleryLabel": "main",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md1t0sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-454281-mb-md1t0sa-eu-543781046",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md1t0sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-454281-mb-md1t0sa-eu-543781046?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-1tb-mb-md1t0sa-eu/"
+            },
+            {
+              "role": "card + SD adapter",
+              "galleryLabel": "front-sd-adapter",
+              "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md1t0sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-454281-mb-md1t0sa-eu-543781034",
+              "presetUrl": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md1t0sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-454281-mb-md1t0sa-eu-543781034?$1300_1038_PNG$",
+              "presetNote": "'$1300_1038_PNG$' is the image preset seen in the samsung.com/in EVO Plus og:image; whether larger presets exist is unverified",
+              "background": null,
+              "backgroundNote": "unknown until downloaded; the 'White'/'Blue' word in the page alt text is Samsung's colour-variant label, not the backdrop",
+              "localPath": null,
+              "status": "NOT DOWNLOADED - host images.samsung.com blocked by network policy (HTTP 403 at proxy)",
+              "foundOnPage": "https://www.samsung.com/uk/memory-storage/memory-card/memory-card-pro-plus-microsd-card-1tb-mb-md1t0sa-eu/"
+            }
+          ],
+          "amazonSearch": "https://www.amazon.in/s?k=Samsung+PRO+Plus+MB-MD1T0SA+microSD+1TB",
+          "flipkartSearch": "https://www.flipkart.com/search?q=Samsung+PRO+Plus+MB-MD1T0SA+microSD+1TB",
+          "notes": "India-region part number not shown on any reachable official page (UK page: /EU suffix; US page: MB-MD128SA/AM). The US page header also states '180MB/s Read | 130MB/s Write' for 128GB."
+        }
+      ],
+      "notes": [
+        "semiconductor.samsung.com/consumer-storage/memory-card/ (and /compare/) redirect to samsung.com/us; US PDP loads specs client-side, so UK PDP used for the spec table.",
+        "UK sitemap also lists PRO Plus 2021 (MB-MDxxxKA) and 32/64GB (MB-MD32GA/MB-MD64GA) - not researched."
+      ]
+    },
+    {
+      "line": "Kingston Canvas Select Plus microSD",
+      "brand": "Kingston",
+      "officialName": null,
+      "officialPage": null,
+      "region": null,
+      "status": "needs manual images/specs",
+      "variants": [],
+      "notes": [
+        "www.kingston.com blocks automated requests; per instructions no request was attempted. Capacities, part numbers, speeds, warranty and images must be filled in manually from kingston.com."
+      ],
+      "lineSearch": {
+        "amazonSearch": "https://www.amazon.in/s?k=Kingston+Canvas+Select+Plus+microSD",
+        "flipkartSearch": "https://www.flipkart.com/search?q=Kingston+Canvas+Select+Plus+microSD"
+      }
+    }
+  ]
+}

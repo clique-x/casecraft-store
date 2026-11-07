@@ -1,0 +1,4426 @@
+{
+ "generated": "2026-11-06T21:46:16Z",
+ "shop": "GadgetsHub",
+ "stage": {
+  "plates": "/tmp/claude-0/-home-user/3a75be47-c221-553c-afbc-49a1acec87b3/scratchpad/ram-renders",
+  "size": [
+   2048,
+   2048
+  ],
+  "notes": [
+   "Official product photos only: cut out, scaled and placed. Product pixels are not redrawn or retouched (exceptions listed per image: lossless 90-degree turns and one in-plane rotation).",
+   "Base on the podium contact line (y 1268 front plate / y 1249 3/4 plate), centred on x 1024.",
+   "Shadows: tight contact line, wide foreshortened occlusion, faint cast shadow back-right (key light upper left).",
+   "Glow: README recipe (alpha blurred ~10/32/90/220 px, weights .55/.42/.26/.12, #00C5E0) on the backdrop only, behind the podium, plus the 20-unit ground quad the RAM renders also glow from; the plate's generic empty-stage halo is swapped out, as in the RAM renders.",
+   "Size: longest side 1331 px (65% of 2048) for cards and SSDs, capped at 1160 px tall so portrait items fit above the podium; speakers/cameras 1160 px tall (57%), wide speaker capped at 1536 px wide."
+  ]
+ },
+ "counts": {
+  "memory-cards": 25,
+  "ssd": 63,
+  "consistent": 19,
+  "boat": 4,
+  "cpplus": 3
+ },
+ "images": [
+  {
+   "file": "memory-cards/sandisk-ultra-microsd/32gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Ultra microSD",
+   "line_slug": "sandisk-ultra-microsd",
+   "variant": "32GB (SDSQUA4-032G-GN6MN)",
+   "variant_slug": "32gb",
+   "part_number": "SDSQUA4-032G-GN6MN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "32GB",
+   "source_file": "ultra-uhs-i-microsd-32gb.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-32gb.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0563,
+    "product_px": [
+     1331,
+     969
+    ],
+    "bbox_xyxy": [
+     358,
+     302,
+     1689,
+     1271
+    ],
+    "base_y": 1269.7,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-ultra-microsd/64gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Ultra microSD",
+   "line_slug": "sandisk-ultra-microsd",
+   "variant": "64GB (SDSQUAB-064G-GN6MN)",
+   "variant_slug": "64gb",
+   "part_number": "SDSQUAB-064G-GN6MN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "64GB",
+   "source_file": "sandisk-ultra-microsd-64gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-64gb.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0563,
+    "product_px": [
+     1331,
+     969
+    ],
+    "bbox_xyxy": [
+     358,
+     302,
+     1689,
+     1271
+    ],
+    "base_y": 1269.8,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-ultra-microsd/128gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Ultra microSD",
+   "line_slug": "sandisk-ultra-microsd",
+   "variant": "128GB (SDSQUAB-128G-GN6MN)",
+   "variant_slug": "128gb",
+   "part_number": "SDSQUAB-128G-GN6MN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "128GB",
+   "source_file": "sandisk-ultra-microsd-128gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-128gb.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0563,
+    "product_px": [
+     1331,
+     969
+    ],
+    "bbox_xyxy": [
+     358,
+     302,
+     1689,
+     1271
+    ],
+    "base_y": 1269.8,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-ultra-microsd/256gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Ultra microSD",
+   "line_slug": "sandisk-ultra-microsd",
+   "variant": "256GB (SDSQUAC-256G-GN6MN)",
+   "variant_slug": "256gb",
+   "part_number": "SDSQUAC-256G-GN6MN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "256GB",
+   "source_file": "sandisk-ultra-microsd-256gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-256gb.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0708,
+    "product_px": [
+     1331,
+     969
+    ],
+    "bbox_xyxy": [
+     358,
+     302,
+     1689,
+     1271
+    ],
+    "base_y": 1269.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-ultra-microsd/512gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Ultra microSD",
+   "line_slug": "sandisk-ultra-microsd",
+   "variant": "512GB (SDSQUAC-512G-GN6MN)",
+   "variant_slug": "512gb",
+   "part_number": "SDSQUAC-512G-GN6MN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "512GB",
+   "source_file": "ultra-uhs-i-microsd-512gb.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-512gb.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0623,
+    "product_px": [
+     1331,
+     970
+    ],
+    "bbox_xyxy": [
+     358,
+     301,
+     1689,
+     1271
+    ],
+    "base_y": 1269.8,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-ultra-microsd/1tb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Ultra microSD",
+   "line_slug": "sandisk-ultra-microsd",
+   "variant": "1TB (SDSQUAC-1T00-GN6MN)",
+   "variant_slug": "1tb",
+   "part_number": "SDSQUAC-1T00-GN6MN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "ultra-uhs-i-microsd-1tb.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-1tb.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0423,
+    "product_px": [
+     1331,
+     968
+    ],
+    "bbox_xyxy": [
+     358,
+     304,
+     1689,
+     1272
+    ],
+    "base_y": 1270.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-ultra-microsd/1-5tb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Ultra microSD",
+   "line_slug": "sandisk-ultra-microsd",
+   "variant": "1.5TB (SDSQUAC-1T50-GN6MN)",
+   "variant_slug": "1-5tb",
+   "part_number": "SDSQUAC-1T50-GN6MN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "1.5TB",
+   "source_file": "ultra-uhs-i-microsd-15tb.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/ultra-uhs-i-microsd/gallery/ultra-uhs-i-microsd-15tb.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0623,
+    "product_px": [
+     1331,
+     968
+    ],
+    "bbox_xyxy": [
+     358,
+     303,
+     1689,
+     1271
+    ],
+    "base_y": 1270.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-extreme-microsd/64gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Extreme microSD",
+   "line_slug": "sandisk-extreme-microsd",
+   "variant": "64GB (SDSQXAH-064G-GN6MN)",
+   "variant_slug": "64gb",
+   "part_number": "SDSQXAH-064G-GN6MN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "64GB",
+   "source_file": "extreme-uhs-i-microsd-64gb.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-64gb.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.1166,
+    "product_px": [
+     1331,
+     968
+    ],
+    "bbox_xyxy": [
+     358,
+     303,
+     1689,
+     1271
+    ],
+    "base_y": 1270.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Removed a detached 2-3 px white vertical line (export artefact, not part of the card) along the right edge of the official PNG."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-extreme-microsd/128gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Extreme microSD",
+   "line_slug": "sandisk-extreme-microsd",
+   "variant": "128GB (SDSQXAA-128G-IN6MS)",
+   "variant_slug": "128gb",
+   "part_number": "SDSQXAA-128G-IN6MS",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "128GB",
+   "source_file": "sandisk-extreme-microsd-128gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-128gb.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.1194,
+    "product_px": [
+     1331,
+     968
+    ],
+    "bbox_xyxy": [
+     358,
+     303,
+     1689,
+     1271
+    ],
+    "base_y": 1270.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Removed a detached 2-3 px white vertical line (export artefact, not part of the card) along the right edge of the official PNG."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-extreme-microsd/256gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Extreme microSD",
+   "line_slug": "sandisk-extreme-microsd",
+   "variant": "256GB (SDSQXAV-256G-IN6MS)",
+   "variant_slug": "256gb",
+   "part_number": "SDSQXAV-256G-IN6MS",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "256GB",
+   "source_file": "sandisk-extreme-microsd-256gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-256gb.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.1157,
+    "product_px": [
+     1331,
+     967
+    ],
+    "bbox_xyxy": [
+     358,
+     304,
+     1689,
+     1271
+    ],
+    "base_y": 1269.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Removed a detached 2-3 px white vertical line (export artefact, not part of the card) along the right edge of the official PNG."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-extreme-microsd/512gb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Extreme microSD",
+   "line_slug": "sandisk-extreme-microsd",
+   "variant": "512GB (SDSQXAV-512G-IN6MS)",
+   "variant_slug": "512gb",
+   "part_number": "SDSQXAV-512G-IN6MS",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "512GB",
+   "source_file": "extreme-uhs-i-microsd-512gb.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-512gb.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.1046,
+    "product_px": [
+     1331,
+     970
+    ],
+    "bbox_xyxy": [
+     358,
+     302,
+     1689,
+     1272
+    ],
+    "base_y": 1270.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Removed a detached 2-3 px white vertical line (export artefact, not part of the card) along the right edge of the official PNG."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/sandisk-extreme-microsd/1tb.webp",
+   "range": "memory-cards",
+   "line": "SanDisk Extreme microSD",
+   "line_slug": "sandisk-extreme-microsd",
+   "variant": "1TB (SDSQXAV-1T00-IN6MS)",
+   "variant_slug": "1tb",
+   "part_number": "SDSQXAV-1T00-IN6MS",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "extreme-uhs-i-microsd-1tb.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/memory-cards/extreme-uhs-i-microsd/extreme-uhs-i-microsd-1tb.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.111,
+    "product_px": [
+     1331,
+     968
+    ],
+    "bbox_xyxy": [
+     358,
+     304,
+     1689,
+     1272
+    ],
+    "base_y": 1269.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2024/64gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2024 model, MB-MCxxxSA)",
+   "line_slug": "samsung-evo-plus-microsd-2024",
+   "variant": "64GB (MB-MC64SA/EU)",
+   "variant_slug": "64gb",
+   "part_number": "MB-MC64SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "64GB",
+   "source_file": "mb-mc64sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc64sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc64sa-eu-540814043?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9494,
+    "product_px": [
+     1331,
+     974
+    ],
+    "bbox_xyxy": [
+     358,
+     296,
+     1689,
+     1270
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2024/128gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2024 model, MB-MCxxxSA)",
+   "line_slug": "samsung-evo-plus-microsd-2024",
+   "variant": "128GB (MB-MC128SA/EU)",
+   "variant_slug": "128gb",
+   "part_number": "MB-MC128SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "128GB",
+   "source_file": "mb-mc128sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc128sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc128sa-eu-540813961?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9494,
+    "product_px": [
+     1331,
+     974
+    ],
+    "bbox_xyxy": [
+     358,
+     296,
+     1689,
+     1270
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2024/256gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2024 model, MB-MCxxxSA)",
+   "line_slug": "samsung-evo-plus-microsd-2024",
+   "variant": "256GB (MB-MC256SA/EU)",
+   "variant_slug": "256gb",
+   "part_number": "MB-MC256SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "256GB",
+   "source_file": "mb-mc256sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc256sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc256sa-eu-540814003?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9494,
+    "product_px": [
+     1331,
+     974
+    ],
+    "bbox_xyxy": [
+     358,
+     296,
+     1689,
+     1270
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2024/512gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2024 model, MB-MCxxxSA)",
+   "line_slug": "samsung-evo-plus-microsd-2024",
+   "variant": "512GB (MB-MC512SA/EU)",
+   "variant_slug": "512gb",
+   "part_number": "MB-MC512SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "512GB",
+   "source_file": "mb-mc512sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc512sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc512sa-eu-540814022?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9494,
+    "product_px": [
+     1331,
+     974
+    ],
+    "bbox_xyxy": [
+     358,
+     296,
+     1689,
+     1270
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2024/1tb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2024 model, MB-MCxxxSA)",
+   "line_slug": "samsung-evo-plus-microsd-2024",
+   "variant": "1TB (MB-MC1T0SA/EU)",
+   "variant_slug": "1tb",
+   "part_number": "MB-MC1T0SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "mb-mc1t0sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-mc1t0sa-eu/gallery/uk-memory-cardevo-plus-microsd-card-mb-mc1t0sa-eu-540813980?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     975
+    ],
+    "bbox_xyxy": [
+     358,
+     295,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2021/64gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2021 model, MB-MCxxxKA/IN) - India site",
+   "line_slug": "samsung-evo-plus-microsd-2021",
+   "variant": "64GB (MB-MC64KA/IN)",
+   "variant_slug": "64gb",
+   "part_number": "MB-MC64KA/IN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "64GB",
+   "source_file": "mb-mc64ka-in-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc64ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc64ka-in-530723545?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9494,
+    "product_px": [
+     1331,
+     974
+    ],
+    "bbox_xyxy": [
+     358,
+     296,
+     1689,
+     1270
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "The card picture on this 2021-model (MB-MCxxxKA/IN) page is visually the same as the 2024 model's (pixel difference under 0.1%); it is used because it is the image on this model's own official page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2021/128gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2021 model, MB-MCxxxKA/IN) - India site",
+   "line_slug": "samsung-evo-plus-microsd-2021",
+   "variant": "128GB (MB-MC128KA/IN)",
+   "variant_slug": "128gb",
+   "part_number": "MB-MC128KA/IN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "128GB",
+   "source_file": "mb-mc128ka-in-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc128ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc128ka-in-530723500?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9494,
+    "product_px": [
+     1331,
+     974
+    ],
+    "bbox_xyxy": [
+     358,
+     296,
+     1689,
+     1270
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "The card picture on this 2021-model (MB-MCxxxKA/IN) page is visually the same as the 2024 model's (pixel difference under 0.1%); it is used because it is the image on this model's own official page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2021/256gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2021 model, MB-MCxxxKA/IN) - India site",
+   "line_slug": "samsung-evo-plus-microsd-2021",
+   "variant": "256GB (MB-MC256KA/IN)",
+   "variant_slug": "256gb",
+   "part_number": "MB-MC256KA/IN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "256GB",
+   "source_file": "mb-mc256ka-in-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc256ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc256ka-in-530723515?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9494,
+    "product_px": [
+     1331,
+     974
+    ],
+    "bbox_xyxy": [
+     358,
+     296,
+     1689,
+     1270
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "The card picture on this 2021-model (MB-MCxxxKA/IN) page is visually the same as the 2024 model's (pixel difference under 0.1%); it is used because it is the image on this model's own official page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-evo-plus-microsd-2021/512gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung EVO Plus microSD (2021 model, MB-MCxxxKA/IN) - India site",
+   "line_slug": "samsung-evo-plus-microsd-2021",
+   "variant": "512GB (MB-MC512KA/IN)",
+   "variant_slug": "512gb",
+   "part_number": "MB-MC512KA/IN",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "512GB",
+   "source_file": "mb-mc512ka-in-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mb-mc512ka-in/gallery/in-evo-plus-microsd-card-2021-model-mb-mc512ka-in-530723530?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9494,
+    "product_px": [
+     1331,
+     974
+    ],
+    "bbox_xyxy": [
+     358,
+     296,
+     1689,
+     1270
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "The card picture on this 2021-model (MB-MCxxxKA/IN) page is visually the same as the 2024 model's (pixel difference under 0.1%); it is used because it is the image on this model's own official page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-pro-plus-microsd-2023/128gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung PRO Plus microSD (2023 model, MB-MDxxxSA)",
+   "line_slug": "samsung-pro-plus-microsd-2023",
+   "variant": "128GB (MB-MD128SA/EU)",
+   "variant_slug": "128gb",
+   "part_number": "MB-MD128SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "128GB",
+   "source_file": "mb-md128sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md128sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md128sa-eu-535808106?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     975
+    ],
+    "bbox_xyxy": [
+     358,
+     295,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-pro-plus-microsd-2023/256gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung PRO Plus microSD (2023 model, MB-MDxxxSA)",
+   "line_slug": "samsung-pro-plus-microsd-2023",
+   "variant": "256GB (MB-MD256SA/EU)",
+   "variant_slug": "256gb",
+   "part_number": "MB-MD256SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "256GB",
+   "source_file": "mb-md256sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md256sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md256sa-eu-535808125?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     975
+    ],
+    "bbox_xyxy": [
+     358,
+     295,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-pro-plus-microsd-2023/512gb.webp",
+   "range": "memory-cards",
+   "line": "Samsung PRO Plus microSD (2023 model, MB-MDxxxSA)",
+   "line_slug": "samsung-pro-plus-microsd-2023",
+   "variant": "512GB (MB-MD512SA/EU)",
+   "variant_slug": "512gb",
+   "part_number": "MB-MD512SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "512GB",
+   "source_file": "mb-md512sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md512sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-mb-md512sa-eu-535808182?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     975
+    ],
+    "bbox_xyxy": [
+     358,
+     295,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "memory-cards/samsung-pro-plus-microsd-2023/1tb.webp",
+   "range": "memory-cards",
+   "line": "Samsung PRO Plus microSD (2023 model, MB-MDxxxSA)",
+   "line_slug": "samsung-pro-plus-microsd-2023",
+   "variant": "1TB (MB-MD1T0SA/EU)",
+   "variant_slug": "1tb",
+   "part_number": "MB-MD1T0SA/EU",
+   "image_role": "card front",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "mb-md1t0sa-eu-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/uk/mb-md1t0sa-eu/gallery/uk-memory-cardpro-plus-microsd-card-454281-mb-md1t0sa-eu-543781046?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     975
+    ],
+    "bbox_xyxy": [
+     358,
+     295,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-870-evo/250gb.webp",
+   "range": "ssd",
+   "line": "Samsung 870 EVO",
+   "line_slug": "samsung-870-evo",
+   "variant": "250GB (MZ-77E250BW)",
+   "variant_slug": "250gb",
+   "part_number": "MZ-77E250BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "mz-77e250bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-77e250bw/gallery/in-870-evo-sata-3-2-5-ssd-mz-77e250bw-374908714?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7937,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for; it is the gallery image of this capacity's own Samsung India page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-870-evo/500gb.webp",
+   "range": "ssd",
+   "line": "Samsung 870 EVO",
+   "line_slug": "samsung-870-evo",
+   "variant": "500GB (MZ-77E500BW)",
+   "variant_slug": "500gb",
+   "part_number": "MZ-77E500BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "mz-77e500bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-77e500bw/gallery/in-870-evo-sata-3-2-5-ssd-mz-77e500bw-374908797?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7937,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for; it is the gallery image of this capacity's own Samsung India page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-870-evo/1tb.webp",
+   "range": "ssd",
+   "line": "Samsung 870 EVO",
+   "line_slug": "samsung-870-evo",
+   "variant": "1TB (MZ-77E1T0BW)",
+   "variant_slug": "1tb",
+   "part_number": "MZ-77E1T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "mz-77e1t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-77e1t0bw/gallery/in-870-evo-sata-3-2-5-ssd-mz-77e1t0bw-374908687?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7937,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for; it is the gallery image of this capacity's own Samsung India page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-870-evo/2tb.webp",
+   "range": "ssd",
+   "line": "Samsung 870 EVO",
+   "line_slug": "samsung-870-evo",
+   "variant": "2TB (MZ-77E2T0BW)",
+   "variant_slug": "2tb",
+   "part_number": "MZ-77E2T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "mz-77e2t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-77e2t0bw/gallery/in-870-evo-sata-3-2-5-ssd-mz-77e2t0bw-374908743?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7937,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for; it is the gallery image of this capacity's own Samsung India page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-870-evo/4tb.webp",
+   "range": "ssd",
+   "line": "Samsung 870 EVO",
+   "line_slug": "samsung-870-evo",
+   "variant": "4TB (MZ-77E4T0BW)",
+   "variant_slug": "4tb",
+   "part_number": "MZ-77E4T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "mz-77e4t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-77e4t0bw/gallery/in-870-evo-sata-3-2-5-ssd-mz-77e4t0bw-374908770?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7937,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1270
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for; it is the gallery image of this capacity's own Samsung India page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-990-evo-plus/1tb.webp",
+   "range": "ssd",
+   "line": "Samsung 990 EVO Plus",
+   "line_slug": "samsung-990-evo-plus",
+   "variant": "1TB (MZ-V9S1T0BW)",
+   "variant_slug": "1tb",
+   "part_number": "MZ-V9S1T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "mz-v9s1t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-v9s1t0bw/gallery/in-990-evo-plus-nvme-m2-ssd-mz-v9s1t0bw-546502786?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7989,
+    "product_px": [
+     1331,
+     365
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1270
+    ],
+    "base_y": 1268.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-990-evo-plus/2tb.webp",
+   "range": "ssd",
+   "line": "Samsung 990 EVO Plus",
+   "line_slug": "samsung-990-evo-plus",
+   "variant": "2TB (MZ-V9S2T0BW)",
+   "variant_slug": "2tb",
+   "part_number": "MZ-V9S2T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": "2TB",
+   "source_file": "mz-v9s2t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-v9s2t0bw/gallery/in-990-evo-plus-nvme-m2-ssd-mz-v9s2t0bw-546502807?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7989,
+    "product_px": [
+     1331,
+     365
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1270
+    ],
+    "base_y": 1268.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-990-evo-plus/4tb.webp",
+   "range": "ssd",
+   "line": "Samsung 990 EVO Plus",
+   "line_slug": "samsung-990-evo-plus",
+   "variant": "4TB (MZ-V9S4T0BW)",
+   "variant_slug": "4tb",
+   "part_number": "MZ-V9S4T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": "4TB",
+   "source_file": "mz-v9s4t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-v9s4t0bw/gallery/in-990-evo-plus-nvme-m2-ssd-mz-v9s4t0bw-546502831?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7989,
+    "product_px": [
+     1331,
+     367
+    ],
+    "bbox_xyxy": [
+     358,
+     902,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Removed 4 px of stray non-product pixels (a detached line/speck in the official PNG)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-990-pro/1tb.webp",
+   "range": "ssd",
+   "line": "Samsung 990 PRO",
+   "line_slug": "samsung-990-pro",
+   "variant": "1TB (MZ-V9P1T0BW)",
+   "variant_slug": "1tb",
+   "part_number": "MZ-V9P1T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "mz-v9p1t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-v9p1t0bw/gallery/in-990pro-nvme-m2-ssd-mz-v9p1t0bw-534630671?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.866,
+    "product_px": [
+     1331,
+     369
+    ],
+    "bbox_xyxy": [
+     358,
+     901,
+     1689,
+     1270
+    ],
+    "base_y": 1269.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-990-pro/2tb.webp",
+   "range": "ssd",
+   "line": "Samsung 990 PRO",
+   "line_slug": "samsung-990-pro",
+   "variant": "2TB (MZ-V9P2T0BW)",
+   "variant_slug": "2tb",
+   "part_number": "MZ-V9P2T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": "2TB",
+   "source_file": "mz-v9p2t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-v9p2t0bw/gallery/in-990pro-nvme-m2-ssd-mz-v9p2t0bw-534630688?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.866,
+    "product_px": [
+     1331,
+     369
+    ],
+    "bbox_xyxy": [
+     358,
+     901,
+     1689,
+     1270
+    ],
+    "base_y": 1269.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-990-pro/4tb.webp",
+   "range": "ssd",
+   "line": "Samsung 990 PRO",
+   "line_slug": "samsung-990-pro",
+   "variant": "4TB (MZ-V9P4T0BW)",
+   "variant_slug": "4tb",
+   "part_number": "MZ-V9P4T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": "4TB",
+   "source_file": "mz-v9p4t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-v9p4t0bw/gallery/in-990pro-nvme-m2-ssd-444560-mz-v9p4t0bw-547216657?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7989,
+    "product_px": [
+     1331,
+     369
+    ],
+    "bbox_xyxy": [
+     358,
+     901,
+     1689,
+     1270
+    ],
+    "base_y": 1269.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-990/1tb.webp",
+   "range": "ssd",
+   "line": "Samsung 990 (value NVMe, MZ-V9V)",
+   "line_slug": "samsung-990",
+   "variant": "1TB (MZ-V9V1T0BW)",
+   "variant_slug": "1tb",
+   "part_number": "MZ-V9V1T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "mz-v9v1t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-v9v1t0bw/gallery/in-990-nvme-m2-ssd-mz-v9v1t0bw-553966971?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7994,
+    "product_px": [
+     1331,
+     365
+    ],
+    "bbox_xyxy": [
+     358,
+     904,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for; it is the gallery image of this capacity's own Samsung India page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/samsung-990/2tb.webp",
+   "range": "ssd",
+   "line": "Samsung 990 (value NVMe, MZ-V9V)",
+   "line_slug": "samsung-990",
+   "variant": "2TB (MZ-V9V2T0BW)",
+   "variant_slug": "2tb",
+   "part_number": "MZ-V9V2T0BW",
+   "image_role": "drive front (official gallery image of this capacity's own page)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "mz-v9v2t0bw-front.png",
+   "source_url": "https://images.samsung.com/is/image/samsung/p6pim/in/mz-v9v2t0bw/gallery/in-990-nvme-m2-ssd-mz-v9v2t0bw-553966988?$ORIGIN_PNG$",
+   "source_fetch": "downloaded in this run from images.samsung.com ($ORIGIN_PNG$ preset, 1920x1280 RGBA)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.7994,
+    "product_px": [
+     1331,
+     365
+    ],
+    "bbox_xyxy": [
+     358,
+     904,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for; it is the gallery image of this capacity's own Samsung India page."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-ssd-plus-sata/240gb.webp",
+   "range": "ssd",
+   "line": "SanDisk SSD Plus SATA III",
+   "line_slug": "sandisk-ssd-plus-sata",
+   "variant": "240GB (SDSSDA-240G-Z26)",
+   "variant_slug": "240gb",
+   "part_number": "SDSSDA-240G-Z26",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "ssd-plus-sata-iii-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/ssd-plus-sata-iii-ssd/gallery/ssd-plus-sata-iii-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.1386,
+    "product_px": [
+     1331,
+     929
+    ],
+    "bbox_xyxy": [
+     358,
+     341,
+     1689,
+     1270
+    ],
+    "base_y": 1269.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-ssd-plus-sata/480gb.webp",
+   "range": "ssd",
+   "line": "SanDisk SSD Plus SATA III",
+   "line_slug": "sandisk-ssd-plus-sata",
+   "variant": "480GB (SDSSDA-480G-Z26)",
+   "variant_slug": "480gb",
+   "part_number": "SDSSDA-480G-Z26",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "ssd-plus-sata-iii-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/ssd-plus-sata-iii-ssd/gallery/ssd-plus-sata-iii-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.1386,
+    "product_px": [
+     1331,
+     929
+    ],
+    "bbox_xyxy": [
+     358,
+     341,
+     1689,
+     1270
+    ],
+    "base_y": 1269.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-ssd-plus-nvme/250gb.webp",
+   "range": "ssd",
+   "line": "SanDisk SSD Plus M.2 NVMe (PCIe Gen 3)",
+   "line_slug": "sandisk-ssd-plus-nvme",
+   "variant": "250GB (SDSSDA3N-250G-G26)",
+   "variant_slug": "250gb",
+   "part_number": "SDSSDA3N-250G-G26",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "250GB",
+   "source_file": "sandisk-ssd-plus-nvme-250gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/sandisk-ssd-plus-nvme/gallery/sandisk-ssd-plus-nvme-250gb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9787,
+    "product_px": [
+     1331,
+     384
+    ],
+    "bbox_xyxy": [
+     358,
+     891,
+     1689,
+     1275
+    ],
+    "base_y": 1268.2,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-ssd-plus-nvme/500gb.webp",
+   "range": "ssd",
+   "line": "SanDisk SSD Plus M.2 NVMe (PCIe Gen 3)",
+   "line_slug": "sandisk-ssd-plus-nvme",
+   "variant": "500GB (SDSSDA3N-500G-G26)",
+   "variant_slug": "500gb",
+   "part_number": "SDSSDA3N-500G-G26",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "500GB",
+   "source_file": "sandisk-ssd-plus-nvme-500gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/sandisk-ssd-plus-nvme/gallery/sandisk-ssd-plus-nvme-500gb-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9787,
+    "product_px": [
+     1331,
+     384
+    ],
+    "bbox_xyxy": [
+     358,
+     891,
+     1689,
+     1275
+    ],
+    "base_y": 1268.2,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-ssd-plus-nvme/1tb.webp",
+   "range": "ssd",
+   "line": "SanDisk SSD Plus M.2 NVMe (PCIe Gen 3)",
+   "line_slug": "sandisk-ssd-plus-nvme",
+   "variant": "1TB (SDSSDA3N-1T00-G26)",
+   "variant_slug": "1tb",
+   "part_number": "SDSSDA3N-1T00-G26",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "sandisk-ssd-plus-nvme-1tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/sandisk-ssd-plus-nvme/gallery/sandisk-ssd-plus-nvme-1tb-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9787,
+    "product_px": [
+     1331,
+     384
+    ],
+    "bbox_xyxy": [
+     358,
+     891,
+     1689,
+     1275
+    ],
+    "base_y": 1268.2,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-ssd-plus-nvme/2tb.webp",
+   "range": "ssd",
+   "line": "SanDisk SSD Plus M.2 NVMe (PCIe Gen 3)",
+   "line_slug": "sandisk-ssd-plus-nvme",
+   "variant": "2TB (SDSSDA3N-2T00-G26)",
+   "variant_slug": "2tb",
+   "part_number": "SDSSDA3N-2T00-G26",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "2TB",
+   "source_file": "sandisk-ssd-plus-nvme-2tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/sandisk-ssd-plus-nvme/gallery/sandisk-ssd-plus-nvme-2tb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9787,
+    "product_px": [
+     1331,
+     384
+    ],
+    "bbox_xyxy": [
+     358,
+     891,
+     1689,
+     1275
+    ],
+    "base_y": 1268.2,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-blue-sn5000/500gb.webp",
+   "range": "ssd",
+   "line": "WD Blue SN5000",
+   "line_slug": "wd-blue-sn5000",
+   "variant": "500GB (WDS500G4B0E-00CNZ0)",
+   "variant_slug": "500gb",
+   "part_number": "WDS500G4B0E-00CNZ0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "500GB",
+   "source_file": "wd-blue-sn5000-nvme-ssd-500gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/wd-blue-sn5000-nvme-ssd/gallery/wd-blue-sn5000-nvme-ssd-500gb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0184,
+    "product_px": [
+     1331,
+     370
+    ],
+    "bbox_xyxy": [
+     358,
+     904,
+     1689,
+     1274
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-blue-sn5000/1tb.webp",
+   "range": "ssd",
+   "line": "WD Blue SN5000",
+   "line_slug": "wd-blue-sn5000",
+   "variant": "1TB (WDS100T4B0E-00CNZ0)",
+   "variant_slug": "1tb",
+   "part_number": "WDS100T4B0E-00CNZ0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "wd-blue-sn5000-nvme-ssd-1tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/wd-blue-sn5000-nvme-ssd/gallery/wd-blue-sn5000-nvme-ssd-1tb-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0184,
+    "product_px": [
+     1331,
+     371
+    ],
+    "bbox_xyxy": [
+     358,
+     904,
+     1689,
+     1275
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-blue-sn5000/2tb.webp",
+   "range": "ssd",
+   "line": "WD Blue SN5000",
+   "line_slug": "wd-blue-sn5000",
+   "variant": "2TB (WDS200T4B0E-00CNZ0)",
+   "variant_slug": "2tb",
+   "part_number": "WDS200T4B0E-00CNZ0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "2TB",
+   "source_file": "wd-blue-sn5000-nvme-ssd-2tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/wd-blue-sn5000-nvme-ssd/gallery/wd-blue-sn5000-nvme-ssd-2tb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0184,
+    "product_px": [
+     1331,
+     370
+    ],
+    "bbox_xyxy": [
+     358,
+     904,
+     1689,
+     1274
+    ],
+    "base_y": 1268.4,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-blue-sn5000/4tb.webp",
+   "range": "ssd",
+   "line": "WD Blue SN5000",
+   "line_slug": "wd-blue-sn5000",
+   "variant": "4TB (WDS400T4B0E-00BKY0)",
+   "variant_slug": "4tb",
+   "part_number": "WDS400T4B0E-00BKY0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "4TB",
+   "source_file": "wd-blue-sn5000-nvme-ssd-4tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/store/en-us/assets/products/internal-storage/wd-blue-sn5000-nvme-ssd/gallery/wd-blue-sn5000-nvme-ssd-4tb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.0191,
+    "product_px": [
+     1331,
+     370
+    ],
+    "bbox_xyxy": [
+     358,
+     904,
+     1689,
+     1274
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-blue-sn5100/500gb.webp",
+   "range": "ssd",
+   "line": "WD Blue SN5100",
+   "line_slug": "wd-blue-sn5100",
+   "variant": "500GB (WDS500G5B0E-00CPE0)",
+   "variant_slug": "500gb",
+   "part_number": "WDS500G5B0E-00CPE0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "500GB",
+   "source_file": "wd-blue-sn5100-nvme-ssd-500gb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-blue-sn5100-nvme-ssd/gallery/wd-blue-sn5100-nvme-ssd-500gb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8791,
+    "product_px": [
+     1331,
+     369
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1274
+    ],
+    "base_y": 1268.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-blue-sn5100/1tb.webp",
+   "range": "ssd",
+   "line": "WD Blue SN5100",
+   "line_slug": "wd-blue-sn5100",
+   "variant": "1TB (WDS100T5B0E-00CPE0)",
+   "variant_slug": "1tb",
+   "part_number": "WDS100T5B0E-00CPE0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "wd-blue-sn5100-nvme-ssd-1tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-blue-sn5100-nvme-ssd/gallery/wd-blue-sn5100-nvme-ssd-1tb-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8791,
+    "product_px": [
+     1331,
+     370
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1275
+    ],
+    "base_y": 1268.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-blue-sn5100/2tb.webp",
+   "range": "ssd",
+   "line": "WD Blue SN5100",
+   "line_slug": "wd-blue-sn5100",
+   "variant": "2TB (WDS200T5B0E-00CPE0)",
+   "variant_slug": "2tb",
+   "part_number": "WDS200T5B0E-00CPE0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "2TB",
+   "source_file": "wd-blue-sn5100-nvme-ssd-2tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-blue-sn5100-nvme-ssd/gallery/wd-blue-sn5100-nvme-ssd-2tb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8791,
+    "product_px": [
+     1331,
+     370
+    ],
+    "bbox_xyxy": [
+     358,
+     904,
+     1689,
+     1274
+    ],
+    "base_y": 1267.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-blue-sn5100/4tb.webp",
+   "range": "ssd",
+   "line": "WD Blue SN5100",
+   "line_slug": "wd-blue-sn5100",
+   "variant": "4TB (WDS400T5B0E-00CPE0)",
+   "variant_slug": "4tb",
+   "part_number": "WDS400T5B0E-00CPE0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": "4TB",
+   "source_file": "wd-blue-sn5100-nvme-ssd-4tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-blue-sn5100-nvme-ssd/gallery/wd-blue-sn5100-nvme-ssd-4tb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8791,
+    "product_px": [
+     1331,
+     370
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1275
+    ],
+    "base_y": 1268.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn7100/500gb.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN7100",
+   "line_slug": "wd-black-sn7100",
+   "variant": "500GB (WDS500G4X0E-00CJA0)",
+   "variant_slug": "500gb",
+   "part_number": "WDS500G4X0E-00CJA0",
+   "image_role": "drive angle",
+   "capacity_or_model_printed_on_product": "500GB",
+   "source_file": "wd-black-sn7100-nvme-internal-ssd-500gb-left.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn7100-nvme-internal-ssd/gallery/wd-black-sn7100-nvme-internal-ssd-500gb-left.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 0.8803,
+    "product_px": [
+     1331,
+     526
+    ],
+    "bbox_xyxy": [
+     358,
+     772,
+     1689,
+     1298
+    ],
+    "base_y": 1286.7,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [
+    "Removed 1 px of stray non-product pixels (a detached line/speck in the official PNG)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn7100/1tb.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN7100",
+   "line_slug": "wd-black-sn7100",
+   "variant": "1TB (WDS100T4X0E-00CJA0)",
+   "variant_slug": "1tb",
+   "part_number": "WDS100T4X0E-00CJA0",
+   "image_role": "drive angle",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "wd-black-sn7100-nvme-internal-ssd-1tb-left.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn7100-nvme-internal-ssd/gallery/wd-black-sn7100-nvme-internal-ssd-1tb-left.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 0.8688,
+    "product_px": [
+     1331,
+     528
+    ],
+    "bbox_xyxy": [
+     358,
+     780,
+     1689,
+     1308
+    ],
+    "base_y": 1287.3,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn7100/2tb.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN7100",
+   "line_slug": "wd-black-sn7100",
+   "variant": "2TB (WDS200T4X0E-00CJA0)",
+   "variant_slug": "2tb",
+   "part_number": "WDS200T4X0E-00CJA0",
+   "image_role": "drive angle",
+   "capacity_or_model_printed_on_product": "2TB",
+   "source_file": "wd-black-sn7100-nvme-internal-ssd-2tb-left.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn7100-nvme-internal-ssd/gallery/wd-black-sn7100-nvme-internal-ssd-2tb-left.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 0.8734,
+    "product_px": [
+     1331,
+     526
+    ],
+    "bbox_xyxy": [
+     358,
+     776,
+     1689,
+     1302
+    ],
+    "base_y": 1286.4,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn7100/4tb.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN7100",
+   "line_slug": "wd-black-sn7100",
+   "variant": "4TB (WDS400T4X0E-00CJA0)",
+   "variant_slug": "4tb",
+   "part_number": "WDS400T4X0E-00CJA0",
+   "image_role": "drive angle",
+   "capacity_or_model_printed_on_product": "4TB",
+   "source_file": "wd-black-sn7100-nvme-internal-ssd-4tb-left.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn7100-nvme-internal-ssd/gallery/wd-black-sn7100-nvme-internal-ssd-4tb-left.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 0.8694,
+    "product_px": [
+     1331,
+     529
+    ],
+    "bbox_xyxy": [
+     358,
+     779,
+     1689,
+     1308
+    ],
+    "base_y": 1287.3,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn850x/1tb.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN850X",
+   "line_slug": "wd-black-sn850x",
+   "variant": "1TB (WDS100T2X0E-00BCA0)",
+   "variant_slug": "1tb",
+   "part_number": "WDS100T2X0E-00BCA0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "wd-black-sn850x-nvme-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn850x-nvme-ssd/gallery/wd-black-sn850x-nvme-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8397,
+    "product_px": [
+     1331,
+     364
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn850x/1tb-heatsink.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN850X",
+   "line_slug": "wd-black-sn850x",
+   "variant": "1TB with heatsink (WDS100T2XHE-00BCA0)",
+   "variant_slug": "1tb-heatsink",
+   "part_number": "WDS100T2XHE-00BCA0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "wd-black-sn850x-nvme-ssd-heatsink-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn850x-nvme-ssd/gallery/wd-black-sn850x-nvme-ssd-heatsink-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     409
+    ],
+    "bbox_xyxy": [
+     358,
+     860,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn850x/2tb.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN850X",
+   "line_slug": "wd-black-sn850x",
+   "variant": "2TB (WDS200T2X0E-00BCA0)",
+   "variant_slug": "2tb",
+   "part_number": "WDS200T2X0E-00BCA0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "wd-black-sn850x-nvme-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn850x-nvme-ssd/gallery/wd-black-sn850x-nvme-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8397,
+    "product_px": [
+     1331,
+     364
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn850x/2tb-heatsink.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN850X",
+   "line_slug": "wd-black-sn850x",
+   "variant": "2TB with heatsink (WDS200T2XHE-00BCA0)",
+   "variant_slug": "2tb-heatsink",
+   "part_number": "WDS200T2XHE-00BCA0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "wd-black-sn850x-nvme-ssd-heatsink-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn850x-nvme-ssd/gallery/wd-black-sn850x-nvme-ssd-heatsink-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     409
+    ],
+    "bbox_xyxy": [
+     358,
+     860,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn850x/4tb.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN850X",
+   "line_slug": "wd-black-sn850x",
+   "variant": "4TB (WDS400T2X0E-00BCA0)",
+   "variant_slug": "4tb",
+   "part_number": "WDS400T2X0E-00BCA0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "wd-black-sn850x-nvme-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn850x-nvme-ssd/gallery/wd-black-sn850x-nvme-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8397,
+    "product_px": [
+     1331,
+     364
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn850x/4tb-heatsink.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN850X",
+   "line_slug": "wd-black-sn850x",
+   "variant": "4TB with heatsink (WDS400T2XHE-00BCA0)",
+   "variant_slug": "4tb-heatsink",
+   "part_number": "WDS400T2XHE-00BCA0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "wd-black-sn850x-nvme-ssd-heatsink-4tb-8tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn850x-nvme-ssd/gallery/wd-black-sn850x-nvme-ssd-heatsink-4tb-8tb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     452
+    ],
+    "bbox_xyxy": [
+     358,
+     817,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn850x/8tb.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN850X",
+   "line_slug": "wd-black-sn850x",
+   "variant": "8TB (WDS800T2X0E-00CDD0)",
+   "variant_slug": "8tb",
+   "part_number": "WDS800T2X0E-00CDD0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "wd-black-sn850x-nvme-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn850x-nvme-ssd/gallery/wd-black-sn850x-nvme-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8397,
+    "product_px": [
+     1331,
+     364
+    ],
+    "bbox_xyxy": [
+     358,
+     905,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/wd-black-sn850x/8tb-heatsink.webp",
+   "range": "ssd",
+   "line": "WD_BLACK SN850X",
+   "line_slug": "wd-black-sn850x",
+   "variant": "8TB with heatsink (WDS800T2XHE-00CDD0)",
+   "variant_slug": "8tb-heatsink",
+   "part_number": "WDS800T2XHE-00CDD0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "wd-black-sn850x-nvme-ssd-heatsink-4tb-8tb-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/wd-black-sn850x-nvme-ssd/gallery/wd-black-sn850x-nvme-ssd-heatsink-4tb-8tb-front.png",
+   "source_fetch": "downloaded in this run from www.sandisk.com (URL recorded in range.json)",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8445,
+    "product_px": [
+     1331,
+     452
+    ],
+    "bbox_xyxy": [
+     358,
+     817,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-pro-850x/1tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX PRO 850X",
+   "line_slug": "sandisk-optimus-gx-pro-850x",
+   "variant": "1TB (SDSP81100TAN-000E0)",
+   "variant_slug": "1tb",
+   "part_number": "SDSP81100TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-pro-850x-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-pro-850x-internal-nvme-ssd/gallery/optimus-gx-pro-850x-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8424,
+    "product_px": [
+     1331,
+     366
+    ],
+    "bbox_xyxy": [
+     358,
+     903,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-pro-850x/1tb-heatsink.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX PRO 850X",
+   "line_slug": "sandisk-optimus-gx-pro-850x",
+   "variant": "1TB with heatsink (SDSP81100TAH-000E0)",
+   "variant_slug": "1tb-heatsink",
+   "part_number": "SDSP81100TAH-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-pro-850x-heatsink-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-pro-850x-internal-nvme-ssd/gallery/optimus-gx-pro-850x-heatsink-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9005,
+    "product_px": [
+     1331,
+     394
+    ],
+    "bbox_xyxy": [
+     358,
+     875,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-pro-850x/2tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX PRO 850X",
+   "line_slug": "sandisk-optimus-gx-pro-850x",
+   "variant": "2TB (SDSP81200TAN-000E0)",
+   "variant_slug": "2tb",
+   "part_number": "SDSP81200TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-pro-850x-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-pro-850x-internal-nvme-ssd/gallery/optimus-gx-pro-850x-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8424,
+    "product_px": [
+     1331,
+     366
+    ],
+    "bbox_xyxy": [
+     358,
+     903,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-pro-850x/2tb-heatsink.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX PRO 850X",
+   "line_slug": "sandisk-optimus-gx-pro-850x",
+   "variant": "2TB with heatsink (SDSP81200TAH-000E0)",
+   "variant_slug": "2tb-heatsink",
+   "part_number": "SDSP81200TAH-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-pro-850x-heatsink-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-pro-850x-internal-nvme-ssd/gallery/optimus-gx-pro-850x-heatsink-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9005,
+    "product_px": [
+     1331,
+     394
+    ],
+    "bbox_xyxy": [
+     358,
+     875,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-pro-850x/4tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX PRO 850X",
+   "line_slug": "sandisk-optimus-gx-pro-850x",
+   "variant": "4TB (SDSP81400TAN-000E0)",
+   "variant_slug": "4tb",
+   "part_number": "SDSP81400TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-pro-850x-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-pro-850x-internal-nvme-ssd/gallery/optimus-gx-pro-850x-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8424,
+    "product_px": [
+     1331,
+     366
+    ],
+    "bbox_xyxy": [
+     358,
+     903,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-pro-850x/4tb-heatsink.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX PRO 850X",
+   "line_slug": "sandisk-optimus-gx-pro-850x",
+   "variant": "4TB with heatsink (SDSP81400TAH-000E0)",
+   "variant_slug": "4tb-heatsink",
+   "part_number": "SDSP81400TAH-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-pro-850x-heatsink-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-pro-850x-internal-nvme-ssd/gallery/optimus-gx-pro-850x-heatsink-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9005,
+    "product_px": [
+     1331,
+     394
+    ],
+    "bbox_xyxy": [
+     358,
+     875,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-pro-850x/8tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX PRO 850X",
+   "line_slug": "sandisk-optimus-gx-pro-850x",
+   "variant": "8TB (SDSP81800TAN-000E0)",
+   "variant_slug": "8tb",
+   "part_number": "SDSP81800TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-pro-850x-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-pro-850x-internal-nvme-ssd/gallery/optimus-gx-pro-850x-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8424,
+    "product_px": [
+     1331,
+     366
+    ],
+    "bbox_xyxy": [
+     358,
+     903,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-pro-850x/8tb-heatsink.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX PRO 850X",
+   "line_slug": "sandisk-optimus-gx-pro-850x",
+   "variant": "8TB with heatsink (SDSP81800TAH-000E0)",
+   "variant_slug": "8tb-heatsink",
+   "part_number": "SDSP81800TAH-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-pro-850x-heatsink-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-pro-850x-internal-nvme-ssd/gallery/optimus-gx-pro-850x-heatsink-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9005,
+    "product_px": [
+     1331,
+     394
+    ],
+    "bbox_xyxy": [
+     358,
+     875,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-7100/500gb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX 7100",
+   "line_slug": "sandisk-optimus-gx-7100",
+   "variant": "500GB (SDSP71500GAN-000E0)",
+   "variant_slug": "500gb",
+   "part_number": "SDSP71500GAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-7100-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-7100-internal-nvme-ssd/gallery/optimus-gx-7100-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8424,
+    "product_px": [
+     1331,
+     366
+    ],
+    "bbox_xyxy": [
+     358,
+     903,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-7100/1tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX 7100",
+   "line_slug": "sandisk-optimus-gx-7100",
+   "variant": "1TB (SDSP71100TAN-000E0)",
+   "variant_slug": "1tb",
+   "part_number": "SDSP71100TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-7100-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-7100-internal-nvme-ssd/gallery/optimus-gx-7100-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8424,
+    "product_px": [
+     1331,
+     366
+    ],
+    "bbox_xyxy": [
+     358,
+     903,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-7100/2tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX 7100",
+   "line_slug": "sandisk-optimus-gx-7100",
+   "variant": "2TB (SDSP71200TAN-000E0)",
+   "variant_slug": "2tb",
+   "part_number": "SDSP71200TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-7100-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-7100-internal-nvme-ssd/gallery/optimus-gx-7100-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8424,
+    "product_px": [
+     1331,
+     366
+    ],
+    "bbox_xyxy": [
+     358,
+     903,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-gx-7100/4tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus GX 7100",
+   "line_slug": "sandisk-optimus-gx-7100",
+   "variant": "4TB (SDSP71400TAN-000E0)",
+   "variant_slug": "4tb",
+   "part_number": "SDSP71400TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-gx-7100-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-gx-7100-internal-nvme-ssd/gallery/optimus-gx-7100-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.8424,
+    "product_px": [
+     1331,
+     366
+    ],
+    "bbox_xyxy": [
+     358,
+     903,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-5100/500gb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus 5100",
+   "line_slug": "sandisk-optimus-5100",
+   "variant": "500GB (SDSP51500GAN-000E0)",
+   "variant_slug": "500gb",
+   "part_number": "SDSP51500GAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-5100-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-5100m-internal-nvme-ssd/gallery/optimus-5100-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.4695,
+    "product_px": [
+     1331,
+     367
+    ],
+    "bbox_xyxy": [
+     358,
+     902,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-5100/1tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus 5100",
+   "line_slug": "sandisk-optimus-5100",
+   "variant": "1TB (SDSP51100TAN-000E0)",
+   "variant_slug": "1tb",
+   "part_number": "SDSP51100TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-5100-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-5100m-internal-nvme-ssd/gallery/optimus-5100-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.4695,
+    "product_px": [
+     1331,
+     367
+    ],
+    "bbox_xyxy": [
+     358,
+     902,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-5100/2tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus 5100",
+   "line_slug": "sandisk-optimus-5100",
+   "variant": "2TB (SDSP51200TAN-000E0)",
+   "variant_slug": "2tb",
+   "part_number": "SDSP51200TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-5100-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-5100m-internal-nvme-ssd/gallery/optimus-5100-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.4695,
+    "product_px": [
+     1331,
+     367
+    ],
+    "bbox_xyxy": [
+     358,
+     902,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-optimus-5100/4tb.webp",
+   "range": "ssd",
+   "line": "SanDisk Optimus 5100",
+   "line_slug": "sandisk-optimus-5100",
+   "variant": "4TB (SDSP51400TAN-000E0)",
+   "variant_slug": "4tb",
+   "part_number": "SDSP51400TAN-000E0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "optimus-5100-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/optimus-5100m-internal-nvme-ssd/gallery/optimus-5100-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.4695,
+    "product_px": [
+     1331,
+     367
+    ],
+    "bbox_xyxy": [
+     358,
+     902,
+     1689,
+     1269
+    ],
+    "base_y": 1267.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-520-sata/500gb.webp",
+   "range": "ssd",
+   "line": "SanDisk 520 SATA SSD",
+   "line_slug": "sandisk-520-sata",
+   "variant": "500GB (SDSS51500GAB-000G0)",
+   "variant_slug": "500gb",
+   "part_number": "SDSS51500GAB-000G0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "sandisk-520-sata-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/520-sata-ssd/gallery/sandisk-520-sata-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9308,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     342,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-520-sata/1tb.webp",
+   "range": "ssd",
+   "line": "SanDisk 520 SATA SSD",
+   "line_slug": "sandisk-520-sata",
+   "variant": "1TB (SDSS51100TAB-000G0)",
+   "variant_slug": "1tb",
+   "part_number": "SDSS51100TAB-000G0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "sandisk-520-sata-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/520-sata-ssd/gallery/sandisk-520-sata-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9308,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     342,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-520-sata/2tb.webp",
+   "range": "ssd",
+   "line": "SanDisk 520 SATA SSD",
+   "line_slug": "sandisk-520-sata",
+   "variant": "2TB (SDSS51200TAB-000G0)",
+   "variant_slug": "2tb",
+   "part_number": "SDSS51200TAB-000G0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "sandisk-520-sata-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/520-sata-ssd/gallery/sandisk-520-sata-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9308,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     342,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-520-sata/4tb.webp",
+   "range": "ssd",
+   "line": "SanDisk 520 SATA SSD",
+   "line_slug": "sandisk-520-sata",
+   "variant": "4TB (SDSS51400TAB-000G0)",
+   "variant_slug": "4tb",
+   "part_number": "SDSS51400TAB-000G0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "sandisk-520-sata-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/520-sata-ssd/gallery/sandisk-520-sata-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9308,
+    "product_px": [
+     1331,
+     927
+    ],
+    "bbox_xyxy": [
+     358,
+     342,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-320-sata/250gb.webp",
+   "range": "ssd",
+   "line": "SanDisk 320 SATA SSD",
+   "line_slug": "sandisk-320-sata",
+   "variant": "250GB (SDSS31250GBB-000G0)",
+   "variant_slug": "250gb",
+   "part_number": "SDSS31250GBB-000G0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "sandisk-320-sata-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/320-sata-ssd/gallery/sandisk-320-sata-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9334,
+    "product_px": [
+     1331,
+     926
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-320-sata/500gb.webp",
+   "range": "ssd",
+   "line": "SanDisk 320 SATA SSD",
+   "line_slug": "sandisk-320-sata",
+   "variant": "500GB (SDSS31500GBB-000G0)",
+   "variant_slug": "500gb",
+   "part_number": "SDSS31500GBB-000G0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "sandisk-320-sata-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/320-sata-ssd/gallery/sandisk-320-sata-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9334,
+    "product_px": [
+     1331,
+     926
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-320-sata/1tb.webp",
+   "range": "ssd",
+   "line": "SanDisk 320 SATA SSD",
+   "line_slug": "sandisk-320-sata",
+   "variant": "1TB (SDSS31100TBB-000G0)",
+   "variant_slug": "1tb",
+   "part_number": "SDSS31100TBB-000G0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "sandisk-320-sata-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/320-sata-ssd/gallery/sandisk-320-sata-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9334,
+    "product_px": [
+     1331,
+     926
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "ssd/sandisk-320-sata/2tb.webp",
+   "range": "ssd",
+   "line": "SanDisk 320 SATA SSD",
+   "line_slug": "sandisk-320-sata",
+   "variant": "2TB (SDSS31200TBB-000G0)",
+   "variant_slug": "2tb",
+   "part_number": "SDSS31200TBB-000G0",
+   "image_role": "drive front",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "sandisk-320-sata-ssd-front.png",
+   "source_url": "https://www.sandisk.com/content/dam/sandisk/en-us/assets/products/internal-storage/320-sata-ssd/gallery/sandisk-320-sata-ssd-front.png",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 0.9334,
+    "product_px": [
+     1331,
+     926
+    ],
+    "bbox_xyxy": [
+     358,
+     343,
+     1689,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "No capacity is printed on the pictured drive, so this one picture is correct for every capacity it is used for (the official site shows the same picture for these capacities)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-2-5-sata/128gb.webp",
+   "range": "consistent",
+   "line": "Consistent 2.5\" SATA SSD",
+   "line_slug": "consistent-s7-2-5-sata",
+   "variant": "128GB",
+   "variant_slug": "128gb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": "128GB",
+   "source_file": "02-128GB.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/128GB.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.3197,
+    "product_px": [
+     829,
+     1160
+    ],
+    "bbox_xyxy": [
+     610,
+     109,
+     1439,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Portrait drive: height capped at 1160 px (57% of frame) so it fits above the podium; longest side is therefore below 60%.",
+    "The drop shadow drawn in the official image (soft blue-grey) was removed with the background."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-2-5-sata/128gb-box.webp",
+   "range": "consistent",
+   "line": "Consistent 2.5\" SATA SSD",
+   "line_slug": "consistent-s7-2-5-sata",
+   "variant": "128GB retail box",
+   "variant_slug": "128gb-box",
+   "part_number": null,
+   "image_role": "retail box",
+   "capacity_or_model_printed_on_product": "128GB",
+   "source_file": "01-128_Packing.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/128_Packing.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 1.2513,
+    "product_px": [
+     922,
+     1160
+    ],
+    "bbox_xyxy": [
+     563,
+     93,
+     1485,
+     1253
+    ],
+    "base_y": 1252.0,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [
+    "Retail box image (secondary image for this variant); box prints 128GB."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-2-5-sata/256gb.webp",
+   "range": "consistent",
+   "line": "Consistent 2.5\" SATA SSD",
+   "line_slug": "consistent-s7-2-5-sata",
+   "variant": "256GB",
+   "variant_slug": "256gb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": "256GB",
+   "source_file": "01-256GB-Photoroom.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/256GB-Photoroom.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.3182,
+    "product_px": [
+     825,
+     1160
+    ],
+    "bbox_xyxy": [
+     612,
+     109,
+     1437,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Portrait drive: height capped at 1160 px (57% of frame) so it fits above the podium; longest side is therefore below 60%.",
+    "The drop shadow drawn in the official image (soft blue-grey, or the flat navy offset shape on the 256GB photo) was removed with the background."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-2-5-sata/256gb-box.webp",
+   "range": "consistent",
+   "line": "Consistent 2.5\" SATA SSD",
+   "line_slug": "consistent-s7-2-5-sata",
+   "variant": "256GB retail box",
+   "variant_slug": "256gb-box",
+   "part_number": null,
+   "image_role": "retail box",
+   "capacity_or_model_printed_on_product": "256GB",
+   "source_file": "02-256GB_Packaging_60ac4ea8-66c2-4b82-b91d-f9bb55b3b387.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/256GB_Packaging_60ac4ea8-66c2-4b82-b91d-f9bb55b3b387.webp",
+   "source_fetch": "research download",
+   "cutout": "source alpha channel",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 1.2554,
+    "product_px": [
+     920,
+     1160
+    ],
+    "bbox_xyxy": [
+     564,
+     91,
+     1484,
+     1251
+    ],
+    "base_y": 1248.8,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [
+    "Retail box image (secondary image for this variant); box prints 256GB."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-2-5-sata/1tb.webp",
+   "range": "consistent",
+   "line": "Consistent 2.5\" SATA SSD",
+   "line_slug": "consistent-s7-2-5-sata",
+   "variant": "1TB",
+   "variant_slug": "1tb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "03-1SSD2.5.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/1SSD2.5.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.3197,
+    "product_px": [
+     829,
+     1160
+    ],
+    "bbox_xyxy": [
+     610,
+     109,
+     1439,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Portrait drive: height capped at 1160 px (57% of frame) so it fits above the podium; longest side is therefore below 60%.",
+    "The drop shadow drawn in the official image (soft blue-grey) was removed with the background."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-2-5-sata/1tb-box.webp",
+   "range": "consistent",
+   "line": "Consistent 2.5\" SATA SSD",
+   "line_slug": "consistent-s7-2-5-sata",
+   "variant": "1TB retail box",
+   "variant_slug": "1tb-box",
+   "part_number": null,
+   "image_role": "retail box",
+   "capacity_or_model_printed_on_product": "1TB",
+   "source_file": "02-1_SSD_2.5.2.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/1_SSD_2.5.2.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 1.25,
+    "product_px": [
+     920,
+     1160
+    ],
+    "bbox_xyxy": [
+     564,
+     90,
+     1484,
+     1250
+    ],
+    "base_y": 1248.9,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [
+    "Retail box image (secondary image for this variant); box prints 1TB."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-m2-2280-sata-titled/128gb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 SSD titled \"M.2 SATA\" (interface contradictory on page)",
+   "line_slug": "consistent-m2-2280-sata-titled",
+   "variant": "128GB",
+   "variant_slug": "128gb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "02-M.2.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/M.2.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 2.0167,
+    "product_px": [
+     1331,
+     379
+    ],
+    "bbox_xyxy": [
+     358,
+     894,
+     1689,
+     1273
+    ],
+    "base_y": 1269.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Generic official drive photo shared by all capacities of this line: placeholder label \"MODEL:- XXXXXXXXXX\", no capacity printed.",
+    "Photo rotated 90 degrees (lossless) so the drive lies horizontal with its label readable; pixels otherwise untouched.",
+    "Source drive is only about 200 x 700 px: upscaled about 1.9x, so fine detail is a little soft.",
+    "Line interface is contradictory on the official pages (titled \"M.2 SATA\" but also \"PCIe Gen3 x4 NVMe\")."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-m2-2280-sata-titled/256gb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 SSD titled \"M.2 SATA\" (interface contradictory on page)",
+   "line_slug": "consistent-m2-2280-sata-titled",
+   "variant": "256GB",
+   "variant_slug": "256gb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "02-M.2-1.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/M.2-1.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 2.0167,
+    "product_px": [
+     1331,
+     379
+    ],
+    "bbox_xyxy": [
+     358,
+     894,
+     1689,
+     1273
+    ],
+    "base_y": 1269.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Generic official drive photo shared by all capacities of this line: placeholder label \"MODEL:- XXXXXXXXXX\", no capacity printed.",
+    "Photo rotated 90 degrees (lossless) so the drive lies horizontal with its label readable; pixels otherwise untouched.",
+    "Source drive is only about 200 x 700 px: upscaled about 1.9x, so fine detail is a little soft.",
+    "Line interface is contradictory on the official pages (titled \"M.2 SATA\" but also \"PCIe Gen3 x4 NVMe\")."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-m2-2280-sata-titled/512gb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 SSD titled \"M.2 SATA\" (interface contradictory on page)",
+   "line_slug": "consistent-m2-2280-sata-titled",
+   "variant": "512GB",
+   "variant_slug": "512gb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "02-M.2-2.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/M.2-2.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 2.0167,
+    "product_px": [
+     1331,
+     379
+    ],
+    "bbox_xyxy": [
+     358,
+     894,
+     1689,
+     1273
+    ],
+    "base_y": 1269.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Generic official drive photo shared by all capacities of this line: placeholder label \"MODEL:- XXXXXXXXXX\", no capacity printed.",
+    "Photo rotated 90 degrees (lossless) so the drive lies horizontal with its label readable; pixels otherwise untouched.",
+    "Source drive is only about 200 x 700 px: upscaled about 1.9x, so fine detail is a little soft.",
+    "Line interface is contradictory on the official pages (titled \"M.2 SATA\" but also \"PCIe Gen3 x4 NVMe\")."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-m2-2280-sata-titled/1tb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 SSD titled \"M.2 SATA\" (interface contradictory on page)",
+   "line_slug": "consistent-m2-2280-sata-titled",
+   "variant": "1TB",
+   "variant_slug": "1tb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "02-M.2-3.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/M.2-3.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 2.0167,
+    "product_px": [
+     1331,
+     379
+    ],
+    "bbox_xyxy": [
+     358,
+     894,
+     1689,
+     1273
+    ],
+    "base_y": 1269.3,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Generic official drive photo shared by all capacities of this line: placeholder label \"MODEL:- XXXXXXXXXX\", no capacity printed.",
+    "Photo rotated 90 degrees (lossless) so the drive lies horizontal with its label readable; pixels otherwise untouched.",
+    "Source drive is only about 200 x 700 px: upscaled about 1.9x, so fine detail is a little soft.",
+    "Line interface is contradictory on the official pages (titled \"M.2 SATA\" but also \"PCIe Gen3 x4 NVMe\")."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-nvme-gen3/128gb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 3 SSD (3D NAND, SLC cache)",
+   "line_slug": "consistent-s7-nvme-gen3",
+   "variant": "128GB",
+   "variant_slug": "128gb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "04-NVME-3.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/NVME-3.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.8512,
+    "product_px": [
+     1331,
+     378
+    ],
+    "bbox_xyxy": [
+     358,
+     899,
+     1689,
+     1277
+    ],
+    "base_y": 1274.1,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Generic official drive photo shared by all capacities of this line: placeholder label \"MODEL:- XXXXXXXXXX\", no capacity printed.",
+    "Photo rotated 90 degrees (lossless) so the drive lies horizontal with its label readable; pixels otherwise untouched.",
+    "Source drive is only about 200 x 700 px: upscaled about 1.9x, so fine detail is a little soft."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-nvme-gen3/128gb-box.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 3 SSD (3D NAND, SLC cache)",
+   "line_slug": "consistent-s7-nvme-gen3",
+   "variant": "128GB retail box",
+   "variant_slug": "128gb-box",
+   "part_number": null,
+   "image_role": "retail box",
+   "capacity_or_model_printed_on_product": "128GB",
+   "source_file": "03-128NVME.2.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/128NVME.2.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.8801,
+    "product_px": [
+     713,
+     1160
+    ],
+    "bbox_xyxy": [
+     668,
+     113,
+     1381,
+     1273
+    ],
+    "base_y": 1272.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Retail box image (secondary image for this variant); box prints 128GB.",
+    "Official photo on light grey (#CACCD0), keyed out.",
+    "Source upscaled 1.9x, so the result is slightly soft."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-nvme-gen3/256gb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 3 SSD (3D NAND, SLC cache)",
+   "line_slug": "consistent-s7-nvme-gen3",
+   "variant": "256GB",
+   "variant_slug": "256gb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "05-NVME-2.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/NVME-2.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.8512,
+    "product_px": [
+     1331,
+     378
+    ],
+    "bbox_xyxy": [
+     358,
+     899,
+     1689,
+     1277
+    ],
+    "base_y": 1274.1,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Generic official drive photo shared by all capacities of this line: placeholder label \"MODEL:- XXXXXXXXXX\", no capacity printed.",
+    "Photo rotated 90 degrees (lossless) so the drive lies horizontal with its label readable; pixels otherwise untouched.",
+    "Source drive is only about 200 x 700 px: upscaled about 1.9x, so fine detail is a little soft."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-nvme-gen3/256gb-box.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 3 SSD (3D NAND, SLC cache)",
+   "line_slug": "consistent-s7-nvme-gen3",
+   "variant": "256GB retail box",
+   "variant_slug": "256gb-box",
+   "part_number": null,
+   "image_role": "retail box",
+   "capacity_or_model_printed_on_product": "256GB",
+   "source_file": "04-256NVME.2.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/256NVME.2.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 2.9592,
+    "product_px": [
+     707,
+     1160
+    ],
+    "bbox_xyxy": [
+     670,
+     120,
+     1377,
+     1280
+    ],
+    "base_y": 1270.9,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Retail box image (secondary image for this variant); box prints 256GB.",
+    "Source box is only about 234 x 388 px: upscaled about 3x, so it is soft."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-nvme-gen3/512gb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 3 SSD (3D NAND, SLC cache)",
+   "line_slug": "consistent-s7-nvme-gen3",
+   "variant": "512GB",
+   "variant_slug": "512gb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "05-NVME-1.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/NVME-1.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.8512,
+    "product_px": [
+     1331,
+     378
+    ],
+    "bbox_xyxy": [
+     358,
+     899,
+     1689,
+     1277
+    ],
+    "base_y": 1274.1,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Generic official drive photo shared by all capacities of this line: placeholder label \"MODEL:- XXXXXXXXXX\", no capacity printed.",
+    "Photo rotated 90 degrees (lossless) so the drive lies horizontal with its label readable; pixels otherwise untouched.",
+    "Source drive is only about 200 x 700 px: upscaled about 1.9x, so fine detail is a little soft."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-s7-nvme-gen3/1tb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 3 SSD (3D NAND, SLC cache)",
+   "line_slug": "consistent-s7-nvme-gen3",
+   "variant": "1TB",
+   "variant_slug": "1tb",
+   "part_number": null,
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "01-NVME.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/NVME.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 1.8512,
+    "product_px": [
+     1331,
+     378
+    ],
+    "bbox_xyxy": [
+     358,
+     899,
+     1689,
+     1277
+    ],
+    "base_y": 1274.1,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Generic official drive photo shared by all capacities of this line: placeholder label \"MODEL:- XXXXXXXXXX\", no capacity printed.",
+    "Photo rotated 90 degrees (lossless) so the drive lies horizontal with its label readable; pixels otherwise untouched.",
+    "Source drive is only about 200 x 700 px: upscaled about 1.9x, so fine detail is a little soft."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-nvme-gen4-cheetah/512gb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 4 SSD (CTNVMe…4G)",
+   "line_slug": "consistent-nvme-gen4-cheetah",
+   "variant": "512GB",
+   "variant_slug": "512gb",
+   "part_number": "CTNVMe5124G",
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": "CTNVMe5124G",
+   "source_file": "01-512GB_Gen_4_PNG.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/512GB_Gen_4_PNG.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 3.2783,
+    "product_px": [
+     1331,
+     374
+    ],
+    "bbox_xyxy": [
+     358,
+     900,
+     1689,
+     1274
+    ],
+    "base_y": 1268.6,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Source drive is only about 405 x 112 px in an 810 px photo: upscaled about 3.3x, so the image is soft (label text readable but blurry).",
+    "Label shows the model code CTNVMe5124G; the 1TB and 2TB photos share the same serial line (CNV4002RAEY00021)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-nvme-gen4-cheetah/1tb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 4 SSD (CTNVMe…4G)",
+   "line_slug": "consistent-nvme-gen4-cheetah",
+   "variant": "1TB",
+   "variant_slug": "1tb",
+   "part_number": "CTNVMe0014G",
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": "CTNVMe0014G",
+   "source_file": "01-1TB_Gen_4_PNG.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/1TB_Gen_4_PNG.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 3.2783,
+    "product_px": [
+     1331,
+     374
+    ],
+    "bbox_xyxy": [
+     358,
+     900,
+     1689,
+     1274
+    ],
+    "base_y": 1268.6,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Source drive is only about 405 x 112 px in an 810 px photo: upscaled about 3.3x, so the image is soft (label text readable but blurry).",
+    "Label shows the model code CTNVMe0014G; the 1TB and 2TB photos share the same serial line (CNV4002RAEY00021)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "consistent/consistent-nvme-gen4-cheetah/2tb.webp",
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 4 SSD (CTNVMe…4G)",
+   "line_slug": "consistent-nvme-gen4-cheetah",
+   "variant": "2TB",
+   "variant_slug": "2tb",
+   "part_number": "CTNVMe0024G",
+   "image_role": "drive alone (official photo on white)",
+   "capacity_or_model_printed_on_product": "CTNVMe0024G",
+   "source_file": "01-2TB_Gen_4_PNG.webp",
+   "source_url": "https://consistent.in/wp-content/uploads/2026/04/2TB_Gen_4_PNG.webp",
+   "source_fetch": "research download",
+   "cutout": "soft key of the plain background (border-connected flood fill + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 3.2703,
+    "product_px": [
+     1331,
+     379
+    ],
+    "bbox_xyxy": [
+     358,
+     898,
+     1689,
+     1277
+    ],
+    "base_y": 1272.2,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Source drive is only about 405 x 112 px in an 810 px photo: upscaled about 3.3x, so the image is soft (label text readable but blurry).",
+    "Label shows the model code CTNVMe0024G; the 1TB and 2TB photos share the same serial line (CNV4002RAEY00021)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "boat/stone-1200-pro/ice-grey.webp",
+   "range": "boat",
+   "line": "boAt Stone 1200 Pro",
+   "line_slug": "stone-1200-pro",
+   "variant": "Ice Grey",
+   "variant_slug": "ice-grey",
+   "part_number": null,
+   "image_role": "product 3/4 view on white",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "stone-1200-pro-bluetooth-speaker-00.jpg",
+   "source_url": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard1_1b61139f-e142-49c3-aaea-de0cfbb55098.jpg",
+   "source_fetch": "research download (boAt Shopify CDN)",
+   "cutout": "soft key of the white background (ISNet trimap + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 1.0414,
+    "product_px": [
+     1536,
+     908
+    ],
+    "bbox_xyxy": [
+     256,
+     472,
+     1792,
+     1380
+    ],
+    "base_y": 1379.0,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [
+    "Wide speaker: width set to 75% of the frame (like the RAM 3/4 module), so its height is about 44%, below the 55-65% speaker guideline; at 55% height it would not fit the frame.",
+    "The soft cast shadow baked into the official white-background photo was removed with the background."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "boat/stone-1200-pro/twilight-black.webp",
+   "range": "boat",
+   "line": "boAt Stone 1200 Pro",
+   "line_slug": "stone-1200-pro",
+   "variant": "Twilight Black",
+   "variant_slug": "twilight-black",
+   "part_number": null,
+   "image_role": "product 3/4 view on white",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "stone-1200-pro-bluetooth-speaker-01.jpg",
+   "source_url": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_1_93f6e194-aa0f-49c0-9684-02e498a503af.jpg",
+   "source_fetch": "research download (boAt Shopify CDN)",
+   "cutout": "soft key of the white background (ISNet trimap + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 0.9916,
+    "product_px": [
+     1536,
+     904
+    ],
+    "bbox_xyxy": [
+     256,
+     479,
+     1792,
+     1383
+    ],
+    "base_y": 1380.5,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [
+    "Wide speaker: width set to 75% of the frame (like the RAM 3/4 module), so its height is about 44%, below the 55-65% speaker guideline; at 55% height it would not fit the frame.",
+    "The soft cast shadow baked into the official white-background photo was removed with the background."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "boat/stone-arc-pro/raging-black.webp",
+   "range": "boat",
+   "line": "boAt Stone Arc Pro",
+   "line_slug": "stone-arc-pro",
+   "variant": "Raging Black",
+   "variant_slug": "raging-black",
+   "part_number": null,
+   "image_role": "product 3/4 view on white",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "stone-arc-pro-portable-speaker-00.png",
+   "source_url": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard5_7212fcb4-850c-424e-a691-206f8b90ece0.png",
+   "source_fetch": "research download (boAt Shopify CDN)",
+   "cutout": "soft key of the white background (ISNet trimap + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 0.746,
+    "product_px": [
+     547,
+     1160
+    ],
+    "bbox_xyxy": [
+     750,
+     91,
+     1297,
+     1251
+    ],
+    "base_y": 1249.5,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [
+    "Official render leans about 23 degrees; rotated in-plane by -22.7 degrees so the speaker stands on its base on the podium (no other change)."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "boat/stone-arc-pro/groovy-grey.webp",
+   "range": "boat",
+   "line": "boAt Stone Arc Pro",
+   "line_slug": "stone-arc-pro",
+   "variant": "Groovy Grey",
+   "variant_slug": "groovy-grey",
+   "part_number": null,
+   "image_role": "product 3/4 view on white",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "stone-arc-pro-portable-speaker-08.png",
+   "source_url": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_5_f294bedc-ac6d-4dcf-87b8-8a5140656cee.png",
+   "source_fetch": "research download (boAt Shopify CDN)",
+   "cutout": "matte from the pixel-aligned sibling render, colours from this source",
+   "plate": "plate-34.png",
+   "placement": {
+    "scale_from_source": 0.746,
+    "product_px": [
+     547,
+     1160
+    ],
+    "bbox_xyxy": [
+     750,
+     91,
+     1297,
+     1251
+    ],
+    "base_y": 1249.5,
+    "contact_point": [
+     1024,
+     1249
+    ]
+   },
+   "caveats": [
+    "Official render leans about 23 degrees; rotated in-plane by -22.7 degrees so the speaker stands on its base on the podium (no other change).",
+    "Silhouette matte taken from the pixel-aligned Raging Black render of the same pose (the light-grey body is too close to the white background to key on its own); colours are the Groovy Grey photo."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "cpplus/ezykam-wifi-pt-camera/cp-e28q-2mp.webp",
+   "range": "cpplus",
+   "line": "CP Plus ezyKam+ Wi-Fi pan/tilt camera (CP-E28Q / E38Q / E48Q)",
+   "line_slug": "ezykam-wifi-pt-camera",
+   "variant": "CP-E28Q (2MP)",
+   "variant_slug": "cp-e28q-2mp",
+   "part_number": "CP-E28Q",
+   "image_role": "product front on white",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "cp-e28q-1.jpg",
+   "source_url": "https://www.cpplusworld.com/prodassets/product/small/e2c311b3-d885-402c-a86b-0eba84729368.jpg",
+   "source_fetch": "research download (cpplusworld.com product gallery \"largeimage\")",
+   "cutout": "soft key of the white background (ISNet trimap + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 2.5439,
+    "product_px": [
+     789,
+     1160
+    ],
+    "bbox_xyxy": [
+     630,
+     109,
+     1419,
+     1269
+    ],
+    "base_y": 1268.0,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Official image is only 400 x 520 px: upscaled about 2.5x, so the result is soft."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "cpplus/ezykam-wifi-pt-camera/cp-e38q-3mp.webp",
+   "range": "cpplus",
+   "line": "CP Plus ezyKam+ Wi-Fi pan/tilt camera (CP-E28Q / E38Q / E48Q)",
+   "line_slug": "ezykam-wifi-pt-camera",
+   "variant": "CP-E38Q (3MP)",
+   "variant_slug": "cp-e38q-3mp",
+   "part_number": "CP-E38Q",
+   "image_role": "product front on white",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "cp-e38q-0.jpg",
+   "source_url": "https://www.cpplusworld.com/prodassets/product/small/bdb3759a-592d-4d66-901f-ed531af0dfc6.jpg",
+   "source_fetch": "research download (cpplusworld.com product gallery \"largeimage\")",
+   "cutout": "soft key of the white background (ISNet trimap + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 2.4893,
+    "product_px": [
+     789,
+     1160
+    ],
+    "bbox_xyxy": [
+     630,
+     110,
+     1419,
+     1270
+    ],
+    "base_y": 1267.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Official image is only 400 x 520 px: upscaled about 2.5x, so the result is soft.",
+    "The CP-E38Q and CP-E48Q pages use the same (byte-identical) photo; the body is the same, only the sensor differs."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  },
+  {
+   "file": "cpplus/ezykam-wifi-pt-camera/cp-e48q-4mp.webp",
+   "range": "cpplus",
+   "line": "CP Plus ezyKam+ Wi-Fi pan/tilt camera (CP-E28Q / E38Q / E48Q)",
+   "line_slug": "ezykam-wifi-pt-camera",
+   "variant": "CP-E48Q (4MP)",
+   "variant_slug": "cp-e48q-4mp",
+   "part_number": "CP-E48Q",
+   "image_role": "product front on white",
+   "capacity_or_model_printed_on_product": null,
+   "source_file": "cp-e48q-1.jpg",
+   "source_url": "https://www.cpplusworld.com/prodassets/product/small/97a45c90-03b4-4ad4-8064-e1e8539be404.jpg",
+   "source_fetch": "research download (cpplusworld.com product gallery \"largeimage\")",
+   "cutout": "soft key of the white background (ISNet trimap + colour-difference edge, edge colours decontaminated)",
+   "plate": "plate-front.png",
+   "placement": {
+    "scale_from_source": 2.4893,
+    "product_px": [
+     789,
+     1160
+    ],
+    "bbox_xyxy": [
+     630,
+     110,
+     1419,
+     1270
+    ],
+    "base_y": 1267.5,
+    "contact_point": [
+     1024,
+     1268
+    ]
+   },
+   "caveats": [
+    "Official image is only 400 x 520 px: upscaled about 2.5x, so the result is soft.",
+    "The CP-E38Q and CP-E48Q pages use the same (byte-identical) photo; the body is the same, only the sensor differs."
+   ],
+   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
+  }
+ ],
+ "no_matching_image": [
+  {
+   "range": "memory-cards",
+   "line": "Kingston Canvas Select Plus microSD",
+   "variant": "(all)",
+   "reason": "No official images in the research (kingston.com blocks automated requests); capacities not researched."
+  },
+  {
+   "range": "ssd",
+   "line": "Crucial MX500",
+   "variant": "(all)",
+   "reason": "www.crucial.in answered every request (homepage, robots.txt, a product URL; curl and Playwright defaults) with a WAF page \"Request Rejected\" (server volt-adc). Not retried or bypassed. Needs manual images/specs."
+  },
+  {
+   "range": "ssd",
+   "line": "Crucial BX500",
+   "variant": "(all)",
+   "reason": "www.crucial.in answered every request (homepage, robots.txt, a product URL; curl and Playwright defaults) with a WAF page \"Request Rejected\" (server volt-adc). Not retried or bypassed. Needs manual images/specs."
+  },
+  {
+   "range": "ssd",
+   "line": "Crucial P3",
+   "variant": "(all)",
+   "reason": "www.crucial.in answered every request (homepage, robots.txt, a product URL; curl and Playwright defaults) with a WAF page \"Request Rejected\" (server volt-adc). Not retried or bypassed. Needs manual images/specs."
+  },
+  {
+   "range": "ssd",
+   "line": "Crucial P3 Plus",
+   "variant": "(all)",
+   "reason": "www.crucial.in answered every request (homepage, robots.txt, a product URL; curl and Playwright defaults) with a WAF page \"Request Rejected\" (server volt-adc). Not retried or bypassed. Needs manual images/specs."
+  },
+  {
+   "range": "ssd",
+   "line": "Crucial T500",
+   "variant": "(all)",
+   "reason": "www.crucial.in answered every request (homepage, robots.txt, a product URL; curl and Playwright defaults) with a WAF page \"Request Rejected\" (server volt-adc). Not retried or bypassed. Needs manual images/specs."
+  },
+  {
+   "range": "ssd",
+   "line": "Kingston A400",
+   "variant": "(all)",
+   "reason": "www.kingston.com returned HTTP 403 with a Cloudflare challenge (cf-mitigated: challenge). Per instructions not bypassed. Needs manual images/specs."
+  },
+  {
+   "range": "ssd",
+   "line": "Kingston NV3",
+   "variant": "(all)",
+   "reason": "www.kingston.com returned HTTP 403 with a Cloudflare challenge (cf-mitigated: challenge). Per instructions not bypassed. Needs manual images/specs."
+  },
+  {
+   "range": "consistent",
+   "line": "Consistent 2.5\" SATA SSD",
+   "variant": "512GB",
+   "reason": "No usable image: the 512GB drive photo cannot be cut cleanly (see skipped), no 512GB box image exists, and every 2.5-inch drive photo prints its capacity, so no capacity-free image can stand in."
+  }
+ ],
+ "skipped": [
+  {
+   "range": "consistent",
+   "line": "Consistent 2.5\" SATA SSD",
+   "variant": "512GB",
+   "source": "05-128GB-Photoroom.webp",
+   "reason": "The only clean 512GB drive photo shows the drive lying on a larger dark-grey offset backing shape of the same colour as the drive frame; the drive outline cannot be separated from it without redrawing an edge."
+  },
+  {
+   "range": "consistent",
+   "line": "Consistent M.2 2280 SSD titled \"M.2 SATA\" (interface contradictory on page)",
+   "variant": "128GB box",
+   "source": "01-128M.2.2.webp",
+   "reason": "Box render fills the frame edge to edge (no background), so its outline cannot be cut cleanly."
+  },
+  {
+   "range": "consistent",
+   "line": "Consistent M.2 2280 SSD titled \"M.2 SATA\" (interface contradictory on page)",
+   "variant": "256GB box",
+   "source": "01-128M.2.2-1.webp",
+   "reason": "Box render fills the frame edge to edge (no background), so its outline cannot be cut cleanly. It also prints 128GB, not 256GB."
+  },
+  {
+   "range": "consistent",
+   "line": "Consistent M.2 2280 SSD titled \"M.2 SATA\" (interface contradictory on page)",
+   "variant": "512GB box",
+   "source": "01-128M.2.2-2.webp",
+   "reason": "Box render fills the frame edge to edge (no background), so its outline cannot be cut cleanly. It also prints 128GB, not 512GB."
+  },
+  {
+   "range": "consistent",
+   "line": "Consistent M.2 2280 SSD titled \"M.2 SATA\" (interface contradictory on page)",
+   "variant": "1TB box",
+   "source": "01-128M.2.2-3.webp",
+   "reason": "Box render fills the frame edge to edge (no background), so its outline cannot be cut cleanly. It also prints 128GB, not 1TB."
+  },
+  {
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 3 SSD (3D NAND, SLC cache)",
+   "variant": "512GB box",
+   "source": "04-51XYi4po7xL.webp",
+   "reason": "Box render fills the frame edge to edge (no background), so its outline cannot be cut cleanly."
+  },
+  {
+   "range": "consistent",
+   "line": "Consistent M.2 2280 NVMe PCIe Gen 3 SSD (3D NAND, SLC cache)",
+   "variant": "1TB box",
+   "source": "02-1TBNVME.2.webp",
+   "reason": "Box render fills the frame edge to edge (no background), so its outline cannot be cut cleanly."
+  }
+ ]
+}

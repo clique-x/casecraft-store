@@ -1,0 +1,450 @@
+{
+  "desktop-ddr3-main": {
+    "contactCentre": [
+      1024,
+      1249
+    ],
+    "topLeft": [
+      7,
+      1249
+    ],
+    "topRight": [
+      2042,
+      1249
+    ],
+    "topFront": [
+      1024,
+      1506
+    ],
+    "topBack": [
+      1024,
+      1072
+    ],
+    "unitPx": [
+      1024,
+      1117
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 9.5
+  },
+  "desktop-ddr3-flat": {
+    "contactCentre": [
+      1024,
+      1268
+    ],
+    "topLeft": [
+      94,
+      1268
+    ],
+    "topRight": [
+      1955,
+      1268
+    ],
+    "topFront": [
+      1024,
+      1392
+    ],
+    "topBack": [
+      1024,
+      1179
+    ],
+    "unitPx": [
+      1024,
+      1147
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 4
+  },
+  "laptop-ddr3l-main": {
+    "contactCentre": [
+      1024,
+      1249
+    ],
+    "topLeft": [
+      7,
+      1249
+    ],
+    "topRight": [
+      2042,
+      1249
+    ],
+    "topFront": [
+      1024,
+      1506
+    ],
+    "topBack": [
+      1024,
+      1072
+    ],
+    "unitPx": [
+      1024,
+      1117
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 9.5
+  },
+  "laptop-ddr3l-flat": {
+    "contactCentre": [
+      1024,
+      1268
+    ],
+    "topLeft": [
+      94,
+      1268
+    ],
+    "topRight": [
+      1955,
+      1268
+    ],
+    "topFront": [
+      1024,
+      1392
+    ],
+    "topBack": [
+      1024,
+      1179
+    ],
+    "unitPx": [
+      1024,
+      1147
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 4
+  },
+  "desktop-ddr4-main": {
+    "contactCentre": [
+      1024,
+      1249
+    ],
+    "topLeft": [
+      7,
+      1249
+    ],
+    "topRight": [
+      2042,
+      1249
+    ],
+    "topFront": [
+      1024,
+      1506
+    ],
+    "topBack": [
+      1024,
+      1072
+    ],
+    "unitPx": [
+      1024,
+      1117
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 9.5
+  },
+  "desktop-ddr4-flat": {
+    "contactCentre": [
+      1024,
+      1268
+    ],
+    "topLeft": [
+      94,
+      1268
+    ],
+    "topRight": [
+      1955,
+      1268
+    ],
+    "topFront": [
+      1024,
+      1392
+    ],
+    "topBack": [
+      1024,
+      1179
+    ],
+    "unitPx": [
+      1024,
+      1147
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 4
+  },
+  "laptop-ddr4-main": {
+    "contactCentre": [
+      1024,
+      1249
+    ],
+    "topLeft": [
+      7,
+      1249
+    ],
+    "topRight": [
+      2042,
+      1249
+    ],
+    "topFront": [
+      1024,
+      1506
+    ],
+    "topBack": [
+      1024,
+      1072
+    ],
+    "unitPx": [
+      1024,
+      1117
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 9.5
+  },
+  "laptop-ddr4-flat": {
+    "contactCentre": [
+      1024,
+      1268
+    ],
+    "topLeft": [
+      94,
+      1268
+    ],
+    "topRight": [
+      1955,
+      1268
+    ],
+    "topFront": [
+      1024,
+      1392
+    ],
+    "topBack": [
+      1024,
+      1179
+    ],
+    "unitPx": [
+      1024,
+      1147
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 4
+  },
+  "desktop-ddr5-main": {
+    "contactCentre": [
+      1024,
+      1249
+    ],
+    "topLeft": [
+      7,
+      1249
+    ],
+    "topRight": [
+      2042,
+      1249
+    ],
+    "topFront": [
+      1024,
+      1506
+    ],
+    "topBack": [
+      1024,
+      1072
+    ],
+    "unitPx": [
+      1024,
+      1117
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 9.5
+  },
+  "desktop-ddr5-flat": {
+    "contactCentre": [
+      1024,
+      1268
+    ],
+    "topLeft": [
+      94,
+      1268
+    ],
+    "topRight": [
+      1955,
+      1268
+    ],
+    "topFront": [
+      1024,
+      1392
+    ],
+    "topBack": [
+      1024,
+      1179
+    ],
+    "unitPx": [
+      1024,
+      1147
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 4
+  },
+  "laptop-ddr5-main": {
+    "contactCentre": [
+      1024,
+      1249
+    ],
+    "topLeft": [
+      7,
+      1249
+    ],
+    "topRight": [
+      2042,
+      1249
+    ],
+    "topFront": [
+      1024,
+      1506
+    ],
+    "topBack": [
+      1024,
+      1072
+    ],
+    "unitPx": [
+      1024,
+      1117
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 9.5
+  },
+  "laptop-ddr5-flat": {
+    "contactCentre": [
+      1024,
+      1268
+    ],
+    "topLeft": [
+      94,
+      1268
+    ],
+    "topRight": [
+      1955,
+      1268
+    ],
+    "topFront": [
+      1024,
+      1392
+    ],
+    "topBack": [
+      1024,
+      1179
+    ],
+    "unitPx": [
+      1024,
+      1147
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 4
+  },
+  "plate-front": {
+    "contactCentre": [
+      1024,
+      1268
+    ],
+    "topLeft": [
+      94,
+      1268
+    ],
+    "topRight": [
+      1955,
+      1268
+    ],
+    "topFront": [
+      1024,
+      1392
+    ],
+    "topBack": [
+      1024,
+      1179
+    ],
+    "unitPx": [
+      1024,
+      1147
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 4
+  },
+  "plate-34": {
+    "contactCentre": [
+      1024,
+      1249
+    ],
+    "topLeft": [
+      7,
+      1249
+    ],
+    "topRight": [
+      2042,
+      1249
+    ],
+    "topFront": [
+      1024,
+      1506
+    ],
+    "topBack": [
+      1024,
+      1072
+    ],
+    "unitPx": [
+      1024,
+      1117
+    ],
+    "keyLight": [
+      -0.473,
+      0.679,
+      0.561
+    ],
+    "cameraElevationDeg": 9.5
+  }
+}
