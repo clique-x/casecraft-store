@@ -588,9 +588,9 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
     slug: 'about',
     title: 'About us',
     navLabel: 'About us',
-    description: `${BRAND_NAME} sells phone covers, earbuds, neckbands and screen protection across India. It is run by ${BUSINESS.name} from SIDCUL, ${SHOP_CITY}.`,
+    description: `${BRAND_NAME} sells phone covers, audio, storage, Wi-Fi cameras and screen protection across India. It is run by ${BUSINESS.name} from SIDCUL, ${SHOP_CITY}.`,
     intro: [
-      `${BRAND_NAME} sells phone covers, sealed boAt and realme earbuds and neckbands, and screen protection online, across India. It is run by ${BUSINESS.name} from our office and warehouse in SIDCUL, ${SHOP_CITY}, where every order is checked and packed.`,
+      `${BRAND_NAME} sells phone covers, sealed boAt and realme audio, memory cards, SSDs and RAM, CP Plus Wi-Fi cameras and screen protection online, across India. It is run by ${BUSINESS.name} from our office and warehouse in SIDCUL, ${SHOP_CITY}, where every order is checked and packed.`,
     ],
     sections: [
       {
@@ -600,6 +600,8 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
             ['Phone covers made for each phone model and photographed in our shop. ', { href: '/phones', label: 'Find yours by phone' }, '.'],
             ['boAt and realme earbuds and neckbands, sold sealed as the brand packs them, with the brand’s one-year warranty. ', { href: '/audio', label: 'See audio' }, '.'],
             ['Screen glass, camera lens protectors and back films cut for each phone. ', { href: '/accessories', label: 'See protection' }, '.'],
+            ['SanDisk, Samsung, WD and Consistent memory cards, pen drives and SSDs, laptop and desktop RAM, and drive cases. ', { href: '/storage', label: 'See storage' }, '.'],
+            ['CP Plus ezyKam+ Wi-Fi cameras for the home and shop. ', { href: '/cameras', label: 'See cameras' }, '.'],
           ),
         ],
       },

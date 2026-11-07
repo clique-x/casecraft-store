@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -106,8 +107,8 @@ function Art({ image, className }: { image: TileImage; className?: string }) {
   );
 }
 
-/** "Find your next favourite.": three editorial tiles into the departments. */
-export function CategoryTiles() {
+/** "Find your next favourite.": three editorial tiles into the departments, then the `rail` of every other range. */
+export function CategoryTiles({ rail }: { rail?: ReactNode }) {
   return (
     <section aria-labelledby="favourites-heading" className="bg-gh-ivory pt-10 pb-14 text-gh-ink lg:pt-12 lg:pb-20">
       <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-10 xl:px-14">
@@ -158,6 +159,7 @@ export function CategoryTiles() {
             );
           })}
         </ul>
+        {rail}
       </div>
     </section>
   );

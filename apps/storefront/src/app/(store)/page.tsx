@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BRAND_NAME, OG_IMAGE, SITE_URL } from '@/lib/brand';
 import { formatInr, gallerySrc, PHOTOS } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
-import { getLooks, getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
+import { getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
 import { BrandIntro } from '@/components/intro/BrandIntro.client';
 import { DeviceHint } from '@/components/home/device-hint/DeviceHint.client';
@@ -14,17 +14,21 @@ import { AudioSpotlight } from '@/components/home/hub/AudioSpotlight';
 import { CoversSection } from '@/components/home/hub/CoversSection';
 import { BrandsWall, type LogoBrand } from '@/components/home/hub/BrandsWall';
 import { HubFinalCta } from '@/components/home/hub/HubFinalCta';
-import { LookGrid } from '@/components/home/LookGrid';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
 import { WhyUs } from '@/components/home/WhyUs';
 import { PROMOS, PromoBanner } from '@/components/home/PromoBanners';
 import { PromoStage } from '@/components/home/promo-stage/PromoStage.client';
+import { CategoryRail, type RailCategory } from '@/components/home/CategoryRail';
+import { GadgetRow } from '@/components/home/GadgetRow';
+import { HomeDuo, type DuoFeature } from '@/components/home/HomeDuo';
+import { ProtectionRow } from '@/components/home/ProtectionRow';
+import { gadgetCardSrc, gadgetCutSrc, gadgetHeroIndex, type GadgetType } from '@/lib/catalog/gadgets';
 
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
-const TITLE = `${BRAND_NAME} · Phone covers, earbuds, neckbands and screen protection`;
-const DESCRIPTION = `Covers cut for your exact phone from ${formatInr(COVER_FROM)}, sealed boAt and realme earbuds and neckbands with the brand warranty, and screen protection. UPI, cards or Cash on Delivery across India.`;
+const TITLE = `${BRAND_NAME} · Phone covers, audio, storage, cameras and screen protection`;
+const DESCRIPTION = `Covers cut for your exact phone from ${formatInr(COVER_FROM)}, sealed boAt and realme earbuds, neckbands and speakers, SanDisk, Samsung, WD and Consistent memory cards and SSDs, RAM, CP Plus Wi-Fi cameras and screen protection. UPI, cards or Cash on Delivery across India.`;
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -111,15 +115,77 @@ function audioPicks(audio: ProductDetail[], shown: HomeProduct[], featureId: str
   return (fresh.length >= 4 ? fresh : [...fresh, ...audio.filter((p) => p.id !== featureId && !fresh.includes(p))]).slice(0, 4);
 }
 
+/** One rail card per range, in shop order: each with its cheapest price and a photo of one of its products. */
+const RAIL: readonly { label: string; href: string; types: readonly GadgetType[]; pick?: string }[] = [
+  { label: 'Earbuds', href: '/audio#earbuds', types: ['earbuds'], pick: 'boat-alpha-gen2' },
+  { label: 'Neckbands', href: '/audio#neckband', types: ['neckband'], pick: 'boat-rockerz-235-pro' },
+  { label: 'Speakers', href: '/audio#speakers', types: ['speaker'], pick: 'boat-stone-arc-pro' },
+  { label: 'Memory cards', href: '/storage#cards', types: ['memory-card'], pick: 'sandisk-extreme-microsd' },
+  { label: 'Pen drives', href: '/storage#cards', types: ['pen-drive'], pick: 'sandisk-cruzer-blade' },
+  { label: 'SSDs', href: '/storage#ssd', types: ['ssd'], pick: 'wd-black-sn7100' },
+  { label: 'RAM', href: '/storage#ram', types: ['ram'], pick: 'ram-laptop-ddr4' },
+  { label: 'Wi-Fi cameras', href: '/cameras', types: ['camera'] },
+];
+
+function railCategories(gadgets: ProductDetail[]): RailCategory[] {
+  return RAIL.flatMap((c) => {
+    const items = gadgets.filter((p) => p.gadget && c.types.includes(p.gadget.type));
+    const lead = items.find((p) => p.gadget?.id === c.pick && p.gadget?.photos) ?? items.find((p) => p.gadget?.photos);
+    const g = lead?.gadget;
+    if (!g?.photos) return [];
+    const image = g.photos.cut ? gadgetCutSrc(g.photos, 480) : gadgetCardSrc(g.photos, gadgetHeroIndex(g.photos, g.options[0]?.slug), 480);
+    return [{ label: c.label, href: c.href, image, cutout: Boolean(g.photos.cut), fromInr: Math.min(...items.map((p) => p.priceFromInr)) }];
+  });
+}
+
+/** Cameras and speakers, side by side; each half only when the department has stock. */
+function duoFeatures(cameras: ProductDetail[], audio: ProductDetail[]): DuoFeature[] {
+  const speakers = audio.filter((p) => p.gadget?.type === 'speaker');
+  const camera = cameras.find((p) => p.gadget?.photos);
+  // The upright Arc Pro fills the tall photo slot; the wide 1200 Pro would be cropped.
+  const speaker = speakers.find((p) => p.gadget?.id === 'boat-stone-arc-pro' && p.gadget?.photos) ?? speakers.find((p) => p.gadget?.photos);
+  const out: DuoFeature[] = [];
+  if (camera?.gadget) {
+    out.push({
+      eyebrow: 'Wi-Fi cameras',
+      heading: 'Keep an eye on home and shop',
+      sub: 'CP Plus ezyKam+ cameras turn 355°, see in the dark and let you talk back, all from your phone.',
+      points: ['2, 3 or 4 MP, pick yours on the page', '15 m night vision and motion tracking', 'Two-way talk, Alexa and Google Home'],
+      fromInr: Math.min(...cameras.map((p) => p.priceFromInr)),
+      href: '/cameras',
+      cta: 'Shop cameras',
+      gadget: camera.gadget,
+      productHref: `/products/${camera.handle}`,
+      productLabel: 'See the camera',
+    });
+  }
+  if (speaker?.gadget) {
+    out.push({
+      eyebrow: 'Bluetooth speakers',
+      heading: 'boAt speakers, made to be loud',
+      sub: 'The 60 W Stone 1200 Pro and the RGB-lit Stone Arc Pro, sealed in the boAt box.',
+      points: ['Up to 60 W with TWS pairing', 'Up to 12 h of playback', 'Splash-proof, IPX5 and IPX6'],
+      fromInr: Math.min(...speakers.map((p) => p.priceFromInr)),
+      href: '/audio#speakers',
+      cta: 'Shop speakers',
+      gadget: speaker.gadget,
+      productHref: `/products/${speaker.handle}`,
+      productLabel: `See the ${speaker.gadget.title.replace(/^boAt /, '')}`,
+    });
+  }
+  return out;
+}
+
 export default async function HomePage() {
-  const [trending, newArrivals, models, looks, allCovers, accessories, audio] = await Promise.all([
+  const [trending, newArrivals, models, allCovers, accessories, audio, storage, cameras] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
-    getLooks(),
     getAllProducts(),
     getAccessories(),
     getGadgets('audio'),
+    getGadgets('storage'),
+    getGadgets('cameras'),
   ]);
 
   const audioWithPhotos = byPicks(audio.filter((p) => p.gadget?.photos));
@@ -155,7 +221,7 @@ export default async function HomePage() {
       {/* Header, hero, service strip and category tiles: the storefront's opening screens. */}
       <ShowcaseHero />
       <ServiceStrip />
-      <CategoryTiles />
+      <CategoryTiles rail={<CategoryRail categories={railCategories([...audio, ...storage, ...cameras])} />} />
       <TrendingHub products={trendingMix} />
       {featureProduct?.gadget && (
         <AudioSpotlight
@@ -169,8 +235,11 @@ export default async function HomePage() {
       {/* Campaign images: audio right after the audio picks, covers right before the covers opener. */}
       <PromoStage />
       <CoversSection models={models} covers={PHOTOS.length} />
-      <LookGrid looks={looks} />
       <NewArrivalsRow products={newArrivals} models={models} />
+      {/* The other departments: storage, then cameras and speakers, then protection. */}
+      <GadgetRow department="storage" products={storage} />
+      <HomeDuo features={duoFeatures(cameras, audio)} />
+      <ProtectionRow products={accessories} />
       <PromoBanner promo={PROMOS.combo} className="bg-surface-2" />
       <HomeCombos covers={comboCovers} accessories={comboAccessories} />
       <BrandsWall brands={brandLogos} />

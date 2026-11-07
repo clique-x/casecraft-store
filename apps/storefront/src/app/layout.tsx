@@ -7,11 +7,11 @@ import { IntroBoot } from '@/components/intro/IntroBoot';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${BRAND_NAME} · Phone covers, earbuds and protection`,
+    default: `${BRAND_NAME} · Phone covers, audio, storage and protection`,
     template: `%s · ${BRAND_NAME}`,
   },
   description:
-    'Phone covers cut for your exact model, sealed boAt and realme earbuds and neckbands, and screen protection. UPI, cards or Cash on Delivery across India.',
+    'Phone covers cut for your exact model, sealed boAt and realme earbuds, neckbands and speakers, memory cards, SSDs and RAM, CP Plus Wi-Fi cameras and screen protection. UPI, cards or Cash on Delivery across India.',
   applicationName: BRAND_NAME,
   robots: { index: true, follow: true },
   // Pages that set their own openGraph replace this whole object, so each of them names an image too.
