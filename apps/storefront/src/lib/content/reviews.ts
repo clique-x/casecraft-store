@@ -1,4 +1,4 @@
-import { BRAND_NAME, WHATSAPP_NUMBER } from '@/lib/brand';
+import { BRAND_NAME, SITE_URL, WHATSAPP_NUMBER } from '@/lib/brand';
 
 /**
  * Customer reviews: shop reviews and product reviews, shown on the home page, on product pages and in
@@ -165,15 +165,17 @@ export function reviewCountLabel(count: number): string {
 
 /**
  * wa.me link with a short form to fill in. It asks for the permission to publish up front, because a
- * WhatsApp review may only appear on the site with the customer's agreement.
+ * WhatsApp review may only appear on the site with the customer's agreement. For a product it carries the
+ * page link, whose last part is the `productHandle` to file the review under.
  */
-export function reviewOnWhatsAppHref(productName?: string): string {
+export function reviewOnWhatsAppHref(product?: { name: string; handle: string }): string {
   const lines = [
-    productName
-      ? `Hi! I'd like to review the ${productName} I bought from ${BRAND_NAME}.`
+    product
+      ? `Hi! I'd like to review the ${product.name} I bought from ${BRAND_NAME}.`
       : `Hi! I'd like to leave a review of my order from ${BRAND_NAME}.`,
+    ...(product ? [new URL(`/products/${product.handle}`, SITE_URL).toString()] : []),
     '',
-    ...(productName ? [] : ['What I bought: ']),
+    ...(product ? [] : ['What I bought: ']),
     'Stars (1 to 5): ',
     'My review: ',
     'Name to show (for example first name and last initial): ',

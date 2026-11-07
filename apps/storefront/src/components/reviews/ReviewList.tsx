@@ -27,21 +27,19 @@ function productOf(review: Review, titles?: ReadonlyMap<string, string>) {
 export function ReviewList({ reviews, label, initial = 4, productTitles, className }: ReviewListProps) {
   const first = reviews.slice(0, initial);
   const rest = reviews.slice(initial);
-  const cards = (list: readonly Review[], delayed: boolean) =>
-    list.map((review, i) => (
-      <Reveal as="li" key={review.id} delay={delayed ? i * 0.05 : 0} className="min-w-0">
-        <ReviewCard review={review} product={productOf(review, productTitles)} />
-      </Reveal>
-    ));
 
   return (
-    <div className={cn('flex min-w-0 flex-col gap-4', className)}>
+    <div className={cn('min-w-0', className)}>
       <ul aria-label={label} className={GRID}>
-        {cards(first, true)}
+        {first.map((review, i) => (
+          <Reveal as="li" key={review.id} delay={i * 0.05} className="min-w-0">
+            <ReviewCard review={review} product={productOf(review, productTitles)} />
+          </Reveal>
+        ))}
       </ul>
       {rest.length > 0 && (
-        <details className="group flex flex-col gap-4">
-          <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 self-start rounded-pill px-1 text-sm font-semibold text-fg underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-accent-2 [&::-webkit-details-marker]:hidden">
+        <details className="group mt-4">
+          <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 rounded-pill px-1 text-sm font-semibold text-fg underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-accent-2 [&::-webkit-details-marker]:hidden">
             <span className="group-open:hidden">
               Show {rest.length} more {rest.length === 1 ? 'review' : 'reviews'}
             </span>
@@ -49,7 +47,11 @@ export function ReviewList({ reviews, label, initial = 4, productTitles, classNa
             <ChevronDownIcon className="size-4 transition-transform group-open:rotate-180" aria-hidden="true" />
           </summary>
           <ul aria-label={`${label}, older`} className={cn(GRID, 'mt-4')}>
-            {cards(rest, false)}
+            {rest.map((review) => (
+              <li key={review.id} className="min-w-0">
+                <ReviewCard review={review} product={productOf(review, productTitles)} />
+              </li>
+            ))}
           </ul>
         </details>
       )}

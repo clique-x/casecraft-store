@@ -3,6 +3,7 @@ import { ACCESSORY_TYPE_LABEL, accessoryPhotoSrc } from '@/lib/catalog/accessori
 import { GADGET_TYPE_LABEL, gadgetGallerySrc, gadgetHeroIndex } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
 import { gallerySrc, photoSrc } from '@/lib/catalog/photos';
+import { reviewsForStructuredData, summarizeReviews } from '@/lib/content/reviews';
 import { THEMES, type ProductDetail } from '@/lib/medusa/fixtures';
 import { lowestPrice } from '@/lib/medusa/variants';
 
@@ -20,6 +21,27 @@ function categoryOf(product: ProductDetail): string {
 function materialOf(product: ProductDetail): string {
   if (product.photo || product.accessory) return product.details.material;
   return product.caseTypes.includes('glass') ? 'TPU, tempered glass' : 'TPU';
+}
+
+/**
+ * `aggregateRating` and `review` from the product's real reviews shown on the page, and nothing at all
+ * while it has none: marking up a rating that no visible review backs breaks Google's review-snippet rules.
+ */
+function reviewsJsonLd(handle: string) {
+  const reviews = reviewsForStructuredData(handle);
+  const { count, average } = summarizeReviews(reviews);
+  if (count === 0 || average === null) return {};
+  return {
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: average, reviewCount: count, bestRating: 5, worstRating: 1 },
+    review: reviews.map((r) => ({
+      '@type': 'Review',
+      ...(r.title ? { name: r.title } : {}),
+      reviewBody: r.body,
+      datePublished: r.date,
+      author: { '@type': 'Person', name: r.displayName },
+      reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+    })),
+  };
 }
 
 function productJsonLd(product: ProductDetail): string {
@@ -62,6 +84,7 @@ function productJsonLd(product: ProductDetail): string {
       availability: inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
       seller: { '@type': 'Organization', name: BRAND_NAME },
     },
+    ...reviewsJsonLd(product.handle),
   };
   return JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 }

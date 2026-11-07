@@ -26,7 +26,8 @@ export function Stars({ value, size = 'sm', decorative = false, className }: Sta
       role={decorative ? undefined : 'img'}
       aria-label={decorative ? undefined : ratingLabel(value)}
       aria-hidden={decorative || undefined}
-      className={cn('relative inline-flex shrink-0 align-middle', className)}
+      // w-fit: a stretching flex parent must not widen the box the fill percentage is taken from.
+      className={cn('relative inline-flex w-fit shrink-0 align-middle', className)}
     >
       <span className="flex gap-0.5 text-fg-muted/50">
         {SLOTS.map((i) => (

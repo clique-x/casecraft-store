@@ -15,6 +15,7 @@ import { RelatedRows } from '@/components/product/RelatedRows';
 import { StickyBuyBar } from '@/components/product/StickyBuyBar.client';
 import { PhotoStage } from '@/components/product/viewer/PhotoStage.client';
 import { ProductViewer } from '@/components/product/viewer/ProductViewer.client';
+import { ProductReviews } from '@/components/reviews/ProductReviews';
 import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 import { ACCESSORY_TYPE_LABEL, accessoryPhotoSrc } from '@/lib/catalog/accessories';
 import {
@@ -277,6 +278,9 @@ async function ProductPageContent({ params }: ProductPageProps) {
             <div className="flex min-w-0 flex-col gap-8 lg:col-span-5">{buyColumn}</div>
           )}
         </div>
+
+        {/* Full width under both columns, so it never lengthens the pinned buy column. */}
+        <ProductReviews product={product} className="mt-10 lg:mt-14" />
       </div>
 
       {/* Below the fold: skipped by layout and paint, and their lazy images wait, until scrolled near. */}
