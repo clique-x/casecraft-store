@@ -6,11 +6,10 @@ import type { HomeProduct } from '@/lib/medusa/fixtures';
 
 const SHORTCUTS = [
   { id: 'screen-guard', label: 'Screen guards' },
-  { id: 'lens-protector', label: 'Lens guards' },
   { id: 'back-film', label: 'Back films' },
 ] as const;
 
-/** Home row for screen guards and films: the photographed brand guards first, then our own. */
+/** Home row for screen guards and films. */
 export function ProtectionRow({ products }: { products: HomeProduct[] }) {
   if (products.length === 0) return null;
   const shown = [...products].sort((a, b) => Number(Boolean(b.accessory?.photos)) - Number(Boolean(a.accessory?.photos))).slice(0, 5);
@@ -23,7 +22,7 @@ export function ProtectionRow({ products }: { products: HomeProduct[] }) {
             <h2 id="protection-heading" className="mt-2 font-display text-h2 font-extrabold text-balance">
               Screen guards and films that fit
             </h2>
-            <p className="mt-2 text-body text-fg-muted">FLAYR, G-TEL and our own, cut for your exact phone. ₹50 off each with any cover.</p>
+            <p className="mt-2 text-body text-fg-muted">FLAYR glass for iPhone, G-TEL glass for Galaxy S and hydrogel back films. ₹50 off each with any cover.</p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             {SHORTCUTS.map((s) => (

@@ -28,13 +28,13 @@ function department(id: MobileMenuDepartment['id'], info: DepartmentInfo, note: 
   return { id, href: info.path, label: info.name, note, sections };
 }
 
-/** The phone menu's departments; the notes match the desktop Shop menu. */
+/** The phone menu's departments; the notes follow the desktop Shop menu's, kept to one line. */
 const MOBILE_DEPARTMENTS: readonly MobileMenuDepartment[] = [
   { id: 'covers', href: '/covers', label: 'Phone cases', note: 'Back covers cut for your exact phone', sections: [] },
-  department('audio', DEPARTMENTS.audio, 'boAt and realme earbuds and speakers'),
+  department('audio', DEPARTMENTS.audio, 'boAt and realme, sealed in the box'),
   department('storage', DEPARTMENTS.storage, 'Memory cards, pen drives, SSDs, RAM'),
   department('cameras', DEPARTMENTS.cameras, 'CP Plus Wi-Fi security cameras'),
-  { id: 'protection', href: '/accessories', label: 'Protection', note: 'Glass, lens guards, back films', sections: [] },
+  { id: 'protection', href: '/accessories', label: 'Protection', note: 'FLAYR and G-TEL glass, back films', sections: [] },
 ];
 
 const FOCUS = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand';

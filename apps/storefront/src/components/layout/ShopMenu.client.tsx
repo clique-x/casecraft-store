@@ -22,7 +22,7 @@ const GROUPS: readonly { heading: string; links: readonly { href: string; label:
       { href: '/audio', label: 'Audio', note: 'boAt and realme earbuds and speakers' },
       { href: '/storage', label: 'Storage', note: 'Memory cards, pen drives, SSDs, RAM' },
       { href: '/cameras', label: 'Cameras', note: 'CP Plus Wi-Fi security cameras' },
-      { href: '/accessories', label: 'Protection', note: 'Glass, lens guards, back films' },
+      { href: '/accessories', label: 'Protection', note: 'FLAYR and G-TEL glass, back films' },
     ],
   },
 ];

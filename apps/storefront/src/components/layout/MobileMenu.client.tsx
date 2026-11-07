@@ -1,9 +1,11 @@
 'use client';
 
+import Form from 'next/form';
 import Link from 'next/link';
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Dialog } from 'radix-ui';
 import {
+  ArrowRight,
   Cctv,
   ChevronRight,
   HardDrive,
@@ -11,6 +13,7 @@ import {
   Menu,
   MessageCircle,
   Phone,
+  Search,
   ShieldCheck,
   Smartphone,
   X,
@@ -18,7 +21,6 @@ import {
 } from 'lucide-react';
 import { Wordmark } from '@/components/brand/Wordmark';
 import { logoIsWordmark, PhoneBrandLogo } from '@/components/brand/PhoneBrandLogo';
-import { SearchForm } from '@/components/search/SearchForm';
 import { BRAND_NAME, BUSINESS, REPLACEMENT_DAYS, WHATSAPP_NUMBER } from '@/lib/brand';
 import { groupByBrand } from '@/lib/catalog/listing';
 import { useMyPhone } from '@/lib/phone/use-my-phone';
@@ -135,7 +137,7 @@ export function MobileMenu({ departments, supportHours, triggerClassName }: Mobi
           )}
         >
           <div className="box-content flex h-16 shrink-0 items-center justify-between gap-2 border-b border-gh-line pt-[env(safe-area-inset-top)] pr-2 pl-4">
-            <Link href="/" onNavigate={close} aria-label={`${BRAND_NAME} home`} className={cn('rounded-sm', FOCUS)}>
+            <Link href="/" onNavigate={close} aria-label={`${BRAND_NAME} home`} className={cn('inline-flex h-11 items-center rounded-sm', FOCUS)}>
               <Wordmark className="text-[1.375rem]" />
             </Link>
             <Dialog.Title className="sr-only">Menu</Dialog.Title>
@@ -156,10 +158,7 @@ export function MobileMenu({ departments, supportHours, triggerClassName }: Mobi
           </div>
 
           <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-[calc(env(safe-area-inset-bottom)+2rem)]">
-            {/* The /search form itself; it navigates client-side, and the submit bubbles up to close the sheet. */}
-            <div onSubmit={close}>
-              <SearchForm id="mobile-menu-q" className="max-w-none" />
-            </div>
+            <MenuSearch onSubmit={close} />
 
             <MenuSection heading="Departments" className="mt-7">
               <ul className="flex flex-col">
@@ -239,6 +238,41 @@ export function MobileMenu({ departments, supportHours, triggerClassName }: Mobi
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
+  );
+}
+
+/**
+ * The same GET form to /search as SearchForm (field name and label), with the submit as an icon inside the
+ * field and a shorter placeholder so nothing is cut off in the narrow sheet.
+ */
+function MenuSearch({ onSubmit }: { onSubmit: () => void }) {
+  return (
+    <Form action="/search" role="search" onSubmit={onSubmit} className="relative">
+      <label htmlFor="mobile-menu-q" className="sr-only">
+        Search covers
+      </label>
+      <Search aria-hidden="true" className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-gh-ink-muted" />
+      <input
+        id="mobile-menu-q"
+        name="q"
+        type="search"
+        maxLength={80}
+        autoComplete="off"
+        enterKeyHint="search"
+        placeholder="Phone, design or brand"
+        className="h-13 w-full rounded-xl border border-gh-line bg-white pr-14 pl-10 text-base text-gh-ink outline-none placeholder:text-gh-ink-muted focus-visible:border-brand focus-visible:ring-3 focus-visible:ring-brand/25"
+      />
+      <button
+        type="submit"
+        aria-label="Search"
+        className={cn(
+          'absolute top-1/2 right-1 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-lg bg-gh-ink text-white transition-colors duration-(--dur-micro) hover:bg-gh-teal',
+          FOCUS,
+        )}
+      >
+        <ArrowRight className="size-5" strokeWidth={2} aria-hidden="true" />
+      </button>
+    </Form>
   );
 }
 

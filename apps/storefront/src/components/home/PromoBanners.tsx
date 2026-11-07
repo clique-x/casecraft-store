@@ -23,12 +23,6 @@ export const PROMOS = {
     href: '/covers',
     alt: 'Cases with character, from ₹250. Cut for your exact phone.',
   },
-  combo: {
-    name: 'combo-protection',
-    href: '/accessories',
-    alt: 'Total protection combo, save ₹150: case, screen glass, camera lens protector and back film for ₹1,296 instead of ₹1,446. Cut for your exact phone, Cash on Delivery.',
-    wide: { name: 'combo-protection-wide', width: 2000, height: 667 },
-  },
 } satisfies Record<string, Promo>;
 
 const WIDE_WIDTHS = [1200, 2000] as const;

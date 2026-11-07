@@ -44,7 +44,7 @@ function CoverThumb({ product }: { product: ProductDetail }) {
   return design ? <ProcCaseThumb design={design} className="h-full w-auto" /> : null;
 }
 
-/** Ready-made kits for this cover: the cover plus screen glass and/or lens protector, at bundle price. */
+/** Ready-made kits for this cover: the cover plus the screen glass cut for the same phone, at bundle price. */
 export function BundleKits({ product, accessories, models }: Props) {
   const { enabled, addMany } = useCart();
   const { modelSlug, caseType } = useVariantSelection();

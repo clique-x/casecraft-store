@@ -3,7 +3,7 @@
 //
 //   node scripts/promo-art/export.mjs SRC_DIR
 //
-// SRC_DIR holds brand-hero.png, audio-sealed.png, covers-character.png and combo-protection.png
+// SRC_DIR holds brand-hero.png, audio-sealed.png and covers-character.png
 // (covers-character.png after clean-covers.py, see README.md), and the wide desktop versions listed in
 // WIDE, such as combo-protection-wide.png. Writes:
 //   <name>-600.webp, <name>-1200.webp   the home page banners (square)
@@ -20,10 +20,10 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const storefront = path.resolve(here, '../../apps/storefront');
 const sharp = createRequire(path.join(storefront, 'package.json'))('sharp');
 const OUT = path.join(storefront, 'public/promo');
-const NAMES = ['brand-hero', 'audio-sealed', 'covers-character', 'combo-protection'];
+const NAMES = ['brand-hero', 'audio-sealed', 'covers-character'];
 const WIDTHS = [600, 1200];
 /** Desktop versions of a banner: output name -> widths (capped at the source width). */
-const WIDE = { 'combo-protection-wide': [1200, 2000] };
+const WIDE = {};
 const INK = '#0D1D1F';
 
 const src = process.argv[2];

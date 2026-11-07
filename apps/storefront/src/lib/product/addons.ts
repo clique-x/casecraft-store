@@ -1,7 +1,7 @@
 import type { ProductDetail, Variant } from '@/lib/medusa/fixtures';
 
-/** Accessories offered as add-ons on cover pages, in display order (back films are sold on their own). */
-export const ADDON_IDS: readonly string[] = ['glass-clear', 'glass-privacy', 'lens-glass'];
+/** Screen guards offered as add-ons on cover pages, in display order; each shows only for phones it is cut for. */
+export const ADDON_IDS: readonly string[] = ['flayr-borderless-iphone', 'gtel-fingerprint-s'];
 
 /** The accessory's variant for a phone, if that phone is supported and in stock. */
 export function accessoryVariant(accessory: ProductDetail, modelSlug: string | null): Variant | null {

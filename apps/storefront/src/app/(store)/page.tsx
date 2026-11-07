@@ -3,7 +3,7 @@ import { BRAND_NAME, OG_IMAGE, SITE_URL } from '@/lib/brand';
 import { formatInr, gallerySrc, PHOTOS } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
-import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
+import { getAccessories, getGadgets } from '@/lib/medusa/products';
 import { BrandIntro } from '@/components/intro/BrandIntro.client';
 import { DeviceHint } from '@/components/home/device-hint/DeviceHint.client';
 import { ShowcaseHero } from '@/components/home/showcase/ShowcaseHero.client';
@@ -15,9 +15,7 @@ import { CoversSection } from '@/components/home/hub/CoversSection';
 import { BrandsWall, type LogoBrand } from '@/components/home/hub/BrandsWall';
 import { HubFinalCta } from '@/components/home/hub/HubFinalCta';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
-import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
 import { WhyUs } from '@/components/home/WhyUs';
-import { PROMOS, PromoBanner } from '@/components/home/PromoBanners';
 import { PromoStage } from '@/components/home/promo-stage/PromoStage.client';
 import { CategoryRail, type RailCategory } from '@/components/home/CategoryRail';
 import { GadgetRow } from '@/components/home/GadgetRow';
@@ -76,19 +74,6 @@ function itemListJsonLd(products: HomeProduct[]): string {
   }).replace(/</g, '\\u003c');
 }
 
-function toComboCovers(products: ProductDetail[]): ComboCover[] {
-  const rank = (p: ProductDetail) => p.trendingRank ?? 999;
-  return [...products]
-    .sort((a, b) => rank(a) - rank(b) || Number(Boolean(b.photo)) - Number(Boolean(a.photo)))
-    .map((p) => ({
-      id: p.id,
-      handle: p.handle,
-      title: p.title,
-      photoId: p.photo?.id ?? null,
-      designId: p.designId,
-      variants: p.variants.filter((v) => v.caseType === 'soft').map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })),
-    }));
-}
 
 /** Two lists woven together: a, b, a, b … */
 function interleave<T>(a: T[], b: T[]): T[] {
@@ -177,11 +162,10 @@ function duoFeatures(cameras: ProductDetail[], audio: ProductDetail[]): DuoFeatu
 }
 
 export default async function HomePage() {
-  const [trending, newArrivals, models, allCovers, accessories, audio, storage, cameras] = await Promise.all([
+  const [trending, newArrivals, models, accessories, audio, storage, cameras] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
-    getAllProducts(),
     getAccessories(),
     getGadgets('audio'),
     getGadgets('storage'),
@@ -204,12 +188,6 @@ export default async function HomePage() {
     ...phoneBrands.map((b) => ({ name: b, href: `/phones/${b.toLowerCase()}`, tag: 'Covers', logo: { phoneBrand: b } })),
   ];
 
-  const comboCovers = toComboCovers(allCovers);
-  const comboAccessories: ComboAccessory[] = accessories.flatMap((a) =>
-    a.accessory
-      ? [{ entry: a.accessory, title: a.title, priceInr: a.priceFromInr, variants: a.variants.map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })) }]
-      : [],
-  );
 
   return (
     <>
@@ -240,8 +218,6 @@ export default async function HomePage() {
       <GadgetRow department="storage" products={storage} />
       <HomeDuo features={duoFeatures(cameras, audio)} />
       <ProtectionRow products={accessories} />
-      <PromoBanner promo={PROMOS.combo} className="bg-surface-2" />
-      <HomeCombos covers={comboCovers} accessories={comboAccessories} />
       <BrandsWall brands={brandLogos} />
       <WhyUs />
       <HubFinalCta />

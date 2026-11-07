@@ -20,8 +20,9 @@ interface Props {
 export function ProtectionAddOns({ accessories, model, coverPrice }: Props) {
   const { enabled } = useCart();
   const selected = useSelectedAddons();
+  // Only guards cut for the picked phone: an iPhone cover offers FLAYR glass, a Galaxy S cover G-TEL glass.
   const offers = ADDON_IDS.map((id) => accessories.find((a) => a.accessory?.id === id)).filter(
-    (a): a is ProductDetail => Boolean(a?.accessory),
+    (a): a is ProductDetail => Boolean(a?.accessory) && (!model || a!.variants.some((v) => v.modelSlug === model.slug)),
   );
   if (!enabled || offers.length === 0) return null;
 

@@ -9,8 +9,8 @@ import { ACCESSORY_TYPE_LABEL, BUNDLE_SAVING_INR, type AccessoryType } from '@/l
 import { formatInr } from '@/lib/catalog/photos';
 import { getAccessories } from '@/lib/medusa/products';
 
-const TITLE = 'Screen guards, lens protectors and back films';
-const DESCRIPTION = `Tempered glass screen guards, camera lens protectors and full-frame back films cut for your phone. ${formatInr(BUNDLE_SAVING_INR)} off each when you buy it with a cover.`;
+const TITLE = 'FLAYR and G-TEL screen guards and hydrogel back films';
+const DESCRIPTION = `FLAYR 8K tempered glass for iPhone, G-TEL 3D fingerprint glass for Galaxy S and full-back hydrogel films, cut for your phone. ${formatInr(BUNDLE_SAVING_INR)} off each when you buy it with a cover.`;
 const URL_PATH = '/accessories';
 
 export const metadata: Metadata = {

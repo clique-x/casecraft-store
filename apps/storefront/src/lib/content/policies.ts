@@ -599,7 +599,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
           list(
             ['Phone covers made for each phone model and photographed in our shop. ', { href: '/phones', label: 'Find yours by phone' }, '.'],
             ['boAt and realme earbuds and neckbands, sold sealed as the brand packs them, with the brand’s one-year warranty. ', { href: '/audio', label: 'See audio' }, '.'],
-            ['Screen glass, camera lens protectors and back films cut for each phone. ', { href: '/accessories', label: 'See protection' }, '.'],
+            ['FLAYR tempered glass for iPhone, G-TEL glass for Galaxy S, and hydrogel back films. ', { href: '/accessories', label: 'See protection' }, '.'],
             ['SanDisk, Samsung, WD and Consistent memory cards, pen drives and SSDs, laptop and desktop RAM, and drive cases. ', { href: '/storage', label: 'See storage' }, '.'],
             ['CP Plus ezyKam+ Wi-Fi cameras for the home and shop. ', { href: '/cameras', label: 'See cameras' }, '.'],
           ),
