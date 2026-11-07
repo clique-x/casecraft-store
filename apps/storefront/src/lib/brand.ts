@@ -58,6 +58,8 @@ export const BUSINESS = {
   email: 'info@earthclique.in',
   gstin: null as string | null,
   grievanceOfficer: { name: 'Shashank Saklani', role: 'Founder' },
+  /** The shop's Google reviews (to read them or write one), from Google Business Profile; null hides the Google buttons. */
+  googleReviewsUrl: null as string | null,
 } as const;
 /** The address on one line, e.g. for the footer and the policy intros. */
 export const BUSINESS_ADDRESS = [...BUSINESS.address.lines, `${BUSINESS.address.city}, ${BUSINESS.address.state} ${BUSINESS.address.pin}`, 'India'].join(', ');
