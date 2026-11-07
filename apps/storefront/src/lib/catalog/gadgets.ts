@@ -179,7 +179,7 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
     sections: [
       { id: 'cards', types: ['memory-card', 'pen-drive'], heading: 'Memory cards and pen drives', intro: 'microSD cards for phones, cameras and dashcams, and USB pen drives.' },
       { id: 'ssd', types: ['ssd'], heading: 'SSDs', intro: '2.5-inch SATA and M.2 NVMe drives to speed up a laptop or desktop.' },
-      { id: 'ram', types: ['ram'], heading: 'RAM', intro: 'Laptop and desktop memory, DDR3 and DDR4. Check your machine takes the same type before you order.' },
+      { id: 'ram', types: ['ram'], heading: 'RAM', intro: 'Samsung and SK hynix memory for laptops and desktops, listed by brand with photos of that brand’s module and label. Check your machine takes the same type before you order.' },
       { id: 'adapters', types: ['enclosure', 'otg'], heading: 'Drive cases and adapters', intro: 'Turn a spare SSD into a portable drive, or plug a pen drive into your phone.' },
     ],
   },

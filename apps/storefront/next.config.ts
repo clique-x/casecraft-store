@@ -6,7 +6,8 @@ const standalone = process.env.NEXT_OUTPUT === "standalone";
 
 const nextConfig: NextConfig = {
   ...(standalone ? { output: "standalone" as const, outputFileTracingRoot: path.join(__dirname, "../..") } : {}),
-  /* config options here */
+  // No Next.js "N" badge in the corner, even when the site runs in development mode.
+  devIndicators: false,
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

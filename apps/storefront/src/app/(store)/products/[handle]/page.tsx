@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { AccessoryStage } from '@/components/accessory/AccessoryStage.client';
 import { GadgetBuyBox } from '@/components/gadget/GadgetBuyBox.client';
 import { GadgetStage } from '@/components/gadget/GadgetStage.client';
+import { RamBrandGuide } from '@/components/gadget/RamBrandGuide';
 import { Breadcrumb } from '@/components/product/Breadcrumb';
 import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
@@ -25,6 +26,7 @@ import {
   gadgetHeroIndex,
 } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
+import { ramBrandOf } from '@/lib/catalog/ram-brands';
 import { gallerySrc, photoSrc, srcSetFor, type PhotoEntry, backdropThumbSrc } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { accessoryMedia, coverMedia, gadgetMedia } from '@/lib/product/media';
@@ -278,6 +280,8 @@ async function ProductPageContent({ params }: ProductPageProps) {
             <div className="flex min-w-0 flex-col gap-8 lg:col-span-5">{buyColumn}</div>
           )}
         </div>
+
+        {product.gadget?.type === 'ram' && <RamBrandGuide brand={ramBrandOf(product.gadget.specs)} className="mt-10 lg:mt-14" />}
 
         {/* Full width under both columns, so it never lengthens the pinned buy column. */}
         <ProductReviews product={product} className="mt-10 lg:mt-14" />

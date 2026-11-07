@@ -109,7 +109,7 @@ const RAIL: readonly { label: string; href: string; types: readonly GadgetType[]
   { label: 'Memory cards', href: '/storage#cards', types: ['memory-card'], pick: 'sandisk-extreme-microsd' },
   { label: 'Pen drives', href: '/storage#cards', types: ['pen-drive'], pick: 'sandisk-cruzer-blade' },
   { label: 'SSDs', href: '/storage#ssd', types: ['ssd'], pick: 'wd-black-sn7100' },
-  { label: 'RAM', href: '/storage#ram', types: ['ram'], pick: 'ram-laptop-ddr4' },
+  { label: 'RAM', href: '/storage#ram', types: ['ram'], pick: 'sk-hynix-ram-laptop-ddr4' },
   { label: 'Wi-Fi cameras', href: '/cameras', types: ['camera'] },
 ];
 

@@ -1,0 +1,11 @@
+{
+  "note": "RAM listing images, 7 Nov 2026. Samsung: Samsung's own product images from Open Icecat (live.icecat.biz, shopname openicecat-live), cut out and placed on the teal stage, or shown flat as a label close-up. SK hynix: the shop's own photo of the stick it stocks (Drive: 01_Storage/RAM/Hynix-RAM/POV2-Back.jpg, the real-pixel pack shot), re-cut to drop the ragged clear-plastic rim and placed on the teal stage. The owner's generated views (POV3/5/9) were not used: they show 8 chips where the real 8GB 1Rx16 module has 4, and print a part-number suffix that the real label hides under the sleeve.",
+  "images": {
+    "samsung-ddr3l-4gb.webp": {"part": "M471B5173DB0-YK0", "source": "https://images.icecat.biz/img/gallery/9ad5ea99749527b9f2cbf7cb7fbf72ab054d8845.jpg"},
+    "samsung-ddr3l-8gb.webp": {"part": "M471B1G73EB0-YK0", "source": "https://images.icecat.biz/img/gallery/f8a7693d719a6b20757c38c8570ecc126c42d2b2.jpg"},
+    "samsung-ddr3l-label.webp": {"part": "M471B1G73QH0-YK0", "source": "https://images.icecat.biz/img/gallery/3e355703b7719c2e063c873496246ddf6a71f69d.jpg", "caveat": "Tight crop of the module; shown flat as a label close-up."},
+    "samsung-ddr4-desktop-16gb.webp": {"part": "M378A2K43EB1-CWE", "source": "https://images.icecat.biz/img/gallery/f9e81aa2b3a9b1875565b3bfe69b58d17f0d6510.jpg", "caveat": "Samsung's render shows two modules and no readable label; the listing says one module is sold."},
+    "sk-hynix-pack.webp": {"part": "HMAA1GS6CJR6N-XN (suffix partly under the sleeve)", "source": "owner's photo via Drive"},
+    "sk-hynix-label.webp": {"part": "HMAA1GS6CJR6N", "source": "owner's photo via Drive, label crop rotated to read left to right"}
+  }
+}

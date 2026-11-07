@@ -2,6 +2,7 @@ import { DepartmentHeader, DepartmentSection } from '@/components/listing/Depart
 import { PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ProductGrid } from '@/components/listing/ProductGrid';
 import { DEPARTMENTS, type Department } from '@/lib/catalog/gadgets';
+import { RamBrandGuide } from './RamBrandGuide';
 import { getGadgets } from '@/lib/medusa/products';
 
 /** Listing for one gadget department: a short header with jump buttons, then one section per product group. */
@@ -23,6 +24,7 @@ export async function DepartmentPage({ department }: { department: Department })
       {groups.map(({ id, heading, items }, i) => (
         <DepartmentSection key={id} id={id} heading={heading} count={items.length} first={i === 0}>
           <ProductGrid products={items} label={heading} eager={i === 0} className="mt-5" />
+          {id === 'ram' && <RamBrandGuide className="mt-6" />}
         </DepartmentSection>
       ))}
     </div>

@@ -34,7 +34,11 @@ Docker image (`catalog-sources` is in `.dockerignore`). Product photos for the s
 - #20 Tom & Jerry black: Redmi A1 or A2?
 - #24 clear bumper Edge 60 Pro: frame black or navy?
 - #30 metal frame iPhone 16 Pro: does the Apple logo show through?
-- #3 Samsung RAM: label says laptop DDR4, owner says desktop DDR3; measure the stick. #2 Hynix: needs new photos.
+- #3 Samsung RAM: the stick is desktop length but its label reads M471A1K43DB1-CWE / PC4-3200AA-SA1, Samsung's laptop SO-DIMM code
+  (a genuine desktop 8GB is M378A…, PC4-3200AA-U…). Not listed until the owner checks it with the supplier.
+- RAM (7 Nov): listed per brand with real photos only: Samsung DDR3L laptop 4/8 GB and Samsung DDR4 desktop 16 GB (Samsung's own images,
+  `teal/ram/`), SK hynix DDR4 laptop 8 GB (the shop's photo). DDR3 desktop, SK hynix DDR3L and Crucial come back once the owner sends
+  photos of those sticks; their prices are already on the sheet.
 - #25 butterfly glitter case and #31 detachable frame: new photos needed.
 - Consistent "M.2 SATA" line: SATA or NVMe? (their pages say both). Consistent 2.5" 512GB has no usable photo.
 - Character prints (Hello Kitty, Tom & Jerry) are trademarks: owner's call to list.

@@ -5137,25 +5137,25 @@
       ]
     },
     {
-      "handle": "desktop-ddr3-ram",
+      "handle": "samsung-ddr3l-laptop-ram",
       "productType": "RAM",
-      "title": "Desktop RAM DDR3 1600 MHz",
-      "description": "DDR3 desktop memory: a 240-pin DIMM running at 1600 MHz (PC3-12800) on 1.5 V. It only fits DDR3 desktop slots, so check your motherboard before you order. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
-      "imagePath": "/products/photos/gadgets/ram-desktop-ddr3/card-0-720.webp",
+      "title": "Samsung Laptop RAM DDR3L 1600 MHz",
+      "description": "Samsung low-voltage DDR3L laptop memory: a 204-pin SO-DIMM at 1600 MHz (PC3L-12800) on 1.35 V, which also runs at 1.5 V in older DDR3 laptops. Its white label carries the Samsung logo and a part number starting M471B5173 (4 GB) or M471B1G73 (8 GB), and the memory chips are printed SAMSUNG or SEC. Photos are Samsung's own product images; the revision letters at the end of the part number can differ on the module you receive.",
+      "imagePath": "/products/photos/gadgets/samsung-ram-laptop-ddr3l/card-0-720.webp",
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "gadget",
-        "gadget_id": "ram-desktop-ddr3",
+        "gadget_id": "samsung-ram-laptop-ddr3l",
         "gadget_type": "ram",
         "department": "storage",
-        "regular_inr": 649,
-        "detail_in_box": "One memory module in an anti-static pack."
+        "regular_inr": 999,
+        "detail_in_box": "One Samsung memory module in an anti-static pack."
       },
       "variants": [
         {
-          "sku": "STO-RAMDESKTOPDDR3-4GB",
+          "sku": "STO-SAMSUNGRAMLAPTOPDDR3L-4GB",
           "modelSlug": null,
           "caseType": null,
           "option": {
@@ -5163,11 +5163,11 @@
             "slug": "4gb",
             "name": "4 GB"
           },
-          "priceInr": 649,
+          "priceInr": 999,
           "stock": 15
         },
         {
-          "sku": "STO-RAMDESKTOPDDR3-8GB",
+          "sku": "STO-SAMSUNGRAMLAPTOPDDR3L-8GB",
           "modelSlug": null,
           "caseType": null,
           "option": {
@@ -5175,75 +5175,31 @@
             "slug": "8gb",
             "name": "8 GB"
           },
-          "priceInr": 1519,
+          "priceInr": 2199,
           "stock": 15
         }
       ]
     },
     {
-      "handle": "laptop-ddr3l-ram",
+      "handle": "samsung-ddr4-desktop-ram",
       "productType": "RAM",
-      "title": "Laptop RAM DDR3L 1600 MHz",
-      "description": "Low-voltage DDR3L laptop memory: a 204-pin SO-DIMM at 1600 MHz (PC3L-12800) on 1.35 V, which also runs at 1.5 V in older DDR3 laptops. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
-      "imagePath": "/products/photos/gadgets/ram-laptop-ddr3l/card-0-720.webp",
+      "title": "Samsung Desktop RAM DDR4 3200 MHz",
+      "description": "Samsung DDR4 desktop memory: a 288-pin DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your motherboard supports and only fits DDR4 slots. Its white label carries the Samsung logo, a part number starting M378A and a speed line reading PC4-3200AA-U…; the memory chips are printed SAMSUNG. The photo, Samsung's own, shows two modules; the price is for one.",
+      "imagePath": "/products/photos/gadgets/samsung-ram-desktop-ddr4/card-0-720.webp",
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "gadget",
-        "gadget_id": "ram-laptop-ddr3l",
-        "gadget_type": "ram",
-        "department": "storage",
-        "regular_inr": 649,
-        "detail_in_box": "One memory module in an anti-static pack."
-      },
-      "variants": [
-        {
-          "sku": "STO-RAMLAPTOPDDR3L-4GB",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Capacity",
-            "slug": "4gb",
-            "name": "4 GB"
-          },
-          "priceInr": 649,
-          "stock": 15
-        },
-        {
-          "sku": "STO-RAMLAPTOPDDR3L-8GB",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Capacity",
-            "slug": "8gb",
-            "name": "8 GB"
-          },
-          "priceInr": 1569,
-          "stock": 15
-        }
-      ]
-    },
-    {
-      "handle": "desktop-ddr4-ram",
-      "productType": "RAM",
-      "title": "Desktop RAM DDR4 3200 MHz",
-      "description": "DDR4 desktop memory: a 288-pin DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your motherboard supports and only fits DDR4 slots. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
-      "imagePath": "/products/photos/gadgets/ram-desktop-ddr4/card-0-720.webp",
-      "collections": [],
-      "category": null,
-      "tags": [],
-      "metadata": {
-        "kind": "gadget",
-        "gadget_id": "ram-desktop-ddr4",
+        "gadget_id": "samsung-ram-desktop-ddr4",
         "gadget_type": "ram",
         "department": "storage",
         "regular_inr": 10899,
-        "detail_in_box": "One memory module in an anti-static pack."
+        "detail_in_box": "One Samsung memory module in an anti-static pack."
       },
       "variants": [
         {
-          "sku": "STO-RAMDESKTOPDDR4-16GB",
+          "sku": "STO-SAMSUNGRAMDESKTOPDDR4-16GB",
           "modelSlug": null,
           "caseType": null,
           "option": {
@@ -5257,25 +5213,25 @@
       ]
     },
     {
-      "handle": "laptop-ddr4-ram",
+      "handle": "sk-hynix-ddr4-laptop-ram",
       "productType": "RAM",
-      "title": "Laptop RAM DDR4 3200 MHz",
-      "description": "DDR4 laptop memory: a 260-pin SO-DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your laptop supports and only fits DDR4 slots. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
-      "imagePath": "/products/photos/gadgets/ram-laptop-ddr4/card-0-720.webp",
+      "title": "SK hynix Laptop RAM DDR4 3200 MHz",
+      "description": "SK hynix DDR4 laptop memory: a single-rank 260-pin SO-DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your laptop supports and only fits DDR4 slots. Its white label reads SK hynix, 8GB 1Rx16 PC4-3200 and the part number HMAA1GS6CJR6N. Photos: the module we stock, in its sealed clear pack.",
+      "imagePath": "/products/photos/gadgets/sk-hynix-ram-laptop-ddr4/card-0-720.webp",
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "gadget",
-        "gadget_id": "ram-laptop-ddr4",
+        "gadget_id": "sk-hynix-ram-laptop-ddr4",
         "gadget_type": "ram",
         "department": "storage",
         "regular_inr": 4849,
-        "detail_in_box": "One memory module in an anti-static pack."
+        "detail_in_box": "One SK hynix memory module in a sealed clear pack."
       },
       "variants": [
         {
-          "sku": "STO-RAMLAPTOPDDR4-8GB",
+          "sku": "STO-SKHYNIXRAMLAPTOPDDR4-8GB",
           "modelSlug": null,
           "caseType": null,
           "option": {
@@ -5284,18 +5240,6 @@
             "name": "8 GB"
           },
           "priceInr": 4849,
-          "stock": 15
-        },
-        {
-          "sku": "STO-RAMLAPTOPDDR4-16GB",
-          "modelSlug": null,
-          "caseType": null,
-          "option": {
-            "title": "Capacity",
-            "slug": "16gb",
-            "name": "16 GB"
-          },
-          "priceInr": 6669,
           "stock": 15
         }
       ]

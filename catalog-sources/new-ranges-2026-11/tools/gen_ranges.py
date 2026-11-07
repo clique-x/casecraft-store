@@ -272,29 +272,68 @@ ssd_line("sandisk-520-sata", "sandisk-520-sata-ssd-500gb", "SanDisk 520 2.5-inch
             "sandisk-520-sata", [("500gb", "500 GB", "SDSS51500GAB-000G0")])
 
 # ---------------------------------------------------------------- RAM
-RAM_NOTE = "The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand."
-RAMS = [
-    ("desktop-ddr3", "Desktop RAM DDR3 1600 MHz", "240-pin DIMM for DDR3 desktops", "DDR3 desktop memory: a 240-pin DIMM running at 1600 MHz (PC3-12800) on 1.5 V. It only fits DDR3 desktop slots, so check your motherboard before you order.",
-     [{"label": "Type", "value": "DDR3, 240-pin DIMM (desktop)"}, {"label": "Speed", "value": "1600 MHz (PC3-12800)"}, {"label": "Voltage", "value": "1.5 V"}],
-     [("4gb", "4 GB"), ("8gb", "8 GB")]),
-    ("laptop-ddr3l", "Laptop RAM DDR3L 1600 MHz", "204-pin SO-DIMM for DDR3 and DDR3L laptops", "Low-voltage DDR3L laptop memory: a 204-pin SO-DIMM at 1600 MHz (PC3L-12800) on 1.35 V, which also runs at 1.5 V in older DDR3 laptops.",
-     [{"label": "Type", "value": "DDR3L, 204-pin SO-DIMM (laptop)"}, {"label": "Speed", "value": "1600 MHz (PC3L-12800)"}, {"label": "Voltage", "value": "1.35 V (also runs at 1.5 V)"}],
-     [("4gb", "4 GB"), ("8gb", "8 GB")]),
-    ("desktop-ddr4", "Desktop RAM DDR4 3200 MHz", "288-pin DIMM for DDR4 desktops", "DDR4 desktop memory: a 288-pin DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your motherboard supports and only fits DDR4 slots.",
-     [{"label": "Type", "value": "DDR4, 288-pin DIMM (desktop)"}, {"label": "Speed", "value": "3200 MHz (PC4-25600); runs at your board's supported speed"}, {"label": "Voltage", "value": "1.2 V"}],
-     [("8gb", "8 GB"), ("16gb", "16 GB"), ("32gb", "32 GB")]),
-    ("laptop-ddr4", "Laptop RAM DDR4 3200 MHz", "260-pin SO-DIMM for DDR4 laptops", "DDR4 laptop memory: a 260-pin SO-DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your laptop supports and only fits DDR4 slots.",
-     [{"label": "Type", "value": "DDR4, 260-pin SO-DIMM (laptop)"}, {"label": "Speed", "value": "3200 MHz (PC4-25600); runs at your laptop's supported speed"}, {"label": "Voltage", "value": "1.2 V"}],
-     [("8gb", "8 GB"), ("16gb", "16 GB"), ("32gb", "32 GB")]),
-]
-for kind, title, short, desc, specs, sizes in RAMS:
-    product("STORAGE", {
-        "id": f"ram-{kind}", "handle": f"{kind}-ram", "title": title, "type": "ram", "optionKind": "capacity",
-        "short": short, "description": f"{desc} {RAM_NOTE}",
-        "features": [specs[0]["value"], specs[1]["value"].split(";")[0], "Samsung, SK hynix or Crucial"],
-        "specs": [*specs, {"label": "Brand", "value": "Samsung, SK hynix or Crucial, as available"}],
-        "inBox": "One memory module in an anti-static pack.",
-    }, [opt(s, n, f"ram-{kind}-{s}") for s, n in sizes], [("Module", ram(kind, "main")), ("Flat", ram(kind, "flat"))])
+# One listing per brand, each with real photos of that brand's module: Samsung's own product images (Open Icecat) and
+# the shop's photo of the SK hynix stick it stocks. Sizes without a real photo of the brand are not listed.
+RAM_PHOTO_NOTE = "Photos are Samsung's own product images; the revision letters at the end of the part number can differ on the module you receive."
+product("STORAGE", {
+    "id": "samsung-ram-laptop-ddr3l", "handle": "samsung-ddr3l-laptop-ram", "title": "Samsung Laptop RAM DDR3L 1600 MHz",
+    "type": "ram", "optionKind": "capacity",
+    "short": "Samsung 204-pin SO-DIMM for DDR3 and DDR3L laptops",
+    "description": "Samsung low-voltage DDR3L laptop memory: a 204-pin SO-DIMM at 1600 MHz (PC3L-12800) on 1.35 V, which also runs at 1.5 V in older DDR3 laptops. "
+                   "Its white label carries the Samsung logo and a part number starting M471B5173 (4 GB) or M471B1G73 (8 GB), and the memory chips are printed SAMSUNG or SEC. "
+                   + RAM_PHOTO_NOTE,
+    "features": ["DDR3L, 204-pin SO-DIMM (laptop)", "1600 MHz (PC3L-12800)", "Samsung label and chips"],
+    "specs": [
+        {"label": "Brand", "value": "Samsung"},
+        {"label": "Type", "value": "DDR3L, 204-pin SO-DIMM (laptop)"},
+        {"label": "Speed", "value": "1600 MHz (PC3L-12800)"},
+        {"label": "Voltage", "value": "1.35 V (also runs at 1.5 V)"},
+        {"label": "Part number", "value": "M471B5173…-YK0 (4 GB), M471B1G73…-YK0 (8 GB)"},
+        {"label": "Label reads", "value": "4GB 1Rx8 or 8GB 2Rx8 PC3L-12800S"},
+    ],
+    "inBox": "One Samsung memory module in an anti-static pack.",
+}, [opt("4gb", "4 GB", "ram-samsung-laptop-ddr3l-4gb"), opt("8gb", "8 GB", "ram-samsung-laptop-ddr3l-8gb")],
+    [("4 GB module", teal("ram/samsung-ddr3l-4gb.webp")), ("8 GB module", teal("ram/samsung-ddr3l-8gb.webp")),
+     ("Label close-up", teal("ram/samsung-ddr3l-label.webp"))],
+    {"4gb": 0, "8gb": 1})
+
+product("STORAGE", {
+    "id": "samsung-ram-desktop-ddr4", "handle": "samsung-ddr4-desktop-ram", "title": "Samsung Desktop RAM DDR4 3200 MHz",
+    "type": "ram", "optionKind": "capacity",
+    "short": "Samsung 288-pin DIMM for DDR4 desktops",
+    "description": "Samsung DDR4 desktop memory: a 288-pin DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your motherboard supports and only fits DDR4 slots. "
+                   "Its white label carries the Samsung logo, a part number starting M378A and a speed line reading PC4-3200AA-U…; the memory chips are printed SAMSUNG. "
+                   "The photo, Samsung's own, shows two modules; the price is for one.",
+    "features": ["DDR4, 288-pin DIMM (desktop)", "3200 MHz (PC4-25600)", "Samsung label and chips"],
+    "specs": [
+        {"label": "Brand", "value": "Samsung"},
+        {"label": "Type", "value": "DDR4, 288-pin DIMM (desktop)"},
+        {"label": "Speed", "value": "3200 MHz (PC4-25600); runs at your board's supported speed"},
+        {"label": "Voltage", "value": "1.2 V"},
+        {"label": "Part number", "value": "Samsung M378A series (desktop)"},
+    ],
+    "inBox": "One Samsung memory module in an anti-static pack.",
+}, [opt("16gb", "16 GB", "ram-desktop-ddr4-16gb")],
+    [("Two modules shown", teal("ram/samsung-ddr4-desktop-16gb.webp"))])
+
+product("STORAGE", {
+    "id": "sk-hynix-ram-laptop-ddr4", "handle": "sk-hynix-ddr4-laptop-ram", "title": "SK hynix Laptop RAM DDR4 3200 MHz",
+    "type": "ram", "optionKind": "capacity",
+    "short": "SK hynix 260-pin SO-DIMM for DDR4 laptops",
+    "description": "SK hynix DDR4 laptop memory: a single-rank 260-pin SO-DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your laptop supports and only fits DDR4 slots. "
+                   "Its white label reads SK hynix, 8GB 1Rx16 PC4-3200 and the part number HMAA1GS6CJR6N. Photos: the module we stock, in its sealed clear pack.",
+    "features": ["DDR4, 260-pin SO-DIMM (laptop)", "3200 MHz (PC4-25600)", "SK hynix HMAA1GS6CJR6N"],
+    "specs": [
+        {"label": "Brand", "value": "SK hynix"},
+        {"label": "Type", "value": "DDR4, 260-pin SO-DIMM (laptop)"},
+        {"label": "Speed", "value": "3200 MHz (PC4-25600); runs at your laptop's supported speed"},
+        {"label": "Voltage", "value": "1.2 V"},
+        {"label": "Part number", "value": "HMAA1GS6CJR6N"},
+        {"label": "Label reads", "value": "8GB 1Rx16 PC4-3200"},
+    ],
+    "inBox": "One SK hynix memory module in a sealed clear pack.",
+}, [opt("8gb", "8 GB", "ram-laptop-ddr4-8gb")],
+    [("In its pack", teal("ram/sk-hynix-pack.webp")), ("Label close-up", teal("ram/sk-hynix-label.webp"))])
 
 # ---------------------------------------------------------------- drive cases and adapters
 product("STORAGE", {

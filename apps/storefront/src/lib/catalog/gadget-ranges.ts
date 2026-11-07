@@ -1113,79 +1113,24 @@ export const STORAGE: readonly GadgetEntry[] = [
     }
   },
   {
-    "id": "ram-desktop-ddr3",
-    "handle": "desktop-ddr3-ram",
-    "title": "Desktop RAM DDR3 1600 MHz",
+    "id": "samsung-ram-laptop-ddr3l",
+    "handle": "samsung-ddr3l-laptop-ram",
+    "title": "Samsung Laptop RAM DDR3L 1600 MHz",
     "type": "ram",
-    "priceInr": 649,
-    "regularInr": 649,
-    "short": "240-pin DIMM for DDR3 desktops",
-    "description": "DDR3 desktop memory: a 240-pin DIMM running at 1600 MHz (PC3-12800) on 1.5 V. It only fits DDR3 desktop slots, so check your motherboard before you order. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
-    "features": [
-      "DDR3, 240-pin DIMM (desktop)",
-      "1600 MHz (PC3-12800)",
-      "Samsung, SK hynix or Crucial"
-    ],
-    "specs": [
-      {
-        "label": "Type",
-        "value": "DDR3, 240-pin DIMM (desktop)"
-      },
-      {
-        "label": "Speed",
-        "value": "1600 MHz (PC3-12800)"
-      },
-      {
-        "label": "Voltage",
-        "value": "1.5 V"
-      },
-      {
-        "label": "Brand",
-        "value": "Samsung, SK hynix or Crucial, as available"
-      }
-    ],
-    "inBox": "One memory module in an anti-static pack.",
-    "optionKind": "capacity",
-    "options": [
-      {
-        "slug": "4gb",
-        "name": "4 GB",
-        "hex": "#3a3d42",
-        "priceInr": 649,
-        "regularInr": 649,
-        "orderIn": true
-      },
-      {
-        "slug": "8gb",
-        "name": "8 GB",
-        "hex": "#3a3d42",
-        "priceInr": 1519,
-        "regularInr": 1519
-      }
-    ],
-    "photos": {
-      "id": "ram-desktop-ddr3",
-      "gallery": [
-        "Module",
-        "Flat"
-      ]
-    }
-  },
-  {
-    "id": "ram-laptop-ddr3l",
-    "handle": "laptop-ddr3l-ram",
-    "title": "Laptop RAM DDR3L 1600 MHz",
-    "type": "ram",
-    "priceInr": 649,
-    "regularInr": 649,
-    "short": "204-pin SO-DIMM for DDR3 and DDR3L laptops",
-    "description": "Low-voltage DDR3L laptop memory: a 204-pin SO-DIMM at 1600 MHz (PC3L-12800) on 1.35 V, which also runs at 1.5 V in older DDR3 laptops. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
+    "priceInr": 999,
+    "regularInr": 999,
+    "short": "Samsung 204-pin SO-DIMM for DDR3 and DDR3L laptops",
+    "description": "Samsung low-voltage DDR3L laptop memory: a 204-pin SO-DIMM at 1600 MHz (PC3L-12800) on 1.35 V, which also runs at 1.5 V in older DDR3 laptops. Its white label carries the Samsung logo and a part number starting M471B5173 (4 GB) or M471B1G73 (8 GB), and the memory chips are printed SAMSUNG or SEC. Photos are Samsung's own product images; the revision letters at the end of the part number can differ on the module you receive.",
     "features": [
       "DDR3L, 204-pin SO-DIMM (laptop)",
       "1600 MHz (PC3L-12800)",
-      "Samsung, SK hynix or Crucial"
+      "Samsung label and chips"
     ],
     "specs": [
+      {
+        "label": "Brand",
+        "value": "Samsung"
+      },
       {
         "label": "Type",
         "value": "DDR3L, 204-pin SO-DIMM (laptop)"
@@ -1199,53 +1144,66 @@ export const STORAGE: readonly GadgetEntry[] = [
         "value": "1.35 V (also runs at 1.5 V)"
       },
       {
-        "label": "Brand",
-        "value": "Samsung, SK hynix or Crucial, as available"
+        "label": "Part number",
+        "value": "M471B5173…-YK0 (4 GB), M471B1G73…-YK0 (8 GB)"
+      },
+      {
+        "label": "Label reads",
+        "value": "4GB 1Rx8 or 8GB 2Rx8 PC3L-12800S"
       }
     ],
-    "inBox": "One memory module in an anti-static pack.",
+    "inBox": "One Samsung memory module in an anti-static pack.",
     "optionKind": "capacity",
     "options": [
       {
         "slug": "4gb",
         "name": "4 GB",
         "hex": "#3a3d42",
-        "priceInr": 649,
-        "regularInr": 649,
+        "priceInr": 999,
+        "regularInr": 999,
         "orderIn": true
       },
       {
         "slug": "8gb",
         "name": "8 GB",
         "hex": "#3a3d42",
-        "priceInr": 1569,
-        "regularInr": 1569,
+        "priceInr": 2199,
+        "regularInr": 2199,
         "orderIn": true
       }
     ],
     "photos": {
-      "id": "ram-laptop-ddr3l",
+      "id": "samsung-ram-laptop-ddr3l",
       "gallery": [
-        "Module",
-        "Flat"
-      ]
+        "4 GB module",
+        "8 GB module",
+        "Label close-up"
+      ],
+      "heroByOption": {
+        "4gb": 0,
+        "8gb": 1
+      }
     }
   },
   {
-    "id": "ram-desktop-ddr4",
-    "handle": "desktop-ddr4-ram",
-    "title": "Desktop RAM DDR4 3200 MHz",
+    "id": "samsung-ram-desktop-ddr4",
+    "handle": "samsung-ddr4-desktop-ram",
+    "title": "Samsung Desktop RAM DDR4 3200 MHz",
     "type": "ram",
     "priceInr": 10899,
     "regularInr": 10899,
-    "short": "288-pin DIMM for DDR4 desktops",
-    "description": "DDR4 desktop memory: a 288-pin DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your motherboard supports and only fits DDR4 slots. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
+    "short": "Samsung 288-pin DIMM for DDR4 desktops",
+    "description": "Samsung DDR4 desktop memory: a 288-pin DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your motherboard supports and only fits DDR4 slots. Its white label carries the Samsung logo, a part number starting M378A and a speed line reading PC4-3200AA-U…; the memory chips are printed SAMSUNG. The photo, Samsung's own, shows two modules; the price is for one.",
     "features": [
       "DDR4, 288-pin DIMM (desktop)",
       "3200 MHz (PC4-25600)",
-      "Samsung, SK hynix or Crucial"
+      "Samsung label and chips"
     ],
     "specs": [
+      {
+        "label": "Brand",
+        "value": "Samsung"
+      },
       {
         "label": "Type",
         "value": "DDR4, 288-pin DIMM (desktop)"
@@ -1259,11 +1217,11 @@ export const STORAGE: readonly GadgetEntry[] = [
         "value": "1.2 V"
       },
       {
-        "label": "Brand",
-        "value": "Samsung, SK hynix or Crucial, as available"
+        "label": "Part number",
+        "value": "Samsung M378A series (desktop)"
       }
     ],
-    "inBox": "One memory module in an anti-static pack.",
+    "inBox": "One Samsung memory module in an anti-static pack.",
     "optionKind": "capacity",
     "options": [
       {
@@ -1276,28 +1234,31 @@ export const STORAGE: readonly GadgetEntry[] = [
       }
     ],
     "photos": {
-      "id": "ram-desktop-ddr4",
+      "id": "samsung-ram-desktop-ddr4",
       "gallery": [
-        "Module",
-        "Flat"
+        "Two modules shown"
       ]
     }
   },
   {
-    "id": "ram-laptop-ddr4",
-    "handle": "laptop-ddr4-ram",
-    "title": "Laptop RAM DDR4 3200 MHz",
+    "id": "sk-hynix-ram-laptop-ddr4",
+    "handle": "sk-hynix-ddr4-laptop-ram",
+    "title": "SK hynix Laptop RAM DDR4 3200 MHz",
     "type": "ram",
     "priceInr": 4849,
     "regularInr": 4849,
-    "short": "260-pin SO-DIMM for DDR4 laptops",
-    "description": "DDR4 laptop memory: a 260-pin SO-DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your laptop supports and only fits DDR4 slots. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
+    "short": "SK hynix 260-pin SO-DIMM for DDR4 laptops",
+    "description": "SK hynix DDR4 laptop memory: a single-rank 260-pin SO-DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your laptop supports and only fits DDR4 slots. Its white label reads SK hynix, 8GB 1Rx16 PC4-3200 and the part number HMAA1GS6CJR6N. Photos: the module we stock, in its sealed clear pack.",
     "features": [
       "DDR4, 260-pin SO-DIMM (laptop)",
       "3200 MHz (PC4-25600)",
-      "Samsung, SK hynix or Crucial"
+      "SK hynix HMAA1GS6CJR6N"
     ],
     "specs": [
+      {
+        "label": "Brand",
+        "value": "SK hynix"
+      },
       {
         "label": "Type",
         "value": "DDR4, 260-pin SO-DIMM (laptop)"
@@ -1311,11 +1272,15 @@ export const STORAGE: readonly GadgetEntry[] = [
         "value": "1.2 V"
       },
       {
-        "label": "Brand",
-        "value": "Samsung, SK hynix or Crucial, as available"
+        "label": "Part number",
+        "value": "HMAA1GS6CJR6N"
+      },
+      {
+        "label": "Label reads",
+        "value": "8GB 1Rx16 PC4-3200"
       }
     ],
-    "inBox": "One memory module in an anti-static pack.",
+    "inBox": "One SK hynix memory module in a sealed clear pack.",
     "optionKind": "capacity",
     "options": [
       {
@@ -1324,21 +1289,13 @@ export const STORAGE: readonly GadgetEntry[] = [
         "hex": "#3a3d42",
         "priceInr": 4849,
         "regularInr": 4849
-      },
-      {
-        "slug": "16gb",
-        "name": "16 GB",
-        "hex": "#3a3d42",
-        "priceInr": 6669,
-        "regularInr": 6669,
-        "orderIn": true
       }
     ],
     "photos": {
-      "id": "ram-laptop-ddr4",
+      "id": "sk-hynix-ram-laptop-ddr4",
       "gallery": [
-        "Module",
-        "Flat"
+        "In its pack",
+        "Label close-up"
       ]
     }
   },
