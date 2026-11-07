@@ -11,8 +11,37 @@
  * is shown. Change them here; the backend catalogue is regenerated with `pnpm catalog:export`.
  */
 
-export type Department = 'audio' | 'charging';
-export type GadgetType = 'earbuds' | 'neckband' | 'speaker' | 'charger' | 'car-charger' | 'cable';
+import { CAMERAS, SPEAKERS, STORAGE } from './gadget-ranges';
+
+export type Department = 'audio' | 'charging' | 'storage' | 'cameras';
+export type GadgetType =
+  | 'earbuds'
+  | 'neckband'
+  | 'speaker'
+  | 'charger'
+  | 'car-charger'
+  | 'cable'
+  | 'pen-drive'
+  | 'memory-card'
+  | 'ssd'
+  | 'ram'
+  | 'enclosure'
+  | 'otg'
+  | 'camera';
+
+/** What a product's options are: colour swatches, or buttons for cable length, capacity, camera resolution or model. */
+export type OptionKind = 'colour' | 'length' | 'capacity' | 'resolution' | 'model';
+
+export const OPTION_LABEL: Record<OptionKind, string> = {
+  colour: 'Colour',
+  length: 'Length',
+  capacity: 'Capacity',
+  resolution: 'Resolution',
+  model: 'Model',
+};
+
+/** Dispatch time for options the shop orders in after the sale instead of keeping on the shelf. */
+export const ORDER_IN_WINDOW = '3–5 days';
 
 export interface GadgetOption {
   slug: string;
@@ -22,6 +51,8 @@ export interface GadgetOption {
   /** Price for this option when it differs from the product's (a longer cable). */
   priceInr?: number;
   regularInr?: number;
+  /** Not on the shelf: the shop orders it in after the sale, so it ships in ORDER_IN_WINDOW. */
+  orderIn?: boolean;
 }
 
 /** Official product images, written by scripts/photo-gadgets.mjs under /products/photos/gadgets/<id>/. */
@@ -49,8 +80,8 @@ export interface GadgetEntry {
   /** Key specs, shown as a list on the product page. */
   specs: readonly { label: string; value: string }[];
   inBox: string;
-  /** What the options are: colour swatches, or cable lengths as buttons. */
-  optionKind: 'colour' | 'length';
+  /** What the options are: colour swatches, or lengths, capacities or resolutions as buttons. */
+  optionKind: OptionKind;
   options: readonly GadgetOption[];
   /**
    * Made by the phone brand itself and sold sealed. Only set this for stock bought from the brand or
@@ -78,6 +109,13 @@ export const GADGET_TYPE_LABEL: Record<GadgetType, string> = {
   charger: 'Charger',
   'car-charger': 'Car charger',
   cable: 'Data cable',
+  'pen-drive': 'Pen drive',
+  'memory-card': 'Memory card',
+  ssd: 'SSD',
+  ram: 'RAM',
+  enclosure: 'Drive case',
+  otg: 'OTG adapter',
+  camera: 'Wi-Fi camera',
 };
 
 export const DEPARTMENT_OF: Record<GadgetType, Department> = {
@@ -87,6 +125,13 @@ export const DEPARTMENT_OF: Record<GadgetType, Department> = {
   charger: 'charging',
   'car-charger': 'charging',
   cable: 'charging',
+  'pen-drive': 'storage',
+  'memory-card': 'storage',
+  ssd: 'storage',
+  ram: 'storage',
+  enclosure: 'storage',
+  otg: 'storage',
+  camera: 'cameras',
 };
 
 export interface DepartmentInfo {
@@ -95,6 +140,8 @@ export interface DepartmentInfo {
   name: string;
   title: string;
   intro: string;
+  /** The promise in the listing header's badge. */
+  badge: string;
   sections: readonly { id: string; types: readonly GadgetType[]; heading: string; intro: string }[];
 }
 
@@ -103,21 +150,45 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
     path: '/audio',
     name: 'Audio',
     title: 'Audio',
-    intro: 'Sealed boAt and realme earbuds and neckbands with the brand warranty. They pair with any phone; pick a colour on the product page.',
+    badge: 'Sealed, brand warranty',
+    intro: 'Sealed boAt and realme earbuds, neckbands and speakers with the brand warranty. They pair with any phone; pick a colour on the product page.',
     sections: [
       { id: 'earbuds', types: ['earbuds'], heading: 'Earbuds', intro: 'True wireless, with a charging case. Pairs with Android and iPhone.' },
       { id: 'neckband', types: ['neckband'], heading: 'Neckbands', intro: 'All-day battery and clear calls, always round your neck.' },
+      { id: 'speakers', types: ['speaker'], heading: 'Bluetooth speakers', intro: 'Portable boAt speakers with big bass, TWS pairing and a splash-proof body.' },
     ],
   },
   charging: {
     path: '/charging',
     name: 'Chargers & cables',
     title: 'Chargers and data cables',
+    badge: 'Sealed, brand warranty',
     intro: 'Fast chargers and original brand cables. Pick your phone and each product says whether it fits and fast-charges it.',
     sections: [
       { id: 'chargers', types: ['charger', 'car-charger'], heading: 'Chargers', intro: 'USB-C fast chargers for the wall and the car. Cables are sold separately.' },
       { id: 'cables', types: ['cable'], heading: 'Data cables', intro: 'Original cables from the phone brands, sealed, plus our braided cables in two lengths.' },
     ],
+  },
+  storage: {
+    path: '/storage',
+    name: 'Storage',
+    title: 'Storage, memory cards and RAM',
+    badge: 'Brand warranty',
+    intro: `Pen drives, microSD cards, SSDs and RAM from SanDisk, Samsung, WD and Consistent. Pick the capacity on the product page; sizes we order in for you ship in ${ORDER_IN_WINDOW}.`,
+    sections: [
+      { id: 'cards', types: ['memory-card', 'pen-drive'], heading: 'Memory cards and pen drives', intro: 'microSD cards for phones, cameras and dashcams, and USB pen drives.' },
+      { id: 'ssd', types: ['ssd'], heading: 'SSDs', intro: '2.5-inch SATA and M.2 NVMe drives to speed up a laptop or desktop.' },
+      { id: 'ram', types: ['ram'], heading: 'RAM', intro: 'Laptop and desktop memory, DDR3 and DDR4. Check your machine takes the same type before you order.' },
+      { id: 'adapters', types: ['enclosure', 'otg'], heading: 'Drive cases and adapters', intro: 'Turn a spare SSD into a portable drive, or plug a pen drive into your phone.' },
+    ],
+  },
+  cameras: {
+    path: '/cameras',
+    name: 'Cameras',
+    title: 'Wi-Fi security cameras',
+    badge: 'Sealed, brand warranty',
+    intro: 'CP Plus pan-and-tilt Wi-Fi cameras for the home and shop, with night vision, two-way talk and the ezyKam+ app.',
+    sections: [{ id: 'wifi', types: ['camera'], heading: 'Wi-Fi cameras', intro: 'Plug in, connect to 2.4 GHz Wi-Fi, and watch live from your phone.' }],
   },
 };
 
@@ -876,7 +947,8 @@ const CHARGING: readonly GadgetEntry[] = [
 /** Chargers and cables are placeholder listings (no stock, no photos) and stay off until they are real. */
 const SHOW_CHARGING = false;
 
-export const GADGETS: readonly GadgetEntry[] = SHOW_CHARGING ? [...AUDIO, ...CHARGING] : AUDIO;
+/** Speakers, storage and cameras live in gadget-ranges.ts (added 7 Nov 2026; prices from the owner's price sheet). */
+export const GADGETS: readonly GadgetEntry[] = [...AUDIO, ...SPEAKERS, ...(SHOW_CHARGING ? CHARGING : []), ...STORAGE, ...CAMERAS];
 
 /** Price of one option, falling back to the product's. */
 export function optionPrice(entry: GadgetEntry, option: GadgetOption): { priceInr: number; regularInr: number } {

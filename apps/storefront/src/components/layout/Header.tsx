@@ -15,6 +15,7 @@ interface HeaderProps {
 const NAV = [
   { href: '/covers', label: 'Cases' },
   { href: '/audio', label: 'Audio' },
+  { href: '/storage', label: 'Storage' },
   { href: '/accessories', label: 'Accessories' },
 ] as const;
 

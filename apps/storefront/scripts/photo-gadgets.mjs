@@ -3,6 +3,8 @@
 // → public/products/photos/gadgets/<gadgetId>/g-<n>-{160,480,960,1440}.webp (square, for the gallery, stage and thumbnails)
 // → public/products/photos/gadgets/<gadgetId>/card-<n>-{320,480,720}.webp (4:5, for the cards)
 // and prints the `gallery` captions to paste into lib/catalog/gadgets.ts. Run with `pnpm photos:gadgets <srcDir>`.
+// `--teal`: the sources are full-bleed square shots on the GadgetsHub teal stage (catalog-sources/), so they keep
+// their own background and the 4:5 cards are cropped from the centre instead of padded onto the light backdrop.
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -33,16 +35,17 @@ async function imagesFor(dir) {
  * are multiplied by the backdrop colour, so their white turns into the backdrop exactly and every card and
  * gallery tile shares one background; the product itself shifts by a few percent at most.
  */
-async function onBackdrop(file) {
+async function onBackdrop(file, teal) {
   const { data, info } = await sharp(file).rotate().toBuffer({ resolveWithObject: true });
+  if (teal) return sharp(data).flatten({ background: { r: 8, g: 37, b: 46 } }).toBuffer();
   const meta = await sharp(data).metadata();
   if (meta.hasAlpha) return sharp(data).flatten({ background: BACKDROP }).toBuffer();
   const tint = { create: { width: info.width, height: info.height, channels: 3, background: BACKDROP } };
   return sharp(data).composite([{ input: tint, blend: 'multiply' }]).toBuffer();
 }
 
-async function writeImage(file, id, n) {
-  const flat = await onBackdrop(file);
+async function writeImage(file, id, n, teal) {
+  const flat = await onBackdrop(file, teal);
   const dir = path.join(OUT, id);
   for (const width of GALLERY_WIDTHS) {
     await sharp(flat)
@@ -52,7 +55,7 @@ async function writeImage(file, id, n) {
   }
   for (const width of CARD_WIDTHS) {
     await sharp(flat)
-      .resize({ width, height: Math.round(width / CARD_ASPECT), fit: 'contain', background: BACKDROP })
+      .resize({ width, height: Math.round(width / CARD_ASPECT), fit: teal ? 'cover' : 'contain', background: BACKDROP })
       .webp(WEBP)
       .toFile(path.join(dir, `card-${n}-${width}.webp`));
   }
@@ -68,14 +71,16 @@ async function pruneFrom(id, count) {
 }
 
 async function main() {
-  const srcDir = process.argv[2];
-  if (!srcDir) throw new Error('usage: node scripts/photo-gadgets.mjs <srcDir with <gadgetId>/<n>-<Caption>.jpg>');
+  const args = process.argv.slice(2);
+  const teal = args.includes('--teal');
+  const srcDir = args.find((a) => !a.startsWith('--'));
+  if (!srcDir) throw new Error('usage: node scripts/photo-gadgets.mjs [--teal] <srcDir with <gadgetId>/<n>-<Caption>.jpg>');
   const ids = (await fs.readdir(srcDir, { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name);
   for (const id of ids.sort()) {
     const images = await imagesFor(path.join(srcDir, id));
     if (images.length === 0) continue;
     await fs.mkdir(path.join(OUT, id), { recursive: true });
-    for (const [i, img] of images.entries()) await writeImage(img.file, id, i);
+    for (const [i, img] of images.entries()) await writeImage(img.file, id, i, teal);
     await pruneFrom(id, images.length);
     console.log(`${id}: gallery: [${images.map((img) => JSON.stringify(img.caption)).join(', ')}]`);
   }

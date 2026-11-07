@@ -440,7 +440,7 @@ export const ACCESSORY_DETAILS: readonly ProductDetail[] = ACCESSORIES.map(acces
 // --- gadgets: wireless audio, chargers, cables -----------------------------------------------------
 
 const GADGET_STOCK = 15;
-const SKU_PREFIX = { audio: 'AUD', charging: 'CHG' } as const;
+const SKU_PREFIX = { audio: 'AUD', charging: 'CHG', storage: 'STO', cameras: 'CAM' } as const;
 
 /**
  * One variant per option (colour or cable length). Gadgets do not fit one phone, so `modelSlug`

@@ -5,7 +5,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { photoSrc } from '../src/lib/catalog/photos';
 import { ACCESSORY_TYPE_LABEL } from '../src/lib/catalog/accessories';
-import { DEPARTMENT_OF, GADGET_TYPE_LABEL, gadgetCardSrc, gadgetHeroIndex } from '../src/lib/catalog/gadgets';
+import { DEPARTMENT_OF, GADGET_TYPE_LABEL, OPTION_LABEL, gadgetCardSrc, gadgetHeroIndex } from '../src/lib/catalog/gadgets';
 import { ACCESSORY_DETAILS, GADGET_DETAILS, CASE_TYPES, PHONE_MODELS, PRODUCT_DETAILS, THEMES } from '../src/lib/medusa/fixtures';
 
 const OUT = path.resolve(import.meta.dirname, '../../backend/data/catalog.json');
@@ -95,7 +95,7 @@ const catalog = {
     }),
     ...GADGET_DETAILS.map((p) => {
       const g = p.gadget!;
-      const optionTitle = g.optionKind === 'colour' ? 'Colour' : 'Length';
+      const optionTitle = OPTION_LABEL[g.optionKind];
       return {
         handle: p.handle,
         productType: GADGET_TYPE_LABEL[g.type],
@@ -115,7 +115,7 @@ const catalog = {
           ...(g.original ? { original_brand: g.original.brand } : {}),
           ...(g.warrantyMonths ? { warranty_months: g.warrantyMonths } : {}),
         },
-        // Gadgets vary by colour or cable length; the storefront keeps the option slug in modelSlug.
+        // Gadgets vary by colour, length, capacity, resolution or model; the storefront keeps the option slug in modelSlug.
         variants: p.variants.map((v) => {
           const o = g.options.find((c) => c.slug === v.modelSlug)!;
           return {

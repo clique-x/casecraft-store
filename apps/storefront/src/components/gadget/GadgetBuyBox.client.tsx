@@ -1,14 +1,14 @@
 'use client';
 
 import { useEffect } from 'react';
-import { MessageCircle } from 'lucide-react';
+import { ClockIcon, MessageCircle } from 'lucide-react';
 import { BuyButtons } from '@/components/product/BuyButtons';
 import { PriceTag } from '@/components/product/PriceTag.client';
 import { StockLine } from '@/components/product/StockLine.client';
 import { GadgetAssurance } from '@/components/gadget/GadgetAssurance';
 import { PhoneFitNote } from '@/components/gadget/PhoneFitNote.client';
 import { keepTogether } from '@/components/gadget/keep-together';
-import { GADGET_TYPE_LABEL, optionPrice } from '@/lib/catalog/gadgets';
+import { GADGET_TYPE_LABEL, OPTION_LABEL, ORDER_IN_WINDOW, optionPrice } from '@/lib/catalog/gadgets';
 import { formatInr } from '@/lib/catalog/photos';
 import type { ProductDetail } from '@/lib/medusa/fixtures';
 import { DEFAULT_SELECTION, useVariantSelection, variantStore } from '@/lib/product/variant-store';
@@ -16,23 +16,29 @@ import { askOnWhatsAppHref } from '@/lib/product/whatsapp-link';
 import { cn } from '@/lib/utils';
 
 /**
- * Buy box for audio, chargers and cables: colour swatches or cable lengths instead of the phone picker.
- * The option slug goes in the shared selection's `modelSlug`, so the sticky bar and cart work as on
- * cover pages. The URL keeps it as `?colour=` or `?length=`.
+ * Buy box for gadgets: colour swatches, or buttons for length, capacity, resolution or model, instead of the phone
+ * picker. The option slug goes in the shared selection's `modelSlug`, so the sticky bar and cart work as on
+ * cover pages. The URL keeps it as `?colour=`, `?capacity=` and so on.
  */
 export function GadgetBuyBox({ product }: { product: ProductDetail }) {
   const gadget = product.gadget!;
   const selection = useVariantSelection();
   const param = gadget.optionKind;
-  const optionLabel = param === 'colour' ? 'Colour' : 'Length';
+  const optionLabel = OPTION_LABEL[param];
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search).get(param);
-    const inStock = product.variants.find((v) => v.stock > 0)?.modelSlug ?? product.variants[0]?.modelSlug ?? null;
+    // Open on an option that is on the shelf, then any in stock (ordered-in sizes ship later).
+    const onShelf = (slug: string) => !gadget.options.find((o) => o.slug === slug)?.orderIn;
+    const inStock =
+      product.variants.find((v) => v.stock > 0 && onShelf(v.modelSlug))?.modelSlug ??
+      product.variants.find((v) => v.stock > 0)?.modelSlug ??
+      product.variants[0]?.modelSlug ??
+      null;
     const start = product.variants.some((v) => v.modelSlug === query) ? query : inStock;
     variantStore.reset({ modelSlug: start, caseType: 'soft' });
     return () => variantStore.reset(DEFAULT_SELECTION);
-  }, [product, param]);
+  }, [product, param, gadget]);
 
   useEffect(() => {
     const current = variantStore.get().modelSlug;
@@ -49,7 +55,7 @@ export function GadgetBuyBox({ product }: { product: ProductDetail }) {
   const regular = option ? optionPrice(gadget, option).regularInr : product.regularInr;
   const whatsappHref = askOnWhatsAppHref({
     productName: product.title,
-    modelName: option ? (param === 'colour' ? `${option.name} colour` : option.name) : null,
+    modelName: option ? (param === 'colour' ? `${option.name} colour` : `${option.name}${param === 'capacity' ? '' : ` ${optionLabel.toLowerCase()}`}`) : null,
     caseTypeName: null,
     sku: variant?.sku ?? null,
     intent: soldOut ? 'notify' : 'order',
@@ -64,7 +70,14 @@ export function GadgetBuyBox({ product }: { product: ProductDetail }) {
         </h1>
         <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
           <PriceTag priceInr={price} regularInr={regular} />
-          <StockLine stock={variant ? variant.stock : null} />
+          {option?.orderIn && variant && variant.stock > 0 ? (
+            <p role="status" aria-live="polite" className="flex min-h-5 items-center gap-1.5 text-sm font-medium text-fg">
+              <ClockIcon className="size-4 shrink-0 text-accent-text" aria-hidden="true" />
+              Ships in {ORDER_IN_WINDOW}
+            </p>
+          ) : (
+            <StockLine stock={variant ? variant.stock : null} />
+          )}
         </div>
         <p className="text-body text-fg-muted">{gadget.short}</p>
         <PhoneFitNote gadget={gadget} className="text-sm" />

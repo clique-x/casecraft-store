@@ -3,14 +3,14 @@ import { BadgeCheck } from 'lucide-react';
 import { GadgetArt } from '@/components/gadget/GadgetArt';
 import { PhoneFitNote } from '@/components/gadget/PhoneFitNote.client';
 import { keepTogether } from '@/components/gadget/keep-together';
-import { GADGET_TYPE_LABEL, gadgetCardSrc, gadgetCardSrcSet, gadgetHeroIndex } from '@/lib/catalog/gadgets';
+import { GADGET_TYPE_LABEL, OPTION_LABEL, gadgetCardSrc, gadgetCardSrcSet, gadgetHeroIndex } from '@/lib/catalog/gadgets';
 import { formatInr } from '@/lib/catalog/photos';
 import type { HomeProduct } from '@/lib/medusa/fixtures';
 import { cn } from '@/lib/utils';
 
 const CARD_SIZES = '(max-width: 768px) 46vw, (max-width: 1024px) 31vw, (max-width: 1280px) 23vw, 240px';
 
-/** Grid card for audio, chargers and cables, with the colours or lengths it comes in. */
+/** Grid card for a gadget, with the colours, lengths, capacities or resolutions it comes in. */
 export function GadgetCard({ product, className }: { product: HomeProduct; className?: string }) {
   const g = product.gadget;
   if (!g) return null;
@@ -79,7 +79,7 @@ export function GadgetCard({ product, className }: { product: HomeProduct; class
         aria-hidden="true"
         className="mt-auto inline-flex h-10 items-center justify-center gap-1.5 rounded-pill bg-fg text-sm font-bold text-paper transition-colors duration-(--dur-micro) group-hover/card:bg-brand"
       >
-        {g.options.length > 1 ? (g.optionKind === 'colour' ? 'Choose colour' : 'Choose length') : 'Buy now'}
+        {g.options.length > 1 ? `Choose ${OPTION_LABEL[g.optionKind].toLowerCase()}` : 'Buy now'}
       </span>
     </Link>
   );

@@ -19,7 +19,9 @@ const GROUPS: readonly { heading: string; links: readonly { href: string; label:
   {
     heading: 'More',
     links: [
-      { href: '/audio', label: 'Audio', note: 'Sealed boAt and realme earbuds' },
+      { href: '/audio', label: 'Audio', note: 'boAt and realme earbuds and speakers' },
+      { href: '/storage', label: 'Storage', note: 'Memory cards, pen drives, SSDs, RAM' },
+      { href: '/cameras', label: 'Cameras', note: 'CP Plus Wi-Fi security cameras' },
       { href: '/accessories', label: 'Protection', note: 'Glass, lens guards, back films' },
     ],
   },

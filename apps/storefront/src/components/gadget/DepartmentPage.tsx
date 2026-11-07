@@ -18,7 +18,7 @@ export async function DepartmentPage({ department }: { department: Department })
         trail={[{ name: info.name, href: info.path }]}
         title={info.title}
         groups={groups.map((g) => ({ id: g.id, heading: g.heading, count: g.items.length }))}
-        warranty="Sealed, brand warranty"
+        warranty={info.badge}
       />
       {groups.map(({ id, heading, items }, i) => (
         <DepartmentSection key={id} id={id} heading={heading} count={items.length} first={i === 0}>

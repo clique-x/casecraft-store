@@ -49,6 +49,16 @@ compose up -d --remove-orphans
 wait_healthy medusa-server
 
 if grep -q '^MEDUSA_PUBLISHABLE_KEY=pk_' infra/prod/.env; then
+  # The seed only adds what is missing: new products from data/catalog.json are created and stocked,
+  # existing products, prices and stock counts (including edits made in the admin) are left alone.
+  echo "==> Catalogue: adding new products"
+  if ! seed_out=$(compose exec -T medusa-server npx medusa exec ./src/scripts/seed.js 2>&1); then
+    echo "$seed_out" >&2
+    echo "The catalogue seed failed; the storefront was not rebuilt." >&2
+    exit 1
+  fi
+  grep -E 'Created|Stocked|added' <<<"$seed_out" || echo "    (no new products)"
+
   echo "==> Storefront (built from the live catalogue)"
   key=$(envget MEDUSA_PUBLISHABLE_KEY)
   region=$(envget MEDUSA_REGION_ID)

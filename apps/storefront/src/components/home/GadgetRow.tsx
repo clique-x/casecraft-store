@@ -15,6 +15,22 @@ const COPY: Record<Department, { eyebrow: string; heading: string; sub: string; 
       { id: 'neckband', label: 'Neckbands' },
     ],
   },
+  storage: {
+    eyebrow: 'Storage',
+    heading: 'Memory cards, SSDs and RAM',
+    sub: 'SanDisk, Samsung, WD and Consistent, in the size you need.',
+    shortcuts: [
+      { id: 'cards', label: 'Memory cards' },
+      { id: 'ssd', label: 'SSDs' },
+      { id: 'ram', label: 'RAM' },
+    ],
+  },
+  cameras: {
+    eyebrow: 'Security',
+    heading: 'CP Plus Wi-Fi cameras',
+    sub: 'Pan-and-tilt cameras with night vision and two-way talk.',
+    shortcuts: [{ id: 'wifi', label: 'Wi-Fi cameras' }],
+  },
   charging: {
     eyebrow: 'Charging',
     heading: 'Chargers and original cables',

@@ -1,7 +1,7 @@
 import { BanknoteIcon, ClockIcon, RotateCcwIcon, ShieldCheckIcon, TruckIcon, WrenchIcon, type LucideIcon } from 'lucide-react';
 import { warrantyLabel } from '@/components/gadget/GadgetAssurance';
 import { COD_FEE_INR, DISPATCH_WINDOW, FREE_SHIPPING_THRESHOLD_INR, REPLACEMENT_DAYS } from '@/lib/brand';
-import type { GadgetEntry } from '@/lib/catalog/gadgets';
+import { ORDER_IN_WINDOW, type GadgetEntry } from '@/lib/catalog/gadgets';
 import { cn } from '@/lib/utils';
 
 interface Fact {
@@ -17,12 +17,21 @@ const SHIPPING: readonly Fact[] = [
 ];
 const FACTS: readonly Fact[] = [...SHIPPING, { Icon: RotateCcwIcon, label: `${REPLACEMENT_DAYS}-day replacement` }];
 
+/** Dispatch line for a gadget whose options are partly or wholly ordered in after the sale. */
+function dispatchFact(gadget: GadgetEntry): Fact {
+  const ordered = gadget.options.filter((o) => o.orderIn).length;
+  if (ordered === 0) return SHIPPING[0];
+  if (ordered === gadget.options.length) return { Icon: ClockIcon, label: `Dispatched in ${ORDER_IN_WINDOW}` };
+  return { Icon: ClockIcon, label: `Dispatched in ${DISPATCH_WINDOW}; some sizes in ${ORDER_IN_WINDOW}` };
+}
+
 /** Sealed brand audio is covered by the maker's warranty instead of the shop's replacement window. */
 function gadgetFacts(gadget: GadgetEntry): readonly Fact[] {
+  const shipping = [dispatchFact(gadget), ...SHIPPING.slice(1)];
   const brand = gadget.original?.brand;
-  if (!brand) return FACTS;
+  if (!brand) return [...shipping, FACTS[FACTS.length - 1]];
   return [
-    ...SHIPPING,
+    ...shipping,
     ...(gadget.warrantyMonths ? [{ Icon: WrenchIcon, label: `${warrantyLabel(gadget.warrantyMonths)} ${brand} warranty` }] : []),
     { Icon: ShieldCheckIcon, label: 'Sealed box, no returns' },
   ];
