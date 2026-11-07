@@ -18,6 +18,30 @@ export interface AccessoryEntry {
   details: { material: string; inBox: string; fit: string; care: string };
   /** Only these phone models (slugs); every model when absent. */
   models?: readonly string[];
+  /** The maker on the pack, for a branded guard sold as it comes; our own generic accessories have none. */
+  brand?: string;
+  /** Shop photos; the drawn art stands in when absent. */
+  photos?: AccessoryPhotos;
+}
+
+/**
+ * Square shop photos of an accessory at /products/photos/accessories/<id>/g-<n>-<w>.webp, made with the
+ * sizes and settings of the cover galleries (scripts/photo-gallery.mjs). The first image leads the card.
+ */
+export interface AccessoryPhotos {
+  /** One label per image, in display order. */
+  gallery: readonly string[];
+}
+
+/** The cover gallery widths (photos.ts GALLERY_WIDTHS); 160 feeds thumbnails. */
+export const ACCESSORY_PHOTO_WIDTHS = [160, 480, 960, 1440] as const;
+
+export function accessoryPhotoSrc(id: string, n: number, w: (typeof ACCESSORY_PHOTO_WIDTHS)[number] = 960): string {
+  return `/products/photos/accessories/${id}/g-${n}-${w}.webp`;
+}
+
+export function accessoryPhotoSrcSet(id: string, n: number): string {
+  return ACCESSORY_PHOTO_WIDTHS.map((w) => `${accessoryPhotoSrc(id, n, w)} ${w}w`).join(', ');
 }
 
 /** Current flagships in the catalogue; the body protection film is cut for these only. */
@@ -161,6 +185,52 @@ export const ACCESSORIES: readonly AccessoryEntry[] = [
       care: 'Fine scratches fade in warm weather. It peels off cleanly with no residue.',
     },
     models: FLAGSHIP_MODELS,
+  },
+  // Branded guards from the shop (November 2026). Models are the ones on the packs and backing cards
+  // photographed; prices are the owner's.
+  {
+    id: 'flayr-borderless',
+    handle: 'flayr-borderless-tempered-glass-iphone-pro',
+    title: 'FLAYR Borderless tempered glass',
+    type: 'screen-guard',
+    finish: 'clear',
+    priceInr: 300,
+    regularInr: 300,
+    short: 'For iPhone 13 Pro to 18 Pro',
+    description:
+      'FLAYR’s Borderless tempered glass for the iPhone Pro models, from the 13 Pro to the 18 Pro. Each glass comes on a FLAYR backing card marked with the iPhone it is cut for: pick your phone and we send that one.',
+    features: ['Borderless tempered glass', 'FLAYR Diamond Section glass', 'iPhone 13 Pro to 18 Pro'],
+    details: {
+      material: 'Tempered glass, FLAYR Borderless (Diamond Section).',
+      inBox: 'One FLAYR glass on its backing card, marked for your iPhone.',
+      fit: 'Cut for each listed iPhone Pro. Not for the Pro Max models.',
+      care: 'Fit it on a clean, dry screen. Clean with a dry microfibre cloth.',
+    },
+    models: ['iphone-13-pro', 'iphone-14-pro', 'iphone-15-pro', 'iphone-16-pro', 'iphone-17-pro', 'iphone-18-pro'],
+    brand: 'FLAYR',
+    photos: { gallery: ['Close up', 'In use', 'On the phone'] },
+  },
+  {
+    id: 'gtel-fingerprint',
+    handle: 'gtel-3d-fingerprint-tempered-glass-galaxy-s',
+    title: 'G-TEL 3D fingerprint tempered glass',
+    type: 'screen-guard',
+    finish: 'clear',
+    priceInr: 300,
+    regularInr: 300,
+    short: 'For Galaxy S22 to S26 and S24 to S26 Ultra',
+    description:
+      'G-TEL’s 3D fingerprint tempered glass for Samsung Galaxy S phones: the S22, S23, S24, S25 and S26, and the S24, S25 and S26 Ultra. Pick your Galaxy and we send the glass made for it.',
+    features: ['3D fingerprint tempered glass', 'Galaxy S22, S23, S24, S25, S26', 'Galaxy S24, S25, S26 Ultra'],
+    details: {
+      material: 'Tempered glass, G-TEL 3D fingerprint range.',
+      inBox: 'One G-TEL glass for the Galaxy you pick.',
+      fit: 'Cut for each listed Galaxy. The S22 and S23 share one glass, and so do the S24 and S25.',
+      care: 'Fit it on a clean, dry screen. Clean with a dry microfibre cloth.',
+    },
+    models: ['galaxy-s22', 'galaxy-s23', 'galaxy-s24', 'galaxy-s25', 'galaxy-s26', 'galaxy-s24-ultra', 'galaxy-s25-ultra', 'galaxy-s26-ultra'],
+    brand: 'G-TEL',
+    photos: { gallery: ['Box', 'On the phone', 'In hand'] },
   },
 ];
 

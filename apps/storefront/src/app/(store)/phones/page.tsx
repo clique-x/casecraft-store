@@ -11,7 +11,7 @@ import { getAllProducts } from '@/lib/medusa/products';
 
 const TITLE = 'Phone back covers by phone model';
 const DESCRIPTION =
-  'Find back covers cut for your exact phone: iPhone, Samsung Galaxy, OnePlus, Redmi, Realme, Vivo, Nothing and Pixel models.';
+  'Find back covers cut for your exact phone: iPhone, Samsung Galaxy, OnePlus, Redmi, Realme, Vivo, OPPO, Motorola, Nothing and Pixel models.';
 const URL_PATH = '/phones';
 
 export const metadata: Metadata = {

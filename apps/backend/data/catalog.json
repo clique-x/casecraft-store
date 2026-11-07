@@ -217,13 +217,31 @@
       "rank": 23
     },
     {
+      "slug": "galaxy-s22",
+      "brand": "Samsung",
+      "name": "Galaxy S22",
+      "series": "Galaxy S",
+      "releaseYear": 2022,
+      "islandStyle": "pills",
+      "rank": 24
+    },
+    {
+      "slug": "galaxy-s23",
+      "brand": "Samsung",
+      "name": "Galaxy S23",
+      "series": "Galaxy S",
+      "releaseYear": 2023,
+      "islandStyle": "pills",
+      "rank": 25
+    },
+    {
       "slug": "galaxy-s23-fe",
       "brand": "Samsung",
       "name": "Galaxy S23 FE",
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 24
+      "rank": 26
     },
     {
       "slug": "galaxy-s23-ultra",
@@ -232,7 +250,16 @@
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 25
+      "rank": 27
+    },
+    {
+      "slug": "galaxy-s24",
+      "brand": "Samsung",
+      "name": "Galaxy S24",
+      "series": "Galaxy S",
+      "releaseYear": 2024,
+      "islandStyle": "pills",
+      "rank": 28
     },
     {
       "slug": "galaxy-s24-ultra",
@@ -241,7 +268,7 @@
       "series": "Galaxy S",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 26
+      "rank": 29
     },
     {
       "slug": "galaxy-s25-ultra",
@@ -250,7 +277,25 @@
       "series": "Galaxy S",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 27
+      "rank": 30
+    },
+    {
+      "slug": "galaxy-s26",
+      "brand": "Samsung",
+      "name": "Galaxy S26",
+      "series": "Galaxy S",
+      "releaseYear": 2026,
+      "islandStyle": "pills",
+      "rank": 31
+    },
+    {
+      "slug": "galaxy-s26-ultra",
+      "brand": "Samsung",
+      "name": "Galaxy S26 Ultra",
+      "series": "Galaxy S",
+      "releaseYear": 2026,
+      "islandStyle": "pills",
+      "rank": 32
     },
     {
       "slug": "pixel-9",
@@ -259,7 +304,88 @@
       "series": "Pixel",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 28
+      "rank": 33
+    },
+    {
+      "slug": "redmi-9c",
+      "brand": "Xiaomi",
+      "name": "Redmi 9C",
+      "series": "Redmi",
+      "releaseYear": 2020,
+      "islandStyle": "square",
+      "rank": 34
+    },
+    {
+      "slug": "redmi-a2",
+      "brand": "Xiaomi",
+      "name": "Redmi A2",
+      "series": "Redmi",
+      "releaseYear": 2023,
+      "islandStyle": "square",
+      "rank": 35
+    },
+    {
+      "slug": "redmi-13c-5g",
+      "brand": "Xiaomi",
+      "name": "Redmi 13C 5G",
+      "series": "Redmi",
+      "releaseYear": 2023,
+      "islandStyle": "pills",
+      "rank": 36
+    },
+    {
+      "slug": "realme-16-5g",
+      "brand": "Realme",
+      "name": "Realme 16 5G",
+      "series": "Number",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 37
+    },
+    {
+      "slug": "oppo-a17",
+      "brand": "OPPO",
+      "name": "OPPO A17",
+      "series": "A",
+      "releaseYear": 2022,
+      "islandStyle": "pills",
+      "rank": 38
+    },
+    {
+      "slug": "motorola-edge-40-neo",
+      "brand": "Motorola",
+      "name": "Motorola Edge 40 Neo",
+      "series": "Edge",
+      "releaseYear": 2023,
+      "islandStyle": "square",
+      "rank": 39
+    },
+    {
+      "slug": "motorola-edge-50-fusion",
+      "brand": "Motorola",
+      "name": "Motorola Edge 50 Fusion",
+      "series": "Edge",
+      "releaseYear": 2024,
+      "islandStyle": "square",
+      "rank": 40
+    },
+    {
+      "slug": "motorola-edge-60-pro",
+      "brand": "Motorola",
+      "name": "Motorola Edge 60 Pro",
+      "series": "Edge",
+      "releaseYear": 2025,
+      "islandStyle": "square",
+      "rank": 41
+    },
+    {
+      "slug": "motorola-edge-70",
+      "brand": "Motorola",
+      "name": "Motorola Edge 70",
+      "series": "Edge",
+      "releaseYear": 2025,
+      "islandStyle": "square",
+      "rank": 42
     }
   ],
   "themes": [],
@@ -2858,6 +2984,413 @@
       ]
     },
     {
+      "handle": "casecraft-cartoon-cat-3d-silicone-case-black-realme-16-5g",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Cartoon Cat 3D Silicone cover for the Realme 16 5G, stocked in our Haridwar shop. Two cartoon cats are moulded in raised 3D on the soft silicone back.",
+      "imagePath": "/products/photos/50172/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50172,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Cartoon Cat 3D Silicone",
+        "regular_inr": 200,
+        "case_types": "",
+        "detail_material": "Soft silicone shell with raised moulded figures",
+        "detail_print": "Raised moulded cartoon cats on a black back, with printed lettering, hearts and a checked strip.",
+        "detail_fit": "Made for the Realme 16 5G. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50172-RE165G",
+          "modelSlug": "realme-16-5g",
+          "caseType": "soft",
+          "priceInr": 200,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-cat-and-mouse-3d-silicone-case-black-redmi-a2",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Cat & Mouse 3D Silicone cover for the Redmi A2, stocked in our Haridwar shop. A cartoon cat and mouse are moulded in raised 3D on the soft silicone back.",
+      "imagePath": "/products/photos/50173/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50173,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Cat & Mouse 3D Silicone",
+        "regular_inr": 200,
+        "case_types": "",
+        "detail_material": "Soft silicone shell with raised moulded figures",
+        "detail_print": "A raised moulded cartoon cat and mouse with raised white lettering on a matte black back.",
+        "detail_fit": "Made for the Redmi A2. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50173-REA2",
+          "modelSlug": "redmi-a2",
+          "caseType": "soft",
+          "priceInr": 200,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-cat-and-mouse-3d-silicone-case-maroon-redmi-9c",
+      "productType": "Phone cover",
+      "title": "Maroon · CaseCraft",
+      "description": "Maroon is a CaseCraft Cat & Mouse 3D Silicone cover for the Redmi 9C, stocked in our Haridwar shop. A cartoon cat and mouse are moulded in raised 3D on the soft silicone back.",
+      "imagePath": "/products/photos/50174/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50174,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Cat & Mouse 3D Silicone",
+        "regular_inr": 200,
+        "case_types": "",
+        "detail_material": "Soft silicone shell with raised moulded figures",
+        "detail_print": "A raised moulded cartoon cat and mouse with raised white lettering on a matte maroon back.",
+        "detail_fit": "Made for the Redmi 9C. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50174-RE9C",
+          "modelSlug": "redmi-9c",
+          "caseType": "soft",
+          "priceInr": 200,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-cat-and-mouse-3d-silicone-case-black-oppo-a17",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Cat & Mouse 3D Silicone cover for the OPPO A17, stocked in our Haridwar shop. A cartoon cat and mouse are moulded in raised 3D on the soft silicone back.",
+      "imagePath": "/products/photos/50175/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50175,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Cat & Mouse 3D Silicone",
+        "regular_inr": 200,
+        "case_types": "",
+        "detail_material": "Soft silicone shell with raised moulded figures",
+        "detail_print": "A raised moulded cartoon cat and mouse with raised white lettering on a matte black back.",
+        "detail_fit": "Made for the OPPO A17. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50175-OPA17",
+          "modelSlug": "oppo-a17",
+          "caseType": "soft",
+          "priceInr": 200,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-bumper-case-black-motorola-edge-40-neo",
+      "productType": "Phone cover",
+      "title": "Black · CaseCraft",
+      "description": "Black is a CaseCraft Clear Bumper cover for the Motorola Edge 40 Neo, stocked in our Haridwar shop. The back is clear, so the phone's own colour shows inside a black bumper frame.",
+      "imagePath": "/products/photos/50176/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50176,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear Bumper",
+        "regular_inr": 300,
+        "case_types": "",
+        "detail_material": "Clear back with a matte black bumper frame",
+        "detail_print": "Nothing printed: a clear back with a black bumper frame.",
+        "detail_fit": "Made for the Motorola Edge 40 Neo. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50176-MOE40N",
+          "modelSlug": "motorola-edge-40-neo",
+          "caseType": "soft",
+          "priceInr": 300,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-clear-bumper-case-clear-motorola-edge-60-pro",
+      "productType": "Phone cover",
+      "title": "Clear · CaseCraft",
+      "description": "Clear is a CaseCraft Clear Bumper cover for the Motorola Edge 60 Pro, stocked in our Haridwar shop. The back is clear, so the phone's own colour shows inside a dark bumper frame.",
+      "imagePath": "/products/photos/50177/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50177,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Clear Bumper",
+        "regular_inr": 300,
+        "case_types": "",
+        "detail_material": "Clear back with a dark bumper frame",
+        "detail_print": "Nothing printed: a clear back with a dark bumper frame.",
+        "detail_fit": "Made for the Motorola Edge 60 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50177-MOE60P",
+          "modelSlug": "motorola-edge-60-pro",
+          "caseType": "soft",
+          "priceInr": 300,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-liquid-glitter-case-floral-redmi-13c-5g",
+      "productType": "Phone cover",
+      "title": "Floral · CaseCraft",
+      "description": "Floral is a CaseCraft Liquid Glitter cover for the Redmi 13C 5G, stocked in our Haridwar shop. Pink liquid glitter and heart sequins sit over a floral print on a cream back, in a clear frame.",
+      "imagePath": "/products/photos/50178/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50178,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Liquid Glitter",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Clear frame with a printed liquid-glitter back",
+        "detail_print": "A floral print on a cream base under pink liquid glitter and heart-shaped sequins.",
+        "detail_fit": "Made for the Redmi 13C 5G. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50178-RE13C5G",
+          "modelSlug": "redmi-13c-5g",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-liquid-glitter-case-purple-hearts-redmi-13c-5g",
+      "productType": "Phone cover",
+      "title": "Purple Hearts · CaseCraft",
+      "description": "Purple Hearts is a CaseCraft Liquid Glitter cover for the Redmi 13C 5G, stocked in our Haridwar shop. Purple liquid glitter sits over a lavender print with two outlined hearts, in a clear frame.",
+      "imagePath": "/products/photos/50179/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50179,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Liquid Glitter",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Clear frame with a printed liquid-glitter back",
+        "detail_print": "A lavender watercolour print with two outlined hearts under purple liquid glitter.",
+        "detail_fit": "Made for the Redmi 13C 5G. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50179-RE13C5G",
+          "modelSlug": "redmi-13c-5g",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "neza-clear-magnetic-ring-case-clear-motorola-edge-50-fusion",
+      "productType": "Phone cover",
+      "title": "Clear · Neza",
+      "description": "Clear is a Neza Clear Magnetic Ring cover for the Motorola Edge 50 Fusion, stocked in our Haridwar shop. The back is clear, with a MagSafe-style magnetic ring built in.",
+      "imagePath": "/products/photos/50180/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50180,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Neza Clear Magnetic Ring",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Clear shell with a white MagSafe-style magnetic ring",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe-style ring.",
+        "detail_fit": "Made for the Motorola Edge 50 Fusion. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50180-MOE50F",
+          "modelSlug": "motorola-edge-50-fusion",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "neza-clear-magnetic-ring-case-clear-motorola-edge-70",
+      "productType": "Phone cover",
+      "title": "Clear · Neza",
+      "description": "Clear is a Neza Clear Magnetic Ring cover for the Motorola Edge 70, stocked in our Haridwar shop. The back is clear, with a MagSafe-style magnetic ring built in.",
+      "imagePath": "/products/photos/50181/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50181,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "Neza Clear Magnetic Ring",
+        "regular_inr": 350,
+        "case_types": "",
+        "detail_material": "Clear shell with a white MagSafe-style magnetic ring",
+        "detail_print": "Nothing printed: a clear back with a white MagSafe-style ring.",
+        "detail_fit": "Made for the Motorola Edge 70. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50181-MOE70",
+          "modelSlug": "motorola-edge-70",
+          "caseType": "soft",
+          "priceInr": 350,
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "handle": "casecraft-metal-frame-case-wine-iphone-16-pro",
+      "productType": "Phone cover",
+      "title": "Wine · CaseCraft",
+      "description": "Wine is a CaseCraft Metal Frame cover for the iPhone 16 Pro, stocked in our Haridwar shop. A metal frame case in a matte wine-burgundy finish.",
+      "imagePath": "/products/photos/50182/960.webp",
+      "collections": [
+        "new-arrivals"
+      ],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "photo",
+        "photo_id": 50182,
+        "family": "minimal",
+        "theme": "minimal",
+        "finish": "soft",
+        "holo": false,
+        "is_new": true,
+        "brand_line": "CaseCraft Metal Frame",
+        "regular_inr": 899,
+        "case_types": "",
+        "detail_material": "Metal frame case in a matte wine-burgundy finish",
+        "detail_print": "Nothing printed: one wine-burgundy colour all over.",
+        "detail_fit": "Made for the iPhone 16 Pro. The camera opening follows that phone's island and the buttons and ports stay open.",
+        "detail_care": "Wipe with a damp cloth and a drop of mild soap. Do not use alcohol or acetone on the shell."
+      },
+      "variants": [
+        {
+          "sku": "PH-50182-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": "soft",
+          "priceInr": 899,
+          "stock": 8
+        }
+      ]
+    },
+    {
       "handle": "tempered-glass-screen-guard",
       "productType": "Screen guard",
       "title": "Edge-to-edge tempered glass",
@@ -3046,6 +3579,20 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLACLE-GAS22",
+          "modelSlug": "galaxy-s22",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS23",
+          "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLACLE-GAS23F",
           "modelSlug": "galaxy-s23-fe",
           "caseType": null,
@@ -3055,6 +3602,13 @@
         {
           "sku": "ACC-GLACLE-GAS23U",
           "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS24",
+          "modelSlug": "galaxy-s24",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
@@ -3074,8 +3628,85 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLACLE-GAS26",
+          "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS26U",
+          "modelSlug": "galaxy-s26-ultra",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLACLE-PI9",
           "modelSlug": "pixel-9",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-RE9C",
+          "modelSlug": "redmi-9c",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-REA2",
+          "modelSlug": "redmi-a2",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-RE13C5G",
+          "modelSlug": "redmi-13c-5g",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-RE165G",
+          "modelSlug": "realme-16-5g",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-OPA17",
+          "modelSlug": "oppo-a17",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-MOE40N",
+          "modelSlug": "motorola-edge-40-neo",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-MOE50F",
+          "modelSlug": "motorola-edge-50-fusion",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-MOE60P",
+          "modelSlug": "motorola-edge-60-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-MOE70",
+          "modelSlug": "motorola-edge-70",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
@@ -3271,6 +3902,20 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLAPRI-GAS22",
+          "modelSlug": "galaxy-s22",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS23",
+          "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLAPRI-GAS23F",
           "modelSlug": "galaxy-s23-fe",
           "caseType": null,
@@ -3280,6 +3925,13 @@
         {
           "sku": "ACC-GLAPRI-GAS23U",
           "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS24",
+          "modelSlug": "galaxy-s24",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -3299,8 +3951,85 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLAPRI-GAS26",
+          "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS26U",
+          "modelSlug": "galaxy-s26-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLAPRI-PI9",
           "modelSlug": "pixel-9",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-RE9C",
+          "modelSlug": "redmi-9c",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-REA2",
+          "modelSlug": "redmi-a2",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-RE13C5G",
+          "modelSlug": "redmi-13c-5g",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-RE165G",
+          "modelSlug": "realme-16-5g",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-OPA17",
+          "modelSlug": "oppo-a17",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-MOE40N",
+          "modelSlug": "motorola-edge-40-neo",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-MOE50F",
+          "modelSlug": "motorola-edge-50-fusion",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-MOE60P",
+          "modelSlug": "motorola-edge-60-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-MOE70",
+          "modelSlug": "motorola-edge-70",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -3496,6 +4225,20 @@
           "stock": 25
         },
         {
+          "sku": "ACC-LENGLA-GAS22",
+          "modelSlug": "galaxy-s22",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS23",
+          "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
           "sku": "ACC-LENGLA-GAS23F",
           "modelSlug": "galaxy-s23-fe",
           "caseType": null,
@@ -3505,6 +4248,13 @@
         {
           "sku": "ACC-LENGLA-GAS23U",
           "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS24",
+          "modelSlug": "galaxy-s24",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
@@ -3524,8 +4274,85 @@
           "stock": 25
         },
         {
+          "sku": "ACC-LENGLA-GAS26",
+          "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS26U",
+          "modelSlug": "galaxy-s26-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
           "sku": "ACC-LENGLA-PI9",
           "modelSlug": "pixel-9",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-RE9C",
+          "modelSlug": "redmi-9c",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-REA2",
+          "modelSlug": "redmi-a2",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-RE13C5G",
+          "modelSlug": "redmi-13c-5g",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-RE165G",
+          "modelSlug": "realme-16-5g",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-OPA17",
+          "modelSlug": "oppo-a17",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-MOE40N",
+          "modelSlug": "motorola-edge-40-neo",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-MOE50F",
+          "modelSlug": "motorola-edge-50-fusion",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-MOE60P",
+          "modelSlug": "motorola-edge-60-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-MOE70",
+          "modelSlug": "motorola-edge-70",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
@@ -3721,6 +4548,20 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILMAT-GAS22",
+          "modelSlug": "galaxy-s22",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS23",
+          "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILMAT-GAS23F",
           "modelSlug": "galaxy-s23-fe",
           "caseType": null,
@@ -3730,6 +4571,13 @@
         {
           "sku": "ACC-FILMAT-GAS23U",
           "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS24",
+          "modelSlug": "galaxy-s24",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
@@ -3749,8 +4597,85 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILMAT-GAS26",
+          "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS26U",
+          "modelSlug": "galaxy-s26-ultra",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILMAT-PI9",
           "modelSlug": "pixel-9",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-RE9C",
+          "modelSlug": "redmi-9c",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-REA2",
+          "modelSlug": "redmi-a2",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-RE13C5G",
+          "modelSlug": "redmi-13c-5g",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-RE165G",
+          "modelSlug": "realme-16-5g",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-OPA17",
+          "modelSlug": "oppo-a17",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-MOE40N",
+          "modelSlug": "motorola-edge-40-neo",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-MOE50F",
+          "modelSlug": "motorola-edge-50-fusion",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-MOE60P",
+          "modelSlug": "motorola-edge-60-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-MOE70",
+          "modelSlug": "motorola-edge-70",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
@@ -3946,6 +4871,20 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILCAR-GAS22",
+          "modelSlug": "galaxy-s22",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS23",
+          "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILCAR-GAS23F",
           "modelSlug": "galaxy-s23-fe",
           "caseType": null,
@@ -3955,6 +4894,13 @@
         {
           "sku": "ACC-FILCAR-GAS23U",
           "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS24",
+          "modelSlug": "galaxy-s24",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -3974,8 +4920,85 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILCAR-GAS26",
+          "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS26U",
+          "modelSlug": "galaxy-s26-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILCAR-PI9",
           "modelSlug": "pixel-9",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-RE9C",
+          "modelSlug": "redmi-9c",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-REA2",
+          "modelSlug": "redmi-a2",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-RE13C5G",
+          "modelSlug": "redmi-13c-5g",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-RE165G",
+          "modelSlug": "realme-16-5g",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-OPA17",
+          "modelSlug": "oppo-a17",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-MOE40N",
+          "modelSlug": "motorola-edge-40-neo",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-MOE50F",
+          "modelSlug": "motorola-edge-50-fusion",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-MOE60P",
+          "modelSlug": "motorola-edge-60-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-MOE70",
+          "modelSlug": "motorola-edge-70",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -4035,6 +5058,148 @@
           "modelSlug": "oneplus-13",
           "caseType": null,
           "priceInr": 499,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "flayr-borderless-tempered-glass-iphone-pro",
+      "productType": "Screen guard",
+      "title": "FLAYR Borderless tempered glass",
+      "description": "FLAYR’s Borderless tempered glass for the iPhone Pro models, from the 13 Pro to the 18 Pro. Each glass comes on a FLAYR backing card marked with the iPhone it is cut for: pick your phone and we send that one.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "flayr-borderless",
+        "accessory_type": "screen-guard",
+        "regular_inr": 300,
+        "detail_material": "Tempered glass, FLAYR Borderless (Diamond Section).",
+        "detail_in_box": "One FLAYR glass on its backing card, marked for your iPhone.",
+        "detail_fit": "Cut for each listed iPhone Pro. Not for the Pro Max models.",
+        "detail_care": "Fit it on a clean, dry screen. Clean with a dry microfibre cloth."
+      },
+      "variants": [
+        {
+          "sku": "ACC-FLABOR-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLABOR-IP13P",
+          "modelSlug": "iphone-13-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLABOR-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLABOR-IP15P",
+          "modelSlug": "iphone-15-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLABOR-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLABOR-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "gtel-3d-fingerprint-tempered-glass-galaxy-s",
+      "productType": "Screen guard",
+      "title": "G-TEL 3D fingerprint tempered glass",
+      "description": "G-TEL’s 3D fingerprint tempered glass for Samsung Galaxy S phones: the S22, S23, S24, S25 and S26, and the S24, S25 and S26 Ultra. Pick your Galaxy and we send the glass made for it.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "gtel-fingerprint",
+        "accessory_type": "screen-guard",
+        "regular_inr": 300,
+        "detail_material": "Tempered glass, G-TEL 3D fingerprint range.",
+        "detail_in_box": "One G-TEL glass for the Galaxy you pick.",
+        "detail_fit": "Cut for each listed Galaxy. The S22 and S23 share one glass, and so do the S24 and S25.",
+        "detail_care": "Fit it on a clean, dry screen. Clean with a dry microfibre cloth."
+      },
+      "variants": [
+        {
+          "sku": "ACC-GTEFIN-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFIN-GAS22",
+          "modelSlug": "galaxy-s22",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFIN-GAS23",
+          "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFIN-GAS24",
+          "modelSlug": "galaxy-s24",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFIN-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFIN-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFIN-GAS26",
+          "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFIN-GAS26U",
+          "modelSlug": "galaxy-s26-ultra",
+          "caseType": null,
+          "priceInr": 300,
           "stock": 25
         }
       ]
@@ -4559,6 +5724,1034 @@
             "name": "Fusion Black"
           },
           "priceInr": 999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-stone-1200-pro",
+      "productType": "Bluetooth speaker",
+      "title": "boAt Stone 1200 Pro",
+      "description": "boAt's Stone 1200 Pro is a 60 W portable speaker with 76.2 mm drivers and boAt Signature Sound. It plays for up to 7.5 hours at half volume, pairs with a second speaker in TWS mode for stereo, plays from a USB drive, takes calls through its built-in mic and is IPX6 water resistant, with a carry strap.",
+      "imagePath": "/products/photos/gadgets/boat-stone-1200-pro/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-stone-1200-pro",
+        "gadget_type": "speaker",
+        "department": "audio",
+        "regular_inr": 14990,
+        "detail_in_box": "Speaker, USB-C charging cable and user manual, in the sealed boAt box."
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATSTONE1200PRO-TWILIGHT-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "twilight-black",
+            "name": "Twilight Black"
+          },
+          "priceInr": 4099,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-stone-arc-pro",
+      "productType": "Bluetooth speaker",
+      "title": "boAt Stone Arc Pro",
+      "description": "boAt's Stone Arc Pro is a 25 W portable speaker with 58 mm drivers and RGB lights. It plays for up to 12 hours, connects over Bluetooth 5.3 or an AUX cable, takes calls through its built-in mic and is IPX5 splash resistant.",
+      "imagePath": "/products/photos/gadgets/boat-stone-arc-pro/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-stone-arc-pro",
+        "gadget_type": "speaker",
+        "department": "audio",
+        "regular_inr": 6990,
+        "detail_in_box": "Speaker, USB-C charging cable, AUX cable, user manual and warranty card, in the sealed boAt box."
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATSTONEARCPRO-RAGING-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "raging-black",
+            "name": "Raging Black"
+          },
+          "priceInr": 2199,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "sandisk-cruzer-blade-usb-pen-drive",
+      "productType": "Pen drive",
+      "title": "SanDisk Cruzer Blade USB pen drive",
+      "description": "SanDisk's slim, capless Cruzer Blade: a light USB-A pen drive for carrying documents, photos and music between computers and other devices with a USB port. It is plug and play on Windows, macOS and Linux, so there is no software to install.",
+      "imagePath": "/products/photos/gadgets/sandisk-cruzer-blade/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "sandisk-cruzer-blade",
+        "gadget_type": "pen-drive",
+        "department": "storage",
+        "regular_inr": 600,
+        "detail_in_box": "The pen drive in its sealed SanDisk blister pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-SANDISKCRUZERBLADE-16GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "16gb",
+            "name": "16 GB"
+          },
+          "priceInr": 600,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKCRUZERBLADE-32GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "32gb",
+            "name": "32 GB"
+          },
+          "priceInr": 800,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKCRUZERBLADE-64GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "64gb",
+            "name": "64 GB"
+          },
+          "priceInr": 999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "sandisk-ultra-flair-usb-3-pen-drive-128gb",
+      "productType": "Pen drive",
+      "title": "SanDisk Ultra Flair USB 3.0 pen drive 128GB",
+      "description": "A 128 GB SanDisk Ultra Flair in a metal casing. USB 3.0 reads at up to 150 MB/s (SanDisk's figure on the pack), so large videos and backups copy quickly, and it still works in older USB 2.0 ports at USB 2.0 speed.",
+      "imagePath": "/products/photos/gadgets/sandisk-ultra-flair/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "sandisk-ultra-flair",
+        "gadget_type": "pen-drive",
+        "department": "storage",
+        "regular_inr": 1700,
+        "detail_in_box": "The pen drive in its sealed SanDisk pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-SANDISKULTRAFLAIR-128GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "128gb",
+            "name": "128 GB"
+          },
+          "priceInr": 1200,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "geonix-64gb-microsdxc-memory-card",
+      "productType": "Memory card",
+      "title": "Geonix 64GB microSDXC memory card",
+      "description": "A 64 GB microSDXC card from Geonix, made in India, rated A2 for apps and V30 and U3 for steady 4K video. Geonix prints read speeds up to 150 MB/s and write speeds up to 70 MB/s on the pack, with a 5-year warranty.",
+      "imagePath": "/products/photos/gadgets/geonix-microsd-64gb/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "geonix-microsd-64gb",
+        "gadget_type": "memory-card",
+        "department": "storage",
+        "regular_inr": 1499,
+        "detail_in_box": "The card in its sealed Geonix pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-GEONIXMICROSD64GB-64GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "64gb",
+            "name": "64 GB"
+          },
+          "priceInr": 900,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "sandisk-ultra-microsd-card",
+      "productType": "Memory card",
+      "title": "SanDisk Ultra microSD card",
+      "description": "SanDisk Ultra microSDHC and microSDXC UHS-I cards for phones, tablets and cameras. They are A1-rated so apps load quickly from the card, Class 10 for Full HD video, and read at up to 150 MB/s depending on the size. Write speeds are lower than read speeds.",
+      "imagePath": "/products/photos/gadgets/sandisk-ultra-microsd/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "sandisk-ultra-microsd",
+        "gadget_type": "memory-card",
+        "department": "storage",
+        "regular_inr": 749,
+        "detail_in_box": "The microSD card in its sealed SanDisk pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-SANDISKULTRAMICROSD-32GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "32gb",
+            "name": "32 GB"
+          },
+          "priceInr": 749,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKULTRAMICROSD-64GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "64gb",
+            "name": "64 GB"
+          },
+          "priceInr": 1679,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKULTRAMICROSD-128GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "128gb",
+            "name": "128 GB"
+          },
+          "priceInr": 2329,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKULTRAMICROSD-256GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "256gb",
+            "name": "256 GB"
+          },
+          "priceInr": 4379,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKULTRAMICROSD-512GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "512gb",
+            "name": "512 GB"
+          },
+          "priceInr": 11799,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "sandisk-extreme-microsd-card",
+      "productType": "Memory card",
+      "title": "SanDisk Extreme microSD card",
+      "description": "SanDisk Extreme microSDXC cards for action cams, drones, Nintendo Switch and phones that shoot 4K. A2 loads apps quickly, V30 and U3 keep 4K recording steady, and reads reach up to 190 MB/s.",
+      "imagePath": "/products/photos/gadgets/sandisk-extreme-microsd/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "sandisk-extreme-microsd",
+        "gadget_type": "memory-card",
+        "department": "storage",
+        "regular_inr": 1899,
+        "detail_in_box": "The microSD card in its sealed SanDisk pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-SANDISKEXTREMEMICROSD-128GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "128gb",
+            "name": "128 GB"
+          },
+          "priceInr": 1899,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKEXTREMEMICROSD-256GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "256gb",
+            "name": "256 GB"
+          },
+          "priceInr": 5499,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "samsung-evo-plus-microsd-card",
+      "productType": "Memory card",
+      "title": "Samsung EVO Plus microSD card 64GB",
+      "description": "Samsung's EVO Plus microSDXC card for phones, tablets and cameras, with reads up to 160 MB/s and an SD adapter in the pack for laptops and cameras that take full-size cards.",
+      "imagePath": "/products/photos/gadgets/samsung-evo-plus-microsd/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "samsung-evo-plus-microsd",
+        "gadget_type": "memory-card",
+        "department": "storage",
+        "regular_inr": 1899,
+        "detail_in_box": "The microSD card and an SD adapter, in the sealed Samsung pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-SAMSUNGEVOPLUSMICROSD-64GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "64gb",
+            "name": "64 GB"
+          },
+          "priceInr": 1899,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "consistent-s7-2-5-inch-sata-ssd",
+      "productType": "SSD",
+      "title": "Consistent S7 2.5-inch SATA SSD",
+      "description": "Consistent's S7 2.5-inch SATA III SSD, made in India. It replaces a laptop or desktop hard drive for faster boots and app loading, and reads at up to 550 MB/s (Consistent's figure). Consistent backs it with a 5-year warranty.",
+      "imagePath": "/products/photos/gadgets/consistent-s7-sata-ssd/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "consistent-s7-sata-ssd",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 5550,
+        "detail_in_box": "The SSD in its sealed Consistent box."
+      },
+      "variants": [
+        {
+          "sku": "STO-CONSISTENTS7SATASSD-128GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "128gb",
+            "name": "128 GB"
+          },
+          "priceInr": 2600,
+          "stock": 15
+        },
+        {
+          "sku": "STO-CONSISTENTS7SATASSD-256GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "256gb",
+            "name": "256 GB"
+          },
+          "priceInr": 3800,
+          "stock": 15
+        },
+        {
+          "sku": "STO-CONSISTENTS7SATASSD-1TB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "1tb",
+            "name": "1 TB"
+          },
+          "priceInr": 6999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "consistent-s7-m2-nvme-ssd",
+      "productType": "SSD",
+      "title": "Consistent S7 M.2 NVMe SSD",
+      "description": "Consistent's S7 M.2 2280 NVMe SSD on PCIe Gen 3 x4, with 3D NAND and an SLC cache, made in India. It fits laptops and desktops with an M.2 NVMe slot (M key); check that your slot takes NVMe drives before you order.",
+      "imagePath": "/products/photos/gadgets/consistent-s7-nvme-ssd/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "consistent-s7-nvme-ssd",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 2479,
+        "detail_in_box": "The SSD in its sealed Consistent box."
+      },
+      "variants": [
+        {
+          "sku": "STO-CONSISTENTS7NVMESSD-128GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "128gb",
+            "name": "128 GB"
+          },
+          "priceInr": 2479,
+          "stock": 15
+        },
+        {
+          "sku": "STO-CONSISTENTS7NVMESSD-256GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "256gb",
+            "name": "256 GB"
+          },
+          "priceInr": 4879,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "wd-blue-sn5000-nvme-ssd",
+      "productType": "SSD",
+      "title": "WD Blue SN5000 M.2 NVMe SSD",
+      "description": "The WD Blue SN5000 is a PCIe 4.0 x4 M.2 2280 NVMe SSD for everyday laptops and desktops, reading at up to 5,000 MB/s (500 GB) or 5,150 MB/s (1 TB).",
+      "imagePath": "/products/photos/gadgets/wd-blue-sn5000/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "wd-blue-sn5000",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 12399,
+        "detail_in_box": "The SSD in its sealed retail box. Screws and cables are not included."
+      },
+      "variants": [
+        {
+          "sku": "STO-WDBLUESN5000-500GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "500gb",
+            "name": "500 GB"
+          },
+          "priceInr": 12399,
+          "stock": 15
+        },
+        {
+          "sku": "STO-WDBLUESN5000-1TB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "1tb",
+            "name": "1 TB"
+          },
+          "priceInr": 19399,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "wd-blue-sn5100-nvme-ssd",
+      "productType": "SSD",
+      "title": "WD Blue SN5100 M.2 NVMe SSD",
+      "description": "The WD Blue SN5100 is a PCIe 4.0 M.2 2280 NVMe SSD for everyday laptops and desktops, reading at up to 6,600 MB/s (500 GB) or 7,100 MB/s (1 TB).",
+      "imagePath": "/products/photos/gadgets/wd-blue-sn5100/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "wd-blue-sn5100",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 11099,
+        "detail_in_box": "The SSD in its sealed retail box. Screws and cables are not included."
+      },
+      "variants": [
+        {
+          "sku": "STO-WDBLUESN5100-500GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "500gb",
+            "name": "500 GB"
+          },
+          "priceInr": 11099,
+          "stock": 15
+        },
+        {
+          "sku": "STO-WDBLUESN5100-1TB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "1tb",
+            "name": "1 TB"
+          },
+          "priceInr": 16899,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "wd-black-sn7100-nvme-ssd",
+      "productType": "SSD",
+      "title": "WD_BLACK SN7100 M.2 NVMe SSD",
+      "description": "The WD_BLACK SN7100 is a PCIe 4.0 M.2 2280 NVMe gaming SSD, reading at up to 7,250 MB/s and writing at up to 6,900 MB/s in the 1 TB size. It is DRAM-less.",
+      "imagePath": "/products/photos/gadgets/wd-black-sn7100/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "wd-black-sn7100",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 19799,
+        "detail_in_box": "The SSD in its sealed retail box. Screws and cables are not included."
+      },
+      "variants": [
+        {
+          "sku": "STO-WDBLACKSN7100-1TB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "1tb",
+            "name": "1 TB"
+          },
+          "priceInr": 19799,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "wd-black-sn850x-nvme-ssd",
+      "productType": "SSD",
+      "title": "WD_BLACK SN850X M.2 NVMe SSD 1TB",
+      "description": "The WD_BLACK SN850X is a PCIe 4.0 x4 M.2 2280 NVMe SSD made for gaming PCs, with reads up to 7,300 MB/s and writes up to 6,300 MB/s in the 1 TB size. This is the version without a heatsink.",
+      "imagePath": "/products/photos/gadgets/wd-black-sn850x/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "wd-black-sn850x",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 35899,
+        "detail_in_box": "The SSD in its sealed retail box. Screws and cables are not included."
+      },
+      "variants": [
+        {
+          "sku": "STO-WDBLACKSN850X-1TB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "1tb",
+            "name": "1 TB"
+          },
+          "priceInr": 35899,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "sandisk-optimus-5100-nvme-ssd",
+      "productType": "SSD",
+      "title": "SanDisk Optimus 5100 M.2 NVMe SSD",
+      "description": "SanDisk's Optimus 5100 is a PCIe 4.0 x4 M.2 2280 NVMe SSD, reading at up to 6,600 MB/s (500 GB) or 7,100 MB/s (1 TB).",
+      "imagePath": "/products/photos/gadgets/sandisk-optimus-5100/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "sandisk-optimus-5100",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 11199,
+        "detail_in_box": "The SSD in its sealed retail box. Screws and cables are not included."
+      },
+      "variants": [
+        {
+          "sku": "STO-SANDISKOPTIMUS5100-500GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "500gb",
+            "name": "500 GB"
+          },
+          "priceInr": 11199,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKOPTIMUS5100-1TB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "1tb",
+            "name": "1 TB"
+          },
+          "priceInr": 20899,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "sandisk-optimus-gx-7100-nvme-ssd",
+      "productType": "SSD",
+      "title": "SanDisk Optimus GX 7100 M.2 NVMe SSD",
+      "description": "SanDisk's Optimus GX 7100 is a PCIe 4.0 x4 M.2 2280 NVMe gaming SSD, reading at up to 6,800 MB/s (500 GB) or 7,250 MB/s (1 TB).",
+      "imagePath": "/products/photos/gadgets/sandisk-optimus-gx-7100/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "sandisk-optimus-gx-7100",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 13399,
+        "detail_in_box": "The SSD in its sealed retail box. Screws and cables are not included."
+      },
+      "variants": [
+        {
+          "sku": "STO-SANDISKOPTIMUSGX7100-500GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "500gb",
+            "name": "500 GB"
+          },
+          "priceInr": 13399,
+          "stock": 15
+        },
+        {
+          "sku": "STO-SANDISKOPTIMUSGX7100-1TB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "1tb",
+            "name": "1 TB"
+          },
+          "priceInr": 26399,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "sandisk-520-sata-ssd-500gb",
+      "productType": "SSD",
+      "title": "SanDisk 520 2.5-inch SATA SSD 500GB",
+      "description": "SanDisk's 520 is a 2.5-inch SATA SSD for upgrading a laptop or desktop from a hard drive, reading at up to 560 MB/s and writing at up to 510 MB/s.",
+      "imagePath": "/products/photos/gadgets/sandisk-520-sata/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "sandisk-520-sata",
+        "gadget_type": "ssd",
+        "department": "storage",
+        "regular_inr": 10999,
+        "detail_in_box": "The SSD in its sealed retail box. Screws and cables are not included."
+      },
+      "variants": [
+        {
+          "sku": "STO-SANDISK520SATA-500GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "500gb",
+            "name": "500 GB"
+          },
+          "priceInr": 10999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "desktop-ddr3-ram",
+      "productType": "RAM",
+      "title": "Desktop RAM DDR3 1600 MHz",
+      "description": "DDR3 desktop memory: a 240-pin DIMM running at 1600 MHz (PC3-12800) on 1.5 V. It only fits DDR3 desktop slots, so check your motherboard before you order. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
+      "imagePath": "/products/photos/gadgets/ram-desktop-ddr3/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "ram-desktop-ddr3",
+        "gadget_type": "ram",
+        "department": "storage",
+        "regular_inr": 649,
+        "detail_in_box": "One memory module in an anti-static pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-RAMDESKTOPDDR3-4GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "4gb",
+            "name": "4 GB"
+          },
+          "priceInr": 649,
+          "stock": 15
+        },
+        {
+          "sku": "STO-RAMDESKTOPDDR3-8GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "8gb",
+            "name": "8 GB"
+          },
+          "priceInr": 1519,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "laptop-ddr3l-ram",
+      "productType": "RAM",
+      "title": "Laptop RAM DDR3L 1600 MHz",
+      "description": "Low-voltage DDR3L laptop memory: a 204-pin SO-DIMM at 1600 MHz (PC3L-12800) on 1.35 V, which also runs at 1.5 V in older DDR3 laptops. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
+      "imagePath": "/products/photos/gadgets/ram-laptop-ddr3l/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "ram-laptop-ddr3l",
+        "gadget_type": "ram",
+        "department": "storage",
+        "regular_inr": 649,
+        "detail_in_box": "One memory module in an anti-static pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-RAMLAPTOPDDR3L-4GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "4gb",
+            "name": "4 GB"
+          },
+          "priceInr": 649,
+          "stock": 15
+        },
+        {
+          "sku": "STO-RAMLAPTOPDDR3L-8GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "8gb",
+            "name": "8 GB"
+          },
+          "priceInr": 1569,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "desktop-ddr4-ram",
+      "productType": "RAM",
+      "title": "Desktop RAM DDR4 3200 MHz",
+      "description": "DDR4 desktop memory: a 288-pin DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your motherboard supports and only fits DDR4 slots. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
+      "imagePath": "/products/photos/gadgets/ram-desktop-ddr4/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "ram-desktop-ddr4",
+        "gadget_type": "ram",
+        "department": "storage",
+        "regular_inr": 10899,
+        "detail_in_box": "One memory module in an anti-static pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-RAMDESKTOPDDR4-16GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "16gb",
+            "name": "16 GB"
+          },
+          "priceInr": 10899,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "laptop-ddr4-ram",
+      "productType": "RAM",
+      "title": "Laptop RAM DDR4 3200 MHz",
+      "description": "DDR4 laptop memory: a 260-pin SO-DIMM rated at 3200 MHz (PC4-25600) on 1.2 V. It runs at the highest speed your laptop supports and only fits DDR4 slots. The brand is Samsung, SK hynix or Crucial, depending on stock; message us on WhatsApp if you need a particular one. Pictured: a typical module of this type; the label on yours depends on the brand.",
+      "imagePath": "/products/photos/gadgets/ram-laptop-ddr4/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "ram-laptop-ddr4",
+        "gadget_type": "ram",
+        "department": "storage",
+        "regular_inr": 4849,
+        "detail_in_box": "One memory module in an anti-static pack."
+      },
+      "variants": [
+        {
+          "sku": "STO-RAMLAPTOPDDR4-8GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "8gb",
+            "name": "8 GB"
+          },
+          "priceInr": 4849,
+          "stock": 15
+        },
+        {
+          "sku": "STO-RAMLAPTOPDDR4-16GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "16gb",
+            "name": "16 GB"
+          },
+          "priceInr": 6669,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "cablet-hd2533-2-5-inch-sata-drive-case",
+      "productType": "Drive case",
+      "title": "CABLET 2.5-inch SATA drive case (HD2533-U3)",
+      "description": "Put a spare 2.5-inch SATA SSD or laptop hard drive in this CABLET case and use it as a portable USB drive. It is tool-free, supports UASP for faster transfers over USB 3.0 (5 Gbps), and takes drives from 7 to 9.5 mm thick, up to 6 TB. The drive is not included.",
+      "imagePath": "/products/photos/gadgets/cablet-hd2533/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cablet-hd2533",
+        "gadget_type": "enclosure",
+        "department": "storage",
+        "regular_inr": 925,
+        "detail_in_box": "The case and its USB cable, in the CABLET box. No drive included."
+      },
+      "variants": [
+        {
+          "sku": "STO-CABLETHD2533-HD2533",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Model",
+            "slug": "hd2533",
+            "name": "HD2533-U3"
+          },
+          "priceInr": 600,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "cablet-ms902-m2-nvme-ssd-case",
+      "productType": "Drive case",
+      "title": "CABLET M.2 NVMe SSD case (MS902-C3)",
+      "description": "An aluminium CABLET case for M.2 NVMe SSDs (M key and M+B key, 2230 to 2280, up to 8 TB) on USB 3.1 Gen 2 at 10 Gbps, with a Realtek RTL9210 bridge. It takes NVMe drives only, not M.2 SATA. The 2-in-1 cable connects to USB-C and USB-A ports. The SSD is not included.",
+      "imagePath": "/products/photos/gadgets/cablet-ms902/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cablet-ms902",
+        "gadget_type": "enclosure",
+        "department": "storage",
+        "regular_inr": 2650,
+        "detail_in_box": "The case and its 2-in-1 cable, in the CABLET box. No SSD included."
+      },
+      "variants": [
+        {
+          "sku": "STO-CABLETMS902-MS902",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Model",
+            "slug": "ms902",
+            "name": "MS902-C3"
+          },
+          "priceInr": 680,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "ranz-usb-c-to-usb-otg-adapter",
+      "productType": "OTG adapter",
+      "title": "Ranz USB-C to USB OTG adapter (RZ-UT01)",
+      "description": "A small Ranz adapter with a USB-C plug on one end and a full-size USB-A socket on the other, so a USB-C phone, tablet or laptop can use pen drives, card readers, mice and keyboards. Plug and play at USB 2.0 speed (up to 480 Mbps). Your device must support USB OTG.",
+      "imagePath": "/products/photos/gadgets/ranz-otg/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "ranz-otg",
+        "gadget_type": "otg",
+        "department": "storage",
+        "regular_inr": 199,
+        "detail_in_box": "The adapter in its Ranz pack. The pen drive in the photos is not included."
+      },
+      "variants": [
+        {
+          "sku": "STO-RANZOTG-RZ-UT01",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Model",
+            "slug": "rz-ut01",
+            "name": "RZ-UT01"
+          },
+          "priceInr": 170,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "cp-plus-ezykam-wifi-pan-tilt-camera",
+      "productType": "Wi-Fi camera",
+      "title": "CP Plus ezyKam+ Wi-Fi pan-tilt camera",
+      "description": "CP Plus's ezyKam+ indoor Wi-Fi camera turns 355° and tilts 75°, so one camera covers a whole room or shop floor. It sees up to 15 m in the dark, follows movement, spots people and sound, and has a built-in siren and two-way talk through the ezyKam+ app. It records to a microSD card up to 256 GB and works with Alexa and Google Home. Pick 2, 3 or 4 MP.",
+      "imagePath": "/products/photos/gadgets/cpplus-ezykam-pt/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "cpplus-ezykam-pt",
+        "gadget_type": "camera",
+        "department": "cameras",
+        "regular_inr": 2239,
+        "detail_in_box": "The camera in its sealed CP Plus box."
+      },
+      "variants": [
+        {
+          "sku": "CAM-CPPLUSEZYKAMPT-2MP",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Resolution",
+            "slug": "2mp",
+            "name": "2 MP · CP-E28Q"
+          },
+          "priceInr": 2239,
+          "stock": 15
+        },
+        {
+          "sku": "CAM-CPPLUSEZYKAMPT-3MP",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Resolution",
+            "slug": "3mp",
+            "name": "3 MP · CP-E38Q"
+          },
+          "priceInr": 2699,
+          "stock": 15
+        },
+        {
+          "sku": "CAM-CPPLUSEZYKAMPT-4MP",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Resolution",
+            "slug": "4mp",
+            "name": "4 MP · CP-E48Q"
+          },
+          "priceInr": 2999,
           "stock": 15
         }
       ]

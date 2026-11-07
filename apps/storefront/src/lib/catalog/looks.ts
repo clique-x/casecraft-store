@@ -32,7 +32,7 @@ export const LOOKS: readonly Look[] = [
   {
     handle: 'print',
     name: 'Prints & checks',
-    blurb: 'Woven-check and printed backs.',
+    blurb: 'Woven-check, printed and cartoon backs.',
     match: (e) => e.look === 'print',
   },
   {

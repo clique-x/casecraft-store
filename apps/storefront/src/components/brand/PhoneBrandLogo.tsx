@@ -54,6 +54,10 @@ const TEXT_MARKS: Record<string, string> = {
   Realme:
     'lowercase font-extrabold tracking-[-0.02em] text-[0.85rem] text-black bg-[#FFC915] rounded-[0.3rem] px-1.5 py-0.5',
   Nothing: 'uppercase font-semibold tracking-[0.2em] text-[0.7rem]',
+  // No logo files for these two yet: a small grey badge in each maker's own case ("motorola", "OPPO"). The text
+  // takes the surrounding colour (headings pass text-fg), so the badge stays light.
+  Motorola: 'lowercase font-bold tracking-[-0.01em] text-[0.85rem] text-black bg-[#E4E7EA] rounded-[0.3rem] px-1.5 py-0.5',
+  OPPO: 'uppercase font-bold tracking-[0.08em] text-[0.8rem] text-black bg-[#E4E7EA] rounded-[0.3rem] px-1.5 py-0.5',
 };
 
 /** True when the logo already spells the brand, so a text label beside it would repeat it. */

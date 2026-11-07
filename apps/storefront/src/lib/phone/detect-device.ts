@@ -15,6 +15,9 @@ import type { PhoneModel } from '@/lib/medusa/fixtures';
  */
 const ANDROID_CODES: Record<string, RegExp> = {
   'galaxy-s25': /^SM-S931[A-Z0-9]*$/i,
+  'galaxy-s22': /^SM-S901[A-Z0-9]*$/i,
+  'galaxy-s23': /^SM-S911[A-Z0-9]*$/i,
+  'galaxy-s24': /^SM-S921[A-Z0-9]*$/i,
   'galaxy-s23-fe': /^SM-S711[A-Z0-9]*$/i,
   'galaxy-s23-ultra': /^SM-S918[A-Z0-9]*$/i,
   'galaxy-s24-ultra': /^SM-S928[A-Z0-9]*$/i,

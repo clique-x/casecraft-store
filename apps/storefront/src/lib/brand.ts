@@ -27,6 +27,8 @@ export const LAUNCH_BRANDS: readonly string[] = [
   'Vivo',
   'Nothing',
   'Google',
+  'Motorola',
+  'OPPO',
 ];
 
 /** Where the photos are shot; appears in the "Up close" and "Why buy here" copy. */

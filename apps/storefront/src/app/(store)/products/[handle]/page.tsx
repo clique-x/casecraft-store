@@ -16,6 +16,7 @@ import { StickyBuyBar } from '@/components/product/StickyBuyBar.client';
 import { PhotoStage } from '@/components/product/viewer/PhotoStage.client';
 import { ProductViewer } from '@/components/product/viewer/ProductViewer.client';
 import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
+import { ACCESSORY_TYPE_LABEL, accessoryPhotoSrc } from '@/lib/catalog/accessories';
 import {
   DEPARTMENT_OF,
   GADGET_TYPE_LABEL,
@@ -25,7 +26,7 @@ import {
 import { LOOKS } from '@/lib/catalog/looks';
 import { gallerySrc, photoSrc, srcSetFor, type PhotoEntry, backdropThumbSrc } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
-import { coverMedia, gadgetMedia } from '@/lib/product/media';
+import { accessoryMedia, coverMedia, gadgetMedia } from '@/lib/product/media';
 import { getPhoneModels } from '@/lib/medusa/home';
 import {
   getAccessories,
@@ -75,11 +76,14 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   const photo = product.photo;
   const gadget = product.gadget;
+  const accessory = product.accessory;
   const title = photo
     ? `${photo.title} · ${photo.modelLabel} back cover`
     : gadget
       ? `${product.title} · ${GADGET_TYPE_LABEL[gadget.type]}`
-      : `${product.title} phone back cover`;
+      : accessory
+        ? `${product.title} · ${ACCESSORY_TYPE_LABEL[accessory.type]}`
+        : `${product.title} phone back cover`;
   const url = new URL(`/products/${product.handle}`, SITE_URL).toString();
   const gadgetImage = gadget?.photos
     ? {
@@ -88,7 +92,14 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         height: 960,
         alt: `${product.title}, ${gadget.options[0]?.name ?? ''}`.replace(/, $/, ''),
       }
-    : null;
+    : accessory?.photos && accessory.photos.gallery.length > 0
+      ? {
+          url: new URL(accessoryPhotoSrc(accessory.id, 0, 960), SITE_URL).toString(),
+          width: 960,
+          height: 960,
+          alt: `${product.title}: ${accessory.photos.gallery[0]}`,
+        }
+      : null;
   return {
     title,
     description: product.description,
@@ -184,6 +195,10 @@ function mediaFor(product: ProductDetail): {
       badge: gadget.original ? `Original ${gadget.original.brand}` : undefined,
       optionIndex: photos.heroByOption,
     };
+  }
+  const accessory = product.accessory;
+  if (accessory?.photos && accessory.photos.gallery.length > 0) {
+    return { images: accessoryMedia(accessory, product.title) };
   }
   return null;
 }

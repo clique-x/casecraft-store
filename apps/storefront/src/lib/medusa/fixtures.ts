@@ -347,7 +347,7 @@ const CARE_PHOTO = 'Wipe with a damp cloth and a drop of mild soap. Do not use a
 
 function photoDescription(photo: PhotoEntry): string {
   const hinge = photo.tags?.includes('hinge') ? ' A separate hinge piece covers the spine when the phone is folded.' : '';
-  return `${photo.design} is a ${photo.brand} ${photo.series} cover for the ${photo.modelLabel}, stocked in our ${SHOP_CITY} shop. ${LOOK_COPY[photo.look]}${hinge}`;
+  return `${photo.design} is a ${photo.brand} ${photo.series} cover for the ${photo.modelLabel}, stocked in our ${SHOP_CITY} shop. ${photo.about ?? LOOK_COPY[photo.look]}${hinge}`;
 }
 
 function photoVariants(photo: PhotoEntry): Variant[] {

@@ -46,6 +46,14 @@ export interface PhotoEntry {
    * of the home hero and the product page opens on its gallery instead of the tilt stage.
    */
   stage?: boolean;
+  /**
+   * True when the cover was photographed only on the teal studio backdrop (the November 2026 ranges): there
+   * is no transparent cutout, so `image` is its first square gallery image and the width variants are that
+   * square resized. Such a cover needs `stage: false`, card shots and a gallery, and stays out of the hero.
+   */
+  backdrop?: boolean;
+  /** One line on what the cover is, for the product description in place of the look's generic line. */
+  about?: string;
   stock?: number;
   hidden?: boolean;
   variants: number[];
@@ -63,7 +71,10 @@ export const HERO_COUNT = { lg: 6, phone: 5 } as const;
 const MIN_CAST = 3;
 const WIDE_ASPECT = 1.15;
 
-/** Phone models that exist because a photographed cover fits them; `PHONE_MODELS` spreads them in. */
+/**
+ * Phone models that exist because a photographed cover or a photographed screen guard fits them;
+ * `PHONE_MODELS` spreads them in.
+ */
 export const PHOTO_PHONE_MODELS: readonly PhoneModel[] = [
   { slug: 'iphone-13-pro', brand: 'Apple', model: 'iPhone 13 Pro', series: 'iPhone', releaseYear: 2021, islandStyle: 'square' },
   { slug: 'iphone-14', brand: 'Apple', model: 'iPhone 14', series: 'iPhone', releaseYear: 2022, islandStyle: 'square' },
@@ -74,11 +85,25 @@ export const PHOTO_PHONE_MODELS: readonly PhoneModel[] = [
   { slug: 'iphone-17-pro', brand: 'Apple', model: 'iPhone 17 Pro', series: 'iPhone', releaseYear: 2025, islandStyle: 'square' },
   { slug: 'iphone-18', brand: 'Apple', model: 'iPhone 18', series: 'iPhone', releaseYear: 2026, islandStyle: 'square' },
   { slug: 'iphone-18-pro', brand: 'Apple', model: 'iPhone 18 Pro', series: 'iPhone', releaseYear: 2026, islandStyle: 'square' },
+  { slug: 'galaxy-s22', brand: 'Samsung', model: 'Galaxy S22', series: 'Galaxy S', releaseYear: 2022, islandStyle: 'pills' },
+  { slug: 'galaxy-s23', brand: 'Samsung', model: 'Galaxy S23', series: 'Galaxy S', releaseYear: 2023, islandStyle: 'pills' },
   { slug: 'galaxy-s23-fe', brand: 'Samsung', model: 'Galaxy S23 FE', series: 'Galaxy S', releaseYear: 2023, islandStyle: 'pills' },
   { slug: 'galaxy-s23-ultra', brand: 'Samsung', model: 'Galaxy S23 Ultra', series: 'Galaxy S', releaseYear: 2023, islandStyle: 'pills' },
+  { slug: 'galaxy-s24', brand: 'Samsung', model: 'Galaxy S24', series: 'Galaxy S', releaseYear: 2024, islandStyle: 'pills' },
   { slug: 'galaxy-s24-ultra', brand: 'Samsung', model: 'Galaxy S24 Ultra', series: 'Galaxy S', releaseYear: 2024, islandStyle: 'pills' },
   { slug: 'galaxy-s25-ultra', brand: 'Samsung', model: 'Galaxy S25 Ultra', series: 'Galaxy S', releaseYear: 2025, islandStyle: 'pills' },
+  { slug: 'galaxy-s26', brand: 'Samsung', model: 'Galaxy S26', series: 'Galaxy S', releaseYear: 2026, islandStyle: 'pills' },
+  { slug: 'galaxy-s26-ultra', brand: 'Samsung', model: 'Galaxy S26 Ultra', series: 'Galaxy S', releaseYear: 2026, islandStyle: 'pills' },
   { slug: 'pixel-9', brand: 'Google', model: 'Pixel 9', series: 'Pixel', releaseYear: 2024, islandStyle: 'pills' },
+  { slug: 'redmi-9c', brand: 'Xiaomi', model: 'Redmi 9C', series: 'Redmi', releaseYear: 2020, islandStyle: 'square' },
+  { slug: 'redmi-a2', brand: 'Xiaomi', model: 'Redmi A2', series: 'Redmi', releaseYear: 2023, islandStyle: 'square' },
+  { slug: 'redmi-13c-5g', brand: 'Xiaomi', model: 'Redmi 13C 5G', series: 'Redmi', releaseYear: 2023, islandStyle: 'pills' },
+  { slug: 'realme-16-5g', brand: 'Realme', model: 'Realme 16 5G', series: 'Number', releaseYear: 2025, islandStyle: 'pills' },
+  { slug: 'oppo-a17', brand: 'OPPO', model: 'OPPO A17', series: 'A', releaseYear: 2022, islandStyle: 'pills' },
+  { slug: 'motorola-edge-40-neo', brand: 'Motorola', model: 'Motorola Edge 40 Neo', series: 'Edge', releaseYear: 2023, islandStyle: 'square' },
+  { slug: 'motorola-edge-50-fusion', brand: 'Motorola', model: 'Motorola Edge 50 Fusion', series: 'Edge', releaseYear: 2024, islandStyle: 'square' },
+  { slug: 'motorola-edge-60-pro', brand: 'Motorola', model: 'Motorola Edge 60 Pro', series: 'Edge', releaseYear: 2025, islandStyle: 'square' },
+  { slug: 'motorola-edge-70', brand: 'Motorola', model: 'Motorola Edge 70', series: 'Edge', releaseYear: 2025, islandStyle: 'square' },
 ];
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -190,6 +215,13 @@ function parseEntry(v: unknown): PhotoEntry {
   if (v.print !== undefined) entry.print = str(v, 'print');
   const stage = optBool(v, 'stage');
   if (stage !== undefined) entry.stage = stage;
+  const backdrop = optBool(v, 'backdrop');
+  if (backdrop !== undefined) entry.backdrop = backdrop;
+  if (v.about !== undefined) entry.about = str(v, 'about');
+  // Nothing may stand a backdrop photo on its own the way it stands a cutout.
+  if (entry.backdrop === true && (entry.heroEligible || entry.stage !== false || !entry.shots || !entry.gallery?.length)) {
+    fail(entry.id, 'backdrop', 'paired with stage: false, shots and a gallery, and never heroEligible');
+  }
   return entry;
 }
 

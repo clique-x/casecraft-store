@@ -56,7 +56,7 @@ export function ModelSelector({ models, value, onChange, unfitPhone = null, clas
     <div className={cn('flex flex-col gap-3', className)}>
       <div className="flex items-baseline justify-between gap-3">
         <p className="text-sm font-semibold text-fg">Your phone</p>
-        <p className="text-caption text-fg-muted tabular-nums">Fits {models.length} models</p>
+        <p className="text-caption text-fg-muted tabular-nums">Fits {models.length} {models.length === 1 ? 'model' : 'models'}</p>
       </div>
 
       {unfitPhone && (

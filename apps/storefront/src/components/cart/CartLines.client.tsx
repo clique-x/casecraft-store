@@ -5,7 +5,7 @@ import { Minus, Plus, Trash2 } from 'lucide-react';
 import { AccessoryArt } from '@/components/accessory/AccessoryArt';
 import { ProcCaseThumb } from '@/components/product/ProcCaseThumb';
 import { GadgetArt } from '@/components/gadget/GadgetArt';
-import { ACCESSORIES } from '@/lib/catalog/accessories';
+import { ACCESSORIES, accessoryPhotoSrc } from '@/lib/catalog/accessories';
 import { GADGETS } from '@/lib/catalog/gadgets';
 import { formatInr } from '@/lib/catalog/photos';
 import { DESIGNS } from '@/lib/designs/catalog';
@@ -16,7 +16,10 @@ import { cn } from '@/lib/utils';
 const QTY_BTN =
   'grid size-8 place-items-center rounded-md text-fg transition-colors outline-none hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-brand disabled:opacity-40';
 
-/** Photo covers have a Medusa thumbnail; accessories and printed designs are drawn from the catalogue. */
+/**
+ * Photo covers have a Medusa thumbnail; photographed accessories show their first photo; other accessories
+ * and printed designs are drawn from the catalogue.
+ */
 function Thumb({ line }: { line: CartLine }) {
   const accessory = line.productHandle ? ACCESSORIES.find((a) => a.handle === line.productHandle) : undefined;
   const gadget = !accessory && line.productHandle ? GADGETS.find((a) => a.handle === line.productHandle) : undefined;
@@ -28,6 +31,9 @@ function Thumb({ line }: { line: CartLine }) {
       {line.thumbnail ? (
         // eslint-disable-next-line @next/next/no-img-element -- Medusa thumbnail URL, small fixed size
         <img src={line.thumbnail} alt="" width={64} height={80} className="size-full object-contain" />
+      ) : accessory?.photos && accessory.photos.gallery.length > 0 ? (
+        // eslint-disable-next-line @next/next/no-img-element -- local catalogue photo at a fixed small size
+        <img src={accessoryPhotoSrc(accessory.id, 0, 160)} alt="" width={64} height={80} className="size-full object-cover" />
       ) : accessory ? (
         <AccessoryArt accessory={accessory} />
       ) : gadget ? (

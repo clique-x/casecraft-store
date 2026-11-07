@@ -1,5 +1,7 @@
 // Generates /public/products/photos/<id>/{320,480,720,960}.webp from the catalogue originals,
 // trims transparent margins and writes the trimmed imageW/imageH + variants back into the JSON.
+// Covers shot only on the studio backdrop (`backdrop: true`) have no cutout: their original is the first
+// square gallery image, which is resized as it is (run `pnpm photos:gallery` first for those).
 // Idempotent: an item is skipped when every variant is newer than its original and the JSON already
 // carries the trimmed size. Run with `pnpm photos`.
 import fs from 'node:fs/promises';
@@ -88,11 +90,12 @@ async function processItem(item) {
     return false;
   }
 
+  const backdrop = item.backdrop === true;
   const meta = await sharp(original).metadata();
-  if (!meta.hasAlpha) throw new Error(`${label}: ${item.image} has no alpha channel; cutouts must be transparent`);
+  if (!backdrop && !meta.hasAlpha) throw new Error(`${label}: ${item.image} has no alpha channel; cutouts must be transparent`);
 
-  const trimmed = sharp(original).trim({ threshold: TRIM_THRESHOLD });
-  let { data, info } = await trimmed.toBuffer({ resolveWithObject: true });
+  const source = backdrop ? sharp(original) : sharp(original).trim({ threshold: TRIM_THRESHOLD });
+  let { data, info } = await source.toBuffer({ resolveWithObject: true });
   if (item.complete === true) {
     ({ data, info } = await completeSilhouette(data, info));
     item.cut = 'full';
