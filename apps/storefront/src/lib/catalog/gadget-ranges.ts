@@ -603,11 +603,11 @@ export const STORAGE: readonly GadgetEntry[] = [
   },
   {
     "id": "consistent-s7-nvme-ssd",
-    "handle": "consistent-s7-m2-nvme-ssd-256gb",
-    "title": "Consistent S7 M.2 NVMe SSD 256GB",
+    "handle": "consistent-s7-m2-nvme-ssd",
+    "title": "Consistent S7 M.2 NVMe SSD",
     "type": "ssd",
-    "priceInr": 4879,
-    "regularInr": 10050,
+    "priceInr": 2479,
+    "regularInr": 2479,
     "short": "M.2 2280 PCIe Gen 3 NVMe SSD, 5-year warranty",
     "description": "Consistent's S7 M.2 2280 NVMe SSD on PCIe Gen 3 x4, with 3D NAND and an SLC cache, made in India. It fits laptops and desktops with an M.2 NVMe slot (M key); check that your slot takes NVMe drives before you order.",
     "features": [
@@ -618,7 +618,7 @@ export const STORAGE: readonly GadgetEntry[] = [
     "specs": [
       {
         "label": "Capacity",
-        "value": "256 GB"
+        "value": "128 GB or 256 GB"
       },
       {
         "label": "Form factor",
@@ -645,6 +645,14 @@ export const STORAGE: readonly GadgetEntry[] = [
     "optionKind": "capacity",
     "options": [
       {
+        "slug": "128gb",
+        "name": "128 GB",
+        "hex": "#3a3d42",
+        "priceInr": 2479,
+        "regularInr": 2479,
+        "orderIn": true
+      },
+      {
         "slug": "256gb",
         "name": "256 GB",
         "hex": "#3a3d42",
@@ -655,315 +663,96 @@ export const STORAGE: readonly GadgetEntry[] = [
     "photos": {
       "id": "consistent-s7-nvme-ssd",
       "gallery": [
-        "On display",
-        "Retail box",
+        "128 GB box",
+        "256 GB on display",
+        "256 GB box",
         "Features"
-      ]
+      ],
+      "heroByOption": {
+        "128gb": 0,
+        "256gb": 1
+      }
     }
   },
   {
-    "id": "samsung-870-evo",
-    "handle": "samsung-870-evo-sata-ssd",
-    "title": "Samsung 870 EVO 2.5-inch SATA SSD",
+    "id": "wd-blue-sn5000",
+    "handle": "wd-blue-sn5000-nvme-ssd",
+    "title": "WD Blue SN5000 M.2 NVMe SSD",
     "type": "ssd",
-    "priceInr": 12799,
-    "regularInr": 12799,
-    "short": "Up to 560 MB/s read, 5-year limited warranty",
-    "description": "Samsung's 870 EVO is a 2.5-inch SATA SSD for laptops and desktops, built with Samsung V-NAND and a DRAM cache. It reads at up to 560 MB/s and writes at up to 530 MB/s, the most a SATA connection allows.",
+    "priceInr": 12399,
+    "regularInr": 12399,
+    "short": "PCIe 4.0 NVMe, up to 5,150 MB/s read",
+    "description": "The WD Blue SN5000 is a PCIe 4.0 x4 M.2 2280 NVMe SSD for everyday laptops and desktops, reading at up to 5,000 MB/s (500 GB) or 5,150 MB/s (1 TB).",
     "features": [
-      "Up to 560 MB/s read, 530 MB/s write",
-      "Samsung V-NAND with DRAM cache",
+      "Up to 5,150 MB/s read",
+      "PCIe 4.0 x4, M.2 2280",
       "5-year limited warranty"
     ],
     "specs": [
       {
         "label": "Interface",
-        "value": "SATA 6 Gb/s"
+        "value": "PCIe 4.0 x4, NVMe"
       },
       {
         "label": "Form factor",
-        "value": "2.5-inch, 6.8 mm"
+        "value": "M.2 2280"
       },
       {
         "label": "Speed",
-        "value": "Up to 560 MB/s read, 530 MB/s write"
+        "value": "Up to 5,000 MB/s read, 4,000 MB/s write (500 GB); 5,150 / 4,900 MB/s (1 TB)"
       },
       {
         "label": "Endurance",
-        "value": "150 TBW (250 GB), 300 TBW (500 GB), 600 TBW (1 TB), 2,400 TBW (4 TB)"
+        "value": "300 TBW (500 GB), 600 TBW (1 TB)"
       },
       {
         "label": "Warranty",
-        "value": "5-year limited warranty from Samsung, or the TBW above, whichever comes first"
+        "value": "5-year limited warranty"
       }
     ],
     "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
     "optionKind": "capacity",
     "options": [
-      {
-        "slug": "250gb",
-        "name": "250 GB",
-        "hex": "#3a3d42",
-        "priceInr": 12799,
-        "regularInr": 12799,
-        "orderIn": true
-      },
       {
         "slug": "500gb",
         "name": "500 GB",
         "hex": "#3a3d42",
-        "priceInr": 21129,
-        "regularInr": 21129,
+        "priceInr": 12399,
+        "regularInr": 12399,
         "orderIn": true
       },
       {
         "slug": "1tb",
         "name": "1 TB",
         "hex": "#3a3d42",
-        "priceInr": 37399,
-        "regularInr": 37399,
-        "orderIn": true
-      },
-      {
-        "slug": "4tb",
-        "name": "4 TB",
-        "hex": "#3a3d42",
-        "priceInr": 81589,
-        "regularInr": 81589,
+        "priceInr": 19399,
+        "regularInr": 19399,
         "orderIn": true
       }
     ],
     "photos": {
-      "id": "samsung-870-evo",
+      "id": "wd-blue-sn5000",
       "gallery": [
-        "250 GB",
         "500 GB",
-        "1 TB",
-        "4 TB"
-      ],
-      "heroByOption": {
-        "250gb": 0,
-        "500gb": 1,
-        "1tb": 2,
-        "4tb": 3
-      }
-    }
-  },
-  {
-    "id": "samsung-990-evo-plus",
-    "handle": "samsung-990-evo-plus-nvme-ssd",
-    "title": "Samsung 990 EVO Plus M.2 NVMe SSD",
-    "type": "ssd",
-    "priceInr": 20399,
-    "regularInr": 20399,
-    "short": "PCIe 4.0 NVMe, up to 7,250 MB/s read",
-    "description": "Samsung's 990 EVO Plus is an M.2 2280 NVMe SSD on PCIe 4.0 x4 (or 5.0 x2), with reads up to 7,250 MB/s for fast game loads and big file copies. It uses Samsung V-NAND TLC and the host memory buffer instead of its own DRAM.",
-    "features": [
-      "Up to 7,250 MB/s read",
-      "PCIe 4.0 x4 / 5.0 x2, NVMe 2.0",
-      "5-year limited warranty"
-    ],
-    "specs": [
-      {
-        "label": "Interface",
-        "value": "PCIe 4.0 x4 / 5.0 x2, NVMe 2.0"
-      },
-      {
-        "label": "Form factor",
-        "value": "M.2 2280"
-      },
-      {
-        "label": "Speed",
-        "value": "Up to 7,150 MB/s read (1 TB) or 7,250 MB/s (2 and 4 TB); up to 6,300 MB/s write"
-      },
-      {
-        "label": "Endurance",
-        "value": "600 TBW (1 TB), 1,200 TBW (2 TB), 2,400 TBW (4 TB)"
-      },
-      {
-        "label": "Warranty",
-        "value": "5-year limited warranty from Samsung, or the TBW above, whichever comes first"
-      }
-    ],
-    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
-    "optionKind": "capacity",
-    "options": [
-      {
-        "slug": "1tb",
-        "name": "1 TB",
-        "hex": "#3a3d42",
-        "priceInr": 20399,
-        "regularInr": 20399,
-        "orderIn": true
-      },
-      {
-        "slug": "2tb",
-        "name": "2 TB",
-        "hex": "#3a3d42",
-        "priceInr": 35899,
-        "regularInr": 35899,
-        "orderIn": true
-      },
-      {
-        "slug": "4tb",
-        "name": "4 TB",
-        "hex": "#3a3d42",
-        "priceInr": 101699,
-        "regularInr": 101699,
-        "orderIn": true
-      }
-    ],
-    "photos": {
-      "id": "samsung-990-evo-plus",
-      "gallery": [
-        "1 TB",
-        "2 TB",
-        "4 TB"
-      ],
-      "heroByOption": {
-        "1tb": 0,
-        "2tb": 1,
-        "4tb": 2
-      }
-    }
-  },
-  {
-    "id": "samsung-990-pro",
-    "handle": "samsung-990-pro-nvme-ssd",
-    "title": "Samsung 990 PRO M.2 NVMe SSD",
-    "type": "ssd",
-    "priceInr": 26899,
-    "regularInr": 26899,
-    "short": "PCIe 4.0 NVMe, up to 7,450 MB/s read, DRAM cache",
-    "description": "Samsung's 990 PRO is its fastest PCIe 4.0 M.2 NVMe SSD, with reads up to 7,450 MB/s and writes up to 6,900 MB/s, a DRAM cache and Samsung V-NAND TLC. It suits gaming PCs, PS5 storage (with a heatsink) and video editing.",
-    "features": [
-      "Up to 7,450 MB/s read, 6,900 MB/s write",
-      "DRAM cache, Samsung V-NAND TLC",
-      "5-year limited warranty"
-    ],
-    "specs": [
-      {
-        "label": "Interface",
-        "value": "PCIe 4.0 x4, NVMe 2.0"
-      },
-      {
-        "label": "Form factor",
-        "value": "M.2 2280, no heatsink"
-      },
-      {
-        "label": "Speed",
-        "value": "Up to 7,450 MB/s read, 6,900 MB/s write"
-      },
-      {
-        "label": "Endurance",
-        "value": "600 TBW (1 TB), 1,200 TBW (2 TB)"
-      },
-      {
-        "label": "Warranty",
-        "value": "5-year limited warranty from Samsung, or the TBW above, whichever comes first"
-      }
-    ],
-    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
-    "optionKind": "capacity",
-    "options": [
-      {
-        "slug": "1tb",
-        "name": "1 TB",
-        "hex": "#3a3d42",
-        "priceInr": 26899,
-        "regularInr": 26899,
-        "orderIn": true
-      },
-      {
-        "slug": "2tb",
-        "name": "2 TB",
-        "hex": "#3a3d42",
-        "priceInr": 52899,
-        "regularInr": 52899,
-        "orderIn": true
-      }
-    ],
-    "photos": {
-      "id": "samsung-990-pro",
-      "gallery": [
-        "1 TB",
-        "2 TB"
-      ],
-      "heroByOption": {
-        "1tb": 0,
-        "2tb": 1
-      }
-    }
-  },
-  {
-    "id": "samsung-990",
-    "handle": "samsung-990-nvme-ssd-1tb",
-    "title": "Samsung 990 M.2 NVMe SSD 1TB",
-    "type": "ssd",
-    "priceInr": 21899,
-    "regularInr": 21899,
-    "short": "PCIe 4.0 NVMe, up to 7,150 MB/s read",
-    "description": "Samsung's 990 is a PCIe 4.0 x4 M.2 2280 NVMe SSD with reads up to 7,150 MB/s and writes up to 6,450 MB/s. It uses the host memory buffer instead of its own DRAM.",
-    "features": [
-      "Up to 7,150 MB/s read, 6,450 MB/s write",
-      "PCIe 4.0 x4, NVMe 2.0",
-      "3-year limited warranty"
-    ],
-    "specs": [
-      {
-        "label": "Interface",
-        "value": "PCIe 4.0 x4, NVMe 2.0"
-      },
-      {
-        "label": "Form factor",
-        "value": "M.2 2280"
-      },
-      {
-        "label": "Speed",
-        "value": "Up to 7,150 MB/s read, 6,450 MB/s write"
-      },
-      {
-        "label": "Endurance",
-        "value": "400 TBW"
-      },
-      {
-        "label": "Warranty",
-        "value": "3-year limited warranty from Samsung, or 400 TBW, whichever comes first"
-      }
-    ],
-    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
-    "optionKind": "capacity",
-    "options": [
-      {
-        "slug": "1tb",
-        "name": "1 TB",
-        "hex": "#3a3d42",
-        "priceInr": 21899,
-        "regularInr": 21899,
-        "orderIn": true
-      }
-    ],
-    "photos": {
-      "id": "samsung-990",
-      "gallery": [
         "1 TB"
       ],
       "heroByOption": {
-        "1tb": 0
+        "500gb": 0,
+        "1tb": 1
       }
     }
   },
   {
     "id": "wd-blue-sn5100",
-    "handle": "wd-blue-sn5100-nvme-ssd-500gb",
-    "title": "WD Blue SN5100 M.2 NVMe SSD 500GB",
+    "handle": "wd-blue-sn5100-nvme-ssd",
+    "title": "WD Blue SN5100 M.2 NVMe SSD",
     "type": "ssd",
     "priceInr": 11099,
     "regularInr": 11099,
-    "short": "PCIe 4.0 NVMe, up to 6,600 MB/s read",
-    "description": "The WD Blue SN5100 is a PCIe 4.0 M.2 2280 NVMe SSD for everyday laptops and desktops, reading at up to 6,600 MB/s and writing at up to 5,600 MB/s in the 500 GB size.",
+    "short": "PCIe 4.0 NVMe, up to 7,100 MB/s read",
+    "description": "The WD Blue SN5100 is a PCIe 4.0 M.2 2280 NVMe SSD for everyday laptops and desktops, reading at up to 6,600 MB/s (500 GB) or 7,100 MB/s (1 TB).",
     "features": [
-      "Up to 6,600 MB/s read, 5,600 MB/s write",
+      "Up to 7,100 MB/s read",
       "PCIe 4.0, M.2 2280",
       "5-year limited warranty"
     ],
@@ -978,7 +767,319 @@ export const STORAGE: readonly GadgetEntry[] = [
       },
       {
         "label": "Speed",
-        "value": "Up to 6,600 MB/s read, 5,600 MB/s write"
+        "value": "Up to 6,600 MB/s read, 5,600 MB/s write (500 GB); 7,100 / 6,700 MB/s (1 TB)"
+      },
+      {
+        "label": "Endurance",
+        "value": "300 TBW (500 GB), 600 TBW (1 TB)"
+      },
+      {
+        "label": "Warranty",
+        "value": "5-year limited warranty"
+      }
+    ],
+    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
+    "optionKind": "capacity",
+    "options": [
+      {
+        "slug": "500gb",
+        "name": "500 GB",
+        "hex": "#3a3d42",
+        "priceInr": 11099,
+        "regularInr": 11099,
+        "orderIn": true
+      },
+      {
+        "slug": "1tb",
+        "name": "1 TB",
+        "hex": "#3a3d42",
+        "priceInr": 16899,
+        "regularInr": 16899,
+        "orderIn": true
+      }
+    ],
+    "photos": {
+      "id": "wd-blue-sn5100",
+      "gallery": [
+        "500 GB",
+        "1 TB"
+      ],
+      "heroByOption": {
+        "500gb": 0,
+        "1tb": 1
+      }
+    }
+  },
+  {
+    "id": "wd-black-sn7100",
+    "handle": "wd-black-sn7100-nvme-ssd",
+    "title": "WD_BLACK SN7100 M.2 NVMe SSD",
+    "type": "ssd",
+    "priceInr": 19799,
+    "regularInr": 19799,
+    "short": "PCIe 4.0 gaming SSD, up to 7,250 MB/s read",
+    "description": "The WD_BLACK SN7100 is a PCIe 4.0 M.2 2280 NVMe gaming SSD, reading at up to 7,250 MB/s and writing at up to 6,900 MB/s in the 1 TB size. It is DRAM-less.",
+    "features": [
+      "Up to 7,250 MB/s read, 6,900 MB/s write",
+      "PCIe 4.0, M.2 2280",
+      "5-year limited warranty"
+    ],
+    "specs": [
+      {
+        "label": "Interface",
+        "value": "PCIe 4.0, NVMe"
+      },
+      {
+        "label": "Form factor",
+        "value": "M.2 2280"
+      },
+      {
+        "label": "Speed",
+        "value": "Up to 7,250 MB/s read, 6,900 MB/s write"
+      },
+      {
+        "label": "Warranty",
+        "value": "5-year limited warranty"
+      }
+    ],
+    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
+    "optionKind": "capacity",
+    "options": [
+      {
+        "slug": "1tb",
+        "name": "1 TB",
+        "hex": "#3a3d42",
+        "priceInr": 19799,
+        "regularInr": 19799,
+        "orderIn": true
+      }
+    ],
+    "photos": {
+      "id": "wd-black-sn7100",
+      "gallery": [
+        "1 TB"
+      ],
+      "heroByOption": {
+        "1tb": 0
+      }
+    }
+  },
+  {
+    "id": "wd-black-sn850x",
+    "handle": "wd-black-sn850x-nvme-ssd",
+    "title": "WD_BLACK SN850X M.2 NVMe SSD 1TB",
+    "type": "ssd",
+    "priceInr": 35899,
+    "regularInr": 35899,
+    "short": "PCIe 4.0 gaming SSD, up to 7,300 MB/s read",
+    "description": "The WD_BLACK SN850X is a PCIe 4.0 x4 M.2 2280 NVMe SSD made for gaming PCs, with reads up to 7,300 MB/s and writes up to 6,300 MB/s in the 1 TB size. This is the version without a heatsink.",
+    "features": [
+      "Up to 7,300 MB/s read, 6,300 MB/s write",
+      "1 TB, PCIe 4.0 x4",
+      "5-year limited warranty"
+    ],
+    "specs": [
+      {
+        "label": "Interface",
+        "value": "PCIe 4.0 x4, NVMe"
+      },
+      {
+        "label": "Form factor",
+        "value": "M.2 2280, no heatsink"
+      },
+      {
+        "label": "Speed",
+        "value": "Up to 7,300 MB/s read, 6,300 MB/s write"
+      },
+      {
+        "label": "Endurance",
+        "value": "600 TBW"
+      },
+      {
+        "label": "Warranty",
+        "value": "5-year limited warranty"
+      }
+    ],
+    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
+    "optionKind": "capacity",
+    "options": [
+      {
+        "slug": "1tb",
+        "name": "1 TB",
+        "hex": "#3a3d42",
+        "priceInr": 35899,
+        "regularInr": 35899,
+        "orderIn": true
+      }
+    ],
+    "photos": {
+      "id": "wd-black-sn850x",
+      "gallery": [
+        "1 TB"
+      ],
+      "heroByOption": {
+        "1tb": 0
+      }
+    }
+  },
+  {
+    "id": "sandisk-optimus-5100",
+    "handle": "sandisk-optimus-5100-nvme-ssd",
+    "title": "SanDisk Optimus 5100 M.2 NVMe SSD",
+    "type": "ssd",
+    "priceInr": 11199,
+    "regularInr": 11199,
+    "short": "PCIe 4.0 NVMe, up to 7,100 MB/s read",
+    "description": "SanDisk's Optimus 5100 is a PCIe 4.0 x4 M.2 2280 NVMe SSD, reading at up to 6,600 MB/s (500 GB) or 7,100 MB/s (1 TB).",
+    "features": [
+      "Up to 7,100 MB/s read",
+      "PCIe 4.0 x4, M.2 2280",
+      "5-year limited warranty"
+    ],
+    "specs": [
+      {
+        "label": "Interface",
+        "value": "PCIe 4.0 x4, NVMe"
+      },
+      {
+        "label": "Form factor",
+        "value": "M.2 2280"
+      },
+      {
+        "label": "Speed",
+        "value": "Up to 6,600 MB/s read, 5,600 MB/s write (500 GB); 7,100 / 6,700 MB/s (1 TB)"
+      },
+      {
+        "label": "Warranty",
+        "value": "5-year limited warranty"
+      }
+    ],
+    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
+    "optionKind": "capacity",
+    "options": [
+      {
+        "slug": "500gb",
+        "name": "500 GB",
+        "hex": "#3a3d42",
+        "priceInr": 11199,
+        "regularInr": 11199,
+        "orderIn": true
+      },
+      {
+        "slug": "1tb",
+        "name": "1 TB",
+        "hex": "#3a3d42",
+        "priceInr": 20899,
+        "regularInr": 20899,
+        "orderIn": true
+      }
+    ],
+    "photos": {
+      "id": "sandisk-optimus-5100",
+      "gallery": [
+        "500 GB",
+        "1 TB"
+      ],
+      "heroByOption": {
+        "500gb": 0,
+        "1tb": 1
+      }
+    }
+  },
+  {
+    "id": "sandisk-optimus-gx-7100",
+    "handle": "sandisk-optimus-gx-7100-nvme-ssd",
+    "title": "SanDisk Optimus GX 7100 M.2 NVMe SSD",
+    "type": "ssd",
+    "priceInr": 13399,
+    "regularInr": 13399,
+    "short": "PCIe 4.0 gaming SSD, up to 7,250 MB/s read",
+    "description": "SanDisk's Optimus GX 7100 is a PCIe 4.0 x4 M.2 2280 NVMe gaming SSD, reading at up to 6,800 MB/s (500 GB) or 7,250 MB/s (1 TB).",
+    "features": [
+      "Up to 7,250 MB/s read",
+      "PCIe 4.0 x4, M.2 2280",
+      "5-year limited warranty"
+    ],
+    "specs": [
+      {
+        "label": "Interface",
+        "value": "PCIe 4.0 x4, NVMe"
+      },
+      {
+        "label": "Form factor",
+        "value": "M.2 2280"
+      },
+      {
+        "label": "Speed",
+        "value": "Up to 6,800 MB/s read, 5,800 MB/s write (500 GB); 7,250 / 6,900 MB/s (1 TB)"
+      },
+      {
+        "label": "Endurance",
+        "value": "300 TBW (500 GB), 600 TBW (1 TB)"
+      },
+      {
+        "label": "Warranty",
+        "value": "5-year limited warranty"
+      }
+    ],
+    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
+    "optionKind": "capacity",
+    "options": [
+      {
+        "slug": "500gb",
+        "name": "500 GB",
+        "hex": "#3a3d42",
+        "priceInr": 13399,
+        "regularInr": 13399,
+        "orderIn": true
+      },
+      {
+        "slug": "1tb",
+        "name": "1 TB",
+        "hex": "#3a3d42",
+        "priceInr": 26399,
+        "regularInr": 26399,
+        "orderIn": true
+      }
+    ],
+    "photos": {
+      "id": "sandisk-optimus-gx-7100",
+      "gallery": [
+        "500 GB",
+        "1 TB"
+      ],
+      "heroByOption": {
+        "500gb": 0,
+        "1tb": 1
+      }
+    }
+  },
+  {
+    "id": "sandisk-520-sata",
+    "handle": "sandisk-520-sata-ssd-500gb",
+    "title": "SanDisk 520 2.5-inch SATA SSD 500GB",
+    "type": "ssd",
+    "priceInr": 10999,
+    "regularInr": 10999,
+    "short": "SATA SSD, up to 560 MB/s read",
+    "description": "SanDisk's 520 is a 2.5-inch SATA SSD for upgrading a laptop or desktop from a hard drive, reading at up to 560 MB/s and writing at up to 510 MB/s.",
+    "features": [
+      "Up to 560 MB/s read, 510 MB/s write",
+      "2.5-inch SATA 6 Gb/s",
+      "5-year limited warranty"
+    ],
+    "specs": [
+      {
+        "label": "Interface",
+        "value": "SATA 6 Gb/s"
+      },
+      {
+        "label": "Form factor",
+        "value": "2.5-inch"
+      },
+      {
+        "label": "Speed",
+        "value": "Up to 560 MB/s read, 510 MB/s write"
       },
       {
         "label": "Endurance",
@@ -996,76 +1097,18 @@ export const STORAGE: readonly GadgetEntry[] = [
         "slug": "500gb",
         "name": "500 GB",
         "hex": "#3a3d42",
-        "priceInr": 11099,
-        "regularInr": 11099,
+        "priceInr": 10999,
+        "regularInr": 10999,
         "orderIn": true
       }
     ],
     "photos": {
-      "id": "wd-blue-sn5100",
+      "id": "sandisk-520-sata",
       "gallery": [
         "500 GB"
       ],
       "heroByOption": {
         "500gb": 0
-      }
-    }
-  },
-  {
-    "id": "wd-black-sn850x",
-    "handle": "wd-black-sn850x-nvme-ssd-4tb",
-    "title": "WD_BLACK SN850X M.2 NVMe SSD 4TB",
-    "type": "ssd",
-    "priceInr": 55899,
-    "regularInr": 55899,
-    "short": "PCIe 4.0 gaming SSD, up to 7,300 MB/s read",
-    "description": "The WD_BLACK SN850X is a PCIe 4.0 x4 M.2 2280 NVMe SSD made for gaming PCs, with reads up to 7,300 MB/s and writes up to 6,600 MB/s in the 4 TB size. This is the version without a heatsink.",
-    "features": [
-      "Up to 7,300 MB/s read, 6,600 MB/s write",
-      "4 TB, PCIe 4.0 x4",
-      "5-year limited warranty"
-    ],
-    "specs": [
-      {
-        "label": "Interface",
-        "value": "PCIe 4.0 x4, NVMe"
-      },
-      {
-        "label": "Form factor",
-        "value": "M.2 2280, no heatsink"
-      },
-      {
-        "label": "Speed",
-        "value": "Up to 7,300 MB/s read, 6,600 MB/s write"
-      },
-      {
-        "label": "Endurance",
-        "value": "2,400 TBW"
-      },
-      {
-        "label": "Warranty",
-        "value": "5-year limited warranty"
-      }
-    ],
-    "inBox": "The SSD in its sealed retail box. Screws and cables are not included.",
-    "optionKind": "capacity",
-    "options": [
-      {
-        "slug": "4tb",
-        "name": "4 TB",
-        "hex": "#3a3d42",
-        "priceInr": 55899,
-        "regularInr": 55899,
-        "orderIn": true
-      }
-    ],
-    "photos": {
-      "id": "wd-black-sn850x",
-      "gallery": [
-        "4 TB"
-      ],
-      "heroByOption": {
-        "4tb": 0
       }
     }
   },

@@ -158,6 +158,8 @@ for l in sorted(cons["lines"], key=lambda l: list(CONS).index(l["id"])):
     title, slug, q, note = CONS[l["id"]]
     for v in l["variants"]:
         c = v["capacity"]
+        if c.upper().endswith("TB") and float(c[:-2]) > 1:  # owner, 7 Nov: SSDs up to 1 TB only
+            continue
         rel = f"consistent/{slug}/{c.lower()}.png"
         mrp = shop_cons.get((l["id"], c))
         code = next((x.get("value") for x in (v.get("modelCode"), v.get("model")) if isinstance(x, dict)), None)
@@ -210,14 +212,20 @@ for l in mc["lines"]:
             thumb=creative_thumb(rel) if rel in by_file else None, part=v["partNumber"].split("/")[0], spec=spec)
 
 # ---------- 7. SSDs ----------
-section("ssd", "SSDs: Samsung, SanDisk, WD", "Every size the brands list for India. Mark Skip for any you don't want.")
+section("ssd", "SSDs: SanDisk and WD", "Sizes up to 1 TB. Samsung SSDs are not listed (owner, 7 Nov).")
 ssd = json.load(open(S / "catalog-research/ssd/range.json"))
 by_part = {i.get("part_number"): i["file"] for i in manifest["images"] if i["range"] == "ssd"}
+def over_1tb(c):  # owner, 7 Nov: SSDs up to 1 TB only
+    return c.upper().endswith("TB") and float(c[:-2]) > 1
+
+
 for l in ssd["lines"]:
-    if not l["variants"]:
+    if not l["variants"] or l["brand"] == "Samsung":  # owner, 7 Nov: no Samsung SSDs
         continue
     for v in l["variants"]:
         c, pn = v["capacity"], v["partNumber"]
+        if over_1tb(c):
+            continue
         hs = "XHE" in pn or "TAH" in pn
         variant = f"{c}{' · with heatsink' if hs else ''}"
         name = l["line"].replace("SanDisk / WD ", "")
