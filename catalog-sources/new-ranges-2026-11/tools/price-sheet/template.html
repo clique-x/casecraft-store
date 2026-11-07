@@ -120,6 +120,9 @@ section.sec { padding-block: 22px 4px; scroll-margin-top: 150px; }
 .money input { width: 100%; min-width: 0; border: 0; background: transparent; color: var(--ink); padding: 7px 8px 7px 4px; font: 600 0.95rem var(--font-num); font-variant-numeric: tabular-nums; }
 .money input:focus { outline: none; }
 .field .hint { font-size: 0.72rem; color: var(--muted); }
+.field .hint.src { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.field .hint.src:empty { display: none; }
+.field .hint.src a { color: var(--muted); }
 
 .ours { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .ours label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
@@ -163,7 +166,7 @@ textarea.fallback { width: 100%; min-height: 160px; font: 0.75rem var(--font-num
     <div class="top-inner">
       <div class="brand">
         <h1>GadgetsHub price sheet</h1>
-        <span class="sub">Type the lowest Amazon or Flipkart price. Your price is worked out for you.</span>
+        <span class="sub">Online prices are filled in from Flipkart (Amazon blocks automatic checks). Change any of them; your price is worked out for you.</span>
       </div>
       <div class="progress" aria-live="polite">
         <div class="bar" aria-hidden="true"><i id="bar"></i></div>
@@ -188,7 +191,7 @@ textarea.fallback { width: 100%; min-height: 160px; font: 0.75rem var(--font-num
 
 <main class="wrap">
   <div class="rules" aria-label="Pricing rules">
-    <div class="rule"><b>Online − ₹90 to ₹100</b>Most products. Rounded to end in 9.</div>
+    <div class="rule"><b>Online − ₹100 to ₹150</b>Most products. Rounded to end in 9.</div>
     <div class="rule"><b>boAt 1200 Pro − ₹400</b>Stone Arc Pro is online − ₹300.</div>
     <div class="rule"><b>OTG adapter ₹170</b>Fixed, as you asked.</div>
     <div class="rule"><b>3–5 days</b>Items not on your shelf show this delivery time.</div>
@@ -215,7 +218,7 @@ const LS_KEY = "gh-price-sheet-v1";
 
 /* state per row: {online, mrp, ours, stock} — ours is an override (null = use the rule) */
 const state = {};
-for (const r of ROWS) state[r.id] = { online: null, mrp: r.mrp ?? null, ours: null, stock: r.stock || "order" };
+for (const r of ROWS) state[r.id] = { online: null, mrp: r.mrp ?? null, ours: null, stock: r.stock || "order", src: null };
 
 let db = null;
 let pushedLocal = false;
@@ -231,8 +234,8 @@ function rulePrice(r, online) {
   if (online == null) return null;
   if (r.rule === "minus400") return online - 400;
   if (r.rule === "minus300") return online - 300;
-  let x = online - 100;              /* first value in [online-100, online-91] ending in 9 */
-  while (((x % 10) + 10) % 10 !== 9) x++;
+  let x = online - 100;              /* highest value in [online-150, online-100] ending in 9 */
+  while (((x % 10) + 10) % 10 !== 9) x--;
   return x > 0 ? x : null;
 }
 function priceInfo(r) {
@@ -285,7 +288,8 @@ function buildRow(r, showLine) {
   const mrpIn = el("input", { id: "mrp-" + r.id, inputmode: "numeric", autocomplete: "off", "aria-label": "MRP for " + r.line + " " + r.variant });
   const onlineField = el("div", { class: "field" }, el("label", { for: onlineIn.id, text: "Online price" }),
     el("div", { class: "money" }, el("span", { text: "₹" }), onlineIn),
-    r.ref ? el("span", { class: "hint", text: r.refLabel + ": " + inr(r.ref) }) : null);
+    r.ref ? el("span", { class: "hint", text: r.refLabel + ": " + inr(r.ref) }) : null,
+    el("span", { class: "hint src" }));
   const mrpField = el("div", { class: "field" }, el("label", { for: mrpIn.id, text: "MRP" }),
     el("div", { class: "money" }, el("span", { text: "₹" }), mrpIn));
   if (r.rule === "fixed170") onlineField.querySelector("label").textContent = "Online price (optional)";
@@ -305,7 +309,7 @@ function buildRow(r, showLine) {
   const row = el("div", { class: "row", id: "row-" + r.id, "data-id": r.id },
     thumb, info, el("div", { class: "inputs" }, onlineField, mrpField), ours, el("div", { class: "stock-cell" }, stock));
 
-  onlineIn.addEventListener("input", () => { state[r.id].online = num(onlineIn.value); refreshRow(r.id, "online"); queueSave(r.id); });
+  onlineIn.addEventListener("input", () => { state[r.id].online = num(onlineIn.value); state[r.id].src = null; refreshRow(r.id, "online"); queueSave(r.id); });
   mrpIn.addEventListener("input", () => { state[r.id].mrp = num(mrpIn.value); refreshRow(r.id, "mrp"); queueSave(r.id); });
   oursIn.addEventListener("input", () => {
     const v = num(oursIn.value), auto = priceInfo(r).auto;
@@ -325,6 +329,13 @@ function refreshRow(id, typing) {
   if (typing !== "mrp" && document.activeElement !== mrp) mrp.value = s.mrp ?? "";
   if (typing !== "ours" && document.activeElement !== ours) ours.value = p.final ?? "";
   ours.placeholder = "—";
+  const srcEl = row.querySelector(".hint.src");
+  srcEl.replaceChildren();
+  if (s.src && s.src.title) {
+    const label = (s.src.site || "Online") + (s.src.date ? ", " + s.src.date : "") + (s.src.listings > 1 ? " (middle of " + s.src.listings + " listings)" : "") + ": ";
+    srcEl.append(label);
+    srcEl.append(s.src.url ? el("a", { href: s.src.url, target: "_blank", rel: "noopener", text: s.src.title }) : s.src.title);
+  }
   const why = row.querySelector(".why");
   why.replaceChildren();
   why.classList.toggle("over", s.ours != null);
@@ -426,7 +437,7 @@ function setSave(text, cls) { saveState.textContent = text; saveState.className 
 const timers = {}, inflight = {}, dirty = new Set();
 function bodyFor(id) {
   const r = BY_ID[id], s = state[id], p = priceInfo(r);
-  return { line: r.line, variant: r.variant, online: s.online, mrp: s.mrp, ours: s.ours, final: p.final, stock: s.stock, updatedAt: new Date().toISOString() };
+  return { line: r.line, variant: r.variant, online: s.online, mrp: s.mrp, ours: s.ours, final: p.final, stock: s.stock, src: s.src ?? null, updatedAt: new Date().toISOString() };
 }
 function saveLocal() {
   try { const out = {}; for (const r of ROWS) out[r.id] = state[r.id]; localStorage.setItem(LS_KEY, JSON.stringify(out)); } catch (e) {}
@@ -488,7 +499,7 @@ applyFilter();
     for (const d of snap.docs) {
       const id = d.id; if (!state[id] || dirty.has(id)) continue;
       const v = d.data() || {};
-      state[id] = { online: v.online ?? null, mrp: v.mrp ?? BY_ID[id].mrp ?? null, ours: v.ours ?? null, stock: v.stock || BY_ID[id].stock || "order" };
+      state[id] = { online: v.online ?? null, mrp: v.mrp ?? BY_ID[id].mrp ?? null, ours: v.ours ?? null, stock: v.stock || BY_ID[id].stock || "order", src: v.src || null };
       refreshRow(id);
     }
     applyFilter();

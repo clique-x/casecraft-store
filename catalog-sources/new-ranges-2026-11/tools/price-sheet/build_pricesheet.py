@@ -128,11 +128,11 @@ row("shop", "Detachable aluminium phone frame", "NO.2 · model and colour?", "de
     rid="zip-31", stock="shop", badge="hold", note="Which phone, which colour? Needs photos.")
 
 # ---------- 2. boAt speakers ----------
-section("boat", "boAt speakers", "You stock both colours of each. Online price minus ₹400 (1200 Pro) or ₹300 (Arc Pro).")
-row("boat", "boAt Stone 1200 Pro", "Ice Grey and Twilight Black · 60W", "boAt Stone 1200 Pro", rid="boat-1200-pro",
+section("boat", "boAt speakers", "Black only. Online price minus ₹400 (1200 Pro) or ₹300 (Arc Pro).")
+row("boat", "boAt Stone 1200 Pro", "Twilight Black · 60W", "boAt Stone 1200 Pro", rid="boat-1200-pro",
     thumb=creative_thumb("boat/stone-1200-pro/twilight-black.png"), mrp=14990, rule="minus400", stock="shop",
     ref=4499, ref_label="boAt store, 6 Nov", spec="76.2 mm drivers · up to 7.5 h · IPX6 · TWS")
-row("boat", "boAt Stone Arc Pro", "Raging Black and Groovy Grey · 25W", "boAt Stone Arc Pro", rid="boat-arc-pro",
+row("boat", "boAt Stone Arc Pro", "Raging Black · 25W", "boAt Stone Arc Pro", rid="boat-arc-pro",
     thumb=creative_thumb("boat/stone-arc-pro/raging-black.png"), mrp=6990, rule="minus300", stock="shop",
     ref=2499, ref_label="boAt store, 6 Nov", spec="58 mm drivers · up to 12 h · RGB · IPX5")
 
@@ -189,7 +189,7 @@ for kind, title, spec, sizes, form in RAM:
             stock=stock, spec=spec, note=note)
 
 # ---------- 6. Memory cards ----------
-section("cards", "Memory cards", "microSD cards. Samsung's EVO Plus 2021 cards are not sold in India any more, so they are left out.")
+section("cards", "Memory cards", "microSD cards up to 512GB. Samsung's EVO Plus 2021 cards are not sold in India any more, so they are left out.")
 mc = json.load(open(S / "catalog-research/memory-cards/range.json"))
 MC = {
     "SanDisk Ultra microSD": ("SanDisk Ultra microSD", "sandisk-ultra-microsd", "SanDisk Ultra microSD {c}", "A1 · up to 150 MB/s read · 10-year warranty"),
@@ -203,6 +203,8 @@ for l in mc["lines"]:
     title, slug, q, spec = MC[l["line"]]
     for v in l["variants"]:
         c = v["capacity"]
+        if c.upper().endswith("TB"):  # owner, 7 Nov: memory cards up to 512GB only
+            continue
         rel = f"memory-cards/{slug}/{c.lower().replace('.', '-')}.png"
         row("cards", title, c, q.format(c=c), rid=f"card-{slug}-{c.lower().replace('.', '-')}",
             thumb=creative_thumb(rel) if rel in by_file else None, part=v["partNumber"].split("/")[0], spec=spec)

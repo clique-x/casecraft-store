@@ -19,7 +19,7 @@
   "memory-cards": 25,
   "ssd": 63,
   "consistent": 19,
-  "boat": 4,
+  "boat": 2,
   "cpplus": 3
  },
  "images": [
@@ -4045,45 +4045,6 @@
    "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
   },
   {
-   "file": "boat/stone-1200-pro/ice-grey.webp",
-   "range": "boat",
-   "line": "boAt Stone 1200 Pro",
-   "line_slug": "stone-1200-pro",
-   "variant": "Ice Grey",
-   "variant_slug": "ice-grey",
-   "part_number": null,
-   "image_role": "product 3/4 view on white",
-   "capacity_or_model_printed_on_product": null,
-   "source_file": "stone-1200-pro-bluetooth-speaker-00.jpg",
-   "source_url": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard1_1b61139f-e142-49c3-aaea-de0cfbb55098.jpg",
-   "source_fetch": "research download (boAt Shopify CDN)",
-   "cutout": "soft key of the white background (ISNet trimap + colour-difference edge, edge colours decontaminated)",
-   "plate": "plate-34.png",
-   "placement": {
-    "scale_from_source": 1.0414,
-    "product_px": [
-     1536,
-     908
-    ],
-    "bbox_xyxy": [
-     256,
-     472,
-     1792,
-     1380
-    ],
-    "base_y": 1379.0,
-    "contact_point": [
-     1024,
-     1249
-    ]
-   },
-   "caveats": [
-    "Wide speaker: width set to 75% of the frame (like the RAM 3/4 module), so its height is about 44%, below the 55-65% speaker guideline; at 55% height it would not fit the frame.",
-    "The soft cast shadow baked into the official white-background photo was removed with the background."
-   ],
-   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
-  },
-  {
    "file": "boat/stone-1200-pro/twilight-black.webp",
    "range": "boat",
    "line": "boAt Stone 1200 Pro",
@@ -4157,45 +4118,6 @@
    },
    "caveats": [
     "Official render leans about 23 degrees; rotated in-plane by -22.7 degrees so the speaker stands on its base on the podium (no other change)."
-   ],
-   "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
-  },
-  {
-   "file": "boat/stone-arc-pro/groovy-grey.webp",
-   "range": "boat",
-   "line": "boAt Stone Arc Pro",
-   "line_slug": "stone-arc-pro",
-   "variant": "Groovy Grey",
-   "variant_slug": "groovy-grey",
-   "part_number": null,
-   "image_role": "product 3/4 view on white",
-   "capacity_or_model_printed_on_product": null,
-   "source_file": "stone-arc-pro-portable-speaker-08.png",
-   "source_url": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_5_f294bedc-ac6d-4dcf-87b8-8a5140656cee.png",
-   "source_fetch": "research download (boAt Shopify CDN)",
-   "cutout": "matte from the pixel-aligned sibling render, colours from this source",
-   "plate": "plate-34.png",
-   "placement": {
-    "scale_from_source": 0.746,
-    "product_px": [
-     547,
-     1160
-    ],
-    "bbox_xyxy": [
-     750,
-     91,
-     1297,
-     1251
-    ],
-    "base_y": 1249.5,
-    "contact_point": [
-     1024,
-     1249
-    ]
-   },
-   "caveats": [
-    "Official render leans about 23 degrees; rotated in-plane by -22.7 degrees so the speaker stands on its base on the podium (no other change).",
-    "Silhouette matte taken from the pixel-aligned Raging Black render of the same pose (the light-grey body is too close to the white background to key on its own); colours are the Groovy Grey photo."
    ],
    "master_note": "Saved here at 1440 px WebP; the 2048 px PNG master was in the session scratchpad."
   },
@@ -4421,6 +4343,18 @@
    "variant": "1TB box",
    "source": "02-1TBNVME.2.webp",
    "reason": "Box render fills the frame edge to edge (no background), so its outline cannot be cut cleanly."
+  }
+ ],
+ "removed_by_owner": [
+  {
+   "file": "boat/stone-1200-pro/ice-grey.webp",
+   "when": "2026-11-07",
+   "note": "Owner: remove; boAt speakers are listed in black only"
+  },
+  {
+   "file": "boat/stone-arc-pro/groovy-grey.webp",
+   "when": "2026-11-07",
+   "note": "Owner: remove; boAt speakers are listed in black only"
   }
  ]
 }

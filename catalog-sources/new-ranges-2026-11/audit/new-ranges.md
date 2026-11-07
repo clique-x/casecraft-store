@@ -1,6 +1,6 @@
 # New ranges researched in this session (6 Nov 2026)
 
-## boAt speakers (owner has both, both colours) — source: www.boat-lifestyle.com (official), images saved in scratchpad/dl-boat/img
+## boAt speakers (owner, 7 Nov: list BLACK ONLY; Ice Grey and Groovy Grey images removed) — source: www.boat-lifestyle.com (official), images saved in scratchpad/dl-boat/img
 Pricing rule (owner): Stone 1200 Pro = online price − ₹400; Stone Arc Pro = online − ₹300.
 | Product | Colours (SKU/EAN) | boAt store price 6 Nov | MRP | Our price (vs boAt store) |
 |---|---|---|---|---|
