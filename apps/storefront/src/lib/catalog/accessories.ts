@@ -189,24 +189,27 @@ export const ACCESSORIES: readonly AccessoryEntry[] = [
   // From the shop (November 2026). Models are the owner's (7 Nov); prices are the owner's. The guards took new ids when
   // their model lists changed, so the catalogue seed (which only adds missing products) creates them afresh.
   {
-    id: 'flayr-8k-borderless',
-    handle: 'flayr-8k-borderless-tempered-glass-iphone-17',
+    id: 'flayr-8k-borderless-iphone',
+    handle: 'flayr-8k-borderless-tempered-glass-iphone',
     title: 'FLAYR 8K Borderless tempered glass',
     type: 'screen-guard',
     finish: 'clear',
     priceInr: 300,
     regularInr: 300,
-    short: 'For iPhone 17 and iPhone 17 Pro',
+    short: 'For iPhone 12 to 18, Pro and non-Pro, and 17 Air',
     description:
-      'FLAYR’s 8K Borderless Diamond Section tempered glass for the iPhone 17 and iPhone 17 Pro, which share the same 6.3-inch screen. It covers the screen edge to edge and comes on a FLAYR backing card in its box.',
-    features: ['Borderless, edge to edge', 'FLAYR Diamond Section glass', 'iPhone 17 and 17 Pro'],
+      'FLAYR’s 8K Borderless Diamond Section tempered glass for every iPhone from the 12 to the 18, the standard and Pro models, and the iPhone 17 Air. It covers the screen edge to edge. Each glass comes on a FLAYR backing card marked with the iPhones it fits: pick yours and we send the right one.',
+    features: ['Borderless, edge to edge', 'FLAYR Diamond Section glass', 'iPhone 12 to 18 and 17 Air'],
     details: {
       material: 'Tempered glass, FLAYR 8K Borderless (Diamond Section).',
-      inBox: 'One FLAYR glass on its backing card, in the FLAYR box.',
-      fit: 'Fits the iPhone 17 and iPhone 17 Pro (6.3-inch). Not for the 17 Air or 17 Pro Max.',
+      inBox: 'One FLAYR glass on its backing card, marked for your iPhone.',
+      fit: 'Fits the iPhone 12, 13, 14, 15, 16, 17 and 18, their Pro models and the iPhone 17 Air. Not for the Plus or Pro Max models.',
       care: 'Fit it on a clean, dry screen. Clean with a dry microfibre cloth.',
     },
-    models: ['iphone-17', 'iphone-17-pro'],
+    models: [
+      'iphone-12', 'iphone-12-pro', 'iphone-13', 'iphone-13-pro', 'iphone-14', 'iphone-14-pro', 'iphone-15', 'iphone-15-pro',
+      'iphone-16', 'iphone-16-pro', 'iphone-17', 'iphone-17-pro', 'iphone-17-air', 'iphone-18', 'iphone-18-pro',
+    ],
     brand: 'FLAYR',
     photos: { gallery: ['Box', 'Close up', 'In use', 'On the phone'] },
   },

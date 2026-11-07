@@ -5591,35 +5591,126 @@
       ]
     },
     {
-      "handle": "flayr-8k-borderless-tempered-glass-iphone-17",
+      "handle": "flayr-8k-borderless-tempered-glass-iphone",
       "productType": "Screen guard",
       "title": "FLAYR 8K Borderless tempered glass",
-      "description": "FLAYR’s 8K Borderless Diamond Section tempered glass for the iPhone 17 and iPhone 17 Pro, which share the same 6.3-inch screen. It covers the screen edge to edge and comes on a FLAYR backing card in its box.",
+      "description": "FLAYR’s 8K Borderless Diamond Section tempered glass for every iPhone from the 12 to the 18, the standard and Pro models, and the iPhone 17 Air. It covers the screen edge to edge. Each glass comes on a FLAYR backing card marked with the iPhones it fits: pick yours and we send the right one.",
       "imagePath": null,
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "accessory",
-        "accessory_id": "flayr-8k-borderless",
+        "accessory_id": "flayr-8k-borderless-iphone",
         "accessory_type": "screen-guard",
         "regular_inr": 300,
         "detail_material": "Tempered glass, FLAYR 8K Borderless (Diamond Section).",
-        "detail_in_box": "One FLAYR glass on its backing card, in the FLAYR box.",
-        "detail_fit": "Fits the iPhone 17 and iPhone 17 Pro (6.3-inch). Not for the 17 Air or 17 Pro Max.",
+        "detail_in_box": "One FLAYR glass on its backing card, marked for your iPhone.",
+        "detail_fit": "Fits the iPhone 12, 13, 14, 15, 16, 17 and 18, their Pro models and the iPhone 17 Air. Not for the Plus or Pro Max models.",
         "detail_care": "Fit it on a clean, dry screen. Clean with a dry microfibre cloth."
       },
       "variants": [
         {
-          "sku": "ACC-FLA8KBOR-IP17",
+          "sku": "ACC-FLA8KBORIPH-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP17",
           "modelSlug": "iphone-17",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-FLA8KBOR-IP17P",
+          "sku": "ACC-FLA8KBORIPH-IP12",
+          "modelSlug": "iphone-12",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP12P",
+          "modelSlug": "iphone-12-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP13",
+          "modelSlug": "iphone-13",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP13P",
+          "modelSlug": "iphone-13-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP14",
+          "modelSlug": "iphone-14",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP15P",
+          "modelSlug": "iphone-15-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP17A",
+          "modelSlug": "iphone-17-air",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP17P",
           "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLA8KBORIPH-IP18P",
+          "modelSlug": "iphone-18-pro",
           "caseType": null,
           "priceInr": 300,
           "stock": 25

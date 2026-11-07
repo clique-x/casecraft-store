@@ -92,7 +92,7 @@ row("shop", "CABLET M.2 NVMe SSD case", "MS902-C3 · USB 3.1 Gen 2, 10 Gbps", "C
     spec="M and M+B key, 2230–2280, up to 8 TB")
 row("shop", "Hydrogel full back film", "iPhone 12 to 18 Pro (back and sides)",
     "hydrogel back film iPhone 17 Pro", rid="zip-14", thumb=zip_thumb("14"), stock="shop", badge="ready")
-row("shop", "FLAYR 8K Borderless tempered glass", "iPhone 17 and 17 Pro", "FLAYR tempered glass iPhone 17 Pro",
+row("shop", "FLAYR 8K Borderless tempered glass", "iPhone 12 to 18, Pro and non-Pro, 17 Air", "FLAYR tempered glass iPhone 17 Pro",
     rid="zip-15", thumb=zip_thumb("15"), stock="shop", badge="ready")
 row("shop", "G-TEL Fantacy 3D fingerprint glass", "Every Galaxy S, S22 to S26 Ultra", "G-TEL tempered glass Samsung S24 Ultra",
     rid="zip-16", thumb=zip_thumb("16"), stock="shop", badge="ready")
