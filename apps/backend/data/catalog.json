@@ -136,13 +136,40 @@
       "rank": 14
     },
     {
+      "slug": "iphone-12",
+      "brand": "Apple",
+      "name": "iPhone 12",
+      "series": "iPhone",
+      "releaseYear": 2020,
+      "islandStyle": "square",
+      "rank": 15
+    },
+    {
+      "slug": "iphone-12-pro",
+      "brand": "Apple",
+      "name": "iPhone 12 Pro",
+      "series": "iPhone",
+      "releaseYear": 2020,
+      "islandStyle": "square",
+      "rank": 16
+    },
+    {
+      "slug": "iphone-13",
+      "brand": "Apple",
+      "name": "iPhone 13",
+      "series": "iPhone",
+      "releaseYear": 2021,
+      "islandStyle": "square",
+      "rank": 17
+    },
+    {
       "slug": "iphone-13-pro",
       "brand": "Apple",
       "name": "iPhone 13 Pro",
       "series": "iPhone",
       "releaseYear": 2021,
       "islandStyle": "square",
-      "rank": 15
+      "rank": 18
     },
     {
       "slug": "iphone-14",
@@ -151,7 +178,7 @@
       "series": "iPhone",
       "releaseYear": 2022,
       "islandStyle": "square",
-      "rank": 16
+      "rank": 19
     },
     {
       "slug": "iphone-14-pro",
@@ -160,7 +187,7 @@
       "series": "iPhone",
       "releaseYear": 2022,
       "islandStyle": "square",
-      "rank": 17
+      "rank": 20
     },
     {
       "slug": "iphone-15",
@@ -169,7 +196,7 @@
       "series": "iPhone",
       "releaseYear": 2023,
       "islandStyle": "square",
-      "rank": 18
+      "rank": 21
     },
     {
       "slug": "iphone-15-pro",
@@ -178,7 +205,7 @@
       "series": "iPhone",
       "releaseYear": 2023,
       "islandStyle": "square",
-      "rank": 19
+      "rank": 22
     },
     {
       "slug": "iphone-17-air",
@@ -187,7 +214,7 @@
       "series": "iPhone",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 20
+      "rank": 23
     },
     {
       "slug": "iphone-17-pro",
@@ -196,7 +223,7 @@
       "series": "iPhone",
       "releaseYear": 2025,
       "islandStyle": "square",
-      "rank": 21
+      "rank": 24
     },
     {
       "slug": "iphone-18",
@@ -205,7 +232,7 @@
       "series": "iPhone",
       "releaseYear": 2026,
       "islandStyle": "square",
-      "rank": 22
+      "rank": 25
     },
     {
       "slug": "iphone-18-pro",
@@ -214,7 +241,7 @@
       "series": "iPhone",
       "releaseYear": 2026,
       "islandStyle": "square",
-      "rank": 23
+      "rank": 26
     },
     {
       "slug": "galaxy-s22",
@@ -223,7 +250,25 @@
       "series": "Galaxy S",
       "releaseYear": 2022,
       "islandStyle": "pills",
-      "rank": 24
+      "rank": 27
+    },
+    {
+      "slug": "galaxy-s22-plus",
+      "brand": "Samsung",
+      "name": "Galaxy S22+",
+      "series": "Galaxy S",
+      "releaseYear": 2022,
+      "islandStyle": "pills",
+      "rank": 28
+    },
+    {
+      "slug": "galaxy-s22-ultra",
+      "brand": "Samsung",
+      "name": "Galaxy S22 Ultra",
+      "series": "Galaxy S",
+      "releaseYear": 2022,
+      "islandStyle": "pills",
+      "rank": 29
     },
     {
       "slug": "galaxy-s23",
@@ -232,7 +277,16 @@
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 25
+      "rank": 30
+    },
+    {
+      "slug": "galaxy-s23-plus",
+      "brand": "Samsung",
+      "name": "Galaxy S23+",
+      "series": "Galaxy S",
+      "releaseYear": 2023,
+      "islandStyle": "pills",
+      "rank": 31
     },
     {
       "slug": "galaxy-s23-fe",
@@ -241,7 +295,7 @@
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 26
+      "rank": 32
     },
     {
       "slug": "galaxy-s23-ultra",
@@ -250,7 +304,7 @@
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 27
+      "rank": 33
     },
     {
       "slug": "galaxy-s24",
@@ -259,7 +313,25 @@
       "series": "Galaxy S",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 28
+      "rank": 34
+    },
+    {
+      "slug": "galaxy-s24-plus",
+      "brand": "Samsung",
+      "name": "Galaxy S24+",
+      "series": "Galaxy S",
+      "releaseYear": 2024,
+      "islandStyle": "pills",
+      "rank": 35
+    },
+    {
+      "slug": "galaxy-s24-fe",
+      "brand": "Samsung",
+      "name": "Galaxy S24 FE",
+      "series": "Galaxy S",
+      "releaseYear": 2024,
+      "islandStyle": "pills",
+      "rank": 36
     },
     {
       "slug": "galaxy-s24-ultra",
@@ -268,7 +340,16 @@
       "series": "Galaxy S",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 29
+      "rank": 37
+    },
+    {
+      "slug": "galaxy-s25-plus",
+      "brand": "Samsung",
+      "name": "Galaxy S25+",
+      "series": "Galaxy S",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 38
     },
     {
       "slug": "galaxy-s25-ultra",
@@ -277,7 +358,25 @@
       "series": "Galaxy S",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 30
+      "rank": 39
+    },
+    {
+      "slug": "galaxy-s25-edge",
+      "brand": "Samsung",
+      "name": "Galaxy S25 Edge",
+      "series": "Galaxy S",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 40
+    },
+    {
+      "slug": "galaxy-s25-fe",
+      "brand": "Samsung",
+      "name": "Galaxy S25 FE",
+      "series": "Galaxy S",
+      "releaseYear": 2025,
+      "islandStyle": "pills",
+      "rank": 41
     },
     {
       "slug": "galaxy-s26",
@@ -286,7 +385,16 @@
       "series": "Galaxy S",
       "releaseYear": 2026,
       "islandStyle": "pills",
-      "rank": 31
+      "rank": 42
+    },
+    {
+      "slug": "galaxy-s26-plus",
+      "brand": "Samsung",
+      "name": "Galaxy S26+",
+      "series": "Galaxy S",
+      "releaseYear": 2026,
+      "islandStyle": "pills",
+      "rank": 43
     },
     {
       "slug": "galaxy-s26-ultra",
@@ -295,7 +403,7 @@
       "series": "Galaxy S",
       "releaseYear": 2026,
       "islandStyle": "pills",
-      "rank": 32
+      "rank": 44
     },
     {
       "slug": "pixel-9",
@@ -304,7 +412,7 @@
       "series": "Pixel",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 33
+      "rank": 45
     },
     {
       "slug": "redmi-9c",
@@ -313,7 +421,7 @@
       "series": "Redmi",
       "releaseYear": 2020,
       "islandStyle": "square",
-      "rank": 34
+      "rank": 46
     },
     {
       "slug": "redmi-a2",
@@ -322,7 +430,7 @@
       "series": "Redmi",
       "releaseYear": 2023,
       "islandStyle": "square",
-      "rank": 35
+      "rank": 47
     },
     {
       "slug": "redmi-13c-5g",
@@ -331,7 +439,7 @@
       "series": "Redmi",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 36
+      "rank": 48
     },
     {
       "slug": "realme-16-5g",
@@ -340,7 +448,7 @@
       "series": "Number",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 37
+      "rank": 49
     },
     {
       "slug": "oppo-a17",
@@ -349,7 +457,7 @@
       "series": "A",
       "releaseYear": 2022,
       "islandStyle": "pills",
-      "rank": 38
+      "rank": 50
     },
     {
       "slug": "motorola-edge-40-neo",
@@ -358,7 +466,7 @@
       "series": "Edge",
       "releaseYear": 2023,
       "islandStyle": "square",
-      "rank": 39
+      "rank": 51
     },
     {
       "slug": "motorola-edge-50-fusion",
@@ -367,7 +475,7 @@
       "series": "Edge",
       "releaseYear": 2024,
       "islandStyle": "square",
-      "rank": 40
+      "rank": 52
     },
     {
       "slug": "motorola-edge-60-pro",
@@ -376,7 +484,7 @@
       "series": "Edge",
       "releaseYear": 2025,
       "islandStyle": "square",
-      "rank": 41
+      "rank": 53
     },
     {
       "slug": "motorola-edge-70",
@@ -385,7 +493,7 @@
       "series": "Edge",
       "releaseYear": 2025,
       "islandStyle": "square",
-      "rank": 42
+      "rank": 54
     }
   ],
   "themes": [],
@@ -3516,6 +3624,27 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLACLE-IP12",
+          "modelSlug": "iphone-12",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP12P",
+          "modelSlug": "iphone-12-pro",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-IP13",
+          "modelSlug": "iphone-13",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLACLE-IP13P",
           "modelSlug": "iphone-13-pro",
           "caseType": null,
@@ -3586,8 +3715,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLACLE-GAS22P",
+          "modelSlug": "galaxy-s22-plus",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS22U",
+          "modelSlug": "galaxy-s22-ultra",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLACLE-GAS23",
           "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS23P",
+          "modelSlug": "galaxy-s23-plus",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
@@ -3614,8 +3764,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLACLE-GAS24P",
+          "modelSlug": "galaxy-s24-plus",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS24F",
+          "modelSlug": "galaxy-s24-fe",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLACLE-GAS24U",
           "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS25P",
+          "modelSlug": "galaxy-s25-plus",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
@@ -3628,8 +3799,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLACLE-GAS25E",
+          "modelSlug": "galaxy-s25-edge",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS25F",
+          "modelSlug": "galaxy-s25-fe",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLACLE-GAS26",
           "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 199,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLACLE-GAS26P",
+          "modelSlug": "galaxy-s26-plus",
           "caseType": null,
           "priceInr": 199,
           "stock": 25
@@ -3839,6 +4031,27 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLAPRI-IP12",
+          "modelSlug": "iphone-12",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP12P",
+          "modelSlug": "iphone-12-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-IP13",
+          "modelSlug": "iphone-13",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLAPRI-IP13P",
           "modelSlug": "iphone-13-pro",
           "caseType": null,
@@ -3909,8 +4122,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLAPRI-GAS22P",
+          "modelSlug": "galaxy-s22-plus",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS22U",
+          "modelSlug": "galaxy-s22-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLAPRI-GAS23",
           "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS23P",
+          "modelSlug": "galaxy-s23-plus",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -3937,8 +4171,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLAPRI-GAS24P",
+          "modelSlug": "galaxy-s24-plus",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS24F",
+          "modelSlug": "galaxy-s24-fe",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLAPRI-GAS24U",
           "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS25P",
+          "modelSlug": "galaxy-s25-plus",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -3951,8 +4206,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GLAPRI-GAS25E",
+          "modelSlug": "galaxy-s25-edge",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS25F",
+          "modelSlug": "galaxy-s25-fe",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GLAPRI-GAS26",
           "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GLAPRI-GAS26P",
+          "modelSlug": "galaxy-s26-plus",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -4162,6 +4438,27 @@
           "stock": 25
         },
         {
+          "sku": "ACC-LENGLA-IP12",
+          "modelSlug": "iphone-12",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP12P",
+          "modelSlug": "iphone-12-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-IP13",
+          "modelSlug": "iphone-13",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
           "sku": "ACC-LENGLA-IP13P",
           "modelSlug": "iphone-13-pro",
           "caseType": null,
@@ -4232,8 +4529,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-LENGLA-GAS22P",
+          "modelSlug": "galaxy-s22-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS22U",
+          "modelSlug": "galaxy-s22-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
           "sku": "ACC-LENGLA-GAS23",
           "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS23P",
+          "modelSlug": "galaxy-s23-plus",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
@@ -4260,8 +4578,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-LENGLA-GAS24P",
+          "modelSlug": "galaxy-s24-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS24F",
+          "modelSlug": "galaxy-s24-fe",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
           "sku": "ACC-LENGLA-GAS24U",
           "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS25P",
+          "modelSlug": "galaxy-s25-plus",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
@@ -4274,8 +4613,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-LENGLA-GAS25E",
+          "modelSlug": "galaxy-s25-edge",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS25F",
+          "modelSlug": "galaxy-s25-fe",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
           "sku": "ACC-LENGLA-GAS26",
           "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENGLA-GAS26P",
+          "modelSlug": "galaxy-s26-plus",
           "caseType": null,
           "priceInr": 149,
           "stock": 25
@@ -4485,6 +4845,27 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILMAT-IP12",
+          "modelSlug": "iphone-12",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP12P",
+          "modelSlug": "iphone-12-pro",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-IP13",
+          "modelSlug": "iphone-13",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILMAT-IP13P",
           "modelSlug": "iphone-13-pro",
           "caseType": null,
@@ -4555,8 +4936,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILMAT-GAS22P",
+          "modelSlug": "galaxy-s22-plus",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS22U",
+          "modelSlug": "galaxy-s22-ultra",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILMAT-GAS23",
           "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS23P",
+          "modelSlug": "galaxy-s23-plus",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
@@ -4583,8 +4985,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILMAT-GAS24P",
+          "modelSlug": "galaxy-s24-plus",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS24F",
+          "modelSlug": "galaxy-s24-fe",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILMAT-GAS24U",
           "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS25P",
+          "modelSlug": "galaxy-s25-plus",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
@@ -4597,8 +5020,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILMAT-GAS25E",
+          "modelSlug": "galaxy-s25-edge",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS25F",
+          "modelSlug": "galaxy-s25-fe",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILMAT-GAS26",
           "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 249,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILMAT-GAS26P",
+          "modelSlug": "galaxy-s26-plus",
           "caseType": null,
           "priceInr": 249,
           "stock": 25
@@ -4808,6 +5252,27 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILCAR-IP12",
+          "modelSlug": "iphone-12",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP12P",
+          "modelSlug": "iphone-12-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-IP13",
+          "modelSlug": "iphone-13",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILCAR-IP13P",
           "modelSlug": "iphone-13-pro",
           "caseType": null,
@@ -4878,8 +5343,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILCAR-GAS22P",
+          "modelSlug": "galaxy-s22-plus",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS22U",
+          "modelSlug": "galaxy-s22-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILCAR-GAS23",
           "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS23P",
+          "modelSlug": "galaxy-s23-plus",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -4906,8 +5392,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILCAR-GAS24P",
+          "modelSlug": "galaxy-s24-plus",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS24F",
+          "modelSlug": "galaxy-s24-fe",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILCAR-GAS24U",
           "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS25P",
+          "modelSlug": "galaxy-s25-plus",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -4920,8 +5427,29 @@
           "stock": 25
         },
         {
+          "sku": "ACC-FILCAR-GAS25E",
+          "modelSlug": "galaxy-s25-edge",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS25F",
+          "modelSlug": "galaxy-s25-fe",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
           "sku": "ACC-FILCAR-GAS26",
           "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FILCAR-GAS26P",
+          "modelSlug": "galaxy-s26-plus",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -5063,63 +5591,35 @@
       ]
     },
     {
-      "handle": "flayr-borderless-tempered-glass-iphone-pro",
+      "handle": "flayr-8k-borderless-tempered-glass-iphone-17",
       "productType": "Screen guard",
-      "title": "FLAYR Borderless tempered glass",
-      "description": "FLAYR’s Borderless tempered glass for the iPhone Pro models, from the 13 Pro to the 18 Pro. Each glass comes on a FLAYR backing card marked with the iPhone it is cut for: pick your phone and we send that one.",
+      "title": "FLAYR 8K Borderless tempered glass",
+      "description": "FLAYR’s 8K Borderless Diamond Section tempered glass for the iPhone 17 and iPhone 17 Pro, which share the same 6.3-inch screen. It covers the screen edge to edge and comes on a FLAYR backing card in its box.",
       "imagePath": null,
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "accessory",
-        "accessory_id": "flayr-borderless",
+        "accessory_id": "flayr-8k-borderless",
         "accessory_type": "screen-guard",
         "regular_inr": 300,
-        "detail_material": "Tempered glass, FLAYR Borderless (Diamond Section).",
-        "detail_in_box": "One FLAYR glass on its backing card, marked for your iPhone.",
-        "detail_fit": "Cut for each listed iPhone Pro. Not for the Pro Max models.",
+        "detail_material": "Tempered glass, FLAYR 8K Borderless (Diamond Section).",
+        "detail_in_box": "One FLAYR glass on its backing card, in the FLAYR box.",
+        "detail_fit": "Fits the iPhone 17 and iPhone 17 Pro (6.3-inch). Not for the 17 Air or 17 Pro Max.",
         "detail_care": "Fit it on a clean, dry screen. Clean with a dry microfibre cloth."
       },
       "variants": [
         {
-          "sku": "ACC-FLABOR-IP16P",
-          "modelSlug": "iphone-16-pro",
+          "sku": "ACC-FLA8KBOR-IP17",
+          "modelSlug": "iphone-17",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-FLABOR-IP13P",
-          "modelSlug": "iphone-13-pro",
-          "caseType": null,
-          "priceInr": 300,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-FLABOR-IP14P",
-          "modelSlug": "iphone-14-pro",
-          "caseType": null,
-          "priceInr": 300,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-FLABOR-IP15P",
-          "modelSlug": "iphone-15-pro",
-          "caseType": null,
-          "priceInr": 300,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-FLABOR-IP17P",
+          "sku": "ACC-FLA8KBOR-IP17P",
           "modelSlug": "iphone-17-pro",
-          "caseType": null,
-          "priceInr": 300,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-FLABOR-IP18P",
-          "modelSlug": "iphone-18-pro",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
@@ -5127,79 +5627,276 @@
       ]
     },
     {
-      "handle": "gtel-3d-fingerprint-tempered-glass-galaxy-s",
+      "handle": "gtel-3d-fingerprint-tempered-glass-galaxy-s-series",
       "productType": "Screen guard",
       "title": "G-TEL 3D fingerprint tempered glass",
-      "description": "G-TEL’s 3D fingerprint tempered glass for Samsung Galaxy S phones: the S22, S23, S24, S25 and S26, and the S24, S25 and S26 Ultra. Pick your Galaxy and we send the glass made for it.",
+      "description": "G-TEL’s 3D fingerprint tempered glass for the Samsung Galaxy S series, from the S22 to the S26 Ultra: the standard, Plus, Ultra, FE and Edge models. Pick your Galaxy and we send the glass made for it.",
       "imagePath": null,
       "collections": [],
       "category": null,
       "tags": [],
       "metadata": {
         "kind": "accessory",
-        "accessory_id": "gtel-fingerprint",
+        "accessory_id": "gtel-fingerprint-s",
         "accessory_type": "screen-guard",
         "regular_inr": 300,
         "detail_material": "Tempered glass, G-TEL 3D fingerprint range.",
         "detail_in_box": "One G-TEL glass for the Galaxy you pick.",
-        "detail_fit": "Cut for each listed Galaxy. The S22 and S23 share one glass, and so do the S24 and S25.",
+        "detail_fit": "Cut for each Galaxy S model from the S22 to the S26 Ultra; pick yours so we send the right one.",
         "detail_care": "Fit it on a clean, dry screen. Clean with a dry microfibre cloth."
       },
       "variants": [
         {
-          "sku": "ACC-GTEFIN-GAS25",
+          "sku": "ACC-GTEFINS-GAS25",
           "modelSlug": "galaxy-s25",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFIN-GAS22",
+          "sku": "ACC-GTEFINS-GAS22",
           "modelSlug": "galaxy-s22",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFIN-GAS23",
+          "sku": "ACC-GTEFINS-GAS22P",
+          "modelSlug": "galaxy-s22-plus",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS22U",
+          "modelSlug": "galaxy-s22-ultra",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS23",
           "modelSlug": "galaxy-s23",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFIN-GAS24",
+          "sku": "ACC-GTEFINS-GAS23P",
+          "modelSlug": "galaxy-s23-plus",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS23F",
+          "modelSlug": "galaxy-s23-fe",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS24",
           "modelSlug": "galaxy-s24",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFIN-GAS24U",
+          "sku": "ACC-GTEFINS-GAS24P",
+          "modelSlug": "galaxy-s24-plus",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS24F",
+          "modelSlug": "galaxy-s24-fe",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS24U",
           "modelSlug": "galaxy-s24-ultra",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFIN-GAS25U",
+          "sku": "ACC-GTEFINS-GAS25P",
+          "modelSlug": "galaxy-s25-plus",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS25U",
           "modelSlug": "galaxy-s25-ultra",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFIN-GAS26",
+          "sku": "ACC-GTEFINS-GAS25E",
+          "modelSlug": "galaxy-s25-edge",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS25F",
+          "modelSlug": "galaxy-s25-fe",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS26",
           "modelSlug": "galaxy-s26",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFIN-GAS26U",
+          "sku": "ACC-GTEFINS-GAS26P",
+          "modelSlug": "galaxy-s26-plus",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-GTEFINS-GAS26U",
           "modelSlug": "galaxy-s26-ultra",
           "caseType": null,
           "priceInr": 300,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "hydrogel-full-back-film-iphone",
+      "productType": "Back film",
+      "title": "Hydrogel full back film for iPhone",
+      "description": "A 0.15 mm hydrogel film that wraps the whole back of your iPhone, with flaps that fold over the sides, so the back and frame stay free of scratches without adding bulk. It is a back film, not a screen protector. Each sheet is cut for one iPhone, with the camera cut out: pick yours and we send that sheet.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "hydrogel-back-film",
+        "accessory_type": "back-film",
+        "regular_inr": 250,
+        "detail_material": "Hydrogel film, 0.15 mm.",
+        "detail_in_box": "One back film sheet cut for the iPhone you pick.",
+        "detail_fit": "Back and sides of the iPhone 12, 13, 14, 15, 16, 17 and 18 and their Pro models. Not for the front screen.",
+        "detail_care": "Fit it on a clean, dry phone and press out bubbles from the centre. Clean with a dry microfibre cloth."
+      },
+      "variants": [
+        {
+          "sku": "ACC-HYDBACFIL-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP12",
+          "modelSlug": "iphone-12",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP12P",
+          "modelSlug": "iphone-12-pro",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP13",
+          "modelSlug": "iphone-13",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP13P",
+          "modelSlug": "iphone-13-pro",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP14",
+          "modelSlug": "iphone-14",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP15P",
+          "modelSlug": "iphone-15-pro",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP18",
+          "modelSlug": "iphone-18",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 250,
           "stock": 25
         }
       ]

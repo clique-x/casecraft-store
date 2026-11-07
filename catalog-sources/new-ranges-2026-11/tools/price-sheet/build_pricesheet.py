@@ -90,13 +90,11 @@ row("shop", "CABLET 2.5\" SATA hard drive case", "HD2533-U3 · USB 3.0", "Cablet
 row("shop", "CABLET M.2 NVMe SSD case", "MS902-C3 · USB 3.1 Gen 2, 10 Gbps", "Cablet MS902 M.2 NVMe enclosure",
     rid="zip-05", thumb=zip_thumb("05"), mrp=2650, stock="shop", badge="box",
     spec="M and M+B key, 2230–2280, up to 8 TB")
-row("shop", "Hydrogel film (Diamonds Quality)", "iPhone 15, 15 Pro, 16, 16 Pro, 17, 17 Pro",
-    "hydrogel film iPhone 17 Pro", rid="zip-14", thumb=zip_thumb("14"), stock="shop", badge="ask",
-    note="Front screen or back film? Tell me before it goes live.")
-row("shop", "FLAYR Borderless tempered glass", "iPhone 13 to 18 Pro", "FLAYR tempered glass iPhone 17 Pro",
-    rid="zip-15", thumb=zip_thumb("15"), stock="shop", badge="ask",
-    note="Box prints 8K. Can the box go to buyers?")
-row("shop", "G-TEL Fantacy 3D fingerprint glass", "Samsung S22 to S26 range", "G-TEL tempered glass Samsung S24 Ultra",
+row("shop", "Hydrogel full back film", "iPhone 12 to 18 Pro (back and sides)",
+    "hydrogel back film iPhone 17 Pro", rid="zip-14", thumb=zip_thumb("14"), stock="shop", badge="ready")
+row("shop", "FLAYR 8K Borderless tempered glass", "iPhone 17 and 17 Pro", "FLAYR tempered glass iPhone 17 Pro",
+    rid="zip-15", thumb=zip_thumb("15"), stock="shop", badge="ready")
+row("shop", "G-TEL Fantacy 3D fingerprint glass", "Every Galaxy S, S22 to S26 Ultra", "G-TEL tempered glass Samsung S24 Ultra",
     rid="zip-16", thumb=zip_thumb("16"), stock="shop", badge="ready")
 row("shop", "FLAYR Super Large Arc glass", "Phone model?", "FLAYR arc tempered glass", rid="zip-17",
     thumb=zip_thumb("17"), stock="shop", badge="ask", note="Which phone is it for?")
