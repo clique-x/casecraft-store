@@ -27,7 +27,9 @@ function groupOf(product: ProductDetail): { name: string; href: string } {
   const look = photo ? LOOKS.find((l) => l.handle === photo.look) : undefined;
   if (look) return { name: look.name, href: `/categories/${look.handle}` };
   const theme = THEMES.find((t) => t.handle === product.theme);
-  return { name: theme?.name ?? product.theme, href: `/categories/${product.theme}` };
+  if (theme) return { name: theme.name, href: `/categories/${theme.handle}` };
+  // A look without a category page of its own (e.g. sparkle): link the covers range, never a category that 404s.
+  return { name: 'Covers', href: '/covers' };
 }
 
 export function RelatedRows({ product, related, candidates, models }: RelatedRowsProps) {

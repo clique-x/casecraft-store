@@ -4,6 +4,8 @@ export const SITE_URL = 'https://gadgetshub.io';
 /** Google Tag Manager container; Google Analytics is configured inside it. Loaded in production builds only. */
 export const GTM_ID = 'GTM-PFNT8ZXR';
 export const FREE_SHIPPING_THRESHOLD_INR = 499;
+/** Standard delivery below FREE_SHIPPING_THRESHOLD_INR, as the backend seed sets it up (apps/backend/src/scripts/seed.ts). */
+export const SHIPPING_FEE_INR = 49;
 export const REPLACEMENT_DAYS = 7;
 export const COD_FEE_INR = 0;
 export const MIN_PRICE_INR = 299;
@@ -63,6 +65,8 @@ export const BUSINESS = {
   /** The shop's Google reviews (to read them or write one), from Google Business Profile; null hides the Google buttons. */
   googleReviewsUrl: null as string | null,
 } as const;
+/** The shop's own social media profile URLs (Instagram, Facebook, YouTube…), for the homepage store markup; none yet. */
+export const SOCIAL_PROFILES: readonly string[] = [];
 /** The address on one line, e.g. for the footer and the policy intros. */
 export const BUSINESS_ADDRESS = [...BUSINESS.address.lines, `${BUSINESS.address.city}, ${BUSINESS.address.state} ${BUSINESS.address.pin}`, 'India'].join(', ');
 /** "by EarthClique" under the header wordmark at md+; off until the owner asks for it. */

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { BRAND_NAME, OG_IMAGE, SITE_URL } from '@/lib/brand';
-import { formatInr, gallerySrc, PHOTOS } from '@/lib/catalog/photos';
+import { formatInr, PHOTOS } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
+import { itemListJsonLd, storeJsonLd } from '@/lib/seo/structured-data';
 import { getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
 import { getAccessories, getGadgets } from '@/lib/medusa/products';
 import { BrandIntro } from '@/components/intro/BrandIntro.client';
@@ -49,32 +50,6 @@ export const metadata: Metadata = {
 /** Audio picked for the spotlight and the trending mix, in this order when they exist. */
 const AUDIO_PICKS = ['boat-800-hidef', 'realme-air-7', 'boat-alpha-gen2', 'realme-t310', 'boat-rockerz-110', 'boat-219'];
 const FEATURE_AUDIO = 'realme-air-7';
-
-function absolute(path: string): string {
-  return new URL(path, SITE_URL).toString();
-}
-
-function itemListJsonLd(products: HomeProduct[]): string {
-  return JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Trending at the hub',
-    numberOfItems: products.length,
-    itemListElement: products.map((p, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      item: {
-        '@type': 'Product',
-        name: p.title,
-        url: absolute(`/products/${p.handle}`),
-        ...(p.photo ? { image: absolute(gallerySrc(p.photo.id, 0, 960)), brand: { '@type': 'Brand', name: p.photo.brand } } : {}),
-        ...(p.gadget?.original ? { brand: { '@type': 'Brand', name: p.gadget.original.brand } } : {}),
-        offers: { '@type': 'Offer', price: p.priceFromInr, priceCurrency: 'INR', availability: 'https://schema.org/InStock' },
-      },
-    })),
-  }).replace(/</g, '\\u003c');
-}
-
 
 /** Two lists woven together: a, b, a, b … */
 function interleave<T>(a: T[], b: T[]): T[] {
@@ -193,7 +168,8 @@ export default async function HomePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd(trendingMix) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: storeJsonLd() }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: itemListJsonLd('Trending at the hub', trendingMix) }} />
       {/* First visit in a tab session: the brand intro, over the hero it hands off to. */}
       <BrandIntro />
       {/* Once per session, no phone picked yet: a pointer to the header's device picker. */}

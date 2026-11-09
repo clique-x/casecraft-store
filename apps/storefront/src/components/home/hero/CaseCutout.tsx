@@ -15,10 +15,8 @@ interface Props {
   deferred?: boolean;
 }
 
-const CUTOUT_CSS = `
-.cutout{display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%}
-.cutout[data-cut=faded]{-webkit-mask-image:linear-gradient(to bottom,black 88%,transparent 100%);mask-image:linear-gradient(to bottom,black 88%,transparent 100%)}
-`;
+// The .cutout rules live in app/globals.css: an inline <style href="cutout"> put a "cutout" href in the page data,
+// which crawlers followed to a /cutout page that does not exist.
 
 export function cutoutAlt(entry: PhotoEntry): string {
   return `${entry.design} ${entry.brand} ${entry.series} cover for ${entry.modelLabel}`;
@@ -31,9 +29,6 @@ export function CaseCutout({ entry, role, sizes, priority = false, className, im
   const source = deferred ? { 'data-src': src, 'data-srcset': srcSet } : { src, srcSet };
   return (
     <>
-      <style href="cutout" precedence="default">
-        {CUTOUT_CSS}
-      </style>
       {/* eslint-disable-next-line @next/next/no-img-element -- the sheen mask must reference this image's own currentSrc */}
       <img
         {...source}

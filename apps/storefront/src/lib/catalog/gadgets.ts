@@ -705,6 +705,15 @@ export function gadgetCardSrcSet(photos: GadgetPhotos, n: number): string {
   return GADGET_CARD_WIDTHS.map((w) => `${gadgetCardSrc(photos, n, w)} ${w}w`).join(', ');
 }
 
+/** Brand names of more than one word; every other gadget title starts with its one-word brand (boAt, SanDisk, WD_BLACK → WD). */
+const MULTI_WORD_BRANDS = ['SK hynix', 'CP Plus'] as const;
+
+/** The maker of a gadget: its `original` brand when set, otherwise the brand its title starts with. */
+export function gadgetBrand(gadget: Pick<GadgetEntry, 'title' | 'original'>): string {
+  if (gadget.original) return gadget.original.brand;
+  return MULTI_WORD_BRANDS.find((b) => gadget.title.startsWith(`${b} `)) ?? gadget.title.split(/[\s_]/)[0];
+}
+
 /** The gallery image that shows an option (a colour), or the first image. */
 export function gadgetHeroIndex(photos: GadgetPhotos, optionSlug: string | null | undefined): number {
   return (optionSlug && photos.heroByOption?.[optionSlug]) || 0;

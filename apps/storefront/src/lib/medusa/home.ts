@@ -1,22 +1,22 @@
 import { looksWithCovers, type LookWithCover } from '@/lib/catalog/looks';
 import { getCatalog } from './catalog';
-import { THEMES, type HomeProduct, type PhoneModel, type Theme } from './fixtures';
+import { THEMES, type HomeProduct, type PhoneModel, type ProductDetail, type Theme } from './fixtures';
 
 function byTrending(a: HomeProduct, b: HomeProduct): number {
   return (a.trendingRank ?? Infinity) - (b.trendingRank ?? Infinity);
 }
 
-async function photoProducts(): Promise<HomeProduct[]> {
+async function photoProducts(): Promise<ProductDetail[]> {
   return (await getCatalog()).products.filter((p) => p.photo !== undefined);
 }
 
 /** Photographed stock by `trendingRank`. */
-export async function getTrending(): Promise<HomeProduct[]> {
+export async function getTrending(): Promise<ProductDetail[]> {
   return (await photoProducts()).filter((p) => p.trendingRank !== undefined).sort(byTrending);
 }
 
 /** Photographed stock flagged `isNew`. */
-export async function getNewArrivals(): Promise<HomeProduct[]> {
+export async function getNewArrivals(): Promise<ProductDetail[]> {
   return (await photoProducts()).filter((p) => p.isNew === true).sort(byTrending);
 }
 
