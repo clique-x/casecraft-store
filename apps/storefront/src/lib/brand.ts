@@ -1,6 +1,8 @@
 export const BRAND_NAME = 'GadgetsHub';
 /** Absolute origin for canonical, Open Graph and JSON-LD URLs; no trailing slash. */
 export const SITE_URL = 'https://gadgetshub.io';
+/** Google Tag Manager container; Google Analytics is configured inside it. Loaded in production builds only. */
+export const GTM_ID = 'GTM-PFNT8ZXR';
 export const FREE_SHIPPING_THRESHOLD_INR = 499;
 export const REPLACEMENT_DAYS = 7;
 export const COD_FEE_INR = 0;

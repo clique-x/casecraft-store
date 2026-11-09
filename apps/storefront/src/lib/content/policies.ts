@@ -47,7 +47,7 @@ export const POLICY_SLUGS = ['shipping', 'returns', 'refunds', 'privacy', 'terms
 export type PolicySlug = (typeof POLICY_SLUGS)[number];
 
 /** ISO date shown as "Last updated" on every page. */
-export const POLICIES_UPDATED = '2026-11-06';
+export const POLICIES_UPDATED = '2026-11-09';
 
 /** Hours someone reads WhatsApp; messages outside them are answered the next working day. */
 export const SUPPORT_HOURS = 'Monday to Saturday, 10 am to 7 pm IST';
@@ -351,6 +351,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
             'Messages you send us on WhatsApp, email or phone, so we can help with your order.',
             'Your phone model, if you choose it on the site. It is saved in a small cookie on your device so we can show covers that fit; it is not linked to your name.',
             'Basic technical data that every website receives, such as your browser type and IP address, kept in server logs for security.',
+            'How the site is used, measured by Google Analytics: the pages you view, your device and browser type, your approximate location (city level) and how you reached us. On pages with a form, such as checkout, Google’s tag can also pick up the email, phone number and address you type and send them to Google in hashed (scrambled) form, which Google uses to measure orders.',
             'Your location, only if you tap "Use my current location" at checkout and allow it. Your browser sends it to OpenStreetMap to look up your address; we do not store it.',
             'Your email and up to three delivery addresses from past checkouts, saved only in your own browser so you can pick one next time. Remove one with "Remove", or all of them with "Not you? Clear" at checkout.',
             'If you use "Find my saved addresses" at checkout, your mobile number is sent to Twilio, our SMS provider, to deliver a one-time code. After you enter the code, we show the delivery addresses of your past orders with that number. Without the code, nobody can see them.',
@@ -368,6 +369,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
             'To handle replacements, refunds and questions.',
             'To prevent fraud and misuse of Cash on Delivery.',
             'To keep the accounting and tax records Indian law requires.',
+            'To see which pages and products people visit, so we can improve the site.',
           ),
           p(
             'We send offers only if you have agreed to receive them, and you can stop them at any time by replying STOP or messaging us.',
@@ -383,6 +385,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
             'Shiprocket and its courier partners, who need your name, address and phone number to deliver.',
             'WhatsApp (Meta), when you choose to message us there.',
             'Our hosting and email providers, who store data on our behalf.',
+            'Google, through Google Tag Manager and Google Analytics, which measure how the site is used.',
           ),
           p(
             'We do not sell your personal information. We share it with government authorities only when the law requires us to.',
@@ -397,14 +400,19 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
             'The phone-model cookie described above.',
             'Small markers in your browser’s storage so the welcome animation and the phone-picker tip show only once.',
           ),
-          p('We do not use advertising or analytics cookies, and no other company tracks you on this site.'),
+          p(
+            'Google Analytics sets its own cookies (named _ga and _ga_ followed by an ID) to tell visits apart, so we can count visitors and see which pages they use. They last up to two years. We do not use advertising cookies.',
+          ),
+          p(
+            'You can block or delete these cookies in your browser settings, or turn off Google Analytics on every site with Google’s opt-out browser add-on (tools.google.com/dlpage/gaoptout). The shop works the same either way.',
+          ),
         ],
       },
       {
         heading: 'How long we keep it',
         blocks: [
           p(
-            'We keep order and invoice records for as long as Indian tax and accounting law requires. Chat messages and other data are deleted when we no longer need them to help you. The phone-model cookie stays on your device until you clear it or pick a different phone.',
+            'We keep order and invoice records for as long as Indian tax and accounting law requires. Chat messages and other data are deleted when we no longer need them to help you. The phone-model cookie stays on your device until you clear it or pick a different phone. Google Analytics keeps usage data for at most 14 months.',
           ),
         ],
       },
