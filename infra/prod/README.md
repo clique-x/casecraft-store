@@ -66,6 +66,16 @@ bash setup-vps.sh gadgetshub.io
 Check: https://gadgetshub.io shows the store, https://api.gadgetshub.io/health says OK and
 https://api.gadgetshub.io/app shows the admin login.
 
+### Admin password
+
+The admin's "Forgot password?" link is sent by email, and the store has no email provider yet, so that email
+never arrives. On the server instead:
+
+```bash
+/opt/casecraft/infra/prod/admin-password.sh                  # lists the admin logins
+/opt/casecraft/infra/prod/admin-password.sh you@example.com  # gives that login a new password, printed once
+```
+
 ## If the server already runs nginx (other sites)
 
 When nginx already holds ports 80 and 443, Caddy cannot start and the domain shows the other site. Serve
