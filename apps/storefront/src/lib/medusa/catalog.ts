@@ -3,6 +3,7 @@ import { ACCESSORIES, ACCESSORY_TYPE_LABEL } from '@/lib/catalog/accessories';
 import { GADGETS, GADGET_TYPE_LABEL, optionPrice } from '@/lib/catalog/gadgets';
 import { PHOTOS, type PhotoEntry } from '@/lib/catalog/photos';
 import { DESIGNS } from '@/lib/designs/catalog';
+import { hasCatalogEntry } from './catalog-entry';
 import { MEDUSA_REGION_ID, medusaEnabled, sdk } from './client';
 import {
   ACCESSORY_DETAILS,
@@ -157,11 +158,16 @@ async function fetchAllProducts(): Promise<MedusaProduct[]> {
   }
 }
 
+/**
+ * Handles of the store products the site can show. A product still in the store but retired from the site's
+ * catalogue (e.g. the generic RAM listings replaced by per-brand ones) is left out, so its old address gets a
+ * real 404 from src/proxy.ts instead of a "not found" page with status 200.
+ */
 async function fetchProductHandles(): Promise<string[]> {
   const handles: string[] = [];
   for (let offset = 0; ; offset += PAGE_SIZE) {
-    const { products, count } = await sdk!.store.product.list({ fields: 'handle', limit: PAGE_SIZE, offset });
-    handles.push(...products.map((p) => p.handle));
+    const { products, count } = await sdk!.store.product.list({ fields: 'handle,metadata', limit: PAGE_SIZE, offset });
+    handles.push(...products.filter((p) => hasCatalogEntry(p.metadata)).map((p) => p.handle));
     if (offset + PAGE_SIZE >= count) return handles;
   }
 }
