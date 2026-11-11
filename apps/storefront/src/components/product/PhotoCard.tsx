@@ -107,7 +107,7 @@ export function PhotoCard({
                     sizes={sizes}
                     width={800}
                     height={1000}
-                    alt=""
+                    alt={`${photoAlt(photo)}, second view`}
                     aria-hidden="true"
                     decoding="async"
                     loading="lazy"

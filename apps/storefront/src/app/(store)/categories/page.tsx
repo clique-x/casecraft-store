@@ -60,7 +60,7 @@ export default async function CategoriesPage() {
     <div className={PAGE_SHELL}>
       <ListingHeader
         trail={[{ name: 'Looks', href: URL_PATH }]}
-        title="Shop by look"
+        title="Phone back covers by look"
         intro={`${looks.length} looks. Every cover is photographed in our shop, so what you see is what arrives.`}
       />
 

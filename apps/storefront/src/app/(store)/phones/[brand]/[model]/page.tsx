@@ -15,6 +15,7 @@ import {
   WHATSAPP_NUMBER,
 } from '@/lib/brand';
 import { coverCounts, coversLabel, findBrand, findModel, sortForListing } from '@/lib/catalog/listing';
+import { searchModelName } from '@/lib/product/names';
 import { formatInr, photoSrc, gallerySrc } from '@/lib/catalog/photos';
 import type { HomeProduct, PhoneModel } from '@/lib/medusa/fixtures';
 import { getPhoneModels, getProductsForPhone } from '@/lib/medusa/home';
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: ModelPageProps): Promise<Meta
   if (!model) return { title: 'Phone not found', robots: { index: false, follow: true } };
 
   const products = sortForListing(await getProductsForPhone(model.slug));
-  const title = `${model.model} back covers`;
+  const title = `${searchModelName(model.model)} back covers`;
   const description = describe(model, products);
   const url = new URL(phoneHref(model), SITE_URL).toString();
   const lead = products.find((p) => p.photo !== undefined)?.photo;
@@ -121,7 +122,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
           { name: model.brand, href: `/phones/${brandSlug(model.brand)}` },
           { name: model.model, href: phoneHref(model) },
         ]}
-        title={`Back covers for ${model.model}`}
+        title={`${searchModelName(model.model)} back covers`}
         intro={
           products.length > 0
             ? `${coversLabel(products.length)} cut for the ${model.brand} ${model.model}, from ${from}. Each one lines up with its camera, buttons and port. Ships in ${DISPATCH_WINDOW}, free over ₹${FREE_SHIPPING_THRESHOLD_INR}, with ${codLine()}.`

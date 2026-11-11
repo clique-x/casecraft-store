@@ -2,6 +2,8 @@ import { DepartmentHeader, DepartmentSection } from '@/components/listing/Depart
 import { PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ProductGrid } from '@/components/listing/ProductGrid';
 import { DEPARTMENTS, type Department } from '@/lib/catalog/gadgets';
+import { DEPARTMENT_GUIDES } from '@/lib/content/department-guides';
+import { DepartmentGuide } from './DepartmentGuide';
 import { RamBrandGuide } from './RamBrandGuide';
 import { getGadgets } from '@/lib/medusa/products';
 
@@ -9,6 +11,7 @@ import { getGadgets } from '@/lib/medusa/products';
 export async function DepartmentPage({ department }: { department: Department }) {
   const info = DEPARTMENTS[department];
   const products = await getGadgets(department);
+  const guide = DEPARTMENT_GUIDES[department];
   const groups = info.sections
     .map((s) => ({ ...s, items: products.filter((p) => p.gadget && s.types.includes(p.gadget.type)) }))
     .filter((g) => g.items.length > 0);
@@ -27,6 +30,7 @@ export async function DepartmentPage({ department }: { department: Department })
           {id === 'ram' && <RamBrandGuide className="mt-6" />}
         </DepartmentSection>
       ))}
+      {guide && <DepartmentGuide guide={guide} className="mt-12 lg:mt-16" />}
     </div>
   );
 }

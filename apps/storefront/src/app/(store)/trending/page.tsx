@@ -34,7 +34,7 @@ export default async function TrendingPage() {
     <div className={PAGE_SHELL}>
       <ListingHeader
         trail={[{ name: 'Trending', href: URL_PATH }]}
-        title="Trending this week"
+        title="Trending phone back covers"
         intro="Ranked by what people ordered this week. Tap a cover to pick your phone model."
         aside={`${ranked.length + rest.length} covers`}
       />

@@ -43,7 +43,7 @@ export default async function AccessoriesPage() {
     <div className={PAGE_SHELL}>
       <DepartmentHeader
         trail={[{ name: 'Accessories', href: URL_PATH }]}
-        title="Protection"
+        title="Screen guards and back films"
         groups={groups.map((g) => ({ id: g.type, heading: g.heading, count: g.items.length }))}
         warranty="Cut for your exact phone"
       />

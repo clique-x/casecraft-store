@@ -31,7 +31,7 @@ export function GadgetCard({ product, className }: { product: HomeProduct; class
             sizes={CARD_SIZES}
             width={480}
             height={600}
-            alt=""
+            alt={`${g.title}, ${GADGET_TYPE_LABEL[g.type].toLowerCase()}`}
             decoding="async"
             loading="lazy"
             className="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out-expo group-hover/card:scale-[1.03]"

@@ -21,7 +21,7 @@ export const PROMOS = {
   covers: {
     name: 'covers-character',
     href: '/covers',
-    alt: 'Cases with character, from ₹250. Cut for your exact phone.',
+    alt: 'Cases with character, from ₹200. Cut for your exact phone.',
   },
 } satisfies Record<string, Promo>;
 

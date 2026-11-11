@@ -329,7 +329,7 @@ export function isWide(entry: PhotoEntry): boolean {
 
 /** Alt text per brief §1.4. */
 export function photoAlt(entry: PhotoEntry): string {
-  return `${entry.design} ${entry.brand} ${entry.series} cover for ${entry.modelLabel}`;
+  return `${entry.design} ${entry.brand} ${entry.series} back cover for ${entry.modelLabel}`;
 }
 
 /** Widths written by scripts/photo-shots.mjs; every shot is cropped to 4:5. */

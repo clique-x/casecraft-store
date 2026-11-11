@@ -79,7 +79,7 @@ export function Footer() {
               <Wordmark className="text-xl" />
             </p>
             <p className="mt-3 max-w-sm text-sm text-pretty text-fg-on-ink-muted">
-              Phone covers, earbuds and speakers, memory cards, SSDs and RAM, Wi-Fi cameras and screen protection, packed at our {SHOP_CITY}
+              Phone covers, earbuds and speakers, memory cards, SSDs and RAM, Wi-Fi cameras and screen protection, packed at our {SHOP_CITY}{' '}
               warehouse. UPI, cards or Cash on Delivery. Free shipping over ₹{FREE_SHIPPING_THRESHOLD_INR}.
             </p>
             <address className="mt-6 flex max-w-sm flex-col gap-3 not-italic">

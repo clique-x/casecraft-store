@@ -39,7 +39,7 @@ export default async function CoversPage() {
     <div className={PAGE_SHELL}>
       <DepartmentHeader
         trail={[{ name: 'Covers', href: URL_PATH }]}
-        title="Covers"
+        title="Phone back covers"
         groups={groups.map((g) => ({ id: g.id, heading: g.heading, count: g.items.length }))}
         warranty="Photographed in our shop"
       />

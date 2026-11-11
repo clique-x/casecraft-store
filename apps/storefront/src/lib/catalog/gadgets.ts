@@ -150,7 +150,7 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
   audio: {
     path: '/audio',
     name: 'Audio',
-    title: 'Audio',
+    title: 'boAt and realme earbuds, neckbands and speakers',
     badge: 'Sealed, brand warranty',
     intro: 'Sealed boAt and realme earbuds, neckbands and speakers with the brand warranty. They pair with any phone; pick a colour on the product page.',
     sections: [
@@ -173,7 +173,7 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
   storage: {
     path: '/storage',
     name: 'Storage',
-    title: 'Storage, memory cards and RAM',
+    title: 'Memory cards, pen drives, SSDs and RAM',
     badge: 'Brand warranty',
     intro: `Pen drives, microSD cards, SSDs and RAM from SanDisk, Samsung, WD and Consistent. Pick the capacity on the product page; sizes we order in for you ship in ${ORDER_IN_WINDOW}.`,
     sections: [
@@ -186,7 +186,7 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
   cameras: {
     path: '/cameras',
     name: 'Cameras',
-    title: 'Wi-Fi security cameras',
+    title: 'CP Plus Wi-Fi security cameras',
     badge: 'Sealed, brand warranty',
     intro: 'CP Plus pan-and-tilt Wi-Fi cameras for the home and shop, with night vision, two-way talk and the ezyKam+ app.',
     sections: [{ id: 'wifi', types: ['camera'], heading: 'Wi-Fi cameras', intro: 'Plug in, connect to 2.4 GHz Wi-Fi, and watch live from your phone.' }],

@@ -40,7 +40,7 @@ export default async function PhonesPage() {
     <div className={PAGE_SHELL}>
       <ListingHeader
         trail={[{ name: 'Phones', href: URL_PATH }]}
-        title="Shop by phone"
+        title="Phone back covers by brand and model"
         intro="Pick your phone to see only the covers cut for it. The camera cut-out, buttons and port line up with your exact model."
       />
 

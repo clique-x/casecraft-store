@@ -79,7 +79,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           { name: 'Looks', href: '/categories' },
           { name: category.name, href: `/categories/${category.handle}` },
         ]}
-        title={category.name}
+        title={`${category.name} phone back covers`}
         intro={category.blurb}
         aside={coversLabel(items.length)}
       />

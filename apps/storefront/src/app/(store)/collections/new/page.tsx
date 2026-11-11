@@ -34,7 +34,7 @@ export default async function NewArrivalsPage() {
     <div className={PAGE_SHELL}>
       <ListingHeader
         trail={[{ name: 'New this week', href: URL_PATH }]}
-        title="New this week"
+        title="New phone back covers"
         intro="Covers that just came in. Each one is photographed in our shop before it goes on the site."
         aside={`${items.length} ${items.length === 1 ? 'cover' : 'covers'}`}
       />

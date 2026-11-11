@@ -125,17 +125,19 @@
 }
 
 .sc-titleLg,
-.sc-lede,
 .sc-cta,
 .sc-controlsLg,
 .sc-hotspot {
   display: none;
 }
 
+/* The page's H1 (what the shop sells): a quiet line under the slogans, on phones too. */
 .sc-lede {
-  margin: 1.25rem 0 0;
-  font-size: 1.1875rem;
-  line-height: 1.5;
+  margin: 0.75rem 0 0;
+  max-width: 21rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.45;
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -569,7 +571,10 @@
   }
 
   .sc-lede {
-    display: block;
+    margin-top: 1.25rem;
+    max-width: 26rem;
+    font-size: 1.1875rem;
+    line-height: 1.5;
   }
 
   .sc-cta {

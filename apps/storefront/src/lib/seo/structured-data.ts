@@ -24,6 +24,7 @@ import { gallerySrc, photoSrc } from '@/lib/catalog/photos';
 import { reviewsForStructuredData, summarizeReviews } from '@/lib/content/reviews';
 import { THEMES, type ProductDetail } from '@/lib/medusa/fixtures';
 import { lowestPrice } from '@/lib/medusa/variants';
+import { productFullName } from '@/lib/product/names';
 
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -144,7 +145,7 @@ export function productSchema(product: ProductDetail, { withReviews = false } = 
   const image = productImageUrl(product);
   return {
     '@type': 'Product',
-    name: product.title,
+    name: productFullName(product),
     description: product.description,
     url,
     ...(image ? { image } : {}),

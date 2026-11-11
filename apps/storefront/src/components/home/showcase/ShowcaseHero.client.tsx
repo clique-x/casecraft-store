@@ -291,7 +291,8 @@ export function ShowcaseHero() {
         <p className={s.eyebrow} data-intro-reveal="1">
           Your world. Upgraded.
         </p>
-        <h1 className={s.title} data-intro-reveal="1">
+        {/* The slogans are display text; the H1 is the line under them, which says what the shop sells. */}
+        <p className={s.title} data-intro-reveal="1">
           <span className={s.titleSm}>
             Everyday tech.
             <br />
@@ -304,10 +305,10 @@ export function ShowcaseHero() {
             <br />
             <em>Extraordinary everyday.</em>
           </span>
-        </h1>
-        <p className={s.lede} data-intro-reveal="1">
-          Discover accessories made for your world.
         </p>
+        <h1 className={s.lede} data-intro-reveal="1">
+          Phone covers, earbuds and memory cards, delivered across India.
+        </h1>
         <Link href={slide.href} className={s.cta} data-intro-reveal="3" aria-label={`Explore the collection: ${slide.department}`}>
           Explore the collection <ArrowUpRight className="size-5" strokeWidth={2.25} aria-hidden="true" />
         </Link>

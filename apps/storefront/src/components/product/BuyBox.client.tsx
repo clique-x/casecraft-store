@@ -11,10 +11,12 @@ import { ModelSelector } from '@/components/product/ModelSelector.client';
 import { PriceTag } from '@/components/product/PriceTag.client';
 import { StockLine } from '@/components/product/StockLine.client';
 import { Badge } from '@/components/ui/badge';
+import { LOOKS } from '@/lib/catalog/looks';
 import { formatInr } from '@/lib/catalog/photos';
 import { CASE_TYPES, THEMES, type CaseType, type PhoneModel, type ProductDetail, type Variant } from '@/lib/medusa/fixtures';
 import { findVariant, lowestPrice } from '@/lib/medusa/variants';
 import { DEFAULT_SELECTION, useVariantSelection, variantStore } from '@/lib/product/variant-store';
+import { coverHeadline, coverMaker } from '@/lib/product/names';
 import { askOnWhatsAppHref } from '@/lib/product/whatsapp-link';
 import { useMyPhone } from '@/lib/phone/use-my-phone';
 
@@ -48,10 +50,10 @@ function variantFor(product: ProductDetail, modelSlug: string | null, caseType: 
   return product.variants.find((v) => v.modelSlug === modelSlug) ?? null;
 }
 
+/** The line above the title. A cover's brand and series are already in its H1, so covers show their look here. */
 function brandLineOf(product: ProductDetail): string | null {
-  if (product.brandLine) return product.brandLine;
-  if (product.photo) return `${product.photo.brand} · ${product.photo.series}`;
-  return null;
+  if (product.photo) return LOOKS.find((l) => l.handle === product.photo?.look)?.name ?? 'Back cover';
+  return product.brandLine ?? null;
 }
 
 interface BuyBoxProps {
@@ -157,7 +159,16 @@ export function BuyBox({ product, models, accessories = [] }: BuyBoxProps) {
           {product.isNew && <Badge className="border-transparent bg-surface-2 text-fg">New</Badge>}
         </div>
         <h1 id="buy-box-title" className="font-display text-h2 text-balance">
-          {product.title}
+          {product.photo ? (
+            <>
+              {coverHeadline(product.photo)}
+              <span className="mt-2 block font-sans text-[1.0625rem] leading-snug font-semibold tracking-normal text-fg-muted">
+                {coverMaker(product.photo)}
+              </span>
+            </>
+          ) : (
+            product.title
+          )}
         </h1>
         <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
           <div className="flex items-baseline gap-2">

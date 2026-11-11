@@ -3,7 +3,7 @@ import './globals.css';
 import { manrope, unbounded } from '@/lib/fonts';
 import { BRAND_NAME, OG_IMAGE, SITE_URL } from '@/lib/brand';
 import { IntroBoot } from '@/components/intro/IntroBoot';
-import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager';
+import { GoogleTagManager } from '@/components/analytics/GoogleTagManager';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,7 +38,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <IntroBoot />
       </head>
       <body className="flex min-h-full flex-col font-sans">
-        <GoogleTagManagerNoScript />
         <a href="#main" className="skip-link">
           Skip to content
         </a>

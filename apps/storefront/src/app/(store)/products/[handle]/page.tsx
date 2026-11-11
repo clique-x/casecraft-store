@@ -27,6 +27,7 @@ import {
 } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
 import { ramBrandOf } from '@/lib/catalog/ram-brands';
+import { productFullName } from '@/lib/product/names';
 import { gallerySrc, photoSrc, srcSetFor, type PhotoEntry, backdropThumbSrc } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { accessoryMedia, coverMedia, gadgetMedia } from '@/lib/product/media';
@@ -81,7 +82,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const gadget = product.gadget;
   const accessory = product.accessory;
   const title = photo
-    ? `${photo.title} · ${photo.modelLabel} back cover`
+    ? productFullName(product)
     : gadget
       ? `${product.title} · ${GADGET_TYPE_LABEL[gadget.type]}`
       : accessory
