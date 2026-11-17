@@ -6,6 +6,7 @@ import { CheckCircle2, MessageCircle } from 'lucide-react';
 import { ClearCart } from '@/components/checkout/ClearCart.client';
 import { DISPATCH_WINDOW, WHATSAPP_NUMBER } from '@/lib/brand';
 import { formatInr } from '@/lib/catalog/photos';
+import { emailSignInAvailable } from '@/lib/account/actions';
 import { getOrder } from '@/lib/cart/orders';
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export default function Page({ params }: Props) {
 
 async function Confirmation({ params }: Props) {
   const { id } = await params;
-  const order = await getOrder(id);
+  const [order, emails] = await Promise.all([getOrder(id), emailSignInAvailable()]);
   if (!order) notFound();
 
   const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi! A question about my order #${order.displayId}.`)}`;
@@ -41,8 +42,8 @@ async function Confirmation({ params }: Props) {
         <h1 className="font-display text-h2 font-extrabold text-fg">Thank you, your order is placed</h1>
         <p className="text-body text-fg-muted">
           Order <strong className="text-fg">#{order.displayId}</strong>
-          {order.email ? <> · placed with {order.email}</> : null}. We dispatch in {DISPATCH_WINDOW}. Keep your order
-          number to track it.
+          {order.email ? <> · placed with {order.email}</> : null}. We dispatch in {DISPATCH_WINDOW}.{' '}
+          {emails && order.email ? 'The receipt is on its way to your inbox.' : 'Keep your order number to track it.'}
         </p>
       </div>
 
@@ -105,13 +106,23 @@ async function Confirmation({ params }: Props) {
           <p className="font-bold text-fg">Payment</p>
           <p className="mt-2 text-fg-muted">{order.paymentLabel}</p>
           <p className="mt-4 font-bold text-fg">Track it any time</p>
-          <p className="mt-1 text-fg-muted">
-            Use your order number and email on the{' '}
-            <Link href="/account" className="font-semibold text-brand underline-offset-4 hover:underline">
-              order tracking page
-            </Link>
-            .
-          </p>
+          {emails && order.email ? (
+            <p className="mt-1 text-fg-muted">
+              Your account is ready. Sign in to{' '}
+              <Link href="/account" className="font-semibold text-brand underline-offset-4 hover:underline">
+                My orders
+              </Link>{' '}
+              with {order.email} to see this order and its tracking: we email you a one-time code, no password.
+            </p>
+          ) : (
+            <p className="mt-1 text-fg-muted">
+              Use your order number and email on the{' '}
+              <Link href="/account" className="font-semibold text-brand underline-offset-4 hover:underline">
+                order tracking page
+              </Link>
+              .
+            </p>
+          )}
         </div>
       </div>
 

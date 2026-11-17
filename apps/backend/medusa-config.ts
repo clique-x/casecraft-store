@@ -58,6 +58,38 @@ const razorpay =
       ]
     : []
 
+/**
+ * Email (sign-in codes, order confirmations, shipping updates) through any SMTP mailbox: Hostinger, Zoho,
+ * Google Workspace, Resend's SMTP… With EMAIL_FROM and SMTP_HOST unset the shop sends no email and the
+ * storefront hides email sign-in. EMAIL_PREVIEW_DIR (development) writes the emails to a folder instead.
+ */
+const email =
+  process.env.EMAIL_FROM && (process.env.SMTP_HOST || process.env.EMAIL_PREVIEW_DIR)
+    ? [
+        {
+          resolve: '@medusajs/medusa/notification',
+          options: {
+            providers: [
+              {
+                resolve: './src/modules/smtp-email',
+                id: 'smtp',
+                options: {
+                  channels: ['email'],
+                  host: process.env.SMTP_HOST,
+                  port: Number(process.env.SMTP_PORT) || 465,
+                  user: process.env.SMTP_USER,
+                  pass: process.env.SMTP_PASSWORD,
+                  from: process.env.EMAIL_FROM,
+                  reply_to: process.env.EMAIL_REPLY_TO,
+                  preview_dir: process.env.SMTP_HOST ? undefined : process.env.EMAIL_PREVIEW_DIR,
+                },
+              },
+            ],
+          },
+        },
+      ]
+    : []
+
 module.exports = defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
@@ -76,5 +108,5 @@ module.exports = defineConfig({
     disable: process.env.DISABLE_MEDUSA_ADMIN === 'true',
     backendUrl: process.env.MEDUSA_BACKEND_URL,
   },
-  modules: [{ resolve: './src/modules/phone-model' }, ...razorpay, ...redisModules],
+  modules: [{ resolve: './src/modules/phone-model' }, ...razorpay, ...email, ...redisModules],
 })

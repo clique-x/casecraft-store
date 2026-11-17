@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Search } from 'lucide-react';
+import { Search, UserRound } from 'lucide-react';
 import { CartButton } from './CartButton.client';
 import { Wordmark } from '@/components/brand/Wordmark';
 import { BRAND_NAME, PARENT_BRAND, SHOW_PARENT_BRAND } from '@/lib/brand';
@@ -94,6 +94,9 @@ export function Header({ solid = false }: HeaderProps) {
           <MyPhoneChip className="lg:mr-2" />
           <Link href="/search" className={ICON_LINK} aria-label="Search">
             <Search className="size-[1.375rem]" strokeWidth={1.75} aria-hidden="true" />
+          </Link>
+          <Link href="/account" className={ICON_LINK} aria-label="My orders" title="My orders">
+            <UserRound className="size-[1.375rem]" strokeWidth={1.75} aria-hidden="true" />
           </Link>
           <CartButton className={ICON_LINK} />
         </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 import { useHeroPresent } from '@/lib/layout/chrome-store';
+import { cn } from '@/lib/utils';
 
 interface HeaderScrollStateProps {
   solid?: boolean;
@@ -38,7 +39,7 @@ export function HeaderScrollState({ solid = false, className, children }: Header
       data-site-header=""
       data-scrolled={scrolled || solid || !heroPresent ? '' : undefined}
       data-past={scrolled ? '' : undefined}
-      className={className}
+      className={cn(className, 'print:hidden')}
     >
       {children}
     </header>

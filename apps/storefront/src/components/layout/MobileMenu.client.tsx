@@ -62,7 +62,7 @@ const COVER_LINKS: readonly { href: string; label: string; note: string }[] = [
 
 /** The footer's Help column, plus shipping from its Policies column. */
 const HELP_LINKS: readonly { href: string; label: string }[] = [
-  { href: '/account', label: 'Track your order' },
+  { href: '/account', label: 'My orders & tracking' },
   { href: '/pages/shipping', label: 'Shipping & delivery' },
   { href: '/pages/returns', label: `Returns & ${REPLACEMENT_DAYS}-day replacement` },
   { href: '/pages/contact', label: 'Contact us' },

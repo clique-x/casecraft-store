@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Banknote, Check, ChevronDown, CreditCard, Loader2, Lock, ShoppingBag, Truck } from 'lucide-react';
 import { CartLines } from '@/components/cart/CartLines.client';
+import { emailSignInAvailable, signedInDetails } from '@/lib/account/actions';
 import { BRAND_NAME } from '@/lib/brand';
 import { formatInr } from '@/lib/catalog/photos';
 import { getCheckoutOptions, placeOrder, saveCheckoutDetails, startPayment } from '@/lib/cart/actions';
@@ -130,6 +131,31 @@ function CheckoutForm({
   const [stage, setStage] = useState<'idle' | 'saving' | 'paying' | 'placing'>('idle');
   const hasItems = Boolean(cart && cart.lines.length > 0);
   const itemSubtotal = cart?.itemSubtotal ?? 0;
+
+  // Signed in to My orders: the account's email, and on a fresh checkout its saved addresses (from past
+  // orders) ahead of the ones remembered on this device.
+  const [accounts, setAccounts] = useState(false);
+  useEffect(() => {
+    let live = true;
+    emailSignInAvailable().then((ok) => live && setAccounts(ok));
+    signedInDetails().then((account) => {
+      if (!live || !account) return;
+      setEmail((cur) => cur || account.email);
+      if (cartAddress || account.addresses.length === 0) return;
+      const merged = [...account.addresses, ...savedAddresses.filter((a) => !account.addresses.some((f) => sameAddress(f, a)))];
+      setSaved(merged);
+      setSelected(0);
+      setMode('saved');
+      setAddress((cur) => ({ ...merged[0], phone: merged[0].phone || cur.phone }));
+      setShowSavedNote(false);
+      setVerifiedNote(`Signed in as ${account.email}. Your saved addresses are in the next step.`);
+    });
+    return () => {
+      live = false;
+    };
+    // Once, when the form opens.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   useEffect(() => {
     if (!hasItems) return;
     let cancelled = false;
@@ -367,7 +393,10 @@ function CheckoutForm({
             }}
           />
           {verifiedNote && <p className="text-caption font-medium text-success">{verifiedNote}</p>}
-          <p className="text-caption text-fg-muted">The courier calls this number on delivery.</p>
+          <p className="text-caption text-fg-muted">
+            The courier calls this number on delivery.
+            {accounts && ' The receipt goes to your email, and you can sign in with it later to see your orders.'}
+          </p>
           <StepContinue disabled={busy} />
         </Step>
 

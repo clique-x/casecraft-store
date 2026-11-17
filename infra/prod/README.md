@@ -66,10 +66,26 @@ bash setup-vps.sh gadgetshub.io
 Check: https://gadgetshub.io shows the store, https://api.gadgetshub.io/health says OK and
 https://api.gadgetshub.io/app shows the admin login.
 
+### Email (order emails and customer sign-in)
+
+The shop emails sign-in codes for My orders, the order confirmation, an "on its way" email with the tracking
+link when you mark a fulfilment as shipped in the admin, and the admin's "Forgot password?" link. It sends
+through any mailbox you already have:
+
+1. Create a mailbox such as `orders@gadgetshub.io` (Hostinger: hPanel → Emails).
+2. Fill the email lines in `/opt/casecraft/infra/prod/.env` (`SMTP_HOST=smtp.hostinger.com`, `SMTP_PORT=465`,
+   `SMTP_USER=orders@gadgetshub.io`, `SMTP_PASSWORD='the mailbox password'`,
+   `EMAIL_FROM=GadgetsHub <orders@gadgetshub.io>`) and run `deploy.sh`.
+3. In the domain's DNS, keep the SPF and DKIM records the mail host gives you, so the emails do not land in
+   spam. Place a test order with your own email to check.
+
+Every order gets an account under its email (name, phone, addresses). There are no passwords: customers sign
+in at gadgetshub.io/account with a 6-digit code emailed to them. Until email is set up, that page only offers
+tracking by order number.
+
 ### Admin password
 
-The admin's "Forgot password?" link is sent by email, and the store has no email provider yet, so that email
-never arrives. On the server instead:
+The admin's "Forgot password?" link only arrives once email is set up (above). Without email, on the server:
 
 ```bash
 /opt/casecraft/infra/prod/admin-password.sh                  # lists the admin logins
@@ -130,6 +146,7 @@ host key on first use. Without the secrets the workflow skips itself.
 | Logs | `cd /opt/casecraft && docker compose -f infra/prod/docker-compose.yml logs -f --tail 100 storefront medusa-server` |
 | Backup now | `/opt/casecraft/infra/prod/backup.sh` (nightly at 02:30, kept 14 days in `/var/backups/casecraft`) |
 | Turn on Razorpay or Twilio | Fill their lines in `/opt/casecraft/infra/prod/.env`, run `deploy.sh`, then `first-run.sh` once |
+| Turn on email | Fill the email lines in `.env` and run `deploy.sh` (see Email above) |
 
 Price and stock edits in the admin show on the store within seconds. New products, photos or code reach
 the store with a deploy, since pages are built from the code and the catalogue.

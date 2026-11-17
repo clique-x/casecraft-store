@@ -39,7 +39,7 @@ const COLUMNS: readonly { heading: string; links: readonly FooterLink[] }[] = [
     links: [
       { href: '/pages/contact', label: 'Contact us' },
       { href: '/pages/about', label: 'About us' },
-      { href: '/account', label: 'Track your order' },
+      { href: '/account', label: 'My orders & tracking' },
       { href: '/pages/returns', label: `${REPLACEMENT_DAYS}-day replacement` },
     ],
   },
@@ -70,7 +70,7 @@ const LINK = `rounded-sm text-sm text-fg-on-ink-muted transition-colors duration
 
 export function Footer() {
   return (
-    <footer id="footer" className="bg-ink text-fg-on-ink">
+    <footer id="footer" className="bg-ink text-fg-on-ink print:hidden">
       <div className="mx-auto w-full max-w-7xl px-4 pt-14 pb-[calc(env(safe-area-inset-bottom)+6rem)] sm:px-6 md:pb-12 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           {/* Who we are and how to reach us: Razorpay's review looks for the address, phone and email. */}

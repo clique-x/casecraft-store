@@ -33,7 +33,7 @@ export default async function StoreLayout({ children }: { children: ReactNode })
           <CartDrawer />
         </MyPhoneProvider>
       </CartProvider>
-      <div aria-hidden="true" className="grain-overlay" />
+      <div aria-hidden="true" className="grain-overlay print:hidden" />
     </MotionProvider>
   );
 }

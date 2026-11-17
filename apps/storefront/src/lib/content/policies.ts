@@ -47,7 +47,7 @@ export const POLICY_SLUGS = ['shipping', 'returns', 'refunds', 'privacy', 'terms
 export type PolicySlug = (typeof POLICY_SLUGS)[number];
 
 /** ISO date shown as "Last updated" on every page. */
-export const POLICIES_UPDATED = '2026-11-09';
+export const POLICIES_UPDATED = '2026-11-17';
 
 /** Hours someone reads WhatsApp; messages outside them are answered the next working day. */
 export const SUPPORT_HOURS = 'Monday to Saturday, 10 am to 7 pm IST';
@@ -348,6 +348,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
         blocks: [
           list(
             'Order details: your name, phone number, email, delivery address and what you bought.',
+            'Your account: every order is saved to an account under your email, with your name, phone number, delivery addresses and orders, so you can see them under My orders. You sign in with a one-time code we email you; there is no password. Ask us and we delete the account.',
             'Messages you send us on WhatsApp, email or phone, so we can help with your order.',
             'Your phone model, if you choose it on the site. It is saved in a small cookie on your device so we can show covers that fit; it is not linked to your name.',
             'Basic technical data that every website receives, such as your browser type and IP address, kept in server logs for security.',
@@ -366,6 +367,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
         blocks: [
           list(
             'To pack, ship and deliver your order and send you tracking updates.',
+            'To email your order confirmation, shipping updates and the sign-in codes you ask for.',
             'To handle replacements, refunds and questions.',
             'To prevent fraud and misuse of Cash on Delivery.',
             'To keep the accounting and tax records Indian law requires.',
@@ -397,6 +399,7 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
         blocks: [
           list(
             'A cart cookie, so your cart is still there when you come back. It lasts 30 days.',
+            'A sign-in cookie when you sign in to My orders, so you stay signed in on that device for 30 days. "Sign out" removes it.',
             'The phone-model cookie described above.',
             'Small markers in your browser’s storage so the welcome animation and the phone-picker tip show only once.',
           ),
