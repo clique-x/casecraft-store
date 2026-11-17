@@ -1,5 +1,6 @@
 'use server';
 
+import { visitorIp } from '@/lib/account/session';
 import { medusaEnabled, sdk } from '@/lib/medusa/client';
 import type { ActionResult, CartAddress } from './types';
 
@@ -22,7 +23,8 @@ export async function phoneLoginAvailable(): Promise<boolean> {
 export async function sendLoginCode(phone: string): Promise<ActionResult<true>> {
   if (!sdk) return { ok: false, error: 'Phone login is not available.' };
   try {
-    await sdk.client.fetch('/store/otp', { method: 'POST', body: { phone } });
+    const ip = await visitorIp();
+    await sdk.client.fetch('/store/otp', { method: 'POST', body: { phone }, headers: ip ? { 'x-client-ip': ip } : undefined });
     return { ok: true, value: true };
   } catch (error) {
     return { ok: false, error: messageOf(error) };
