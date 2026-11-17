@@ -4,7 +4,8 @@ import { formatInr, PHOTOS } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { itemListJsonLd, storeJsonLd } from '@/lib/seo/structured-data';
 import { getNewArrivals, getPhoneModels, getTrending } from '@/lib/medusa/home';
-import { getAccessories, getGadgets } from '@/lib/medusa/products';
+import { getAccessories, getAllProducts, getGadgets } from '@/lib/medusa/products';
+import { HomeCombos, type ComboAccessory, type ComboCover } from '@/components/home/HomeCombos.client';
 import { BrandIntro } from '@/components/intro/BrandIntro.client';
 import { DeviceHint } from '@/components/home/device-hint/DeviceHint.client';
 import { ShowcaseHero } from '@/components/home/showcase/ShowcaseHero.client';
@@ -51,6 +52,30 @@ export const metadata: Metadata = {
 /** Audio picked for the spotlight and the trending mix, in this order when they exist. */
 const AUDIO_PICKS = ['boat-800-hidef', 'realme-air-7', 'boat-alpha-gen2', 'realme-t310', 'boat-rockerz-110', 'boat-219'];
 const FEATURE_AUDIO = 'realme-air-7';
+
+/** Photographed covers for the combo picker, trending first, with one variant per phone. */
+function comboCovers(products: ProductDetail[]): ComboCover[] {
+  const rank = (p: ProductDetail) => p.trendingRank ?? 999;
+  return products
+    .filter((p): p is ProductDetail & { photo: NonNullable<ProductDetail['photo']> } => p.photo !== undefined)
+    .sort((a, b) => rank(a) - rank(b))
+    .map((p) => ({
+      id: p.id,
+      handle: p.handle,
+      title: p.title,
+      photoId: p.photo.id,
+      variants: p.variants.map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })),
+    }));
+}
+
+/** The screen glass and back films, with their variants per phone, for the combo picker. */
+function comboAccessories(products: ProductDetail[]): ComboAccessory[] {
+  return products.flatMap((p) =>
+    p.accessory
+      ? [{ entry: p.accessory, title: p.title, variants: p.variants.map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })) }]
+      : [],
+  );
+}
 
 /** Two lists woven together: a, b, a, b … */
 function interleave<T>(a: T[], b: T[]): T[] {
@@ -140,7 +165,7 @@ function duoFeatures(cameras: ProductDetail[], audio: ProductDetail[]): DuoFeatu
 }
 
 export default async function HomePage() {
-  const [trending, newArrivals, models, accessories, audio, storage, cameras] = await Promise.all([
+  const [trending, newArrivals, models, accessories, audio, storage, cameras, allCovers] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
@@ -148,6 +173,7 @@ export default async function HomePage() {
     getGadgets('audio'),
     getGadgets('storage'),
     getGadgets('cameras'),
+    getAllProducts(),
   ]);
 
   const audioWithPhotos = byPicks(audio.filter((p) => p.gadget?.photos));
@@ -193,6 +219,8 @@ export default async function HomePage() {
       <PromoStage />
       <CoversSection models={models} covers={PHOTOS.length} />
       <NewArrivalsRow products={newArrivals} models={models} />
+      {/* Cover + screen glass + back film for the visitor's phone, at bundle price. */}
+      <HomeCombos covers={comboCovers(allCovers)} accessories={comboAccessories(accessories)} />
       {/* The other departments: storage, then cameras and speakers, then protection. */}
       <GadgetRow department="storage" products={storage} />
       <HomeDuo features={duoFeatures(cameras, audio)} />
