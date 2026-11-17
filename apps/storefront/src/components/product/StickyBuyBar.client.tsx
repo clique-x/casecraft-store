@@ -13,7 +13,8 @@ import { findVariant, lowestPrice } from '@/lib/medusa/variants';
 import { SPRING_UI } from '@/lib/motion/tokens';
 import { usePickerSheetOpen } from '@/lib/phone/picker-sheet-store';
 import { useVariantSelection } from '@/lib/product/variant-store';
-import { askOnWhatsAppHref } from '@/lib/product/whatsapp-link';
+import { askOnWhatsAppHref, whatsAppProduct } from '@/lib/product/whatsapp-link';
+import { OPTION_LABEL } from '@/lib/catalog/gadgets';
 import { addonVariantIds } from '@/lib/product/addons';
 import { useSelectedAddons } from '@/lib/product/addon-store';
 
@@ -58,14 +59,16 @@ export function StickyBuyBar({ product, models, accessories = [] }: StickyBuyBar
   const price = variant ? variant.priceInr : lowestPrice(product);
   const priceLabel = `${variant ? '' : 'from '}${formatInr(price)}`;
   const soldOut = variant !== null && variant.stock <= 0;
+  const optionName = product.gadget?.options.find((c) => c.slug === selection.modelSlug)?.name ?? null;
   const whatsappHref = askOnWhatsAppHref({
-    productName: product.title,
-    modelName: model?.model ?? null,
+    ...whatsAppProduct(product),
+    ...(product.gadget
+      ? { modelName: optionName, modelLabel: OPTION_LABEL[product.gadget.optionKind] }
+      : { modelName: model?.model ?? null }),
     caseTypeName: product.caseTypes.length > 0 ? caseTypeInfo.name : null,
     sku: variant?.sku ?? null,
     intent: soldOut ? 'notify' : 'order',
   });
-  const optionName = product.gadget?.options.find((c) => c.slug === selection.modelSlug)?.name ?? null;
   const detail = [optionName ?? model?.model, product.caseTypes.length > 0 ? caseTypeInfo.name : null].filter(Boolean).join(' · ');
 
   return (

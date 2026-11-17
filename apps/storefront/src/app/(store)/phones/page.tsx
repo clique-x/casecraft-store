@@ -11,7 +11,7 @@ import { getAllProducts } from '@/lib/medusa/products';
 
 const TITLE = 'Phone back covers by phone model';
 const DESCRIPTION =
-  'Find back covers cut for your exact phone: iPhone, Samsung Galaxy, OnePlus, Redmi, Realme, Vivo, OPPO, Motorola, Nothing and Pixel models.';
+  'Find back covers made for your exact phone: iPhone, Samsung Galaxy, Pixel, Motorola, Redmi, Realme and OPPO models. COD across India.';
 const URL_PATH = '/phones';
 
 export const metadata: Metadata = {
@@ -33,8 +33,9 @@ const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponen
 
 export default async function PhonesPage() {
   const [models, products] = await Promise.all([getPhoneModels(), getAllProducts()]);
-  const brands = groupByBrand(models);
   const counts = coverCounts(products);
+  // Brands whose phones have no covers yet are left out: nothing here links to an empty listing.
+  const brands = groupByBrand(models).filter((g) => g.models.some((m) => (counts.get(m.slug) ?? 0) > 0));
 
   return (
     <div className={PAGE_SHELL}>

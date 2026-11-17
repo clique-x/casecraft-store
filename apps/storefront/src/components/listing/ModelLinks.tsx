@@ -13,8 +13,13 @@ interface ModelLinksProps {
   className?: string;
 }
 
-/** One row per phone model, linking to its covers, with the number of covers that fit. */
+/**
+ * One row per phone model that has covers, linking to them, with the number that fit. Phones with none are
+ * left out, so no page links to an empty listing.
+ */
 export function ModelLinks({ models, counts, layout = 'grid', className }: ModelLinksProps) {
+  const listed = models.filter((m) => (counts.get(m.slug) ?? 0) > 0);
+  if (listed.length === 0) return null;
   return (
     <ul
       className={cn(
@@ -23,7 +28,7 @@ export function ModelLinks({ models, counts, layout = 'grid', className }: Model
         className,
       )}
     >
-      {models.map((model) => {
+      {listed.map((model) => {
         const count = counts.get(model.slug) ?? 0;
         return (
           <li key={model.slug}>
@@ -37,9 +42,8 @@ export function ModelLinks({ models, counts, layout = 'grid', className }: Model
               <BrandOutline islandStyle={model.islandStyle} size={layout === 'grid' ? 24 : 20} className="text-fg-muted" />
               <span className="flex min-w-0 flex-1 flex-col">
                 <span className="truncate text-sm font-semibold">{model.model}</span>
-                <span className="text-caption text-fg-muted tabular-nums">
-                  {count > 0 ? coversLabel(count) : 'No covers listed yet'}
-                </span>
+                <span className="sr-only">, </span>
+                <span className="text-caption text-fg-muted tabular-nums">{coversLabel(count)}</span>
               </span>
               <ChevronRightIcon
                 aria-hidden="true"

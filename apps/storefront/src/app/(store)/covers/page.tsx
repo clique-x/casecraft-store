@@ -10,7 +10,7 @@ import { getAllProducts } from '@/lib/medusa/products';
 
 const TITLE = 'Phone back covers';
 const DESCRIPTION =
-  'Every cover in the shop: carbon, animal print, solid, clear and frosted, ring and stand. Photographed in our shop, cut for your exact phone, with Cash on Delivery across India.';
+  'Clear, solid, carbon, printed and ring-stand back covers for iPhone, Samsung, Pixel, Motorola and Redmi, made for your exact phone. COD across India.';
 const URL_PATH = '/covers';
 
 export const metadata: Metadata = {

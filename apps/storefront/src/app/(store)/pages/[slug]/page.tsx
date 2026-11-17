@@ -5,6 +5,7 @@ import { Fragment } from 'react';
 import { Crumbs } from '@/components/listing/Crumbs';
 import { PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
+import { seoDescription } from '@/lib/seo/meta';
 import { getPolicy, POLICIES, POLICIES_UPDATED, POLICY_SLUGS, type Block, type Inline } from '@/lib/content/policies';
 
 interface PolicyPageProps {
@@ -28,16 +29,17 @@ export async function generateMetadata({ params }: PolicyPageProps): Promise<Met
   const page = getPolicy(slug);
   if (!page) return { title: 'Page not found', robots: { index: false, follow: true } };
   const url = new URL(`/pages/${page.slug}`, SITE_URL).toString();
+  const description = seoDescription(page.description);
   return {
     title: page.title,
-    description: page.description,
+    description,
     alternates: { canonical: url },
     openGraph: {
       type: 'website',
       locale: 'en_IN',
       siteName: BRAND_NAME,
       title: `${page.title} · ${BRAND_NAME}`,
-      description: page.description,
+      description,
       url,
       images: [OG_IMAGE],
     },

@@ -30,7 +30,7 @@ function department(id: MobileMenuDepartment['id'], info: DepartmentInfo, note: 
 
 /** The phone menu's departments; the notes follow the desktop Shop menu's, kept to one line. */
 const MOBILE_DEPARTMENTS: readonly MobileMenuDepartment[] = [
-  { id: 'covers', href: '/covers', label: 'Phone cases', note: 'Back covers cut for your exact phone', sections: [] },
+  { id: 'covers', href: '/covers', label: 'Phone cases', note: 'Back covers made for your exact phone', sections: [] },
   department('audio', DEPARTMENTS.audio, 'boAt and realme, sealed in the box'),
   department('storage', DEPARTMENTS.storage, 'Memory cards, pen drives, SSDs, RAM'),
   department('cameras', DEPARTMENTS.cameras, 'CP Plus Wi-Fi security cameras'),

@@ -4,7 +4,7 @@ import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 
 const TITLE = 'Memory cards, pen drives, SSDs and RAM';
 const DESCRIPTION =
-  'SanDisk, Samsung, WD and Consistent memory cards, pen drives and SSDs, plus laptop and desktop RAM, with Cash on Delivery and free shipping over ₹499.';
+  'SanDisk, Samsung, WD and Consistent memory cards, pen drives and SSDs, plus Samsung and SK hynix RAM. COD, free shipping over ₹499.';
 const URL_PATH = '/storage';
 
 export const metadata: Metadata = {

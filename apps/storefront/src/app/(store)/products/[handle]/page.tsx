@@ -5,6 +5,7 @@ import { AccessoryStage } from '@/components/accessory/AccessoryStage.client';
 import { GadgetBuyBox } from '@/components/gadget/GadgetBuyBox.client';
 import { GadgetStage } from '@/components/gadget/GadgetStage.client';
 import { RamBrandGuide } from '@/components/gadget/RamBrandGuide';
+import { FaqSection } from '@/components/content/FaqSection';
 import { Breadcrumb } from '@/components/product/Breadcrumb';
 import { BundleKits } from '@/components/product/BundleKits.client';
 import { BuyBox } from '@/components/product/BuyBox.client';
@@ -18,16 +19,16 @@ import { PhotoStage } from '@/components/product/viewer/PhotoStage.client';
 import { ProductViewer } from '@/components/product/viewer/ProductViewer.client';
 import { ProductReviews } from '@/components/reviews/ProductReviews';
 import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
-import { ACCESSORY_TYPE_LABEL, accessoryPhotoSrc } from '@/lib/catalog/accessories';
+import { accessoryPhotoSrc } from '@/lib/catalog/accessories';
 import {
   DEPARTMENT_OF,
-  GADGET_TYPE_LABEL,
   gadgetGallerySrc,
   gadgetHeroIndex,
 } from '@/lib/catalog/gadgets';
 import { LOOKS } from '@/lib/catalog/looks';
 import { ramBrandOf } from '@/lib/catalog/ram-brands';
-import { productFullName } from '@/lib/product/names';
+import { productFaqs } from '@/lib/content/product-faq';
+import { fullTitle, productSeoDescription, productSeoTitle } from '@/lib/seo/meta';
 import { gallerySrc, photoSrc, srcSetFor, type PhotoEntry, backdropThumbSrc } from '@/lib/catalog/photos';
 import type { HomeProduct, ProductDetail } from '@/lib/medusa/fixtures';
 import { accessoryMedia, coverMedia, gadgetMedia } from '@/lib/product/media';
@@ -81,13 +82,9 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const photo = product.photo;
   const gadget = product.gadget;
   const accessory = product.accessory;
-  const title = photo
-    ? productFullName(product)
-    : gadget
-      ? `${product.title} · ${GADGET_TYPE_LABEL[gadget.type]}`
-      : accessory
-        ? `${product.title} · ${ACCESSORY_TYPE_LABEL[accessory.type]}`
-        : `${product.title} phone back cover`;
+  // ≤60-character title and ≤150-character description (lib/seo/meta.ts); the long description stays in the page body.
+  const title = productSeoTitle(product);
+  const description = productSeoDescription(product);
   const url = new URL(`/products/${product.handle}`, SITE_URL).toString();
   const gadgetImage = gadget?.photos
     ? {
@@ -106,14 +103,14 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       : null;
   return {
     title,
-    description: product.description,
+    description,
     alternates: { canonical: url },
     openGraph: {
       type: 'website',
       locale: 'en_IN',
       siteName: BRAND_NAME,
-      title: `${title} · ${BRAND_NAME}`,
-      description: product.description,
+      title: fullTitle(title),
+      description,
       url,
       ...(photo ? { images: [ogImageFor(photo)] } : gadgetImage ? { images: [gadgetImage] } : { images: [OG_IMAGE] }),
     },
@@ -283,6 +280,8 @@ async function ProductPageContent({ params }: ProductPageProps) {
         </div>
 
         {product.gadget?.type === 'ram' && <RamBrandGuide brand={ramBrandOf(product.gadget.specs)} className="mt-10 lg:mt-14" />}
+
+        <FaqSection faqs={productFaqs(product, models)} id="product-faq" className="mt-10 max-w-3xl lg:mt-14" />
 
         {/* Full width under both columns, so it never lengthens the pinned buy column. */}
         <ProductReviews product={product} className="mt-10 lg:mt-14" />

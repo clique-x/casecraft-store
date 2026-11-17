@@ -27,8 +27,9 @@ import { gadgetCutSrc, gadgetGallerySrc, gadgetHeroIndex, type GadgetType } from
 
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
-const TITLE = `${BRAND_NAME} · Phone covers, audio, storage, cameras and screen protection`;
-const DESCRIPTION = `Covers cut for your exact phone from ${formatInr(COVER_FROM)}, sealed boAt and realme earbuds, neckbands and speakers, SanDisk, Samsung, WD and Consistent memory cards and SSDs, RAM, CP Plus Wi-Fi cameras and screen protection. UPI, cards or Cash on Delivery across India.`;
+// ≤60 and ≤150 characters, so search results show them whole.
+const TITLE = `Phone Covers, Earbuds & Memory Cards Online – ${BRAND_NAME}`;
+const DESCRIPTION = `Phone covers from ${formatInr(COVER_FROM)}, sealed boAt & realme audio, SanDisk & Samsung storage. COD, UPI & cards. Free shipping over ₹499 across India.`;
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -96,7 +97,7 @@ function railCategories(gadgets: ProductDetail[]): RailCategory[] {
     if (!g?.photos) return [];
     // The square gallery photo, not the 4:5 card crop, so nothing is cut off in the square tile.
     const image = g.photos.cut ? gadgetCutSrc(g.photos, 480) : gadgetGallerySrc(g.photos, gadgetHeroIndex(g.photos, g.options[0]?.slug), 480);
-    return [{ label: c.label, href: c.href, image, cutout: Boolean(g.photos.cut), fromInr: Math.min(...items.map((p) => p.priceFromInr)) }];
+    return [{ label: c.label, href: c.href, image, alt: g.title, cutout: Boolean(g.photos.cut), fromInr: Math.min(...items.map((p) => p.priceFromInr)) }];
   });
 }
 

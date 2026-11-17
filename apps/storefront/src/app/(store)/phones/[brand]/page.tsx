@@ -5,7 +5,9 @@ import { PhoneBrandLogo } from '@/components/brand/PhoneBrandLogo';
 import { ListingHeader, PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ModelLinks } from '@/components/listing/ModelLinks';
 import { BRAND_NAME, FREE_SHIPPING_THRESHOLD_INR, SITE_URL, OG_IMAGE } from '@/lib/brand';
-import { coverCounts, findBrand, groupByBrand } from '@/lib/catalog/listing';
+import { coverCounts, coversLabel, findBrand, groupByBrand, listPhrase, lowestFrom } from '@/lib/catalog/listing';
+import { searchModelName } from '@/lib/product/names';
+import { fullTitle, rupees, seoDescription, seoTitle } from '@/lib/seo/meta';
 import { getPhoneModels } from '@/lib/medusa/home';
 import { getAllProducts } from '@/lib/medusa/products';
 
@@ -23,15 +25,34 @@ export async function generateMetadata({ params }: BrandPageProps): Promise<Meta
   const group = findBrand(await getPhoneModels(), slug);
   if (!group) return { title: 'Phone brand not found', robots: { index: false, follow: true } };
 
-  const title = `${group.brand} back covers`;
-  const names = group.models.slice(0, 3).map((m) => m.model).join(', ');
-  const description = `Back covers for ${group.brand} phones including ${names}. Cut for each model, photographed in our shop, with Cash on Delivery across India.`;
+  const products = await getAllProducts();
+  const counts = coverCounts(products);
+  const covered = group.models.filter((m) => (counts.get(m.slug) ?? 0) > 0);
+  const covers = products.filter((p) => p.fitsModels.some((s) => group.models.some((m) => m.slug === s)));
   const url = new URL(`/phones/${group.slug}`, SITE_URL).toString();
+  if (covers.length === 0) {
+    const title = `${group.brand} back covers`;
+    const description = seoDescription(`Back covers for ${group.brand} phones are coming soon. See the phones we have covers for, with COD across India.`);
+    return {
+      title,
+      description,
+      robots: { index: false, follow: true },
+      alternates: { canonical: url },
+      openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: fullTitle(title), description, url, images: [OG_IMAGE] },
+    };
+  }
+  const from = rupees(lowestFrom(covers));
+  const title = seoTitle(`${group.brand} Back Covers & Cases – From ${from}`, `${group.brand} Back Covers – From ${from}`, `${group.brand} Back Covers`);
+  const names = covered.map((m) => searchModelName(m.model));
+  const description = seoDescription(
+    `${coversLabel(covers.length)} for ${group.brand} phones, from ${from}: ${listPhrase(names, 3)}. COD, free shipping over ₹${FREE_SHIPPING_THRESHOLD_INR}.`,
+    `${coversLabel(covers.length)} for ${group.brand} phones, from ${from}. COD, free shipping over ₹${FREE_SHIPPING_THRESHOLD_INR}.`,
+  );
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: `${title} · ${BRAND_NAME}`, description, url, images: [OG_IMAGE] },
+    openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: fullTitle(title), description, url, images: [OG_IMAGE] },
   };
 }
 
@@ -42,7 +63,9 @@ export default async function BrandPage({ params }: BrandPageProps) {
   if (!group) notFound();
 
   const counts = coverCounts(products);
-  const others = groupByBrand(models).filter((g) => g.slug !== group.slug);
+  const hasCovers = (g: { models: readonly { slug: string }[] }) => g.models.some((m) => (counts.get(m.slug) ?? 0) > 0);
+  const others = groupByBrand(models).filter((g) => g.slug !== group.slug && hasCovers(g));
+  const coveredModels = group.models.filter((m) => (counts.get(m.slug) ?? 0) > 0);
 
   return (
     <div className={PAGE_SHELL}>
@@ -57,8 +80,12 @@ export default async function BrandPage({ params }: BrandPageProps) {
             <span>{group.brand} back covers</span>
           </span>
         }
-        intro={`Choose your ${group.brand} model to see the covers cut for it. Free shipping on orders over ₹${FREE_SHIPPING_THRESHOLD_INR}.`}
-        aside={`${group.models.length} ${group.models.length === 1 ? 'model' : 'models'}`}
+        intro={
+          coveredModels.length > 0
+            ? `Choose your ${group.brand} model to see the covers made for it. Free shipping on orders over ₹${FREE_SHIPPING_THRESHOLD_INR}.`
+            : `Covers for ${group.brand} phones are coming soon. See the other brands below, or message us on WhatsApp and we will check the shop for your phone.`
+        }
+        aside={`${coveredModels.length} ${coveredModels.length === 1 ? 'model' : 'models'}`}
       />
 
       <ModelLinks models={group.models} counts={counts} className="mt-8 lg:mt-10" />

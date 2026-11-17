@@ -68,13 +68,20 @@ function brandOf(product: ProductDetail): string {
   return product.accessory?.brand ?? BRAND_NAME;
 }
 
-/** The product's main photo (960 px), the one its page leads with; null for the rare product without one. */
-export function productImageUrl(product: ProductDetail): string | null {
+/** Up to MAX_IMAGES of the product's own photos (960 px), lead photo first: for Google's product data and feed. */
+const MAX_IMAGES = 6;
+export function productImageUrls(product: ProductDetail): string[] {
   const { photo, gadget, accessory } = product;
-  if (photo) return absoluteUrl(photo.gallery && photo.gallery.length > 0 ? gallerySrc(photo.id, 0, 960) : photoSrc(photo.id, 960));
-  if (gadget?.photos) return absoluteUrl(gadgetGallerySrc(gadget.photos, gadgetHeroIndex(gadget.photos, gadget.options[0]?.slug), 960));
-  if (accessory?.photos && accessory.photos.gallery.length > 0) return absoluteUrl(accessoryPhotoSrc(accessory.id, 0, 960));
-  return null;
+  const take = (n: number, src: (i: number) => string) => Array.from({ length: Math.min(n, MAX_IMAGES) }, (_, i) => absoluteUrl(src(i)));
+  if (photo) return photo.gallery && photo.gallery.length > 0 ? take(photo.gallery.length, (i) => gallerySrc(photo.id, i, 960)) : [absoluteUrl(photoSrc(photo.id, 960))];
+  if (gadget?.photos) {
+    const photos = gadget.photos;
+    const hero = gadgetHeroIndex(photos, gadget.options[0]?.slug);
+    const order = [hero, ...photos.gallery.map((_, i) => i).filter((i) => i !== hero)];
+    return order.slice(0, MAX_IMAGES).map((i) => absoluteUrl(gadgetGallerySrc(photos, i, 960)));
+  }
+  if (accessory?.photos && accessory.photos.gallery.length > 0) return take(accessory.photos.gallery.length, (i) => accessoryPhotoSrc(accessory.id, i, 960));
+  return [];
 }
 
 /** Days to dispatch: on the shelf within 24–72 h; ordered-in sizes in 3–5 days; a mix spans both. */
@@ -112,6 +119,8 @@ function returnPolicy(product: ProductDetail) {
     merchantReturnDays: product.gadget ? SEALED_ELECTRONICS_DAYS : REPLACEMENT_DAYS,
     returnMethod: 'https://schema.org/ReturnByMail',
     refundType: 'https://schema.org/ExchangeRefund',
+    // Every return the shop accepts (a damaged, faulty or wrong item) costs the buyer nothing.
+    returnFees: 'https://schema.org/FreeReturn',
     itemDefectReturnFees: 'https://schema.org/FreeReturn',
     merchantReturnLink: absoluteUrl('/pages/returns'),
   };
@@ -142,17 +151,21 @@ function reviewsJsonLd(handle: string) {
 export function productSchema(product: ProductDetail, { withReviews = false } = {}) {
   const url = absoluteUrl(`/products/${product.handle}`);
   const price = lowestPrice(product);
-  const image = productImageUrl(product);
+  const images = productImageUrls(product);
   return {
     '@type': 'Product',
     name: productFullName(product),
     description: product.description,
     url,
-    ...(image ? { image } : {}),
+    ...(images.length > 0 ? { image: images } : {}),
     sku: product.variants[0]?.sku,
     brand: { '@type': 'Brand', name: brandOf(product) },
     category: categoryOf(product),
     ...(product.gadget ? {} : { material: materialOf(product) }),
+    // The spec table on the page, as structured properties.
+    ...(product.gadget && product.gadget.specs.length > 0
+      ? { additionalProperty: product.gadget.specs.map((s) => ({ '@type': 'PropertyValue', name: s.label, value: s.value })) }
+      : {}),
     offers: {
       '@type': 'Offer',
       url,
@@ -230,5 +243,19 @@ export function storeJsonLd(): string {
         publisher: { '@id': ORG_ID },
       },
     ],
+  });
+}
+
+export interface Faq {
+  q: string;
+  a: string;
+}
+
+/** FAQPage data for questions shown as text on the same page. */
+export function faqJsonLd(faqs: readonly Faq[]): string {
+  return jsonLdString({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   });
 }

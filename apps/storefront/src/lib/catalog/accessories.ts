@@ -14,6 +14,8 @@ export interface AccessoryEntry {
   /** One line for cards and add-on rows. */
   short: string;
   description: string;
+  /** A hand-written meta description (≤150 characters); a template is used when absent. */
+  seoDescription?: string;
   features: [string, string, string];
   details: { material: string; inBox: string; fit: string; care: string };
   /** Only these phone models (slugs); every model when absent. */
@@ -106,7 +108,7 @@ export const ACCESSORIES: readonly AccessoryEntry[] = [
     details: {
       material: 'Tempered glass, G-TEL 3D fingerprint range.',
       inBox: 'One G-TEL glass for the Galaxy you pick.',
-      fit: 'Cut for each Galaxy S model from the S22 to the S26 Ultra; pick yours so we send the right one.',
+      fit: 'Made for each Galaxy S model from the S22 to the S26 Ultra; pick yours so we send the right one.',
       care: 'Fit it on a clean, dry screen. Clean with a dry microfibre cloth.',
     },
     models: [

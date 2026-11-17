@@ -74,7 +74,7 @@ export function HomeDuo({ features }: { features: DuoFeature[] }) {
                       sizes={SIZES}
                       width={960}
                       height={960}
-                      alt=""
+                      alt={f.gadget.title}
                       loading="lazy"
                       decoding="async"
                       className="absolute inset-0 size-full object-cover object-top transition-transform duration-700 sm:object-center ease-out-expo group-hover/duo:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover/duo:transform-none"

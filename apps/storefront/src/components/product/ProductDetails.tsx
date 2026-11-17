@@ -52,7 +52,8 @@ export function ProductDetails({ product }: { product: ProductDetail }) {
         </dl>
       )}
 
-      <Accordion type="multiple" defaultValue={['material']} className="border-t border-border">
+      {/* All open at first: a closed panel's text is not in the page, so buyers and search engines would see an empty "In the box". */}
+      <Accordion type="multiple" defaultValue={items.map((i) => i.key)} className="border-t border-border">
         {items.map(({ key, label }) => (
           <AccordionItem key={key} value={key} className="border-border not-last:border-b">
             <AccordionTrigger className="min-h-12 items-center rounded-none py-3 text-base font-medium text-fg hover:no-underline focus-visible:ring-accent-2/50 **:data-[slot=accordion-trigger-icon]:text-fg-muted">

@@ -78,6 +78,8 @@ export interface GadgetEntry {
   short: string;
   description: string;
   features: [string, string, string];
+  /** A hand-written meta description (≤150 characters); a template is used when absent. */
+  seoDescription?: string;
   /** Key specs, shown as a list on the product page. */
   specs: readonly { label: string; value: string }[];
   inBox: string;

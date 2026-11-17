@@ -141,3 +141,48 @@ export function searchCatalog<T extends HomeProduct>(
   const phones = models.filter((m) => matchesAll(`${m.brand} ${m.model} ${m.series ?? ''}`.toLowerCase(), words));
   return { products: sortForListing(matched), models: [...phones].sort(byRelease) };
 }
+
+// --- page copy -----------------------------------------------------------------------------------
+
+/** "a", "a and b", "a, b and c"; past `max` items, "a, b, c and more". */
+export function listPhrase(items: readonly string[], max = 3): string {
+  if (items.length === 0) return '';
+  if (items.length > max) return `${items.slice(0, max).join(', ')} and more`;
+  if (items.length === 1) return items[0];
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+}
+
+/** The lowest starting price among the products. */
+export function lowestFrom(products: readonly HomeProduct[]): number {
+  return Math.min(...products.map((p) => p.priceFromInr));
+}
+
+/** Phone makers as buyers name them: an Apple phone is an iPhone, a Google phone a Pixel, a Xiaomi a Redmi. */
+const MAKER_NAME: Readonly<Record<string, string>> = { Apple: 'iPhone', Google: 'Pixel', Xiaomi: 'Redmi' };
+
+/** The phone makers the products fit, those with the most covers first: ["iPhone", "Samsung", "Motorola"]. */
+export function phoneMakersFor(products: readonly HomeProduct[], models: readonly PhoneModel[]): string[] {
+  const brandOf = new Map(models.map((m) => [m.slug, m.brand]));
+  const counts = new Map<string, number>();
+  for (const p of products) {
+    for (const brand of new Set(p.fitsModels.map((s) => brandOf.get(s)).filter((b): b is string => Boolean(b)))) {
+      counts.set(brand, (counts.get(brand) ?? 0) + 1);
+    }
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([brand]) => MAKER_NAME[brand] ?? brand);
+}
+
+/** The looks of the photographed covers, most common first, in lower case: ["clear & frosted", "solid"]. */
+export function looksFor(products: readonly HomeProduct[], looks: readonly Look[]): string[] {
+  const counts = new Map<string, number>();
+  for (const p of products) {
+    const look = p.photo ? looks.find((l) => l.match(p.photo!)) : undefined;
+    if (look) counts.set(look.name, (counts.get(look.name) ?? 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([name]) => name.toLowerCase());
+}
+
+/** Covers with a magnet ring for MagSafe or other magnetic chargers, by their series name. */
+export function isMagnetic(product: HomeProduct): boolean {
+  return /magsafe|magnetic/i.test(product.photo?.series ?? '');
+}

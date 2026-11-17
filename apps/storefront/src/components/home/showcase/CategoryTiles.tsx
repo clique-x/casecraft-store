@@ -20,6 +20,8 @@ interface Tile {
   /** Backdrop of the tile. */
   surface: string;
   product: TileImage;
+  /** What the product photo shows, for search engines; the plinth stays decorative. */
+  alt: string;
   plinth?: TileImage;
 }
 
@@ -33,6 +35,7 @@ const TILES: readonly Tile[] = [
     tone: 'dark',
     surface: 'bg-[radial-gradient(120%_130%_at_82%_20%,#11565a_0%,#06363b_42%,#021d20_100%)]',
     // CaseCraft SF Carbon on an iPhone 16 (photo 50129, "On the phone").
+    alt: 'Phone in a grey carbon-fibre back cover',
     product: {
       src: '/home/phone-sf-carbon-580.webp',
       srcSet: set('/home/phone-sf-carbon', [300, 580]),
@@ -47,6 +50,7 @@ const TILES: readonly Tile[] = [
     href: '/audio',
     tone: 'light',
     surface: 'bg-[radial-gradient(110%_120%_at_78%_30%,#f4f3ee_0%,#d9dcd4_48%,#b4bbb2_100%)]',
+    alt: 'boAt Airdopes Prime 800 HiDef wireless earbuds',
     product: {
       // boAt Airdopes Prime 800 HiDef, the shop's own cutout.
       src: '/products/photos/gadgets/boat-800-hidef/cut-480.webp',
@@ -70,6 +74,7 @@ const TILES: readonly Tile[] = [
     href: '/accessories',
     tone: 'dark',
     surface: 'bg-[radial-gradient(120%_130%_at_80%_25%,#0f5156_0%,#05343a_45%,#021b1e_100%)]',
+    alt: 'Tempered glass screen guard',
     product: {
       src: '/home/guard-320.webp',
       srcSet: set('/home/guard', [320, 640]),
@@ -89,7 +94,7 @@ const TILES: readonly Tile[] = [
   },
 ];
 
-function Art({ image, className }: { image: TileImage; className?: string }) {
+function Art({ image, className, alt = '' }: { image: TileImage; className?: string; alt?: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer
     <img
@@ -98,7 +103,7 @@ function Art({ image, className }: { image: TileImage; className?: string }) {
       sizes={image.sizes}
       width={image.w}
       height={image.h}
-      alt=""
+      alt={alt}
       loading="lazy"
       decoding="async"
       draggable={false}
@@ -134,7 +139,7 @@ export function CategoryTiles({ rail }: { rail?: ReactNode }) {
                   <div aria-hidden="true" className="absolute inset-y-0 right-0 -z-10 w-[56%] md:max-lg:inset-x-0 md:max-lg:top-[34%] md:max-lg:w-auto">
                     {tile.plinth && <Art image={tile.plinth} />}
                     <div className="absolute inset-0 transition-transform duration-700 ease-out-expo group-hover/tile:-translate-y-1.5 group-hover/tile:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover/tile:transform-none">
-                      <Art image={tile.product} className="drop-shadow-[0_22px_26px_rgba(0,12,14,.45)]" />
+                      <Art image={tile.product} alt={tile.alt} className="drop-shadow-[0_22px_26px_rgba(0,12,14,.45)]" />
                     </div>
                   </div>
 

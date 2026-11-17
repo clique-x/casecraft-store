@@ -57,7 +57,7 @@ const COVER_LINKS: readonly { href: string; label: string; note: string }[] = [
   { href: '/trending', label: 'Trending', note: 'What shoppers pick this week' },
   { href: '/collections/new', label: 'New arrivals', note: 'Just photographed in the shop' },
   { href: '/categories', label: 'Shop by look', note: 'Carbon, clear, solid, stands' },
-  { href: '/phones', label: 'Shop by phone', note: 'Covers cut for your model' },
+  { href: '/phones', label: 'Shop by phone', note: 'Covers made for your model' },
 ];
 
 /** The footer's Help column, plus shipping from its Policies column. */

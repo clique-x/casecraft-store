@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: `%s · ${BRAND_NAME}`,
   },
   description:
-    'Phone covers cut for your exact model, sealed boAt and realme earbuds, neckbands and speakers, memory cards, SSDs and RAM, CP Plus Wi-Fi cameras and screen protection. UPI, cards or Cash on Delivery across India.',
+    'Phone covers for your exact model, sealed boAt and realme audio, memory cards, SSDs, RAM and Wi-Fi cameras. COD, UPI and cards across India.',
   applicationName: BRAND_NAME,
   robots: { index: true, follow: true },
   // Pages that set their own openGraph replace this whole object, so each of them names an image too.

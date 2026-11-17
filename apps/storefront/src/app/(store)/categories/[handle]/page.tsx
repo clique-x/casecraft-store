@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ListingHeader, PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ProductGrid } from '@/components/listing/ProductGrid';
-import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
-import { coversLabel, productsInLook, sortForListing } from '@/lib/catalog/listing';
+import { BRAND_NAME, REPLACEMENT_DAYS, SITE_URL, OG_IMAGE } from '@/lib/brand';
+import { coversLabel, listPhrase, lowestFrom, phoneMakersFor, productsInLook, sortForListing } from '@/lib/catalog/listing';
+import { fullTitle, rupees, seoDescription, seoTitle } from '@/lib/seo/meta';
 import { LOOKS } from '@/lib/catalog/looks';
 import type { HomeProduct } from '@/lib/medusa/fixtures';
 import { getPhoneModels, getThemes } from '@/lib/medusa/home';
@@ -54,14 +55,34 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const category = await findCategory(handle);
   if (!category) return { title: 'Look not found', robots: { index: false, follow: true } };
 
-  const title = `${category.name} phone back covers`;
-  const description = `${category.blurb} ${category.name} back covers for iPhone, Samsung, OnePlus and more, with Cash on Delivery across India.`;
+  const [items, models] = await Promise.all([productsFor(category), getPhoneModels()]);
   const url = new URL(`/categories/${category.handle}`, SITE_URL).toString();
+  const named = category.name.replace(/\b([a-z])/g, (c) => c.toUpperCase());
+  const lower = category.name.toLowerCase();
+  if (items.length === 0) {
+    const title = `${named} Phone Covers`;
+    const description = seoDescription(`${category.blurb} New ${lower} covers are coming soon; see the other looks meanwhile.`);
+    return {
+      title,
+      description,
+      robots: { index: false, follow: true },
+      alternates: { canonical: url },
+      openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: fullTitle(title), description, url, images: [OG_IMAGE] },
+    };
+  }
+  const from = rupees(lowestFrom(items));
+  const makers = listPhrase(phoneMakersFor(items, models), 3);
+  const count = `${items.length} ${lower} phone ${items.length === 1 ? 'cover' : 'covers'}`;
+  const title = seoTitle(`${named} Phone Covers Online`, `${named} Phone Covers`);
+  const description = seoDescription(
+    `Shop ${count} for ${makers}. From ${from}. COD and ${REPLACEMENT_DAYS}-day replacement.`,
+    `Shop ${count}, from ${from}. COD and ${REPLACEMENT_DAYS}-day replacement.`,
+  );
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: `${title} · ${BRAND_NAME}`, description, url, images: [OG_IMAGE] },
+    openGraph: { type: 'website', locale: 'en_IN', siteName: BRAND_NAME, title: fullTitle(title), description, url, images: [OG_IMAGE] },
   };
 }
 

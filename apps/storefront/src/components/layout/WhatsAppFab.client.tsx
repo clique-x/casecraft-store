@@ -18,9 +18,7 @@ export function WhatsAppFab() {
   const overHero = heroPresent && heroInView !== false;
   const stickyVisible = useStickyCtaVisible();
 
-  const text = phone
-    ? `Hi! I'm looking for a back cover for my ${phone.model}.`
-    : "Hi! I'm looking for a phone back cover.";
+  const text = phone ? `Hi! I have a question. My phone is the ${phone.model}.` : 'Hi! I have a question about GadgetsHub.';
   const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
   return (

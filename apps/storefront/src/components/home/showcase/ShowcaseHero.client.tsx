@@ -341,7 +341,7 @@ export function ShowcaseHero() {
                       sizes={art.sizes}
                       width={art.w}
                       height={art.h}
-                      alt=""
+                      alt={art.alt}
                       decoding="async"
                       fetchPriority={art.id === 'phone' ? 'high' : 'auto'}
                       data-intro-critical={art.id === 'phone' ? '' : undefined}

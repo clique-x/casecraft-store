@@ -11,7 +11,13 @@ const TITLE = 'New phone back covers';
 const DESCRIPTION = 'Back covers that just came into our shop, photographed as they arrived. Pick your phone and see what fits.';
 const URL_PATH = '/collections/new';
 
-export const metadata: Metadata = {
+/** Not indexed while nothing is new: an empty listing is not worth a search result (it is also left out of the sitemap). */
+export async function generateMetadata(): Promise<Metadata> {
+  const empty = newArrivals(await getAllProducts()).length === 0;
+  return { ...metadata, ...(empty ? { robots: { index: false, follow: true } } : {}) };
+}
+
+const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: new URL(URL_PATH, SITE_URL).toString() },

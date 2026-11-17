@@ -72,7 +72,7 @@ export function BundleKits({ product, accessories, models }: Props) {
         <h2 id="bundles-heading" className="font-display text-h2 font-extrabold text-balance text-fg">
           Ready-made bundles{model ? ` for ${model.model}` : ''}
         </h2>
-        <p className="mt-2 text-body text-fg-muted">This cover with the protection most people add. Everything is cut for the same phone.</p>
+        <p className="mt-2 text-body text-fg-muted">This cover with the protection most people add. Everything is made for the same phone.</p>
 
         <ul className={cn('mt-8 grid gap-4 md:grid-cols-2', kits.length > 3 ? 'xl:grid-cols-4' : 'lg:grid-cols-3')}>
           {kits.map(({ kit, items, variantIds, regular, price, available }) => (

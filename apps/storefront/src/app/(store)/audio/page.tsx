@@ -4,7 +4,7 @@ import { BRAND_NAME, SITE_URL, OG_IMAGE } from '@/lib/brand';
 
 const TITLE = 'boAt and realme earbuds, neckbands and speakers';
 const DESCRIPTION =
-  'Sealed boAt and realme earbuds, neckbands and Bluetooth speakers with the brand warranty, for every phone, with Cash on Delivery and free shipping over ₹499.';
+  'Sealed boAt and realme earbuds, neckbands and Bluetooth speakers with the brand’s 1-year warranty and GST invoice. COD, free shipping over ₹499.';
 const URL_PATH = '/audio';
 
 export const metadata: Metadata = {

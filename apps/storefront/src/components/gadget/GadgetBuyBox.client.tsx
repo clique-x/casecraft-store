@@ -12,7 +12,7 @@ import { GADGET_TYPE_LABEL, OPTION_LABEL, ORDER_IN_WINDOW, optionPrice } from '@
 import { formatInr } from '@/lib/catalog/photos';
 import type { ProductDetail } from '@/lib/medusa/fixtures';
 import { DEFAULT_SELECTION, useVariantSelection, variantStore } from '@/lib/product/variant-store';
-import { askOnWhatsAppHref } from '@/lib/product/whatsapp-link';
+import { askOnWhatsAppHref, whatsAppProduct } from '@/lib/product/whatsapp-link';
 import { cn } from '@/lib/utils';
 
 /**
@@ -26,19 +26,21 @@ export function GadgetBuyBox({ product }: { product: ProductDetail }) {
   const param = gadget.optionKind;
   const optionLabel = OPTION_LABEL[param];
 
+  // Open on an option that is on the shelf, then any in stock (ordered-in sizes ship later). The server renders
+  // with it too, so the first HTML names a real option ("Colour: Black") and a working Add to cart, not "Choose".
+  const onShelf = (slug: string) => !gadget.options.find((o) => o.slug === slug)?.orderIn;
+  const defaultSlug =
+    product.variants.find((v) => v.stock > 0 && onShelf(v.modelSlug))?.modelSlug ??
+    product.variants.find((v) => v.stock > 0)?.modelSlug ??
+    product.variants[0]?.modelSlug ??
+    null;
+
   useEffect(() => {
     const query = new URLSearchParams(window.location.search).get(param);
-    // Open on an option that is on the shelf, then any in stock (ordered-in sizes ship later).
-    const onShelf = (slug: string) => !gadget.options.find((o) => o.slug === slug)?.orderIn;
-    const inStock =
-      product.variants.find((v) => v.stock > 0 && onShelf(v.modelSlug))?.modelSlug ??
-      product.variants.find((v) => v.stock > 0)?.modelSlug ??
-      product.variants[0]?.modelSlug ??
-      null;
-    const start = product.variants.some((v) => v.modelSlug === query) ? query : inStock;
+    const start = product.variants.some((v) => v.modelSlug === query) ? query : defaultSlug;
     variantStore.reset({ modelSlug: start, caseType: 'soft' });
     return () => variantStore.reset(DEFAULT_SELECTION);
-  }, [product, param, gadget]);
+  }, [product, param, defaultSlug]);
 
   useEffect(() => {
     const current = variantStore.get().modelSlug;
@@ -48,14 +50,16 @@ export function GadgetBuyBox({ product }: { product: ProductDetail }) {
     window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
   }, [selection, param]);
 
-  const variant = product.variants.find((v) => v.modelSlug === selection.modelSlug) ?? null;
-  const option = gadget.options.find((c) => c.slug === selection.modelSlug) ?? null;
+  const current = selection.modelSlug ?? defaultSlug;
+  const variant = product.variants.find((v) => v.modelSlug === current) ?? null;
+  const option = gadget.options.find((c) => c.slug === current) ?? null;
   const soldOut = variant !== null && variant.stock <= 0;
   const price = variant?.priceInr ?? product.priceFromInr;
   const regular = option ? optionPrice(gadget, option).regularInr : product.regularInr;
   const whatsappHref = askOnWhatsAppHref({
-    productName: product.title,
-    modelName: option ? (param === 'colour' ? `${option.name} colour` : `${option.name}${param === 'capacity' ? '' : ` ${optionLabel.toLowerCase()}`}`) : null,
+    ...whatsAppProduct(product),
+    modelName: option?.name ?? null,
+    modelLabel: optionLabel,
     caseTypeName: null,
     sku: variant?.sku ?? null,
     intent: soldOut ? 'notify' : 'order',
@@ -90,7 +94,7 @@ export function GadgetBuyBox({ product }: { product: ProductDetail }) {
         <div role="radiogroup" aria-label={optionLabel} className="flex flex-wrap gap-3">
           {gadget.options.map((c) => {
             const v = product.variants.find((x) => x.modelSlug === c.slug);
-            const on = c.slug === selection.modelSlug;
+            const on = c.slug === current;
             const out = !v || v.stock <= 0;
             const ring = on ? 'ring-2 ring-fg ring-offset-2 ring-offset-paper' : 'ring-1 ring-border hover:ring-fg/40';
             const focus = 'outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand';
@@ -139,7 +143,7 @@ export function GadgetBuyBox({ product }: { product: ProductDetail }) {
         <p className="text-caption text-fg-muted">Pay by UPI, card, netbanking or Cash on Delivery at checkout.</p>
         <GadgetAssurance gadget={gadget} className="mt-2" />
         <a
-          href={askOnWhatsAppHref({ productName: product.title, modelName: null, caseTypeName: null, sku: null })}
+          href={askOnWhatsAppHref({ ...whatsAppProduct(product), modelName: null, modelLabel: optionLabel, caseTypeName: null, sku: null })}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 self-start rounded-sm text-sm font-semibold text-fg underline-offset-4 outline-none hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"

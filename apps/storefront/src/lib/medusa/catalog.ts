@@ -85,7 +85,7 @@ export function getCatalogPhoneModels(): Promise<PhoneModel[]> {
 // --- Medusa reads ---------------------------------------------------------------------------------
 
 /** Fields the store API returns; `*variants` is needed because a narrower list drops variant metadata. */
-const PRODUCT_FIELDS = 'id,handle,title,description,metadata,*tags,*variants,*variants.calculated_price,+variants.inventory_quantity';
+const PRODUCT_FIELDS = 'id,handle,title,description,updated_at,metadata,*tags,*variants,*variants.calculated_price,+variants.inventory_quantity';
 const PAGE_SIZE = 100;
 
 type Metadata = Record<string, unknown> | null | undefined;
@@ -104,6 +104,8 @@ interface MedusaProduct {
   handle: string;
   title: string;
   description: string | null;
+  /** When the product last changed in the store; the sitemap's lastmod. */
+  updated_at?: string | null;
   metadata?: Metadata;
   tags?: { value: string }[] | null;
   variants?: MedusaVariant[] | null;
@@ -254,6 +256,7 @@ function toProductDetail(p: MedusaProduct, modelRank: Map<string, number>): Prod
   return {
     id: p.id,
     handle: p.handle,
+    ...(p.updated_at ? { updatedAt: p.updated_at } : {}),
     title: p.title,
     description: p.description ?? '',
     designId: photo ? `photo_${photo.id}` : design!.id,
@@ -301,6 +304,7 @@ function toAccessory(p: MedusaProduct, modelRank: Map<string, number>): ProductD
   return {
     id: p.id,
     handle: p.handle,
+    ...(p.updated_at ? { updatedAt: p.updated_at } : {}),
     title: p.title,
     designId: `acc_${entry.id}`,
     family: 'minimal',
@@ -344,6 +348,7 @@ function toGadget(p: MedusaProduct): ProductDetail | null {
   return {
     id: p.id,
     handle: p.handle,
+    ...(p.updated_at ? { updatedAt: p.updated_at } : {}),
     title: p.title,
     designId: `gad_${entry.id}`,
     family: 'minimal',

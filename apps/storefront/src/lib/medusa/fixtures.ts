@@ -41,6 +41,8 @@ export interface HomeProduct {
   /** Struck through on cards only when higher than the price. */
   regularInr?: number;
   stock?: number;
+  /** ISO time the product last changed in the store (Medusa `updated_at`); absent on sample data. */
+  updatedAt?: string;
   /** Present on screen guards, lens protectors and back films (lib/catalog/accessories.ts). */
   accessory?: AccessoryEntry;
   /** Present on wireless audio, chargers and cables (lib/catalog/gadgets.ts). */

@@ -6,6 +6,8 @@ export interface RailCategory {
   href: string;
   /** A product photo on the teal stage (square or 4:5; it is cropped to a square). */
   image: string;
+  /** What the photo shows (the product's name); the label when absent. */
+  alt?: string;
   /** Lowest price in the category, from the live catalogue. */
   fromInr: number;
   /** A transparent cutout: shown whole, on the teal glow, instead of cropped to fill. */
@@ -38,7 +40,7 @@ export function CategoryRail({ categories }: { categories: RailCategory[] }) {
                 {/* eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer */}
                 <img
                   src={c.image}
-                  alt=""
+                  alt={c.alt ?? c.label}
                   width={480}
                   height={480}
                   loading="lazy"

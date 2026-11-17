@@ -13,7 +13,7 @@ export function CoversSection({ models, covers }: { models: PhoneModel[]; covers
           <Reveal className="flex flex-col gap-3 lg:col-span-4">
             <p className={EYEBROW}>Phone covers</p>
             <h2 id="covers-heading" className="font-display text-h2 font-extrabold text-balance">
-              Covers cut for your exact phone
+              Covers made for your exact phone
             </h2>
             <AccentBar className="mt-1" />
             <p className="max-w-md text-body text-fg-muted">{covers} covers. Pick your phone, see only what fits.</p>

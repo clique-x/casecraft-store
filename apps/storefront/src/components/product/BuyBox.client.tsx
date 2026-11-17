@@ -17,7 +17,7 @@ import { CASE_TYPES, THEMES, type CaseType, type PhoneModel, type ProductDetail,
 import { findVariant, lowestPrice } from '@/lib/medusa/variants';
 import { DEFAULT_SELECTION, useVariantSelection, variantStore } from '@/lib/product/variant-store';
 import { coverHeadline, coverMaker } from '@/lib/product/names';
-import { askOnWhatsAppHref } from '@/lib/product/whatsapp-link';
+import { askOnWhatsAppHref, whatsAppProduct } from '@/lib/product/whatsapp-link';
 import { useMyPhone } from '@/lib/phone/use-my-phone';
 
 const BADGE_LABEL: Record<NonNullable<ProductDetail['badge']>, string> = {
@@ -142,7 +142,7 @@ export function BuyBox({ product, models, accessories = [] }: BuyBoxProps) {
   };
 
   const whatsappArgs = {
-    productName: product.title,
+    ...whatsAppProduct(product),
     modelName: selectedModel?.model ?? null,
     caseTypeName: hasCaseTypes ? caseTypeInfo.name : null,
     sku: variant?.sku ?? null,

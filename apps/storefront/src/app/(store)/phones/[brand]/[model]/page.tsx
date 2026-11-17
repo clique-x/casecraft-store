@@ -6,17 +6,12 @@ import { ListingHeader, PAGE_SHELL } from '@/components/listing/ListingHeader';
 import { ModelLinks } from '@/components/listing/ModelLinks';
 import { ProductGrid } from '@/components/listing/ProductGrid';
 import { brandSlug, phoneHref } from '@/components/phone-picker/BrandOutline';
-import {
-  BRAND_NAME,
-  COD_FEE_INR,
-  DISPATCH_WINDOW,
-  FREE_SHIPPING_THRESHOLD_INR,
-  SITE_URL,
-  WHATSAPP_NUMBER,
-} from '@/lib/brand';
-import { coverCounts, coversLabel, findBrand, findModel, sortForListing } from '@/lib/catalog/listing';
-import { searchModelName } from '@/lib/product/names';
-import { formatInr, photoSrc, gallerySrc } from '@/lib/catalog/photos';
+import { FaqSection } from '@/components/content/FaqSection';
+import { BRAND_NAME, SITE_URL, WHATSAPP_NUMBER } from '@/lib/brand';
+import { coverCounts, findBrand, findModel, sortForListing } from '@/lib/catalog/listing';
+import { photoSrc, gallerySrc } from '@/lib/catalog/photos';
+import { phonePageCopy } from '@/lib/content/phone-page';
+import { fullTitle, seoTitle } from '@/lib/seo/meta';
 import type { HomeProduct, PhoneModel } from '@/lib/medusa/fixtures';
 import { getPhoneModels, getProductsForPhone } from '@/lib/medusa/home';
 import { getAllProducts } from '@/lib/medusa/products';
@@ -32,37 +27,28 @@ export async function generateStaticParams(): Promise<{ brand: string; model: st
   return (await getPhoneModels()).map((m) => ({ brand: brandSlug(m.brand), model: m.slug }));
 }
 
-function codLine(): string {
-  return COD_FEE_INR === 0 ? 'Cash on Delivery at no extra charge' : `Cash on Delivery (₹${COD_FEE_INR} fee)`;
-}
-
-function describe(model: PhoneModel, products: readonly HomeProduct[]): string {
-  if (products.length === 0) {
-    return `Back covers for the ${model.brand} ${model.model}. Message us on WhatsApp and we will check stock for your phone.`;
-  }
-  const from = formatInr(Math.min(...products.map((p) => p.priceFromInr)));
-  return `${coversLabel(products.length)} cut for the ${model.model}, from ${from}. ${codLine()}, UPI and cards, free shipping over ₹${FREE_SHIPPING_THRESHOLD_INR}.`;
-}
-
 export async function generateMetadata({ params }: ModelPageProps): Promise<Metadata> {
   const { brand, model: slug } = await params;
   const model = findModel(await getPhoneModels(), brand, slug);
   if (!model) return { title: 'Phone not found', robots: { index: false, follow: true } };
 
   const products = sortForListing(await getProductsForPhone(model.slug));
-  const title = `${searchModelName(model.model)} back covers`;
-  const description = describe(model, products);
+  const copy = phonePageCopy(model, products);
+  const title = seoTitle(...copy.titles);
+  const description = copy.description;
   const url = new URL(phoneHref(model), SITE_URL).toString();
   const lead = products.find((p) => p.photo !== undefined)?.photo;
   return {
     title,
     description,
+    // A phone with no covers yet is not worth an index entry; its links are still followed.
+    ...(products.length === 0 ? { robots: { index: false, follow: true } } : {}),
     alternates: { canonical: url },
     openGraph: {
       type: 'website',
       locale: 'en_IN',
       siteName: BRAND_NAME,
-      title: `${title} · ${BRAND_NAME}`,
+      title: fullTitle(title),
       description,
       url,
       ...(lead
@@ -108,7 +94,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     `Hi! Do you have back covers for the ${model.brand} ${model.model}?`,
   )}`;
-  const from = products.length > 0 ? formatInr(Math.min(...products.map((p) => p.priceFromInr))) : null;
+  const copy = phonePageCopy(model, products);
 
   return (
     <div className={PAGE_SHELL}>
@@ -122,12 +108,8 @@ export default async function ModelPage({ params }: ModelPageProps) {
           { name: model.brand, href: `/phones/${brandSlug(model.brand)}` },
           { name: model.model, href: phoneHref(model) },
         ]}
-        title={`${searchModelName(model.model)} back covers`}
-        intro={
-          products.length > 0
-            ? `${coversLabel(products.length)} cut for the ${model.brand} ${model.model}, from ${from}. Each one lines up with its camera, buttons and port. Ships in ${DISPATCH_WINDOW}, free over ₹${FREE_SHIPPING_THRESHOLD_INR}, with ${codLine()}.`
-            : `We have no covers listed for the ${model.model} right now. Message us and we will check what is in the shop for it.`
-        }
+        title={`${copy.name} back covers`}
+        intro={copy.intro}
         aside={
           <span className="inline-flex items-center gap-2 text-fg">
             <PhoneBrandLogo brand={model.brand} />
@@ -160,10 +142,12 @@ export default async function ModelPage({ params }: ModelPageProps) {
         </div>
       )}
 
+      <FaqSection faqs={copy.faqs} heading={`${copy.name} covers: common questions`} className="mt-14 max-w-3xl" />
+
       {siblings.length > 0 && (
         <section aria-labelledby="siblings-heading" className="mt-16 border-t border-border pt-8">
           <h2 id="siblings-heading" className="font-sans text-h3 text-fg">
-            Other {model.brand} phones
+            {products.length > 0 ? `Other ${model.brand} phones` : `${model.brand} phones with covers`}
           </h2>
           <ModelLinks models={siblings} counts={coverCounts(all)} layout="compact" className="mt-4" />
         </section>
