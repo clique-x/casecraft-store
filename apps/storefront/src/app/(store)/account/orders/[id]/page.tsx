@@ -73,7 +73,7 @@ async function Receipt({ params }: Props) {
               {a.city}, {a.province} {a.postalCode}
             </p>
             {a.phone && <p className="text-fg-muted tabular-nums">+91 {a.phone.replace(/^\+91/, '')}</p>}
-            {order.email && <p className="break-all text-fg-muted">{order.email}</p>}
+            {order.email && <p className="[overflow-wrap:anywhere] text-fg-muted">{order.email}</p>}
           </div>
         )}
       </div>

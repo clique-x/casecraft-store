@@ -97,7 +97,7 @@ function MyOrders({ account }: { account: Account }) {
       <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
         <h1 className="font-display text-h2 font-extrabold text-fg">{name ? `Hi ${name}, your orders` : 'My orders'}</h1>
         <p className="text-sm text-fg-muted">
-          <span className="break-all">{account.email}</span> · <SignOutButton />
+          <span className="[overflow-wrap:anywhere]">{account.email}</span> · <SignOutButton />
         </p>
       </div>
 

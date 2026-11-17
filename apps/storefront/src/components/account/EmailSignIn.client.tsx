@@ -93,7 +93,7 @@ export function EmailSignIn({ initialEmail = '' }: { initialEmail?: string }) {
   return (
     <form onSubmit={verify} className="flex flex-col gap-3" noValidate>
       <label htmlFor="signin-code" className="text-sm text-fg">
-        Enter the 6-digit code we emailed to <strong className="break-all">{sentTo}</strong>
+        Enter the 6-digit code we emailed to <strong className="[overflow-wrap:anywhere]">{sentTo}</strong>
       </label>
       <div className="flex gap-3">
         <input
