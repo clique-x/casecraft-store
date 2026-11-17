@@ -16,7 +16,7 @@ import { useFinePointer } from '@/lib/device/use-fine-pointer';
 import { useReducedMotion } from '@/lib/device/use-reduced-motion';
 import { chromeStore } from '@/lib/layout/chrome-store';
 import { cn } from '@/lib/utils';
-import { ORBIT, PLINTH, PRODUCT_ART, SLIDES, type ShowcaseArt, type ShowcaseSlide } from './showcase-data';
+import { ORBIT, PLINTH, SCENE_ART, SLIDES, type ShowcaseArt, type ShowcaseSlide } from './showcase-data';
 import './showcase.css';
 
 /** Class names from showcase.css; all prefixed so they cannot collide with the rest of the site. */
@@ -71,6 +71,7 @@ const FLOAT: Record<ShowcaseArt['id'], [string, string]> = {
   phone: ['7.5s', '0s'],
   buds: ['9s', '-3.2s'],
   guard: ['8.2s', '-5.4s'],
+  laptop: ['10s', '-1.7s'],
 };
 
 type Vars = CSSProperties & Record<`--${string}`, string | number>;
@@ -104,7 +105,7 @@ interface Drag {
 }
 
 /**
- * Home hero: three curated states (Cases, Audio, Protection) of one product scene.
+ * Home hero: four curated states (Cases, Audio, Protection, Computer accessories) of one product scene.
  * Arrows, indicators, keyboard arrows and horizontal swipes change the state; nothing advances on its own.
  */
 export function ShowcaseHero() {
@@ -327,7 +328,7 @@ export function ShowcaseHero() {
             <img src={PLINTH.src} srcSet={PLINTH.srcSet} sizes={PLINTH.sizes} width={PLINTH.w} height={PLINTH.h} alt="" decoding="async" draggable={false} />
           </div>
           <div className={s.track}>
-            {PRODUCT_ART.map((art) => (
+            {SCENE_ART.map((art) => (
               <div key={art.id} className={s.layer} style={poseVars(slide, art)} data-layer={art.id}>
                 <div className={s.depth} style={{ '--d': art.depth } as Vars}>
                   <div className={s.float} style={{ '--float-dur': FLOAT[art.id][0], '--float-delay': FLOAT[art.id][1] } as Vars}>
@@ -383,7 +384,14 @@ export function ShowcaseHero() {
           <ul className={s.panelDepts} aria-label="Departments">
             {SLIDES.map((sl, i) => (
               <li key={sl.id} aria-current={i === index ? 'true' : undefined}>
-                {sl.department}
+                {sl.short ? (
+                  <>
+                    <span aria-hidden="true">{sl.short}</span>
+                    <span className="sr-only">{sl.department}</span>
+                  </>
+                ) : (
+                  sl.department
+                )}
               </li>
             ))}
           </ul>

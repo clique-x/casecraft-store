@@ -69,3 +69,10 @@ listings, since the owner calls these real glass. The five-piece Ultra image is 
 - **"Original" badge:** not set on any product in this batch until the source is confirmed.
 - **iPhone 13 mini, 16e, iPhone Air, Galaxy FE and Edge:** no lens listing. The packs shown do not fit them; FE models would fit
   the Galaxy S pack if stocked.
+
+## Homepage hero laptop (17 Nov)
+
+The hero's fourth slide ("The desk edit", Computer accessories) and the laptop in the other three slides use the Dell Latitude 5400
+from the owner's three-quarter creative (02 - Final Creatives/Laptops/Dell Latitude 5400/01-hero-three-quarter.png), lifted off its
+backdrop: `apps/storefront/public/home/laptop-latitude-{520,1034}.webp`. It opens the computer accessories page until the laptops
+are listed.

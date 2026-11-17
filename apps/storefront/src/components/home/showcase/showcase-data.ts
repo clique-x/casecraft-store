@@ -2,12 +2,12 @@
  * Content and layout for the home hero. Plain data, so the slides, their shopping destinations and
  * the art can change without touching the component.
  *
- * Art: the phone and the earbuds are real shop photos lifted off their backdrops; the glass guard,
+ * Art: the phone, the earbuds and the laptop are real shop photos lifted off their backdrops; the glass guard,
  * the glass orbit and the plinths are renders with no text or branding. All are produced by
  * scripts/hero-art (see its README) into public/home/.
  */
 
-export type LayerId = 'phone' | 'buds' | 'guard';
+export type LayerId = 'phone' | 'buds' | 'guard' | 'laptop';
 
 /** Where one product sits in a slide: offset from the stage centre (x in cqw, y in cqh), scale, roll (deg), stacking. */
 export interface Pose {
@@ -21,9 +21,11 @@ export interface Pose {
 export type Poses = Record<LayerId, Pose>;
 
 export interface ShowcaseSlide {
-  id: 'cases' | 'audio' | 'protection';
+  id: 'cases' | 'audio' | 'protection' | 'computer';
   /** Department name: indicators, counter announcements and the mobile panel line. */
   department: string;
+  /** A shorter name for the mobile panel line, where four names share one row. */
+  short?: string;
   /** Mobile panel title. */
   edit: string;
   /** Department page for "Explore the collection". */
@@ -75,11 +77,13 @@ export const SLIDES: readonly ShowcaseSlide[] = [
       phone: { x: 9, y: -6, s: 1, r: 20, z: 3 },
       buds: { x: -24, y: 25, s: 0.64, r: -8, z: 4 },
       guard: { x: 31, y: 22, s: 0.58, r: 14, z: 4 },
+      laptop: { x: -26, y: -22, s: 0.46, r: -4, z: 1 },
     },
     lg: {
       phone: { x: 3, y: -1, s: 1, r: 14, z: 3 },
       buds: { x: -22, y: -20, s: 0.58, r: -8, z: 2 },
       guard: { x: 29, y: 13, s: 0.62, r: 10, z: 2 },
+      laptop: { x: -27, y: 19, s: 0.5, r: -3, z: 1 },
     },
     orbit: { sm: -14, lg: -3 },
   },
@@ -93,11 +97,13 @@ export const SLIDES: readonly ShowcaseSlide[] = [
       phone: { x: 31, y: -17, s: 0.56, r: 24, z: 2 },
       buds: { x: 1, y: 6, s: 1, r: 0, z: 3 },
       guard: { x: -31, y: -12, s: 0.56, r: -14, z: 2 },
+      laptop: { x: 25, y: 27, s: 0.42, r: 3, z: 4 },
     },
     lg: {
       phone: { x: 30, y: -9, s: 0.6, r: 18, z: 2 },
       buds: { x: 1, y: 3, s: 1, r: 0, z: 3 },
       guard: { x: -27, y: 9, s: 0.6, r: -12, z: 2 },
+      laptop: { x: -27, y: -20, s: 0.44, r: -4, z: 1 },
     },
     orbit: { sm: -6, lg: 3 },
   },
@@ -111,13 +117,36 @@ export const SLIDES: readonly ShowcaseSlide[] = [
       phone: { x: -30, y: 19, s: 0.5, r: -16, z: 4 },
       buds: { x: 29, y: 26, s: 0.5, r: 6, z: 4 },
       guard: { x: 6, y: -4, s: 1, r: 10, z: 3 },
+      laptop: { x: 27, y: -22, s: 0.4, r: 4, z: 1 },
     },
     lg: {
       phone: { x: -27, y: -8, s: 0.58, r: -10, z: 2 },
       buds: { x: 28, y: 17, s: 0.58, r: 6, z: 2 },
       guard: { x: 3, y: -2, s: 1, r: 9, z: 3 },
+      laptop: { x: 29, y: -20, s: 0.44, r: 3, z: 1 },
     },
     orbit: { sm: -18, lg: -7 },
+  },
+  {
+    id: 'computer',
+    department: 'Computer accessories',
+    short: 'PC',
+    edit: 'The desk edit',
+    href: '/computer-accessories',
+    hotspot: { label: 'Gaming mice & keyboards', href: '/computer-accessories', x: 50, y: 52 },
+    sm: {
+      phone: { x: 33, y: -20, s: 0.42, r: 18, z: 2 },
+      buds: { x: -28, y: 25, s: 0.48, r: -6, z: 4 },
+      guard: { x: -32, y: -20, s: 0.42, r: -14, z: 2 },
+      laptop: { x: 2, y: 2, s: 1, r: 0, z: 3 },
+    },
+    lg: {
+      phone: { x: 31, y: -10, s: 0.5, r: 16, z: 2 },
+      buds: { x: -29, y: 15, s: 0.5, r: -6, z: 4 },
+      guard: { x: -28, y: -15, s: 0.44, r: -12, z: 2 },
+      laptop: { x: 2, y: 3, s: 1, r: 0, z: 3 },
+    },
+    orbit: { sm: -10, lg: 2 },
   },
 ];
 
@@ -166,6 +195,25 @@ export const PRODUCT_ART: readonly ShowcaseArt[] = [
     depth: 18,
   },
 ];
+
+/** Laptops are not listed yet: the laptop opens the computer accessories until they are. */
+export const LAPTOP_ART: ShowcaseArt = {
+  id: 'laptop',
+  href: '/computer-accessories',
+  label: 'Shop computer accessories',
+  alt: 'Dell Latitude 5400 laptop, open, seen from the front left',
+  // The shop's Dell Latitude 5400, from the owner's three-quarter creative, lifted off its backdrop (catalog-sources/batch-2026-11-17).
+  src: '/home/laptop-latitude-1034.webp',
+  srcSet: home('laptop-latitude', [520, 1034]),
+  sizes: '(min-width: 64rem) 380px, 300px',
+  w: 1034,
+  h: 831,
+  width: { sm: 74, lg: 76 },
+  depth: 10,
+};
+
+/** Every product in the scene; the laptop first, so at equal stacking it sits behind the others. */
+export const SCENE_ART: readonly ShowcaseArt[] = [LAPTOP_ART, ...PRODUCT_ART];
 
 export const ORBIT: SceneArt = {
   src: '/home/orbit-1500.webp',
