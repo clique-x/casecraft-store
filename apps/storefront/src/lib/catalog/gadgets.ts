@@ -12,10 +12,10 @@
  * is shown. Change them here; the backend catalogue is regenerated with `pnpm catalog:export`.
  */
 
-import { CHARGING, COMPUTER, SOUNDBARS } from './gadget-additions';
+import { CHARGING, COMPUTER, LAPTOPS, SOUNDBARS } from './gadget-additions';
 import { CAMERAS, SPEAKERS, STORAGE } from './gadget-ranges';
 
-export type Department = 'audio' | 'charging' | 'storage' | 'cameras' | 'computer';
+export type Department = 'audio' | 'charging' | 'storage' | 'cameras' | 'computer' | 'laptops';
 export type GadgetType =
   | 'earbuds'
   | 'neckband'
@@ -33,7 +33,8 @@ export type GadgetType =
   | 'camera'
   | 'mouse'
   | 'keyboard'
-  | 'hub';
+  | 'hub'
+  | 'laptop';
 
 /** What a product's options are: colour swatches, or buttons for cable length, capacity, camera resolution or model. */
 export type OptionKind = 'colour' | 'length' | 'capacity' | 'resolution' | 'model';
@@ -59,6 +60,8 @@ export interface GadgetOption {
   regularInr?: number;
   /** Not on the shelf: the shop orders it in after the sale, so it ships in ORDER_IN_WINDOW. */
   orderIn?: boolean;
+  /** Units in stock when fewer than the usual shelf stock, e.g. 1 for a single used laptop. */
+  stock?: number;
 }
 
 /** Official product images, written by scripts/photo-gadgets.mjs under /products/photos/gadgets/<id>/. */
@@ -108,6 +111,8 @@ export interface GadgetEntry {
   ports?: readonly ('usb-c' | 'usb-a')[];
   /** Chargers and cables: phone brands it fast-charges at full speed. */
   fastFor?: readonly string[];
+  /** Not new: a used unit, restored and covered by the shop's own warranty (`warrantyMonths`). */
+  condition?: 'refurbished';
 }
 
 export const GADGET_TYPE_LABEL: Record<GadgetType, string> = {
@@ -128,6 +133,7 @@ export const GADGET_TYPE_LABEL: Record<GadgetType, string> = {
   mouse: 'Gaming mouse',
   keyboard: 'Keyboard and mouse combo',
   hub: 'USB hub',
+  laptop: 'Refurbished laptop',
 };
 
 export const DEPARTMENT_OF: Record<GadgetType, Department> = {
@@ -148,6 +154,7 @@ export const DEPARTMENT_OF: Record<GadgetType, Department> = {
   mouse: 'computer',
   keyboard: 'computer',
   hub: 'computer',
+  laptop: 'laptops',
 };
 
 export interface DepartmentInfo {
@@ -206,6 +213,14 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
     badge: 'Sealed, brand warranty',
     intro: 'CP Plus pan-and-tilt Wi-Fi cameras for the home and shop, with night vision, two-way talk and the ezyKam+ app.',
     sections: [{ id: 'wifi', types: ['camera'], heading: 'Wi-Fi cameras', intro: 'Plug in, connect to 2.4 GHz Wi-Fi, and watch live from your phone.' }],
+  },
+  laptops: {
+    path: '/laptops',
+    name: 'Laptops',
+    title: 'Refurbished Dell Latitude laptops',
+    badge: '6-month shop warranty',
+    intro: 'Used Dell Latitude business laptops with an 8th-gen Core i5, 8GB RAM and a 256GB SSD, each with a 6-month GadgetsHub warranty. One of each: the shop photos are of the laptop you get, wear and all.',
+    sections: [{ id: 'latitude', types: ['laptop'], heading: 'Dell Latitude', intro: '14-inch business laptops, one unit of each.' }],
   },
   computer: {
     path: '/computer-accessories',
@@ -695,7 +710,7 @@ const AUDIO: readonly GadgetEntry[] = [
 ];
 
 /** Speakers, storage and cameras live in gadget-ranges.ts (added 7 Nov 2026; prices from the owner's price sheet). */
-export const GADGETS: readonly GadgetEntry[] = [...AUDIO, ...SPEAKERS, ...SOUNDBARS, ...CHARGING, ...STORAGE, ...CAMERAS, ...COMPUTER];
+export const GADGETS: readonly GadgetEntry[] = [...AUDIO, ...SPEAKERS, ...SOUNDBARS, ...CHARGING, ...STORAGE, ...CAMERAS, ...LAPTOPS, ...COMPUTER];
 
 /** Price of one option, falling back to the product's. */
 export function optionPrice(entry: GadgetEntry, option: GadgetOption): { priceInr: number; regularInr: number } {

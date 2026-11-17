@@ -171,7 +171,7 @@ export function productSchema(product: ProductDetail, { withReviews = false } = 
       url,
       price,
       priceCurrency: 'INR',
-      itemCondition: 'https://schema.org/NewCondition',
+      itemCondition: product.gadget?.condition === 'refurbished' ? 'https://schema.org/RefurbishedCondition' : 'https://schema.org/NewCondition',
       availability: product.variants.some((v) => v.stock > 0) ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
       seller: { '@id': ORG_ID, '@type': 'Organization', name: BRAND_NAME },
       shippingDetails: shippingDetails(price, handlingDays(product)),

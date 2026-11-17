@@ -18,6 +18,7 @@ import {
   Smartphone,
   X,
   type LucideIcon,
+  Laptop,
   Mouse,
   PlugZap,
 } from 'lucide-react';
@@ -28,7 +29,7 @@ import { groupByBrand } from '@/lib/catalog/listing';
 import { useMyPhone } from '@/lib/phone/use-my-phone';
 import { cn } from '@/lib/utils';
 
-export type MobileMenuDepartmentId = 'covers' | 'audio' | 'charging' | 'storage' | 'cameras' | 'computer' | 'protection';
+export type MobileMenuDepartmentId = 'covers' | 'audio' | 'charging' | 'storage' | 'cameras' | 'laptops' | 'computer' | 'protection';
 
 /** One department row; `sections` are its in-page jump links (empty when the page has a single section). */
 export interface MobileMenuDepartment {
@@ -52,6 +53,7 @@ const DEPARTMENT_ICON: Record<MobileMenuDepartmentId, LucideIcon> = {
   storage: HardDrive,
   cameras: Cctv,
   charging: PlugZap,
+  laptops: Laptop,
   computer: Mouse,
   protection: ShieldCheck,
 };

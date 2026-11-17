@@ -25,11 +25,27 @@ function dispatchFact(gadget: GadgetEntry): Fact {
   return { Icon: ClockIcon, label: `Dispatched in ${DISPATCH_WINDOW}; some sizes in ${ORDER_IN_WINDOW}` };
 }
 
-/** Sealed brand audio is covered by the maker's warranty instead of the shop's replacement window. */
+/**
+ * Electronics are covered by a warranty instead of the shop's replacement window: the maker's for sealed brand products,
+ * the shop's for refurbished laptops. Damage in transit is replaced on an unboxing video within 48 hours (/pages/returns).
+ */
 function gadgetFacts(gadget: GadgetEntry): readonly Fact[] {
   const shipping = [dispatchFact(gadget), ...SHIPPING.slice(1)];
   const brand = gadget.original?.brand;
-  if (!brand) return [...shipping, FACTS[FACTS.length - 1]];
+  if (gadget.condition === 'refurbished') {
+    return [
+      ...shipping,
+      ...(gadget.warrantyMonths ? [{ Icon: WrenchIcon, label: `${warrantyLabel(gadget.warrantyMonths)} GadgetsHub warranty` }] : []),
+      { Icon: RotateCcwIcon, label: 'Replaced if damaged on arrival (48 h)' },
+    ];
+  }
+  if (!brand) {
+    return [
+      ...shipping,
+      ...(gadget.warrantyMonths ? [{ Icon: WrenchIcon, label: `${warrantyLabel(gadget.warrantyMonths)} brand warranty` }] : []),
+      { Icon: RotateCcwIcon, label: 'Replaced if damaged on arrival (48 h)' },
+    ];
+  }
   return [
     ...shipping,
     ...(gadget.warrantyMonths ? [{ Icon: WrenchIcon, label: `${warrantyLabel(gadget.warrantyMonths)} ${brand} warranty` }] : []),
@@ -39,7 +55,7 @@ function gadgetFacts(gadget: GadgetEntry): readonly Fact[] {
 
 export function DeliveryFacts({ gadget, className }: { gadget?: GadgetEntry; className?: string }) {
   const facts = gadget ? gadgetFacts(gadget) : FACTS;
-  const sealed = gadget?.original !== undefined;
+  const sealed = Boolean(gadget?.original || gadget?.warrantyMonths);
   return (
     <section aria-labelledby="delivery-heading" className={cn('rounded-card border border-border bg-surface p-4 sm:p-5', className)}>
       <h2 id="delivery-heading" className="text-caption font-semibold tracking-wide text-fg-muted uppercase">

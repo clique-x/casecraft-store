@@ -40,6 +40,12 @@ const COPY: Record<Department, { eyebrow: string; heading: string; sub: string; 
       { id: 'cables', label: 'Data cables' },
     ],
   },
+  laptops: {
+    eyebrow: 'Laptops',
+    heading: 'Refurbished Dell Latitude laptops',
+    sub: 'Core i5, 8GB RAM and a 256GB SSD, with a 6-month GadgetsHub warranty. One of each.',
+    shortcuts: [{ id: 'latitude', label: 'Dell Latitude' }],
+  },
   computer: {
     eyebrow: 'Computer accessories',
     heading: 'Gaming mice, keyboards and USB hubs',

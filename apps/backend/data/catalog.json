@@ -4948,6 +4948,39 @@
       ]
     },
     {
+      "handle": "apple-40w-dynamic-power-adapter-60w-max",
+      "productType": "Charger",
+      "title": "Apple 40W Dynamic Power Adapter with 60W Max",
+      "description": "Apple’s USB-C wall adapter that adjusts its output to what is plugged in, up to 60 W when the device can take it. It fast-charges an iPhone over a USB-C cable and also charges iPad, AirPods, Apple Watch and Mac. The box holds the adapter only: pair it with a USB-C cable.",
+      "imagePath": "/products/photos/gadgets/apple-40w-dynamic-adapter/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "apple-40w-dynamic-adapter",
+        "gadget_type": "charger",
+        "department": "charging",
+        "regular_inr": 4490,
+        "detail_in_box": "Power adapter. No cable in the box.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "CHG-APPLE40WDYNAMICADAPTER-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "white",
+            "name": "White"
+          },
+          "priceInr": 4099,
+          "stock": 15
+        }
+      ]
+    },
+    {
       "handle": "samsung-25w-usb-c-power-adapter-white",
       "productType": "Charger",
       "title": "Samsung 25W USB-C power adapter (white)",
@@ -5951,6 +5984,72 @@
           },
           "priceInr": 2999,
           "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "dell-latitude-5400-refurbished-i5-8gb-256gb",
+      "productType": "Refurbished laptop",
+      "title": "Dell Latitude 5400 (refurbished)",
+      "description": "A used Dell Latitude 5400 business laptop with a 14-inch screen, an 8th-generation Intel Core i5 (4 cores, 8 threads), 8GB of DDR4 memory and a 256GB NVMe SSD, with Intel UHD Graphics 620. It has seen use: there are scratches and scuffs on the body, the keys are worn in places, and the 1 key wears a mismatched keycap that reads 2. The keyboard is the ISO layout, with a tall Enter key. The shop photos are of this laptop, so look through them. We have one, and it comes with a 6-month GadgetsHub warranty.",
+      "imagePath": "/products/photos/gadgets/dell-latitude-5400/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "dell-latitude-5400",
+        "gadget_type": "laptop",
+        "department": "laptops",
+        "regular_inr": 23500,
+        "detail_in_box": "The laptop shown in the photos. Ask us on WhatsApp what else comes with it, such as a charger, before you order.",
+        "warranty_months": 6
+      },
+      "variants": [
+        {
+          "sku": "LAP-DELLLATITUDE5400-8GB-256GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "8gb-256gb",
+            "name": "8GB · 256GB"
+          },
+          "priceInr": 23500,
+          "stock": 1
+        }
+      ]
+    },
+    {
+      "handle": "dell-latitude-7490-refurbished-i5-8gb-256gb",
+      "productType": "Refurbished laptop",
+      "title": "Dell Latitude 7490 (refurbished)",
+      "description": "A used Dell Latitude 7490, the slimmer, lighter model of Dell’s business range: a 14-inch screen, an 8th-generation Intel Core i5 (4 cores, 8 threads), 8GB of DDR4 memory and a 256GB NVMe SSD, with Intel UHD Graphics 620. It has seen use: light scuffs on the lid, paint marks and sticker residue on the underside. The keyboard has the Indian layout with the rupee key. The shop photos are of this laptop. We have one, and it comes with a 6-month GadgetsHub warranty.",
+      "imagePath": "/products/photos/gadgets/dell-latitude-7490/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "dell-latitude-7490",
+        "gadget_type": "laptop",
+        "department": "laptops",
+        "regular_inr": 24000,
+        "detail_in_box": "The laptop shown in the photos. Ask us on WhatsApp what else comes with it, such as a charger, before you order.",
+        "warranty_months": 6
+      },
+      "variants": [
+        {
+          "sku": "LAP-DELLLATITUDE7490-8GB-256GB",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Capacity",
+            "slug": "8gb-256gb",
+            "name": "8GB · 256GB"
+          },
+          "priceInr": 24000,
+          "stock": 1
         }
       ]
     },

@@ -239,6 +239,18 @@ export const POLICIES: Record<PolicySlug, PolicyPage> = {
         ],
       },
       {
+        heading: 'Refurbished laptops',
+        blocks: [
+          p(
+            'Our refurbished laptops are used units, sold as shown in their photos, with a 6-month GadgetsHub warranty from the date of delivery. We do not accept change of mind on them.',
+          ),
+          list(
+            'Damaged in transit or not as described: tell us within 48 hours of delivery with your unboxing video.',
+            'A fault within 6 months: message us on WhatsApp with your order number and we look after it under our warranty.',
+          ),
+        ],
+      },
+      {
         heading: 'How to ask for a replacement',
         blocks: [
           list(

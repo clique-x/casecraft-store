@@ -54,9 +54,14 @@ export function productFaqs(product: ProductDetail, models: readonly PhoneModel[
     faqs.push({ q: 'What is in the box?', a: `${gadget.inBox} Every order comes with our GST invoice.` });
   }
 
-  // Warranty, only when the product states one.
+  // Warranty, only when the product states one. Refurbished laptops carry the shop's own.
   const warranty = gadget?.specs.find((s) => s.label === 'Warranty')?.value;
-  if (warranty) {
+  if (warranty && gadget?.condition === 'refurbished') {
+    faqs.push({
+      q: `What warranty does the ${product.title} have?`,
+      a: `${warranty}. If it develops a fault in that time, message us on WhatsApp with your order number and we look after it.`,
+    });
+  } else if (warranty) {
     faqs.push({
       q: `What warranty does the ${product.title} have?`,
       a: `${warranty}. Claims go to ${gadgetBrand(gadget!)} through its service centres or website.`,
@@ -76,8 +81,14 @@ export function productFaqs(product: ProductDetail, models: readonly PhoneModel[
   });
 
   // Replacement.
+  const refurbishedReturn: Faq = {
+    q: 'Can I return it?',
+    a: 'It is a used laptop sold as shown in its photos, so we do not take change-of-mind returns. If it arrives damaged or not as described, message us on WhatsApp within 48 hours of delivery with your unboxing video; faults after that are covered by the warranty above.',
+  };
   faqs.push(
-    gadget
+    gadget?.condition === 'refurbished'
+      ? refurbishedReturn
+      : gadget
       ? {
           q: 'Can I return or replace it?',
           a: `It is sealed electronics, so we do not take change-of-mind returns once it is opened. If it arrives damaged or you get the wrong item, message us on WhatsApp within 48 hours of delivery with your unboxing video and we replace it.${warranty ? ' A fault after use is covered by the warranty above.' : ''}`,

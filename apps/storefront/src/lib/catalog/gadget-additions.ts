@@ -1,7 +1,8 @@
 /**
  * Products added from the owner's image batch of 17 Nov 2026 (GadgetsHub - Complete Image Collection.zip).
  *
- * PRICES: the owner's rule (7 Nov): the Flipkart price on 17 Nov less ₹100, ending in 9; `regularInr` is the MRP printed on
+ * PRICES: the owner's rules: the Flipkart price on 17 Nov less ₹100, ending in 9 (7 Nov); chargers and cables ₹50–100 below
+ * the lower of Amazon and Flipkart (17 Nov; Apple 40W: Amazon ₹4,190); the laptops at the owner's own prices; `regularInr` is the MRP printed on
  * the box (or on the brand's page where the box label was not photographed). The Honeywell hub is not on Flipkart: its price
  * is set below Honeywell's own ₹439. Specs are the brands' own published figures or the box print.
  *
@@ -10,8 +11,8 @@
  * altered box text (Aavante 2.0 150 #1–3, Aavante Bar 490, KM1410, Samsung 45W, Samsung 25W #2–3) are not used.
  *
  * `original` is not set on any of these until the owner confirms they came from the brand or its authorised distributor.
- * Held back, with the reasons in catalog-sources/batch-2026-11-17/README.md: Apple 20W and 40W adapters, Apple 60W cable,
- * Samsung USB-C to USB-C cable, the unidentified boAt speaker, and the two Dell Latitude laptops.
+ * Held back until the owner confirms they are genuine (catalog-sources/batch-2026-11-17/README.md): Apple 20W adapter,
+ * Apple 60W cable, Samsung USB-C to USB-C cable; and the unidentified boAt speaker.
  */
 
 import type { GadgetEntry } from './gadgets';
@@ -85,6 +86,32 @@ export const SOUNDBARS: readonly GadgetEntry[] = [
 ];
 
 export const CHARGING: readonly GadgetEntry[] = [
+  {
+    id: 'apple-40w-dynamic-adapter',
+    handle: 'apple-40w-dynamic-power-adapter-60w-max',
+    title: 'Apple 40W Dynamic Power Adapter with 60W Max',
+    type: 'charger',
+    priceInr: 4099,
+    regularInr: 4490,
+    short: 'USB-C, up to 60 W, cable sold separately',
+    description:
+      'Apple’s USB-C wall adapter that adjusts its output to what is plugged in, up to 60 W when the device can take it. It fast-charges an iPhone over a USB-C cable and also charges iPad, AirPods, Apple Watch and Mac. The box holds the adapter only: pair it with a USB-C cable.',
+    features: ['Up to 60 W, adjusts to the device', 'Fast-charges iPhone over USB-C', 'One USB-C port'],
+    specs: [
+      { label: 'Output', value: 'Up to 60 W (40 W dynamic, 60 W max)' },
+      { label: 'Port', value: '1 × USB-C' },
+      { label: 'Works with', value: 'iPhone, iPad, Mac, Apple Watch and AirPods, with a USB-C cable' },
+      { label: 'Cable included', value: 'No' },
+      { label: 'Warranty', value: '1 year from Apple, with our GST invoice' },
+    ],
+    inBox: 'Power adapter. No cable in the box.',
+    optionKind: 'colour',
+    options: [{ slug: 'white', name: 'White', hex: '#f4f4f2' }],
+    warrantyMonths: 12,
+    ports: ['usb-c'],
+    fastFor: ['Apple'],
+    photos: { id: 'apple-40w-dynamic-adapter', gallery: ['Sealed box', '40 W with 60 W max', 'USB-C connection'] },
+  },
   {
     id: 'samsung-25w-adapter',
     handle: 'samsung-25w-usb-c-power-adapter-white',
@@ -274,5 +301,82 @@ export const COMPUTER: readonly GadgetEntry[] = [
     options: [{ slug: 'black', name: 'Black', hex: '#1c1c1e' }],
     warrantyMonths: 36,
     photos: { id: 'honeywell-usb-hub-4', gallery: ['Sealed box', '4 USB ports', 'USB 2.0, up to 480 Mbps', '120 cm cable'] },
+  },
+];
+
+/**
+ * Used Dell Latitudes, one unit each, at the owner's prices with the owner's 6-month warranty. Processor, memory and storage are
+ * the owner's (the creatives); the rest is Dell's spec for the model. Condition is written from the shop's photos.
+ */
+const LAPTOP_WARRANTY = '6 months from GadgetsHub';
+
+export const LAPTOPS: readonly GadgetEntry[] = [
+  {
+    id: 'dell-latitude-5400',
+    handle: 'dell-latitude-5400-refurbished-i5-8gb-256gb',
+    title: 'Dell Latitude 5400 (refurbished)',
+    type: 'laptop',
+    priceInr: 23500,
+    regularInr: 23500,
+    short: '14-inch, Core i5 8th gen, 8GB RAM, 256GB SSD',
+    seoDescription: 'Refurbished Dell Latitude 5400: Core i5 8th gen, 8GB RAM, 256GB SSD, 14-inch. ₹23,500 with a 6-month warranty. Cash on Delivery.',
+    description:
+      'A used Dell Latitude 5400 business laptop with a 14-inch screen, an 8th-generation Intel Core i5 (4 cores, 8 threads), 8GB of DDR4 memory and a 256GB NVMe SSD, with Intel UHD Graphics 620. It has seen use: there are scratches and scuffs on the body, the keys are worn in places, and the 1 key wears a mismatched keycap that reads 2. The keyboard is the ISO layout, with a tall Enter key. The shop photos are of this laptop, so look through them. We have one, and it comes with a 6-month GadgetsHub warranty.',
+    features: ['Core i5 8th gen, 8GB RAM, 256GB SSD', '14-inch Dell business laptop', '6-month shop warranty'],
+    specs: [
+      { label: 'Processor', value: 'Intel Core i5, 8th generation, 4 cores and 8 threads' },
+      { label: 'Memory', value: '8GB DDR4' },
+      { label: 'Storage', value: '256GB NVMe SSD' },
+      { label: 'Graphics', value: 'Intel UHD Graphics 620' },
+      { label: 'Screen', value: '14-inch' },
+      { label: 'Ports (Dell’s spec)', value: '3 × USB-A, USB-C, HDMI, Ethernet, microSD reader, headset jack' },
+      { label: 'Weight', value: 'About 1.5 kg' },
+      { label: 'Keyboard', value: 'ISO layout (tall Enter key); the 1 key has a mismatched keycap' },
+      { label: 'Condition', value: 'Used: scratches, scuffs and worn keys, as in the photos' },
+      { label: 'Warranty', value: LAPTOP_WARRANTY },
+    ],
+    inBox: 'The laptop shown in the photos. Ask us on WhatsApp what else comes with it, such as a charger, before you order.',
+    optionKind: 'capacity',
+    options: [{ slug: '8gb-256gb', name: '8GB · 256GB', hex: '#2b2b2b', stock: 1 }],
+    warrantyMonths: 6,
+    condition: 'refurbished',
+    photos: {
+      id: 'dell-latitude-5400',
+      gallery: ['Dell Latitude 5400', 'This laptop, open', 'This laptop, lid', 'Core i5 8th gen', '8GB RAM, 256GB SSD', 'Intel UHD Graphics 620'],
+    },
+  },
+  {
+    id: 'dell-latitude-7490',
+    handle: 'dell-latitude-7490-refurbished-i5-8gb-256gb',
+    title: 'Dell Latitude 7490 (refurbished)',
+    type: 'laptop',
+    priceInr: 24000,
+    regularInr: 24000,
+    short: '14-inch, Core i5 8th gen, 8GB RAM, 256GB SSD',
+    seoDescription: 'Refurbished Dell Latitude 7490: Core i5 8th gen, 8GB RAM, 256GB SSD, 14-inch. ₹24,000 with a 6-month warranty. Cash on Delivery.',
+    description:
+      'A used Dell Latitude 7490, the slimmer, lighter model of Dell’s business range: a 14-inch screen, an 8th-generation Intel Core i5 (4 cores, 8 threads), 8GB of DDR4 memory and a 256GB NVMe SSD, with Intel UHD Graphics 620. It has seen use: light scuffs on the lid, paint marks and sticker residue on the underside. The keyboard has the Indian layout with the rupee key. The shop photos are of this laptop. We have one, and it comes with a 6-month GadgetsHub warranty.',
+    features: ['Core i5 8th gen, 8GB RAM, 256GB SSD', 'Slim 14-inch, from 1.4 kg', '6-month shop warranty'],
+    specs: [
+      { label: 'Processor', value: 'Intel Core i5, 8th generation, 4 cores and 8 threads' },
+      { label: 'Memory', value: '8GB DDR4' },
+      { label: 'Storage', value: '256GB NVMe SSD' },
+      { label: 'Graphics', value: 'Intel UHD Graphics 620' },
+      { label: 'Screen', value: '14-inch' },
+      { label: 'Ports (Dell’s spec)', value: 'USB-A, USB-C with DisplayPort, HDMI, Ethernet, SD reader' },
+      { label: 'Weight', value: 'From 1.4 kg' },
+      { label: 'Keyboard', value: 'Indian English layout, with the rupee key' },
+      { label: 'Condition', value: 'Used: light scuffs, paint marks and sticker residue, as in the photos' },
+      { label: 'Warranty', value: LAPTOP_WARRANTY },
+    ],
+    inBox: 'The laptop shown in the photos. Ask us on WhatsApp what else comes with it, such as a charger, before you order.',
+    optionKind: 'capacity',
+    options: [{ slug: '8gb-256gb', name: '8GB · 256GB', hex: '#2b2b2b', stock: 1 }],
+    warrantyMonths: 6,
+    condition: 'refurbished',
+    photos: {
+      id: 'dell-latitude-7490',
+      gallery: ['Dell Latitude 7490', 'This laptop, open', 'This laptop, lid', 'Core i5 8th gen', '8GB RAM, 256GB SSD', 'Intel UHD Graphics 620'],
+    },
   },
 ];

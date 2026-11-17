@@ -129,11 +129,11 @@ export const SLIDES: readonly ShowcaseSlide[] = [
   },
   {
     id: 'computer',
-    department: 'Computer accessories',
+    department: 'Laptops',
     short: 'PC',
     edit: 'The desk edit',
-    href: '/computer-accessories',
-    hotspot: { label: 'Gaming mice & keyboards', href: '/computer-accessories', x: 50, y: 52 },
+    href: '/laptops',
+    hotspot: { label: 'Refurbished Dell Latitude', href: '/laptops', x: 50, y: 52 },
     sm: {
       phone: { x: 33, y: -20, s: 0.42, r: 18, z: 2 },
       buds: { x: -28, y: 25, s: 0.48, r: -6, z: 4 },
@@ -196,11 +196,10 @@ export const PRODUCT_ART: readonly ShowcaseArt[] = [
   },
 ];
 
-/** Laptops are not listed yet: the laptop opens the computer accessories until they are. */
 export const LAPTOP_ART: ShowcaseArt = {
   id: 'laptop',
-  href: '/computer-accessories',
-  label: 'Shop computer accessories',
+  href: '/laptops',
+  label: 'Shop laptops',
   alt: 'Dell Latitude 5400 laptop, open, seen from the front left',
   // The shop's Dell Latitude 5400, from the owner's three-quarter creative, lifted off its backdrop (catalog-sources/batch-2026-11-17).
   src: '/home/laptop-latitude-1034.webp',

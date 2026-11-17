@@ -443,7 +443,7 @@ export const ACCESSORY_DETAILS: readonly ProductDetail[] = ACCESSORIES.map(acces
 // --- gadgets: wireless audio, chargers, cables -----------------------------------------------------
 
 const GADGET_STOCK = 15;
-const SKU_PREFIX = { audio: 'AUD', charging: 'CHG', storage: 'STO', cameras: 'CAM', computer: 'CMP' } as const;
+const SKU_PREFIX = { audio: 'AUD', charging: 'CHG', storage: 'STO', cameras: 'CAM', computer: 'CMP', laptops: 'LAP' } as const;
 
 /**
  * One variant per option (colour or cable length). Gadgets do not fit one phone, so `modelSlug`
@@ -455,7 +455,7 @@ function gadgetDetail(entry: GadgetEntry): ProductDetail {
   const code = entry.id.toUpperCase().replace(/-/g, '');
   const variants = entry.options.map((o) => {
     const sku = `${prefix}-${code}-${o.slug.toUpperCase()}`;
-    return { id: `variant_${sku.toLowerCase()}`, sku, modelSlug: o.slug, caseType: 'soft' as const, priceInr: optionPrice(entry, o).priceInr, stock: GADGET_STOCK };
+    return { id: `variant_${sku.toLowerCase()}`, sku, modelSlug: o.slug, caseType: 'soft' as const, priceInr: optionPrice(entry, o).priceInr, stock: o.stock ?? GADGET_STOCK };
   });
   return {
     id: `gad_${entry.id}`,

@@ -50,21 +50,33 @@ The universal lens images print "LENS GLASS", which is on none of the real packs
 listings, since the owner calls these real glass. The five-piece Ultra image is not used, because the real S23 Ultra pack says
 "LENS FILM"; that listing shows the real pack.
 
+## Added on 17 Nov (second round)
+
+- **Dell Latitude 5400, ₹23,500, and Dell Latitude 7490, ₹24,000:** the owner's prices, with a 6-month GadgetsHub warranty.
+  - One unit of each.
+  - Listed as refurbished: Google feed `condition=refurbished`, schema.org `RefurbishedCondition`.
+  - Processor, RAM and SSD are from the owner's creatives. Ports and weight are Dell's spec for the model.
+  - Condition is written from the shop photos: the 5400's 1 key wears a "2" keycap.
+  - The charger was not confirmed, so the listings ask buyers to check on WhatsApp.
+- **Apple 40W Dynamic Power Adapter with 60W Max, ₹4,099:** the owner's rule, ₹50–100 below the lower of Amazon and Flipkart
+  (Amazon ₹4,190; MRP ₹4,490). Its box text is clean.
+- **Not used:** the laptop creatives #1, because they say "Condition: As new".
+
+Prices waiting for the two cables below, by the same rule:
+
+- Apple 60W USB-C cable: about ₹1,819 (Flipkart ₹1,900).
+- Samsung USB-C to USB-C cable: about ₹279 (Flipkart ₹337).
+
 ## Held back, for the owner
 
 - **Apple 20W adapter:** the box prints "Veiulle recycler cette boite" (Apple prints "Veuillez recycler cette boîte") and
   carries no Indian MRP or importer sticker.
 - **Apple 60W cable:** the sticker reads "REIATED".
-- **Apple 40W Dynamic adapter:** not checked; apple.com was out of reach.
 - **Samsung USB-C to USB-C cable EP-DA705BBEGIN:** misprints ("Câble UsB", "Samsung'senvironmental", "e.9. REACH"), and the
   same serial number on all three barcode labels.
 - **Before these are listed,** confirm they come from Apple's or Samsung's authorised distributor (invoice). Misprinted boxes
   are a common sign of copies.
 - **boAt portable speaker:** model not identified. Send the label on its base or its box.
-- **Dell Latitude 5400 and 7490:** the photos show wear and a "USED / REFURBISHED" sticker, so "Condition: As new" cannot be
-  used. Needed before listing:
-  - CPU, RAM, SSD, screen, battery health, charger, warranty, an honest cosmetic grade, and the Windows licence;
-  - a price (Flipkart refurbished 5400s: about ₹31,000).
 - **Samsung 45W:** its serial sticker says Made in Vietnam while the MRP label says Made in India; listed, worth a look.
 - **"Original" badge:** not set on any product in this batch until the source is confirmed.
 - **iPhone 13 mini, 16e, iPhone Air, Galaxy FE and Edge:** no lens listing. The packs shown do not fit them; FE models would fit

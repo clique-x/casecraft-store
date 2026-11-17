@@ -32,6 +32,7 @@ const COLUMNS: readonly { heading: string; links: readonly FooterLink[] }[] = [
       { href: '/charging', label: 'Chargers & cables' },
       { href: '/storage', label: 'Memory cards, SSDs & RAM' },
       { href: '/cameras', label: 'Wi-Fi cameras' },
+      { href: '/laptops', label: 'Refurbished laptops' },
       { href: '/computer-accessories', label: 'Gaming mice & keyboards' },
       { href: '/search', label: 'Search' },
     ],

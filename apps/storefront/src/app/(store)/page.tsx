@@ -114,6 +114,7 @@ const RAIL: readonly { label: string; href: string; types: readonly GadgetType[]
   { label: 'SSDs', href: '/storage#ssd', types: ['ssd'], pick: 'wd-black-sn7100' },
   { label: 'RAM', href: '/storage#ram', types: ['ram'], pick: 'sk-hynix-ram-laptop-ddr4' },
   { label: 'Wi-Fi cameras', href: '/cameras', types: ['camera'] },
+  { label: 'Laptops', href: '/laptops', types: ['laptop'], pick: 'dell-latitude-7490' },
   { label: 'Gaming mice & keyboards', href: '/computer-accessories', types: ['mouse', 'keyboard'], pick: 'ant-esports-km1410' },
   { label: 'USB hubs', href: '/computer-accessories#hubs', types: ['hub'] },
 ];
@@ -169,7 +170,7 @@ function duoFeatures(cameras: ProductDetail[], audio: ProductDetail[]): DuoFeatu
 }
 
 export default async function HomePage() {
-  const [trending, newArrivals, models, accessories, audio, storage, cameras, charging, computer, allCovers] = await Promise.all([
+  const [trending, newArrivals, models, accessories, audio, storage, cameras, charging, computer, laptops, allCovers] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
@@ -179,6 +180,7 @@ export default async function HomePage() {
     getGadgets('cameras'),
     getGadgets('charging'),
     getGadgets('computer'),
+    getGadgets('laptops'),
     getAllProducts(),
   ]);
 
@@ -210,7 +212,7 @@ export default async function HomePage() {
       {/* Header, hero, service strip and category tiles: the storefront's opening screens. */}
       <ShowcaseHero />
       <ServiceStrip />
-      <CategoryTiles rail={<CategoryRail categories={railCategories([...audio, ...charging, ...storage, ...cameras, ...computer])} />} />
+      <CategoryTiles rail={<CategoryRail categories={railCategories([...audio, ...charging, ...storage, ...cameras, ...laptops, ...computer])} />} />
       <TrendingHub products={trendingMix} />
       {featureProduct?.gadget && (
         <AudioSpotlight
@@ -230,6 +232,7 @@ export default async function HomePage() {
       {/* The other departments: storage, then cameras and speakers, then protection. */}
       <GadgetRow department="storage" products={storage} />
       <GadgetRow department="charging" products={charging} />
+      <GadgetRow department="laptops" products={laptops} />
       <GadgetRow department="computer" products={computer} />
       <HomeDuo features={duoFeatures(cameras, audio)} />
       <ProtectionRow products={accessories} />

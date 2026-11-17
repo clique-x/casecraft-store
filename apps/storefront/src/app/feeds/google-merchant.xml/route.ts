@@ -34,7 +34,8 @@ const GADGET_CATEGORY: Record<GadgetType, string> = {
   soundbar: 'Electronics > Audio > Audio Components > Speakers',
   mouse: 'Electronics > Electronics Accessories > Computer Components > Input Devices > Mice & Trackballs',
   keyboard: 'Electronics > Electronics Accessories > Computer Components > Input Devices > Keyboards',
-  hub: 'Electronics > Electronics Accessories > Computer Accessories > Computer Accessory Sets',
+  hub: 'Electronics > Electronics Accessories > Computer Components',
+  laptop: 'Electronics > Computers > Laptops',
 };
 /** Days to dispatch (DISPATCH_WINDOW, or ORDER_IN_WINDOW for ordered-in options) and with the courier. */
 const HANDLING = { shelf: [1, 3], orderIn: [3, 5] } as const;
@@ -62,6 +63,8 @@ interface Item {
   category: string;
   productType: string;
   orderIn: boolean;
+  /** 'new' unless the gadget is a refurbished unit. */
+  condition?: 'refurbished';
 }
 
 function itemsFor(product: ProductDetail, models: readonly PhoneModel[]): Item[] {
@@ -98,6 +101,7 @@ function itemsFor(product: ProductDetail, models: readonly PhoneModel[]): Item[]
           category: GADGET_CATEGORY[g.type],
           productType: `${type} > ${OPTION_LABEL[g.optionKind]} > ${option.name}`,
           orderIn: Boolean(option.orderIn),
+          ...(g.condition ? { condition: g.condition } : {}),
         },
       ];
     });
@@ -163,7 +167,7 @@ function itemXml(i: Item): string {
     discounted ? `<g:sale_price>${money(i.price)}</g:sale_price>` : '',
     `<g:brand>${esc(i.brand)}</g:brand>`,
     '<g:identifier_exists>no</g:identifier_exists>',
-    '<g:condition>new</g:condition>',
+    `<g:condition>${i.condition ?? 'new'}</g:condition>`,
     `<g:google_product_category>${esc(i.category)}</g:google_product_category>`,
     `<g:product_type>${esc(i.productType)}</g:product_type>`,
     '<g:shipping>',

@@ -105,7 +105,7 @@ interface Drag {
 }
 
 /**
- * Home hero: four curated states (Cases, Audio, Protection, Computer accessories) of one product scene.
+ * Home hero: four curated states (Cases, Audio, Protection, Laptops) of one product scene.
  * Arrows, indicators, keyboard arrows and horizontal swipes change the state; nothing advances on its own.
  */
 export function ShowcaseHero() {

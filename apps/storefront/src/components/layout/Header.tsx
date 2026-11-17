@@ -35,6 +35,7 @@ const MOBILE_DEPARTMENTS: readonly MobileMenuDepartment[] = [
   department('charging', DEPARTMENTS.charging, 'Samsung fast chargers and cables'),
   department('storage', DEPARTMENTS.storage, 'Memory cards, pen drives, SSDs, RAM'),
   department('cameras', DEPARTMENTS.cameras, 'CP Plus Wi-Fi security cameras'),
+  department('laptops', DEPARTMENTS.laptops, 'Refurbished Dell Latitude, 6-month warranty'),
   department('computer', DEPARTMENTS.computer, 'Gaming mice, keyboards, USB hubs'),
   { id: 'protection', href: '/accessories', label: 'Protection', note: 'Screen glass, lens protectors, back films', sections: [] },
 ];

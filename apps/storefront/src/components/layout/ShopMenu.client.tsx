@@ -23,6 +23,7 @@ const GROUPS: readonly { heading: string; links: readonly { href: string; label:
       { href: '/charging', label: 'Chargers & cables', note: 'Samsung fast chargers and cables' },
       { href: '/storage', label: 'Storage', note: 'Memory cards, pen drives, SSDs, RAM' },
       { href: '/cameras', label: 'Cameras', note: 'CP Plus Wi-Fi security cameras' },
+      { href: '/laptops', label: 'Laptops', note: 'Refurbished Dell Latitude, 6-month warranty' },
       { href: '/computer-accessories', label: 'Computer accessories', note: 'Gaming mice, keyboards, USB hubs' },
       { href: '/accessories', label: 'Protection', note: 'Screen glass, lens protectors, back films' },
     ],
