@@ -206,7 +206,7 @@ function DesktopColumn({
                 {/* eslint-disable-next-line @next/next/no-img-element -- static pre-sized variants, no optimizer */}
                 <img
                   src={lead.thumbSrc}
-                  alt=""
+                  alt={images[0]?.alt ?? ''}
                   width={160}
                   height={160}
                   decoding="async"
@@ -222,7 +222,7 @@ function DesktopColumn({
                 {/* eslint-disable-next-line @next/next/no-img-element -- static pre-sized variants, no optimizer */}
                 <img
                   src={img.src160}
-                  alt=""
+                  alt={img.alt}
                   width={160}
                   height={160}
                   decoding="async"
@@ -566,7 +566,7 @@ function Viewer({
                 )}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element -- static pre-sized variants, no optimizer */}
-                <img src={img.src160} alt="" width={160} height={160} loading="lazy" className="size-full object-cover" />
+                <img src={img.src160} alt={img.alt} width={160} height={160} loading="lazy" className="size-full object-cover" />
               </button>
             ))}
           </div>

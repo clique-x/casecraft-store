@@ -81,8 +81,19 @@ export function productKind(product: ProductDetail): string {
 export function productSeoTitle(product: ProductDetail): Metadata['title'] {
   const price = priceText(product);
   if (product.photo) {
-    const headline = coverHeadline(product.photo);
-    return seoTitle(`${headline} – ${price}`, headline);
+    // The colour keeps covers of one series apart (a black and a navy bumper would otherwise share a title).
+    const p = product.photo;
+    const headline = coverHeadline(p);
+    const colour = p.series.toLowerCase().includes(p.design.toLowerCase()) ? '' : `, ${p.design}`;
+    const short = `${searchModelName(p.modelLabel)} ${p.series} Cover`;
+    return seoTitle(
+      `${headline}${colour} – ${price}`,
+      `${short}${colour} – ${price}`,
+      `${headline}${colour}`,
+      `${short}${colour}`,
+      `${headline} – ${price}`,
+      headline,
+    );
   }
   const kind = productKind(product);
   return seoTitle(`${product.title} – ${kind} – ${price}`, `${product.title} – ${price}`, `${product.title} – ${kind}`, product.title);
