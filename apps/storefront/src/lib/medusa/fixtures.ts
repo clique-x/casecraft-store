@@ -400,7 +400,8 @@ function accessoryCode(id: string): string {
 
 /** One variant per phone model; accessories have no case type, so `soft` only fills the field. */
 function accessoryDetail(entry: AccessoryEntry): ProductDetail {
-  const fitsModels = PHONE_MODELS.map((m) => m.slug).filter((slug) => !entry.models || entry.models.includes(slug));
+  // The entry's own phone order when it lists them (oldest first, base before Plus, Pro, Pro Max).
+  const fitsModels = entry.models ? entry.models.filter((slug) => PHONE_MODELS.some((m) => m.slug === slug)) : PHONE_MODELS.map((m) => m.slug);
   return {
     id: `acc_${entry.id}`,
     handle: entry.handle,
@@ -442,7 +443,7 @@ export const ACCESSORY_DETAILS: readonly ProductDetail[] = ACCESSORIES.map(acces
 // --- gadgets: wireless audio, chargers, cables -----------------------------------------------------
 
 const GADGET_STOCK = 15;
-const SKU_PREFIX = { audio: 'AUD', charging: 'CHG', storage: 'STO', cameras: 'CAM' } as const;
+const SKU_PREFIX = { audio: 'AUD', charging: 'CHG', storage: 'STO', cameras: 'CAM', computer: 'CMP' } as const;
 
 /**
  * One variant per option (colour or cable length). Gadgets do not fit one phone, so `modelSlug`

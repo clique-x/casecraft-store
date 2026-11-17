@@ -34,7 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...(newArrivals(covers).length > 0 ? [entry('/collections/new', newArrivals(covers))] : []),
     entry('/categories', covers),
     entry('/phones', covers),
-    ...(['audio', 'storage', 'cameras'] as const).flatMap((d) => (department(d).length > 0 ? [entry(`/${d}`, department(d))] : [])),
+    ...(['audio', 'charging', 'storage', 'cameras', 'computer'] as const).flatMap((d) => (department(d).length > 0 ? [entry(`/${d}`, department(d))] : [])),
     ...(accessories.length > 0 ? [entry('/accessories', accessories)] : []),
   ];
 

@@ -18,6 +18,8 @@ import {
   Smartphone,
   X,
   type LucideIcon,
+  Mouse,
+  PlugZap,
 } from 'lucide-react';
 import { Wordmark } from '@/components/brand/Wordmark';
 import { logoIsWordmark, PhoneBrandLogo } from '@/components/brand/PhoneBrandLogo';
@@ -26,7 +28,7 @@ import { groupByBrand } from '@/lib/catalog/listing';
 import { useMyPhone } from '@/lib/phone/use-my-phone';
 import { cn } from '@/lib/utils';
 
-export type MobileMenuDepartmentId = 'covers' | 'audio' | 'storage' | 'cameras' | 'protection';
+export type MobileMenuDepartmentId = 'covers' | 'audio' | 'charging' | 'storage' | 'cameras' | 'computer' | 'protection';
 
 /** One department row; `sections` are its in-page jump links (empty when the page has a single section). */
 export interface MobileMenuDepartment {
@@ -49,6 +51,8 @@ const DEPARTMENT_ICON: Record<MobileMenuDepartmentId, LucideIcon> = {
   audio: Headphones,
   storage: HardDrive,
   cameras: Cctv,
+  charging: PlugZap,
+  computer: Mouse,
   protection: ShieldCheck,
 };
 

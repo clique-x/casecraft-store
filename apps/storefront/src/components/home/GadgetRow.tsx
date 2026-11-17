@@ -33,11 +33,21 @@ const COPY: Record<Department, { eyebrow: string; heading: string; sub: string; 
   },
   charging: {
     eyebrow: 'Charging',
-    heading: 'Chargers and original cables',
-    sub: 'Fast chargers and sealed brand cables. Each one says whether it fits your phone.',
+    heading: 'Samsung chargers and cables',
+    sub: 'Super Fast Charging adapters and a data cable, sealed in the box. Each one says whether it fits your phone.',
     shortcuts: [
       { id: 'chargers', label: 'Chargers' },
       { id: 'cables', label: 'Data cables' },
+    ],
+  },
+  computer: {
+    eyebrow: 'Computer accessories',
+    heading: 'Gaming mice, keyboards and USB hubs',
+    sub: 'Ant Esports and Honeywell, sealed with the brand warranty.',
+    shortcuts: [
+      { id: 'mice', label: 'Gaming mice' },
+      { id: 'keyboards', label: 'Keyboard combos' },
+      { id: 'hubs', label: 'USB hubs' },
     ],
   },
 };

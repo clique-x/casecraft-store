@@ -19,10 +19,12 @@ const GROUPS: readonly { heading: string; links: readonly { href: string; label:
   {
     heading: 'More',
     links: [
-      { href: '/audio', label: 'Audio', note: 'boAt and realme earbuds and speakers' },
+      { href: '/audio', label: 'Audio', note: 'boAt and realme earbuds, speakers, soundbars' },
+      { href: '/charging', label: 'Chargers & cables', note: 'Samsung fast chargers and cables' },
       { href: '/storage', label: 'Storage', note: 'Memory cards, pen drives, SSDs, RAM' },
       { href: '/cameras', label: 'Cameras', note: 'CP Plus Wi-Fi security cameras' },
-      { href: '/accessories', label: 'Protection', note: 'FLAYR and G-TEL glass, back films' },
+      { href: '/computer-accessories', label: 'Computer accessories', note: 'Gaming mice, keyboards, USB hubs' },
+      { href: '/accessories', label: 'Protection', note: 'Screen glass, lens protectors, back films' },
     ],
   },
 ];

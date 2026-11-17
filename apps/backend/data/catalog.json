@@ -172,13 +172,31 @@
       "rank": 18
     },
     {
+      "slug": "iphone-13-pro-max",
+      "brand": "Apple",
+      "name": "iPhone 13 Pro Max",
+      "series": "iPhone",
+      "releaseYear": 2021,
+      "islandStyle": "square",
+      "rank": 19
+    },
+    {
       "slug": "iphone-14",
       "brand": "Apple",
       "name": "iPhone 14",
       "series": "iPhone",
       "releaseYear": 2022,
       "islandStyle": "square",
-      "rank": 19
+      "rank": 20
+    },
+    {
+      "slug": "iphone-14-plus",
+      "brand": "Apple",
+      "name": "iPhone 14 Plus",
+      "series": "iPhone",
+      "releaseYear": 2022,
+      "islandStyle": "square",
+      "rank": 21
     },
     {
       "slug": "iphone-14-pro",
@@ -187,7 +205,16 @@
       "series": "iPhone",
       "releaseYear": 2022,
       "islandStyle": "square",
-      "rank": 20
+      "rank": 22
+    },
+    {
+      "slug": "iphone-14-pro-max",
+      "brand": "Apple",
+      "name": "iPhone 14 Pro Max",
+      "series": "iPhone",
+      "releaseYear": 2022,
+      "islandStyle": "square",
+      "rank": 23
     },
     {
       "slug": "iphone-15",
@@ -196,7 +223,16 @@
       "series": "iPhone",
       "releaseYear": 2023,
       "islandStyle": "square",
-      "rank": 21
+      "rank": 24
+    },
+    {
+      "slug": "iphone-15-plus",
+      "brand": "Apple",
+      "name": "iPhone 15 Plus",
+      "series": "iPhone",
+      "releaseYear": 2023,
+      "islandStyle": "square",
+      "rank": 25
     },
     {
       "slug": "iphone-15-pro",
@@ -205,7 +241,34 @@
       "series": "iPhone",
       "releaseYear": 2023,
       "islandStyle": "square",
-      "rank": 22
+      "rank": 26
+    },
+    {
+      "slug": "iphone-15-pro-max",
+      "brand": "Apple",
+      "name": "iPhone 15 Pro Max",
+      "series": "iPhone",
+      "releaseYear": 2023,
+      "islandStyle": "square",
+      "rank": 27
+    },
+    {
+      "slug": "iphone-16-plus",
+      "brand": "Apple",
+      "name": "iPhone 16 Plus",
+      "series": "iPhone",
+      "releaseYear": 2024,
+      "islandStyle": "square",
+      "rank": 28
+    },
+    {
+      "slug": "iphone-16-pro-max",
+      "brand": "Apple",
+      "name": "iPhone 16 Pro Max",
+      "series": "iPhone",
+      "releaseYear": 2024,
+      "islandStyle": "square",
+      "rank": 29
     },
     {
       "slug": "iphone-17-air",
@@ -214,7 +277,7 @@
       "series": "iPhone",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 23
+      "rank": 30
     },
     {
       "slug": "iphone-17-pro",
@@ -223,7 +286,16 @@
       "series": "iPhone",
       "releaseYear": 2025,
       "islandStyle": "square",
-      "rank": 24
+      "rank": 31
+    },
+    {
+      "slug": "iphone-17-pro-max",
+      "brand": "Apple",
+      "name": "iPhone 17 Pro Max",
+      "series": "iPhone",
+      "releaseYear": 2025,
+      "islandStyle": "square",
+      "rank": 32
     },
     {
       "slug": "iphone-18",
@@ -232,7 +304,7 @@
       "series": "iPhone",
       "releaseYear": 2026,
       "islandStyle": "square",
-      "rank": 25
+      "rank": 33
     },
     {
       "slug": "iphone-18-pro",
@@ -241,7 +313,16 @@
       "series": "iPhone",
       "releaseYear": 2026,
       "islandStyle": "square",
-      "rank": 26
+      "rank": 34
+    },
+    {
+      "slug": "iphone-18-pro-max",
+      "brand": "Apple",
+      "name": "iPhone 18 Pro Max",
+      "series": "iPhone",
+      "releaseYear": 2026,
+      "islandStyle": "square",
+      "rank": 35
     },
     {
       "slug": "galaxy-s22",
@@ -250,7 +331,7 @@
       "series": "Galaxy S",
       "releaseYear": 2022,
       "islandStyle": "pills",
-      "rank": 27
+      "rank": 36
     },
     {
       "slug": "galaxy-s22-plus",
@@ -259,7 +340,7 @@
       "series": "Galaxy S",
       "releaseYear": 2022,
       "islandStyle": "pills",
-      "rank": 28
+      "rank": 37
     },
     {
       "slug": "galaxy-s22-ultra",
@@ -268,7 +349,7 @@
       "series": "Galaxy S",
       "releaseYear": 2022,
       "islandStyle": "pills",
-      "rank": 29
+      "rank": 38
     },
     {
       "slug": "galaxy-s23",
@@ -277,7 +358,7 @@
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 30
+      "rank": 39
     },
     {
       "slug": "galaxy-s23-plus",
@@ -286,7 +367,7 @@
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 31
+      "rank": 40
     },
     {
       "slug": "galaxy-s23-fe",
@@ -295,7 +376,7 @@
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 32
+      "rank": 41
     },
     {
       "slug": "galaxy-s23-ultra",
@@ -304,7 +385,7 @@
       "series": "Galaxy S",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 33
+      "rank": 42
     },
     {
       "slug": "galaxy-s24",
@@ -313,7 +394,7 @@
       "series": "Galaxy S",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 34
+      "rank": 43
     },
     {
       "slug": "galaxy-s24-plus",
@@ -322,7 +403,7 @@
       "series": "Galaxy S",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 35
+      "rank": 44
     },
     {
       "slug": "galaxy-s24-fe",
@@ -331,7 +412,7 @@
       "series": "Galaxy S",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 36
+      "rank": 45
     },
     {
       "slug": "galaxy-s24-ultra",
@@ -340,7 +421,7 @@
       "series": "Galaxy S",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 37
+      "rank": 46
     },
     {
       "slug": "galaxy-s25-plus",
@@ -349,7 +430,7 @@
       "series": "Galaxy S",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 38
+      "rank": 47
     },
     {
       "slug": "galaxy-s25-ultra",
@@ -358,7 +439,7 @@
       "series": "Galaxy S",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 39
+      "rank": 48
     },
     {
       "slug": "galaxy-s25-edge",
@@ -367,7 +448,7 @@
       "series": "Galaxy S",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 40
+      "rank": 49
     },
     {
       "slug": "galaxy-s25-fe",
@@ -376,7 +457,7 @@
       "series": "Galaxy S",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 41
+      "rank": 50
     },
     {
       "slug": "galaxy-s26",
@@ -385,7 +466,7 @@
       "series": "Galaxy S",
       "releaseYear": 2026,
       "islandStyle": "pills",
-      "rank": 42
+      "rank": 51
     },
     {
       "slug": "galaxy-s26-plus",
@@ -394,7 +475,7 @@
       "series": "Galaxy S",
       "releaseYear": 2026,
       "islandStyle": "pills",
-      "rank": 43
+      "rank": 52
     },
     {
       "slug": "galaxy-s26-ultra",
@@ -403,7 +484,7 @@
       "series": "Galaxy S",
       "releaseYear": 2026,
       "islandStyle": "pills",
-      "rank": 44
+      "rank": 53
     },
     {
       "slug": "pixel-9",
@@ -412,7 +493,7 @@
       "series": "Pixel",
       "releaseYear": 2024,
       "islandStyle": "pills",
-      "rank": 45
+      "rank": 54
     },
     {
       "slug": "redmi-9c",
@@ -421,7 +502,7 @@
       "series": "Redmi",
       "releaseYear": 2020,
       "islandStyle": "square",
-      "rank": 46
+      "rank": 55
     },
     {
       "slug": "redmi-a2",
@@ -430,7 +511,7 @@
       "series": "Redmi",
       "releaseYear": 2023,
       "islandStyle": "square",
-      "rank": 47
+      "rank": 56
     },
     {
       "slug": "redmi-13c-5g",
@@ -439,7 +520,7 @@
       "series": "Redmi",
       "releaseYear": 2023,
       "islandStyle": "pills",
-      "rank": 48
+      "rank": 57
     },
     {
       "slug": "realme-16-5g",
@@ -448,7 +529,7 @@
       "series": "Number",
       "releaseYear": 2025,
       "islandStyle": "pills",
-      "rank": 49
+      "rank": 58
     },
     {
       "slug": "oppo-a17",
@@ -457,7 +538,7 @@
       "series": "A",
       "releaseYear": 2022,
       "islandStyle": "pills",
-      "rank": 50
+      "rank": 59
     },
     {
       "slug": "motorola-edge-40-neo",
@@ -466,7 +547,7 @@
       "series": "Edge",
       "releaseYear": 2023,
       "islandStyle": "square",
-      "rank": 51
+      "rank": 60
     },
     {
       "slug": "motorola-edge-50-fusion",
@@ -475,7 +556,7 @@
       "series": "Edge",
       "releaseYear": 2024,
       "islandStyle": "square",
-      "rank": 52
+      "rank": 61
     },
     {
       "slug": "motorola-edge-60-pro",
@@ -484,7 +565,7 @@
       "series": "Edge",
       "releaseYear": 2025,
       "islandStyle": "square",
-      "rank": 53
+      "rank": 62
     },
     {
       "slug": "motorola-edge-70",
@@ -493,7 +574,7 @@
       "series": "Edge",
       "releaseYear": 2025,
       "islandStyle": "square",
-      "rank": 54
+      "rank": 63
     }
   ],
   "themes": [],
@@ -3519,27 +3600,6 @@
       },
       "variants": [
         {
-          "sku": "ACC-FLABORIPH-IP16",
-          "modelSlug": "iphone-16",
-          "caseType": null,
-          "priceInr": 299,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-FLABORIPH-IP16P",
-          "modelSlug": "iphone-16-pro",
-          "caseType": null,
-          "priceInr": 299,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-FLABORIPH-IP17",
-          "modelSlug": "iphone-17",
-          "caseType": null,
-          "priceInr": 299,
-          "stock": 25
-        },
-        {
           "sku": "ACC-FLABORIPH-IP12",
           "modelSlug": "iphone-12",
           "caseType": null,
@@ -3596,8 +3656,22 @@
           "stock": 25
         },
         {
-          "sku": "ACC-FLABORIPH-IP17A",
-          "modelSlug": "iphone-17-air",
+          "sku": "ACC-FLABORIPH-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLABORIPH-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLABORIPH-IP17",
+          "modelSlug": "iphone-17",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -3605,6 +3679,13 @@
         {
           "sku": "ACC-FLABORIPH-IP17P",
           "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 299,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-FLABORIPH-IP17A",
+          "modelSlug": "iphone-17-air",
           "caseType": null,
           "priceInr": 299,
           "stock": 25
@@ -3641,17 +3722,10 @@
         "regular_inr": 300,
         "detail_material": "Tempered glass, G-TEL 3D fingerprint range.",
         "detail_in_box": "One G-TEL glass for the Galaxy you pick.",
-        "detail_fit": "Cut for each Galaxy S model from the S22 to the S26 Ultra; pick yours so we send the right one.",
+        "detail_fit": "Made for each Galaxy S model from the S22 to the S26 Ultra; pick yours so we send the right one.",
         "detail_care": "Fit it on a clean, dry screen. Clean with a dry microfibre cloth."
       },
       "variants": [
-        {
-          "sku": "ACC-GTEFINS-GAS25",
-          "modelSlug": "galaxy-s25",
-          "caseType": null,
-          "priceInr": 300,
-          "stock": 25
-        },
         {
           "sku": "ACC-GTEFINS-GAS22",
           "modelSlug": "galaxy-s22",
@@ -3688,15 +3762,15 @@
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFINS-GAS23F",
-          "modelSlug": "galaxy-s23-fe",
+          "sku": "ACC-GTEFINS-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFINS-GAS23U",
-          "modelSlug": "galaxy-s23-ultra",
+          "sku": "ACC-GTEFINS-GAS23F",
+          "modelSlug": "galaxy-s23-fe",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
@@ -3716,6 +3790,13 @@
           "stock": 25
         },
         {
+          "sku": "ACC-GTEFINS-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 300,
+          "stock": 25
+        },
+        {
           "sku": "ACC-GTEFINS-GAS24F",
           "modelSlug": "galaxy-s24-fe",
           "caseType": null,
@@ -3723,8 +3804,8 @@
           "stock": 25
         },
         {
-          "sku": "ACC-GTEFINS-GAS24U",
-          "modelSlug": "galaxy-s24-ultra",
+          "sku": "ACC-GTEFINS-GAS25",
+          "modelSlug": "galaxy-s25",
           "caseType": null,
           "priceInr": 300,
           "stock": 25
@@ -3801,27 +3882,6 @@
       },
       "variants": [
         {
-          "sku": "ACC-HYDBACFIL-IP16",
-          "modelSlug": "iphone-16",
-          "caseType": null,
-          "priceInr": 250,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-HYDBACFIL-IP16P",
-          "modelSlug": "iphone-16-pro",
-          "caseType": null,
-          "priceInr": 250,
-          "stock": 25
-        },
-        {
-          "sku": "ACC-HYDBACFIL-IP17",
-          "modelSlug": "iphone-17",
-          "caseType": null,
-          "priceInr": 250,
-          "stock": 25
-        },
-        {
           "sku": "ACC-HYDBACFIL-IP12",
           "modelSlug": "iphone-12",
           "caseType": null,
@@ -3878,6 +3938,27 @@
           "stock": 25
         },
         {
+          "sku": "ACC-HYDBACFIL-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFIL-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
           "sku": "ACC-HYDBACFIL-IP17P",
           "modelSlug": "iphone-17-pro",
           "caseType": null,
@@ -3896,6 +3977,318 @@
           "modelSlug": "iphone-18-pro",
           "caseType": null,
           "priceInr": 250,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "iphone-camera-lens-protector",
+      "productType": "Camera lens protector",
+      "title": "Jing Yuan camera lens protector for iPhone",
+      "description": "Separate glass rings that sit over each of the two rear cameras of your iPhone, so the lenses stay free of scratches and smudges while the camera island stays visible. The Jing Yuan pack prints 99% light transmission, an AR + AF coating and a full lens fit. Ring sizes change from one iPhone to the next, so each pack is made for one model: pick yours and we send the pack labelled with it.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "lens-rings-iphone",
+        "accessory_type": "lens-protector",
+        "regular_inr": 149,
+        "detail_material": "Glass lens rings on a card, as packed by Jing Yuan. The pack prints 99% transmittance, AR + AF coating and full lens fit.",
+        "detail_in_box": "One set of lens rings for the iPhone you pick, on its card.",
+        "detail_fit": "iPhone 13, 14, 14 Plus, 15, 15 Plus, 16, 16 Plus and 17 (two rear cameras). For the Pro and Pro Max, see the three-ring set.",
+        "detail_care": "Wipe the camera glass clean and dry, line each ring up over its lens, then press for a few seconds."
+      },
+      "variants": [
+        {
+          "sku": "ACC-LENRINIPH-IP13",
+          "modelSlug": "iphone-13",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPH-IP14",
+          "modelSlug": "iphone-14",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPH-IP14P",
+          "modelSlug": "iphone-14-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPH-IP15",
+          "modelSlug": "iphone-15",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPH-IP15P",
+          "modelSlug": "iphone-15-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPH-IP16",
+          "modelSlug": "iphone-16",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPH-IP16P",
+          "modelSlug": "iphone-16-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPH-IP17",
+          "modelSlug": "iphone-17",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "iphone-pro-camera-lens-protector",
+      "productType": "Camera lens protector",
+      "title": "Jing Yuan camera lens protector for iPhone Pro and Pro Max",
+      "description": "Three separate glass rings, one for each rear camera of your iPhone Pro or Pro Max, to keep the lenses free of scratches and smudges without covering the whole camera island. The Jing Yuan pack prints 99% light transmission, an AR + AF coating and a full lens fit. The lenses grow a little with every generation, so each pack is made for one model: pick yours and we send the pack labelled with it.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "lens-rings-iphone-pro",
+        "accessory_type": "lens-protector",
+        "regular_inr": 149,
+        "detail_material": "Glass lens rings on a card, as packed by Jing Yuan. The pack prints 99% transmittance, AR + AF coating and full lens fit.",
+        "detail_in_box": "One set of three lens rings for the iPhone you pick, on its card.",
+        "detail_fit": "iPhone 13 Pro and Pro Max through iPhone 18 Pro and Pro Max (three rear cameras).",
+        "detail_care": "Wipe the camera glass clean and dry, line each ring up over its lens, then press for a few seconds."
+      },
+      "variants": [
+        {
+          "sku": "ACC-LENRINIPHPRO-IP13P",
+          "modelSlug": "iphone-13-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP13PM",
+          "modelSlug": "iphone-13-pro-max",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP14P",
+          "modelSlug": "iphone-14-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP14PM",
+          "modelSlug": "iphone-14-pro-max",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP15P",
+          "modelSlug": "iphone-15-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP15PM",
+          "modelSlug": "iphone-15-pro-max",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP16P",
+          "modelSlug": "iphone-16-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP16PM",
+          "modelSlug": "iphone-16-pro-max",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP17P",
+          "modelSlug": "iphone-17-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP17PM",
+          "modelSlug": "iphone-17-pro-max",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP18P",
+          "modelSlug": "iphone-18-pro",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINIPHPRO-IP18PM",
+          "modelSlug": "iphone-18-pro-max",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "galaxy-s-camera-lens-protector",
+      "productType": "Camera lens protector",
+      "title": "Camera lens protector for Galaxy S23 to S26+",
+      "description": "Glass rings for the three rear cameras of your Galaxy S, set in a frame that lines them up in one go. The pack prints 9H hardness, Ultra HD clarity and dust prevention. Each pack is made for one model, since the lenses differ in size from one Galaxy to the next: pick yours and we send the pack labelled with it.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "lens-rings-galaxy-s",
+        "accessory_type": "lens-protector",
+        "regular_inr": 149,
+        "detail_material": "Glass lens rings in a fitting frame. The pack prints 9H, Ultra HD and dust prevention.",
+        "detail_in_box": "One set of three lens rings for the Galaxy you pick, in its frame.",
+        "detail_fit": "Galaxy S23, S23+, S24, S24+, S25, S25+, S26 and S26+ (three rear cameras in a column). For the Ultra models, see the Ultra protector.",
+        "detail_care": "Wipe the camera glass clean and dry, place the frame over the cameras, press each ring down, then lift the frame away."
+      },
+      "variants": [
+        {
+          "sku": "ACC-LENRINGALS-GAS23",
+          "modelSlug": "galaxy-s23",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINGALS-GAS23P",
+          "modelSlug": "galaxy-s23-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINGALS-GAS24",
+          "modelSlug": "galaxy-s24",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINGALS-GAS24P",
+          "modelSlug": "galaxy-s24-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINGALS-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINGALS-GAS25P",
+          "modelSlug": "galaxy-s25-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINGALS-GAS26",
+          "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENRINGALS-GAS26P",
+          "modelSlug": "galaxy-s26-plus",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "handle": "galaxy-s-ultra-camera-lens-protector",
+      "productType": "Camera lens protector",
+      "title": "Camera lens protector for Galaxy S23 to S26 Ultra",
+      "description": "Protective pieces for every rear camera of your Galaxy Ultra, so the large lenses stay free of scratches and smudges. The Ultra camera layout changes from one generation to the next, so each pack is made for one model: pick yours and we send the pack labelled with it. The photo shows the Galaxy S23 Ultra pack, which is marked \"lens film\".",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "lens-film-galaxy-ultra",
+        "accessory_type": "lens-protector",
+        "regular_inr": 149,
+        "detail_material": "Lens protector pieces on a card. The Galaxy S23 Ultra pack is marked \"lens film\".",
+        "detail_in_box": "One set of lens protectors for the Galaxy Ultra you pick, on its card.",
+        "detail_fit": "Galaxy S23 Ultra, S24 Ultra, S25 Ultra and S26 Ultra.",
+        "detail_care": "Wipe the camera glass clean and dry, line each piece up over its lens, then press for a few seconds."
+      },
+      "variants": [
+        {
+          "sku": "ACC-LENFILGALULT-GAS23U",
+          "modelSlug": "galaxy-s23-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENFILGALULT-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENFILGALULT-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": null,
+          "priceInr": 149,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-LENFILGALULT-GAS26U",
+          "modelSlug": "galaxy-s26-ultra",
+          "caseType": null,
+          "priceInr": 149,
           "stock": 25
         }
       ]
@@ -4484,6 +4877,171 @@
             "name": "Raging Black"
           },
           "priceInr": 2199,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-aavante-2-0-150",
+      "productType": "Bluetooth soundbar",
+      "title": "boAt Aavante 2.0 150",
+      "description": "A 16 W portable soundbar with two full-range drivers in a 2.0-channel layout and RGB lights at both ends. Play over Bluetooth 5.4, AUX, a USB drive or a TF card, pair two Aavante 2.0 150s in TWS mode for more sound, and take calls through the built-in mic. Music, News and Movie EQ modes tune the sound, and a charge over USB-C lasts up to 5 hours.",
+      "imagePath": "/products/photos/gadgets/boat-aavante-2-150/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-aavante-2-150",
+        "gadget_type": "soundbar",
+        "department": "audio",
+        "regular_inr": 3990,
+        "detail_in_box": "Soundbar, USB-C charging cable, AUX cable and user manual, in the sealed boAt box.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATAAVANTE2150-PREMIUM-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "premium-black",
+            "name": "Premium Black"
+          },
+          "priceInr": 1399,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "boat-aavante-bar-490",
+      "productType": "Bluetooth soundbar",
+      "title": "boAt Aavante Bar 490",
+      "description": "A slim 10 W Bluetooth soundbar with two full-range drivers, for a desk, a bedside or under a TV. It plays for up to 7 hours on a charge, also takes AUX, a USB drive or a TF card, pairs with a second Aavante Bar in TWS mode and has a mic for hands-free calls.",
+      "imagePath": "/products/photos/gadgets/boat-aavante-bar-490/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-aavante-bar-490",
+        "gadget_type": "soundbar",
+        "department": "audio",
+        "regular_inr": 3490,
+        "detail_in_box": "Soundbar with its accessories and user manual, as packed by boAt in the sealed box.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATAAVANTEBAR490-CLASSIC-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "classic-black",
+            "name": "Classic Black"
+          },
+          "priceInr": 999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "samsung-25w-usb-c-power-adapter-white",
+      "productType": "Charger",
+      "title": "Samsung 25W USB-C power adapter (white)",
+      "description": "Samsung’s own 25 W wall adapter with one USB-C port. It Super Fast Charges Galaxy phones that support 25 W charging (USB PD 3.0 with PPS) and charges any other USB-C phone or earbuds at their normal speed. It draws under 5 mW when nothing is plugged in. The box holds the adapter only: pair it with a USB-C cable.",
+      "imagePath": "/products/photos/gadgets/samsung-25w-adapter/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "samsung-25w-adapter",
+        "gadget_type": "charger",
+        "department": "charging",
+        "regular_inr": 1699,
+        "detail_in_box": "Power adapter and leaflet. No cable in the box.",
+        "warranty_months": 6
+      },
+      "variants": [
+        {
+          "sku": "CHG-SAMSUNG25WADAPTER-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "white",
+            "name": "White"
+          },
+          "priceInr": 899,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "samsung-45w-usb-c-power-adapter-black",
+      "productType": "Charger",
+      "title": "Samsung 45W USB-C power adapter (black)",
+      "description": "Samsung’s 45 W wall adapter with one USB-C port. It charges at the full 45 W the Galaxy phones that support Super Fast Charging 2.0 (Samsung lists the S23+, S23 Ultra, S24+ and S24 Ultra among them), and other USB-C phones at the speed they support. The box holds the adapter only: Samsung asks for a 5 A USB-C cable for the full 45 W.",
+      "imagePath": "/products/photos/gadgets/samsung-45w-adapter/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "samsung-45w-adapter",
+        "gadget_type": "charger",
+        "department": "charging",
+        "regular_inr": 3499,
+        "detail_in_box": "Power adapter and leaflet. No cable in the box.",
+        "warranty_months": 6
+      },
+      "variants": [
+        {
+          "sku": "CHG-SAMSUNG45WADAPTER-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 2299,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "samsung-usb-a-to-usb-c-cable-1-5m-white",
+      "productType": "Data cable",
+      "title": "Samsung USB-A to USB-C cable, 1.5 m (white)",
+      "description": "Samsung’s USB-A to USB-C cable in white, 1.5 m long. Use it to charge a USB-C phone or earbuds from a USB-A charger, laptop or car port, and to move photos and files between your phone and a computer.",
+      "imagePath": "/products/photos/gadgets/samsung-cable-a-c-white/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "samsung-cable-a-c-white",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 550,
+        "detail_in_box": "Cable and leaflet.",
+        "warranty_months": 6
+      },
+      "variants": [
+        {
+          "sku": "CHG-SAMSUNGCABLEACWHITE-1-5M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "1-5m",
+            "name": "1.5 m"
+          },
+          "priceInr": 279,
           "stock": 15
         }
       ]
@@ -5392,6 +5950,138 @@
             "name": "4 MP · CP-E48Q"
           },
           "priceInr": 2999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "ant-esports-gm320-rgb-gaming-mouse",
+      "productType": "Gaming mouse",
+      "title": "Ant Esports GM320 RGB gaming mouse",
+      "description": "A wired optical gaming mouse with eight programmable buttons and a fire button, multicolour lighting with 12 modes and a 1.5 m braided cable. Six DPI steps go up to 12800, the sensor reads 7000 frames a second and the switches are rated for 20 million clicks. A USB to Type-C adapter in the box lets it work with a phone or tablet too.",
+      "imagePath": "/products/photos/gadgets/ant-esports-gm320/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "ant-esports-gm320",
+        "gadget_type": "mouse",
+        "department": "computer",
+        "regular_inr": 2799,
+        "detail_in_box": "Mouse, USB to Type-C OTG adapter and user manual.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "CMP-ANTESPORTSGM320-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 579,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "ant-esports-gm320-pro-wireless-gaming-mouse",
+      "productType": "Gaming mouse",
+      "title": "Ant Esports GM320 Pro wireless gaming mouse",
+      "description": "The wireless version of the GM320: a 2.4 GHz USB receiver, a rechargeable 300 mAh battery that tops up in about an hour, five DPI steps up to 4000 and RGB lighting in seven colours. It has eight buttons, weighs about 95 g and works with Windows, Mac and Linux; the USB to Type-C adapter in the box connects the receiver to a phone or tablet.",
+      "imagePath": "/products/photos/gadgets/ant-esports-gm320-pro/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "ant-esports-gm320-pro",
+        "gadget_type": "mouse",
+        "department": "computer",
+        "regular_inr": 3499,
+        "detail_in_box": "Mouse, USB receiver, USB to Type-C OTG adapter, charging cable and user manual.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "CMP-ANTESPORTSGM320PRO-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 849,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "ant-esports-km1410-gaming-keyboard-mouse-combo",
+      "productType": "Keyboard and mouse combo",
+      "title": "Ant Esports KM1410 gaming keyboard and mouse combo",
+      "description": "A full-size 104-key membrane keyboard with black and white keys and multicolour backlighting, paired with a matching wired gaming mouse that goes up to 3600 DPI. FN shortcuts on F1 to F12 control music, volume, mail, the browser and the calculator. Both plug in over USB with 1.5 m cables, and a Type-C adapter is in the box.",
+      "imagePath": "/products/photos/gadgets/ant-esports-km1410/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "ant-esports-km1410",
+        "gadget_type": "keyboard",
+        "department": "computer",
+        "regular_inr": 1599,
+        "detail_in_box": "Keyboard, mouse, USB to Type-C OTG adapter and user manual.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "CMP-ANTESPORTSKM1410-CARBON-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "carbon-black",
+            "name": "Carbon Black"
+          },
+          "priceInr": 699,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "honeywell-4-port-usb-2-0-hub",
+      "productType": "USB hub",
+      "title": "Honeywell 4-port USB 2.0 hub",
+      "description": "Turns one USB port into four, for pen drives, a keyboard and mouse, a printer or a portable hard drive. It runs off the laptop or PC it is plugged into, with no power adapter, on a 1.2 m cable so the hub can sit on the desk. USB 2.0 moves data at up to 480 Mbps. Honeywell backs it with a 3-year warranty.",
+      "imagePath": "/products/photos/gadgets/honeywell-usb-hub-4/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "honeywell-usb-hub-4",
+        "gadget_type": "hub",
+        "department": "computer",
+        "regular_inr": 799,
+        "detail_in_box": "USB hub with its attached cable.",
+        "warranty_months": 36
+      },
+      "variants": [
+        {
+          "sku": "CMP-HONEYWELLUSBHUB4-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "black",
+            "name": "Black"
+          },
+          "priceInr": 399,
           "stock": 15
         }
       ]

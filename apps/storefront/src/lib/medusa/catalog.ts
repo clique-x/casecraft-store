@@ -1,5 +1,5 @@
 import { cacheLife, cacheTag } from 'next/cache';
-import { ACCESSORIES, ACCESSORY_TYPE_LABEL } from '@/lib/catalog/accessories';
+import { ACCESSORIES, ACCESSORY_TYPE_LABEL, type AccessoryEntry } from '@/lib/catalog/accessories';
 import { GADGETS, GADGET_TYPE_LABEL, optionPrice } from '@/lib/catalog/gadgets';
 import { PHOTOS, type PhotoEntry } from '@/lib/catalog/photos';
 import { DESIGNS } from '@/lib/designs/catalog';
@@ -288,6 +288,11 @@ function toProductDetail(p: MedusaProduct, modelRank: Map<string, number>): Prod
   };
 }
 
+function fitOrder(entry: AccessoryEntry, slug: string, modelRank: Map<string, number>): number {
+  const i = entry.models?.indexOf(slug) ?? -1;
+  return i >= 0 ? i : 1000 + modelRank.get(slug)!;
+}
+
 /** Accessories carry `accessory_id` in metadata, matching an entry in lib/catalog/accessories.ts. */
 function toAccessory(p: MedusaProduct, modelRank: Map<string, number>): ProductDetail | null {
   const entry = ACCESSORIES.find((a) => a.id === str(p.metadata, 'accessory_id'));
@@ -299,7 +304,8 @@ function toAccessory(p: MedusaProduct, modelRank: Map<string, number>): ProductD
   const variants = (p.variants ?? [])
     .map((v) => toVariant({ ...v, metadata: { ...v.metadata, case_type: 'soft' } }))
     .filter((v): v is Variant => v !== null && modelRank.has(v.modelSlug))
-    .sort((a, b) => modelRank.get(a.modelSlug)! - modelRank.get(b.modelSlug)!);
+    // In the order the entry lists its phones (oldest first, base before Plus, Pro, Pro Max), else the catalogue's.
+    .sort((a, b) => fitOrder(entry, a.modelSlug, modelRank) - fitOrder(entry, b.modelSlug, modelRank));
   if (variants.length === 0) return null;
   return {
     id: p.id,

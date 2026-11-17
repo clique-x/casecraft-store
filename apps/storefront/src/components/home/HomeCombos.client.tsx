@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import Link from 'next/link';
 import { Check, Loader2, Plus, Smartphone } from 'lucide-react';
 import { CoverCarousel } from '@/components/home/CoverCarousel.client';
@@ -10,6 +10,7 @@ import { backdropThumbSrc, backdropThumbSrcSet, formatInr, getPhoto } from '@/li
 import { useCart } from '@/lib/cart/cart-context';
 import { pickerSheet } from '@/lib/phone/picker-sheet-store';
 import { useMyPhone } from '@/lib/phone/use-my-phone';
+import { cn } from '@/lib/utils';
 
 export interface ComboVariant {
   id: string;
@@ -34,20 +35,33 @@ export interface ComboAccessory {
   variants: ComboVariant[];
 }
 
-type Role = 'glass' | 'film';
+type Role = 'glass' | 'film' | 'lens';
 
-/** The combos: a cover with the screen glass, with the back film, or with both. Every piece is made for the same phone. */
+/**
+ * The combos, in display order: a cover with the screen glass, the lens protector or the back film, and the bigger sets.
+ * Every piece is made for the same phone, and a kit shows only when that phone has every piece of it.
+ */
 const KITS: readonly { id: string; name: string; roles: readonly Role[] }[] = [
   { id: 'glass', name: 'Cover + screen glass', roles: ['glass'] },
+  { id: 'lens', name: 'Cover + camera lens protector', roles: ['lens'] },
   { id: 'film', name: 'Cover + back film', roles: ['film'] },
+  { id: 'glass-lens', name: 'Cover + glass + lens protector', roles: ['glass', 'lens'] },
   { id: 'full', name: 'Cover + glass + back film', roles: ['glass', 'film'] },
+  { id: 'complete', name: 'Cover + glass + back film + lens protector', roles: ['glass', 'film', 'lens'] },
 ];
+/** With the complete set on offer, these smaller kits would only repeat it: four cards at most. */
+const DROPPED_WITH_COMPLETE = new Set(['film', 'glass-lens']);
 
-const ROLE_LABEL: Record<Role, string> = { glass: 'Screen glass for your phone', film: 'Hydrogel back film for your phone' };
+const ROLE_LABEL: Record<Role, string> = {
+  glass: 'Screen glass for your phone',
+  film: 'Hydrogel back film for your phone',
+  lens: 'Camera lens protector for your phone',
+};
 
 function roleOf(entry: AccessoryEntry): Role | null {
   if (entry.type === 'screen-guard') return 'glass';
   if (entry.type === 'back-film') return 'film';
+  if (entry.type === 'lens-protector') return 'lens';
   return null;
 }
 
@@ -99,9 +113,11 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
     const cheapest = [...ofRole].sort((a, b) => a.entry.priceInr - b.entry.priceInr)[0];
     return cheapest ? { accessory: cheapest, variant: null, priceInr: cheapest.entry.priceInr } : null;
   };
-  const roles = { glass: forRole('glass'), film: forRole('film') };
+  const roles = { glass: forRole('glass'), film: forRole('film'), lens: forRole('lens') };
 
-  const kits = KITS.flatMap((kit) => {
+  const offered = KITS.filter((kit) => kit.roles.every((r) => roles[r] !== null));
+  const hasComplete = offered.some((k) => k.id === 'complete');
+  const kits = offered.filter((k) => !(hasComplete && DROPPED_WITH_COMPLETE.has(k.id))).flatMap((kit) => {
     const items = kit.roles.map((r) => roles[r]);
     if (items.some((i) => i === null)) return [];
     const parts = items as NonNullable<(typeof items)[number]>[];
@@ -123,10 +139,10 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
           <div className="max-w-2xl">
             <p className="text-label font-bold tracking-[0.16em] text-brand uppercase">Combo deals</p>
             <h2 id="combos-heading" className="mt-2 font-display text-h2 font-extrabold text-balance">
-              Cover, screen glass and back film in one go
+              Cover, screen glass, back film and lens protector in one go
             </h2>
             <p className="mt-2 text-body text-fg-muted">
-              Every piece is made for the same phone. {formatInr(BUNDLE_SAVING_INR)} off the glass and the back film when they come with a cover.
+              Every piece is made for the same phone. {formatInr(BUNDLE_SAVING_INR)} off the glass, the back film and the lens protector when they come with a cover.
             </p>
           </div>
           <button
@@ -174,7 +190,10 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
           /* Phones: swipe one combo at a time, the next one peeking in. Larger screens: a grid. */
           <ul
             aria-label="Combo deals"
-            className="-mx-4 mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden"
+            className={cn(
+              '-mx-4 mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden',
+              kits.length > 3 ? 'lg:grid-cols-2' : 'lg:grid-cols-3',
+            )}
           >
             {kits.map(({ kit, parts, price, separately, available, variantIds }) => (
               <li key={kit.id} className="relative flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-border bg-paper sm:w-auto">
@@ -182,17 +201,18 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
                   Save {formatInr(separately - price)}
                 </span>
 
+                {/* Up to four pictures: they shrink to share the card's width, never wider than 5.5rem. */}
                 <div className="flex items-center justify-center gap-1.5 bg-surface-2/70 px-4 pt-12 pb-5">
-                  <span className="flex h-28 w-[5.5rem] items-center justify-center overflow-hidden rounded-lg bg-paper">
+                  <span className="flex aspect-[11/14] max-w-[5.5rem] min-w-0 flex-1 items-center justify-center overflow-hidden rounded-lg bg-paper">
                     {shownCover && <CoverThumb cover={shownCover} />}
                   </span>
                   {parts.map((p) => (
-                    <span key={p.accessory.entry.id} className="flex items-center gap-1.5">
-                      <Plus className="size-3.5 text-fg-muted" aria-hidden="true" />
-                      <span className="h-28 w-[5.5rem] overflow-hidden rounded-lg bg-paper">
+                    <Fragment key={p.accessory.entry.id}>
+                      <Plus className="size-3.5 shrink-0 text-fg-muted" aria-hidden="true" />
+                      <span className="aspect-[11/14] max-w-[5.5rem] min-w-0 flex-1 overflow-hidden rounded-lg bg-paper">
                         <AccessoryThumb accessory={p.accessory} />
                       </span>
-                    </span>
+                    </Fragment>
                   ))}
                 </div>
 

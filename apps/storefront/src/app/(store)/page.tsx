@@ -107,11 +107,15 @@ const RAIL: readonly { label: string; href: string; types: readonly GadgetType[]
   { label: 'Earbuds', href: '/audio#earbuds', types: ['earbuds'], pick: 'boat-alpha-gen2' },
   { label: 'Neckbands', href: '/audio#neckband', types: ['neckband'], pick: 'boat-rockerz-110' },
   { label: 'Speakers', href: '/audio#speakers', types: ['speaker'], pick: 'boat-stone-arc-pro' },
+  { label: 'Soundbars', href: '/audio#soundbars', types: ['soundbar'], pick: 'boat-aavante-2-150' },
+  { label: 'Chargers & cables', href: '/charging', types: ['charger', 'cable'], pick: 'samsung-25w-adapter' },
   { label: 'Memory cards', href: '/storage#cards', types: ['memory-card'], pick: 'sandisk-extreme-microsd' },
   { label: 'Pen drives', href: '/storage#cards', types: ['pen-drive'], pick: 'sandisk-cruzer-blade' },
   { label: 'SSDs', href: '/storage#ssd', types: ['ssd'], pick: 'wd-black-sn7100' },
   { label: 'RAM', href: '/storage#ram', types: ['ram'], pick: 'sk-hynix-ram-laptop-ddr4' },
   { label: 'Wi-Fi cameras', href: '/cameras', types: ['camera'] },
+  { label: 'Gaming mice & keyboards', href: '/computer-accessories', types: ['mouse', 'keyboard'], pick: 'ant-esports-km1410' },
+  { label: 'USB hubs', href: '/computer-accessories#hubs', types: ['hub'] },
 ];
 
 function railCategories(gadgets: ProductDetail[]): RailCategory[] {
@@ -165,7 +169,7 @@ function duoFeatures(cameras: ProductDetail[], audio: ProductDetail[]): DuoFeatu
 }
 
 export default async function HomePage() {
-  const [trending, newArrivals, models, accessories, audio, storage, cameras, allCovers] = await Promise.all([
+  const [trending, newArrivals, models, accessories, audio, storage, cameras, charging, computer, allCovers] = await Promise.all([
     getTrending(),
     getNewArrivals(),
     getPhoneModels(),
@@ -173,6 +177,8 @@ export default async function HomePage() {
     getGadgets('audio'),
     getGadgets('storage'),
     getGadgets('cameras'),
+    getGadgets('charging'),
+    getGadgets('computer'),
     getAllProducts(),
   ]);
 
@@ -204,7 +210,7 @@ export default async function HomePage() {
       {/* Header, hero, service strip and category tiles: the storefront's opening screens. */}
       <ShowcaseHero />
       <ServiceStrip />
-      <CategoryTiles rail={<CategoryRail categories={railCategories([...audio, ...storage, ...cameras])} />} />
+      <CategoryTiles rail={<CategoryRail categories={railCategories([...audio, ...charging, ...storage, ...cameras, ...computer])} />} />
       <TrendingHub products={trendingMix} />
       {featureProduct?.gadget && (
         <AudioSpotlight
@@ -223,6 +229,8 @@ export default async function HomePage() {
       <HomeCombos covers={comboCovers(allCovers)} accessories={comboAccessories(accessories)} />
       {/* The other departments: storage, then cameras and speakers, then protection. */}
       <GadgetRow department="storage" products={storage} />
+      <GadgetRow department="charging" products={charging} />
+      <GadgetRow department="computer" products={computer} />
       <HomeDuo features={duoFeatures(cameras, audio)} />
       <ProtectionRow products={accessories} />
       {/* Real customer reviews only; until there are some, an invitation to write one. */}

@@ -31,6 +31,10 @@ const GADGET_CATEGORY: Record<GadgetType, string> = {
   enclosure: 'Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drive Accessories',
   otg: 'Electronics > Electronics Accessories > Adapters',
   camera: 'Cameras & Optics > Cameras > Surveillance Cameras',
+  soundbar: 'Electronics > Audio > Audio Components > Speakers',
+  mouse: 'Electronics > Electronics Accessories > Computer Components > Input Devices > Mice & Trackballs',
+  keyboard: 'Electronics > Electronics Accessories > Computer Components > Input Devices > Keyboards',
+  hub: 'Electronics > Electronics Accessories > Computer Accessories > Computer Accessory Sets',
 };
 /** Days to dispatch (DISPATCH_WINDOW, or ORDER_IN_WINDOW for ordered-in options) and with the courier. */
 const HANDLING = { shelf: [1, 3], orderIn: [3, 5] } as const;

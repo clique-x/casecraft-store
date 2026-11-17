@@ -12,13 +12,15 @@
  * is shown. Change them here; the backend catalogue is regenerated with `pnpm catalog:export`.
  */
 
+import { CHARGING, COMPUTER, SOUNDBARS } from './gadget-additions';
 import { CAMERAS, SPEAKERS, STORAGE } from './gadget-ranges';
 
-export type Department = 'audio' | 'charging' | 'storage' | 'cameras';
+export type Department = 'audio' | 'charging' | 'storage' | 'cameras' | 'computer';
 export type GadgetType =
   | 'earbuds'
   | 'neckband'
   | 'speaker'
+  | 'soundbar'
   | 'charger'
   | 'car-charger'
   | 'cable'
@@ -28,7 +30,10 @@ export type GadgetType =
   | 'ram'
   | 'enclosure'
   | 'otg'
-  | 'camera';
+  | 'camera'
+  | 'mouse'
+  | 'keyboard'
+  | 'hub';
 
 /** What a product's options are: colour swatches, or buttons for cable length, capacity, camera resolution or model. */
 export type OptionKind = 'colour' | 'length' | 'capacity' | 'resolution' | 'model';
@@ -109,6 +114,7 @@ export const GADGET_TYPE_LABEL: Record<GadgetType, string> = {
   earbuds: 'Wireless earbuds',
   neckband: 'Neckband',
   speaker: 'Bluetooth speaker',
+  soundbar: 'Bluetooth soundbar',
   charger: 'Charger',
   'car-charger': 'Car charger',
   cable: 'Data cable',
@@ -119,12 +125,16 @@ export const GADGET_TYPE_LABEL: Record<GadgetType, string> = {
   enclosure: 'Drive case',
   otg: 'OTG adapter',
   camera: 'Wi-Fi camera',
+  mouse: 'Gaming mouse',
+  keyboard: 'Keyboard and mouse combo',
+  hub: 'USB hub',
 };
 
 export const DEPARTMENT_OF: Record<GadgetType, Department> = {
   earbuds: 'audio',
   neckband: 'audio',
   speaker: 'audio',
+  soundbar: 'audio',
   charger: 'charging',
   'car-charger': 'charging',
   cable: 'charging',
@@ -135,6 +145,9 @@ export const DEPARTMENT_OF: Record<GadgetType, Department> = {
   enclosure: 'storage',
   otg: 'storage',
   camera: 'cameras',
+  mouse: 'computer',
+  keyboard: 'computer',
+  hub: 'computer',
 };
 
 export interface DepartmentInfo {
@@ -152,13 +165,14 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
   audio: {
     path: '/audio',
     name: 'Audio',
-    title: 'boAt and realme earbuds, neckbands and speakers',
+    title: 'boAt and realme earbuds, neckbands, speakers and soundbars',
     badge: 'Sealed, brand warranty',
-    intro: 'Sealed boAt and realme earbuds, neckbands and speakers with the brand warranty. They pair with any phone; pick a colour on the product page.',
+    intro: 'Sealed boAt and realme earbuds, neckbands, speakers and soundbars with the brand warranty. They pair with any phone; pick a colour on the product page.',
     sections: [
       { id: 'earbuds', types: ['earbuds'], heading: 'Earbuds', intro: 'True wireless, with a charging case. Pairs with Android and iPhone.' },
       { id: 'neckband', types: ['neckband'], heading: 'Neckbands', intro: 'All-day battery and clear calls, always round your neck.' },
       { id: 'speakers', types: ['speaker'], heading: 'Bluetooth speakers', intro: 'Portable boAt speakers with big bass, TWS pairing and a splash-proof body.' },
+      { id: 'soundbars', types: ['soundbar'], heading: 'Soundbars', intro: 'Compact boAt Bluetooth soundbars for a desk, a bedside or under the TV, with AUX, USB and TF card too.' },
     ],
   },
   charging: {
@@ -166,10 +180,10 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
     name: 'Chargers & cables',
     title: 'Chargers and data cables',
     badge: 'Sealed, brand warranty',
-    intro: 'Fast chargers and original brand cables. Pick your phone and each product says whether it fits and fast-charges it.',
+    intro: 'Samsung fast chargers and data cables, sealed in the box. Pick your phone and each product says whether it fits and fast-charges it.',
     sections: [
       { id: 'chargers', types: ['charger', 'car-charger'], heading: 'Chargers', intro: 'USB-C fast chargers for the wall and the car. Cables are sold separately.' },
-      { id: 'cables', types: ['cable'], heading: 'Data cables', intro: 'Original cables from the phone brands, sealed, plus our braided cables in two lengths.' },
+      { id: 'cables', types: ['cable'], heading: 'Data cables', intro: 'Samsung charging and data cables, sealed in the box.' },
     ],
   },
   storage: {
@@ -192,6 +206,18 @@ export const DEPARTMENTS: Record<Department, DepartmentInfo> = {
     badge: 'Sealed, brand warranty',
     intro: 'CP Plus pan-and-tilt Wi-Fi cameras for the home and shop, with night vision, two-way talk and the ezyKam+ app.',
     sections: [{ id: 'wifi', types: ['camera'], heading: 'Wi-Fi cameras', intro: 'Plug in, connect to 2.4 GHz Wi-Fi, and watch live from your phone.' }],
+  },
+  computer: {
+    path: '/computer-accessories',
+    name: 'Computer accessories',
+    title: 'Gaming mice, keyboard combos and USB hubs',
+    badge: 'Sealed, brand warranty',
+    intro: 'Ant Esports gaming mice and keyboard combos and a Honeywell USB hub, sealed in the brand box with the brand warranty. They plug into any Windows, Mac or Linux computer.',
+    sections: [
+      { id: 'mice', types: ['mouse'], heading: 'Gaming mice', intro: 'Wired and wireless Ant Esports mice with adjustable DPI and RGB lighting.' },
+      { id: 'keyboards', types: ['keyboard'], heading: 'Keyboard and mouse combos', intro: 'A backlit keyboard and a matching mouse in one box.' },
+      { id: 'hubs', types: ['hub'], heading: 'USB hubs', intro: 'More USB ports for a laptop or PC, no power adapter needed.' },
+    ],
   },
 };
 
@@ -669,7 +695,7 @@ const AUDIO: readonly GadgetEntry[] = [
 ];
 
 /** Speakers, storage and cameras live in gadget-ranges.ts (added 7 Nov 2026; prices from the owner's price sheet). */
-export const GADGETS: readonly GadgetEntry[] = [...AUDIO, ...SPEAKERS, ...STORAGE, ...CAMERAS];
+export const GADGETS: readonly GadgetEntry[] = [...AUDIO, ...SPEAKERS, ...SOUNDBARS, ...CHARGING, ...STORAGE, ...CAMERAS, ...COMPUTER];
 
 /** Price of one option, falling back to the product's. */
 export function optionPrice(entry: GadgetEntry, option: GadgetOption): { priceInr: number; regularInr: number } {

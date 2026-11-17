@@ -9,8 +9,8 @@ import { ACCESSORY_TYPE_LABEL, BUNDLE_SAVING_INR, type AccessoryType } from '@/l
 import { formatInr } from '@/lib/catalog/photos';
 import { getAccessories } from '@/lib/medusa/products';
 
-const TITLE = 'FLAYR and G-TEL screen guards, back films';
-const DESCRIPTION = `FLAYR tempered glass for iPhone, G-TEL 3D glass for Galaxy S and hydrogel back films, made for your phone. ${formatInr(BUNDLE_SAVING_INR)} off each with a cover.`;
+const TITLE = 'Screen guards, lens protectors and back films';
+const DESCRIPTION = `FLAYR and G-TEL screen glass, camera lens protectors for iPhone and Galaxy S, and back films, made for your phone. ${formatInr(BUNDLE_SAVING_INR)} off each with a cover.`;
 const URL_PATH = '/accessories';
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export default async function AccessoriesPage() {
     <div className={PAGE_SHELL}>
       <DepartmentHeader
         trail={[{ name: 'Accessories', href: URL_PATH }]}
-        title="Screen guards and back films"
+        title="Screen guards, lens protectors and back films"
         groups={groups.map((g) => ({ id: g.type, heading: g.heading, count: g.items.length }))}
         warranty="Made for your exact phone"
       />

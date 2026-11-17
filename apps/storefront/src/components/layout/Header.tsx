@@ -32,9 +32,11 @@ function department(id: MobileMenuDepartment['id'], info: DepartmentInfo, note: 
 const MOBILE_DEPARTMENTS: readonly MobileMenuDepartment[] = [
   { id: 'covers', href: '/covers', label: 'Phone cases', note: 'Back covers made for your exact phone', sections: [] },
   department('audio', DEPARTMENTS.audio, 'boAt and realme, sealed in the box'),
+  department('charging', DEPARTMENTS.charging, 'Samsung fast chargers and cables'),
   department('storage', DEPARTMENTS.storage, 'Memory cards, pen drives, SSDs, RAM'),
   department('cameras', DEPARTMENTS.cameras, 'CP Plus Wi-Fi security cameras'),
-  { id: 'protection', href: '/accessories', label: 'Protection', note: 'FLAYR and G-TEL glass, back films', sections: [] },
+  department('computer', DEPARTMENTS.computer, 'Gaming mice, keyboards, USB hubs'),
+  { id: 'protection', href: '/accessories', label: 'Protection', note: 'Screen glass, lens protectors, back films', sections: [] },
 ];
 
 const FOCUS = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand';
