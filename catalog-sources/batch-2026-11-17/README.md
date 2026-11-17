@@ -69,13 +69,15 @@ Prices waiting for the two cables below, by the same rule:
 
 ## Held back, for the owner
 
-- **Apple 20W adapter:** the box prints "Veiulle recycler cette boite" (Apple prints "Veuillez recycler cette boîte") and
-  carries no Indian MRP or importer sticker.
-- **Apple 60W cable:** the sticker reads "REIATED".
-- **Samsung USB-C to USB-C cable EP-DA705BBEGIN:** misprints ("Câble UsB", "Samsung'senvironmental", "e.9. REACH"), and the
-  same serial number on all three barcode labels.
-- **Before these are listed,** confirm they come from Apple's or Samsung's authorised distributor (invoice). Misprinted boxes
-  are a common sign of copies.
+- **Apple 20W adapter, Apple 60W cable and Samsung USB-C to USB-C cable:** added on the owner's request (17 Nov) at ₹1,429,
+  ₹1,819 and ₹279, after these box misprints were pointed out. They go live only with the owner's confirmation that the stock
+  came from an authorised distributor.
+  - Apple 20W: the box prints "Veiulle recycler cette boite" (Apple prints "Veuillez recycler cette boîte") and has no Indian
+    MRP sticker.
+  - Apple 60W cable: its sticker reads "REIATED".
+  - Samsung C-to-C: "Câble UsB", "e.9. REACH", and one serial number on all three labels.
+  - Photos: Apple's official images (store.storeimages.cdn-apple.com: MUVR3, MGTT4, MQKJ3) and Samsung's (EP-DA705), on the
+    teal stage.
 - **boAt portable speaker:** model not identified. Send the label on its base or its box.
 - **Samsung 45W:** its serial sticker says Made in Vietnam while the MRP label says Made in India; listed, worth a look.
 - **"Original" badge:** not set on any product in this batch until the source is confirmed.

@@ -7,12 +7,13 @@
  * is set below Honeywell's own ₹439. Specs are the brands' own published figures or the box print.
  *
  * PHOTOS: the shop's own photos cut off the green backdrop and placed on the teal stage, the brands' official product images
- * (boAt, Samsung, Ant Esports), and only those of the owner's creatives whose box art matches the real box. Creatives with
+ * (boAt, Samsung, Ant Esports, Apple), and only those of the owner's creatives whose box art matches the real box. Creatives with
  * altered box text (Aavante 2.0 150 #1–3, Aavante Bar 490, KM1410, Samsung 45W, Samsung 25W #2–3) are not used.
  *
  * `original` is not set on any of these until the owner confirms they came from the brand or its authorised distributor.
- * Held back until the owner confirms they are genuine (catalog-sources/batch-2026-11-17/README.md): Apple 20W adapter,
- * Apple 60W cable, Samsung USB-C to USB-C cable; and the unidentified boAt speaker.
+ * Apple 20W, Apple 60W cable and Samsung USB-C to USB-C cable: added at the owner's request (17 Nov) after their boxes' misprints
+ * were pointed out; publishing waits on the owner's confirmation that they came from an authorised distributor.
+ * Still held: the unidentified boAt speaker.
  */
 
 import type { GadgetEntry } from './gadgets';
@@ -110,7 +111,7 @@ export const CHARGING: readonly GadgetEntry[] = [
     warrantyMonths: 12,
     ports: ['usb-c'],
     fastFor: ['Apple'],
-    photos: { id: 'apple-40w-dynamic-adapter', gallery: ['Sealed box', '40 W with 60 W max', 'USB-C connection'] },
+    photos: { id: 'apple-40w-dynamic-adapter', gallery: ['Adapter', 'Sealed box', 'Plug side', '40 W with 60 W max', 'USB-C connection'] },
   },
   {
     id: 'samsung-25w-adapter',
@@ -192,6 +193,89 @@ export const CHARGING: readonly GadgetEntry[] = [
     phoneEnd: 'usb-c',
     hostEnd: 'usb-a',
     photos: { id: 'samsung-cable-a-c-white', gallery: ['Sealed box', 'USB-A to USB-C', '1.5 metre length'] },
+  },
+  {
+    id: 'apple-20w-adapter',
+    handle: 'apple-20w-usb-c-power-adapter',
+    title: 'Apple 20W USB-C Power Adapter',
+    type: 'charger',
+    priceInr: 1429,
+    regularInr: 1900,
+    short: '20 W USB-C fast charging, cable sold separately',
+    description:
+      'Apple’s 20 W USB-C wall adapter. It fast-charges an iPhone (iPhone 8 and later) over a USB-C cable, and also charges iPad, AirPods and Apple Watch. The box holds the adapter only: pair it with a USB-C cable, or a USB-C to Lightning cable for older iPhones.',
+    features: ['20 W USB-C fast charging', 'For iPhone, iPad and AirPods', 'One USB-C port'],
+    specs: [
+      { label: 'Output', value: '20 W, USB-C Power Delivery' },
+      { label: 'Port', value: '1 × USB-C' },
+      { label: 'Works with', value: 'iPhone 8 and later, iPad, AirPods, Apple Watch' },
+      { label: 'Cable included', value: 'No' },
+      { label: 'Part number', value: 'MHJD3HN/A' },
+      { label: 'Warranty', value: '1 year from Apple, with our GST invoice' },
+    ],
+    inBox: 'Power adapter. No cable in the box.',
+    optionKind: 'colour',
+    options: [{ slug: 'white', name: 'White', hex: '#f4f4f2' }],
+    warrantyMonths: 12,
+    ports: ['usb-c'],
+    fastFor: ['Apple'],
+    photos: { id: 'apple-20w-adapter', gallery: ['Adapter', 'Sealed box', 'USB-C port', '20 W power adapter'] },
+  },
+  {
+    id: 'apple-60w-usb-c-cable',
+    handle: 'apple-60w-usb-c-charge-cable-1m',
+    title: 'Apple 60W USB-C Charge Cable (1 m)',
+    type: 'cable',
+    priceInr: 1819,
+    regularInr: 1900,
+    short: 'USB-C to USB-C, woven, up to 60 W, 1 m',
+    description:
+      'Apple’s woven USB-C to USB-C cable, 1 m long and rated for up to 60 W. Use it to charge an iPhone 15 or later, iPad, AirPods or MacBook Air from a USB-C adapter, and to sync at USB 2 speed.',
+    features: ['USB-C to USB-C, 1 m', 'Up to 60 W charging', 'Woven design'],
+    specs: [
+      { label: 'Connectors', value: 'USB-C to USB-C' },
+      { label: 'Length', value: '1 m' },
+      { label: 'Charging', value: 'Up to 60 W' },
+      { label: 'Data', value: 'USB 2 speed' },
+      { label: 'Part number', value: 'MW493ZM/A' },
+      { label: 'Warranty', value: '1 year from Apple, with our GST invoice' },
+    ],
+    inBox: 'Cable.',
+    optionKind: 'length',
+    options: [{ slug: '1m', name: '1 m', hex: '#f4f4f2' }],
+    warrantyMonths: 12,
+    phoneEnd: 'usb-c',
+    hostEnd: 'usb-c',
+    fastFor: ['Apple'],
+    photos: { id: 'apple-60w-usb-c-cable', gallery: ['Woven cable', 'Sealed box', 'USB-C at both ends', '60 W charging cable', '1 metre length'] },
+  },
+  {
+    id: 'samsung-cable-c-c-black',
+    handle: 'samsung-usb-c-to-usb-c-cable-1m-black',
+    title: 'Samsung USB-C to USB-C cable, 1 m (black)',
+    type: 'cable',
+    priceInr: 279,
+    regularInr: 599,
+    short: 'USB-C to USB-C, 3 A, 1 m',
+    description:
+      'Samsung’s USB-C to USB-C cable in black, 1 m long and rated for up to 3 A. Pair it with a Samsung 25W adapter for Super Fast Charging, or use it to charge any USB-C phone or earbuds and move files at USB 2.0 speed.',
+    features: ['USB-C to USB-C, 1 m', 'Up to 3 A', 'Charging and data'],
+    specs: [
+      { label: 'Connectors', value: 'USB-C to USB-C' },
+      { label: 'Length', value: '1 m' },
+      { label: 'Current', value: 'Up to 3 A' },
+      { label: 'Data', value: 'USB 2.0' },
+      { label: 'Part number', value: 'EP-DA705BBEGIN' },
+      { label: 'Warranty', value: SAMSUNG_ACCESSORY },
+    ],
+    inBox: 'Cable and leaflet.',
+    optionKind: 'length',
+    options: [{ slug: '1m', name: '1 m', hex: '#1c1c1e' }],
+    warrantyMonths: 6,
+    phoneEnd: 'usb-c',
+    hostEnd: 'usb-c',
+    fastFor: ['Samsung'],
+    photos: { id: 'samsung-cable-c-c-black', gallery: ['Cable', 'Sealed box', 'USB-C at both ends', '1 metre length'] },
   },
 ];
 

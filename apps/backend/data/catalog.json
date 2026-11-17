@@ -5080,6 +5080,105 @@
       ]
     },
     {
+      "handle": "apple-20w-usb-c-power-adapter",
+      "productType": "Charger",
+      "title": "Apple 20W USB-C Power Adapter",
+      "description": "Apple’s 20 W USB-C wall adapter. It fast-charges an iPhone (iPhone 8 and later) over a USB-C cable, and also charges iPad, AirPods and Apple Watch. The box holds the adapter only: pair it with a USB-C cable, or a USB-C to Lightning cable for older iPhones.",
+      "imagePath": "/products/photos/gadgets/apple-20w-adapter/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "apple-20w-adapter",
+        "gadget_type": "charger",
+        "department": "charging",
+        "regular_inr": 1900,
+        "detail_in_box": "Power adapter. No cable in the box.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "CHG-APPLE20WADAPTER-WHITE",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "white",
+            "name": "White"
+          },
+          "priceInr": 1429,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "apple-60w-usb-c-charge-cable-1m",
+      "productType": "Data cable",
+      "title": "Apple 60W USB-C Charge Cable (1 m)",
+      "description": "Apple’s woven USB-C to USB-C cable, 1 m long and rated for up to 60 W. Use it to charge an iPhone 15 or later, iPad, AirPods or MacBook Air from a USB-C adapter, and to sync at USB 2 speed.",
+      "imagePath": "/products/photos/gadgets/apple-60w-usb-c-cable/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "apple-60w-usb-c-cable",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 1900,
+        "detail_in_box": "Cable.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "CHG-APPLE60WUSBCCABLE-1M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "1m",
+            "name": "1 m"
+          },
+          "priceInr": 1819,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "handle": "samsung-usb-c-to-usb-c-cable-1m-black",
+      "productType": "Data cable",
+      "title": "Samsung USB-C to USB-C cable, 1 m (black)",
+      "description": "Samsung’s USB-C to USB-C cable in black, 1 m long and rated for up to 3 A. Pair it with a Samsung 25W adapter for Super Fast Charging, or use it to charge any USB-C phone or earbuds and move files at USB 2.0 speed.",
+      "imagePath": "/products/photos/gadgets/samsung-cable-c-c-black/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "samsung-cable-c-c-black",
+        "gadget_type": "cable",
+        "department": "charging",
+        "regular_inr": 599,
+        "detail_in_box": "Cable and leaflet.",
+        "warranty_months": 6
+      },
+      "variants": [
+        {
+          "sku": "CHG-SAMSUNGCABLECCBLACK-1M",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Length",
+            "slug": "1m",
+            "name": "1 m"
+          },
+          "priceInr": 279,
+          "stock": 15
+        }
+      ]
+    },
+    {
       "handle": "sandisk-cruzer-blade-usb-pen-drive",
       "productType": "Pen drive",
       "title": "SanDisk Cruzer Blade USB pen drive",
