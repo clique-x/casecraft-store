@@ -13,7 +13,10 @@
  * `original` is not set on any of these until the owner confirms they came from the brand or its authorised distributor.
  * Apple 20W, Apple 60W cable and Samsung USB-C to USB-C cable: added at the owner's request (17 Nov) after their boxes' misprints
  * were pointed out; publishing waits on the owner's confirmation that they came from an authorised distributor.
- * Still held: the unidentified boAt speaker.
+ *
+ * The boAt speaker that came in the batch without a name is the Stone Arc Pro Plus (carry handle, light strip and side
+ * button panel match boAt's own images; the owner named it on 18 Nov). boAt rates it at 45 W, so it is listed as 45 W.
+ * Its price is the owner's rule for it: ₹200 below the online price (Flipkart ₹3,699 on 18 Nov; boAt's own site ₹3,999).
  */
 
 import type { GadgetEntry } from './gadgets';
@@ -21,6 +24,52 @@ import type { GadgetEntry } from './gadgets';
 const BOAT_YEAR = '1 year from boAt, with our GST invoice';
 const ANT_YEAR = '1 year from Ant Esports, with our GST invoice';
 const SAMSUNG_ACCESSORY = '6 months, exchanged at Samsung service centres, with our GST invoice';
+
+export const MORE_SPEAKERS: readonly GadgetEntry[] = [
+  {
+    id: 'boat-stone-arc-pro-plus',
+    handle: 'boat-stone-arc-pro-plus',
+    title: 'boAt Stone Arc Pro Plus',
+    type: 'speaker',
+    priceInr: 3499,
+    regularInr: 10990,
+    short: '45 W speaker with RGB lights, 12 h playback, IPX5',
+    description:
+      "boAt's Stone Arc Pro Plus is a 45 W portable speaker with two 78 mm drivers, boAt Spatial Audio and an RGB light strip with four modes. It plays for up to 12 hours on a charge, connects over Bluetooth 5.3 or an AUX cable, links with other Stone Arc Pro Plus speakers in Broadcast mode, takes calls through its built-in mic and is IPX5 splash resistant, with a carry handle on top.",
+    features: ['45 W, two 78 mm drivers', 'Up to 12 h playback', 'RGB lights, IPX5'],
+    specs: [
+      { label: 'Output', value: '45 W, boAt Signature Sound' },
+      { label: 'Drivers', value: 'Two 78 mm' },
+      { label: 'Spatial audio', value: 'boAt Spatial Audio' },
+      { label: 'Playback', value: 'Up to 12 h per charge' },
+      { label: 'Charging', value: 'USB-C, about 4.3 h' },
+      { label: 'Connectivity', value: 'Bluetooth 5.3, AUX' },
+      { label: 'Broadcast mode', value: 'Links several Stone Arc Pro Plus speakers' },
+      { label: 'Lights', value: 'RGB LEDs, 4 modes' },
+      { label: 'Calls', value: 'Built-in mic' },
+      { label: 'Water resistance', value: 'IPX5' },
+      { label: 'Size', value: '300 × 121.5 × 97 mm' },
+      { label: 'Warranty', value: BOAT_YEAR },
+    ],
+    inBox: 'Speaker, USB-C charging cable, AUX cable, user manual and warranty card.',
+    optionKind: 'colour',
+    options: [{ slug: 'raging-black', name: 'Raging Black', hex: '#1c1d21' }],
+    warrantyMonths: 12,
+    photos: {
+      id: 'boat-stone-arc-pro-plus',
+      gallery: [
+        'Raging Black',
+        'RGB light on',
+        'Side controls',
+        '45 W boAt Signature Sound',
+        'RGB lights with 4 LED modes',
+        '12 hours of playback',
+        'Bluetooth 5.3, AUX, mic and IPX5',
+        'boAt Spatial Audio',
+      ],
+    },
+  },
+];
 
 export const SOUNDBARS: readonly GadgetEntry[] = [
   {

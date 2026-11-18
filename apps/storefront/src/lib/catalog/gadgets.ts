@@ -12,7 +12,7 @@
  * is shown. Change them here; the backend catalogue is regenerated with `pnpm catalog:export`.
  */
 
-import { CHARGING, COMPUTER, LAPTOPS, SOUNDBARS } from './gadget-additions';
+import { CHARGING, COMPUTER, LAPTOPS, MORE_SPEAKERS, SOUNDBARS } from './gadget-additions';
 import { CAMERAS, SPEAKERS, STORAGE } from './gadget-ranges';
 
 export type Department = 'audio' | 'charging' | 'storage' | 'cameras' | 'computer' | 'laptops';
@@ -710,7 +710,7 @@ const AUDIO: readonly GadgetEntry[] = [
 ];
 
 /** Speakers, storage and cameras live in gadget-ranges.ts (added 7 Nov 2026; prices from the owner's price sheet). */
-export const GADGETS: readonly GadgetEntry[] = [...AUDIO, ...SPEAKERS, ...SOUNDBARS, ...CHARGING, ...STORAGE, ...CAMERAS, ...LAPTOPS, ...COMPUTER];
+export const GADGETS: readonly GadgetEntry[] = [...AUDIO, ...SPEAKERS, ...MORE_SPEAKERS, ...SOUNDBARS, ...CHARGING, ...STORAGE, ...CAMERAS, ...LAPTOPS, ...COMPUTER];
 
 /** Price of one option, falling back to the product's. */
 export function optionPrice(entry: GadgetEntry, option: GadgetOption): { priceInr: number; regularInr: number } {

@@ -4988,6 +4988,39 @@
       ]
     },
     {
+      "handle": "boat-stone-arc-pro-plus",
+      "productType": "Bluetooth speaker",
+      "title": "boAt Stone Arc Pro Plus",
+      "description": "boAt's Stone Arc Pro Plus is a 45 W portable speaker with two 78 mm drivers, boAt Spatial Audio and an RGB light strip with four modes. It plays for up to 12 hours on a charge, connects over Bluetooth 5.3 or an AUX cable, links with other Stone Arc Pro Plus speakers in Broadcast mode, takes calls through its built-in mic and is IPX5 splash resistant, with a carry handle on top.",
+      "imagePath": "/products/photos/gadgets/boat-stone-arc-pro-plus/card-0-720.webp",
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "gadget",
+        "gadget_id": "boat-stone-arc-pro-plus",
+        "gadget_type": "speaker",
+        "department": "audio",
+        "regular_inr": 10990,
+        "detail_in_box": "Speaker, USB-C charging cable, AUX cable, user manual and warranty card.",
+        "warranty_months": 12
+      },
+      "variants": [
+        {
+          "sku": "AUD-BOATSTONEARCPROPLUS-RAGING-BLACK",
+          "modelSlug": null,
+          "caseType": null,
+          "option": {
+            "title": "Colour",
+            "slug": "raging-black",
+            "name": "Raging Black"
+          },
+          "priceInr": 3499,
+          "stock": 15
+        }
+      ]
+    },
+    {
       "handle": "boat-aavante-2-0-150",
       "productType": "Bluetooth soundbar",
       "title": "boAt Aavante 2.0 150",
