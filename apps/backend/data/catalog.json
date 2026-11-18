@@ -3982,6 +3982,112 @@
       ]
     },
     {
+      "handle": "hydrogel-full-back-film-galaxy-s",
+      "productType": "Back film",
+      "title": "Hydrogel full back film for Galaxy S",
+      "description": "A 0.15 mm hydrogel film that wraps the whole back of your Galaxy, with flaps that fold over the sides, so the back and frame stay free of scratches without adding bulk. It is a back film, not a screen protector. Each sheet is cut for one Galaxy S model, with the cameras cut out: pick yours and we send that sheet.",
+      "imagePath": null,
+      "collections": [],
+      "category": null,
+      "tags": [],
+      "metadata": {
+        "kind": "accessory",
+        "accessory_id": "hydrogel-back-film-galaxy-s",
+        "accessory_type": "back-film",
+        "regular_inr": 250,
+        "detail_material": "Hydrogel film, 0.15 mm.",
+        "detail_in_box": "One back film sheet cut for the Galaxy you pick.",
+        "detail_fit": "Back and sides of the Galaxy S24, S25 and S26 ranges: the standard, Plus, Ultra, FE and Edge models. Not for the front screen.",
+        "detail_care": "Fit it on a clean, dry phone and press out bubbles from the centre. Clean with a dry microfibre cloth."
+      },
+      "variants": [
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS24",
+          "modelSlug": "galaxy-s24",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS24P",
+          "modelSlug": "galaxy-s24-plus",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS24U",
+          "modelSlug": "galaxy-s24-ultra",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS24F",
+          "modelSlug": "galaxy-s24-fe",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS25",
+          "modelSlug": "galaxy-s25",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS25P",
+          "modelSlug": "galaxy-s25-plus",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS25U",
+          "modelSlug": "galaxy-s25-ultra",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS25E",
+          "modelSlug": "galaxy-s25-edge",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS25F",
+          "modelSlug": "galaxy-s25-fe",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS26",
+          "modelSlug": "galaxy-s26",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS26P",
+          "modelSlug": "galaxy-s26-plus",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        },
+        {
+          "sku": "ACC-HYDBACFILGALS-GAS26U",
+          "modelSlug": "galaxy-s26-ultra",
+          "caseType": null,
+          "priceInr": 250,
+          "stock": 25
+        }
+      ]
+    },
+    {
       "handle": "iphone-camera-lens-protector",
       "productType": "Camera lens protector",
       "title": "Jing Yuan camera lens protector for iPhone",

@@ -145,6 +145,34 @@ export const ACCESSORIES: readonly AccessoryEntry[] = [
     ],
     photos: { gallery: ['Back film sheet', 'In the pack', 'Thin and flexible'] },
   },
+  // The same film for the Galaxy S24, S25 and S26 ranges (18 Nov 2026), on the owner's request and at the iPhone film's
+  // price. The first photo is the owner's picture of the "for SAM" sheet on the teal stage; the next two are the owner's
+  // creatives, whose wording matches the print on the sheet; the last is the film itself, shared with the iPhone listing.
+  {
+    id: 'hydrogel-back-film-galaxy-s',
+    handle: 'hydrogel-full-back-film-galaxy-s',
+    title: 'Hydrogel full back film for Galaxy S',
+    type: 'back-film',
+    finish: 'clear',
+    priceInr: 250,
+    regularInr: 250,
+    short: 'Full back and side wrap, Galaxy S24 to S26 Ultra',
+    description:
+      'A 0.15 mm hydrogel film that wraps the whole back of your Galaxy, with flaps that fold over the sides, so the back and frame stay free of scratches without adding bulk. It is a back film, not a screen protector. Each sheet is cut for one Galaxy S model, with the cameras cut out: pick yours and we send that sheet.',
+    features: ['Full back with side flaps', 'Thin 0.15 mm hydrogel', 'Galaxy S24 to S26 Ultra'],
+    details: {
+      material: 'Hydrogel film, 0.15 mm.',
+      inBox: 'One back film sheet cut for the Galaxy you pick.',
+      fit: 'Back and sides of the Galaxy S24, S25 and S26 ranges: the standard, Plus, Ultra, FE and Edge models. Not for the front screen.',
+      care: 'Fit it on a clean, dry phone and press out bubbles from the centre. Clean with a dry microfibre cloth.',
+    },
+    models: [
+      'galaxy-s24', 'galaxy-s24-plus', 'galaxy-s24-ultra', 'galaxy-s24-fe',
+      'galaxy-s25', 'galaxy-s25-plus', 'galaxy-s25-ultra', 'galaxy-s25-edge', 'galaxy-s25-fe',
+      'galaxy-s26', 'galaxy-s26-plus', 'galaxy-s26-ultra',
+    ],
+    photos: { gallery: ['Back film sheet', 'Film and backing sheet', 'What it offers', 'Thin and flexible'] },
+  },
   // Camera lens protectors (17 Nov 2026): one listing per pack design, sold per phone model. Every model has its own pack,
   // labelled with that model; the first photo is the pack design without a model name, the second a real pack.
   {

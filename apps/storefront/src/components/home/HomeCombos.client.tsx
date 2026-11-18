@@ -49,7 +49,7 @@ const ROLE_TAG: Record<Role, string> = { glass: 'Glass', film: 'Back film', lens
 /** Shown under the name until a phone is picked and the exact product is known. */
 const ROLE_HINT: Record<Role, string> = {
   glass: 'Tempered glass cut for your phone',
-  film: 'Hydrogel film, for iPhone 12 to 18 Pro',
+  film: 'Hydrogel film, for iPhone and Galaxy S',
   lens: 'Guards the camera lenses',
 };
 

@@ -150,6 +150,7 @@ const GUARD_PHOTO: Readonly<Record<string, number>> = {
   'flayr-borderless-iphone': 0,
   'gtel-fingerprint-s': 1,
   'hydrogel-back-film': 2,
+  'hydrogel-back-film-galaxy-s': 0,
   'lens-rings-iphone': 0,
   'lens-rings-iphone-pro': 0,
   'lens-rings-galaxy-s': 0,
