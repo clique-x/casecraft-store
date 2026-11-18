@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Plus } from 'lucide-react';
 import { formatInr } from '@/lib/catalog/photos';
 import { useMediaQuery } from '@/lib/device/use-media-query';
 import { useReducedMotion } from '@/lib/device/use-reduced-motion';
@@ -31,19 +31,39 @@ export interface ExploreDepartment {
   ranges: ExploreRange[];
 }
 
-/** How long each range's picture stays before the next one takes its place (ms). */
-const TURN_MS = 3200;
+/** One size hint for every picture of a range, so the round frame and the big picture share a download. */
+const SIZES = '(min-width: 80rem) 368px, (min-width: 64rem) 30vw, (min-width: 40rem) 44vw, 80vw';
+/** How often the pictures move on (ms). A panel changes on every second beat, and its neighbours on the beats between. */
+const BEAT_MS = 2400;
+/**
+ * How many closed panels' worth of the row the open panel takes; the same number as in its class, xl:grow-[5.6].
+ * It leaves the open panel room for its text and its picture side by side from 1280px up.
+ */
+const OPEN_GROW = 5.6;
+/** The gap between panels in rem; the same as the list's gap-3. */
+const GAP_REM = 0.75;
 /** The studio set's own teal, so photos shot on it sit in the panel without an edge. */
 const SURFACE = 'bg-[radial-gradient(130%_120%_at_70%_25%,#0b5364_0%,#06323c_46%,#021a20_100%)]';
 
-function Panel({ department, on, desktop, tick, onOpen }: { department: ExploreDepartment; on: boolean; desktop: boolean; tick: number; onOpen: () => void }) {
+interface PanelProps {
+  department: ExploreDepartment;
+  index: number;
+  on: boolean;
+  /** The row layout (xl and up), where a closed panel is a single button. */
+  row: boolean;
+  beat: number;
+  onOpen: () => void;
+}
+
+function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
   const { ranges } = department;
-  // The range under the pointer or with focus holds its picture; otherwise the ranges take turns.
+  // The range under the pointer or with focus holds its picture; otherwise the ranges take turns. Counting in
+  // twos, offset by the panel's place, keeps the row from changing all at once.
   const [held, setHeld] = useState<number | null>(null);
-  const shown = held ?? tick % ranges.length;
+  const shown = held ?? Math.floor((beat + index) / 2) % ranges.length;
   const fromInr = Math.min(...ranges.map((r) => r.fromInr));
-  // On a desktop a closed panel is a single button; its links must not take focus from behind it.
-  const closed = desktop && !on;
+  // In the row a closed panel is a single button; its links must not take focus from behind it.
+  const closed = row && !on;
 
   return (
     <li
@@ -51,35 +71,35 @@ function Panel({ department, on, desktop, tick, onOpen }: { department: ExploreD
       onPointerEnter={(e) => e.pointerType === 'mouse' && onOpen()}
       onPointerLeave={() => setHeld(null)}
       className={cn(
-        'group/panel relative isolate flex w-[80%] shrink-0 snap-start flex-col overflow-hidden rounded-[1.25rem] text-white shadow-[0_18px_40px_-28px_rgba(0,22,25,.6)] sm:w-[44%]',
-        // Desktop: the panels share the row, and the open one takes most of it.
-        'lg:w-auto lg:min-w-0 lg:shrink lg:basis-0 lg:transition-[flex-grow] lg:duration-[550ms] lg:ease-out-expo motion-reduce:lg:transition-none',
-        on ? 'lg:grow-[4.6]' : 'lg:grow',
+        'group/panel relative isolate flex w-[80%] shrink-0 snap-start flex-col overflow-hidden rounded-[1.25rem] text-white shadow-[0_18px_40px_-28px_rgba(0,22,25,.6)] sm:w-[44%] lg:w-[30%]',
+        // The row: the panels share it, and the open one takes most of it. --win is the big picture's window.
+        'xl:w-auto xl:min-w-0 xl:shrink xl:basis-0 xl:transition-[flex-grow] xl:duration-[550ms] xl:ease-out-expo xl:[--win:19rem] min-[90rem]:[--win:23rem] motion-reduce:xl:transition-none',
+        on ? 'xl:grow-[5.6]' : 'xl:grow',
         SURFACE,
       )}
     >
       {/*
-        The picture. On a desktop it is a square as tall as the panel, centred in a window that is the panel's
-        width until the panel is wider than the square: as the panel opens, the window only uncovers more of the
-        same picture, so nothing resizes on the way. On phones the square is faded at its sides and foot, where
-        a studio photo's own backdrop would otherwise end in an edge against the card.
+        The big picture. In the row it is a square as tall as the panel, in a window at the panel's right edge, and
+        shows only while the panel is open: a closed panel is too narrow for it and would show a strip. It keeps
+        its size as the panel opens. A studio photo's own backdrop would end in an edge against the panel, so the
+        window fades in from its left in the row, and on cards the square is faded at its sides and foot.
       */}
-      <div className="relative h-40 shrink-0 overflow-hidden [mask-image:linear-gradient(to_bottom,black_60%,transparent)] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[min(100%,23rem)] lg:[mask-image:none]">
-        <div className="absolute -top-[12%] left-1/2 aspect-square h-[130%] -translate-x-1/2 [mask-image:linear-gradient(to_right,transparent,black_24%,black_76%,transparent)] lg:top-0 lg:h-full lg:[mask-image:none]">
+      <div className="relative h-40 shrink-0 overflow-hidden [mask-image:linear-gradient(to_bottom,black_60%,transparent)] xl:absolute xl:inset-y-0 xl:right-0 xl:h-auto xl:w-(--win) xl:opacity-0 xl:transition-opacity xl:duration-500 xl:[mask-image:linear-gradient(to_right,transparent,black_2.75rem)] xl:group-data-[open=true]/panel:opacity-100">
+        <div className="absolute -top-[12%] left-1/2 aspect-square h-[130%] -translate-x-1/2 [mask-image:linear-gradient(to_right,transparent,black_24%,black_76%,transparent)] xl:top-0 xl:h-full xl:[mask-image:none]">
           {ranges.map((r, k) => (
             // eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer
             <img
               key={r.label}
               src={r.image}
               srcSet={r.imageSet}
-              sizes="(min-width: 64rem) 368px, 80vw"
+              sizes={SIZES}
               alt={k === shown ? r.alt : ''}
               loading="lazy"
               decoding="async"
               draggable={false}
               className={cn(
                 'absolute inset-0 size-full transition-opacity duration-700 ease-out',
-                r.cutout ? 'object-contain p-[18%] drop-shadow-[0_18px_22px_rgba(0,0,0,.5)] lg:p-[20%]' : 'object-cover',
+                r.cutout ? 'object-contain p-[18%] drop-shadow-[0_18px_22px_rgba(0,0,0,.5)] xl:p-[20%]' : 'object-cover',
                 k === shown ? 'opacity-100' : 'opacity-0',
               )}
             />
@@ -87,15 +107,10 @@ function Panel({ department, on, desktop, tick, onOpen }: { department: ExploreD
         </div>
       </div>
       {/*
-        Desktop, open: one flat ground under the text that runs on over the picture's near half and fades out
-        there, so there is no line where the picture begins.
+        The row, closed: the panel is one button that opens it, with the whole product in a round frame, the
+        department and its lowest price. Its face is exactly as wide as a closed panel (--bar) and anchored left,
+        so the frame is the same size and in the same place in every panel, and stays put while one opens.
       */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 z-[5] hidden w-[calc(100%-11.5rem)] bg-[linear-gradient(to_right,#06323c_0%,#06323c_calc(100%-12.5rem),transparent_100%)] opacity-0 transition-opacity duration-500 group-data-[open=true]/panel:opacity-100 lg:block"
-      />
-
-      {/* Desktop, closed: the whole panel is one button that opens it. */}
       <button
         type="button"
         aria-expanded={on}
@@ -103,35 +118,61 @@ function Panel({ department, on, desktop, tick, onOpen }: { department: ExploreD
         onClick={onOpen}
         onFocus={onOpen}
         className={cn(
-          'absolute inset-0 z-20 hidden cursor-pointer flex-col justify-end bg-gradient-to-t from-black/75 via-black/15 to-transparent p-4 text-left outline-none transition-opacity duration-300 focus-visible:ring-2 focus-visible:ring-gh-mint focus-visible:ring-inset lg:flex',
+          'absolute inset-0 z-20 hidden cursor-pointer bg-gradient-to-t from-black/35 to-transparent to-55% outline-none transition-opacity duration-300 focus-visible:ring-2 focus-visible:ring-gh-mint focus-visible:ring-inset xl:block',
           on ? 'pointer-events-none opacity-0' : 'opacity-100 delay-150',
         )}
       >
-        <span className="block text-[0.9375rem] leading-tight font-bold">{department.name}</span>
-        <span className="mt-1 block text-caption text-white/70 tabular-nums">from {formatInr(fromInr)}</span>
+        <span className="flex h-full w-(--bar) flex-col items-center pt-[4.25rem] pb-4 text-center">
+          <span className="relative block aspect-square w-[76%] shrink-0 overflow-hidden rounded-full bg-[radial-gradient(closest-side,#10707f_0%,#07404c_100%)] shadow-[0_16px_32px_-14px_rgba(0,0,0,.75)] ring-1 ring-white/20 transition-shadow duration-300 group-hover/panel:ring-white/45">
+            {ranges.map((r, k) => (
+              // eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer
+              <img
+                key={r.label}
+                src={r.image}
+                srcSet={r.imageSet}
+                // The big picture's size hint, so the two share one download.
+                sizes={SIZES}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className={cn(
+                  'absolute inset-0 size-full transition-opacity duration-700 ease-out',
+                  r.cutout ? 'object-contain p-[15%]' : 'scale-[1.16] object-cover',
+                  k === shown ? 'opacity-100' : 'opacity-0',
+                )}
+              />
+            ))}
+          </span>
+          <span className="mt-4 block px-2 text-[0.875rem] leading-tight font-bold text-balance min-[90rem]:text-[0.9375rem]">{department.name}</span>
+          <span className="mt-1 block px-2 text-caption text-white/65 tabular-nums">from {formatInr(fromInr)}</span>
+          <span aria-hidden="true" className="mt-auto grid size-7 place-items-center rounded-full border border-white/25 text-white/70 transition-colors duration-300 group-hover/panel:border-white/60 group-hover/panel:text-white">
+            <Plus className="size-3.5" strokeWidth={2} />
+          </span>
+        </span>
       </button>
 
-      {/* The department and its ranges. A fixed width on a desktop, so the text never re-wraps as the panel moves. */}
+      {/* The department and its ranges. A fixed width in the row, so the text never re-wraps as the panel moves. */}
       <div
         inert={closed}
         className={cn(
-          'relative z-10 flex flex-1 flex-col px-4 pt-1 pb-4 lg:absolute lg:inset-y-0 lg:left-0 lg:w-[19.5rem] lg:p-6 lg:transition-opacity lg:duration-300',
-          on ? 'lg:opacity-100 lg:delay-200' : 'lg:opacity-0',
+          'relative z-10 flex flex-1 flex-col px-4 pt-1 pb-4 xl:absolute xl:inset-y-0 xl:left-0 xl:w-[18.5rem] xl:p-6 xl:transition-opacity xl:duration-300 min-[90rem]:w-[19.5rem]',
+          on ? 'xl:opacity-100 xl:delay-200' : 'xl:opacity-0',
         )}
       >
         <div className="flex items-start justify-between gap-3">
-          <h4 className="text-xl leading-tight font-bold tracking-[-0.02em] lg:text-[1.625rem]">{department.name}</h4>
+          <h4 className="text-xl leading-tight font-bold tracking-[-0.02em] xl:text-[1.625rem]">{department.name}</h4>
           <Link
             href={department.href}
             aria-label={`All ${department.name.toLowerCase()}`}
-            className="grid size-9 shrink-0 place-items-center rounded-full border border-white/40 outline-none transition-colors hover:border-white hover:bg-white hover:text-gh-teal focus-visible:ring-2 focus-visible:ring-gh-mint lg:size-10"
+            className="grid size-9 shrink-0 place-items-center rounded-full border border-white/40 outline-none transition-colors hover:border-white hover:bg-white hover:text-gh-teal focus-visible:ring-2 focus-visible:ring-gh-mint xl:size-10"
           >
             <ArrowUpRight className="size-4" strokeWidth={1.75} aria-hidden="true" />
           </Link>
         </div>
-        <p className="mt-1 text-[0.8125rem] leading-snug text-white/70 lg:mt-2">{department.blurb}</p>
+        <p className="mt-1 text-[0.8125rem] leading-snug text-white/70 xl:mt-2">{department.blurb}</p>
 
-        <ul className="mt-3 lg:mt-auto">
+        <ul className="mt-3 xl:mt-auto">
           {ranges.map((r, k) => (
             <li key={r.label}>
               <Link
@@ -159,20 +200,20 @@ function Panel({ department, on, desktop, tick, onOpen }: { department: ExploreD
 }
 
 /**
- * "More to explore": every other department as a panel. On a desktop the panels stand in one row and the one
- * under the pointer opens to show its ranges, each a link with its lowest price; on phones and tablets they are
- * cards to swipe through, all open. In an open panel the picture changes to each range in turn, and to a range
- * as the pointer reaches it.
+ * "More to explore": every other department as a panel. From xl up the panels stand in one row: the one under
+ * the pointer is open and lists its ranges, each a link with its lowest price, and the others show their product
+ * whole in a round frame. Below xl they are cards to swipe through, all open. The pictures change to each range
+ * in turn, and in an open panel to a range as the pointer reaches it.
  *
- * Opening a panel animates only flex-grow; the text and the picture keep their size throughout, so the row
- * moves without re-wrapping or rescaling anything.
+ * Opening a panel animates only flex-grow; the text, the big picture and the round frames keep their size and
+ * place throughout, so the row moves without re-wrapping or rescaling anything.
  */
 export function DepartmentExplorer({ departments }: { departments: ExploreDepartment[] }) {
   const root = useRef<HTMLDivElement>(null);
-  const desktop = useMediaQuery('(min-width: 1024px)');
+  const row = useMediaQuery('(min-width: 1280px)');
   const reduced = useReducedMotion();
   const [open, setOpen] = useState(0);
-  const [tick, setTick] = useState(0);
+  const [beat, setBeat] = useState(0);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
@@ -185,11 +226,15 @@ export function DepartmentExplorer({ departments }: { departments: ExploreDepart
 
   useEffect(() => {
     if (reduced || !inView) return;
-    const timer = window.setInterval(() => setTick((t) => t + 1), TURN_MS);
+    const timer = window.setInterval(() => setBeat((t) => t + 1), BEAT_MS);
     return () => window.clearInterval(timer);
   }, [reduced, inView]);
 
   if (departments.length === 0) return null;
+  const n = departments.length;
+  // A closed panel's width in the row: the list's width less the gaps, shared between the closed panels and the
+  // open one. The list is a size container (xl), so 100cqw is its width wherever --bar is used inside it.
+  const bar = `calc((100cqw - ${(n - 1) * GAP_REM}rem) / ${n - 1 + OPEN_GROW})`;
   return (
     <div ref={root} className="mt-8 lg:mt-10">
       <div className="flex items-baseline justify-between gap-4">
@@ -198,10 +243,11 @@ export function DepartmentExplorer({ departments }: { departments: ExploreDepart
       </div>
       <ul
         aria-label="Shop by department"
-        className="-mx-4 mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:mx-0 lg:h-[23rem] lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
+        style={{ '--bar': bar } as CSSProperties}
+        className="-mx-4 mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:-mx-10 lg:scroll-px-10 lg:px-10 xl:mx-0 xl:h-[23rem] xl:overflow-visible xl:px-0 xl:pb-0 xl:[container-type:inline-size] [&::-webkit-scrollbar]:hidden"
       >
         {departments.map((d, i) => (
-          <Panel key={d.key} department={d} on={open === i} desktop={desktop} tick={tick} onOpen={() => setOpen(i)} />
+          <Panel key={d.key} department={d} index={i} on={open === i} row={row} beat={beat} onOpen={() => setOpen(i)} />
         ))}
       </ul>
     </div>

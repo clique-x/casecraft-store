@@ -169,7 +169,8 @@ const EXPLORE: readonly {
   },
   {
     department: 'laptops',
-    blurb: 'Refurbished Dell Latitudes with a 6-month shop warranty.',
+    // A non-breaking hyphen, so "6-month" stays on one line.
+    blurb: 'Refurbished Dell Latitudes with a 6\u2011month shop warranty.',
     ranges: [{ label: 'Dell Latitude', href: '/laptops', types: ['laptop'], pick: 'dell-latitude-7490' }],
   },
   {
