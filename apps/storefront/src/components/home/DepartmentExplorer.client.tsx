@@ -71,7 +71,7 @@ function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
       onPointerEnter={(e) => e.pointerType === 'mouse' && onOpen()}
       onPointerLeave={() => setHeld(null)}
       className={cn(
-        'group/panel relative isolate flex w-[80%] shrink-0 snap-start flex-col overflow-hidden rounded-[1.25rem] text-white shadow-[0_18px_40px_-28px_rgba(0,22,25,.6)] sm:w-[44%] lg:w-[30%]',
+        'group/panel relative isolate flex w-[88%] shrink-0 snap-start flex-col overflow-hidden rounded-[1.25rem] text-white shadow-[0_18px_40px_-28px_rgba(0,22,25,.6)] max-xl:[container-type:inline-size] min-[360px]:w-[80%] sm:w-[44%] lg:w-[30%]',
         // The row: the panels share it, and the open one takes most of it. --win is the big picture's window.
         'xl:w-auto xl:min-w-0 xl:shrink xl:basis-0 xl:transition-[flex-grow] xl:duration-[550ms] xl:ease-out-expo xl:[--win:19rem] min-[90rem]:[--win:23rem] motion-reduce:xl:transition-none',
         on ? 'xl:grow-[5.6]' : 'xl:grow',
@@ -79,13 +79,19 @@ function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
       )}
     >
       {/*
-        The big picture. In the row it is a square as tall as the panel, in a window at the panel's right edge, and
-        shows only while the panel is open: a closed panel is too narrow for it and would show a strip. It keeps
-        its size as the panel opens. A studio photo's own backdrop would end in an edge against the panel, so the
-        window fades in from its left in the row, and on cards the square is faded at its sides and foot.
+        The big picture: a square that always shows the whole photo, so no product is cut off.
+
+        On cards its box takes the height the text leaves, so a department with one range shows its product
+        larger than one with four; the square is as tall as that box, but never wider than the card (the card
+        is a size container below xl, and 100cqw its width). A studio photo is faded at its sides and foot,
+        where its own backdrop would otherwise end in an edge against the card.
+
+        In the row the square is as tall as the panel, in a window at the panel's right edge that fades in from
+        its left. It shows only while the panel is open (a closed panel is too narrow for it and would show a
+        strip) and keeps its size as the panel opens.
       */}
-      <div className="relative h-40 shrink-0 overflow-hidden [mask-image:linear-gradient(to_bottom,black_60%,transparent)] xl:absolute xl:inset-y-0 xl:right-0 xl:h-auto xl:w-(--win) xl:opacity-0 xl:transition-opacity xl:duration-500 xl:[mask-image:linear-gradient(to_right,transparent,black_2.75rem)] xl:group-data-[open=true]/panel:opacity-100">
-        <div className="absolute -top-[12%] left-1/2 aspect-square h-[130%] -translate-x-1/2 [mask-image:linear-gradient(to_right,transparent,black_24%,black_76%,transparent)] xl:top-0 xl:h-full xl:[mask-image:none]">
+      <div className="relative min-h-40 flex-1 overflow-hidden xl:absolute xl:inset-y-0 xl:right-0 xl:w-(--win) xl:opacity-0 xl:transition-opacity xl:duration-500 xl:[mask-image:linear-gradient(to_right,transparent,black_2.75rem)] xl:group-data-[open=true]/panel:opacity-100">
+        <div className="absolute top-0 left-1/2 aspect-square h-full max-h-[100cqw] -translate-x-1/2 xl:max-h-none">
           {ranges.map((r, k) => (
             // eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer
             <img
@@ -99,7 +105,9 @@ function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
               draggable={false}
               className={cn(
                 'absolute inset-0 size-full transition-opacity duration-700 ease-out',
-                r.cutout ? 'object-contain p-[18%] drop-shadow-[0_18px_22px_rgba(0,0,0,.5)] xl:p-[20%]' : 'object-cover',
+                r.cutout
+                  ? 'object-contain p-[13%] drop-shadow-[0_18px_22px_rgba(0,0,0,.5)] xl:p-[20%]'
+                  : 'object-cover [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_14%,black_86%,transparent),linear-gradient(to_bottom,black_72%,transparent)] xl:[mask-image:none]',
                 k === shown ? 'opacity-100' : 'opacity-0',
               )}
             />
@@ -156,7 +164,7 @@ function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
       <div
         inert={closed}
         className={cn(
-          'relative z-10 flex flex-1 flex-col px-4 pt-1 pb-4 xl:absolute xl:inset-y-0 xl:left-0 xl:w-[18.5rem] xl:p-6 xl:transition-opacity xl:duration-300 min-[90rem]:w-[19.5rem]',
+          'relative z-10 flex shrink-0 flex-col px-4 pt-1 pb-4 xl:absolute xl:inset-y-0 xl:left-0 xl:w-[18.5rem] xl:p-6 xl:transition-opacity xl:duration-300 min-[90rem]:w-[19.5rem]',
           on ? 'xl:opacity-100 xl:delay-200' : 'xl:opacity-0',
         )}
       >
@@ -188,7 +196,8 @@ function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
                 </span>
                 <span className="flex shrink-0 items-center gap-1.5 text-caption text-white/65 tabular-nums transition-colors group-hover/row:text-white">
                   from {formatInr(r.fromInr)}
-                  <ArrowRight className="size-3.5 -translate-x-1 opacity-0 transition-[opacity,transform] duration-200 group-hover/row:translate-x-0 group-hover/row:opacity-100 group-focus-visible/row:translate-x-0 group-focus-visible/row:opacity-100" aria-hidden="true" />
+                  {/* For the pointer, in the row; on cards it would only take room from the label. */}
+                  <ArrowRight className="hidden size-3.5 -translate-x-1 opacity-0 transition-[opacity,transform] duration-200 group-hover/row:translate-x-0 group-hover/row:opacity-100 group-focus-visible/row:translate-x-0 group-focus-visible/row:opacity-100 xl:block" aria-hidden="true" />
                 </span>
               </Link>
             </li>
