@@ -19,12 +19,22 @@ import { HubFinalCta } from '@/components/home/hub/HubFinalCta';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
 import { WhyUs } from '@/components/home/WhyUs';
 import { PromoStage } from '@/components/home/promo-stage/PromoStage.client';
-import { CategoryRail, type RailCategory } from '@/components/home/CategoryRail';
+import { DepartmentExplorer, type ExploreDepartment } from '@/components/home/DepartmentExplorer.client';
 import { GadgetRow } from '@/components/home/GadgetRow';
 import { HomeDuo, type DuoFeature } from '@/components/home/HomeDuo';
 import { ProtectionRow } from '@/components/home/ProtectionRow';
 import { ReviewsSection } from '@/components/reviews/ReviewsSection';
-import { gadgetCutSrc, gadgetGallerySrc, gadgetHeroIndex, type GadgetEntry, type GadgetType } from '@/lib/catalog/gadgets';
+import {
+  DEPARTMENTS,
+  gadgetCutSrc,
+  gadgetCutSrcSet,
+  gadgetGallerySrc,
+  gadgetGallerySrcSet,
+  gadgetHeroIndex,
+  type Department,
+  type GadgetEntry,
+  type GadgetType,
+} from '@/lib/catalog/gadgets';
 
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
@@ -114,32 +124,89 @@ function audioPicks(audio: ProductDetail[], shown: HomeProduct[], featureId: str
   return (fresh.length >= 4 ? fresh : [...fresh, ...audio.filter((p) => p.id !== featureId && !fresh.includes(p))]).slice(0, 4);
 }
 
-/** One rail card per range, in shop order: each with its cheapest price and a photo of one of its products. */
-const RAIL: readonly { label: string; href: string; types: readonly GadgetType[]; pick?: string }[] = [
-  { label: 'Earbuds', href: '/audio#earbuds', types: ['earbuds'], pick: 'boat-alpha-gen2' },
-  { label: 'Neckbands', href: '/audio#neckband', types: ['neckband'], pick: 'boat-rockerz-110' },
-  { label: 'Speakers', href: '/audio#speakers', types: ['speaker'], pick: 'boat-stone-arc-pro' },
-  { label: 'Soundbars', href: '/audio#soundbars', types: ['soundbar'], pick: 'boat-aavante-2-150' },
-  { label: 'Chargers & cables', href: '/charging', types: ['charger', 'cable'], pick: 'samsung-25w-adapter' },
-  { label: 'Memory cards', href: '/storage#cards', types: ['memory-card'], pick: 'sandisk-extreme-microsd' },
-  { label: 'Pen drives', href: '/storage#cards', types: ['pen-drive'], pick: 'sandisk-cruzer-blade' },
-  { label: 'SSDs', href: '/storage#ssd', types: ['ssd'], pick: 'wd-black-sn7100' },
-  { label: 'RAM', href: '/storage#ram', types: ['ram'], pick: 'sk-hynix-ram-laptop-ddr4' },
-  { label: 'Wi-Fi cameras', href: '/cameras', types: ['camera'] },
-  { label: 'Laptops', href: '/laptops', types: ['laptop'], pick: 'dell-latitude-7490' },
-  { label: 'Gaming mice & keyboards', href: '/computer-accessories', types: ['mouse', 'keyboard'], pick: 'ant-esports-km1410' },
-  { label: 'USB hubs', href: '/computer-accessories#hubs', types: ['hub'] },
+/**
+ * "More to explore": the departments in shop order, each with its ranges. `pick` is the product whose photo
+ * stands for a range, chosen because that photo is sharp at panel size (some first photos are a soft shot of a
+ * pack or a label); without one, the first product with a photo is used.
+ */
+const EXPLORE: readonly {
+  department: Department;
+  blurb: string;
+  ranges: readonly { label: string; href: string; types: readonly GadgetType[]; pick?: string }[];
+}[] = [
+  {
+    department: 'audio',
+    blurb: 'boAt and realme, sealed in the box with the brand warranty.',
+    ranges: [
+      { label: 'Earbuds', href: '/audio#earbuds', types: ['earbuds'], pick: 'boat-alpha-gen2' },
+      { label: 'Neckbands', href: '/audio#neckband', types: ['neckband'], pick: 'boat-rockerz-110' },
+      { label: 'Speakers', href: '/audio#speakers', types: ['speaker'], pick: 'boat-stone-arc-pro' },
+      { label: 'Soundbars', href: '/audio#soundbars', types: ['soundbar'], pick: 'boat-aavante-2-150' },
+    ],
+  },
+  {
+    department: 'storage',
+    blurb: 'SanDisk, Samsung and WD, in the capacity you need.',
+    ranges: [
+      { label: 'Memory cards', href: '/storage#cards', types: ['memory-card'], pick: 'sandisk-extreme-microsd' },
+      { label: 'Pen drives', href: '/storage#cards', types: ['pen-drive'], pick: 'sandisk-ultra-flair' },
+      { label: 'SSDs', href: '/storage#ssd', types: ['ssd'], pick: 'wd-black-sn7100' },
+      { label: 'RAM', href: '/storage#ram', types: ['ram'], pick: 'samsung-ram-desktop-ddr4' },
+    ],
+  },
+  {
+    department: 'charging',
+    blurb: 'Fast chargers and data cables for iPhone and Galaxy.',
+    ranges: [
+      { label: 'Chargers', href: '/charging#chargers', types: ['charger', 'car-charger'], pick: 'samsung-25w-adapter' },
+      { label: 'Data cables', href: '/charging#cables', types: ['cable'], pick: 'apple-60w-usb-c-cable' },
+    ],
+  },
+  {
+    department: 'cameras',
+    blurb: 'CP Plus cameras that turn, see in the dark and let you talk back.',
+    ranges: [{ label: 'Wi-Fi cameras', href: '/cameras', types: ['camera'] }],
+  },
+  {
+    department: 'laptops',
+    blurb: 'Refurbished Dell Latitudes with a 6-month shop warranty.',
+    ranges: [{ label: 'Dell Latitude', href: '/laptops', types: ['laptop'], pick: 'dell-latitude-7490' }],
+  },
+  {
+    department: 'computer',
+    blurb: 'Ant Esports and Honeywell, for the desk.',
+    ranges: [
+      { label: 'Mice & keyboards', href: '/computer-accessories', types: ['mouse', 'keyboard'], pick: 'ant-esports-km1410' },
+      { label: 'USB hubs', href: '/computer-accessories#hubs', types: ['hub'] },
+    ],
+  },
 ];
 
-function railCategories(gadgets: ProductDetail[]): RailCategory[] {
-  return RAIL.flatMap((c) => {
-    const items = gadgets.filter((p) => p.gadget && c.types.includes(p.gadget.type));
-    const lead = items.find((p) => p.gadget?.id === c.pick && p.gadget?.photos) ?? items.find((p) => p.gadget?.photos);
-    const g = lead?.gadget;
-    if (!g?.photos) return [];
-    // The square gallery photo, not the 4:5 card crop, so nothing is cut off in the square tile.
-    const image = g.photos.cut ? gadgetCutSrc(g.photos, 480) : gadgetGallerySrc(g.photos, gadgetHeroIndex(g.photos, g.options[0]?.slug), 480);
-    return [{ label: c.label, href: c.href, image, alt: g.title, cutout: Boolean(g.photos.cut), fromInr: Math.min(...items.map((p) => p.priceFromInr)) }];
+/** Each department with the ranges that have stock: the range's cheapest price and one product's photo. */
+function exploreDepartments(gadgets: ProductDetail[]): ExploreDepartment[] {
+  return EXPLORE.flatMap(({ department, blurb, ranges }) => {
+    const found = ranges.flatMap((c) => {
+      const items = gadgets.filter((p) => p.gadget && c.types.includes(p.gadget.type));
+      const lead = items.find((p) => p.gadget?.id === c.pick && p.gadget?.photos) ?? items.find((p) => p.gadget?.photos);
+      const g = lead?.gadget;
+      if (!g?.photos) return [];
+      // The square gallery photo, not the 4:5 card crop, so nothing is cut off in the square frame.
+      const n = gadgetHeroIndex(g.photos, g.options[0]?.slug);
+      const cutout = Boolean(g.photos.cut);
+      return [
+        {
+          label: c.label,
+          href: c.href,
+          image: cutout ? gadgetCutSrc(g.photos, 480) : gadgetGallerySrc(g.photos, n, 480),
+          imageSet: cutout ? gadgetCutSrcSet(g.photos) : gadgetGallerySrcSet(g.photos, n),
+          alt: g.title,
+          cutout,
+          fromInr: Math.min(...items.map((p) => p.priceFromInr)),
+        },
+      ];
+    });
+    const info = DEPARTMENTS[department];
+    return found.length > 0 ? [{ key: department, name: info.name, href: info.path, blurb, ranges: found }] : [];
   });
 }
 
@@ -224,7 +291,7 @@ export default async function HomePage() {
       {/* Header, hero, service strip and category tiles: the storefront's opening screens. */}
       <ShowcaseHero />
       <ServiceStrip />
-      <CategoryTiles rail={<CategoryRail categories={railCategories([...audio, ...charging, ...storage, ...cameras, ...laptops, ...computer])} />} />
+      <CategoryTiles rail={<DepartmentExplorer departments={exploreDepartments([...audio, ...charging, ...storage, ...cameras, ...laptops, ...computer])} />} />
       <TrendingHub products={trendingMix} />
       {featureProduct?.gadget && (
         <AudioSpotlight

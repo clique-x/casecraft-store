@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { DEPARTMENT_OF, GADGETS, gadgetCutSrc, gadgetCutSrcSet } from '@/lib/catalog/gadgets';
 import { cn } from '@/lib/utils';
+import { CoverTileArt, ProtectionTileArt, TileRotator, type TileArtItem } from './TileArt.client';
 
 interface TileImage {
   src: string;
@@ -9,7 +11,7 @@ interface TileImage {
   sizes: string;
   w: number;
   h: number;
-  /** Placement inside the art box (right half of the tile, or its lower part on tablets). Height-sized art needs w-auto. */
+  /** Placement inside the art box (right half of the tile, or its lower part on tablets). */
   className: string;
 }
 
@@ -19,47 +21,57 @@ interface Tile {
   tone: 'dark' | 'light';
   /** Backdrop of the tile. */
   surface: string;
-  product: TileImage;
-  /** What the product photo shows, for search engines; the plinth stays decorative. */
-  alt: string;
+  /** The products, taking turns in the art box. */
+  art: ReactNode;
+  /** A stand under cutout products; studio photos bring their own. */
   plinth?: TileImage;
 }
 
 const set = (base: string, widths: readonly number[]) => widths.map((w) => `${base}-${w}.webp ${w}w`).join(', ');
 const PLINTH_SIZES = '(min-width: 64rem) 300px, (min-width: 48rem) 260px, 60vw';
 
+/**
+ * Covers and guards are shown as their studio photos. Every one was shot on the same teal set, so the photo is
+ * laid over the right of the tile and faded into it on the left (below lg on tablets: from the top), and when
+ * the photo changes only the product appears to.
+ */
+const STUDIO_FRAME =
+  'inset-0 [mask-image:linear-gradient(to_right,transparent_2%,black_46%)] transition-transform duration-700 ease-out-expo group-hover/tile:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover/tile:transform-none md:max-lg:[mask-image:linear-gradient(to_bottom,transparent_0%,black_34%)]';
+const STUDIO_SIZES = '(min-width: 64rem) 380px, (min-width: 48rem) 34vw, 56vw';
+const STUDIO_LABEL = 'bg-black/40 text-white/90 backdrop-blur-sm';
+/** The studio set's own teal, so the photo's edge has nothing to show against. */
+const STUDIO_SURFACE = 'bg-[radial-gradient(120%_130%_at_82%_30%,#0a4f60_0%,#06323c_44%,#021a20_100%)]';
+
+/** The audio products with a transparent cutout: they stand on the tile's stone plinth in turn. */
+const AUDIO_ART: TileArtItem[] = GADGETS.flatMap((g) =>
+  DEPARTMENT_OF[g.type] === 'audio' && g.photos?.cut
+    ? [{ key: g.id, src: gadgetCutSrc(g.photos, 480), srcSet: gadgetCutSrcSet(g.photos), alt: g.title, label: g.title }]
+    : [],
+).slice(0, 6);
+
 const TILES: readonly Tile[] = [
   {
     title: ['Cases with', 'character'],
     href: '/covers',
     tone: 'dark',
-    surface: 'bg-[radial-gradient(120%_130%_at_82%_20%,#11565a_0%,#06363b_42%,#021d20_100%)]',
-    // CaseCraft SF Carbon on an iPhone 16 (photo 50129, "On the phone").
-    alt: 'Phone in a grey carbon-fibre back cover',
-    product: {
-      src: '/home/phone-sf-carbon-580.webp',
-      srcSet: set('/home/phone-sf-carbon', [300, 580]),
-      sizes: '(min-width: 64rem) 200px, (min-width: 48rem) 170px, 34vw',
-      w: 580,
-      h: 1082,
-      className: 'left-[26%] top-[9%] h-[112%] w-auto rotate-[22deg] md:max-lg:left-[30%] md:max-lg:top-[2%] md:max-lg:h-[112%]',
-    },
+    surface: STUDIO_SURFACE,
+    art: <CoverTileArt sizes={STUDIO_SIZES} className={STUDIO_FRAME} imgClassName="object-cover object-[50%_20%]" labelClassName={STUDIO_LABEL} />,
   },
   {
     title: ['Sound that', 'moves you'],
     href: '/audio',
     tone: 'light',
     surface: 'bg-[radial-gradient(110%_120%_at_78%_30%,#f4f3ee_0%,#d9dcd4_48%,#b4bbb2_100%)]',
-    alt: 'boAt Airdopes Prime 800 HiDef wireless earbuds',
-    product: {
-      // boAt Airdopes Prime 800 HiDef, the shop's own cutout.
-      src: '/products/photos/gadgets/boat-800-hidef/cut-480.webp',
-      srcSet: '/products/photos/gadgets/boat-800-hidef/cut-480.webp 480w, /products/photos/gadgets/boat-800-hidef/cut-960.webp 960w',
-      sizes: '(min-width: 64rem) 260px, (min-width: 48rem) 220px, 46vw',
-      w: 960,
-      h: 933,
-      className: 'left-1/2 bottom-[15%] w-[70%] -translate-x-1/2',
-    },
+    art: (
+      <TileRotator
+        items={AUDIO_ART}
+        sizes="(min-width: 64rem) 240px, (min-width: 48rem) 200px, 42vw"
+        offsetMs={1250}
+        className="inset-x-[12%] top-[9%] bottom-[17%] transition-transform duration-700 ease-out-expo group-hover/tile:-translate-y-1.5 group-hover/tile:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover/tile:transform-none"
+        imgClassName="object-contain object-bottom drop-shadow-[0_18px_20px_rgba(0,12,14,.32)]"
+        labelClassName="bg-white/70 text-gh-ink backdrop-blur-sm"
+      />
+    ),
     plinth: {
       src: '/home/plinth-stone-560.webp',
       srcSet: set('/home/plinth-stone', [560, 1000]),
@@ -73,24 +85,8 @@ const TILES: readonly Tile[] = [
     title: ['Protection', 'that fits'],
     href: '/accessories',
     tone: 'dark',
-    surface: 'bg-[radial-gradient(120%_130%_at_80%_25%,#0f5156_0%,#05343a_45%,#021b1e_100%)]',
-    alt: 'Tempered glass screen guard',
-    product: {
-      src: '/home/guard-320.webp',
-      srcSet: set('/home/guard', [320, 640]),
-      sizes: '(min-width: 64rem) 140px, (min-width: 48rem) 130px, 26vw',
-      w: 640,
-      h: 1195,
-      className: 'left-1/2 bottom-[14%] h-[84%] w-auto -translate-x-1/2 rotate-[10deg]',
-    },
-    plinth: {
-      src: '/home/plinth-560.webp',
-      srcSet: set('/home/plinth', [560, 1000]),
-      sizes: PLINTH_SIZES,
-      w: 1000,
-      h: 390,
-      className: 'left-1/2 -bottom-[16%] w-[112%] -translate-x-1/2',
-    },
+    surface: STUDIO_SURFACE,
+    art: <ProtectionTileArt sizes={STUDIO_SIZES} offsetMs={2500} className={STUDIO_FRAME} imgClassName="object-cover object-[50%_32%]" labelClassName={STUDIO_LABEL} />,
   },
 ];
 
@@ -112,7 +108,10 @@ function Art({ image, className, alt = '' }: { image: TileImage; className?: str
   );
 }
 
-/** "Find your next favourite.": three editorial tiles into the departments, then the `rail` of every other range. */
+/**
+ * "Find your next favourite.": three editorial tiles into the departments, each showing its products in turn,
+ * then the `rail` of every other range.
+ */
 export function CategoryTiles({ rail }: { rail?: ReactNode }) {
   return (
     <section aria-labelledby="favourites-heading" className="bg-gh-ivory pt-10 pb-14 text-gh-ink lg:pt-12 lg:pb-20">
@@ -138,9 +137,7 @@ export function CategoryTiles({ rail }: { rail?: ReactNode }) {
                   {/* Art: the right part of the tile, or its lower part on tablets. */}
                   <div aria-hidden="true" className="absolute inset-y-0 right-0 -z-10 w-[56%] md:max-lg:inset-x-0 md:max-lg:top-[34%] md:max-lg:w-auto">
                     {tile.plinth && <Art image={tile.plinth} />}
-                    <div className="absolute inset-0 transition-transform duration-700 ease-out-expo group-hover/tile:-translate-y-1.5 group-hover/tile:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover/tile:transform-none">
-                      <Art image={tile.product} alt={tile.alt} className="drop-shadow-[0_22px_26px_rgba(0,12,14,.45)]" />
-                    </div>
+                    {tile.art}
                   </div>
 
                   <h3 className="absolute top-5 left-5 max-w-[60%] text-[1.5rem] leading-[1.1] font-bold tracking-[-0.03em] sm:top-6 sm:left-6 sm:text-[1.625rem] md:max-lg:max-w-[90%] lg:top-8 lg:left-8 lg:text-[1.75rem] xl:text-[2rem]">
