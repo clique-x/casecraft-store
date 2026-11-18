@@ -24,7 +24,7 @@ import { GadgetRow } from '@/components/home/GadgetRow';
 import { HomeDuo, type DuoFeature } from '@/components/home/HomeDuo';
 import { ProtectionRow } from '@/components/home/ProtectionRow';
 import { ReviewsSection } from '@/components/reviews/ReviewsSection';
-import { gadgetCutSrc, gadgetGallerySrc, gadgetHeroIndex, type GadgetType } from '@/lib/catalog/gadgets';
+import { gadgetCutSrc, gadgetGallerySrc, gadgetHeroIndex, type GadgetEntry, type GadgetType } from '@/lib/catalog/gadgets';
 
 const COVER_FROM = Math.min(...PHOTOS.map((e) => e.priceInr));
 
@@ -93,6 +93,18 @@ function byPicks(products: ProductDetail[]): ProductDetail[] {
     return i === -1 ? 99 : i;
   };
   return [...products].sort((a, b) => pos(a) - pos(b));
+}
+
+/** How many products take turns in the audio spotlight. */
+const FEATURE_TURNS = 6;
+
+/**
+ * The audio spotlight's featured products: the feature first, then the other audio products that have a
+ * transparent cutout, which is what lets them change places on the same light panel.
+ */
+function audioFeatures(audio: ProductDetail[], feature: ProductDetail): { gadget: GadgetEntry; handle: string }[] {
+  const rest = audio.filter((p) => p.id !== feature.id && p.gadget?.photos?.cut);
+  return [feature, ...rest].slice(0, FEATURE_TURNS).flatMap((p) => (p.gadget ? [{ gadget: p.gadget, handle: p.handle }] : []));
 }
 
 /** Four audio products for the spotlight grid that are not already in the trending mix or the feature. */
@@ -216,8 +228,7 @@ export default async function HomePage() {
       <TrendingHub products={trendingMix} />
       {featureProduct?.gadget && (
         <AudioSpotlight
-          feature={featureProduct.gadget}
-          featureHandle={featureProduct.handle}
+          features={audioFeatures(audioWithPhotos, featureProduct)}
           products={audioPicks(audioWithPhotos, trendingMix, featureProduct.id)}
           total={audio.length}
           brands={audioBrands}

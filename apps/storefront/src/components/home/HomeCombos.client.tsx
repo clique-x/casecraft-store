@@ -1,13 +1,17 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import Link from 'next/link';
-import { Check, Loader2, Plus, Smartphone } from 'lucide-react';
-import { CoverCarousel } from '@/components/home/CoverCarousel.client';
+import { animate, m, useMotionValue, useTransform } from 'motion/react';
+import { ArrowRight, ChevronRight, Loader2, ShoppingBag, Smartphone } from 'lucide-react';
+import { ComboCoverRail } from '@/components/home/combo/ComboCoverRail.client';
+import { ComboStage, type StageCard } from '@/components/home/combo/ComboStage.client';
 import { phoneHref } from '@/components/phone-picker/BrandOutline';
+import { FREE_SHIPPING_THRESHOLD_INR } from '@/lib/brand';
 import { BUNDLE_SAVING_INR, accessoryPhotoSrc, bundlePrice, type AccessoryEntry } from '@/lib/catalog/accessories';
 import { backdropThumbSrc, backdropThumbSrcSet, formatInr, getPhoto } from '@/lib/catalog/photos';
 import { useCart } from '@/lib/cart/cart-context';
+import { useReducedMotion } from '@/lib/device/use-reduced-motion';
 import { pickerSheet } from '@/lib/phone/picker-sheet-store';
 import { useMyPhone } from '@/lib/phone/use-my-phone';
 import { cn } from '@/lib/utils';
@@ -37,25 +41,15 @@ export interface ComboAccessory {
 
 type Role = 'glass' | 'film' | 'lens';
 
-/**
- * The combos, in display order: a cover with the screen glass, the lens protector or the back film, and the bigger sets.
- * Every piece is made for the same phone, and a kit shows only when that phone has every piece of it.
- */
-const KITS: readonly { id: string; name: string; roles: readonly Role[] }[] = [
-  { id: 'glass', name: 'Cover + screen glass', roles: ['glass'] },
-  { id: 'lens', name: 'Cover + camera lens protector', roles: ['lens'] },
-  { id: 'film', name: 'Cover + back film', roles: ['film'] },
-  { id: 'glass-lens', name: 'Cover + glass + lens protector', roles: ['glass', 'lens'] },
-  { id: 'full', name: 'Cover + glass + back film', roles: ['glass', 'film'] },
-  { id: 'complete', name: 'Cover + glass + back film + lens protector', roles: ['glass', 'film', 'lens'] },
-];
-/** With the complete set on offer, these smaller kits would only repeat it: four cards at most. */
-const DROPPED_WITH_COMPLETE = new Set(['film', 'glass-lens']);
-
-const ROLE_LABEL: Record<Role, string> = {
-  glass: 'Screen glass for your phone',
-  film: 'Hydrogel back film for your phone',
-  lens: 'Camera lens protector for your phone',
+/** The add-ons, in the order they are offered. A phone shows only the ones made for it. */
+const ROLES: readonly Role[] = ['glass', 'film', 'lens'];
+const ROLE_NAME: Record<Role, string> = { glass: 'Screen glass', film: 'Back film', lens: 'Lens protector' };
+const ROLE_TAG: Record<Role, string> = { glass: 'Glass', film: 'Back film', lens: 'Lens' };
+/** Shown under the name until a phone is picked and the exact product is known. */
+const ROLE_HINT: Record<Role, string> = {
+  glass: 'Tempered glass cut for your phone',
+  film: 'Hydrogel film, for iPhone 12 to 18 Pro',
+  lens: 'Guards the camera lenses',
 };
 
 function roleOf(entry: AccessoryEntry): Role | null {
@@ -67,32 +61,48 @@ function roleOf(entry: AccessoryEntry): Role | null {
 
 const inStock = (variants: readonly ComboVariant[], slug: string) => variants.find((v) => v.modelSlug === slug && v.stock > 0) ?? null;
 
-function CoverThumb({ cover }: { cover: ComboCover }) {
-  const entry = getPhoto(cover.photoId);
-  if (!entry) return null;
+/** A rupee amount that counts to its new value instead of jumping. Screen readers get the final figure only. */
+function AnimatedInr({ value }: { value: number }) {
+  const reduced = useReducedMotion();
+  const amount = useMotionValue(value);
+  const text = useTransform(amount, (v) => formatInr(Math.round(v)));
+  useEffect(() => {
+    if (reduced) {
+      amount.set(value);
+      return;
+    }
+    const controls = animate(amount, value, { duration: 0.45, ease: [0.16, 1, 0.3, 1] });
+    return () => controls.stop();
+  }, [amount, value, reduced]);
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- small catalogue photo at a fixed size
-    <img src={backdropThumbSrc(entry, 160)} srcSet={backdropThumbSrcSet(entry)} sizes="96px" alt={cover.title} className="size-full object-cover" loading="lazy" />
+    <>
+      <m.span aria-hidden="true">{text}</m.span>
+      <span className="sr-only">{formatInr(value)}</span>
+    </>
   );
 }
 
-function AccessoryThumb({ accessory }: { accessory: ComboAccessory }) {
+function Step({ n, children }: { n: number; children: ReactNode }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- the guard's own shop photo, pre-sized
-    <img src={accessoryPhotoSrc(accessory.entry.id, 0, 480)} alt={accessory.title} className="size-full object-cover" loading="lazy" />
+    <h3 className="flex min-w-0 items-center gap-2 text-sm font-bold">
+      <span className="grid size-5 shrink-0 place-items-center rounded-full bg-fg text-[0.6875rem] leading-none text-paper tabular-nums">{n}</span>
+      {children}
+    </h3>
   );
 }
 
 /**
- * "Combo deals" on the home page: the visitor's phone, a cover they choose for it, and the real screen glass and
- * back film made for that phone at bundle price. The ₹50 off each add-on is the store's automatic BUNDLE50
- * promotion (any screen guard or back film in a cart with a cover), so the total here is what checkout charges.
+ * "Combo deals" on the home page, as one builder: the visitor's phone, a cover they choose for it, and a switch
+ * for each add-on made for that phone (screen glass, back film, lens protector). The stage shows the combo as it
+ * stands and the total follows every change. The ₹50 off each add-on is the store's automatic BUNDLE50 promotion
+ * (any of them in a cart with a cover), so the total here is what checkout charges.
  */
 export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; accessories: ComboAccessory[] }) {
   const { phone } = useMyPhone();
   const { enabled, addMany } = useCart();
   const [picked, setPicked] = useState<string | null>(null);
-  const [busy, setBusy] = useState<string | null>(null);
+  const [off, setOff] = useState<ReadonlySet<Role>>(new Set());
+  const [busy, setBusy] = useState(false);
 
   const slug = phone?.slug ?? null;
   const choices = slug ? covers.filter((c) => inStock(c.variants, slug)) : [];
@@ -100,85 +110,74 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
   const coverVariant = cover && slug ? inStock(cover.variants, slug) : null;
   // Before a phone is picked, the first cover stands in as the example and prices read "from".
   const shownCover = cover ?? covers[0] ?? null;
+  const shownPhoto = shownCover ? getPhoto(shownCover.photoId) : undefined;
   const cheapestCover = Math.min(...covers.flatMap((c) => c.variants.map((v) => v.priceInr)));
 
   // The guard or film for each role: the one made for the visitor's phone, or (no phone yet) the cheapest example.
-  const forRole = (role: Role): { accessory: ComboAccessory; variant: ComboVariant | null; priceInr: number } | null => {
+  const forRole = (role: Role): { role: Role; accessory: ComboAccessory; variant: ComboVariant | null; priceInr: number } | null => {
     const ofRole = accessories.filter((a) => roleOf(a.entry) === role);
     if (slug) {
       const accessory = ofRole.find((a) => inStock(a.variants, slug));
       const variant = accessory ? inStock(accessory.variants, slug) : null;
-      return accessory && variant ? { accessory, variant, priceInr: variant.priceInr } : null;
+      return accessory && variant ? { role, accessory, variant, priceInr: variant.priceInr } : null;
     }
     const cheapest = [...ofRole].sort((a, b) => a.entry.priceInr - b.entry.priceInr)[0];
-    return cheapest ? { accessory: cheapest, variant: null, priceInr: cheapest.entry.priceInr } : null;
+    return cheapest ? { role, accessory: cheapest, variant: null, priceInr: cheapest.entry.priceInr } : null;
   };
-  const roles = { glass: forRole('glass'), film: forRole('film'), lens: forRole('lens') };
+  const offered = ROLES.flatMap((r) => forRole(r) ?? []);
+  const parts = offered.filter((p) => !off.has(p.role));
 
-  const offered = KITS.filter((kit) => kit.roles.every((r) => roles[r] !== null));
-  const hasComplete = offered.some((k) => k.id === 'complete');
-  const kits = offered.filter((k) => !(hasComplete && DROPPED_WITH_COMPLETE.has(k.id))).flatMap((kit) => {
-    const items = kit.roles.map((r) => roles[r]);
-    if (items.some((i) => i === null)) return [];
-    const parts = items as NonNullable<(typeof items)[number]>[];
-    const coverPrice = coverVariant?.priceInr ?? cheapestCover;
-    const price = coverPrice + parts.reduce((n, p) => n + bundlePrice(p.priceInr), 0);
-    const separately = coverPrice + parts.reduce((n, p) => n + p.priceInr, 0);
-    const variantIds = [coverVariant?.id, ...parts.map((p) => p.variant?.id)].filter((x): x is string => Boolean(x));
-    const available = Boolean(coverVariant) && variantIds.length === parts.length + 1;
-    return [{ kit, parts, price, separately, available, variantIds }];
-  });
+  const coverPrice = coverVariant?.priceInr ?? cheapestCover;
+  const price = coverPrice + parts.reduce((n, p) => n + bundlePrice(p.priceInr), 0);
+  const saving = parts.reduce((n, p) => n + (p.priceInr - bundlePrice(p.priceInr)), 0);
+  const variantIds = [coverVariant?.id, ...parts.map((p) => p.variant?.id)].filter((x): x is string => Boolean(x));
+  const available = Boolean(coverVariant) && variantIds.length === parts.length + 1;
+  const pieces = parts.length + 1;
 
   const noCovers = Boolean(phone) && choices.length === 0;
-  const noKits = Boolean(phone) && !noCovers && kits.length === 0;
+  const noAddOns = Boolean(phone) && !noCovers && offered.length === 0;
+
+  const toggle = (role: Role) =>
+    setOff((prev) => {
+      const next = new Set(prev);
+      if (!next.delete(role)) next.add(role);
+      return next;
+    });
+
+  const stageCards: StageCard[] = [
+    ...(shownPhoto ? [{ key: 'cover', label: 'Cover', src: backdropThumbSrc(shownPhoto, 480), srcSet: backdropThumbSrcSet(shownPhoto) }] : []),
+    ...parts.map((p) => ({ key: p.role, label: ROLE_TAG[p.role], src: accessoryPhotoSrc(p.accessory.entry.id, 0, 480) })),
+  ];
 
   return (
-    <section id="combos" aria-labelledby="combos-heading" className="cv-auto scroll-mt-20 bg-surface-2 py-14 text-fg lg:py-20">
+    <section id="combos" aria-labelledby="combos-heading" className="cv-auto scroll-mt-20 bg-surface-2 py-10 text-fg lg:py-16">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-label font-bold tracking-[0.16em] text-brand uppercase">Combo deals</p>
-            <h2 id="combos-heading" className="mt-2 font-display text-h2 font-extrabold text-balance">
-              Cover, screen glass, back film and lens protector in one go
-            </h2>
-            <p className="mt-2 text-body text-fg-muted">
-              Every piece is made for the same phone. {formatInr(BUNDLE_SAVING_INR)} off the glass, the back film and the lens protector when they come with a cover.
-            </p>
-          </div>
+        <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-1.5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-4">
+          <p className="text-label font-bold tracking-[0.16em] whitespace-nowrap text-brand uppercase">Combo deals</p>
           <button
             type="button"
             onClick={() => pickerSheet.open()}
-            className="inline-flex h-11 shrink-0 items-center gap-2 self-start rounded-full border border-border bg-paper px-4 text-sm font-semibold text-fg transition-colors hover:border-fg sm:self-auto"
+            className="col-start-2 row-start-1 inline-flex h-9 max-w-full min-w-0 items-center gap-1.5 justify-self-end rounded-full border border-border bg-paper px-3 text-[0.8125rem] font-semibold whitespace-nowrap text-fg transition-colors hover:border-fg sm:row-span-3 sm:h-11 sm:gap-2 sm:self-end sm:px-4 sm:text-sm"
           >
-            <Smartphone className="size-4" aria-hidden="true" />
+            <Smartphone className="size-4 shrink-0" aria-hidden="true" />
             {phone ? (
               <>
-                For {phone.model} <span className="text-brand">· Change</span>
+                <span className="min-w-0 truncate">{phone.model}</span> <span className="text-brand">· Change</span>
               </>
             ) : (
               'Pick your phone'
             )}
           </button>
+          <h2 id="combos-heading" className="col-span-2 font-display text-h2 font-extrabold text-balance sm:col-span-1">
+            Build your combo
+          </h2>
+          <p className="col-span-2 max-w-2xl text-[0.9375rem] leading-snug text-pretty text-fg-muted sm:col-span-1 sm:text-body">
+            Cover, screen glass, back film and lens protector for your phone. {formatInr(BUNDLE_SAVING_INR)} off each add-on.
+          </p>
         </div>
 
-        {phone && choices.length > 1 && (
-          <CoverCarousel
-            covers={choices.map((c) => ({
-              id: c.id,
-              handle: c.handle,
-              title: c.title,
-              priceInr: inStock(c.variants, phone.slug)?.priceInr ?? 0,
-              thumb: <CoverThumb cover={c} />,
-            }))}
-            selectedId={cover?.id ?? null}
-            onSelect={setPicked}
-            phoneName={phone.model}
-            allHref={phoneHref(phone)}
-          />
-        )}
-
-        {(noCovers || noKits) && phone ? (
-          <p className="mt-6 max-w-2xl rounded-2xl border border-border bg-paper p-5 text-body text-fg-muted">
+        {(noCovers || noAddOns) && phone ? (
+          <p className="mt-5 max-w-2xl rounded-2xl border border-border bg-paper p-5 text-body text-fg-muted">
             {noCovers
               ? `We have no covers for the ${phone.model} in stock right now, so there is no combo for it yet.`
               : `Screen glass and back films for the ${phone.model} are not in stock yet. The covers for it are on its page.`}{' '}
@@ -187,100 +186,159 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
             </Link>
           </p>
         ) : (
-          /* Phones: swipe one combo at a time, the next one peeking in. Larger screens: a grid. */
-          <ul
-            aria-label="Combo deals"
-            className={cn(
-              '-mx-4 mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden',
-              kits.length > 3 ? 'lg:grid-cols-2' : 'lg:grid-cols-3',
-            )}
-          >
-            {kits.map(({ kit, parts, price, separately, available, variantIds }) => (
-              <li key={kit.id} className="relative flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-border bg-paper sm:w-auto">
-                <span className="absolute top-3 right-3 z-10 rounded-full bg-brand-coral px-2.5 py-1 text-[0.6875rem] font-bold text-fg tabular-nums">
-                  Save {formatInr(separately - price)}
-                </span>
+          <div className="mt-4 grid overflow-hidden rounded-3xl border border-border bg-paper shadow-[0_30px_60px_-40px_rgb(27_26_23/0.35)] lg:mt-7 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+            <ComboStage
+              cards={stageCards}
+              coverKey={shownCover?.id ?? 'cover'}
+              savingInr={saving}
+              caption={
+                parts.length === 0
+                  ? `Switch on an add-on to save ${formatInr(BUNDLE_SAVING_INR)} on it`
+                  : `${pieces} pieces${phone ? ` for the ${phone.model}` : ', all made for one phone'}`
+              }
+              label={`Your combo: ${[shownCover?.title ?? 'a cover', ...parts.map((p) => ROLE_NAME[p.role].toLowerCase())].join(', ')}`}
+              className="lg:min-h-0"
+            />
 
-                {/* Up to four pictures: they shrink to share the card's width, never wider than 5.5rem. */}
-                <div className="flex items-center justify-center gap-1.5 bg-surface-2/70 px-4 pt-12 pb-5">
-                  <span className="flex aspect-[11/14] max-w-[5.5rem] min-w-0 flex-1 items-center justify-center overflow-hidden rounded-lg bg-paper">
-                    {shownCover && <CoverThumb cover={shownCover} />}
-                  </span>
-                  {parts.map((p) => (
-                    <Fragment key={p.accessory.entry.id}>
-                      <Plus className="size-3.5 shrink-0 text-fg-muted" aria-hidden="true" />
-                      <span className="aspect-[11/14] max-w-[5.5rem] min-w-0 flex-1 overflow-hidden rounded-lg bg-paper">
-                        <AccessoryThumb accessory={p.accessory} />
-                      </span>
-                    </Fragment>
-                  ))}
-                </div>
-
-                <div className="flex flex-1 flex-col gap-3 p-4">
-                  <h3 className="text-lg font-extrabold">{kit.name}</h3>
-                  <ul className="flex flex-col gap-1.5 text-sm">
-                    <li className="flex items-start justify-between gap-3">
-                      <span className="flex items-start gap-2">
-                        <Check className="mt-0.5 size-4 shrink-0 text-success" aria-hidden="true" />
-                        <span className="min-w-0">{cover ? cover.title : 'A cover for your phone'}</span>
-                      </span>
-                      <span className="shrink-0 text-fg-muted tabular-nums">
-                        {coverVariant ? formatInr(coverVariant.priceInr) : `from ${formatInr(cheapestCover)}`}
-                      </span>
-                    </li>
-                    {parts.map((p, i) => (
-                      <li key={p.accessory.entry.id} className="flex items-start justify-between gap-3">
-                        <span className="flex items-start gap-2">
-                          <Check className="mt-0.5 size-4 shrink-0 text-success" aria-hidden="true" />
-                          <span className="min-w-0">{phone ? p.accessory.title : ROLE_LABEL[kit.roles[i]]}</span>
-                        </span>
-                        <span className="shrink-0 tabular-nums">
-                          <s className="mr-1.5 text-caption text-fg-muted">{formatInr(p.priceInr)}</s>
-                          {formatInr(bundlePrice(p.priceInr))}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  {!phone && kit.roles.includes('film') && (
-                    <p className="text-caption text-fg-muted">The back film is for iPhones, from the iPhone 12 to the 18 Pro.</p>
-                  )}
-
-                  <div className="mt-auto flex items-baseline gap-2 border-t border-border pt-3 tabular-nums">
-                    <span className="text-2xl font-extrabold">
-                      {!coverVariant && <span className="mr-1 text-sm font-semibold text-fg-muted">from</span>}
-                      {formatInr(price)}
-                    </span>
-                    <s className="text-sm text-fg-muted">{formatInr(separately)}</s>
+            <div className="flex min-w-0 flex-col gap-3 p-4 pb-3.5 sm:gap-5 sm:p-6 lg:p-8">
+              {/* 1 · the cover */}
+              {phone && cover ? (
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <Step n={1}>Cover</Step>
+                    <p aria-live="polite" className="min-w-0">
+                      <Link href={`/products/${cover.handle}`} className="flex min-w-0 items-baseline gap-1.5 text-sm underline-offset-4 hover:underline">
+                        <span className="truncate font-semibold">{cover.title}</span>
+                        {coverVariant && <span className="shrink-0 text-fg-muted tabular-nums">{formatInr(coverVariant.priceInr)}</span>}
+                      </Link>
+                    </p>
                   </div>
+                  {choices.length > 1 && (
+                    <div className="mt-1.5 flex items-center gap-2">
+                      <div className="min-w-0 flex-1">
+                        <ComboCoverRail
+                          covers={choices.flatMap((c) => {
+                            const photo = getPhoto(c.photoId);
+                            return photo ? [{ id: c.id, title: c.title, src: backdropThumbSrc(photo, 160), srcSet: backdropThumbSrcSet(photo) }] : [];
+                          })}
+                          selectedId={cover.id}
+                          onSelect={setPicked}
+                          label={`Designs for ${phone.model}`}
+                        />
+                      </div>
+                      <Link
+                        href={phoneHref(phone)}
+                        className="hidden shrink-0 items-center gap-1 text-caption font-semibold whitespace-nowrap text-brand underline-offset-4 hover:underline sm:inline-flex"
+                      >
+                        See all <ArrowRight className="size-3" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => pickerSheet.open()}
+                  className="group flex w-full items-center gap-3 rounded-2xl border border-dashed border-brand/50 bg-brand/[0.05] p-3 text-left transition-colors hover:bg-brand/[0.09]"
+                >
+                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand text-paper">
+                    <Smartphone className="size-5" aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-bold">Which phone is it for?</span>
+                    <span className="block text-caption text-fg-muted">Pick it to see the covers and exact prices.</span>
+                  </span>
+                  <ChevronRight className="size-5 shrink-0 text-brand transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </button>
+              )}
 
+              {/* 2 · the add-ons */}
+              <div>
+                <div className="flex items-center justify-between gap-3">
+                  <Step n={phone ? 2 : 1}>Add protection</Step>
+                  <span className="text-caption font-semibold text-brand-coral tabular-nums">{formatInr(BUNDLE_SAVING_INR)} off each</span>
+                </div>
+                <ul className="mt-2 flex flex-col gap-1.5 sm:gap-2">
+                  {offered.map((p) => {
+                    const on = !off.has(p.role);
+                    return (
+                      <li key={p.role}>
+                        <button
+                          type="button"
+                          role="switch"
+                          aria-checked={on}
+                          onClick={() => toggle(p.role)}
+                          className={cn(
+                            'flex w-full items-center gap-2.5 rounded-2xl border p-1.5 pr-2.5 text-left transition-[background-color,border-color,transform] duration-200 outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand active:scale-[0.99] min-[360px]:gap-3 min-[360px]:pr-3 sm:p-2 sm:pr-3.5',
+                            on ? 'border-brand/40 bg-brand/[0.05]' : 'border-border bg-paper hover:border-fg/30',
+                          )}
+                        >
+                          <span className={cn('size-9 shrink-0 overflow-hidden rounded-[0.6rem] bg-surface-2 transition-[opacity,filter] duration-200 sm:size-11 sm:rounded-xl', !on && 'opacity-60 grayscale')}>
+                            {/* eslint-disable-next-line @next/next/no-img-element -- the add-on's own shop photo, pre-sized */}
+                            <img src={accessoryPhotoSrc(p.accessory.entry.id, 0, 160)} alt="" loading="lazy" className="size-full object-cover" />
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-sm leading-tight font-bold">{ROLE_NAME[p.role]}</span>
+                            <span className="block truncate text-caption text-fg-muted">{phone ? p.accessory.title : ROLE_HINT[p.role]}</span>
+                          </span>
+                          <span className={cn('shrink-0 text-right leading-tight tabular-nums transition-opacity duration-200', !on && 'opacity-60')}>
+                            <span className="block text-sm font-bold">{formatInr(bundlePrice(p.priceInr))}</span>
+                            <s className="block text-[0.6875rem] text-fg-muted">{formatInr(p.priceInr)}</s>
+                          </span>
+                          <span aria-hidden="true" className={cn('relative h-6 w-10 shrink-0 rounded-full transition-colors duration-200', on ? 'bg-brand' : 'bg-surface-3')}>
+                            <span className={cn('absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow-sm transition-transform duration-300 ease-out-expo', on && 'translate-x-4')} />
+                          </span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              {/* The total and the one button */}
+              <div className="mt-auto border-t border-border pt-3 sm:pt-5">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="flex flex-col leading-none tabular-nums sm:flex-row sm:items-baseline sm:gap-2">
+                    <span className="text-[1.625rem] font-extrabold tracking-tight sm:text-3xl">
+                      {!coverVariant && <span className="mr-1 text-sm font-semibold tracking-normal text-fg-muted">from</span>}
+                      <AnimatedInr value={price} />
+                    </span>
+                    {saving > 0 && <s className="mt-1 text-caption text-fg-muted sm:mt-0 sm:text-sm">{formatInr(price + saving)}</s>}
+                  </p>
                   {!phone ? (
                     <button
                       type="button"
                       onClick={() => pickerSheet.open()}
-                      className="inline-flex h-12 items-center justify-center rounded-[10px] border border-fg text-base font-semibold text-fg transition-colors hover:bg-surface-2"
+                      className="inline-flex h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-fg px-3 text-[0.9375rem] font-semibold whitespace-nowrap text-paper transition-colors hover:bg-[#2b2b2b] min-[360px]:px-5 min-[360px]:text-base sm:max-w-xs"
                     >
+                      <Smartphone className="hidden size-4 shrink-0 sm:block" aria-hidden="true" />
                       Pick your phone
                     </button>
                   ) : (
                     <button
                       type="button"
-                      disabled={!enabled || !available || busy !== null}
+                      disabled={!enabled || !available || busy}
                       title={enabled ? undefined : 'The cart needs the shop backend'}
                       onClick={async () => {
-                        setBusy(kit.id);
+                        setBusy(true);
                         await addMany(variantIds, { openDrawer: true });
-                        setBusy(null);
+                        setBusy(false);
                       }}
-                      className="inline-flex h-12 items-center justify-center gap-2 rounded-[10px] bg-fg text-base font-semibold text-paper transition-colors hover:bg-[#2b2b2b] disabled:cursor-not-allowed disabled:bg-fg/40"
+                      className="inline-flex h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-fg px-3 text-[0.9375rem] font-semibold whitespace-nowrap text-paper transition-[background-color,transform] hover:bg-[#2b2b2b] active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-fg/40 min-[360px]:px-5 min-[360px]:text-base sm:max-w-xs"
                     >
-                      {busy === kit.id && <Loader2 className="size-4 animate-spin" aria-hidden="true" />}
-                      {available ? `Add combo · ${parts.length + 1} items` : 'Out of stock for this phone'}
+                      {busy ? <Loader2 className="size-4 shrink-0 animate-spin" aria-hidden="true" /> : <ShoppingBag className="hidden size-4 shrink-0 sm:block" aria-hidden="true" />}
+                      {!available ? 'Out of stock' : pieces === 1 ? 'Add cover' : `Add combo · ${pieces} items`}
                     </button>
                   )}
                 </div>
-              </li>
-            ))}
-          </ul>
+                <p className="mt-2 text-[0.75rem] text-fg-muted min-[360px]:text-caption sm:mt-2.5">
+                  {saving > 0 && <span className="font-semibold text-success">You save {formatInr(saving)} · </span>}
+                  {price >= FREE_SHIPPING_THRESHOLD_INR && 'Free shipping · '}
+                  Cash on Delivery
+                </p>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </section>

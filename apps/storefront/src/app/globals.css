@@ -313,6 +313,31 @@
       transform: translateY(3px);
     }
   }
+
+  /* Audio spotlight: the featured product drifts slowly, and the segment under it fills as its turn runs. */
+  .feature-drift {
+    animation: feature-drift 6.5s ease-in-out infinite alternate;
+  }
+  @keyframes feature-drift {
+    from {
+      transform: translate3d(0, -5px, 0);
+    }
+    to {
+      transform: translate3d(0, 5px, 0);
+    }
+  }
+  .feature-timer {
+    transform-origin: left center;
+    animation: feature-timer 4.5s linear both;
+  }
+  @keyframes feature-timer {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
 }
 
 /* Stage glow: Night base, grain, the brand radial */
@@ -405,6 +430,7 @@ body:has([data-home-hero]) [data-announcement] {
     scroll-behavior: auto !important;
   }
   .fan-float,
+  .feature-drift,
   .marquee-track {
     animation: none !important;
   }

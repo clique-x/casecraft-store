@@ -2,15 +2,15 @@ import Link from 'next/link';
 import { ArrowRightIcon, BadgeCheckIcon, ShieldCheckIcon, TruckIcon } from 'lucide-react';
 import { GadgetCard } from '@/components/gadget/GadgetCard';
 import { Reveal } from '@/components/motion/Reveal.client';
-import { gadgetGallerySrc, gadgetGallerySrcSet, type GadgetEntry } from '@/lib/catalog/gadgets';
-import { formatInr } from '@/lib/catalog/photos';
+import { gadgetCutSrc, gadgetCutSrcSet, gadgetGallerySrc, gadgetGallerySrcSet, type GadgetEntry } from '@/lib/catalog/gadgets';
 import type { HomeProduct } from '@/lib/medusa/fixtures';
 import { cn } from '@/lib/utils';
+import { AudioFeatureStage, type FeatureItem } from './AudioFeatureStage.client';
 import { SHELL, TEXT_LINK } from './hub-styles';
 
 interface Props {
-  feature: GadgetEntry;
-  featureHandle: string;
+  /** The featured products, in the order they take their turn; the first shows first. */
+  features: { gadget: GadgetEntry; handle: string }[];
   products: HomeProduct[];
   total: number;
   brands: string[];
@@ -22,56 +22,60 @@ const POINTS = [
   { Icon: TruckIcon, text: 'Cash on Delivery' },
 ];
 
-/** Audio department: a dark studio feature panel, then the picks as cards. */
-export function AudioSpotlight({ feature, featureHandle, products, total, brands }: Props) {
-  const photos = feature.photos;
+/** A featured product's picture: its transparent cutout when it has one, else its first photo on the light backdrop. */
+function featureItem({ gadget, handle }: Props['features'][number]): FeatureItem[] {
+  const photos = gadget.photos;
+  if (!photos) return [];
+  const cut = Boolean(photos.cut);
+  return [
+    {
+      id: gadget.id,
+      handle,
+      title: gadget.title,
+      priceInr: gadget.priceInr,
+      src: cut ? gadgetCutSrc(photos) : gadgetGallerySrc(photos, 0),
+      srcSet: cut ? gadgetCutSrcSet(photos) : gadgetGallerySrcSet(photos, 0),
+      cut,
+    },
+  ];
+}
+
+/**
+ * Audio department: a dark studio feature panel whose featured product changes every few seconds, then the picks
+ * as cards. On a phone the panel is sized to show whole on one screen.
+ */
+export function AudioSpotlight({ features, products, total, brands }: Props) {
+  const items = features.flatMap(featureItem);
   return (
-    <section id="audio" aria-labelledby="audio-heading" className="scroll-mt-20 bg-paper py-14 text-fg lg:py-20">
+    <section id="audio" aria-labelledby="audio-heading" className="scroll-mt-20 bg-paper py-12 text-fg lg:py-20">
       <div className={SHELL}>
         <Reveal className="grid overflow-hidden rounded-[28px] bg-fg text-paper lg:grid-cols-2">
-          <div className="flex flex-col justify-center gap-5 p-6 sm:p-10 lg:p-14">
+          <div className="flex flex-col justify-center gap-3.5 p-5 sm:gap-5 sm:p-10 lg:p-14">
             <p className="text-label font-bold tracking-[0.2em] text-[#7fd3dc] uppercase">Audio · {brands.join(' · ')}</p>
             <h2 id="audio-heading" className="font-display text-[clamp(2rem,1.4rem+2.4vw,3.25rem)] leading-[1.04] font-extrabold tracking-[-0.035em] text-balance">
               Sound that ships sealed.
             </h2>
-            <ul className="flex flex-col gap-2.5">
+            {/* Phones: three short columns, to leave the screen to the product. Larger screens: a list. */}
+            <ul className="grid grid-cols-3 gap-2 sm:flex sm:flex-col sm:gap-2.5">
               {POINTS.map(({ Icon, text }) => (
-                <li key={text} className="flex items-center gap-3 text-sm text-paper/85">
-                  <span className="grid size-8 shrink-0 place-items-center rounded-pill bg-white/10">
-                    <Icon className="size-4 text-[#7fd3dc]" aria-hidden="true" />
+                <li key={text} className="flex flex-col gap-1.5 text-[0.75rem] leading-snug text-paper/85 sm:flex-row sm:items-center sm:gap-3 sm:text-sm">
+                  <span className="grid size-7 shrink-0 place-items-center rounded-pill bg-white/10 sm:size-8">
+                    <Icon className="size-3.5 text-[#7fd3dc] sm:size-4" aria-hidden="true" />
                   </span>
                   {text}
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="pt-0.5 sm:pt-1">
               <Link
                 href="/audio"
-                className="inline-flex h-12 items-center gap-2 rounded-pill bg-paper px-6 text-base font-bold text-fg transition-colors hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+                className="inline-flex h-11 items-center gap-2 rounded-pill bg-paper px-5 text-[0.9375rem] font-bold text-fg transition-colors hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper sm:h-12 sm:px-6 sm:text-base"
               >
                 Shop all audio <ArrowRightIcon className="size-4" aria-hidden="true" />
               </Link>
-              <Link href={`/products/${featureHandle}`} className="text-sm font-semibold text-paper/80 underline-offset-4 hover:text-paper hover:underline">
-                {feature.title} · {formatInr(feature.priceInr)}
-              </Link>
             </div>
           </div>
-          <Link href={`/products/${featureHandle}`} aria-label={feature.title} className="group/feat relative block min-h-[20rem] overflow-hidden bg-surface-2 lg:min-h-[32rem]">
-            {photos && (
-              // eslint-disable-next-line @next/next/no-img-element -- static pre-sized variants
-              <img
-                src={gadgetGallerySrc(photos, 0)}
-                srcSet={gadgetGallerySrcSet(photos, 0)}
-                sizes="(min-width: 1024px) 640px, 100vw"
-                alt={feature.title}
-                width={960}
-                height={960}
-                loading="lazy"
-                className="absolute inset-0 size-full object-contain p-6 transition-transform duration-700 ease-out-expo group-hover/feat:scale-[1.04] motion-reduce:transition-none sm:p-10"
-              />
-            )}
-            <span className="absolute top-4 left-4 rounded-pill bg-fg px-3 py-1 text-caption font-bold text-paper">Featured</span>
-          </Link>
+          {items.length > 0 && <AudioFeatureStage items={items} className="h-[clamp(15rem,44svh,19rem)] sm:h-[24rem] lg:h-auto lg:min-h-[30rem]" />}
         </Reveal>
 
         <div className="mt-8 flex items-end justify-between gap-4">
