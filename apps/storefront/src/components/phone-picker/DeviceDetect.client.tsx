@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { AnimatePresence, m } from 'motion/react';
 import { Smartphone, X } from 'lucide-react';
 import { phoneHref } from '@/components/phone-picker/BrandOutline';
-import { useStickyCtaVisible } from '@/lib/layout/chrome-store';
+import { chromeStore, useStickyCtaVisible } from '@/lib/layout/chrome-store';
 import type { PhoneModel } from '@/lib/medusa/fixtures';
 import { SPRING_UI } from '@/lib/motion/tokens';
 import { detectDevice } from '@/lib/phone/detect-device';
@@ -102,6 +102,13 @@ export function DeviceDetect({ models }: { models: PhoneModel[] }) {
     const id = window.setTimeout(() => setNote(null), note.others.length > 0 ? AUTO_HIDE_MS * 2 : AUTO_HIDE_MS);
     return () => window.clearTimeout(id);
   }, [note]);
+
+  // The install pop-up uses the same corner and waits while this note is up.
+  const noteUp = note !== null;
+  useEffect(() => {
+    chromeStore.setDeviceNoteVisible(noteUp);
+    return () => chromeStore.setDeviceNoteVisible(false);
+  }, [noteUp]);
 
   const nameOf = (slug: string) => models.find((x) => x.slug === slug)?.model ?? slug;
   const switchTo = (slug: string) => {

@@ -11,6 +11,7 @@ import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFab } from '@/components/layout/WhatsAppFab.client';
+import { InstallPrompt } from '@/components/install/InstallPrompt.client';
 
 export default async function StoreLayout({ children }: { children: ReactNode }) {
   const models = await getPhoneModels();
@@ -30,6 +31,8 @@ export default async function StoreLayout({ children }: { children: ReactNode })
           <WhatsAppFab />
           <PhonePickerSheetMount models={models} />
           <DeviceDetect models={models} />
+          {/* Offers to install the store as an app, in a quiet moment (never a dialog). */}
+          <InstallPrompt />
           <CartDrawer />
         </MyPhoneProvider>
       </CartProvider>

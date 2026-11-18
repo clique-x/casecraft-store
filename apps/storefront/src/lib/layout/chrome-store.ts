@@ -3,7 +3,7 @@ import { useSyncExternalStore } from 'react';
 type Listener = () => void;
 
 const listeners = new Set<Listener>();
-const state = { heroPresent: false, stickyCtaVisible: false };
+const state = { heroPresent: false, stickyCtaVisible: false, deviceNoteVisible: false };
 
 function emit(): void {
   for (const cb of listeners) cb();
@@ -31,6 +31,12 @@ export const chromeStore = {
     state.stickyCtaVisible = visible;
     emit();
   },
+  /** The "Showing covers for your …" note is up; anything else for the same corner waits for it. */
+  setDeviceNoteVisible(visible: boolean): void {
+    if (state.deviceNoteVisible === visible) return;
+    state.deviceNoteVisible = visible;
+    emit();
+  },
 };
 
 /** Whether a full-bleed dark hero is mounted on the current page; `serverFallback` is used for SSR and hydration. */
@@ -46,6 +52,14 @@ export function useStickyCtaVisible(): boolean {
   return useSyncExternalStore(
     subscribe,
     () => state.stickyCtaVisible,
+    () => false,
+  );
+}
+
+export function useDeviceNoteVisible(): boolean {
+  return useSyncExternalStore(
+    subscribe,
+    () => state.deviceNoteVisible,
     () => false,
   );
 }

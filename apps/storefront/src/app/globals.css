@@ -404,6 +404,10 @@
     display: none;
   }
 }
+/* The install pop-up never opens on the checkout; this covers one that was already up on the way there. */
+body:has(#checkout-form) [data-install-prompt] {
+  display: none;
+}
 
 /* Home: the service strip under the hero carries the same four facts, so the announcement bar steps aside
    and the header starts at the very top, over the hero on phones. */
