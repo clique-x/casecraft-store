@@ -8,7 +8,7 @@ import { formatInr } from '@/lib/catalog/photos';
 import type { HomeProduct } from '@/lib/medusa/fixtures';
 import { cn } from '@/lib/utils';
 
-const CARD_SIZES = '(max-width: 768px) 46vw, (max-width: 1024px) 31vw, (max-width: 1280px) 23vw, 240px';
+const CARD_SIZES = '(max-width: 768px) 40vw, (max-width: 1024px) 31vw, (max-width: 1280px) 23vw, 240px';
 
 /** Grid card for a gadget, with the colours, lengths, capacities or resolutions it comes in. */
 export function GadgetCard({ product, className }: { product: HomeProduct; className?: string }) {

@@ -47,7 +47,7 @@ function featureItem({ gadget, handle }: Props['features'][number]): FeatureItem
 export function AudioSpotlight({ features, products, total, brands }: Props) {
   const items = features.flatMap(featureItem);
   return (
-    <section id="audio" aria-labelledby="audio-heading" className="scroll-mt-20 bg-paper py-12 text-fg lg:py-20">
+    <section id="audio" aria-labelledby="audio-heading" className="scroll-mt-20 bg-paper py-10 text-fg lg:py-20">
       <div className={SHELL}>
         <Reveal className="grid overflow-hidden rounded-[28px] bg-fg text-paper lg:grid-cols-2">
           <div className="flex flex-col justify-center gap-3.5 p-5 sm:gap-5 sm:p-10 lg:p-14">
@@ -84,9 +84,12 @@ export function AudioSpotlight({ features, products, total, brands }: Props) {
             See all {total} <ArrowRightIcon aria-hidden="true" />
           </Link>
         </div>
-        <ul className="mt-5 grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-5 md:grid-cols-4">
+        <ul
+          aria-label="More audio"
+          className="-mx-4 mt-5 flex snap-x gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6 md:mx-0 md:grid md:grid-cols-4 md:gap-x-5 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
+        >
           {products.map((p) => (
-            <li key={p.id}>
+            <li key={p.id} className="w-[44%] shrink-0 snap-start md:w-auto">
               <GadgetCard product={p} />
             </li>
           ))}

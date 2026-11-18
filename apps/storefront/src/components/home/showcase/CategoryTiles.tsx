@@ -37,7 +37,8 @@ const PLINTH_SIZES = '(min-width: 64rem) 300px, (min-width: 48rem) 260px, 60vw';
  */
 const STUDIO_FRAME =
   'inset-0 [mask-image:linear-gradient(to_right,transparent_2%,black_46%)] transition-transform duration-700 ease-out-expo group-hover/tile:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover/tile:transform-none md:max-lg:[mask-image:linear-gradient(to_bottom,transparent_0%,black_34%)]';
-const STUDIO_SIZES = '(min-width: 64rem) 380px, (min-width: 48rem) 34vw, 56vw';
+// The art is about 55vw wide on a phone; 40vw asks for the 480 px file, which is still over 2x there.
+const STUDIO_SIZES = '(min-width: 64rem) 380px, (min-width: 48rem) 34vw, 40vw';
 const STUDIO_LABEL = 'bg-black/40 text-white/90 backdrop-blur-sm';
 /** The studio set's own teal, so the photo's edge has nothing to show against. */
 const STUDIO_SURFACE = 'bg-[radial-gradient(120%_130%_at_82%_30%,#0a4f60_0%,#06323c_44%,#021a20_100%)]';
@@ -114,7 +115,7 @@ function Art({ image, className, alt = '' }: { image: TileImage; className?: str
  */
 export function CategoryTiles({ rail }: { rail?: ReactNode }) {
   return (
-    <section aria-labelledby="favourites-heading" className="bg-gh-ivory pt-10 pb-14 text-gh-ink lg:pt-12 lg:pb-20">
+    <section aria-labelledby="favourites-heading" className="bg-gh-ivory pt-10 pb-10 text-gh-ink lg:pt-12 lg:pb-20">
       <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-10 xl:px-14">
         <h2 id="favourites-heading" className="text-[1.875rem] leading-tight font-extrabold tracking-[-0.04em] text-gh-ink lg:text-[2.5rem]">
           Find your next favourite.

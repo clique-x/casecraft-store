@@ -10,7 +10,7 @@ const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponen
 /** Closing band: two ways forward, pick a phone or ask a person. */
 export function HubFinalCta() {
   return (
-    <section aria-labelledby="final-cta-heading" className="bg-paper py-14 lg:py-20">
+    <section aria-labelledby="final-cta-heading" className="bg-paper py-10 lg:py-20">
       <div className={SHELL}>
         <Reveal className="relative overflow-hidden rounded-[28px] bg-brand px-6 py-12 text-paper sm:px-12 lg:px-16 lg:py-16">
           <div aria-hidden="true" className="pointer-events-none absolute -right-24 -bottom-32 size-[26rem] rounded-full bg-white/8" />

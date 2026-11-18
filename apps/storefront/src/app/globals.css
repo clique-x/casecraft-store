@@ -404,6 +404,12 @@
     display: none;
   }
 }
+/* The checkout's fixed action bar on phones stays up over the footer: leave it room below the last row. */
+@media (max-width: 63.99rem) {
+  body:has(#checkout-form) #footer {
+    padding-bottom: 5rem;
+  }
+}
 /* The install pop-up never opens on the checkout; this covers one that was already up on the way there. */
 body:has(#checkout-form) [data-install-prompt] {
   display: none;

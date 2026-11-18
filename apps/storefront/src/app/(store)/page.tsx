@@ -13,16 +13,14 @@ import { ServiceStrip } from '@/components/home/showcase/ServiceStrip';
 import { CategoryTiles } from '@/components/home/showcase/CategoryTiles';
 import { TrendingHub } from '@/components/home/hub/TrendingHub';
 import { AudioSpotlight } from '@/components/home/hub/AudioSpotlight';
-import { CoversSection } from '@/components/home/hub/CoversSection';
+import { CoversShowcase } from '@/components/home/hub/CoversShowcase.client';
 import { BrandsWall, type LogoBrand } from '@/components/home/hub/BrandsWall';
 import { HubFinalCta } from '@/components/home/hub/HubFinalCta';
 import { NewArrivalsRow } from '@/components/home/NewArrivalsRow';
-import { WhyUs } from '@/components/home/WhyUs';
 import { PromoStage } from '@/components/home/promo-stage/PromoStage.client';
 import { DepartmentExplorer, type ExploreDepartment } from '@/components/home/DepartmentExplorer.client';
-import { GadgetRow } from '@/components/home/GadgetRow';
+import { DepartmentShelf } from '@/components/home/DepartmentShelf';
 import { HomeDuo, type DuoFeature } from '@/components/home/HomeDuo';
-import { ProtectionRow } from '@/components/home/ProtectionRow';
 import { ReviewsSection } from '@/components/reviews/ReviewsSection';
 import {
   DEPARTMENTS,
@@ -82,7 +80,21 @@ function comboCovers(products: ProductDetail[]): ComboCover[] {
 function comboAccessories(products: ProductDetail[]): ComboAccessory[] {
   return products.flatMap((p) =>
     p.accessory
-      ? [{ entry: p.accessory, title: p.title, variants: p.variants.map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })) }]
+      ? [
+          {
+            // Only what the builder shows; the descriptions and details are not sent to the browser.
+            entry: {
+              id: p.accessory.id,
+              handle: p.accessory.handle,
+              type: p.accessory.type,
+              priceInr: p.accessory.priceInr,
+              features: p.accessory.features,
+              photos: p.accessory.photos,
+            },
+            title: p.title,
+            variants: p.variants.map(({ id, modelSlug, priceInr, stock }) => ({ id, modelSlug, priceInr, stock })),
+          },
+        ]
       : [],
   );
 }
@@ -264,6 +276,8 @@ export default async function HomePage() {
     getAllProducts(),
   ]);
 
+  // One list for the covers row and the combo builder: every photographed cover with its variants per phone.
+  const covers = comboCovers(allCovers);
   const audioWithPhotos = byPicks(audio.filter((p) => p.gadget?.photos));
   const featureProduct = audioWithPhotos.find((p) => p.gadget?.id === FEATURE_AUDIO) ?? audioWithPhotos[0];
 
@@ -304,21 +318,17 @@ export default async function HomePage() {
       )}
       {/* Campaign images: audio right after the audio picks, covers right before the covers opener. */}
       <PromoStage />
-      <CoversSection models={models} covers={PHOTOS.length} />
+      {/* The covers for the visitor's phone, in a row to swipe. */}
+      <CoversShowcase covers={covers} />
       <NewArrivalsRow products={newArrivals} models={models} />
       {/* Cover + screen glass + back film for the visitor's phone, at bundle price. */}
-      <HomeCombos covers={comboCovers(allCovers)} accessories={comboAccessories(accessories)} />
-      {/* The other departments: storage, then cameras and speakers, then protection. */}
-      <GadgetRow department="storage" products={storage} />
-      <GadgetRow department="charging" products={charging} />
-      <GadgetRow department="laptops" products={laptops} />
-      <GadgetRow department="computer" products={computer} />
+      <HomeCombos covers={covers} accessories={comboAccessories(accessories)} />
+      {/* The other departments, as tabs over one row: protection, chargers, storage, laptops, computer accessories. */}
+      <DepartmentShelf accessories={accessories} gadgets={{ charging, storage, laptops, computer }} />
       <HomeDuo features={duoFeatures(cameras, audio)} />
-      <ProtectionRow products={accessories} />
       {/* Real customer reviews only; until there are some, an invitation to write one. */}
       <ReviewsSection />
       <BrandsWall brands={brandLogos} />
-      <WhyUs />
       <HubFinalCta />
     </>
   );

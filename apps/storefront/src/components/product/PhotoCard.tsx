@@ -43,6 +43,11 @@ interface PhotoCardProps {
   newBadge?: boolean
   /** The rail's centre card on phones: it settles, then turns to the second angle. */
   centre?: boolean
+  /**
+   * In a grid the second angle shows only under a pointer's hover, so on touch screens it is taken out of the
+   * layout and never downloaded. Rails leave this off: there the centre card turns to it.
+   */
+  hoverOnly?: boolean
   sizes?: string
 }
 
@@ -58,6 +63,7 @@ export function PhotoCard({
   className,
   newBadge = false,
   centre = false,
+  hoverOnly = false,
   sizes = CARD_SIZES,
 }: PhotoCardProps) {
   const { photo } = product
@@ -111,7 +117,10 @@ export function PhotoCard({
                     aria-hidden="true"
                     decoding="async"
                     loading="lazy"
-                    className="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-500 ease-out-expo group-hover/card:opacity-100 in-data-centre:opacity-100 in-data-centre:delay-700"
+                    className={cn(
+                      'absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-500 ease-out-expo group-hover/card:opacity-100 in-data-centre:opacity-100 in-data-centre:delay-700',
+                      hoverOnly && 'pointer-coarse:hidden',
+                    )}
                   />
                 )}
               </>

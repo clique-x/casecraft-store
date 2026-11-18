@@ -217,7 +217,8 @@ export const SCENE_ART: readonly ShowcaseArt[] = [LAPTOP_ART, ...PRODUCT_ART];
 export const ORBIT: SceneArt = {
   src: '/home/orbit-1500.webp',
   srcSet: home('orbit', [760, 1500]),
-  sizes: '(min-width: 64rem) 62vw, 150vw',
+  // A blurred ring: on phones the 760 px file is plenty, so the hint is kept under it at 3x.
+  sizes: '(min-width: 64rem) 62vw, 250px',
   w: 1500,
   h: 807,
 };

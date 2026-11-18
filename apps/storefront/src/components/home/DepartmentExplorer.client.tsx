@@ -31,8 +31,11 @@ export interface ExploreDepartment {
   ranges: ExploreRange[];
 }
 
-/** One size hint for every picture of a range, so the round frame and the big picture share a download. */
-const SIZES = '(min-width: 80rem) 368px, (min-width: 64rem) 30vw, (min-width: 40rem) 44vw, 80vw';
+/**
+ * One size hint for every picture of a range, so the round frame and the big picture share a download. On a
+ * card the square is 160 to 290 px; 180 px asks a phone for the 480 px file, which is all that size needs.
+ */
+const SIZES = '(min-width: 80rem) 368px, 180px';
 /** How often the pictures move on (ms). A panel changes on every second beat, and its neighbours on the beats between. */
 const BEAT_MS = 2400;
 /**
@@ -60,7 +63,12 @@ function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
   // The range under the pointer or with focus holds its picture; otherwise the ranges take turns. Counting in
   // twos, offset by the panel's place, keeps the row from changing all at once.
   const [held, setHeld] = useState<number | null>(null);
-  const shown = held ?? Math.floor((beat + index) / 2) % ranges.length;
+  const first = Math.floor(index / 2);
+  const turn = Math.floor((beat + index) / 2);
+  const shown = held ?? turn % ranges.length;
+  // A range's photo is in the page from the turn before its own (so it is ready), and stays once shown. Before
+  // that it is not rendered, so a department with four ranges costs two downloads up front, not four.
+  const reached = (k: number) => k === held || turn + 1 - first >= ranges.length - 1 || (((k - first) % ranges.length) + ranges.length) % ranges.length <= turn + 1 - first;
   const fromInr = Math.min(...ranges.map((r) => r.fromInr));
   // In the row a closed panel is a single button; its links must not take focus from behind it.
   const closed = row && !on;
@@ -92,26 +100,28 @@ function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
       */}
       <div className="relative min-h-40 flex-1 overflow-hidden xl:absolute xl:inset-y-0 xl:right-0 xl:w-(--win) xl:opacity-0 xl:transition-opacity xl:duration-500 xl:[mask-image:linear-gradient(to_right,transparent,black_2.75rem)] xl:group-data-[open=true]/panel:opacity-100">
         <div className="absolute top-0 left-1/2 aspect-square h-full max-h-[100cqw] -translate-x-1/2 xl:max-h-none">
-          {ranges.map((r, k) => (
-            // eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer
-            <img
-              key={r.label}
-              src={r.image}
-              srcSet={r.imageSet}
-              sizes={SIZES}
-              alt={k === shown ? r.alt : ''}
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-              className={cn(
-                'absolute inset-0 size-full transition-opacity duration-700 ease-out',
-                r.cutout
-                  ? 'object-contain p-[13%] drop-shadow-[0_18px_22px_rgba(0,0,0,.5)] xl:p-[20%]'
-                  : 'object-cover [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_14%,black_86%,transparent),linear-gradient(to_bottom,black_72%,transparent)] xl:[mask-image:none]',
-                k === shown ? 'opacity-100' : 'opacity-0',
-              )}
-            />
-          ))}
+          {ranges.map((r, k) =>
+            reached(k) ? (
+              // eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer
+              <img
+                key={r.label}
+                src={r.image}
+                srcSet={r.imageSet}
+                sizes={SIZES}
+                alt={k === shown ? r.alt : ''}
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className={cn(
+                  'absolute inset-0 size-full transition-opacity duration-700 ease-out',
+                  r.cutout
+                    ? 'object-contain p-[13%] drop-shadow-[0_18px_22px_rgba(0,0,0,.5)] xl:p-[20%]'
+                    : 'object-cover [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_14%,black_86%,transparent),linear-gradient(to_bottom,black_72%,transparent)] xl:[mask-image:none]',
+                  k === shown ? 'opacity-100' : 'opacity-0',
+                )}
+              />
+            ) : null,
+          )}
         </div>
       </div>
       {/*
@@ -132,25 +142,27 @@ function Panel({ department, index, on, row, beat, onOpen }: PanelProps) {
       >
         <span className="flex h-full w-(--bar) flex-col items-center pt-[4.25rem] pb-4 text-center">
           <span className="relative block aspect-square w-[76%] shrink-0 overflow-hidden rounded-full bg-[radial-gradient(closest-side,#10707f_0%,#07404c_100%)] shadow-[0_16px_32px_-14px_rgba(0,0,0,.75)] ring-1 ring-white/20 transition-shadow duration-300 group-hover/panel:ring-white/45">
-            {ranges.map((r, k) => (
-              // eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer
-              <img
-                key={r.label}
-                src={r.image}
-                srcSet={r.imageSet}
-                // The big picture's size hint, so the two share one download.
-                sizes={SIZES}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                draggable={false}
-                className={cn(
-                  'absolute inset-0 size-full transition-opacity duration-700 ease-out',
-                  r.cutout ? 'object-contain p-[15%]' : 'scale-[1.16] object-cover',
-                  k === shown ? 'opacity-100' : 'opacity-0',
-                )}
-              />
-            ))}
+            {ranges.map((r, k) =>
+              reached(k) ? (
+                // eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer
+                <img
+                  key={r.label}
+                  src={r.image}
+                  srcSet={r.imageSet}
+                  // The big picture's size hint, so the two share one download.
+                  sizes={SIZES}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  draggable={false}
+                  className={cn(
+                    'absolute inset-0 size-full transition-opacity duration-700 ease-out',
+                    r.cutout ? 'object-contain p-[15%]' : 'scale-[1.16] object-cover',
+                    k === shown ? 'opacity-100' : 'opacity-0',
+                  )}
+                />
+              ) : null,
+            )}
           </span>
           <span className="mt-4 block px-2 text-[0.875rem] leading-tight font-bold text-balance min-[90rem]:text-[0.9375rem]">{department.name}</span>
           <span className="mt-1 block px-2 text-caption text-white/65 tabular-nums">from {formatInr(fromInr)}</span>

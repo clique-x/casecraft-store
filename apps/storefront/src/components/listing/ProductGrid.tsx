@@ -6,7 +6,7 @@ import { hasPhoto, type HomeProduct } from '@/lib/medusa/fixtures';
 import { cn } from '@/lib/utils';
 
 /** Two columns on phones, three from md, four from lg, five from xl. */
-const GRID_SIZES = '(max-width: 768px) 46vw, (max-width: 1024px) 31vw, (max-width: 1280px) 23vw, 240px';
+const GRID_SIZES = '(max-width: 768px) 40vw, (max-width: 1024px) 31vw, (max-width: 1280px) 23vw, 240px';
 /** First row on a phone: the cards above the fold load eagerly. */
 const EAGER_COUNT = 2;
 
@@ -50,7 +50,7 @@ export function ProductGrid({
             ) : product.accessory ? (
               <AccessoryCard product={product} />
             ) : hasPhoto(product) ? (
-              <PhotoCard product={product} rank={rank} priority={priority} newBadge={newBadge} sizes={GRID_SIZES} />
+              <PhotoCard product={product} rank={rank} priority={priority} newBadge={newBadge} sizes={GRID_SIZES} hoverOnly />
             ) : (
               <ProductCard product={product} rank={rank} modelCount={modelCount} priority={priority} />
             )}

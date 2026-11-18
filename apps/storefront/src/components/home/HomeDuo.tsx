@@ -25,15 +25,16 @@ const SIZES = '(min-width: 64rem) 300px, (min-width: 40rem) 40vw, 80vw';
 export function HomeDuo({ features }: { features: DuoFeature[] }) {
   if (features.length === 0) return null;
   return (
-    <section aria-label="Cameras and speakers" className="cv-auto bg-gh-ivory py-14 text-gh-ink lg:py-20">
-      <div className="mx-auto grid w-full max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-2 lg:gap-6 lg:px-8">
+    <section aria-label="Cameras and speakers" className="cv-auto bg-gh-ivory py-10 text-gh-ink lg:py-20">
+      {/* Phones: the two cards side by side, one to swipe to. From sm they stack, from lg they share the row. */}
+      <div className="mx-auto flex w-full max-w-[90rem] snap-x gap-4 overflow-x-auto overscroll-x-contain scroll-px-4 px-4 pb-2 [scrollbar-width:none] sm:grid sm:gap-5 sm:overflow-visible sm:px-6 sm:pb-0 lg:grid-cols-2 lg:gap-6 lg:px-10 xl:px-14 [&::-webkit-scrollbar]:hidden">
         {features.map((f, i) => {
           const photos = f.gadget.photos;
           const hero = photos ? gadgetHeroIndex(photos, f.gadget.options[0]?.slug) : 0;
           return (
-            <Reveal key={f.href} delay={i * 80}>
+            <Reveal key={f.href} delay={i * 80} className="w-[86%] shrink-0 snap-start sm:w-auto">
               <article className="grid h-full overflow-hidden rounded-[1.5rem] bg-[radial-gradient(120%_120%_at_85%_15%,#11565a_0%,#06363b_45%,#021d20_100%)] text-white shadow-[0_24px_60px_-36px_rgba(0,22,25,.8)] sm:grid-cols-[1fr_minmax(0,0.9fr)]">
-                <div className="flex flex-col gap-4 p-6 sm:p-8">
+                <div className="flex flex-col gap-3 p-5 sm:gap-4 sm:p-8">
                   <p className="text-label font-bold tracking-[0.16em] text-[#7fe6f2] uppercase">{f.eyebrow}</p>
                   <h2 className="font-display text-[1.75rem] leading-[1.1] font-extrabold tracking-[-0.03em] text-balance lg:text-[2rem]">
                     {f.heading}
@@ -66,7 +67,7 @@ export function HomeDuo({ features }: { features: DuoFeature[] }) {
                   </div>
                 </div>
                 {photos && (
-                  <Link href={f.productHref} tabIndex={-1} aria-hidden="true" className="group/duo relative order-first block aspect-[5/4] sm:order-none sm:aspect-auto">
+                  <Link href={f.productHref} tabIndex={-1} aria-hidden="true" className="group/duo relative order-first block aspect-[3/2] sm:order-none sm:aspect-auto">
                     {/* eslint-disable-next-line @next/next/no-img-element -- pre-sized static variants, no optimizer */}
                     <img
                       src={gadgetGallerySrc(photos, hero, 960)}

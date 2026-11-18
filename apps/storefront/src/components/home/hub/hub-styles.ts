@@ -1,5 +1,6 @@
 /** Shared class strings for the hub home sections. */
-export const SHELL = 'mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8';
+/** The header's own width and gutters (layout/Header), so every home section starts on the logo's edge. */
+export const SHELL = 'mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-10 xl:px-14';
 export const EYEBROW = 'text-label font-bold tracking-[0.2em] text-brand uppercase';
 export const PRIMARY_BTN =
   'inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-pill bg-accent px-6 text-base font-bold text-on-accent transition-colors duration-(--dur-micro) hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2 [&_svg]:size-4';

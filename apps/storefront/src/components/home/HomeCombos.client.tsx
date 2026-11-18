@@ -33,8 +33,11 @@ export interface ComboCover {
   variants: ComboVariant[];
 }
 
+/** The few fields of a guard or film the builder uses; the rest of its entry stays on the server. */
+export type ComboEntry = Pick<AccessoryEntry, 'id' | 'handle' | 'type' | 'priceInr' | 'features' | 'photos'>;
+
 export interface ComboAccessory {
-  entry: AccessoryEntry;
+  entry: ComboEntry;
   title: string;
   /** One variant per phone the guard or film is made for. */
   variants: ComboVariant[];
@@ -53,7 +56,7 @@ const ROLE_HINT: Record<Role, string> = {
   lens: 'Guards the camera lenses',
 };
 
-function roleOf(entry: AccessoryEntry): Role | null {
+function roleOf(entry: ComboEntry): Role | null {
   if (entry.type === 'screen-guard') return 'glass';
   if (entry.type === 'back-film') return 'film';
   if (entry.type === 'lens-protector') return 'lens';
@@ -70,7 +73,7 @@ function coverImages(photo: PhotoEntry): QuickLookImage[] {
 }
 
 /** Every shop photo of a guard or film. The stage already shows the first, so each has at least that one. */
-function accessoryImages(entry: AccessoryEntry): QuickLookImage[] {
+function accessoryImages(entry: ComboEntry): QuickLookImage[] {
   return (entry.photos?.gallery ?? ['On the stage']).map((caption, n) => ({
     src: accessoryPhotoSrc(entry.id, n, 480),
     srcSet: accessoryPhotoSrcSet(entry.id, n),
@@ -202,7 +205,7 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
 
   return (
     <section id="combos" aria-labelledby="combos-heading" className="cv-auto scroll-mt-20 bg-surface-2 py-10 text-fg lg:py-16">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-1.5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-4">
           <p className="text-label font-bold tracking-[0.16em] whitespace-nowrap text-brand uppercase">Combo deals</p>
           <button

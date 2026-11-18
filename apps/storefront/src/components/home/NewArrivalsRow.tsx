@@ -19,9 +19,9 @@ export function NewArrivalsRow({ products }: NewArrivalsRowProps) {
     <section
       id="new"
       aria-labelledby="new-heading"
-      className="cv-auto scroll-mt-20 bg-surface-2 py-14 text-fg lg:py-20"
+      className="cv-auto scroll-mt-20 bg-surface-2 py-10 text-fg lg:py-20"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-10 xl:px-14">
         <Reveal className="flex items-end justify-between gap-4">
           <div>
             <h2 id="new-heading" className="font-display text-h2 font-extrabold text-heading text-balance">

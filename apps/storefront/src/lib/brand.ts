@@ -35,7 +35,7 @@ export const LAUNCH_BRANDS: readonly string[] = [
   'OPPO',
 ];
 
-/** Where the photos are shot; appears in the "Up close" and "Why buy here" copy. */
+/** Where the photos are shot and orders are packed; appears in the "Up close" copy and the footer. */
 export const SHOP_CITY = 'Haridwar';
 /** Case makers we stock, shown as plain text only (no third-party logos). */
 export const CASE_BRANDS: readonly string[] = ['CG Mobile', 'Dulero', 'Spigen', 'Neza'];

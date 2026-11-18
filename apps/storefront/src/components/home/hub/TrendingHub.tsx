@@ -10,7 +10,7 @@ import { EYEBROW, SHELL, TEXT_LINK } from './hub-styles';
 export function TrendingHub({ products }: { products: HomeProduct[] }) {
   if (products.length === 0) return null;
   return (
-    <section id="trending" aria-labelledby="trending-heading" className="scroll-mt-20 bg-paper pb-14 text-fg lg:pb-20">
+    <section id="trending" aria-labelledby="trending-heading" className="scroll-mt-20 bg-paper py-10 text-fg lg:py-16">
       <div className={SHELL}>
         <Reveal className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -24,7 +24,8 @@ export function TrendingHub({ products }: { products: HomeProduct[] }) {
             All trending covers <ArrowRightIcon aria-hidden="true" />
           </Link>
         </Reveal>
-        <ProductGrid products={products} label="Trending covers and audio" className="mt-8" eager />
+        {/* Phones show the first six (three rows); the link above leads to the rest. Hidden cards load nothing. */}
+        <ProductGrid products={products} label="Trending covers and audio" className="mt-6 max-sm:[&>li:nth-child(n+7)]:hidden lg:mt-8" />
       </div>
     </section>
   );
