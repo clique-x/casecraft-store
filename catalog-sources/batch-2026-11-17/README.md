@@ -90,3 +90,22 @@ The hero's fourth slide ("The desk edit", Computer accessories) and the laptop i
 from the owner's three-quarter creative (02 - Final Creatives/Laptops/Dell Latitude 5400/01-hero-three-quarter.png), lifted off its
 backdrop: `apps/storefront/public/home/laptop-latitude-{520,1034}.webp`. It opens the computer accessories page until the laptops
 are listed.
+
+## KM1410 photos replaced (18 Nov)
+
+- **The old first image was wrong.** It came from antesports.com, the only photo on Ant Esports' KM1410 page. It is a
+  generated render with wrong keycaps ("Fnter", "F7 F7", "( 9 ) 9") and "GAMING UNLEASHED" on the spacebar; the product and
+  its box say "GAMING UNLIMITED".
+- **New first image:** `teal/ant-km1410__0-hero.webp`.
+  - Built from Ant Esports' own packshot on its Flipkart listing (keyboard, mouse and OTG adapter on white; the keycaps are
+    correct), using `tools/glow_teal.py`.
+  - The bodies are matted. The RGB glow is turned into coloured light with colour-to-alpha, so it shows on the teal.
+  - The pieces keep the packshot's scale, with the mouse and adapter about 10% larger.
+- **Gallery 3–6:** Ant Esports' infographics from the same listing, unchanged:
+  - USB wired connection;
+  - 7D durable buttons;
+  - universal compatibility;
+  - silent and long-lasting clicks (10 million keystrokes, 5 million clicks).
+
+  Their text is clean and matches the box and specs.
+- **New spec row:** "Rated life" comes from the last infographic.

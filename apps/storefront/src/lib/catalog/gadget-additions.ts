@@ -351,6 +351,7 @@ export const COMPUTER: readonly GadgetEntry[] = [
       { label: 'Media keys', value: 'FN + F1–F12: music, volume, mail, browser, calculator, lock' },
       { label: 'Mouse', value: '1200, 1800, 2400, 3600 DPI, 7 buttons, multicolour LED' },
       { label: 'Cables', value: 'USB, 1.5 m on both' },
+      { label: 'Rated life', value: 'Keys 10 million presses, mouse buttons 5 million clicks' },
       { label: 'Works with', value: 'Windows, macOS, Linux' },
       { label: 'Warranty', value: ANT_YEAR },
     ],
@@ -358,7 +359,17 @@ export const COMPUTER: readonly GadgetEntry[] = [
     optionKind: 'colour',
     options: [{ slug: 'carbon-black', name: 'Carbon Black', hex: '#1c1c1e' }],
     warrantyMonths: 12,
-    photos: { id: 'ant-esports-km1410', gallery: ['Keyboard and mouse', 'Sealed box'] },
+    photos: {
+      id: 'ant-esports-km1410',
+      gallery: [
+        'Keyboard, mouse and Type-C adapter',
+        'Sealed box',
+        'Wired USB, with a Type-C adapter',
+        'Mouse buttons',
+        'Works with Windows, macOS and Linux',
+        'Rated for 10 million key presses and 5 million clicks',
+      ],
+    },
   },
   {
     id: 'honeywell-usb-hub-4',
