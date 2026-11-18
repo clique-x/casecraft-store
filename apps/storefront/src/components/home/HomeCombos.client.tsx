@@ -5,11 +5,12 @@ import Link from 'next/link';
 import { animate, m, useMotionValue, useTransform } from 'motion/react';
 import { ArrowRight, ChevronRight, Loader2, ShoppingBag, Smartphone } from 'lucide-react';
 import { ComboCoverRail } from '@/components/home/combo/ComboCoverRail.client';
+import type { QuickLookImage } from '@/components/home/combo/ComboQuickLook.client';
 import { ComboStage, type StageCard } from '@/components/home/combo/ComboStage.client';
 import { phoneHref } from '@/components/phone-picker/BrandOutline';
 import { FREE_SHIPPING_THRESHOLD_INR } from '@/lib/brand';
-import { BUNDLE_SAVING_INR, accessoryPhotoSrc, bundlePrice, type AccessoryEntry } from '@/lib/catalog/accessories';
-import { backdropThumbSrc, backdropThumbSrcSet, formatInr, getPhoto } from '@/lib/catalog/photos';
+import { BUNDLE_SAVING_INR, accessoryPhotoSrc, accessoryPhotoSrcSet, bundlePrice, type AccessoryEntry } from '@/lib/catalog/accessories';
+import { backdropThumbSrc, backdropThumbSrcSet, formatInr, gallerySrc, gallerySrcSet, getPhoto, type PhotoEntry } from '@/lib/catalog/photos';
 import { useCart } from '@/lib/cart/cart-context';
 import { useReducedMotion } from '@/lib/device/use-reduced-motion';
 import { pickerSheet } from '@/lib/phone/picker-sheet-store';
@@ -60,6 +61,23 @@ function roleOf(entry: AccessoryEntry): Role | null {
 }
 
 const inStock = (variants: readonly ComboVariant[], slug: string) => variants.find((v) => v.modelSlug === slug && v.stock > 0) ?? null;
+
+/** Every photo of a cover for the closer look: its gallery, or the one studio shot when it has none. */
+function coverImages(photo: PhotoEntry): QuickLookImage[] {
+  const gallery = photo.gallery ?? [];
+  if (gallery.length === 0) return [{ src: backdropThumbSrc(photo, 480), srcSet: backdropThumbSrcSet(photo), thumb: backdropThumbSrc(photo, 160), caption: 'Back' }];
+  return gallery.map((caption, n) => ({ src: gallerySrc(photo.id, n, 480), srcSet: gallerySrcSet(photo.id, n), thumb: gallerySrc(photo.id, n, 160), caption }));
+}
+
+/** Every shop photo of a guard or film. The stage already shows the first, so each has at least that one. */
+function accessoryImages(entry: AccessoryEntry): QuickLookImage[] {
+  return (entry.photos?.gallery ?? ['On the stage']).map((caption, n) => ({
+    src: accessoryPhotoSrc(entry.id, n, 480),
+    srcSet: accessoryPhotoSrcSet(entry.id, n),
+    thumb: accessoryPhotoSrc(entry.id, n, 160),
+    caption,
+  }));
+}
 
 /** A rupee amount that counts to its new value instead of jumping. Screen readers get the final figure only. */
 function AnimatedInr({ value }: { value: number }) {
@@ -145,8 +163,41 @@ export function HomeCombos({ covers, accessories }: { covers: ComboCover[]; acce
     });
 
   const stageCards: StageCard[] = [
-    ...(shownPhoto ? [{ key: 'cover', label: 'Cover', src: backdropThumbSrc(shownPhoto, 480), srcSet: backdropThumbSrcSet(shownPhoto) }] : []),
-    ...parts.map((p) => ({ key: p.role, label: ROLE_TAG[p.role], src: accessoryPhotoSrc(p.accessory.entry.id, 0, 480) })),
+    ...(shownCover && shownPhoto
+      ? [
+          {
+            key: 'cover',
+            label: 'Cover',
+            src: backdropThumbSrc(shownPhoto, 480),
+            srcSet: backdropThumbSrcSet(shownPhoto),
+            quick: {
+              id: shownCover.id,
+              kind: 'Cover',
+              title: shownCover.title,
+              href: `/products/${shownCover.handle}`,
+              priceInr: coverPrice,
+              from: !coverVariant,
+              features: shownPhoto.features,
+              images: coverImages(shownPhoto),
+            },
+          },
+        ]
+      : []),
+    ...parts.map((p) => ({
+      key: p.role,
+      label: ROLE_TAG[p.role],
+      src: accessoryPhotoSrc(p.accessory.entry.id, 0, 480),
+      quick: {
+        id: p.accessory.entry.id,
+        kind: ROLE_NAME[p.role],
+        title: p.accessory.title,
+        href: `/products/${p.accessory.entry.handle}`,
+        priceInr: bundlePrice(p.priceInr),
+        wasInr: p.priceInr,
+        features: p.accessory.entry.features,
+        images: accessoryImages(p.accessory.entry),
+      },
+    })),
   ];
 
   return (
