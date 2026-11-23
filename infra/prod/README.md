@@ -79,6 +79,10 @@ through any mailbox you already have:
 3. In the domain's DNS, keep the SPF and DKIM records the mail host gives you, so the emails do not land in
    spam. Place a test order with your own email to check.
 
+You also get an email for every new order, at `ORDER_ALERT_EMAILS` in `.env` (default `shambhvi91@gmail.com`),
+and a WhatsApp message at `ORDER_ALERT_WHATSAPP` once a Twilio WhatsApp sender is set up: see "New-order alerts"
+in [`apps/backend/README.md`](../../apps/backend/README.md).
+
 Every order gets an account under its email (name, phone, addresses). There are no passwords: customers sign
 in at gadgetshub.io/account with a 6-digit code emailed to them. Until email is set up, that page only offers
 tracking by order number.

@@ -18,6 +18,7 @@ The commerce backend for the storefront: products, prices, stock, phone models a
 | Cash on Delivery | built in | Medusa's manual provider (`pp_system_default`), shown as Cash on Delivery. Mark the payment as captured in the admin once the courier remits. |
 | Order tracking API | `src/api/store/order-lookup/route.ts` | `GET /store/order-lookup?order=&contact=`: order number plus the email or phone on the order. |
 | Phone login | `src/lib/phone-otp.ts`, `src/api/store/otp`, `src/api/store/my-addresses` | Twilio Verify sends a code; after a correct code, the addresses of past orders with that phone show at checkout. Rate limited. Off until `TWILIO_VERIFY_SERVICE_SID` is set. |
+| New-order alerts | `src/subscribers/order-placed-alert.ts`, `src/lib/whatsapp.ts` | Every order emails the owner (`ORDER_ALERT_EMAILS`) and, once a Twilio WhatsApp sender is set, sends a WhatsApp message (`ORDER_ALERT_WHATSAPP`). |
 | Storefront refresh | `src/subscribers/revalidate-storefront.ts` | Tells the storefront to refresh its cached catalogue when products, prices or stock change. |
 
 Product metadata carries what the storefront needs to draw each cover: `photo_id` for photographed covers, `design_id` for procedural designs, plus `trending_rank`, `is_new`, `badge`, `regular_inr` and the `detail_*` copy. Each variant has `model_slug` and `case_type` in its metadata.
@@ -75,6 +76,28 @@ Unit tests for the provider: `TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modu
 3. Checkout then shows "Ordered before? Find my saved addresses" under the mobile number.
 
 Limits: 3 codes per number per 10 minutes, 5 code checks per number per 10 minutes, 10 sends per IP per hour. They are kept in memory, so they reset when Medusa restarts.
+
+## New-order alerts (email and WhatsApp)
+
+Every placed order emails `ORDER_ALERT_EMAILS` (default `shambhvi91@gmail.com`) with the items, total, payment method, the customer's contact and a link to the order in the admin. It uses the shop's own email settings, so it works as soon as `SMTP_HOST` and `EMAIL_FROM` are set.
+
+The WhatsApp alert to `ORDER_ALERT_WHATSAPP` (default `+918077402898`) goes through Twilio and needs a one-time setup:
+
+1. In the Twilio Console open Messaging, then Senders, then WhatsApp senders, and register a WhatsApp sender (a number that is not already in use on WhatsApp). To try it first, use the sandbox under Messaging, then Try it out, then Send a WhatsApp message, and send its join code from the phone that should get the alerts.
+2. WhatsApp only delivers a message the shop starts when it uses an approved template. Under Messaging, then Content Template Builder, create a text template in the Utility category with this body, and submit it for WhatsApp approval:
+
+   ```
+   New order #{{1}} on GadgetsHub
+   Customer: {{2}}
+   Amount: {{3}}
+   Items: {{4}}
+   Ship to: {{5}}
+   Open the admin to pack it.
+   ```
+
+3. Set `TWILIO_WHATSAPP_FROM` to the sender's number and `TWILIO_WHATSAPP_ORDER_TEMPLATE_SID` to the template's Content SID (`HX…`), next to `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN`, and restart Medusa.
+
+Without the template SID the alert is sent as free-form text, which WhatsApp delivers only within 24 hours of the last message that phone sent to the sender (enough for the sandbox). Failures are written to the Medusa log and never block the order.
 
 ## Production notes
 

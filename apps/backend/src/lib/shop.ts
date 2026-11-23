@@ -19,6 +19,31 @@ export const SHOP = {
 
 export const LOGIN_CODE_MINUTES = 10
 
+/** The admin dashboard's public address, for links in emails to the shop's owner. */
+export function adminUrl(): string {
+  const base = process.env.API_DOMAIN ? `https://${process.env.API_DOMAIN}` : process.env.MEDUSA_BACKEND_URL || 'http://localhost:9000'
+  return `${base.replace(/\/$/, '')}/app`
+}
+
+const list = (value: string | undefined, fallback: string) => (value ?? fallback).split(',').map((v) => v.trim()).filter(Boolean)
+
+/**
+ * Who hears about every new order. ORDER_ALERT_EMAILS and ORDER_ALERT_WHATSAPP (comma-separated) replace the
+ * defaults; set either to an empty value to turn that alert off.
+ */
+export function orderAlertEmails(): string[] {
+  return list(process.env.ORDER_ALERT_EMAILS, 'shambhvi91@gmail.com').flatMap((e) => normaliseEmail(e) ?? [])
+}
+
+/** WhatsApp numbers in international format, e.g. "+918077402898". A bare 10-digit number is taken as Indian. */
+export function orderAlertWhatsappNumbers(): string[] {
+  return list(process.env.ORDER_ALERT_WHATSAPP, '+918077402898').flatMap((raw) => {
+    const digits = raw.replace(/\D/g, '')
+    if (digits.length === 10) return [`+91${digits}`]
+    return digits.length >= 11 && digits.length <= 15 ? [`+${digits}`] : []
+  })
+}
+
 /** Whether the shop can send email: SMTP is configured, or (development) emails go to a preview folder. */
 export function emailEnabled(): boolean {
   return Boolean(process.env.EMAIL_FROM && (process.env.SMTP_HOST || process.env.EMAIL_PREVIEW_DIR))
