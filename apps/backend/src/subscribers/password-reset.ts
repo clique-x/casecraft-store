@@ -2,6 +2,7 @@ import type { SubscriberArgs, SubscriberConfig } from '@medusajs/framework'
 import { ContainerRegistrationKeys } from '@medusajs/framework/utils'
 import { adminResetEmail } from '../lib/email/admin-reset'
 import { sendEmail } from '../lib/email/send'
+import { adminUrl } from '../lib/shop'
 
 /**
  * Emails the admin dashboard's "Forgot password?" link. Customers have no passwords (they sign in with an
@@ -12,8 +13,7 @@ export default async function passwordReset({
   container,
 }: SubscriberArgs<{ entity_id: string; token: string; actor_type: string }>) {
   if (data.actor_type !== 'user') return
-  const admin = process.env.API_DOMAIN ? `https://${process.env.API_DOMAIN}` : (process.env.MEDUSA_BACKEND_URL || 'http://localhost:9000')
-  const link = `${admin.replace(/\/$/, '')}/app/reset-password?${new URLSearchParams({ token: data.token, email: data.entity_id })}`
+  const link = `${adminUrl()}/reset-password?${new URLSearchParams({ token: data.token, email: data.entity_id })}`
   try {
     await sendEmail(container, { to: data.entity_id, template: 'admin-password-reset', email: adminResetEmail(link), trigger: 'auth.password_reset' })
   } catch (error) {

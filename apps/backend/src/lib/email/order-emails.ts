@@ -1,5 +1,5 @@
 import type { OrderSummary } from '../orders'
-import { SHOP, inr } from '../shop'
+import { SHOP, adminUrl, inr } from '../shop'
 import { COLOURS, button, esc, layout, paragraph, textFooter, type RenderedEmail } from './layout'
 
 const { INK, MUTED, BORDER, BRAND } = COLOURS
@@ -102,6 +102,81 @@ export function orderPlacedEmail(order: OrderSummary): RenderedEmail {
     html: layout({ preheader: `${order.items.length === 1 ? order.items[0].title : `${order.items.length} items`}, ${inr(order.total)}. Dispatch within ${SHOP.dispatchWindow}.`, body }),
     text: text + textFooter(),
   }
+}
+
+const customerName = (order: OrderSummary) => `${order.address?.firstName ?? ''} ${order.address?.lastName ?? ''}`.trim()
+
+/** "New order": what the shop's owner gets for every order, with the customer's contact and a link to the admin. */
+export function orderAlertEmail(order: OrderSummary): RenderedEmail {
+  const name = customerName(order)
+  const payment = order.paidOnline ? 'Paid online' : 'Cash on Delivery'
+  const link = `${adminUrl()}/orders/${order.id}`
+  const phone = order.address?.phone ? `+91 ${order.address.phone.replace(/^\+91/, '')}` : ''
+  const contact = [name, order.email, phone].filter(Boolean)
+  const body = [
+    `<h1 style="margin:0 0 10px;font-family:${FONT};font-size:22px;line-height:1.25;font-weight:800;color:${INK}">New order #${order.displayId}</h1>`,
+    paragraph(`<strong>${esc(inr(order.total))}</strong> · ${esc(payment)}`),
+    paragraph(contact.map((c) => esc(c)).join('<br>'), `font-size:14px;color:${MUTED}`),
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:6px">${itemRows(order)}</table>`,
+    totalsTable(order),
+    addressBlock(order),
+    button(link, 'Open the order in admin'),
+  ].join('')
+
+  const text = [
+    `New ${SHOP.name} order #${order.displayId}: ${inr(order.total)}, ${payment}.`,
+    '',
+    ...(contact.length ? [`Customer: ${contact.join(', ')}`, ''] : []),
+    ...order.items.map((i) => `${i.quantity} × ${i.title}${i.variantTitle ? ` (${i.variantTitle})` : ''}: ${inr(i.total)}`),
+    '',
+    `Subtotal: ${inr(order.itemSubtotal)}`,
+    ...(order.discountTotal > 0 ? [`Discount: −${inr(order.discountTotal)}`] : []),
+    `Delivery: ${order.shippingTotal === 0 ? 'Free' : inr(order.shippingTotal)}`,
+    `${order.paidOnline ? 'Paid' : 'To collect on delivery'}: ${inr(order.total)}`,
+    '',
+    addressText(order),
+    '',
+    `Open it in the admin: ${link}`,
+  ].join('\n')
+
+  return {
+    subject: `New order #${order.displayId} · ${inr(order.total)} · ${order.paidOnline ? 'Paid' : 'COD'}${name ? ` · ${name}` : ''}`,
+    html: layout({ preheader: `${order.items.length === 1 ? order.items[0].title : `${order.items.length} items`}${order.address ? `, to ${order.address.city}` : ''}.`, body }),
+    text,
+  }
+}
+
+/**
+ * The same alert for WhatsApp. `variables` fill an approved template ({{1}} order number, {{2}} customer,
+ * {{3}} amount and payment, {{4}} items, {{5}} destination), so each is one line; `body` is the free-form
+ * message used when no template is configured.
+ */
+export function orderAlertWhatsapp(order: OrderSummary): { body: string; variables: Record<string, string> } {
+  const oneLine = (v: string, max: number) => {
+    const clean = v.replace(/\s+/g, ' ').trim()
+    return clean.length > max ? `${clean.slice(0, max - 1)}…` : clean || '-'
+  }
+  const a = order.address
+  const customer = [customerName(order), a?.phone && `+91 ${a.phone.replace(/^\+91/, '')}`].filter(Boolean).join(', ')
+  const amount = `${inr(order.total)} (${order.paidOnline ? 'paid online' : 'Cash on Delivery'})`
+  const items = order.items.map((i) => `${i.quantity} × ${i.title}${i.variantTitle ? ` (${i.variantTitle})` : ''}`).join('; ')
+  const destination = a ? `${a.city}, ${a.province} ${a.postalCode}` : ''
+  const variables = {
+    '1': String(order.displayId),
+    '2': oneLine(customer, 120),
+    '3': oneLine(amount, 60),
+    '4': oneLine(items, 400),
+    '5': oneLine(destination, 120),
+  }
+  const body = [
+    `New order #${variables['1']} on ${SHOP.name}`,
+    `Customer: ${variables['2']}`,
+    `Amount: ${variables['3']}`,
+    `Items: ${variables['4']}`,
+    `Ship to: ${variables['5']}`,
+    `${adminUrl()}/orders/${order.id}`,
+  ].join('\n')
+  return { body, variables }
 }
 
 /** "Your order is on its way", with the courier's tracking number and link. */
